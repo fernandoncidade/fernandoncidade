@@ -13,8 +13,8 @@
 <div align="center">
 
 ### 🕒 Total de Tempo Trabalhado: <span id="total-horas">580 horas</span>
-### 📝 Total de Linhas Escritas: <span id="total-linhas"><!-- TOTAL_LINES_PLACEHOLDER --></span>
-### 💻 Total de Commits: <span id="total-commits"><!-- TOTAL_COMMITS_PLACEHOLDER --></span>
+### 📝 Total de Linhas Escritas: <span id="total-linhas">39426 linhas</span>
+### 💻 Total de Commits: <span id="total-commits">98 commits</span>
 
 </div>
 
