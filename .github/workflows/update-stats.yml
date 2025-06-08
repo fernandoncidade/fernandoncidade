@@ -65,7 +65,7 @@ jobs:
           echo "TOTAL_COMMITS=$total_commits" >> $GITHUB_ENV
           
           # Após calcular lines e commits no loop
-          repo_upper=$(echo "$repo" | tr '[:lower:]' '[:upper:]' | tr '-' '_' )
+          repo_upper=$(echo "$repo" | tr '[:lower:]' '[:upper:]' | tr '-.' '__')
           echo "${repo_upper}_LINES=$lines" >> $GITHUB_ENV
           echo "${repo_upper}_COMMITS=$commits" >> $GITHUB_ENV
           
@@ -81,11 +81,11 @@ jobs:
           sed -i "s/<!-- AGENDA_LINES -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_LINES }} linhas/g" README.md
           sed -i "s/<!-- AGENDA_COMMITS -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_COMMITS }} commits/g" README.md
           
-          sed -i "s/<!-- PYSIDE6_LINES -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V.0.0.1_LINES }} linhas/g" README.md
-          sed -i "s/<!-- PYSIDE6_COMMITS -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V.0.0.1_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- PYSIDE6_LINES -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V_0_0_1_LINES }} linhas/g" README.md
+          sed -i "s/<!-- PYSIDE6_COMMITS -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V_0_0_1_COMMITS }} commits/g" README.md
 
-          sed -i "s/<!-- PYQT6_LINES -->/${{ env.MANAGER_COMPRESSION_PYQT6_V.0.0.1_LINES }} linhas/g" README.md
-          sed -i "s/<!-- PYQT6_COMMITS -->/${{ env.MANAGER_COMPRESSION_PYQT6_V.0.0.1_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- PYQT6_LINES -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_LINES }} linhas/g" README.md
+          sed -i "s/<!-- PYQT6_COMMITS -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_COMMITS }} commits/g" README.md
 
           sed -i "s/<!-- EISENHOWER_LINES -->/${{ env.EISENHOWER_ORGANIZING_LINES }} linhas/g" README.md
           sed -i "s/<!-- EISENHOWER_COMMITS -->/${{ env.EISENHOWER_ORGANIZING_COMMITS }} commits/g" README.md
@@ -93,17 +93,17 @@ jobs:
           sed -i "s/<!-- URNA_LINES -->/${{ env.PROGRAMA_URNA_ELETRONICA_LINES }} linhas/g" README.md
           sed -i "s/<!-- URNA_COMMITS -->/${{ env.PROGRAMA_URNA_ELETRONICA_COMMITS }} commits/g" README.md
 
-          sed -i "s/<!-- MANEGEMENT_LINES -->/${{ env.DASHBOARD_STREAMLIT-PLOTLY-PANDAS_MANAGEMENT_LINES }} linhas/g" README.md
-          sed -i "s/<!-- MANEGEMENT_COMMITS -->/${{ env.DASHBOARD_STREAMLIT-PLOTLY-PANDAS_MANAGEMENT_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- MANEGEMENT_LINES -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_LINES }} linhas/g" README.md
+          sed -i "s/<!-- MANEGEMENT_COMMITS -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_COMMITS }} commits/g" README.md
 
-          sed -i "s/<!-- STREAMLIT_LINES -->/${{ env.DASHBOARD_STREAMLIT-PLOTLY-PANDAS_PARETO-DIAGRAM_ABC-CURVE_LINE }} linhas/g" README.md
-          sed -i "s/<!-- STREAMLIT_COMMITS -->/${{ env.DASHBOARD_STREAMLIT-PLOTLY-PANDAS_PARETO-DIAGRAM_ABC-CURVE_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- STREAMLIT_LINES -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_LINE }} linhas/g" README.md
+          sed -i "s/<!-- STREAMLIT_COMMITS -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_COMMITS }} commits/g" README.md
           
-          sed -i "s/<!-- PARETO_LINES -->/${{ env.DASHBOARD_TKINTER_PARETO-DIAGRAM_ABC-CURVE_LINE }} linhas/g" README.md
-          sed -i "s/<!-- PARETO_COMMITS -->/${{ env.DASHBOARD_TKINTER_PARETO-DIAGRAM_ABC-CURVE_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- PARETO_LINES -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_LINE }} linhas/g" README.md
+          sed -i "s/<!-- PARETO_COMMITS -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_COMMITS }} commits/g" README.md
           
-          sed -i "s/<!-- SLOTH_LINES -->/${{ env.SLOTH-HIGHLANDER-THEME-1_LINE }} linhas/g" README.md
-          sed -i "s/<!-- SLOTH_COMMITS -->/${{ env.SLOTH-HIGHLANDER-THEME-1_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- SLOTH_LINES -->/${{ env.SLOTH_HIGHLANDER_THEME_1_LINE }} linhas/g" README.md
+          sed -i "s/<!-- SLOTH_COMMITS -->/${{ env.SLOTH_HIGHLANDER_THEME_1_COMMITS }} commits/g" README.md
           
       - name: Commit e push das alterações
         run: |
