@@ -33,22 +33,6 @@
 | 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS -->h | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> l/h |
 | 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS -->h | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> l/h |
 
-## 🛠️ Distribuição por Linguagem
-
-<!-- INÍCIO DA SEÇÃO DE DISTRIBUIÇÃO POR LINGUAGEM -->
-
-```
-🐍 Python <!-- PYTHON_BAR --> <!-- PYTHON_PERCENT -->% (<!-- PYTHON_LINES --> linhas)
-🔧 C++ <!-- CPP_BAR --> <!-- CPP_PERCENT -->% (<!-- CPP_LINES --> linhas)
-🎨 CSS/HTML <!-- WEB_BAR --> <!-- WEB_PERCENT -->% (<!-- WEB_LINES --> linhas)
-```
-
-<!-- FIM DA SEÇÃO DE DISTRIBUIÇÃO POR LINGUAGEM -->
-
-<div align="center">
-  <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="300"/>
-</div>
-
 ## Sobre Mim
 
 Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento de interfaces gráficas (GUI). Tenho interesse especial em automação de tarefas, análise de dados e criação de soluções práticas para o dia a dia, utilizando frameworks modernos como PySide6, PyQt6 e Streamlit.
@@ -114,5 +98,9 @@ Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento 
 [![fernandoncidade's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&area=true&custom_title=Gráfico%20de%20Atividade%20de%20fernandoncidade&locale=pt-br)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em><b>Sempre codando com paixão!</b> 🚀</em> <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60">
+
+<div align="center">
+  <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="300"/>
+</div>
 
 </div>
