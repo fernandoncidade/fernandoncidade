@@ -8,13 +8,10 @@ on:
 jobs:
   update-stats:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write     # Adicionando permissão explícita para escrever conteúdo
-    
     steps:
       - uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          path: main-repo
           
       - name: Configurar ambiente
         run: |
@@ -36,7 +33,6 @@ jobs:
             "Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve"
             "Dashboard_TkInter_Pareto-Diagram_ABC-Curve"
             "sloth-highlander-theme-1"
-            "fernando"
           )
       
           total_lines=0
@@ -76,7 +72,6 @@ jobs:
               "HTML") taxa_base=30 ;;       # HTML tem muitas linhas por hora
               "CSS") taxa_base=25 ;;        # CSS é relativamente rápido
               "Java") taxa_base=12 ;;       # Java é mais verboso
-              "Makefile") taxa_base=25 ;;   # Makefile é relativamente rápido
               *) taxa_base=18 ;;            # Taxa padrão
             esac
             
@@ -110,15 +105,12 @@ jobs:
             # Adiciona linha à tabela de estatísticas
             echo "| $repo | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> ../stats.md
           
-            # Exporta variáveis de ambiente
+            # Environment variables
             repo_env=$(echo "$repo" | sed -e 's/-/_/g' -e 's/\./_/g' | tr '[:lower:]' '[:upper:]')
             echo "${repo_env}_LINES=$lines" >> $GITHUB_ENV
             echo "${repo_env}_COMMITS=$commits" >> $GITHUB_ENV
             echo "${repo_env}_HOURS=$horas" >> $GITHUB_ENV
             echo "${repo_env}_PROD=$produtividade" >> $GITHUB_ENV
-            
-            # Debug para verificar se as variáveis estão sendo configuradas corretamente
-            echo "Configurando ${repo_env}_LINES=$lines"
           
             total_lines=$((total_lines + lines))
             total_commits=$((total_commits + commits))
@@ -135,18 +127,12 @@ jobs:
           # Adiciona linha de totais na tabela
           echo "| **TOTAL** | - | ${total_horas}h | $total_lines | $total_commits | - |" >> stats.md
           
-          # Move o arquivo de estatísticas para o diretório principal
-          mv stats.md ./stats.md
-          
-      - name: Debug variáveis de ambiente
-        run: |
-          echo "FERNANDO_LINES: ${{ env.FERNANDO_LINES }}"
-          echo "FERNANDO_COMMITS: ${{ env.FERNANDO_COMMITS }}"
-          echo "FERNANDO_HOURS: ${{ env.FERNANDO_HOURS }}"
-          echo "FERNANDO_PROD: ${{ env.FERNANDO_PROD }}"
+          # Mova o arquivo de estatísticas para o repo principal
+          mv stats.md main-repo/stats.md
           
       - name: Atualizar README
         run: |
+          cd main-repo
           sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER -->/${{ env.TOTAL_LINES }} linhas/g" README.md
           sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER -->/${{ env.TOTAL_COMMITS }} commits/g" README.md
           sed -i "s/<!-- TOTAL_HOURS_PLACEHOLDER -->/${{ env.TOTAL_HOURS }} horas/g" README.md
@@ -201,19 +187,9 @@ jobs:
           sed -i "s/<!-- SLOTH_HOURS -->/${{ env.SLOTH_HIGHLANDER_THEME_1_HOURS }}h/g" README.md
           sed -i "s/<!-- SLOTH_PROD -->/${{ env.SLOTH_HIGHLANDER_THEME_1_PROD }} l\/h/g" README.md
           
-          # Usando cat para verificar o conteúdo da variável antes da substituição
-          echo "FERNANDO_LINES: ${{ env.FERNANDO_LINES }}"
-          sed -i "s/<!-- FERNANDO_LINES -->/${{ env.FERNANDO_LINES }} linhas/g" README.md
-          sed -i "s/<!-- FERNANDO_COMMITS -->/${{ env.FERNANDO_COMMITS }} commits/g" README.md
-          sed -i "s/<!-- FERNANDO_HOURS -->/${{ env.FERNANDO_HOURS }}h/g" README.md
-          sed -i "s/<!-- FERNANDO_PROD -->/${{ env.FERNANDO_PROD }} l\/h/g" README.md
-
-          # Debug: exibir parte relevante do README após substituição
-          echo "Verificando se a substituição ocorreu:"
-          grep -A 3 "🌻 \*\*fernando\*\*" README.md || echo "Padrão não encontrado"
-          
       - name: Commit e push das alterações
         run: |
+          cd main-repo
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add README.md stats.md
