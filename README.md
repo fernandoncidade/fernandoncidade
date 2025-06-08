@@ -22,16 +22,16 @@
 
 | Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |
 |-------------|-----------|-------|--------|---------|---------------|
-| 🔍 **Panoptes Patrol File Monitor** | Python | 120h | <!-- TOTAL_LINES_PLACEHOLDER --> | <!-- TOTAL_COMMITS_PLACEHOLDER --> | <!-- PANOPTES_PRODUCTIVITY --> |
-| 📅 **Agenda Avaliações Acadêmicas** | Python | 90h | 2.800 | 62 | 31 l/h |
-| 🗜️ **Manager Compression PySide6** | Python | 75h | 2.200 | 48 | 29 l/h |
-| 🗜️ **Manager Compression PyQt6** | Python | 70h | 2.100 | 45 | 30 l/h |
-| 📋 **Eisenhower Organizing** | Python | 60h | 1.800 | 35 | 30 l/h |
-| 🗳️ **Programa Urna Eletrônica** | C++ | 45h | 1.500 | 28 | 33 l/h |
-| 📊 **Dashboard Streamlit Management** | Python | 40h | 1.200 | 24 | 30 l/h |
-| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 35h | 1.000 | 20 | 29 l/h |
-| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 30h | 900 | 18 | 30 l/h |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 15h | 400 | 12 | 27 l/h |
+| 🔍 **Panoptes Patrol File Monitor** | Python | 120h | <!-- PANOPTES_LINES --> | <!-- PANOPTES_COMMITS --> | <!-- PANOPTES_PRODUCTIVITY --> |
+| 📅 **Agenda Avaliações Acadêmicas** | Python | 90h | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PRODUCTIVITY --> |
+| 🗜️ **Manager Compression PySide6** | Python | 75h | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PRODUCTIVITY --> |
+| 🗜️ **Manager Compression PyQt6** | Python | 70h | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PRODUCTIVITY --> |
+| 📋 **Eisenhower Organizing** | Python | 60h | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PRODUCTIVITY --> |
+| 🗳️ **Programa Urna Eletrônica** | C++ | 45h | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PRODUCTIVITY --> |
+| 📊 **Dashboard Streamlit Management** | Python | 40h | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PRODUCTIVITY --> |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 35h | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PRODUCTIVITY --> |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 30h | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PRODUCTIVITY --> |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 15h  <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PRODUCTIVITY --> |
 
 ## 🛠️ Distribuição por Linguagem
 
