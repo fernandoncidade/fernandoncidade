@@ -12,9 +12,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: 5675.0 horas horas
-### 📝 Total de Linhas Escritas: 78852 linhas
-### 💻 Total de Commits: 98 commits
+### 🕒 Total de Tempo Trabalhado: <!-- TOTAL_HOURS_PLACEHOLDER --> horas
+### 📝 Total de Linhas Escritas: <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -22,18 +22,18 @@
 
 | Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |
 |-------------|-----------|-------|--------|---------|---------------|
-| 🔍 **Panoptes Patrol File Monitor** | Python | 2191.7hh | 27396 linhas | 13 commits | 12.50 l/h l/h |
-| 📅 **Agenda Avaliações Acadêmicas** | Python | 225.4hh | 3688 linhas | 10 commits | 16.36 l/h l/h |
-| 🗜️ **Manager Compression PySide6** | Python | 384.7hh | 4842 linhas | 20 commits | 12.59 l/h l/h |
-| 🗜️ **Manager Compression PyQt6** | Python | 451.5hh | 5210 linhas | 14 commits | 11.54 l/h l/h |
-| 📋 **Eisenhower Organizing** | Python | 39.0hh | 702 linhas | 4 commits | 18.00 l/h l/h |
-| 🗳️ **Programa Urna Eletrônica** | C++ | 1391.1hh | 20866 linhas | 5 commits | 15.00 l/h l/h |
-| 📊 **Dashboard Streamlit Management** | Python | 128.7hh | 2340 linhas | 8 commits | 18.18 l/h l/h |
-| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8hh | 2232 linhas | 3 commits | 18.18 l/h l/h |
-| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 149.2hh | 2712 linhas | 1 commits | 18.18 l/h l/h |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 590.9hh | 8864 linhas | 20 commits | 15.00 l/h l/h |
+| 🔍 **Panoptes Patrol File Monitor** | Python | <!-- PANOPTES_HOURS -->h | <!-- PANOPTES_LINES --> | <!-- PANOPTES_COMMITS --> | <!-- PANOPTES_PROD --> |
+| 📅 **Agenda Avaliações Acadêmicas** | Python | <!-- AGENDA_HOURS -->h | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS -->h | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
+| 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS -->h | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
+| 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS -->h | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
+| 🗳️ **Programa Urna Eletrônica** | C++ | <!-- URNA_HOURS -->h | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
+| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS -->h | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS -->h | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS -->h | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS -->h | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
 
-## 🌻 Sobre Mim 🌻
+## Sobre Mim
 
 Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento de interfaces gráficas (GUI). Tenho interesse especial em automação de tarefas, análise de dados e criação de soluções práticas para o dia a dia, utilizando frameworks modernos como PySide6, PyQt6 e Streamlit.
 
