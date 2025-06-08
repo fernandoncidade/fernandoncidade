@@ -32,8 +32,6 @@
 | 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
 | 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
 | 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
-| 🌻 **fernando** | Makefile | <!-- FERNANDO_HOURS --> | <!-- FERNANDO_LINES --> | <!-- FERNANDO_COMMITS --> | <!-- FERNANDO_PROD --> |
-
 
 ## 🌻 Sobre Mim 🌻
 
@@ -108,3 +106,4 @@ Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento 
 </div>
 
 </div>
+
