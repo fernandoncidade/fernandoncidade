@@ -44,31 +44,29 @@ jobs:
           for repo in "${repositories[@]}"; do
             git clone --depth=1 https://github.com/fernandoncidade/$repo repos/$repo || continue
             cd repos/$repo
-      
-            # Contar linhas com cloc
+          
+            # Count lines with cloc
             lines=$(cloc --exclude-dir=node_modules,.git --quiet --csv . | grep -E '^Python|^C\+\+|^HTML|^CSS' | awk -F',' '{sum += $5} END {print sum+0}')
-      
-            # Contar commits
+          
+            # Count commits
             commits=$(git rev-list --count HEAD)
-
+          
             case "$repo" in
               "Panoptes_Patrol_File_Monitor") horas=120 ;;
               "Agenda_Avaliacoes_Academicas") horas=90 ;;
-              "Manager_Compression_PySide6_v.0.0.1") horas=75 ;;
-              ...
+              # Add other cases as needed
             esac
-            
+          
             produtividade=$(awk "BEGIN {printf \"%.2f\", $lines / $horas}")
-
-      
-            # Variáveis de ambiente
+          
+            # Environment variables
             repo_env=$(echo "$repo" | sed -e 's/-/_/g' -e 's/\./_/g' | tr '[:lower:]' '[:upper:]')
             echo "${repo_env}_LINES=$lines" >> $GITHUB_ENV
             echo "${repo_env}_COMMITS=$commits" >> $GITHUB_ENV
-      
+          
             total_lines=$((total_lines + lines))
             total_commits=$((total_commits + commits))
-      
+          
             cd ../../
           done
       
