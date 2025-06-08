@@ -44,7 +44,7 @@ Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento 
 - Lattes: [fernando_n_cidade](http://lattes.cnpq.br/1220810284745516)
 - Instagram: [fernandoncidade](https://www.instagram.com/fernandoncidade)
 
-![Estatísticas do GitHub](https://github-readme-stats.vercel.app/api?username=fernandoncidade&show_icons=true&theme=blue-greenk&locale=pt-br)
+![Estatísticas do GitHub](https://github-readme-stats.vercel.app/api?username=fernandoncidade&theme=blue-green&show_icons=True&locale=pt-br)
 
 [![GitHub Streak](https://streak-stats.demolab.com/?user=fernandoncidade&theme=microsoft-dark&locale=pt-br)](https://git.io/streak-stats)
 
