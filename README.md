@@ -31,7 +31,7 @@
 | 📊 **Dashboard Streamlit Management** | Python | 40h | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PRODUCTIVITY --> |
 | 📈 **Dashboard Pareto/ABC Streamlit** | Python | 35h | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PRODUCTIVITY --> |
 | 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 30h | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PRODUCTIVITY --> |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 15h  <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PRODUCTIVITY --> |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 15h | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PRODUCTIVITY --> |
 
 ## 🛠️ Distribuição por Linguagem
 
