@@ -73,11 +73,6 @@ jobs:
           echo "TOTAL_LINES=$total_lines" >> $GITHUB_ENV
           echo "TOTAL_COMMITS=$total_commits" >> $GITHUB_ENV
           
-          # Após calcular lines e commits no loop
-          repo_upper=$(echo "$repo" | sed -e 's/-/_/g' -e 's/\./_/g' | tr '[:lower:]' '[:upper:]')
-          echo "${repo_upper}_LINES=$lines" >> $GITHUB_ENV
-          echo "${repo_upper}_COMMITS=$commits" >> $GITHUB_ENV
-          
       - name: Atualizar README
         run: |
           cd main-repo
