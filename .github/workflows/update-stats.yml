@@ -9,20 +9,19 @@ jobs:
   update-stats:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          path: main-repo
-          
+      # Passo 1: Checkout do seu repositório principal (onde o README.md está)
+      - uses: actions/checkout@v4
+
+      # Passo 2: Instalar o 'cloc' para contagem de linhas
       - name: Configurar ambiente
         run: |
           sudo apt-get update
           sudo apt-get install -y cloc
-          
-      - name: Clonar e analisar repositórios
+
+      # Passo 3: Clonar cada repositório, analisar e atualizar o README em tempo real
+      - name: Clonar, analisar repositórios e atualizar README
         run: |
-          mkdir -p repos
-          
-          # Lista de repositórios para clonar e analisar
+          # Lista de repositórios para analisar
           repositories=(
             "Panoptes_Patrol_File_Monitor"
             "Agenda_Avaliacoes_Academicas"
@@ -36,45 +35,59 @@ jobs:
             "sloth-highlander-theme-1"
           )
           
-          total_lines=0
-          total_commits=0
+          # Criar um diretório temporário para os clones
+          mkdir -p repos_temp
           
-          echo "| Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |" > stats.md
-          echo "|-------------|-----------|-------|--------|---------|---------------|" >> stats.md
-          
-          for repo in "${repositories[@]}"; do
-            echo "Processando $repo..."
-            git clone "https://github.com/fernandoncidade/$repo.git" "repos/$repo" || continue
+          for repo_name in "${repositories[@]}"; do
+            echo "Processando $repo_name..."
             
-            # Contagem de linhas
-            cd "repos/$repo"
-            lines=$(cloc --exclude-dir=node_modules,.git --quiet --csv . | tail -1 | cut -d, -f5)
+            # Clonar o repositório específico
+            git clone --depth 1 "https://github.com/fernandoncidade/$repo_name.git" "repos_temp/$repo_name" || continue
             
-            # Contagem de commits
+            # Entrar no diretório do repositório clonado
+            cd "repos_temp/$repo_name"
+            
+            # Contagem de linhas com cloc (excluindo arquivos de dependências, etc.)
+            lines=$(cloc --exclude-dir=node_modules,vendor,.git --quiet --csv . | tail -n 1 | cut -d, -f5)
+            
+            # Contagem de commits (necessário um clone completo, não --depth 1)
+            # Para isso, precisamos remover o --depth 1 do clone e "unshallow" o repositório
+            # git fetch --unshallow || echo "Repositório já completo."
+            # Como a contagem de commits pode tornar o processo lento, vamos buscar o histórico completo
+            # Removendo o --depth 1 do clone inicial e fazendo um clone completo
+            cd ../.. # Volta para a raiz
+            rm -rf "repos_temp/$repo_name" # Remove o clone superficial
+            git clone "https://github.com/fernandoncidade/$repo_name.git" "repos_temp/$repo_name" # Clona completo
+            cd "repos_temp/$repo_name"
+            
             commits=$(git rev-list --count HEAD)
             
-            # Adicionar ao total
-            total_lines=$((total_lines + lines))
-            total_commits=$((total_commits + commits))
+            # Voltar para o diretório raiz do workflow
+            cd ../..
+
+            # Gerar o nome do placeholder a partir do nome do repositório
+            # Ex: "Panoptes_Patrol_File_Monitor" -> "PANOPTES_PATROL_FILE_MONITOR"
+            placeholder_base=$(echo "$repo_name" | tr '[:lower:]' '[:upper:]' | tr '-' '_')
             
-            # Voltar ao diretório principal
-            cd ../../
+            # Atualizar os placeholders de linhas e commits no README.md principal
+            # Usamos `|` como delimitador do sed para evitar conflitos com `|${lines}|g" README.md
+            sed -i "s||${commits}|g" README.md
+
+            # Limpar o repositório clonado para economizar espaço
+            rm -rf "repos_temp/$repo_name"
           done
-          
-          echo "TOTAL_LINES=$total_lines" >> $GITHUB_ENV
-          echo "TOTAL_COMMITS=$total_commits" >> $GITHUB_ENV
-          
-      - name: Atualizar README
-        run: |
-          cd main-repo
-          sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER -->/${{ env.TOTAL_LINES }} linhas/g" README.md
-          sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER -->/${{ env.TOTAL_COMMITS }} commits/g" README.md
-          
+
+      # Passo 4: Fazer o commit e push das alterações no README.md
       - name: Commit e push das alterações
         run: |
-          cd main-repo
-          git config user.name "GitHub Actions"
+          git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          git add README.md
-          git commit -m "Atualiza estatísticas de código [skip ci]" || echo "No changes to commit"
-          git push
+          # Adicionar o -A para garantir que o README.md seja stageado
+          git add -A
+          # Verificar se há mudanças antes de commitar
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "chore: Atualiza estatísticas dos repositórios [skip ci]"
+            git push
+          else
+            echo "Nenhuma mudança para commitar."
+          fi
