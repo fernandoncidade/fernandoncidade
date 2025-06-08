@@ -21,8 +21,7 @@ jobs:
       - name: Clonar e analisar repositórios
         run: |
           mkdir -p repos
-          
-          # Lista de repositórios para clonar e analisar
+      
           repositories=(
             "Panoptes_Patrol_File_Monitor"
             "Agenda_Avaliacoes_Academicas"
@@ -35,41 +34,44 @@ jobs:
             "Dashboard_TkInter_Pareto-Diagram_ABC-Curve"
             "sloth-highlander-theme-1"
           )
-          
+      
           total_lines=0
           total_commits=0
-          
+      
           echo "| Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |" > stats.md
-          echo "|-------------|-----------|-------|--------|---------|---------------|" >> stats.md
-          
+          echo "| $repo | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> stats.md
+      
           for repo in "${repositories[@]}"; do
-            git clone ... || continue
-            cd "repos/$repo"
-            lines=$(cloc ... | tail -1 | cut -d, -f5)
+            git clone --depth=1 https://github.com/fernandoncidade/$repo repos/$repo || continue
+            cd repos/$repo
+      
+            # Contar linhas com cloc
+            lines=$(cloc --exclude-dir=node_modules,.git --quiet --csv . | grep -E '^Python|^C\+\+|^HTML|^CSS' | awk -F',' '{sum += $5} END {print sum+0}')
+      
+            # Contar commits
             commits=$(git rev-list --count HEAD)
+
+            case "$repo" in
+              "Panoptes_Patrol_File_Monitor") horas=120 ;;
+              "Agenda_Avaliacoes_Academicas") horas=90 ;;
+              "Manager_Compression_PySide6_v.0.0.1") horas=75 ;;
+              ...
+            esac
+            
+            produtividade=$(awk "BEGIN {printf \"%.2f\", $lines / $horas}")
+
+      
+            # Variáveis de ambiente
+            repo_env=$(echo "$repo" | sed -e 's/-/_/g' -e 's/\./_/g' | tr '[:lower:]' '[:upper:]')
+            echo "${repo_env}_LINES=$lines" >> $GITHUB_ENV
+            echo "${repo_env}_COMMITS=$commits" >> $GITHUB_ENV
+      
             total_lines=$((total_lines + lines))
             total_commits=$((total_commits + commits))
-  
-            # Variáveis individuais AGORA são definidas aqui
-            repo_upper=$(echo "$repo" | sed -e 's/-/_/g' -e 's/\./_/g' | tr '[:lower:]' '[:upper:]')
-            echo "${repo_upper}_LINES=$lines" >> $GITHUB_ENV
-            echo "${repo_upper}_COMMITS=$commits" >> $GITHUB_ENV
-            
-            # Contagem de linhas
-            cd "repos/$repo"
-            lines=$(cloc --exclude-dir=node_modules,.git --quiet --csv . | tail -1 | cut -d, -f5)
-            
-            # Contagem de commits
-            commits=$(git rev-list --count HEAD)
-            
-            # Adicionar ao total
-            total_lines=$((total_lines + lines))
-            total_commits=$((total_commits + commits))
-            
-            # Voltar ao diretório principal
+      
             cd ../../
           done
-          
+      
           echo "TOTAL_LINES=$total_lines" >> $GITHUB_ENV
           echo "TOTAL_COMMITS=$total_commits" >> $GITHUB_ENV
           
@@ -100,13 +102,13 @@ jobs:
           sed -i "s/<!-- MANEGEMENT_LINES -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_LINES }} linhas/g" README.md
           sed -i "s/<!-- MANEGEMENT_COMMITS -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_COMMITS }} commits/g" README.md
 
-          sed -i "s/<!-- STREAMLIT_LINES -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_LINE }} linhas/g" README.md
+          sed -i "s/<!-- STREAMLIT_LINES -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_LINES }} linhas/g" README.md
           sed -i "s/<!-- STREAMLIT_COMMITS -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_COMMITS }} commits/g" README.md
           
-          sed -i "s/<!-- PARETO_LINES -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_LINE }} linhas/g" README.md
+          sed -i "s/<!-- PARETO_LINES -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_LINES }} linhas/g" README.md
           sed -i "s/<!-- PARETO_COMMITS -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_COMMITS }} commits/g" README.md
           
-          sed -i "s/<!-- SLOTH_LINES -->/${{ env.SLOTH_HIGHLANDER_THEME_1_LINE }} linhas/g" README.md
+          sed -i "s/<!-- SLOTH_LINES -->/${{ env.SLOTH_HIGHLANDER_THEME_1_LINES }} linhas/g" README.md
           sed -i "s/<!-- SLOTH_COMMITS -->/${{ env.SLOTH_HIGHLANDER_THEME_1_COMMITS }} commits/g" README.md
           
       - name: Commit e push das alterações
