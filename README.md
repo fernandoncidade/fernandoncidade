@@ -1,5 +1,7 @@
 # Olá, eu sou o Fernando Nillsson Cidade! 👋
 
+![Última atualização](https://img.shields.io/github/last-commit/fernandoncidade/fernandoncidade?label=Estatísticas%20atualizadas%20em&style=flat-square)
+
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="60" height="60"/>
   <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="60" height="60"/>
@@ -10,9 +12,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: **580 horas**
-### 📝 Total de Linhas Escritas: **17.400 linhas**
-### 💻 Total de Commits: **377 commits**
+### 🕒 Total de Tempo Trabalhado: <span id="total-horas">580 horas</span>
+### 📝 Total de Linhas Escritas: <span id="total-linhas"><!-- TOTAL_LINES_PLACEHOLDER --></span>
+### 💻 Total de Commits: <span id="total-commits"><!-- TOTAL_COMMITS_PLACEHOLDER --></span>
 
 </div>
 
@@ -20,7 +22,7 @@
 
 | Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |
 |-------------|-----------|-------|--------|---------|---------------|
-| 🔍 **Panoptes Patrol File Monitor** | Python | 120h | 3.500 | 85 | 29 l/h |
+| 🔍 **Panoptes Patrol File Monitor** | Python | 120h | <!-- PANOPTES_LINES --> | <!-- PANOPTES_COMMITS --> | <!-- PANOPTES_PRODUCTIVITY --> |
 | 📅 **Agenda Avaliações Acadêmicas** | Python | 90h | 2.800 | 62 | 31 l/h |
 | 🗜️ **Manager Compression PySide6** | Python | 75h | 2.200 | 48 | 29 l/h |
 | 🗜️ **Manager Compression PyQt6** | Python | 70h | 2.100 | 45 | 30 l/h |
