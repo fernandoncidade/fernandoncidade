@@ -65,7 +65,7 @@ jobs:
           echo "TOTAL_COMMITS=$total_commits" >> $GITHUB_ENV
           
           # Após calcular lines e commits no loop
-          repo_upper=$(echo "$repo" | tr '[:lower:]' '[:upper:]' | tr '-.' '__')
+          repo_upper=$(echo "$repo" | tr '[:lower:]' '[:upper:]' | tr '-.' '_')
           echo "${repo_upper}_LINES=$lines" >> $GITHUB_ENV
           echo "${repo_upper}_COMMITS=$commits" >> $GITHUB_ENV
           
