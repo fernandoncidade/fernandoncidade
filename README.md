@@ -48,5 +48,5 @@ Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento 
 
 [![GitHub Streak](https://streak-stats.demolab.com/?user=fernandoncidade&theme=microsoft-dark&locale=pt-br)](https://git.io/streak-stats)
 
-[![Gráfico de atividade do GitHub](https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=gotham&locale=pt-br)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![Gráfico de atividade do GitHub](https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&locale=pt-br)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
