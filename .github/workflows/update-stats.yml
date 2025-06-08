@@ -45,8 +45,9 @@ jobs:
             git clone --depth=1 https://github.com/fernandoncidade/$repo repos/$repo || continue
             cd repos/$repo
           
-            # Count lines with cloc
-            lines=$(cloc --exclude-dir=node_modules,.git --quiet --csv . | grep -E '^Python|^C\+\+|^HTML|^CSS' | awk -F',' '{sum += $5} END {print sum+0}')
+            # Conta todas as linhas de código (coluna "code", ignora header e linhas em branco/comentário)
+            lines=$(cloc --exclude-dir=node_modules,.git --quiet --csv . | awk -F',' 'NR>1 {sum += $5} END {print sum+0}')
+            lines=${lines:-0}
           
             # Count commits
             commits=$(git rev-list --count HEAD)
