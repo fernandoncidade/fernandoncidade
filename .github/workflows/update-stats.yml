@@ -210,6 +210,33 @@ jobs:
           sed -i "s/<!-- SLOTH_HOURS -->/${{ env.SLOTH_HIGHLANDER_THEME_1_HOURS }}h/g" README.md
           sed -i "s/<!-- SLOTH_PROD -->/${{ env.SLOTH_HIGHLANDER_THEME_1_PROD }} l\/h/g" README.md
 
+          # Adicionar na etapa "Atualizar README" do workflow, antes da substituição da seção completa
+          # Gerar as barras de progresso para cada linguagem
+          python_bar=$(printf '%-20s' $(printf '%0.s█' $(seq 1 $(echo "$PYTHON_PERCENT / 5" | bc))))
+          cpp_bar=$(printf '%-20s' $(printf '%0.s█' $(seq 1 $(echo "$CPP_PERCENT / 5" | bc))))
+          web_bar=$(printf '%-20s' $(printf '%0.s█' $(seq 1 $(echo "$WEB_PERCENT / 5" | bc))))
+          
+          # Substituir os placeholders de barras e percentuais
+          sed -i "s/<!-- PYTHON_BAR -->/$python_bar/g" README.md
+          sed -i "s/<!-- PYTHON_PERCENT -->/$PYTHON_PERCENT/g" README.md
+          sed -i "s/<!-- PYTHON_LINES -->/$(printf "%'d" $PYTHON_LINES)/g" README.md
+          
+          sed -i "s/<!-- CPP_BAR -->/$cpp_bar/g" README.md
+          sed -i "s/<!-- CPP_PERCENT -->/$CPP_PERCENT/g" README.md
+          sed -i "s/<!-- CPP_LINES -->/$(printf "%'d" $CPP_LINES)/g" README.md
+          
+          sed -i "s/<!-- WEB_BAR -->/$web_bar/g" README.md
+          sed -i "s/<!-- WEB_PERCENT -->/$WEB_PERCENT/g" README.md
+          sed -i "s/<!-- WEB_LINES -->/$(printf "%'d" $WEB_LINES)/g" README.md
+          
+          # Adicionar "Outros" se necessário
+          if [ -n "$OTHER_LINES" ] && [ "$OTHER_LINES" -gt 0 ]; then
+            other_bar=$(printf '%-20s' $(printf '%0.s█' $(seq 1 $(echo "$OTHER_PERCENT / 5" | bc))))
+            other_section="📦 Outros    $other_bar $OTHER_PERCENT% ($(printf "%'d" $OTHER_LINES) linhas)"
+            sed -i "s/<!-- OTHERS_SECTION -->/$other_section/g" README.md
+          else
+            sed -i "s/<!-- OTHERS_SECTION -->//g" README.md
+
           # Adicionar após os outros sed commands na etapa "Atualizar README"
           # Atualizar a seção de distribuição por linguagem
           sed -i '/## 🛠️ Distribuição por Linguagem/,/```$/c\## 🛠️ Distribuição por Linguagem\n\n'"$(cat language_distribution.txt)" README.md
