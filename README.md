@@ -12,9 +12,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: <span id="total-horas">5675.0 horas</span>
-### 📝 Total de Linhas Escritas: <span id="total-linhas">78852 linhas</span>
-### 💻 Total de Commits: <span id="total-commits">98 commits</span>
+### 🕒 Total de Tempo Trabalhado: <!-- TOTAL_HOURS_PLACEHOLDER --> horas
+### 📝 Total de Linhas Escritas: <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -22,24 +22,28 @@
 
 | Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |
 |-------------|-----------|-------|--------|---------|---------------|
-| 🔍 **Panoptes Patrol File Monitor** | Python | 2191.7h | 27396 linhas | 13 commits | 12.50 l/h |
-| 📅 **Agenda Avaliações Acadêmicas** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
-| 🗜️ **Manager Compression PySide6** | Python | 384.7h | 4842 linhas | 20 commits | 12.59 l/h |
-| 🗜️ **Manager Compression PyQt6** | Python | 451.5h | 5210 linhas | 14 commits | 11.54 l/h |
-| 📋 **Eisenhower Organizing** | Python | 39.0h | 702 linhas | 4 commits | 18.00 l/h |
-| 🗳️ **Programa Urna Eletrônica** | C++ | 1391.1h | 20866 linhas | 5 commits | 15.00 l/h |
-| 📊 **Dashboard Streamlit Management** | Python | 128.7h | 2340 linhas | 8 commits | 18.18 l/h |
-| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8h | 2232 linhas | 3 commits | 18.18 l/h |
-| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 149.2h | 2712 linhas | 1 commits | 18.18 l/h |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 590.9h | 8864 linhas | 20 commits | 15.00 l/h |
+| 🔍 **Panoptes Patrol File Monitor** | Python | <!-- PANOPTES_HOURS -->h | <!-- PANOPTES_LINES --> | <!-- PANOPTES_COMMITS --> | <!-- PANOPTES_PROD --> l/h |
+| 📅 **Agenda Avaliações Acadêmicas** | Python | <!-- AGENDA_HOURS -->h | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> l/h |
+| 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS -->h | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> l/h |
+| 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS -->h | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> l/h |
+| 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS -->h | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> l/h |
+| 🗳️ **Programa Urna Eletrônica** | C++ | <!-- URNA_HOURS -->h | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> l/h |
+| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS -->h | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> l/h |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS -->h | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> l/h |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS -->h | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> l/h |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS -->h | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> l/h |
 
 ## 🛠️ Distribuição por Linguagem
 
+<!-- INÍCIO DA SEÇÃO DE DISTRIBUIÇÃO POR LINGUAGEM -->
+
 ```
-🐍 Python    ████████████████████ 85.1% (14.800 linhas)
-🔧 C++       ████ 8.6% (1.500 linhas)  
-🎨 CSS/HTML  ██ 2.3% (400 linhas)
+🐍 Python <!-- PYTHON_BAR --> <!-- PYTHON_PERCENT -->% (<!-- PYTHON_LINES --> linhas)
+🔧 C++ <!-- CPP_BAR --> <!-- CPP_PERCENT -->% (<!-- CPP_LINES --> linhas)
+🎨 CSS/HTML <!-- WEB_BAR --> <!-- WEB_PERCENT -->% (<!-- WEB_LINES --> linhas)
 ```
+
+<!-- FIM DA SEÇÃO DE DISTRIBUIÇÃO POR LINGUAGEM -->
 
 <div align="center">
   <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="300"/>
