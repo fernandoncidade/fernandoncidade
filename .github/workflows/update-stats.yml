@@ -43,8 +43,17 @@ jobs:
           echo "|-------------|-----------|-------|--------|---------|---------------|" >> stats.md
           
           for repo in "${repositories[@]}"; do
-            echo "Processando $repo..."
-            git clone "https://github.com/fernandoncidade/$repo.git" "repos/$repo" || continue
+            git clone ... || continue
+            cd "repos/$repo"
+            lines=$(cloc ... | tail -1 | cut -d, -f5)
+            commits=$(git rev-list --count HEAD)
+            total_lines=$((total_lines + lines))
+            total_commits=$((total_commits + commits))
+  
+            # Variáveis individuais AGORA são definidas aqui
+            repo_upper=$(echo "$repo" | sed -e 's/-/_/g' -e 's/\./_/g' | tr '[:lower:]' '[:upper:]')
+            echo "${repo_upper}_LINES=$lines" >> $GITHUB_ENV
+            echo "${repo_upper}_COMMITS=$commits" >> $GITHUB_ENV
             
             # Contagem de linhas
             cd "repos/$repo"
