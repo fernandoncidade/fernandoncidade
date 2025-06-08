@@ -50,3 +50,9 @@ Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento 
 
 [![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=github-compact)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
+![Estatísticas do GitHub](https://github-readme-stats.vercel.app/api?username=fernandoncidade&show_icons=true&theme=dark&locale=pt-br)
+
+[![GitHub Streak](https://streak-stats.demolab.com/?user=fernandoncidade&theme=gotham&locale=pt-br)](https://git.io/streak-stats)
+
+[![Gráfico de atividade do GitHub](https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=blue-green)](https://github.com/ashutosh00710/github-readme-activity-graph)
+
