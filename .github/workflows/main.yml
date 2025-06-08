@@ -1,0 +1,145 @@
+name: Atualizar Estatísticas de Código
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Executa todo domingo à meia-noite
+  workflow_dispatch:      # Permite execução manual
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v3
+      
+      - name: Configurar ambiente
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cloc
+          
+      - name: Clonar e analisar repositórios
+        run: |
+          mkdir -p repos
+          
+          # Lista de seus repositórios
+          repositories=(
+            "Panoptes_Patrol_File_Monitor"
+            "Agenda_Avaliacoes_Academicas"
+            "Manager_Compression_PySide6_v.0.0.1"
+            "Manager_Compression_PyQt6_v.0.0.1"
+            "eisenhower_organizing"
+            "Programa_Urna_Eletronica"
+            "Dashboard_Streamlit-Plotly-Pandas_Management"
+            "Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve"
+            "Dashboard_TkInter_Pareto-Diagram_ABC-Curve"
+            "sloth-highlander-theme-1"
+          )
+          
+          total_lines=0
+          total_commits=0
+          
+          echo -e "## Estatísticas atualizadas em $(date +'%d/%m/%Y')\n" > stats.md
+          echo "| Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |" >> stats.md
+          echo "|-------------|-----------|-------|--------|---------|---------------|" >> stats.md
+          
+          for repo in "${repositories[@]}"; do
+            echo "Processando $repo..."
+            git clone "https://github.com/fernandoncidade/$repo.git" "repos/$repo" || continue
+            
+            # Contagem de linhas
+            cd "repos/$repo"
+            repo_stats=$(cloc --quiet --md . | grep -A 10 "Language" | tail -n +3)
+            
+            # Extrair linguagem principal
+            main_lang=$(echo "$repo_stats" | head -1 | awk '{print $2}')
+            
+            # Contar linhas totais (soma de todas as linguagens)
+            lines=$(cloc --quiet --json . | grep '"code": ' | awk -F': ' '{sum+=$2} END {print sum}')
+            
+            # Contar commits
+            commits=$(git rev-list --count HEAD)
+            
+            # Calcular produtividade com base nas horas existentes (manter os valores originais)
+            case "$repo" in
+              "Panoptes_Patrol_File_Monitor") hours=120 ;;
+              "Agenda_Avaliacoes_Academicas") hours=90 ;;
+              "Manager_Compression_PySide6_v.0.0.1") hours=75 ;;
+              "Manager_Compression_PyQt6_v.0.0.1") hours=70 ;;
+              "eisenhower_organizing") hours=60 ;;
+              "Programa_Urna_Eletronica") hours=45 ;;
+              "Dashboard_Streamlit-Plotly-Pandas_Management") hours=40 ;;
+              "Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve") hours=35 ;;
+              "Dashboard_TkInter_Pareto-Diagram_ABC-Curve") hours=30 ;;
+              "sloth-highlander-theme-1") hours=15 ;;
+              *) hours=0 ;;
+            esac
+            
+            productivity=$((lines / hours))
+            
+            # Criar nome de exibição formatado para o repositório
+            display_name=$(echo "$repo" | sed 's/_/ /g' | sed 's/-/ /g')
+            
+            # Adicionar à tabela
+            echo "| $display_name | $main_lang | ${hours}h | $lines | $commits | $productivity l/h |" >> ../../stats.md
+            
+            # Adicionar ao total
+            total_lines=$((total_lines + lines))
+            total_commits=$((total_commits + commits))
+            
+            # Voltar ao diretório principal
+            cd ../../
+          done
+          
+          # Calcular distribuição por linguagem
+          echo -e "\n## 🛠️ Distribuição por Linguagem\n" >> stats.md
+          echo '```' >> stats.md
+          
+          cd repos/
+          cloc --quiet --lang-no-ext . >> ../stats.md
+          cd ..
+          
+          echo '```' >> stats.md
+          
+          # Salvar totais para uso posterior
+          echo "TOTAL_LINES=$total_lines" >> $GITHUB_ENV
+          echo "TOTAL_COMMITS=$total_commits" >> $GITHUB_ENV
+      
+      - name: Atualizar README com estatísticas
+        run: |
+          # Ler o README atual
+          README_CONTENT=$(cat README.md)
+          
+          # Atualizar as estatísticas totais
+          README_CONTENT=$(echo "$README_CONTENT" | sed "s/### 📝 Total de Linhas Escritas: .*$/### 📝 Total de Linhas Escritas: **${{ env.TOTAL_LINES }} linhas**/")
+          README_CONTENT=$(echo "$README_CONTENT" | sed "s/### 💻 Total de Commits: .*$/### 💻 Total de Commits: **${{ env.TOTAL_COMMITS }} commits**/")
+          
+          # Atualizar a tabela de repositórios
+          TABLE_SECTION=$(cat stats.md)
+          README_CONTENT=$(echo "$README_CONTENT" | awk -v table="$TABLE_SECTION" '
+          /## 📈 Detalhamento por Repositório/,/## 🛠️ Distribuição por Linguagem/ {
+            if (!/## 📈 Detalhamento por Repositório/ && !/## 🛠️ Distribuição por Linguagem/) {
+              skip=1; next;
+            }
+            if (/## 📈 Detalhamento por Repositório/) {
+              print;
+              print "";
+              print table;
+              skip=1; next;
+            }
+            if (/## 🛠️ Distribuição por Linguagem/) {
+              skip=0;
+            }
+          }
+          !skip {print}
+          ')
+          
+          # Salvar o README atualizado
+          echo "$README_CONTENT" > README.md
+          
+      - name: Commit e push das alterações
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add README.md
+          git commit -m "Atualiza estatísticas de código [Automated]" || echo "No changes to commit"
+          git push
