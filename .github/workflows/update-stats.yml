@@ -64,11 +64,46 @@ jobs:
           echo "TOTAL_LINES=$total_lines" >> $GITHUB_ENV
           echo "TOTAL_COMMITS=$total_commits" >> $GITHUB_ENV
           
+          # Após calcular lines e commits no loop
+          repo_upper=$(echo "$repo" | tr '[:lower:]' '[:upper:]' | tr '-' '_' )
+          echo "${repo_upper}_LINES=$lines" >> $GITHUB_ENV
+          echo "${repo_upper}_COMMITS=$commits" >> $GITHUB_ENV
+          
       - name: Atualizar README
         run: |
           cd main-repo
           sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER -->/${{ env.TOTAL_LINES }} linhas/g" README.md
           sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER -->/${{ env.TOTAL_COMMITS }} commits/g" README.md
+
+          sed -i "s/<!-- PANOPTES_LINES -->/${{ env.PANOPTES_PATROL_FILE_MONITOR_LINES }} linhas/g" README.md
+          sed -i "s/<!-- PANOPTES_COMMITS -->/${{ env.PANOPTES_PATROL_FILE_MONITOR_COMMITS }} commits/g" README.md
+
+          sed -i "s/<!-- AGENDA_LINES -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_LINES }} linhas/g" README.md
+          sed -i "s/<!-- AGENDA_COMMITS -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_COMMITS }} commits/g" README.md
+          
+          sed -i "s/<!-- PYSIDE6_LINES -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V.0.0.1_LINES }} linhas/g" README.md
+          sed -i "s/<!-- PYSIDE6_COMMITS -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V.0.0.1_COMMITS }} commits/g" README.md
+
+          sed -i "s/<!-- PYQT6_LINES -->/${{ env.MANAGER_COMPRESSION_PYQT6_V.0.0.1_LINES }} linhas/g" README.md
+          sed -i "s/<!-- PYQT6_COMMITS -->/${{ env.MANAGER_COMPRESSION_PYQT6_V.0.0.1_COMMITS }} commits/g" README.md
+
+          sed -i "s/<!-- EISENHOWER_LINES -->/${{ env.EISENHOWER_ORGANIZING_LINES }} linhas/g" README.md
+          sed -i "s/<!-- EISENHOWER_COMMITS -->/${{ env.EISENHOWER_ORGANIZING_COMMITS }} commits/g" README.md
+          
+          sed -i "s/<!-- URNA_LINES -->/${{ env.PROGRAMA_URNA_ELETRONICA_LINES }} linhas/g" README.md
+          sed -i "s/<!-- URNA_COMMITS -->/${{ env.PROGRAMA_URNA_ELETRONICA_COMMITS }} commits/g" README.md
+
+          sed -i "s/<!-- MANEGEMENT_LINES -->/${{ env.DASHBOARD_STREAMLIT-PLOTLY-PANDAS_MANAGEMENT_LINES }} linhas/g" README.md
+          sed -i "s/<!-- MANEGEMENT_COMMITS -->/${{ env.DASHBOARD_STREAMLIT-PLOTLY-PANDAS_MANAGEMENT_COMMITS }} commits/g" README.md
+
+          sed -i "s/<!-- STREAMLIT_LINES -->/${{ env.DASHBOARD_STREAMLIT-PLOTLY-PANDAS_PARETO-DIAGRAM_ABC-CURVE_LINE }} linhas/g" README.md
+          sed -i "s/<!-- STREAMLIT_COMMITS -->/${{ env.DASHBOARD_STREAMLIT-PLOTLY-PANDAS_PARETO-DIAGRAM_ABC-CURVE_COMMITS }} commits/g" README.md
+          
+          sed -i "s/<!-- PARETO_LINES -->/${{ env.DASHBOARD_TKINTER_PARETO-DIAGRAM_ABC-CURVE_LINE }} linhas/g" README.md
+          sed -i "s/<!-- PARETO_COMMITS -->/${{ env.DASHBOARD_TKINTER_PARETO-DIAGRAM_ABC-CURVE_COMMITS }} commits/g" README.md
+          
+          sed -i "s/<!-- SLOTH_LINES -->/${{ env.SLOTH-HIGHLANDER-THEME-1_LINE }} linhas/g" README.md
+          sed -i "s/<!-- SLOTH_COMMITS -->/${{ env.SLOTH-HIGHLANDER-THEME-1_COMMITS }} commits/g" README.md
           
       - name: Commit e push das alterações
         run: |
