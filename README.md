@@ -13,8 +13,8 @@
 <div align="center">
 
 ### 🕒 Total de Tempo Trabalhado: <span id="total-horas">580 horas</span>
-### 📝 Total de Linhas Escritas: <span id="total-linhas">39426 linhas</span>
-### 💻 Total de Commits: <span id="total-commits">98 commits</span>
+### 📝 Total de Linhas Escritas: <span id="total-linhas"><!-- TOTAL_LINES_PLACEHOLDER --></span>
+### 💻 Total de Commits: <span id="total-commits"><!-- TOTAL_COMMITS_PLACEHOLDER --></span>
 
 </div>
 
@@ -22,7 +22,7 @@
 
 | Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |
 |-------------|-----------|-------|--------|---------|---------------|
-| 🔍 **Panoptes Patrol File Monitor** | Python | 120h | <!-- PANOPTES_LINES --> | <!-- PANOPTES_COMMITS --> | <!-- PANOPTES_PRODUCTIVITY --> |
+| 🔍 **Panoptes Patrol File Monitor** | Python | 120h | <!-- TOTAL_LINES_PLACEHOLDER --> | <!-- TOTAL_COMMITS_PLACEHOLDER --> | <!-- PANOPTES_PRODUCTIVITY --> |
 | 📅 **Agenda Avaliações Acadêmicas** | Python | 90h | 2.800 | 62 | 31 l/h |
 | 🗜️ **Manager Compression PySide6** | Python | 75h | 2.200 | 48 | 29 l/h |
 | 🗜️ **Manager Compression PyQt6** | Python | 70h | 2.100 | 45 | 30 l/h |
