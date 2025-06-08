@@ -39,40 +39,65 @@ jobs:
           total_commits=0
       
           echo "| Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |" > stats.md
-          echo "| $repo | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> stats.md
+          echo "|-------------|-----------|-------|--------|---------|---------------|" >> stats.md
       
           for repo in "${repositories[@]}"; do
-            git clone --depth=1 https://github.com/fernandoncidade/$repo repos/$repo || continue
+            echo "Processando repositório: $repo"
+            # Clone sem limite de profundidade para contar todos os commits
+            git clone https://github.com/fernandoncidade/$repo repos/$repo || continue
             cd repos/$repo
           
             # Conta todas as linhas de código (coluna "code", ignora header e linhas em branco/comentário)
             lines=$(cloc --exclude-dir=node_modules,.git --quiet --csv . | awk -F',' 'NR>1 {sum += $5} END {print sum+0}')
             lines=${lines:-0}
           
-            # Count commits
-            commits=$(git rev-list --count HEAD)
+            # Obtém linguagem principal
+            linguagem=$(cloc --exclude-dir=node_modules,.git --quiet --csv . | awk -F',' 'NR>1 && $5>0 {if ($5>max) {max=$5; lang=$2}} END {print lang}')
+            linguagem=${linguagem:-"N/A"}
           
+            # Count commits - agora sem limite de profundidade
+            commits=$(git rev-list --count HEAD)
+            commits=${commits:-0}
+          
+            # Define horas para cada repositório
             case "$repo" in
               "Panoptes_Patrol_File_Monitor") horas=120 ;;
               "Agenda_Avaliacoes_Academicas") horas=90 ;;
-              # Add other cases as needed
+              "Manager_Compression_PySide6_v.0.0.1") horas=60 ;;
+              "Manager_Compression_PyQt6_v.0.0.1") horas=50 ;;
+              "eisenhower_organizing") horas=40 ;;
+              "Programa_Urna_Eletronica") horas=80 ;;
+              "Dashboard_Streamlit-Plotly-Pandas_Management") horas=70 ;;
+              "Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve") horas=65 ;;
+              "Dashboard_TkInter_Pareto-Diagram_ABC-Curve") horas=55 ;;
+              "sloth-highlander-theme-1") horas=30 ;;
+              *) horas=1 ;; # valor padrão para evitar divisão por zero
             esac
           
-            produtividade=$(awk "BEGIN {printf \"%.2f\", $lines / $horas}")
+            # Calcula produtividade com proteção contra divisão por zero
+            produtividade=$(awk "BEGIN {printf \"%.2f\", ($horas > 0) ? $lines / $horas : 0}")
+          
+            # Adiciona linha à tabela de estatísticas
+            echo "| $repo | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> ../stats.md
           
             # Environment variables
             repo_env=$(echo "$repo" | sed -e 's/-/_/g' -e 's/\./_/g' | tr '[:lower:]' '[:upper:]')
             echo "${repo_env}_LINES=$lines" >> $GITHUB_ENV
             echo "${repo_env}_COMMITS=$commits" >> $GITHUB_ENV
+            echo "${repo_env}_PROD=$produtividade" >> $GITHUB_ENV
           
             total_lines=$((total_lines + lines))
             total_commits=$((total_commits + commits))
           
-            cd ../../
+            cd ../..
+            echo "Repositório $repo processado: $lines linhas, $commits commits"
           done
       
           echo "TOTAL_LINES=$total_lines" >> $GITHUB_ENV
           echo "TOTAL_COMMITS=$total_commits" >> $GITHUB_ENV
+          
+          # Mova o arquivo de estatísticas para o repo principal
+          mv stats.md main-repo/stats.md
           
       - name: Atualizar README
         run: |
@@ -82,39 +107,49 @@ jobs:
 
           sed -i "s/<!-- PANOPTES_LINES -->/${{ env.PANOPTES_PATROL_FILE_MONITOR_LINES }} linhas/g" README.md
           sed -i "s/<!-- PANOPTES_COMMITS -->/${{ env.PANOPTES_PATROL_FILE_MONITOR_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- PANOPTES_PROD -->/${{ env.PANOPTES_PATROL_FILE_MONITOR_PROD }} l\/h/g" README.md
 
           sed -i "s/<!-- AGENDA_LINES -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_LINES }} linhas/g" README.md
           sed -i "s/<!-- AGENDA_COMMITS -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- AGENDA_PROD -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_PROD }} l\/h/g" README.md
           
           sed -i "s/<!-- PYSIDE6_LINES -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V_0_0_1_LINES }} linhas/g" README.md
           sed -i "s/<!-- PYSIDE6_COMMITS -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V_0_0_1_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- PYSIDE6_PROD -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V_0_0_1_PROD }} l\/h/g" README.md
 
           sed -i "s/<!-- PYQT6_LINES -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_LINES }} linhas/g" README.md
           sed -i "s/<!-- PYQT6_COMMITS -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- PYQT6_PROD -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_PROD }} l\/h/g" README.md
 
           sed -i "s/<!-- EISENHOWER_LINES -->/${{ env.EISENHOWER_ORGANIZING_LINES }} linhas/g" README.md
           sed -i "s/<!-- EISENHOWER_COMMITS -->/${{ env.EISENHOWER_ORGANIZING_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- EISENHOWER_PROD -->/${{ env.EISENHOWER_ORGANIZING_PROD }} l\/h/g" README.md
           
           sed -i "s/<!-- URNA_LINES -->/${{ env.PROGRAMA_URNA_ELETRONICA_LINES }} linhas/g" README.md
           sed -i "s/<!-- URNA_COMMITS -->/${{ env.PROGRAMA_URNA_ELETRONICA_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- URNA_PROD -->/${{ env.PROGRAMA_URNA_ELETRONICA_PROD }} l\/h/g" README.md
 
           sed -i "s/<!-- MANEGEMENT_LINES -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_LINES }} linhas/g" README.md
           sed -i "s/<!-- MANEGEMENT_COMMITS -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- MANEGEMENT_PROD -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_PROD }} l\/h/g" README.md
 
           sed -i "s/<!-- STREAMLIT_LINES -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_LINES }} linhas/g" README.md
           sed -i "s/<!-- STREAMLIT_COMMITS -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- STREAMLIT_PROD -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_PROD }} l\/h/g" README.md
           
           sed -i "s/<!-- PARETO_LINES -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_LINES }} linhas/g" README.md
           sed -i "s/<!-- PARETO_COMMITS -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- PARETO_PROD -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_PROD }} l\/h/g" README.md
           
           sed -i "s/<!-- SLOTH_LINES -->/${{ env.SLOTH_HIGHLANDER_THEME_1_LINES }} linhas/g" README.md
           sed -i "s/<!-- SLOTH_COMMITS -->/${{ env.SLOTH_HIGHLANDER_THEME_1_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- SLOTH_PROD -->/${{ env.SLOTH_HIGHLANDER_THEME_1_PROD }} l\/h/g" README.md
           
       - name: Commit e push das alterações
         run: |
           cd main-repo
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add README.md
+          git add README.md stats.md
           git commit -m "Atualiza estatísticas de código [skip ci]" || echo "No changes to commit"
           git push
