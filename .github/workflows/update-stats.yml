@@ -41,80 +41,43 @@ jobs:
       
           echo "| Repositório | Linguagem | Horas Estimadas | Linhas | Commits | Produtividade |" > stats.md
           echo "|-------------|-----------|-----------------|--------|---------|---------------|" >> stats.md
-      
-          for repo in "${repositories[@]}"; do
-            echo "Processando repositório: $repo"
-            # Clone sem limite de profundidade para contar todos os commits
-            git clone https://github.com/fernandoncidade/$repo repos/$repo || continue
-            cd repos/$repo
           
-            # Conta todas as linhas de código e obtém as estatísticas detalhadas por linguagem
-            cloc_output=$(cloc --exclude-dir=node_modules,.git --quiet --csv .)
-            
-            # Extrai o total de linhas
-            lines=$(echo "$cloc_output" | awk -F',' 'NR>1 {sum += $5} END {print sum+0}')
-            lines=${lines:-0}
+          # Estatísticas do próprio README.md do perfil
+          echo "Processando repositório: fernandoncidade/fernandoncidade (README.md)"
+
+          # Conta as linhas do README.md
+          readme_lines=$(cloc --csv --quiet --by-file main-repo/README.md | awk -F',' 'NR>2 {print $5}')
+          readme_lines=${readme_lines:-0}
+
+          # Linguagem principal do README.md (esperado: Markdown)
+          readme_lang=$(cloc --csv --quiet --by-file main-repo/README.md | awk -F',' 'NR>2 {print $2}')
+          readme_lang=${readme_lang:-"Markdown"}
+
+          # Commits que alteraram o README.md
+          readme_commits=$(cd main-repo && git log --oneline -- README.md | wc -l)
+          readme_commits=${readme_commits:-0}
+
+          # Assume produtividade padrão para Markdown
+          readme_taxa_base=35
+          readme_complexidade=1.0
+          readme_tamanho_ajuste=1.0
+          readme_taxa_efetiva=$(awk "BEGIN {print $readme_taxa_base / ($readme_complexidade * $readme_tamanho_ajuste)}")
+          readme_horas=$(awk "BEGIN {h = $readme_lines / $readme_taxa_efetiva; print (h > 2) ? h : 2}")
+          readme_horas=$(printf "%.1f" $readme_horas)
+          readme_produtividade=$(awk "BEGIN {printf \"%.2f\", $readme_lines / $readme_horas}")
           
-            # Obtém linguagem principal e suas estatísticas
-            linguagem=$(echo "$cloc_output" | awk -F',' 'NR>1 && $5>0 {if ($5>max) {max=$5; lang=$2}} END {print lang}')
-            linguagem=${linguagem:-"N/A"}
-          
-            # Count commits
-            commits=$(git rev-list --count HEAD)
-            commits=${commits:-0}
-          
-            # Estimar horas baseado na linguagem e quantidade de linhas
-            # Taxa base: linhas por hora, considerando documentação, testes, depuração e refatoração
-            case "$linguagem" in
-              "Python") taxa_base=15 ;;     # Python é mais conciso
-              "JavaScript") taxa_base=20 ;; # JS tem mais verbosidade
-              "C++") taxa_base=10 ;;        # C++ exige mais tempo por linha
-              "HTML") taxa_base=30 ;;       # HTML tem muitas linhas por hora
-              "CSS") taxa_base=25 ;;        # CSS é relativamente rápido
-              "Java") taxa_base=12 ;;       # Java é mais verboso
-              *) taxa_base=18 ;;            # Taxa padrão
-            esac
-            
-            # Ajuste pela complexidade do projeto (baseado no nome ou outros fatores)
-            case "$repo" in
-              *"Patrol"*|*"Monitor"*) complexidade=1.2 ;;  # Sistemas de monitoramento são mais complexos
-              *"Dashboard"*) complexidade=0.9 ;;           # Dashboards são mais diretos
-              *"Compression"*) complexidade=1.3 ;;         # Compressão é mais complexa
-              *) complexidade=1.0 ;;                       # Padrão
-            esac
-            
-            # Ajuste pelo tamanho do projeto
-            if [ $lines -gt 5000 ]; then
-              tamanho_ajuste=1.2                          # Projetos grandes exigem mais overhead
-            elif [ $lines -gt 2000 ]; then
-              tamanho_ajuste=1.1
-            else
-              tamanho_ajuste=1.0
-            fi
-            
-            # Cálculo de horas considerando todos os fatores
-            taxa_efetiva=$(awk "BEGIN {print $taxa_base / ($complexidade * $tamanho_ajuste)}")
-            
-            # Mínimo de horas para evitar valores irrealistas
-            horas=$(awk "BEGIN {h = $lines / $taxa_efetiva; print (h > 10) ? h : 10}")
-            horas=$(printf "%.1f" $horas)
-            
-            # Calcula produtividade (linhas por hora)
-            produtividade=$(awk "BEGIN {printf \"%.2f\", $lines / $horas}")
-          
-            # Adiciona linha à tabela de estatísticas
-            echo "| $repo | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> ../stats.md
-          
-            # Environment variables
-            repo_env=$(echo "$repo" | sed -e 's/-/_/g' -e 's/\./_/g' | tr '[:lower:]' '[:upper:]')
-            echo "${repo_env}_LINES=$lines" >> $GITHUB_ENV
-            echo "${repo_env}_COMMITS=$commits" >> $GITHUB_ENV
-            echo "${repo_env}_HOURS=$horas" >> $GITHUB_ENV
-            echo "${repo_env}_PROD=$produtividade" >> $GITHUB_ENV
-          
-            total_lines=$((total_lines + lines))
-            total_commits=$((total_commits + commits))
-            total_horas=$(awk "BEGIN {printf \"%.1f\", $total_horas + $horas}")
+          # Adiciona linha à tabela
+          echo "| fernandoncidade/fernandoncidade (README) | $readme_lang | ${readme_horas}h | $readme_lines | $readme_commits | $readme_produtividade l/h |" >> stats.md
+
+          # Environment variables
+          echo "README_LINES=$readme_lines" >> $GITHUB_ENV
+          echo "README_COMMITS=$readme_commits" >> $GITHUB_ENV
+          echo "README_HOURS=$readme_horas" >> $GITHUB_ENV
+          echo "README_PROD=$readme_produtividade" >> $GITHUB_ENV
+
+          total_lines=$((total_lines + readme_lines))
+          total_commits=$((total_commits + readme_commits))
+          total_horas=$(awk "BEGIN {printf \"%.1f\", $total_horas + $readme_horas}")
           
             cd ../..
             echo "Repositório $repo processado: $lines linhas, $commits commits, $horas horas estimadas"
