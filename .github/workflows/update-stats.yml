@@ -149,6 +149,11 @@ jobs:
           sed -i "s/<!-- SLOTH_COMMITS -->/${{ env.SLOTH_HIGHLANDER_THEME_1_COMMITS }} commits/g" README.md
           sed -i "s/<!-- SLOTH_HOURS -->/${{ env.SLOTH_HIGHLANDER_THEME_1_HOURS }}h/g" README.md
           sed -i "s/<!-- SLOTH_PROD -->/${{ env.SLOTH_HIGHLANDER_THEME_1_PROD }} l\/h/g" README.md
+
+          sed -i "s/<!-- README_LINES -->/${{ env.README_LINES }} linhas/g" README.md
+          sed -i "s/<!-- README_COMMITS -->/${{ env.README_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- README_HOURS -->/${{ env.README_HOURS }}h/g" README.md
+          sed -i "s/<!-- README_PROD -->/${{ env.README_PROD }} l\/h/g" README.md
           
       - name: Commit e push das alterações
         run: |
