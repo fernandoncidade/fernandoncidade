@@ -9,17 +9,9 @@ jobs:
   update-stats:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout do repositório principal
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           path: main-repo
-          
-      - name: Checkout do repositório do perfil
-        uses: actions/checkout@v3
-        with:
-          repository: fernandoncidade/fernandoncidade
-          path: profile-repo
-          token: ${{ secrets.PAT_TOKEN }}  # Token de acesso pessoal com permissão para push
           
       - name: Configurar ambiente
         run: |
@@ -41,6 +33,7 @@ jobs:
             "Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve"
             "Dashboard_TkInter_Pareto-Diagram_ABC-Curve"
             "sloth-highlander-theme-1"
+            "fernandoncidade"  # Adicionando o repositório do perfil
           )
       
           total_lines=0
@@ -80,6 +73,7 @@ jobs:
               "HTML") taxa_base=30 ;;       # HTML tem muitas linhas por hora
               "CSS") taxa_base=25 ;;        # CSS é relativamente rápido
               "Java") taxa_base=12 ;;       # Java é mais verboso
+              "Markdown") taxa_base=35 ;;   # Markdown é mais rápido de escrever
               *) taxa_base=18 ;;            # Taxa padrão
             esac
             
@@ -88,6 +82,7 @@ jobs:
               *"Patrol"*|*"Monitor"*) complexidade=1.2 ;;  # Sistemas de monitoramento são mais complexos
               *"Dashboard"*) complexidade=0.9 ;;           # Dashboards são mais diretos
               *"Compression"*) complexidade=1.3 ;;         # Compressão é mais complexa
+              "fernandoncidade") complexidade=0.8 ;;       # README é mais simples
               *) complexidade=1.0 ;;                       # Padrão
             esac
             
@@ -138,14 +133,13 @@ jobs:
           # Mova o arquivo de estatísticas para o repo principal
           mv stats.md main-repo/stats.md
           
-      - name: Atualizar README do projeto
+      - name: Atualizar README
         run: |
           cd main-repo
           sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER -->/${{ env.TOTAL_LINES }} linhas/g" README.md
           sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER -->/${{ env.TOTAL_COMMITS }} commits/g" README.md
           sed -i "s/<!-- TOTAL_HOURS_PLACEHOLDER -->/${{ env.TOTAL_HOURS }} horas/g" README.md
 
-          # Atualização para todos os repositórios como no workflow original
           sed -i "s/<!-- PANOPTES_LINES -->/${{ env.PANOPTES_PATROL_FILE_MONITOR_LINES }} linhas/g" README.md
           sed -i "s/<!-- PANOPTES_COMMITS -->/${{ env.PANOPTES_PATROL_FILE_MONITOR_COMMITS }} commits/g" README.md
           sed -i "s/<!-- PANOPTES_HOURS -->/${{ env.PANOPTES_PATROL_FILE_MONITOR_HOURS }}h/g" README.md
@@ -196,27 +190,17 @@ jobs:
           sed -i "s/<!-- SLOTH_HOURS -->/${{ env.SLOTH_HIGHLANDER_THEME_1_HOURS }}h/g" README.md
           sed -i "s/<!-- SLOTH_PROD -->/${{ env.SLOTH_HIGHLANDER_THEME_1_PROD }} l\/h/g" README.md
           
-          # Calcula e atualiza estatísticas do próprio README
-          cd ..
-          readme_lines=$(cloc --exclude-dir=node_modules,.git --quiet --csv profile-repo/README.md | awk -F',' 'NR>1 {sum += $5} END {print sum+0}')
-          readme_lines=${readme_lines:-0}
-          readme_commits=$(cd profile-repo && git log --oneline -- README.md | wc -l)
-          readme_commits=${readme_commits:-0}
-          readme_horas=$(awk "BEGIN {h = $readme_lines / 20; print (h > 5) ? h : 5}")
-          readme_horas=$(printf "%.1f" $readme_horas)
-          readme_prod=$(awk "BEGIN {printf \"%.2f\", $readme_lines / $readme_horas}")
+          # Adicionando substituições para o README do perfil
+          sed -i "s/<!-- README_LINES -->/${{ env.FERNANDONCIDADE_LINES }} linhas/g" README.md
+          sed -i "s/<!-- README_COMMITS -->/${{ env.FERNANDONCIDADE_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- README_HOURS -->/${{ env.FERNANDONCIDADE_HOURS }}h/g" README.md
+          sed -i "s/<!-- README_PROD -->/${{ env.FERNANDONCIDADE_PROD }} l\/h/g" README.md
           
-          cd profile-repo
-          sed -i "s/<!-- README_LINES -->/$readme_lines/g" README.md
-          sed -i "s/<!-- README_COMMITS -->/$readme_commits/g" README.md
-          sed -i "s/<!-- README_HOURS -->/$readme_horas/g" README.md
-          sed -i "s/<!-- README_PROD -->/$readme_prod/g" README.md
-          
-      - name: Commit e push das alterações no perfil
+      - name: Commit e push das alterações
         run: |
-          cd profile-repo
+          cd main-repo
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add README.md
-          git commit -m "Atualiza estatísticas do perfil [skip ci]" || echo "No changes to commit"
+          git add README.md stats.md
+          git commit -m "Atualiza estatísticas de código [skip ci]" || echo "No changes to commit"
           git push
