@@ -12,9 +12,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: 6199.2 horas
-### 📝 Total de Linhas Escritas: 85854 linhas
-### 💻 Total de Commits: 201 commits
+### 🕒 Total de Tempo Trabalhado: <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Linhas Escritas: <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -22,17 +22,17 @@
 
 | Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |
 |-------------|-----------|-------|--------|---------|---------------|
-| 🔍 **Panoptes Patrol File Monitor** | Python | 2597.8h | 32472 linhas | 20 commits | 12.50 l/h |
-| 📅 **Agenda Avaliações Acadêmicas** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
-| 🗜️ **Manager Compression PySide6** | Python | 384.7h | 4842 linhas | 20 commits | 12.59 l/h |
-| 🗜️ **Manager Compression PyQt6** | Python | 451.5h | 5210 linhas | 14 commits | 11.54 l/h |
-| 📋 **Eisenhower Organizing** | Python | 39.0h | 702 linhas | 4 commits | 18.00 l/h |
-| 🗳️ **Programa Urna Eletrônica** | C++ | 1488.8h | 22332 linhas | 6 commits | 15.00 l/h |
-| 📊 **Dashboard Streamlit Management** | Python | 128.7h | 2340 linhas | 8 commits | 18.18 l/h |
-| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8h | 2232 linhas | 3 commits | 18.18 l/h |
-| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 149.2h | 2712 linhas | 1 commits | 18.18 l/h |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 590.9h | 8864 linhas | 20 commits | 15.00 l/h |
-| 📄 **README do Perfil** | Markdown | 20.4h | 460 linhas | 95 commits | 22.55 l/h |
+| 🔍 **Panoptes Patrol File Monitor** | Python | <!-- PANOPTES_HOURS --> | <!-- PANOPTES_LINES --> | <!-- PANOPTES_COMMITS --> | <!-- PANOPTES_PROD --> |
+| 📅 **Agenda Avaliações Acadêmicas** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
+| 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
+| 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
+| 🗳️ **Programa Urna Eletrônica** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
+| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
+| 📄 **README do Perfil** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
 
 ## 🌻 Sobre Mim 🌻
 
@@ -94,7 +94,8 @@ Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento 
 ## 📈 Estatísticas GitHub
 
 ![Estatísticas do GitHub](https://github-readme-stats.vercel.app/api?username=fernandoncidade&theme=blue-green&show_icons=True&locale=pt-br)
-[![GitHub Streak](https://streak-stats.demolab.com/?user=fernandoncidade&theme=microsoft-dark&locale=pt-br)](https://git.io/streak-stats)
+
+[![GitHub Streak](https://streak-stats.demolab.com/?user=fernandoncidade&theme=ads-juicy-fresh&locale=pt-br)](https://git.io/streak-stats)
 
 [![fernandoncidade's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&area=true&custom_title=Gráfico%20de%20Atividade%20de%20fernandoncidade&locale=pt-br)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
