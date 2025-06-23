@@ -6,7 +6,7 @@ on:
   workflow_dispatch:      # Permite execução manual
 
 jobs:
-  update-stats:a
+  update-stats:
     runs-on: ubuntu-latest
     permissions:      # <-- ADICIONE ESTA SEÇÃO
       contents: write # Permite que o workflow faça commit e push
