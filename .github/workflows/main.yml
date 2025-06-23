@@ -197,12 +197,10 @@ jobs:
           sed -i "s/<!-- README_PROD -->/${{ env.FERNANDONCIDADE_PROD }} l\/h/g" README.md
           
       - name: Commit e push das alterações
-        env:
-          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         run: |
           cd main-repo
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add README.md stats.md
           git commit -m "Atualiza estatísticas de código [skip ci]" || echo "No changes to commit"
-          git push https://x-access-token:${PERSONAL_TOKEN}@github.com/fernandoncidade/fernandoncidade.git HEAD:main
+          git push
