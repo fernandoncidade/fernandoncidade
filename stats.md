@@ -1,3 +1,3 @@
 | Repositório | Linguagem | Horas Estimadas | Linhas | Commits | Produtividade |
 |-------------|-----------|-----------------|--------|---------|---------------|
-| **TOTAL** | - | 5741.1h | 80130 | 106 | - |
+| **TOTAL** | - | 18043.4h | 285436 | 125 | - |
