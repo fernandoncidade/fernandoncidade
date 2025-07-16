@@ -25,7 +25,6 @@ jobs:
           mkdir -p repos
 
           repositories=(
-            "Panoptes_Patrol_File_Monitor"
             "Agenda_Avaliacoes_Academicas"
             "Manager_Compression_PySide6_v.0.0.1"
             "Manager_Compression_PyQt6_v.0.0.1"
@@ -78,7 +77,7 @@ jobs:
             esac
 
             case "$repo" in
-              *"Patrol"*|*"Monitor"*) complexidade=1.2 ;;
+              *"Monitor"*) complexidade=1.2 ;;
               *"Dashboard"*) complexidade=0.9 ;;
               *"Compression"*) complexidade=1.3 ;;
               "fernandoncidade") complexidade=0.8 ;;
@@ -127,11 +126,6 @@ jobs:
           sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER -->/${{ env.TOTAL_LINES }} linhas/g" README.md
           sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER -->/${{ env.TOTAL_COMMITS }} commits/g" README.md
           sed -i "s/<!-- TOTAL_HOURS_PLACEHOLDER -->/${{ env.TOTAL_HOURS }} horas/g" README.md
-
-          sed -i "s/<!-- PANOPTES_LINES -->/${{ env.PANOPTES_PATROL_FILE_MONITOR_LINES }} linhas/g" README.md
-          sed -i "s/<!-- PANOPTES_COMMITS -->/${{ env.PANOPTES_PATROL_FILE_MONITOR_COMMITS }} commits/g" README.md
-          sed -i "s/<!-- PANOPTES_HOURS -->/${{ env.PANOPTES_PATROL_FILE_MONITOR_HOURS }}h/g" README.md
-          sed -i "s/<!-- PANOPTES_PROD -->/${{ env.PANOPTES_PATROL_FILE_MONITOR_PROD }} l\/h/g" README.md
 
           sed -i "s/<!-- AGENDA_LINES -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_LINES }} linhas/g" README.md
           sed -i "s/<!-- AGENDA_COMMITS -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_COMMITS }} commits/g" README.md
