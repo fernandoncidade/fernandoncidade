@@ -55,6 +55,22 @@ Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento 
 - **Metodologias de Organização e Produtividade:** Matriz de Eisenhower
 - **Controle de Versionamento:** Git e GitHub
 
+## 🏮 Destaque de Projeto: Linceu Lighthouse Binary
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary">
+    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+  </a>
+</div>
+
+**Linceu Lighthouse Binary**  
+Ferramenta avançada de monitoramento de integridade de arquivos (FIM), com interface multilíngue, estatísticas detalhadas e exportação flexível de dados.  
+Disponível em versão de teste por 7 dias, após o qual pode ser adquirida pela [Microsoft Store](https://www.microsoft.com/store/apps/9NN8Z5Z700TM).
+
+- [Repositório Linceu Lighthouse Binary](https://github.com/fernandoncidade/Linceu_Lighthouse_Binary)
+- [Leia o README multilíngue](https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/README.md)
+- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+
 ## 🎯 Principais Projetos
 
 - [**Agenda Avaliações Acadêmicas**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas): Sistema para gerenciamento de atividades avaliativas em ambientes educacionais, usando PySide6 e módulos personalizados.
