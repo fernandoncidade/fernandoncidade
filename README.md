@@ -31,17 +31,18 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: 16967.3 horas
-### 📝 Total de Linhas Escritas: 274810 linhas
-### 💻 Total de Commits: 145 commits
+### 🕒 Total de Tempo Trabalhado: <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Linhas Escritas: <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
 ## 📈 Detalhamento por Repositório
 
+<!--TABLE_STATS_PT_START-->
 | Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |
 |-------------|-----------|-------|--------|---------|---------------|
-| 📅 **Agenda Avaliações Acadêmicas** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
+| 📅 **Agenda Avaliações Acadêmicas** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -59,6 +60,7 @@
 | 🔝 **Programa Determinar Maior Inteiro** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
 | 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
 | 📄 **README do Perfil** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+<!--TABLE_STATS_PT_START-->
 
 ## 🌻 Sobre Mim 🌻
 
@@ -173,17 +175,18 @@ Disponível em versão de teste por 7 dias, após o qual pode ser adquirida pela
 
 <div align="center">
 
-### 🕒 Total Working Time: 16967.3 horas
-### 📝 Total Lines Written: 274810 linhas
-### 💻 Total Commits: 145 commits
+### 🕒 Total Working Time: <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total Lines Written: <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
 ## 📈 Repository Breakdown
 
+<!--TABLE_STATS_EN_START-->
 | Repository | Language | Hours | Lines | Commits | Productivity |
 |------------|----------|-------|-------|---------|--------------|
-| 📅 **Academic Evaluations Scheduler** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
+| 📅 **Academic Evaluations Scheduler** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -201,6 +204,7 @@ Disponível em versão de teste por 7 dias, após o qual pode ser adquirida pela
 | 🔝 **Find Largest Integer Program** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
 | 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
 | 📄 **Profile README** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+<!--TABLE_STATS_EN_END-->
 
 ## 🌻 About Me 🌻
 
@@ -315,17 +319,18 @@ Available as a 7-day trial version, after which it can be purchased via the [Mic
 
 <div align="center">
 
-### 🕒 Total de Tiempo Trabajado: 16967.3 horas
-### 📝 Total de Líneas Escritas: 274810 linhas
-### 💻 Total de Commits: 145 commits
+### 🕒 Total de Tiempo Trabajado: <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Líneas Escritas: <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
 ## 📈 Detalle por Repositorio
 
+<!--TABLE_STATS_ES_START-->
 | Repositorio | Lenguaje | Horas | Líneas | Commits | Productividad |
 |-------------|----------|-------|--------|---------|---------------|
-| 📅 **Agenda Evaluaciones Académicas** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
+| 📅 **Agenda Evaluaciones Académicas** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -343,6 +348,7 @@ Available as a 7-day trial version, after which it can be purchased via the [Mic
 | 🔝 **Programa Determinar el Mayor Entero** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
 | 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
 | 📄 **README del Perfil** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+<!--TABLE_STATS_ES_END-->
 
 ## 🌻 Sobre Mí 🌻
 
@@ -457,17 +463,18 @@ Disponible en versión de prueba de 7 días, tras los cuales puede adquirirse en
 
 <div align="center">
 
-### 🕒 Temps de travail total : 16967.3 horas
-### 📝 Nombre total de lignes écrites : 274810 linhas
-### 💻 Nombre total de commits : 145 commits
+### 🕒 Temps de travail total : <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Nombre total de lignes écrites : <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Nombre total de commits : <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
 ## 📈 Détail par Répertoire
 
+<!--TABLE_STATS_FR_START-->
 | Répertoire | Langage | Heures | Lignes | Commits | Productivité |
 |------------|---------|--------|--------|---------|--------------|
-| 📅 **Agenda des Évaluations Académiques** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
+| 📅 **Agenda des Évaluations Académiques** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -485,6 +492,7 @@ Disponible en versión de prueba de 7 días, tras los cuales puede adquirirse en
 | 🔝 **Programme Déterminer le Plus Grand Entier** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
 | 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
 | 📄 **README du Profil** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+<!--TABLE_STATS_FR_END-->
 
 ## 🌻 À propos de moi 🌻
 
@@ -599,17 +607,18 @@ Disponible en version d'essai de 7 jours, puis achetable sur la [Microsoft Store
 
 <div align="center">
 
-### 🕒 Tempo Totale di Lavoro: 16967.3 horas
-### 📝 Totale Righe Scritte: 274810 linhas
-### 💻 Totale Commit: 145 commits
+### 🕒 Tempo Totale di Lavoro: <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Totale Righe Scritte: <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Totale Commit: <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
 ## 📈 Dettaglio per Repository
 
+<!--TABLE_STATS_IT_START-->
 | Repository | Linguaggio | Ore | Righe | Commit | Produttività |
 |------------|------------|-----|-------|--------|--------------|
-| 📅 **Agenda Valutazioni Accademiche** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
+| 📅 **Agenda Valutazioni Accademiche** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -627,6 +636,7 @@ Disponible en version d'essai de 7 jours, puis achetable sur la [Microsoft Store
 | 🔝 **Programma Determina Maggiore Intero** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
 | 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
 | 📄 **README del Profilo** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+<!--TABLE_STATS_IT_END-->
 
 ## 🌻 Su di Me 🌻
 
@@ -741,17 +751,18 @@ Disponibile in versione di prova per 7 giorni, dopo i quali può essere acquista
 
 <div align="center">
 
-### 🕒 Gesamtarbeitszeit: 16967.3 horas
-### 📝 Gesamtzahl der geschriebenen Zeilen: 274810 linhas
-### 💻 Gesamtzahl der Commits: 145 commits
+### 🕒 Gesamtarbeitszeit: <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Gesamtzahl der geschriebenen Zeilen: <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Gesamtzahl der Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
 ## 📈 Übersicht nach Repository
 
+<!--TABLE_STATS_DE_START-->
 | Repository | Sprache | Stunden | Zeilen | Commits | Produktivität |
 |------------|--------|---------|--------|---------|---------------|
-| 📅 **Akademische Bewertungsagenda** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
+| 📅 **Akademische Bewertungsagenda** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -769,6 +780,7 @@ Disponibile in versione di prova per 7 giorni, dopo i quali può essere acquista
 | 🔝 **Bestimme das größte Ganze Programm** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
 | 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
 | 📄 **Profil-README** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+<!--TABLE_STATS_DE_END-->
 
 ## 🌻 Über mich 🌻
 
