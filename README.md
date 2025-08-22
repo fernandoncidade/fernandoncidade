@@ -41,7 +41,7 @@
 
 | Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |
 |-------------|-----------|-------|--------|---------|---------------|
-| 📅 **Agenda Avaliações Acadêmicas** | Python | <!-- AGENDA_HOURS --> | 3688 linhas | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 📅 **Agenda Avaliações Acadêmicas** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -183,7 +183,7 @@ Disponível em versão de teste por 7 dias, após o qual pode ser adquirida pela
 
 | Repository | Language | Hours | Lines | Commits | Productivity |
 |------------|----------|-------|-------|---------|--------------|
-| 📅 **Academic Evaluations Scheduler** | Python | <!-- AGENDA_HOURS --> | 3688 linhas | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 📅 **Academic Evaluations Scheduler** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -325,7 +325,7 @@ Available as a 7-day trial version, after which it can be purchased via the [Mic
 
 | Repositorio | Lenguaje | Horas | Líneas | Commits | Productividad |
 |-------------|----------|-------|--------|---------|---------------|
-| 📅 **Agenda Evaluaciones Académicas** | Python | <!-- AGENDA_HOURS --> | 3688 linhas | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 📅 **Agenda Evaluaciones Académicas** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -467,7 +467,7 @@ Disponible en versión de prueba de 7 días, tras los cuales puede adquirirse en
 
 | Répertoire | Langage | Heures | Lignes | Commits | Productivité |
 |------------|---------|--------|--------|---------|--------------|
-| 📅 **Agenda des Évaluations Académiques** | Python | <!-- AGENDA_HOURS --> | 3688 linhas | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 📅 **Agenda des Évaluations Académiques** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -609,7 +609,7 @@ Disponible en version d'essai de 7 jours, puis achetable sur la [Microsoft Store
 
 | Repository | Linguaggio | Ore | Righe | Commit | Produttività |
 |------------|------------|-----|-------|--------|--------------|
-| 📅 **Agenda Valutazioni Accademiche** | Python | <!-- AGENDA_HOURS --> | 3688 linhas | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 📅 **Agenda Valutazioni Accademiche** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -751,7 +751,7 @@ Disponibile in versione di prova per 7 giorni, dopo i quali può essere acquista
 
 | Repository | Sprache | Stunden | Zeilen | Commits | Produktivität |
 |------------|--------|---------|--------|---------|---------------|
-| 📅 **Akademische Bewertungsagenda** | Python | <!-- AGENDA_HOURS --> | 3688 linhas | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 📅 **Akademische Bewertungsagenda** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
