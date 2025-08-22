@@ -315,8 +315,9 @@ jobs:
           update_placeholder() {
             lang=$1
             stats_file="stats_${lang}.md"
-            # Substitui toda a tabela por conteúdo gerado
-            sed -i "/<!--TABLE_STATS_${lang^^}_START-->/,/<!--TABLE_STATS_${lang^^}_END-->/c\\<!--TABLE_STATS_${lang^^}_START-->\n$(cat ${stats_file})\n<!--TABLE_STATS_${lang^^}_END-->" README.md
+            # Transforma quebras de linha em \n para sed
+            tabela=$(awk '{printf "%s\\n", $0}' "${stats_file}")
+            sed -i "/<!--TABLE_STATS_${lang^^}_START-->/,/<!--TABLE_STATS_${lang^^}_END-->/c\\<!--TABLE_STATS_${lang^^}_START-->\n${tabela}<!--TABLE_STATS_${lang^^}_END-->" README.md
           }
 
           # Substituição multilíngue da tabela de estatísticas
