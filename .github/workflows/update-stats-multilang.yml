@@ -49,7 +49,6 @@ jobs:
           total_commits=0
           total_horas=0
 
-          # Tabelas multilíngues
           declare -A table_headers_pt=(
             [main]="| Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |"
             [sep]="|-------------|-----------|-------|--------|---------|---------------|"
@@ -80,9 +79,6 @@ jobs:
             [sep]="|------------|--------|---------|-------|---------|---------------|"
             [total]="| **GESAMT** | - | %s | %s | %s | - |"
           )
-
-          # Traduções dos nomes dos repositórios
-          # ... (igual ao exemplo anterior, arrays repo_names_X)
 
           # Inicializa cada stats file
           echo "${table_headers_pt[main]}" > stats_pt.md
@@ -141,7 +137,7 @@ jobs:
             horas=$(printf "%.1f" $horas)
             produtividade=$(awk "BEGIN {printf \"%.2f\", $lines / $horas}")
 
-            # Traduções dos nomes dos repositórios
+            # Traduções dos nomes dos repositórios (deixe como no original)
             declare -A repo_names_pt=( ...)
             declare -A repo_names_en=( ...)
             declare -A repo_names_es=( ...)
@@ -192,13 +188,11 @@ jobs:
         run: |
           cd main-repo
 
-          # Função para substituir tabelas entre marcadores multilíngues
           update_table() {
             lang=$1
             stats_file="stats_${lang}.md"
-            # Remove tabs e carriage returns para evitar erros no sed
-            table_content=$(cat ${stats_file} | tr -d '\r' )
-            # O sed abaixo garante substituição entre os marcadores, preservando o restante do README
+            table_content=$(cat ${stats_file} | tr -d '\r')
+            # Use delimitador '/' no sed, mas escape corretamente as barras e caracteres especiais
             sed -i "/<!--TABLE_STATS_${lang^^}_START-->/, /<!--TABLE_STATS_${lang^^}_END-->/c\\<!--TABLE_STATS_${lang^^}_START-->\n${table_content}\n<!--TABLE_STATS_${lang^^}_END-->" README.md
           }
 
@@ -209,13 +203,9 @@ jobs:
           update_table it
           update_table de
 
-          # Substitui os totais globais
           sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER -->/${{ env.TOTAL_LINES }} linhas/g" README.md
           sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER -->/${{ env.TOTAL_COMMITS }} commits/g" README.md
           sed -i "s/<!-- TOTAL_HOURS_PLACEHOLDER -->/${{ env.TOTAL_HOURS }} horas/g" README.md
-
-          # Substituições individuais de cada repositório
-          # [Inclua aqui os sed para cada variável de repositório, como no workflow original se necessário]
 
       - name: Commit e push das alterações
         run: |
