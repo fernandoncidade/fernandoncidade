@@ -1,0 +1,252 @@
+name: Atualizar Estatísticas de Código
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Executa todo domingo à meia-noite
+  workflow_dispatch:
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          path: main-repo
+
+      - name: Configurar ambiente
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cloc
+
+      - name: Clonar e analisar repositórios
+        run: |
+          mkdir -p repos
+
+          repositories=(
+            "Agenda_Avaliacoes_Academicas"
+            "Manager_Compression_PySide6_v.0.0.1"
+            "Manager_Compression_PyQt6_v.0.0.1"
+            "eisenhower_organizing"
+            "Programa_Urna_Eletronica"
+            "Dashboard_Streamlit-Plotly-Pandas_Management"
+            "Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve"
+            "Dashboard_TkInter_Pareto-Diagram_ABC-Curve"
+            "sloth-highlander-theme-1"
+            "fernandoncidade"
+            "Dashboard_Taipy"
+            "File_Manager"
+            "Programa_Matriz_NM"
+            "Programa_Todos_Tipos_Matrizes"
+            "Programa_Quociente_Resto"
+            "Programa_Multiplo"
+            "Programa_Media_Aritmetica"
+            "Programa_Determinar_Maior_Inteiro"
+          )
+
+          total_lines=0
+          total_commits=0
+          total_horas=0
+
+          # Multilanguage header and column translations
+          declare -A headers_pt=(
+            [repo]="Repositório" [lang]="Linguagem" [hours]="Horas Estimadas" [lines]="Linhas" [commits]="Commits" [prod]="Produtividade"
+          )
+          declare -A headers_en=(
+            [repo]="Repository" [lang]="Language" [hours]="Estimated Hours" [lines]="Lines" [commits]="Commits" [prod]="Productivity"
+          )
+          declare -A headers_es=(
+            [repo]="Repositorio" [lang]="Lenguaje" [hours]="Horas Estimadas" [lines]="Líneas" [commits]="Commits" [prod]="Productividad"
+          )
+          declare -A headers_fr=(
+            [repo]="Répertoire" [lang]="Langage" [hours]="Heures estimées" [lines]="Lignes" [commits]="Commits" [prod]="Productivité"
+          )
+          declare -A headers_it=(
+            [repo]="Repository" [lang]="Linguaggio" [hours]="Ore stimate" [lines]="Righe" [commits]="Commit" [prod]="Produttività"
+          )
+          declare -A headers_de=(
+            [repo]="Repository" [lang]="Sprache" [hours]="Geschätzte Stunden" [lines]="Zeilen" [commits]="Commits" [prod]="Produktivität"
+          )
+
+          # Create multilanguage stats files
+          for lang in pt en es fr it de; do
+            eval "headers=\${headers_${lang}[@]}"
+            eval "col_repo=\${headers_${lang}[repo]}"
+            eval "col_lang=\${headers_${lang}[lang]}"
+            eval "col_hours=\${headers_${lang}[hours]}"
+            eval "col_lines=\${headers_${lang}[lines]}"
+            eval "col_commits=\${headers_${lang}[commits]}"
+            eval "col_prod=\${headers_${lang}[prod]}"
+            echo "| $col_repo | $col_lang | $col_hours | $col_lines | $col_commits | $col_prod |" > stats_${lang}.md
+            echo "|-------------|-----------|-----------------|--------|---------|---------------|" >> stats_${lang}.md
+          done
+
+          for repo in "${repositories[@]}"; do
+            echo "Processando repositório: $repo"
+            git clone https://github.com/fernandoncidade/$repo repos/$repo || continue
+            cd repos/$repo
+
+            cloc_output=$(cloc --exclude-dir=node_modules,.git --quiet --csv .)
+            lines=$(echo "$cloc_output" | awk -F',' 'NR>1 {sum += $5} END {print sum+0}')
+            lines=${lines:-0}
+            linguagem=$(echo "$cloc_output" | awk -F',' 'NR>1 && $5>0 {if ($5>max) {max=$5; lang=$2}} END {print lang}')
+            linguagem=${linguagem:-"N/A"}
+            commits=$(git rev-list --count HEAD)
+            commits=${commits:-0}
+
+            case "$linguagem" in
+              "Python") taxa_base=15 ;;
+              "JavaScript") taxa_base=20 ;;
+              "C++") taxa_base=10 ;;
+              "HTML") taxa_base=30 ;;
+              "CSS") taxa_base=25 ;;
+              "Java") taxa_base=12 ;;
+              "Markdown") taxa_base=35 ;;
+              *) taxa_base=18 ;;
+            esac
+
+            case "$repo" in
+              *"Monitor"*) complexidade=1.2 ;;
+              *"Dashboard"*) complexidade=0.9 ;;
+              *"Compression"*) complexidade=1.3 ;;
+              "fernandoncidade") complexidade=0.8 ;;
+              *) complexidade=1.0 ;;
+            esac
+
+            if [ $lines -gt 5000 ]; then
+              tamanho_ajuste=1.2
+            elif [ $lines -gt 2000 ]; then
+              tamanho_ajuste=1.1
+            else
+              tamanho_ajuste=1.0
+            fi
+
+            taxa_efetiva=$(awk "BEGIN {print $taxa_base / ($complexidade * $tamanho_ajuste)}")
+            horas=$(awk "BEGIN {h = $lines / $taxa_efetiva; print (h > 10) ? h : 10}")
+            horas=$(printf "%.1f" $horas)
+            produtividade=$(awk "BEGIN {printf \"%.2f\", $lines / $horas}")
+
+            # Write multilanguage stats line
+            for lang in pt en es fr it de; do
+              eval "col_lines=\${headers_${lang}[lines]}"
+              eval "col_commits=\${headers_${lang}[commits]}"
+              eval "col_hours=\${headers_${lang}[hours]}"
+              eval "col_prod=\${headers_${lang}[prod]}"
+              # Language-specific suffix
+              case "$lang" in
+                pt) suffix_lines="linhas"; suffix_commits="commits"; suffix_hours="h"; suffix_prod="l/h" ;;
+                en) suffix_lines="lines"; suffix_commits="commits"; suffix_hours="h"; suffix_prod="l/h" ;;
+                es) suffix_lines="líneas"; suffix_commits="commits"; suffix_hours="h"; suffix_prod="l/h" ;;
+                fr) suffix_lines="lignes"; suffix_commits="commits"; suffix_hours="h"; suffix_prod="l/h" ;;
+                it) suffix_lines="righe"; suffix_commits="commit"; suffix_hours="h"; suffix_prod="l/h" ;;
+                de) suffix_lines="zeilen"; suffix_commits="commits"; suffix_hours="h"; suffix_prod="l/h" ;;
+              esac
+              eval "col_repo=\${headers_${lang}[repo]}"
+              eval "col_lang=\${headers_${lang}[lang]}"
+              # Print row
+              echo "| $repo | $linguagem | ${horas}${suffix_hours} | $lines ${suffix_lines} | $commits ${suffix_commits} | $produtividade ${suffix_prod} |" >> ../stats_${lang}.md
+            done
+
+            repo_env=$(echo "$repo" | sed -e 's/-/_/g' -e 's/\./_/g' | tr '[:lower:]' '[:upper:]')
+            echo "${repo_env}_LINES=$lines" >> $GITHUB_ENV
+            echo "${repo_env}_COMMITS=$commits" >> $GITHUB_ENV
+            echo "${repo_env}_HOURS=$horas" >> $GITHUB_ENV
+            echo "${repo_env}_PROD=$produtividade" >> $GITHUB_ENV
+
+            total_lines=$((total_lines + lines))
+            total_commits=$((total_commits + commits))
+            total_horas=$(awk "BEGIN {printf \"%.1f\", $total_horas + $horas}")
+
+            cd ../..
+            echo "Repositório $repo processado: $lines linhas, $commits commits, $horas horas estimadas"
+          done
+
+          # Add TOTAL line in all languages
+          for lang in pt en es fr it de; do
+            case "$lang" in
+              pt) suffix_lines="linhas"; suffix_commits="commits"; suffix_hours="h"; suffix_prod="l/h"; label_total="**TOTAL**"; ;;
+              en) suffix_lines="lines";  suffix_commits="commits"; suffix_hours="h"; suffix_prod="l/h"; label_total="**TOTAL**"; ;;
+              es) suffix_lines="líneas"; suffix_commits="commits"; suffix_hours="h"; suffix_prod="l/h"; label_total="**TOTAL**"; ;;
+              fr) suffix_lines="lignes"; suffix_commits="commits"; suffix_hours="h"; suffix_prod="l/h"; label_total="**TOTAL**"; ;;
+              it) suffix_lines="righe";  suffix_commits="commit";  suffix_hours="h"; suffix_prod="l/h"; label_total="**TOTALE**"; ;;
+              de) suffix_lines="zeilen"; suffix_commits="commits"; suffix_hours="h"; suffix_prod="l/h"; label_total="**GESAMT**"; ;;
+            esac
+            echo "| $label_total | - | ${total_horas}${suffix_hours} | $total_lines $suffix_lines | $total_commits $suffix_commits | - |" >> stats_${lang}.md
+            mv stats_${lang}.md main-repo/stats_${lang}.md
+          done
+
+          echo "TOTAL_LINES=$total_lines" >> $GITHUB_ENV
+          echo "TOTAL_COMMITS=$total_commits" >> $GITHUB_ENV
+          echo "TOTAL_HOURS=$total_horas" >> $GITHUB_ENV
+
+      - name: Atualizar README com traduções multilíngues
+        run: |
+          cd main-repo
+          # PT-BR (Português)
+          sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER -->/${{ env.TOTAL_LINES }} linhas/g" README.md
+          sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER -->/${{ env.TOTAL_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- TOTAL_HOURS_PLACEHOLDER -->/${{ env.TOTAL_HOURS }} horas/g" README.md
+          # EN (English)
+          sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER_EN -->/${{ env.TOTAL_LINES }} lines/g" README.md
+          sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER_EN -->/${{ env.TOTAL_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- TOTAL_HOURS_PLACEHOLDER_EN -->/${{ env.TOTAL_HOURS }} h/g" README.md
+          # ES (Español)
+          sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER_ES -->/${{ env.TOTAL_LINES }} líneas/g" README.md
+          sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER_ES -->/${{ env.TOTAL_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- TOTAL_HOURS_PLACEHOLDER_ES -->/${{ env.TOTAL_HOURS }} h/g" README.md
+          # FR (Français)
+          sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER_FR -->/${{ env.TOTAL_LINES }} lignes/g" README.md
+          sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER_FR -->/${{ env.TOTAL_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- TOTAL_HOURS_PLACEHOLDER_FR -->/${{ env.TOTAL_HOURS }} h/g" README.md
+          # IT (Italiano)
+          sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER_IT -->/${{ env.TOTAL_LINES }} righe/g" README.md
+          sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER_IT -->/${{ env.TOTAL_COMMITS }} commit/g" README.md
+          sed -i "s/<!-- TOTAL_HOURS_PLACEHOLDER_IT -->/${{ env.TOTAL_HOURS }} h/g" README.md
+          # DE (Deutsch)
+          sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER_DE -->/${{ env.TOTAL_LINES }} zeilen/g" README.md
+          sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER_DE -->/${{ env.TOTAL_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- TOTAL_HOURS_PLACEHOLDER_DE -->/${{ env.TOTAL_HOURS }} h/g" README.md
+
+          # Repositório/coluna multilíngue substitutions (example for one repo, repeat for all)
+          # PT-BR (default)
+          sed -i "s/<!-- AGENDA_LINES -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_LINES }} linhas/g" README.md
+          sed -i "s/<!-- AGENDA_COMMITS -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- AGENDA_HOURS -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_HOURS }}h/g" README.md
+          sed -i "s/<!-- AGENDA_PROD -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_PROD }} l\/h/g" README.md
+          # EN
+          sed -i "s/<!-- AGENDA_LINES_EN -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_LINES }} lines/g" README.md
+          sed -i "s/<!-- AGENDA_COMMITS_EN -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- AGENDA_HOURS_EN -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_HOURS }}h/g" README.md
+          sed -i "s/<!-- AGENDA_PROD_EN -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_PROD }} l\/h/g" README.md
+          # ES
+          sed -i "s/<!-- AGENDA_LINES_ES -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_LINES }} líneas/g" README.md
+          sed -i "s/<!-- AGENDA_COMMITS_ES -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- AGENDA_HOURS_ES -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_HOURS }}h/g" README.md
+          sed -i "s/<!-- AGENDA_PROD_ES -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_PROD }} l\/h/g" README.md
+          # FR
+          sed -i "s/<!-- AGENDA_LINES_FR -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_LINES }} lignes/g" README.md
+          sed -i "s/<!-- AGENDA_COMMITS_FR -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- AGENDA_HOURS_FR -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_HOURS }}h/g" README.md
+          sed -i "s/<!-- AGENDA_PROD_FR -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_PROD }} l\/h/g" README.md
+          # IT
+          sed -i "s/<!-- AGENDA_LINES_IT -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_LINES }} righe/g" README.md
+          sed -i "s/<!-- AGENDA_COMMITS_IT -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_COMMITS }} commit/g" README.md
+          sed -i "s/<!-- AGENDA_HOURS_IT -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_HOURS }}h/g" README.md
+          sed -i "s/<!-- AGENDA_PROD_IT -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_PROD }} l\/h/g" README.md
+          # DE
+          sed -i "s/<!-- AGENDA_LINES_DE -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_LINES }} zeilen/g" README.md
+          sed -i "s/<!-- AGENDA_COMMITS_DE -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_COMMITS }} commits/g" README.md
+          sed -i "s/<!-- AGENDA_HOURS_DE -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_HOURS }}h/g" README.md
+          sed -i "s/<!-- AGENDA_PROD_DE -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_PROD }} l\/h/g" README.md
+
+          # Repita o bloco acima para todos os repositórios substituindo as tags multilíngues correspondentes!
+
+      - name: Commit e push das alterações
+        run: |
+          cd main-repo
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add README.md stats_*.md
+          git commit -m "Atualiza estatísticas de código multilíngue [skip ci]" || echo "No changes to commit"
+          git push
