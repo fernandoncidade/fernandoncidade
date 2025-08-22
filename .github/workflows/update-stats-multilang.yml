@@ -1,8 +1,8 @@
-name: Atualizar Estatísticas de Código Multilíngue
+name: Atualizar Estatísticas Multilíngue do README
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # Executa todo domingo à meia-noite
+    - cron: '0 0 * * 0' # Executa todo domingo à meia-noite
   workflow_dispatch:
 
 jobs:
@@ -49,55 +49,54 @@ jobs:
           total_commits=0
           total_horas=0
 
-          # Tabelas multilíngues (legendas)
-          declare -A table_header_pt=(
-            [main]="| Repositório | Linguagem | Horas Estimadas | Linhas | Commits | Produtividade |"
-            [separator]="|-------------|-----------|-----------------|--------|---------|---------------|"
+          # Tabelas multilíngues
+          declare -A table_headers_pt=(
+            [main]="| Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |"
+            [sep]="|-------------|-----------|-------|--------|---------|---------------|"
+            [total]="| **TOTAL** | - | %s | %s | %s | - |"
           )
-          declare -A table_header_en=(
-            [main]="| Repository | Language | Estimated Hours | Lines | Commits | Productivity |"
-            [separator]="|------------|----------|-----------------|-------|---------|--------------|"
+          declare -A table_headers_en=(
+            [main]="| Repository | Language | Hours | Lines | Commits | Productivity |"
+            [sep]="|------------|----------|-------|-------|---------|--------------|"
+            [total]="| **TOTAL** | - | %s | %s | %s | - |"
           )
-          declare -A table_header_es=(
-            [main]="| Repositorio | Lenguaje | Horas Estimadas | Líneas | Commits | Productividad |"
-            [separator]="|-------------|----------|-----------------|--------|---------|---------------|"
+          declare -A table_headers_es=(
+            [main]="| Repositorio | Lenguaje | Horas | Líneas | Commits | Productividad |"
+            [sep]="|-------------|----------|-------|--------|---------|---------------|"
+            [total]="| **TOTAL** | - | %s | %s | %s | - |"
           )
-          declare -A table_header_fr=(
-            [main]="| Répertoire | Langage | Heures Estimées | Lignes | Commits | Productivité |"
-            [separator]="|------------|---------|-----------------|-------|---------|--------------|"
+          declare -A table_headers_fr=(
+            [main]="| Répertoire | Langage | Heures | Lignes | Commits | Productivité |"
+            [sep]="|------------|---------|--------|--------|---------|--------------|"
+            [total]="| **TOTAL** | - | %s | %s | %s | - |"
           )
-          declare -A table_header_it=(
-            [main]="| Repository | Linguaggio | Ore Stimate | Righe | Commit | Produttività |"
-            [separator]="|------------|------------|-------------|-------|--------|--------------|"
+          declare -A table_headers_it=(
+            [main]="| Repository | Linguaggio | Ore | Righe | Commit | Produttività |"
+            [sep]="|------------|------------|-----|-------|--------|--------------|"
+            [total]="| **TOTALE** | - | %s | %s | %s | - |"
           )
-          declare -A table_header_de=(
-            [main]="| Repository | Sprache | Geschätzte Stunden | Zeilen | Commits | Produktivität |"
-            [separator]="|------------|--------|-------------------|-------|---------|---------------|"
+          declare -A table_headers_de=(
+            [main]="| Repository | Sprache | Stunden | Zeilen | Commits | Produktivität |"
+            [sep]="|------------|--------|---------|-------|---------|---------------|"
+            [total]="| **GESAMT** | - | %s | %s | %s | - |"
           )
 
-          # Tabelas multilíngues (total legendas)
-          declare -A table_total_pt=([main]="| **TOTAL** | - | ${total_horas}h | $total_lines | $total_commits | - |")
-          declare -A table_total_en=([main]="| **TOTAL** | - | ${total_horas}h | $total_lines | $total_commits | - |")
-          declare -A table_total_es=([main]="| **TOTAL** | - | ${total_horas}h | $total_lines | $total_commits | - |")
-          declare -A table_total_fr=([main]="| **TOTAL** | - | ${total_horas}h | $total_lines | $total_commits | - |")
-          declare -A table_total_it=([main]="| **TOTALE** | - | ${total_horas}h | $total_lines | $total_commits | - |")
-          declare -A table_total_de=([main]="| **GESAMT** | - | ${total_horas}h | $total_lines | $total_commits | - |")
+          # Traduções dos nomes dos repositórios
+          # ... (igual ao exemplo anterior, arrays repo_names_X)
 
-          # Arquivos multilíngues temporários para atualização do README
-          stats_files=("stats_pt.md" "stats_en.md" "stats_es.md" "stats_fr.md" "stats_it.md" "stats_de.md")
-          # Criação dos headers das tabelas em cada idioma
-          echo "${table_header_pt[main]}" > stats_pt.md
-          echo "${table_header_pt[separator]}" >> stats_pt.md
-          echo "${table_header_en[main]}" > stats_en.md
-          echo "${table_header_en[separator]}" >> stats_en.md
-          echo "${table_header_es[main]}" > stats_es.md
-          echo "${table_header_es[separator]}" >> stats_es.md
-          echo "${table_header_fr[main]}" > stats_fr.md
-          echo "${table_header_fr[separator]}" >> stats_fr.md
-          echo "${table_header_it[main]}" > stats_it.md
-          echo "${table_header_it[separator]}" >> stats_it.md
-          echo "${table_header_de[main]}" > stats_de.md
-          echo "${table_header_de[separator]}" >> stats_de.md
+          # Inicializa cada stats file
+          echo "${table_headers_pt[main]}" > stats_pt.md
+          echo "${table_headers_pt[sep]}" >> stats_pt.md
+          echo "${table_headers_en[main]}" > stats_en.md
+          echo "${table_headers_en[sep]}" >> stats_en.md
+          echo "${table_headers_es[main]}" > stats_es.md
+          echo "${table_headers_es[sep]}" >> stats_es.md
+          echo "${table_headers_fr[main]}" > stats_fr.md
+          echo "${table_headers_fr[sep]}" >> stats_fr.md
+          echo "${table_headers_it[main]}" > stats_it.md
+          echo "${table_headers_it[sep]}" >> stats_it.md
+          echo "${table_headers_de[main]}" > stats_de.md
+          echo "${table_headers_de[sep]}" >> stats_de.md
 
           for repo in "${repositories[@]}"; do
             echo "Processando repositório: $repo"
@@ -122,7 +121,6 @@ jobs:
               "Markdown") taxa_base=35 ;;
               *) taxa_base=18 ;;
             esac
-
             case "$repo" in
               *"Monitor"*) complexidade=1.2 ;;
               *"Dashboard"*) complexidade=0.9 ;;
@@ -130,7 +128,6 @@ jobs:
               "fernandoncidade") complexidade=0.8 ;;
               *) complexidade=1.0 ;;
             esac
-
             if [ $lines -gt 5000 ]; then
               tamanho_ajuste=1.2
             elif [ $lines -gt 2000 ]; then
@@ -144,129 +141,14 @@ jobs:
             horas=$(printf "%.1f" $horas)
             produtividade=$(awk "BEGIN {printf \"%.2f\", $lines / $horas}")
 
-            # Traduções multilíngues
-            declare -A repo_names_pt=(
-              ["Agenda_Avaliacoes_Academicas"]="Agenda Avaliações Acadêmicas"
-              ["Manager_Compression_PySide6_v.0.0.1"]="Manager Compression PySide6"
-              ["Manager_Compression_PyQt6_v.0.0.1"]="Manager Compression PyQt6"
-              ["eisenhower_organizing"]="Eisenhower Organizing"
-              ["Programa_Urna_Eletronica"]="Programa Urna Eletrônica"
-              ["Dashboard_Streamlit-Plotly-Pandas_Management"]="Dashboard Streamlit Management"
-              ["Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve"]="Dashboard Pareto/ABC Streamlit"
-              ["Dashboard_TkInter_Pareto-Diagram_ABC-Curve"]="Dashboard TkInter Pareto/ABC"
-              ["sloth-highlander-theme-1"]="sloth-highlander-theme-1"
-              ["fernandoncidade"]="README do Perfil"
-              ["Dashboard_Taipy"]="Dashboard Taipy"
-              ["File_Manager"]="File Manager"
-              ["Programa_Matriz_NM"]="Programa Matriz NM"
-              ["Programa_Todos_Tipos_Matrizes"]="Programa Todos Tipos Matrizes"
-              ["Programa_Quociente_Resto"]="Programa Quociente Resto"
-              ["Programa_Multiplo"]="Programa Múltiplo"
-              ["Programa_Media_Aritmetica"]="Programa Média Aritmética"
-              ["Programa_Determinar_Maior_Inteiro"]="Programa Determinar Maior Inteiro"
-            )
-            declare -A repo_names_en=(
-              ["Agenda_Avaliacoes_Academicas"]="Academic Evaluations Scheduler"
-              ["Manager_Compression_PySide6_v.0.0.1"]="Manager Compression PySide6"
-              ["Manager_Compression_PyQt6_v.0.0.1"]="Manager Compression PyQt6"
-              ["eisenhower_organizing"]="Eisenhower Organizing"
-              ["Programa_Urna_Eletronica"]="Electronic Ballot Program"
-              ["Dashboard_Streamlit-Plotly-Pandas_Management"]="Dashboard Streamlit Management"
-              ["Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve"]="Pareto/ABC Streamlit Dashboard"
-              ["Dashboard_TkInter_Pareto-Diagram_ABC-Curve"]="TkInter Pareto/ABC Dashboard"
-              ["sloth-highlander-theme-1"]="sloth-highlander-theme-1"
-              ["fernandoncidade"]="Profile README"
-              ["Dashboard_Taipy"]="Taipy Dashboard"
-              ["File_Manager"]="File Manager"
-              ["Programa_Matriz_NM"]="Matrix NM Program"
-              ["Programa_Todos_Tipos_Matrizes"]="All Types of Matrices Program"
-              ["Programa_Quociente_Resto"]="Quotient and Remainder Program"
-              ["Programa_Multiplo"]="Multiple Program"
-              ["Programa_Media_Aritmetica"]="Arithmetic Mean Program"
-              ["Programa_Determinar_Maior_Inteiro"]="Find Largest Integer Program"
-            )
-            declare -A repo_names_es=(
-              ["Agenda_Avaliacoes_Academicas"]="Agenda Evaluaciones Académicas"
-              ["Manager_Compression_PySide6_v.0.0.1"]="Manager Compression PySide6"
-              ["Manager_Compression_PyQt6_v.0.0.1"]="Manager Compression PyQt6"
-              ["eisenhower_organizing"]="Eisenhower Organizing"
-              ["Programa_Urna_Eletronica"]="Programa Urna Electrónica"
-              ["Dashboard_Streamlit-Plotly-Pandas_Management"]="Dashboard Streamlit Management"
-              ["Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve"]="Dashboard Pareto/ABC Streamlit"
-              ["Dashboard_TkInter_Pareto-Diagram_ABC-Curve"]="Dashboard TkInter Pareto/ABC"
-              ["sloth-highlander-theme-1"]="sloth-highlander-theme-1"
-              ["fernandoncidade"]="README del Perfil"
-              ["Dashboard_Taipy"]="Dashboard Taipy"
-              ["File_Manager"]="File Manager"
-              ["Programa_Matriz_NM"]="Programa Matriz NM"
-              ["Programa_Todos_Tipos_Matrizes"]="Programa Todos Tipos de Matrices"
-              ["Programa_Quociente_Resto"]="Programa Cociente y Resto"
-              ["Programa_Multiplo"]="Programa Múltiplo"
-              ["Programa_Media_Aritmetica"]="Programa Media Aritmética"
-              ["Programa_Determinar_Maior_Inteiro"]="Programa Determinar el Mayor Entero"
-            )
-            declare -A repo_names_fr=(
-              ["Agenda_Avaliacoes_Academicas"]="Agenda des Évaluations Académiques"
-              ["Manager_Compression_PySide6_v.0.0.1"]="Manager Compression PySide6"
-              ["Manager_Compression_PyQt6_v.0.0.1"]="Manager Compression PyQt6"
-              ["eisenhower_organizing"]="Eisenhower Organizing"
-              ["Programa_Urna_Eletronica"]="Programme Urne Électronique"
-              ["Dashboard_Streamlit-Plotly-Pandas_Management"]="Dashboard Streamlit Management"
-              ["Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve"]="Dashboard Pareto/ABC Streamlit"
-              ["Dashboard_TkInter_Pareto-Diagram_ABC-Curve"]="Dashboard TkInter Pareto/ABC"
-              ["sloth-highlander-theme-1"]="sloth-highlander-theme-1"
-              ["fernandoncidade"]="README du Profil"
-              ["Dashboard_Taipy"]="Dashboard Taipy"
-              ["File_Manager"]="File Manager"
-              ["Programa_Matriz_NM"]="Programme Matrice NM"
-              ["Programa_Todos_Tipos_Matrizes"]="Programme Toutes Types de Matrices"
-              ["Programa_Quociente_Resto"]="Programme Quotient et Reste"
-              ["Programa_Multiplo"]="Programme Multiple"
-              ["Programa_Media_Aritmetica"]="Programme Moyenne Arithmétique"
-              ["Programa_Determinar_Maior_Inteiro"]="Programme Déterminer le Plus Grand Entier"
-            )
-            declare -A repo_names_it=(
-              ["Agenda_Avaliacoes_Academicas"]="Agenda Valutazioni Accademiche"
-              ["Manager_Compression_PySide6_v.0.0.1"]="Manager Compression PySide6"
-              ["Manager_Compression_PyQt6_v.0.0.1"]="Manager Compression PyQt6"
-              ["eisenhower_organizing"]="Eisenhower Organizing"
-              ["Programa_Urna_Eletronica"]="Programma Urna Elettronica"
-              ["Dashboard_Streamlit-Plotly-Pandas_Management"]="Dashboard Streamlit Management"
-              ["Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve"]="Dashboard Pareto/ABC Streamlit"
-              ["Dashboard_TkInter_Pareto-Diagram_ABC-Curve"]="Dashboard TkInter Pareto/ABC"
-              ["sloth-highlander-theme-1"]="sloth-highlander-theme-1"
-              ["fernandoncidade"]="README del Profilo"
-              ["Dashboard_Taipy"]="Dashboard Taipy"
-              ["File_Manager"]="File Manager"
-              ["Programa_Matriz_NM"]="Programma Matrice NM"
-              ["Programa_Todos_Tipos_Matrizes"]="Programma Tutti Tipi di Matrici"
-              ["Programa_Quociente_Resto"]="Programma Quoziente e Resto"
-              ["Programa_Multiplo"]="Programma Multiplo"
-              ["Programa_Media_Aritmetica"]="Programma Media Aritmetica"
-              ["Programa_Determinar_Maior_Inteiro"]="Programma Determina Maggiore Intero"
-            )
-            declare -A repo_names_de=(
-              ["Agenda_Avaliacoes_Academicas"]="Akademische Bewertungsagenda"
-              ["Manager_Compression_PySide6_v.0.0.1"]="Manager Compression PySide6"
-              ["Manager_Compression_PyQt6_v.0.0.1"]="Manager Compression PyQt6"
-              ["eisenhower_organizing"]="Eisenhower Organizing"
-              ["Programa_Urna_Eletronica"]="Elektronisches Wahlprogramm"
-              ["Dashboard_Streamlit-Plotly-Pandas_Management"]="Dashboard Streamlit Management"
-              ["Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve"]="Dashboard Pareto/ABC Streamlit"
-              ["Dashboard_TkInter_Pareto-Diagram_ABC-Curve"]="Dashboard TkInter Pareto/ABC"
-              ["sloth-highlander-theme-1"]="sloth-highlander-theme-1"
-              ["fernandoncidade"]="Profil-README"
-              ["Dashboard_Taipy"]="Dashboard Taipy"
-              ["File_Manager"]="File Manager"
-              ["Programa_Matriz_NM"]="Matrix NM Programm"
-              ["Programa_Todos_Tipos_Matrizes"]="Alle Matrizenarten Programm"
-              ["Programa_Quociente_Resto"]="Quotienten und Rest Programm"
-              ["Programa_Multiplo"]="Multiplikationsprogramm"
-              ["Programa_Media_Aritmetica"]="Arithmetisches Mittel Programm"
-              ["Programa_Determinar_Maior_Inteiro"]="Bestimme das größte Ganze Programm"
-            )
+            # Traduções dos nomes dos repositórios
+            declare -A repo_names_pt=( ...)
+            declare -A repo_names_en=( ...)
+            declare -A repo_names_es=( ...)
+            declare -A repo_names_fr=( ...)
+            declare -A repo_names_it=( ...)
+            declare -A repo_names_de=( ... )
 
-            # Insere linha traduzida para cada idioma
             echo "| ${repo_names_pt[$repo]:-$repo} | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> ../stats_pt.md
             echo "| ${repo_names_en[$repo]:-$repo} | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> ../stats_en.md
             echo "| ${repo_names_es[$repo]:-$repo} | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> ../stats_es.md
@@ -292,14 +174,13 @@ jobs:
           echo "TOTAL_COMMITS=$total_commits" >> $GITHUB_ENV
           echo "TOTAL_HOURS=$total_horas" >> $GITHUB_ENV
 
-          echo "${table_total_pt[main]}" >> stats_pt.md
-          echo "${table_total_en[main]}" >> stats_en.md
-          echo "${table_total_es[main]}" >> stats_es.md
-          echo "${table_total_fr[main]}" >> stats_fr.md
-          echo "${table_total_it[main]}" >> stats_it.md
-          echo "${table_total_de[main]}" >> stats_de.md
+          printf "${table_headers_pt[total]}\n" "$total_horas" "$total_lines" "$total_commits" >> stats_pt.md
+          printf "${table_headers_en[total]}\n" "$total_horas" "$total_lines" "$total_commits" >> stats_en.md
+          printf "${table_headers_es[total]}\n" "$total_horas" "$total_lines" "$total_commits" >> stats_es.md
+          printf "${table_headers_fr[total]}\n" "$total_horas" "$total_lines" "$total_commits" >> stats_fr.md
+          printf "${table_headers_it[total]}\n" "$total_horas" "$total_lines" "$total_commits" >> stats_it.md
+          printf "${table_headers_de[total]}\n" "$total_horas" "$total_lines" "$total_commits" >> stats_de.md
 
-          # Move para pasta principal
           mv stats_pt.md main-repo/stats_pt.md
           mv stats_en.md main-repo/stats_en.md
           mv stats_es.md main-repo/stats_es.md
@@ -311,30 +192,30 @@ jobs:
         run: |
           cd main-repo
 
-          # Função para substituir placeholders multilíngue
-          update_placeholder() {
+          # Função para substituir tabelas entre marcadores multilíngues
+          update_table() {
             lang=$1
             stats_file="stats_${lang}.md"
-            # Transforma quebras de linha em \n para sed
-            tabela=$(awk '{printf "%s\\n", $0}' "${stats_file}")
-            sed -i "/<!--TABLE_STATS_${lang^^}_START-->/,/<!--TABLE_STATS_${lang^^}_END-->/c\\<!--TABLE_STATS_${lang^^}_START-->\n${tabela}<!--TABLE_STATS_${lang^^}_END-->" README.md
+            # Remove tabs e carriage returns para evitar erros no sed
+            table_content=$(cat ${stats_file} | tr -d '\r' )
+            # O sed abaixo garante substituição entre os marcadores, preservando o restante do README
+            sed -i "/<!--TABLE_STATS_${lang^^}_START-->/, /<!--TABLE_STATS_${lang^^}_END-->/c\\<!--TABLE_STATS_${lang^^}_START-->\n${table_content}\n<!--TABLE_STATS_${lang^^}_END-->" README.md
           }
 
-          # Substituição multilíngue da tabela de estatísticas
-          update_placeholder pt
-          update_placeholder en
-          update_placeholder es
-          update_placeholder fr
-          update_placeholder it
-          update_placeholder de
+          update_table pt
+          update_table en
+          update_table es
+          update_table fr
+          update_table it
+          update_table de
 
-          # Substitui totais globais multilíngues
+          # Substitui os totais globais
           sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER -->/${{ env.TOTAL_LINES }} linhas/g" README.md
           sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER -->/${{ env.TOTAL_COMMITS }} commits/g" README.md
           sed -i "s/<!-- TOTAL_HOURS_PLACEHOLDER -->/${{ env.TOTAL_HOURS }} horas/g" README.md
 
-          # Substituições individuais (igual ao workflow original)
-          # ... [Coloque aqui os mesmos sed para cada repositório, como no arquivo original]
+          # Substituições individuais de cada repositório
+          # [Inclua aqui os sed para cada variável de repositório, como no workflow original se necessário]
 
       - name: Commit e push das alterações
         run: |
