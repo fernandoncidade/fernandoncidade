@@ -1,8 +1,8 @@
-name: Atualizar Estatísticas Multilíngue do README
+name: Atualizar Estatísticas de Código
 
 on:
   schedule:
-    - cron: '0 0 * * 0' # Executa todo domingo à meia-noite
+    - cron: '0 0 * * 0'  # Executa todo domingo à meia-noite
   workflow_dispatch:
 
 jobs:
@@ -49,50 +49,8 @@ jobs:
           total_commits=0
           total_horas=0
 
-          declare -A table_headers_pt=(
-            [main]="| Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |"
-            [sep]="|-------------|-----------|-------|--------|---------|---------------|"
-            [total]="| **TOTAL** | - | %s | %s | %s | - |"
-          )
-          declare -A table_headers_en=(
-            [main]="| Repository | Language | Hours | Lines | Commits | Productivity |"
-            [sep]="|------------|----------|-------|-------|---------|--------------|"
-            [total]="| **TOTAL** | - | %s | %s | %s | - |"
-          )
-          declare -A table_headers_es=(
-            [main]="| Repositorio | Lenguaje | Horas | Líneas | Commits | Productividad |"
-            [sep]="|-------------|----------|-------|--------|---------|---------------|"
-            [total]="| **TOTAL** | - | %s | %s | %s | - |"
-          )
-          declare -A table_headers_fr=(
-            [main]="| Répertoire | Langage | Heures | Lignes | Commits | Productivité |"
-            [sep]="|------------|---------|--------|--------|---------|--------------|"
-            [total]="| **TOTAL** | - | %s | %s | %s | - |"
-          )
-          declare -A table_headers_it=(
-            [main]="| Repository | Linguaggio | Ore | Righe | Commit | Produttività |"
-            [sep]="|------------|------------|-----|-------|--------|--------------|"
-            [total]="| **TOTALE** | - | %s | %s | %s | - |"
-          )
-          declare -A table_headers_de=(
-            [main]="| Repository | Sprache | Stunden | Zeilen | Commits | Produktivität |"
-            [sep]="|------------|--------|---------|-------|---------|---------------|"
-            [total]="| **GESAMT** | - | %s | %s | %s | - |"
-          )
-
-          # Inicializa cada stats file
-          echo "${table_headers_pt[main]}" > stats_pt.md
-          echo "${table_headers_pt[sep]}" >> stats_pt.md
-          echo "${table_headers_en[main]}" > stats_en.md
-          echo "${table_headers_en[sep]}" >> stats_en.md
-          echo "${table_headers_es[main]}" > stats_es.md
-          echo "${table_headers_es[sep]}" >> stats_es.md
-          echo "${table_headers_fr[main]}" > stats_fr.md
-          echo "${table_headers_fr[sep]}" >> stats_fr.md
-          echo "${table_headers_it[main]}" > stats_it.md
-          echo "${table_headers_it[sep]}" >> stats_it.md
-          echo "${table_headers_de[main]}" > stats_de.md
-          echo "${table_headers_de[sep]}" >> stats_de.md
+          echo "| Repositório | Linguagem | Horas Estimadas | Linhas | Commits | Produtividade |" > stats.md
+          echo "|-------------|-----------|-----------------|--------|---------|---------------|" >> stats.md
 
           for repo in "${repositories[@]}"; do
             echo "Processando repositório: $repo"
@@ -117,6 +75,8 @@ jobs:
               "Markdown") taxa_base=35 ;;
               *) taxa_base=18 ;;
             esac
+
+            # Removido *"Patrol"* da lógica de complexidade
             case "$repo" in
               *"Monitor"*) complexidade=1.2 ;;
               *"Dashboard"*) complexidade=0.9 ;;
@@ -124,6 +84,7 @@ jobs:
               "fernandoncidade") complexidade=0.8 ;;
               *) complexidade=1.0 ;;
             esac
+
             if [ $lines -gt 5000 ]; then
               tamanho_ajuste=1.2
             elif [ $lines -gt 2000 ]; then
@@ -137,20 +98,7 @@ jobs:
             horas=$(printf "%.1f" $horas)
             produtividade=$(awk "BEGIN {printf \"%.2f\", $lines / $horas}")
 
-            # Traduções dos nomes dos repositórios (deixe como no original)
-            declare -A repo_names_pt=( ...)
-            declare -A repo_names_en=( ...)
-            declare -A repo_names_es=( ...)
-            declare -A repo_names_fr=( ...)
-            declare -A repo_names_it=( ...)
-            declare -A repo_names_de=( ... )
-
-            echo "| ${repo_names_pt[$repo]:-$repo} | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> ../stats_pt.md
-            echo "| ${repo_names_en[$repo]:-$repo} | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> ../stats_en.md
-            echo "| ${repo_names_es[$repo]:-$repo} | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> ../stats_es.md
-            echo "| ${repo_names_fr[$repo]:-$repo} | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> ../stats_fr.md
-            echo "| ${repo_names_it[$repo]:-$repo} | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> ../stats_it.md
-            echo "| ${repo_names_de[$repo]:-$repo} | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> ../stats_de.md
+            echo "| $repo | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> ../stats.md
 
             repo_env=$(echo "$repo" | sed -e 's/-/_/g' -e 's/\./_/g' | tr '[:lower:]' '[:upper:]')
             echo "${repo_env}_LINES=$lines" >> $GITHUB_ENV
@@ -170,48 +118,112 @@ jobs:
           echo "TOTAL_COMMITS=$total_commits" >> $GITHUB_ENV
           echo "TOTAL_HOURS=$total_horas" >> $GITHUB_ENV
 
-          printf "${table_headers_pt[total]}\n" "$total_horas" "$total_lines" "$total_commits" >> stats_pt.md
-          printf "${table_headers_en[total]}\n" "$total_horas" "$total_lines" "$total_commits" >> stats_en.md
-          printf "${table_headers_es[total]}\n" "$total_horas" "$total_lines" "$total_commits" >> stats_es.md
-          printf "${table_headers_fr[total]}\n" "$total_horas" "$total_lines" "$total_commits" >> stats_fr.md
-          printf "${table_headers_it[total]}\n" "$total_horas" "$total_lines" "$total_commits" >> stats_it.md
-          printf "${table_headers_de[total]}\n" "$total_horas" "$total_lines" "$total_commits" >> stats_de.md
+          echo "| **TOTAL** | - | ${total_horas}h | $total_lines | $total_commits | - |" >> stats.md
+          mv stats.md main-repo/stats.md
 
-          mv stats_pt.md main-repo/stats_pt.md
-          mv stats_en.md main-repo/stats_en.md
-          mv stats_es.md main-repo/stats_es.md
-          mv stats_fr.md main-repo/stats_fr.md
-          mv stats_it.md main-repo/stats_it.md
-          mv stats_de.md main-repo/stats_de.md
-
-      - name: Atualizar README Multilíngue
+      - name: Atualizar README
         run: |
           cd main-repo
+          sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER -->/${{ env.TOTAL_LINES }}/g" README.md
+          sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER -->/${{ env.TOTAL_COMMITS }}/g" README.md
+          sed -i "s/<!-- TOTAL_HOURS_PLACEHOLDER -->/${{ env.TOTAL_HOURS }}/g" README.md
 
-          update_table() {
-            lang=$1
-            stats_file="stats_${lang}.md"
-            table_content=$(cat ${stats_file} | tr -d '\r')
-            # Use delimitador '/' no sed, mas escape corretamente as barras e caracteres especiais
-            sed -i "/<!--TABLE_STATS_${lang^^}_START-->/, /<!--TABLE_STATS_${lang^^}_END-->/c\\<!--TABLE_STATS_${lang^^}_START-->\n${table_content}\n<!--TABLE_STATS_${lang^^}_END-->" README.md
-          }
+          sed -i "s/<!-- AGENDA_LINES -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_LINES }}/g" README.md
+          sed -i "s/<!-- AGENDA_COMMITS -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_COMMITS }}/g" README.md
+          sed -i "s/<!-- AGENDA_HOURS -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_HOURS }}/g" README.md
+          sed -i "s/<!-- AGENDA_PROD -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_PROD }}/g" README.md
 
-          update_table pt
-          update_table en
-          update_table es
-          update_table fr
-          update_table it
-          update_table de
+          sed -i "s/<!-- PYSIDE6_LINES -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V_0_0_1_LINES }}/g" README.md
+          sed -i "s/<!-- PYSIDE6_COMMITS -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V_0_0_1_COMMITS }}/g" README.md
+          sed -i "s/<!-- PYSIDE6_HOURS -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V_0_0_1_HOURS }}/g" README.md
+          sed -i "s/<!-- PYSIDE6_PROD -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V_0_0_1_PROD }}/g" README.md
 
-          sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER -->/${{ env.TOTAL_LINES }} linhas/g" README.md
-          sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER -->/${{ env.TOTAL_COMMITS }} commits/g" README.md
-          sed -i "s/<!-- TOTAL_HOURS_PLACEHOLDER -->/${{ env.TOTAL_HOURS }} horas/g" README.md
+          sed -i "s/<!-- PYQT6_LINES -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_LINES }}/g" README.md
+          sed -i "s/<!-- PYQT6_COMMITS -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_COMMITS }}/g" README.md
+          sed -i "s/<!-- PYQT6_HOURS -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_HOURS }}/g" README.md
+          sed -i "s/<!-- PYQT6_PROD -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_PROD }}/g" README.md
+
+          sed -i "s/<!-- EISENHOWER_LINES -->/${{ env.EISENHOWER_ORGANIZING_LINES }}/g" README.md
+          sed -i "s/<!-- EISENHOWER_COMMITS -->/${{ env.EISENHOWER_ORGANIZING_COMMITS }}/g" README.md
+          sed -i "s/<!-- EISENHOWER_HOURS -->/${{ env.EISENHOWER_ORGANIZING_HOURS }}/g" README.md
+          sed -i "s/<!-- EISENHOWER_PROD -->/${{ env.EISENHOWER_ORGANIZING_PROD }}/g" README.md
+
+          sed -i "s/<!-- URNA_LINES -->/${{ env.PROGRAMA_URNA_ELETRONICA_LINES }}/g" README.md
+          sed -i "s/<!-- URNA_COMMITS -->/${{ env.PROGRAMA_URNA_ELETRONICA_COMMITS }}/g" README.md
+          sed -i "s/<!-- URNA_HOURS -->/${{ env.PROGRAMA_URNA_ELETRONICA_HOURS }}/g" README.md
+          sed -i "s/<!-- URNA_PROD -->/${{ env.PROGRAMA_URNA_ELETRONICA_PROD }}/g" README.md
+
+          sed -i "s/<!-- MANEGEMENT_LINES -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_LINES }}/g" README.md
+          sed -i "s/<!-- MANEGEMENT_COMMITS -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_COMMITS }}/g" README.md
+          sed -i "s/<!-- MANEGEMENT_HOURS -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_HOURS }}/g" README.md
+          sed -i "s/<!-- MANEGEMENT_PROD -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_PROD }}/g" README.md
+
+          sed -i "s/<!-- STREAMLIT_LINES -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_LINES }}/g" README.md
+          sed -i "s/<!-- STREAMLIT_COMMITS -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_COMMITS }}/g" README.md
+          sed -i "s/<!-- STREAMLIT_HOURS -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_HOURS }}/g" README.md
+          sed -i "s/<!-- STREAMLIT_PROD -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_PROD }}/g" README.md
+
+          sed -i "s/<!-- PARETO_LINES -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_LINES }}/g" README.md
+          sed -i "s/<!-- PARETO_COMMITS -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_COMMITS }}/g" README.md
+          sed -i "s/<!-- PARETO_HOURS -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_HOURS }}/g" README.md
+          sed -i "s/<!-- PARETO_PROD -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_PROD }}/g" README.md
+
+          sed -i "s/<!-- SLOTH_LINES -->/${{ env.SLOTH_HIGHLANDER_THEME_1_LINES }}/g" README.md
+          sed -i "s/<!-- SLOTH_COMMITS -->/${{ env.SLOTH_HIGHLANDER_THEME_1_COMMITS }}/g" README.md
+          sed -i "s/<!-- SLOTH_HOURS -->/${{ env.SLOTH_HIGHLANDER_THEME_1_HOURS }}/g" README.md
+          sed -i "s/<!-- SLOTH_PROD -->/${{ env.SLOTH_HIGHLANDER_THEME_1_PROD }}/g" README.md
+
+          sed -i "s/<!-- README_LINES -->/${{ env.FERNANDONCIDADE_LINES }}/g" README.md
+          sed -i "s/<!-- README_COMMITS -->/${{ env.FERNANDONCIDADE_COMMITS }}/g" README.md
+          sed -i "s/<!-- README_HOURS -->/${{ env.FERNANDONCIDADE_HOURS }}/g" README.md
+          sed -i "s/<!-- README_PROD -->/${{ env.FERNANDONCIDADE_PROD }}/g" README.md
+
+          # Novos repositórios adicionados
+          sed -i "s/<!-- TAIPY_LINES -->/${{ env.DASHBOARD_TAIPY_LINES }}/g" README.md
+          sed -i "s/<!-- TAIPY_COMMITS -->/${{ env.DASHBOARD_TAIPY_COMMITS }}/g" README.md
+          sed -i "s/<!-- TAIPY_HOURS -->/${{ env.DASHBOARD_TAIPY_HOURS }}/g" README.md
+          sed -i "s/<!-- TAIPY_PROD -->/${{ env.DASHBOARD_TAIPY_PROD }}/g" README.md
+
+          sed -i "s/<!-- FILEMANAGER_LINES -->/${{ env.FILE_MANAGER_LINES }}/g" README.md
+          sed -i "s/<!-- FILEMANAGER_COMMITS -->/${{ env.FILE_MANAGER_COMMITS }}/g" README.md
+          sed -i "s/<!-- FILEMANAGER_HOURS -->/${{ env.FILE_MANAGER_HOURS }}/g" README.md
+          sed -i "s/<!-- FILEMANAGER_PROD -->/${{ env.FILE_MANAGER_PROD }}/g" README.md
+
+          sed -i "s/<!-- MATRIZNM_LINES -->/${{ env.PROGRAMA_MATRIZ_NM_LINES }}/g" README.md
+          sed -i "s/<!-- MATRIZNM_COMMITS -->/${{ env.PROGRAMA_MATRIZ_NM_COMMITS }}/g" README.md
+          sed -i "s/<!-- MATRIZNM_HOURS -->/${{ env.PROGRAMA_MATRIZ_NM_HOURS }}/g" README.md
+          sed -i "s/<!-- MATRIZNM_PROD -->/${{ env.PROGRAMA_MATRIZ_NM_PROD }}/g" README.md
+
+          sed -i "s/<!-- MATRIZES_LINES -->/${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_LINES }}/g" README.md
+          sed -i "s/<!-- MATRIZES_COMMITS -->/${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_COMMITS }}/g" README.md
+          sed -i "s/<!-- MATRIZES_HOURS -->/${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_HOURS }}/g" README.md
+          sed -i "s/<!-- MATRIZES_PROD -->/${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_PROD }}/g" README.md
+
+          sed -i "s/<!-- QUOCRESTO_LINES -->/${{ env.PROGRAMA_QUOCIENTE_RESTO_LINES }}/g" README.md
+          sed -i "s/<!-- QUOCRESTO_COMMITS -->/${{ env.PROGRAMA_QUOCIENTE_RESTO_COMMITS }}/g" README.md
+          sed -i "s/<!-- QUOCRESTO_HOURS -->/${{ env.PROGRAMA_QUOCIENTE_RESTO_HOURS }}/g" README.md
+          sed -i "s/<!-- QUOCRESTO_PROD -->/${{ env.PROGRAMA_QUOCIENTE_RESTO_PROD }}/g" README.md
+
+          sed -i "s/<!-- MULTIPLO_LINES -->/${{ env.PROGRAMA_MULTIPLO_LINES }}/g" README.md
+          sed -i "s/<!-- MULTIPLO_COMMITS -->/${{ env.PROGRAMA_MULTIPLO_COMMITS }}/g" README.md
+          sed -i "s/<!-- MULTIPLO_HOURS -->/${{ env.PROGRAMA_MULTIPLO_HOURS }}/g" README.md
+          sed -i "s/<!-- MULTIPLO_PROD -->/${{ env.PROGRAMA_MULTIPLO_PROD }}/g" README.md
+
+          sed -i "s/<!-- MEDIAARIT_LINES -->/${{ env.PROGRAMA_MEDIA_ARITMETICA_LINES }}/g" README.md
+          sed -i "s/<!-- MEDIAARIT_COMMITS -->/${{ env.PROGRAMA_MEDIA_ARITMETICA_COMMITS }}/g" README.md
+          sed -i "s/<!-- MEDIAARIT_HOURS -->/${{ env.PROGRAMA_MEDIA_ARITMETICA_HOURS }}/g" README.md
+          sed -i "s/<!-- MEDIAARIT_PROD -->/${{ env.PROGRAMA_MEDIA_ARITMETICA_PROD }}/g" README.md
+
+          sed -i "s/<!-- MAIORINT_LINES -->/${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_LINES }}/g" README.md
+          sed -i "s/<!-- MAIORINT_COMMITS -->/${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_COMMITS }}/g" README.md
+          sed -i "s/<!-- MAIORINT_HOURS -->/${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_HOURS }}/g" README.md
+          sed -i "s/<!-- MAIORINT_PROD -->/${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_PROD }}/g" README.md
 
       - name: Commit e push das alterações
         run: |
           cd main-repo
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add README.md stats_pt.md stats_en.md stats_es.md stats_fr.md stats_it.md stats_de.md
-          git commit -m "Atualiza estatísticas multilíngue do README [skip ci]" || echo "No changes to commit"
+          git add README.md stats.md
+          git commit -m "Atualiza estatísticas de código [skip ci]" || echo "No changes to commit"
           git push
