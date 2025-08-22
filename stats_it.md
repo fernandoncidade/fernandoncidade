@@ -1,3 +1,3 @@
-| Repository | Linguaggio | Ore stimate | Righe | Commit | Produttività |
-|-------------|-----------|-----------------|--------|---------|---------------|
-| **TOTALE** | - | 16973.7h | 274952 righe | 147 commit | - |
+| Repository | Linguaggio | Ore Stimate | Righe | Commit | Produttività |
+|------------|------------|-------------|-------|--------|--------------|
+| **TOTALE** | - | 0h | 0 | 0 | - |
