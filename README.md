@@ -31,9 +31,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total de Linhas Escritas: <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total de Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total de Tempo Trabalhado: 16967.3 horas
+### 📝 Total de Linhas Escritas: 274810 linhas
+### 💻 Total de Commits: 145 commits
 
 </div>
 
@@ -41,7 +41,7 @@
 
 | Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |
 |-------------|-----------|-------|--------|---------|---------------|
-| 📅 **Agenda Avaliações Acadêmicas** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 📅 **Agenda Avaliações Acadêmicas** | Python | <!-- AGENDA_HOURS --> | 3688 linhas | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -173,9 +173,9 @@ Disponível em versão de teste por 7 dias, após o qual pode ser adquirida pela
 
 <div align="center">
 
-### 🕒 Total Working Time: <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total Lines Written: <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total Working Time: 16967.3 horas
+### 📝 Total Lines Written: 274810 linhas
+### 💻 Total Commits: 145 commits
 
 </div>
 
@@ -183,7 +183,7 @@ Disponível em versão de teste por 7 dias, após o qual pode ser adquirida pela
 
 | Repository | Language | Hours | Lines | Commits | Productivity |
 |------------|----------|-------|-------|---------|--------------|
-| 📅 **Academic Evaluations Scheduler** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 📅 **Academic Evaluations Scheduler** | Python | <!-- AGENDA_HOURS --> | 3688 linhas | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -315,9 +315,9 @@ Available as a 7-day trial version, after which it can be purchased via the [Mic
 
 <div align="center">
 
-### 🕒 Total de Tiempo Trabajado: <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total de Líneas Escritas: <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total de Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total de Tiempo Trabajado: 16967.3 horas
+### 📝 Total de Líneas Escritas: 274810 linhas
+### 💻 Total de Commits: 145 commits
 
 </div>
 
@@ -325,7 +325,7 @@ Available as a 7-day trial version, after which it can be purchased via the [Mic
 
 | Repositorio | Lenguaje | Horas | Líneas | Commits | Productividad |
 |-------------|----------|-------|--------|---------|---------------|
-| 📅 **Agenda Evaluaciones Académicas** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 📅 **Agenda Evaluaciones Académicas** | Python | <!-- AGENDA_HOURS --> | 3688 linhas | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -457,9 +457,9 @@ Disponible en versión de prueba de 7 días, tras los cuales puede adquirirse en
 
 <div align="center">
 
-### 🕒 Temps de travail total : <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Nombre total de lignes écrites : <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Nombre total de commits : <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Temps de travail total : 16967.3 horas
+### 📝 Nombre total de lignes écrites : 274810 linhas
+### 💻 Nombre total de commits : 145 commits
 
 </div>
 
@@ -467,7 +467,7 @@ Disponible en versión de prueba de 7 días, tras los cuales puede adquirirse en
 
 | Répertoire | Langage | Heures | Lignes | Commits | Productivité |
 |------------|---------|--------|--------|---------|--------------|
-| 📅 **Agenda des Évaluations Académiques** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 📅 **Agenda des Évaluations Académiques** | Python | <!-- AGENDA_HOURS --> | 3688 linhas | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -599,9 +599,9 @@ Disponible en version d'essai de 7 jours, puis achetable sur la [Microsoft Store
 
 <div align="center">
 
-### 🕒 Tempo Totale di Lavoro: <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Totale Righe Scritte: <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Totale Commit: <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Tempo Totale di Lavoro: 16967.3 horas
+### 📝 Totale Righe Scritte: 274810 linhas
+### 💻 Totale Commit: 145 commits
 
 </div>
 
@@ -609,7 +609,7 @@ Disponible en version d'essai de 7 jours, puis achetable sur la [Microsoft Store
 
 | Repository | Linguaggio | Ore | Righe | Commit | Produttività |
 |------------|------------|-----|-------|--------|--------------|
-| 📅 **Agenda Valutazioni Accademiche** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 📅 **Agenda Valutazioni Accademiche** | Python | <!-- AGENDA_HOURS --> | 3688 linhas | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
@@ -741,9 +741,9 @@ Disponibile in versione di prova per 7 giorni, dopo i quali può essere acquista
 
 <div align="center">
 
-### 🕒 Gesamtarbeitszeit: <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Gesamtzahl der geschriebenen Zeilen: <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Gesamtzahl der Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Gesamtarbeitszeit: 16967.3 horas
+### 📝 Gesamtzahl der geschriebenen Zeilen: 274810 linhas
+### 💻 Gesamtzahl der Commits: 145 commits
 
 </div>
 
@@ -751,7 +751,7 @@ Disponibile in versione di prova per 7 giorni, dopo i quali può essere acquista
 
 | Repository | Sprache | Stunden | Zeilen | Commits | Produktivität |
 |------------|--------|---------|--------|---------|---------------|
-| 📅 **Akademische Bewertungsagenda** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 📅 **Akademische Bewertungsagenda** | Python | <!-- AGENDA_HOURS --> | 3688 linhas | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
 | 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
 | 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
 | 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
