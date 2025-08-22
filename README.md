@@ -31,9 +31,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total de Linhas Escritas: <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total de Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total de Tempo Trabalhado: 16971.9 horas
+### 📝 Total de Linhas Escritas: 274912 linhas
+### 💻 Total de Commits: 142 commits
 
 </div>
 
@@ -41,24 +41,24 @@
 
 | Repositório | Linguagem | Horas | Linhas | Commits | Produtividade |
 |-------------|-----------|-------|--------|---------|---------------|
-| 📅 **Agenda Avaliações Acadêmicas** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
-| 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
-| 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
-| 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
-| 🗳️ **Programa Urna Eletrônica** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
-| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
-| 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
-| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
-| 📊 **Dashboard Taipy** | Python | <!-- TAIPY_HOURS --> | <!-- TAIPY_LINES --> | <!-- TAIPY_COMMITS --> | <!-- TAIPY_PROD --> |
-| 🗂️ **File Manager** | C++ | <!-- FILEMANAGER_HOURS --> | <!-- FILEMANAGER_LINES --> | <!-- FILEMANAGER_COMMITS --> | <!-- FILEMANAGER_PROD --> |
-| 🧮 **Programa Matriz NM** | C++ | <!-- MATRIZNM_HOURS --> | <!-- MATRIZNM_LINES --> | <!-- MATRIZNM_COMMITS --> | <!-- MATRIZNM_PROD --> |
-| 🧮 **Programa Todos Tipos Matrizes** | C++ | <!-- MATRIZES_HOURS --> | <!-- MATRIZES_LINES --> | <!-- MATRIZES_COMMITS --> | <!-- MATRIZES_PROD --> |
-| ➗ **Programa Quociente Resto** | C++ | <!-- QUOCRESTO_HOURS --> | <!-- QUOCRESTO_LINES --> | <!-- QUOCRESTO_COMMITS --> | <!-- QUOCRESTO_PROD --> |
-| 🔢 **Programa Múltiplo** | C++ | <!-- MULTIPLO_HOURS --> | <!-- MULTIPLO_LINES --> | <!-- MULTIPLO_COMMITS --> | <!-- MULTIPLO_PROD --> |
-| 📏 **Programa Média Aritmética** | C++ | <!-- MEDIAARIT_HOURS --> | <!-- MEDIAARIT_LINES --> | <!-- MEDIAARIT_COMMITS --> | <!-- MEDIAARIT_PROD --> |
-| 🔝 **Programa Determinar Maior Inteiro** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
-| 📄 **README do Perfil** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+| 📅 **Agenda Avaliações Acadêmicas** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
+| 🗜️ **Manager Compression PySide6** | Python | 384.7h | 4842 linhas | 20 commits | 12.59 l/h |
+| 🗜️ **Manager Compression PyQt6** | Python | 451.5h | 5210 linhas | 14 commits | 11.54 l/h |
+| 📋 **Eisenhower Organizing** | Python | 39.0h | 702 linhas | 4 commits | 18.00 l/h |
+| 🗳️ **Programa Urna Eletrônica** | C++ | 1488.8h | 22332 linhas | 6 commits | 15.00 l/h |
+| 📊 **Dashboard Streamlit Management** | Python | 128.7h | 2340 linhas | 8 commits | 18.18 l/h |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8h | 2232 linhas | 3 commits | 18.18 l/h |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 149.2h | 2712 linhas | 1 commits | 18.18 l/h |
+| 📊 **Dashboard Taipy** | Python | 12113.4h | 201890 linhas | 2 commits | 16.67 l/h |
+| 🗂️ **File Manager** | C++ | 1069.9h | 16048 linhas | 5 commits | 15.00 l/h |
+| 🧮 **Programa Matriz NM** | C++ | 18.1h | 326 linhas | 2 commits | 18.01 l/h |
+| 🧮 **Programa Todos Tipos Matrizes** | C++ | 24.8h | 446 linhas | 2 commits | 17.98 l/h |
+| ➗ **Programa Quociente Resto** | C++ | 15.6h | 280 linhas | 2 commits | 17.95 l/h |
+| 🔢 **Programa Múltiplo** | C++ | 19.0h | 342 linhas | 2 commits | 18.00 l/h |
+| 📏 **Programa Média Aritmética** | C++ | 42.8h | 770 linhas | 2 commits | 17.99 l/h |
+| 🔝 **Programa Determinar Maior Inteiro** | C++ | 16.7h | 300 linhas | 2 commits | 17.96 l/h |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 590.9h | 8864 linhas | 20 commits | 15.00 l/h |
+| 📄 **README do Perfil** | Markdown | 70.6h | 1588 linhas | 37 commits | 22.49 l/h |
 
 ## 🌻 Sobre Mim 🌻
 
@@ -173,9 +173,9 @@ Disponível em versão de teste por 7 dias, após o qual pode ser adquirida pela
 
 <div align="center">
 
-### 🕒 Total Working Time: <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total Lines Written: <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total Working Time: 16971.9 horas
+### 📝 Total Lines Written: 274912 linhas
+### 💻 Total Commits: 142 commits
 
 </div>
 
@@ -183,24 +183,24 @@ Disponível em versão de teste por 7 dias, após o qual pode ser adquirida pela
 
 | Repository | Language | Hours | Lines | Commits | Productivity |
 |------------|----------|-------|-------|---------|--------------|
-| 📅 **Academic Evaluations Scheduler** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
-| 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
-| 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
-| 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
-| 🗳️ **Electronic Ballot Program** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
-| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
-| 📈 **Pareto/ABC Streamlit Dashboard** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
-| 🖥️ **TkInter Pareto/ABC Dashboard** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
-| 📊 **Taipy Dashboard** | Python | <!-- TAIPY_HOURS --> | <!-- TAIPY_LINES --> | <!-- TAIPY_COMMITS --> | <!-- TAIPY_PROD --> |
-| 🗂️ **File Manager** | C++ | <!-- FILEMANAGER_HOURS --> | <!-- FILEMANAGER_LINES --> | <!-- FILEMANAGER_COMMITS --> | <!-- FILEMANAGER_PROD --> |
-| 🧮 **Matrix NM Program** | C++ | <!-- MATRIZNM_HOURS --> | <!-- MATRIZNM_LINES --> | <!-- MATRIZNM_COMMITS --> | <!-- MATRIZNM_PROD --> |
-| 🧮 **All Types of Matrices Program** | C++ | <!-- MATRIZES_HOURS --> | <!-- MATRIZES_LINES --> | <!-- MATRIZES_COMMITS --> | <!-- MATRIZES_PROD --> |
-| ➗ **Quotient and Remainder Program** | C++ | <!-- QUOCRESTO_HOURS --> | <!-- QUOCRESTO_LINES --> | <!-- QUOCRESTO_COMMITS --> | <!-- QUOCRESTO_PROD --> |
-| 🔢 **Multiple Program** | C++ | <!-- MULTIPLO_HOURS --> | <!-- MULTIPLO_LINES --> | <!-- MULTIPLO_COMMITS --> | <!-- MULTIPLO_PROD --> |
-| 📏 **Arithmetic Mean Program** | C++ | <!-- MEDIAARIT_HOURS --> | <!-- MEDIAARIT_LINES --> | <!-- MEDIAARIT_COMMITS --> | <!-- MEDIAARIT_PROD --> |
-| 🔝 **Find Largest Integer Program** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
-| 📄 **Profile README** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+| 📅 **Academic Evaluations Scheduler** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
+| 🗜️ **Manager Compression PySide6** | Python | 384.7h | 4842 linhas | 20 commits | 12.59 l/h |
+| 🗜️ **Manager Compression PyQt6** | Python | 451.5h | 5210 linhas | 14 commits | 11.54 l/h |
+| 📋 **Eisenhower Organizing** | Python | 39.0h | 702 linhas | 4 commits | 18.00 l/h |
+| 🗳️ **Electronic Ballot Program** | C++ | 1488.8h | 22332 linhas | 6 commits | 15.00 l/h |
+| 📊 **Dashboard Streamlit Management** | Python | 128.7h | 2340 linhas | 8 commits | 18.18 l/h |
+| 📈 **Pareto/ABC Streamlit Dashboard** | Python | 122.8h | 2232 linhas | 3 commits | 18.18 l/h |
+| 🖥️ **TkInter Pareto/ABC Dashboard** | Python | 149.2h | 2712 linhas | 1 commits | 18.18 l/h |
+| 📊 **Taipy Dashboard** | Python | 12113.4h | 201890 linhas | 2 commits | 16.67 l/h |
+| 🗂️ **File Manager** | C++ | 1069.9h | 16048 linhas | 5 commits | 15.00 l/h |
+| 🧮 **Matrix NM Program** | C++ | 18.1h | 326 linhas | 2 commits | 18.01 l/h |
+| 🧮 **All Types of Matrices Program** | C++ | 24.8h | 446 linhas | 2 commits | 17.98 l/h |
+| ➗ **Quotient and Remainder Program** | C++ | 15.6h | 280 linhas | 2 commits | 17.95 l/h |
+| 🔢 **Multiple Program** | C++ | 19.0h | 342 linhas | 2 commits | 18.00 l/h |
+| 📏 **Arithmetic Mean Program** | C++ | 42.8h | 770 linhas | 2 commits | 17.99 l/h |
+| 🔝 **Find Largest Integer Program** | C++ | 16.7h | 300 linhas | 2 commits | 17.96 l/h |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 590.9h | 8864 linhas | 20 commits | 15.00 l/h |
+| 📄 **Profile README** | Markdown | 70.6h | 1588 linhas | 37 commits | 22.49 l/h |
 
 ## 🌻 About Me 🌻
 
@@ -315,9 +315,9 @@ Available as a 7-day trial version, after which it can be purchased via the [Mic
 
 <div align="center">
 
-### 🕒 Total de Tiempo Trabajado: <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total de Líneas Escritas: <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total de Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total de Tiempo Trabajado: 16971.9 horas
+### 📝 Total de Líneas Escritas: 274912 linhas
+### 💻 Total de Commits: 142 commits
 
 </div>
 
@@ -325,24 +325,24 @@ Available as a 7-day trial version, after which it can be purchased via the [Mic
 
 | Repositorio | Lenguaje | Horas | Líneas | Commits | Productividad |
 |-------------|----------|-------|--------|---------|---------------|
-| 📅 **Agenda Evaluaciones Académicas** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
-| 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
-| 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
-| 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
-| 🗳️ **Programa Urna Electrónica** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
-| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
-| 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
-| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
-| 📊 **Dashboard Taipy** | Python | <!-- TAIPY_HOURS --> | <!-- TAIPY_LINES --> | <!-- TAIPY_COMMITS --> | <!-- TAIPY_PROD --> |
-| 🗂️ **File Manager** | C++ | <!-- FILEMANAGER_HOURS --> | <!-- FILEMANAGER_LINES --> | <!-- FILEMANAGER_COMMITS --> | <!-- FILEMANAGER_PROD --> |
-| 🧮 **Programa Matriz NM** | C++ | <!-- MATRIZNM_HOURS --> | <!-- MATRIZNM_LINES --> | <!-- MATRIZNM_COMMITS --> | <!-- MATRIZNM_PROD --> |
-| 🧮 **Programa Todos Tipos de Matrices** | C++ | <!-- MATRIZES_HOURS --> | <!-- MATRIZES_LINES --> | <!-- MATRIZES_COMMITS --> | <!-- MATRIZES_PROD --> |
-| ➗ **Programa Cociente y Resto** | C++ | <!-- QUOCRESTO_HOURS --> | <!-- QUOCRESTO_LINES --> | <!-- QUOCRESTO_COMMITS --> | <!-- QUOCRESTO_PROD --> |
-| 🔢 **Programa Múltiplo** | C++ | <!-- MULTIPLO_HOURS --> | <!-- MULTIPLO_LINES --> | <!-- MULTIPLO_COMMITS --> | <!-- MULTIPLO_PROD --> |
-| 📏 **Programa Media Aritmética** | C++ | <!-- MEDIAARIT_HOURS --> | <!-- MEDIAARIT_LINES --> | <!-- MEDIAARIT_COMMITS --> | <!-- MEDIAARIT_PROD --> |
-| 🔝 **Programa Determinar el Mayor Entero** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
-| 📄 **README del Perfil** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+| 📅 **Agenda Evaluaciones Académicas** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
+| 🗜️ **Manager Compression PySide6** | Python | 384.7h | 4842 linhas | 20 commits | 12.59 l/h |
+| 🗜️ **Manager Compression PyQt6** | Python | 451.5h | 5210 linhas | 14 commits | 11.54 l/h |
+| 📋 **Eisenhower Organizing** | Python | 39.0h | 702 linhas | 4 commits | 18.00 l/h |
+| 🗳️ **Programa Urna Electrónica** | C++ | 1488.8h | 22332 linhas | 6 commits | 15.00 l/h |
+| 📊 **Dashboard Streamlit Management** | Python | 128.7h | 2340 linhas | 8 commits | 18.18 l/h |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8h | 2232 linhas | 3 commits | 18.18 l/h |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 149.2h | 2712 linhas | 1 commits | 18.18 l/h |
+| 📊 **Dashboard Taipy** | Python | 12113.4h | 201890 linhas | 2 commits | 16.67 l/h |
+| 🗂️ **File Manager** | C++ | 1069.9h | 16048 linhas | 5 commits | 15.00 l/h |
+| 🧮 **Programa Matriz NM** | C++ | 18.1h | 326 linhas | 2 commits | 18.01 l/h |
+| 🧮 **Programa Todos Tipos de Matrices** | C++ | 24.8h | 446 linhas | 2 commits | 17.98 l/h |
+| ➗ **Programa Cociente y Resto** | C++ | 15.6h | 280 linhas | 2 commits | 17.95 l/h |
+| 🔢 **Programa Múltiplo** | C++ | 19.0h | 342 linhas | 2 commits | 18.00 l/h |
+| 📏 **Programa Media Aritmética** | C++ | 42.8h | 770 linhas | 2 commits | 17.99 l/h |
+| 🔝 **Programa Determinar el Mayor Entero** | C++ | 16.7h | 300 linhas | 2 commits | 17.96 l/h |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 590.9h | 8864 linhas | 20 commits | 15.00 l/h |
+| 📄 **README del Perfil** | Markdown | 70.6h | 1588 linhas | 37 commits | 22.49 l/h |
 
 ## 🌻 Sobre Mí 🌻
 
@@ -457,9 +457,9 @@ Disponible en versión de prueba de 7 días, tras los cuales puede adquirirse en
 
 <div align="center">
 
-### 🕒 Temps de travail total : <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Nombre total de lignes écrites : <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Nombre total de commits : <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Temps de travail total : 16971.9 horas
+### 📝 Nombre total de lignes écrites : 274912 linhas
+### 💻 Nombre total de commits : 142 commits
 
 </div>
 
@@ -467,24 +467,24 @@ Disponible en versión de prueba de 7 días, tras los cuales puede adquirirse en
 
 | Répertoire | Langage | Heures | Lignes | Commits | Productivité |
 |------------|---------|--------|--------|---------|--------------|
-| 📅 **Agenda des Évaluations Académiques** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
-| 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
-| 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
-| 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
-| 🗳️ **Programme Urne Électronique** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
-| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
-| 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
-| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
-| 📊 **Dashboard Taipy** | Python | <!-- TAIPY_HOURS --> | <!-- TAIPY_LINES --> | <!-- TAIPY_COMMITS --> | <!-- TAIPY_PROD --> |
-| 🗂️ **File Manager** | C++ | <!-- FILEMANAGER_HOURS --> | <!-- FILEMANAGER_LINES --> | <!-- FILEMANAGER_COMMITS --> | <!-- FILEMANAGER_PROD --> |
-| 🧮 **Programme Matrice NM** | C++ | <!-- MATRIZNM_HOURS --> | <!-- MATRIZNM_LINES --> | <!-- MATRIZNM_COMMITS --> | <!-- MATRIZNM_PROD --> |
-| 🧮 **Programme Toutes Types de Matrices** | C++ | <!-- MATRIZES_HOURS --> | <!-- MATRIZES_LINES --> | <!-- MATRIZES_COMMITS --> | <!-- MATRIZES_PROD --> |
-| ➗ **Programme Quotient et Reste** | C++ | <!-- QUOCRESTO_HOURS --> | <!-- QUOCRESTO_LINES --> | <!-- QUOCRESTO_COMMITS --> | <!-- QUOCRESTO_PROD --> |
-| 🔢 **Programme Multiple** | C++ | <!-- MULTIPLO_HOURS --> | <!-- MULTIPLO_LINES --> | <!-- MULTIPLO_COMMITS --> | <!-- MULTIPLO_PROD --> |
-| 📏 **Programme Moyenne Arithmétique** | C++ | <!-- MEDIAARIT_HOURS --> | <!-- MEDIAARIT_LINES --> | <!-- MEDIAARIT_COMMITS --> | <!-- MEDIAARIT_PROD --> |
-| 🔝 **Programme Déterminer le Plus Grand Entier** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
-| 📄 **README du Profil** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+| 📅 **Agenda des Évaluations Académiques** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
+| 🗜️ **Manager Compression PySide6** | Python | 384.7h | 4842 linhas | 20 commits | 12.59 l/h |
+| 🗜️ **Manager Compression PyQt6** | Python | 451.5h | 5210 linhas | 14 commits | 11.54 l/h |
+| 📋 **Eisenhower Organizing** | Python | 39.0h | 702 linhas | 4 commits | 18.00 l/h |
+| 🗳️ **Programme Urne Électronique** | C++ | 1488.8h | 22332 linhas | 6 commits | 15.00 l/h |
+| 📊 **Dashboard Streamlit Management** | Python | 128.7h | 2340 linhas | 8 commits | 18.18 l/h |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8h | 2232 linhas | 3 commits | 18.18 l/h |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 149.2h | 2712 linhas | 1 commits | 18.18 l/h |
+| 📊 **Dashboard Taipy** | Python | 12113.4h | 201890 linhas | 2 commits | 16.67 l/h |
+| 🗂️ **File Manager** | C++ | 1069.9h | 16048 linhas | 5 commits | 15.00 l/h |
+| 🧮 **Programme Matrice NM** | C++ | 18.1h | 326 linhas | 2 commits | 18.01 l/h |
+| 🧮 **Programme Toutes Types de Matrices** | C++ | 24.8h | 446 linhas | 2 commits | 17.98 l/h |
+| ➗ **Programme Quotient et Reste** | C++ | 15.6h | 280 linhas | 2 commits | 17.95 l/h |
+| 🔢 **Programme Multiple** | C++ | 19.0h | 342 linhas | 2 commits | 18.00 l/h |
+| 📏 **Programme Moyenne Arithmétique** | C++ | 42.8h | 770 linhas | 2 commits | 17.99 l/h |
+| 🔝 **Programme Déterminer le Plus Grand Entier** | C++ | 16.7h | 300 linhas | 2 commits | 17.96 l/h |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 590.9h | 8864 linhas | 20 commits | 15.00 l/h |
+| 📄 **README du Profil** | Markdown | 70.6h | 1588 linhas | 37 commits | 22.49 l/h |
 
 ## 🌻 À propos de moi 🌻
 
@@ -599,9 +599,9 @@ Disponible en version d'essai de 7 jours, puis achetable sur la [Microsoft Store
 
 <div align="center">
 
-### 🕒 Tempo Totale di Lavoro: <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Totale Righe Scritte: <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Totale Commit: <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Tempo Totale di Lavoro: 16971.9 horas
+### 📝 Totale Righe Scritte: 274912 linhas
+### 💻 Totale Commit: 142 commits
 
 </div>
 
@@ -609,24 +609,24 @@ Disponible en version d'essai de 7 jours, puis achetable sur la [Microsoft Store
 
 | Repository | Linguaggio | Ore | Righe | Commit | Produttività |
 |------------|------------|-----|-------|--------|--------------|
-| 📅 **Agenda Valutazioni Accademiche** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
-| 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
-| 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
-| 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
-| 🗳️ **Programma Urna Elettronica** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
-| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
-| 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
-| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
-| 📊 **Dashboard Taipy** | Python | <!-- TAIPY_HOURS --> | <!-- TAIPY_LINES --> | <!-- TAIPY_COMMITS --> | <!-- TAIPY_PROD --> |
-| 🗂️ **File Manager** | C++ | <!-- FILEMANAGER_HOURS --> | <!-- FILEMANAGER_LINES --> | <!-- FILEMANAGER_COMMITS --> | <!-- FILEMANAGER_PROD --> |
-| 🧮 **Programma Matrice NM** | C++ | <!-- MATRIZNM_HOURS --> | <!-- MATRIZNM_LINES --> | <!-- MATRIZNM_COMMITS --> | <!-- MATRIZNM_PROD --> |
-| 🧮 **Programma Tutti Tipi di Matrici** | C++ | <!-- MATRIZES_HOURS --> | <!-- MATRIZES_LINES --> | <!-- MATRIZES_COMMITS --> | <!-- MATRIZES_PROD --> |
-| ➗ **Programma Quoziente e Resto** | C++ | <!-- QUOCRESTO_HOURS --> | <!-- QUOCRESTO_LINES --> | <!-- QUOCRESTO_COMMITS --> | <!-- QUOCRESTO_PROD --> |
-| 🔢 **Programma Multiplo** | C++ | <!-- MULTIPLO_HOURS --> | <!-- MULTIPLO_LINES --> | <!-- MULTIPLO_COMMITS --> | <!-- MULTIPLO_PROD --> |
-| 📏 **Programma Media Aritmetica** | C++ | <!-- MEDIAARIT_HOURS --> | <!-- MEDIAARIT_LINES --> | <!-- MEDIAARIT_COMMITS --> | <!-- MEDIAARIT_PROD --> |
-| 🔝 **Programma Determina Maggiore Intero** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
-| 📄 **README del Profilo** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+| 📅 **Agenda Valutazioni Accademiche** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
+| 🗜️ **Manager Compression PySide6** | Python | 384.7h | 4842 linhas | 20 commits | 12.59 l/h |
+| 🗜️ **Manager Compression PyQt6** | Python | 451.5h | 5210 linhas | 14 commits | 11.54 l/h |
+| 📋 **Eisenhower Organizing** | Python | 39.0h | 702 linhas | 4 commits | 18.00 l/h |
+| 🗳️ **Programma Urna Elettronica** | C++ | 1488.8h | 22332 linhas | 6 commits | 15.00 l/h |
+| 📊 **Dashboard Streamlit Management** | Python | 128.7h | 2340 linhas | 8 commits | 18.18 l/h |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8h | 2232 linhas | 3 commits | 18.18 l/h |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 149.2h | 2712 linhas | 1 commits | 18.18 l/h |
+| 📊 **Dashboard Taipy** | Python | 12113.4h | 201890 linhas | 2 commits | 16.67 l/h |
+| 🗂️ **File Manager** | C++ | 1069.9h | 16048 linhas | 5 commits | 15.00 l/h |
+| 🧮 **Programma Matrice NM** | C++ | 18.1h | 326 linhas | 2 commits | 18.01 l/h |
+| 🧮 **Programma Tutti Tipi di Matrici** | C++ | 24.8h | 446 linhas | 2 commits | 17.98 l/h |
+| ➗ **Programma Quoziente e Resto** | C++ | 15.6h | 280 linhas | 2 commits | 17.95 l/h |
+| 🔢 **Programma Multiplo** | C++ | 19.0h | 342 linhas | 2 commits | 18.00 l/h |
+| 📏 **Programma Media Aritmetica** | C++ | 42.8h | 770 linhas | 2 commits | 17.99 l/h |
+| 🔝 **Programma Determina Maggiore Intero** | C++ | 16.7h | 300 linhas | 2 commits | 17.96 l/h |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 590.9h | 8864 linhas | 20 commits | 15.00 l/h |
+| 📄 **README del Profilo** | Markdown | 70.6h | 1588 linhas | 37 commits | 22.49 l/h |
 
 ## 🌻 Su di Me 🌻
 
@@ -741,9 +741,9 @@ Disponibile in versione di prova per 7 giorni, dopo i quali può essere acquista
 
 <div align="center">
 
-### 🕒 Gesamtarbeitszeit: <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Gesamtzahl der geschriebenen Zeilen: <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Gesamtzahl der Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Gesamtarbeitszeit: 16971.9 horas
+### 📝 Gesamtzahl der geschriebenen Zeilen: 274912 linhas
+### 💻 Gesamtzahl der Commits: 142 commits
 
 </div>
 
@@ -751,24 +751,24 @@ Disponibile in versione di prova per 7 giorni, dopo i quali può essere acquista
 
 | Repository | Sprache | Stunden | Zeilen | Commits | Produktivität |
 |------------|--------|---------|--------|---------|---------------|
-| 📅 **Akademische Bewertungsagenda** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
-| 🗜️ **Manager Compression PySide6** | Python | <!-- PYSIDE6_HOURS --> | <!-- PYSIDE6_LINES --> | <!-- PYSIDE6_COMMITS --> | <!-- PYSIDE6_PROD --> |
-| 🗜️ **Manager Compression PyQt6** | Python | <!-- PYQT6_HOURS --> | <!-- PYQT6_LINES --> | <!-- PYQT6_COMMITS --> | <!-- PYQT6_PROD --> |
-| 📋 **Eisenhower Organizing** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
-| 🗳️ **Elektronisches Wahlprogramm** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
-| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
-| 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
-| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
-| 📊 **Dashboard Taipy** | Python | <!-- TAIPY_HOURS --> | <!-- TAIPY_LINES --> | <!-- TAIPY_COMMITS --> | <!-- TAIPY_PROD --> |
-| 🗂️ **File Manager** | C++ | <!-- FILEMANAGER_HOURS --> | <!-- FILEMANAGER_LINES --> | <!-- FILEMANAGER_COMMITS --> | <!-- FILEMANAGER_PROD --> |
-| 🧮 **Matrix NM Programm** | C++ | <!-- MATRIZNM_HOURS --> | <!-- MATRIZNM_LINES --> | <!-- MATRIZNM_COMMITS --> | <!-- MATRIZNM_PROD --> |
-| 🧮 **Alle Matrizenarten Programm** | C++ | <!-- MATRIZES_HOURS --> | <!-- MATRIZES_LINES --> | <!-- MATRIZES_COMMITS --> | <!-- MATRIZES_PROD --> |
-| ➗ **Quotienten und Rest Programm** | C++ | <!-- QUOCRESTO_HOURS --> | <!-- QUOCRESTO_LINES --> | <!-- QUOCRESTO_COMMITS --> | <!-- QUOCRESTO_PROD --> |
-| 🔢 **Multiplikationsprogramm** | C++ | <!-- MULTIPLO_HOURS --> | <!-- MULTIPLO_LINES --> | <!-- MULTIPLO_COMMITS --> | <!-- MULTIPLO_PROD --> |
-| 📏 **Arithmetisches Mittel Programm** | C++ | <!-- MEDIAARIT_HOURS --> | <!-- MEDIAARIT_LINES --> | <!-- MEDIAARIT_COMMITS --> | <!-- MEDIAARIT_PROD --> |
-| 🔝 **Bestimme das größte Ganze Programm** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
-| 📄 **Profil-README** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+| 📅 **Akademische Bewertungsagenda** | Python | 225.4h | 3688 linhas | 10 commits | 16.36 l/h |
+| 🗜️ **Manager Compression PySide6** | Python | 384.7h | 4842 linhas | 20 commits | 12.59 l/h |
+| 🗜️ **Manager Compression PyQt6** | Python | 451.5h | 5210 linhas | 14 commits | 11.54 l/h |
+| 📋 **Eisenhower Organizing** | Python | 39.0h | 702 linhas | 4 commits | 18.00 l/h |
+| 🗳️ **Elektronisches Wahlprogramm** | C++ | 1488.8h | 22332 linhas | 6 commits | 15.00 l/h |
+| 📊 **Dashboard Streamlit Management** | Python | 128.7h | 2340 linhas | 8 commits | 18.18 l/h |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8h | 2232 linhas | 3 commits | 18.18 l/h |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 149.2h | 2712 linhas | 1 commits | 18.18 l/h |
+| 📊 **Dashboard Taipy** | Python | 12113.4h | 201890 linhas | 2 commits | 16.67 l/h |
+| 🗂️ **File Manager** | C++ | 1069.9h | 16048 linhas | 5 commits | 15.00 l/h |
+| 🧮 **Matrix NM Programm** | C++ | 18.1h | 326 linhas | 2 commits | 18.01 l/h |
+| 🧮 **Alle Matrizenarten Programm** | C++ | 24.8h | 446 linhas | 2 commits | 17.98 l/h |
+| ➗ **Quotienten und Rest Programm** | C++ | 15.6h | 280 linhas | 2 commits | 17.95 l/h |
+| 🔢 **Multiplikationsprogramm** | C++ | 19.0h | 342 linhas | 2 commits | 18.00 l/h |
+| 📏 **Arithmetisches Mittel Programm** | C++ | 42.8h | 770 linhas | 2 commits | 17.99 l/h |
+| 🔝 **Bestimme das größte Ganze Programm** | C++ | 16.7h | 300 linhas | 2 commits | 17.96 l/h |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 590.9h | 8864 linhas | 20 commits | 15.00 l/h |
+| 📄 **Profil-README** | Markdown | 70.6h | 1588 linhas | 37 commits | 22.49 l/h |
 
 ## 🌻 Über mich 🌻
 
