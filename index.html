@@ -150,6 +150,25 @@
       dede: "📂 Projekte/Repositories"
     };
 
+    // Textos da seção de projetos
+    const PROJECTS_NOTE_T = {
+      ptbr: "Lista de projetos e repositórios públicos de fernandoncidade.",
+      enus: "List of public projects and repositories by fernandoncidade.",
+      eses: "Lista de proyectos y repositorios públicos de fernandoncidade.",
+      frfr: "Liste des projets et dépôts publics de fernandoncidade.",
+      itit: "Elenco dei progetti e repository pubblici di fernandoncidade.",
+      dede: "Liste öffentlicher Projekte und Repositories von fernandoncidade."
+    };
+
+    const PROJECTS_CTA_T = {
+      ptbr: "Abrir repositório",
+      enus: "Open repository",
+      eses: "Abrir repositorio",
+      frfr: "Ouvrir le dépôt",
+      itit: "Apri repository",
+      dede: "Repository öffnen"
+    };
+
     function activateLang(idObj) {
       LANGS.forEach(l => {
         document.getElementById(l.section).classList.remove('active');
@@ -170,6 +189,7 @@
       updateLastCommitBadge();
       updateStatsLocale();
       updateProjectsTabLabel();
+      updateProjectsSectionTexts();
 
       const top = document.querySelector('.languages');
       if (top) window.scrollTo({ top: top.offsetTop - 16, behavior: 'smooth' });
@@ -226,6 +246,18 @@
       btn.title = t.replace("📂 ", "");
     }
 
+    // Atualiza textos da seção de projetos (nota e CTAs)
+    function updateProjectsSectionTexts() {
+      const sec = document.getElementById('sec-projects');
+      if (!sec) return;
+      const note = sec.querySelector('.note');
+      if (note) note.textContent = PROJECTS_NOTE_T[CURRENT_LANG] || PROJECTS_NOTE_T.ptbr;
+
+      const ctas = sec.querySelectorAll('a.cta');
+      const label = PROJECTS_CTA_T[CURRENT_LANG] || PROJECTS_CTA_T.ptbr;
+      ctas.forEach(a => { a.textContent = label; });
+    }
+
     // Nova função: mostrar aba de projetos
     function showProjects() {
       // Desativa todas as seções/btns de idioma
@@ -240,6 +272,9 @@
       const projBtn = document.getElementById('btn-projects');
       if (projSec) projSec.classList.add('active');
       if (projBtn) projBtn.classList.add('active');
+
+      updateProjectsTabLabel();      // garante rótulo do botão correto
+      updateProjectsSectionTexts();  // traduz nota e CTAs
 
       const top = document.querySelector('.languages');
       if (top) window.scrollTo({ top: top.offsetTop - 16, behavior: 'smooth' });
