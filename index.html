@@ -140,54 +140,6 @@
       dede: { stats:"de",    streak:"de",    graph:"de",    langs:"de" }
     };
 
-    // i18n da aba Projetos/Repositórios
-    const PROJ_I18N = {
-      ptbr: {
-        btn: "📂 Projetos/Repositórios",
-        note: "Lista de projetos e repositórios públicos de fernandoncidade.",
-        open: "Abrir repositório"
-      },
-      enus: {
-        btn: "📂 Projects/Repositories",
-        note: "List of public projects and repositories by fernandoncidade.",
-        open: "Open repository"
-      },
-      eses: {
-        btn: "📂 Proyectos/Repositorios",
-        note: "Lista de projetos e repositorios públicos de fernandoncidade.",
-        open: "Abrir repositorio"
-      },
-      frfr: {
-        btn: "📂 Projets/Dépôts",
-        note: "Liste des projets et dépôts publics de fernandoncidade.",
-        open: "Ouvrir le dépôt"
-      },
-      itit: {
-        btn: "📂 Progetti/Repository",
-        note: "Elenco dei progetti e repository pubblici di fernandoncidade.",
-        open: "Apri repository"
-      },
-      dede: {
-        btn: "📂 Projekte/Repositories",
-        note: "Liste der öffentlichen Projekte und Repositories von fernandoncidade.",
-        open: "Repository öffnen"
-      }
-    };
-
-    function updateProjectsTexts() {
-      const t = PROJ_I18N[CURRENT_LANG] || PROJ_I18N.ptbr;
-      const projBtn = document.getElementById('btn-projects');
-      if (projBtn) projBtn.textContent = t.btn;
-
-      const projSec = document.getElementById('sec-projects');
-      if (!projSec) return;
-
-      const note = projSec.querySelector('.note');
-      if (note) note.textContent = t.note;
-
-      projSec.querySelectorAll('a.cta').forEach(a => { a.textContent = t.open; });
-    }
-
     function activateLang(idObj) {
       LANGS.forEach(l => {
         document.getElementById(l.section).classList.remove('active');
@@ -207,10 +159,51 @@
       updateHeaderTagline();
       updateLastCommitBadge();
       updateStatsLocale();
-      updateProjectsTexts(); // << traduz botão/aba de projetos
 
       const top = document.querySelector('.languages');
       if (top) window.scrollTo({ top: top.offsetTop - 16, behavior: 'smooth' });
+    }
+
+    function updateHeaderTagline() {
+      const t = HEADER_T[CURRENT_LANG] || HEADER_T.ptbr;
+      const el = document.getElementById('tagline');
+      if (el) el.innerText = t;
+    }
+
+    function updateLastCommitBadge() {
+      const info = BADGE_LAST_COMMIT[CURRENT_LANG] || BADGE_LAST_COMMIT.ptbr;
+      const img = document.getElementById('badge-last-commit');
+      if (!img) return;
+      img.src = "https://img.shields.io/github/last-commit/fernandoncidade/fernandoncidade?label=" + info.label + "&style=flat-square";
+      img.alt = info.alt;
+    }
+
+    function updateStatsLocale() {
+      const l = LOCALES[CURRENT_LANG] || LOCALES.ptbr;
+      const section = document.querySelector('.lang-section.active');
+      if (!section) return;
+
+      const stats = section.querySelector('.gh-stats');
+      if (stats) stats.src = `https://github-readme-stats.vercel.app/api?username=fernandoncidade&theme=blue-green&show_icons=True&locale=${l.stats}`;
+
+      const streak = section.querySelector('.gh-streak');
+      if (streak) streak.src = `https://streak-stats.demolab.com?user=fernandoncidade&theme=microsoft-dark&locale=${l.streak}&date_format=j%20M%5B%20Y%5D`;
+
+      const graph = section.querySelector('.gh-activity');
+      const titles = {
+        ptbr: "Gráfico%20de%20Atividade%20de%20fernandoncidade",
+        enus: "fernandoncidade's%20Activity%20Graph",
+        eses: "Gráfico%20de%20Actividad%20de%20fernandoncidade",
+        frfr: "Graphique%20d'activité%20de%20fernandoncidade",
+        itit: "Grafico%20di%20Attività%20di%20fernandoncidade",
+        dede: "Aktivitätsdiagramm%20von%20fernandoncidade"
+      };
+      if (graph) graph.src =
+        `https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&area=true&custom_title=${titles[CURRENT_LANG] || titles.ptbr}&locale=${l.graph}`;
+
+      const langs = section.querySelector('.top-langs');
+      if (langs) langs.src =
+        `https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade&layout=compact&theme=merko&locale=${l.langs}`;
     }
 
     // Nova função: mostrar aba de projetos
@@ -228,8 +221,6 @@
       if (projSec) projSec.classList.add('active');
       if (projBtn) projBtn.classList.add('active');
 
-      updateProjectsTexts(); // << garante textos corretos ao abrir a aba
-
       const top = document.querySelector('.languages');
       if (top) window.scrollTo({ top: top.offsetTop - 16, behavior: 'smooth' });
     }
@@ -246,7 +237,6 @@
 
       // ativar padrão
       activateLang(LANGS[0]);
-      updateProjectsTexts(); // << inicializa rótulos da aba projetos
     });
   </script>
 </head>
