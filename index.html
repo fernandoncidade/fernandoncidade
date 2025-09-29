@@ -205,14 +205,11 @@
       CURRENT_LANG = idObj.code;
 
       updateHeaderTagline();
-      updateProjectsTexts();
       updateLastCommitBadge();
       updateStatsLocale();
 
-      // Chamadas seguras (evitam erro caso a função não exista)
-      if (typeof updateHeaderTagline === 'function') updateHeaderTagline();
-      if (typeof updateLastCommitBadge === 'function') updateLastCommitBadge();
-      if (typeof updateStatsLocale === 'function') updateStatsLocale();
+      // Atualiza imediatamente o rótulo do botão "Projetos/Repositórios"
+      updateProjectsTexts();
 
       const top = document.querySelector('.languages');
       if (top) window.scrollTo({ top: top.offsetTop - 16, behavior: 'smooth' });
