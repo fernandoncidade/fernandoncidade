@@ -204,8 +204,10 @@
       document.documentElement.lang = idObj.htmlLang;
       CURRENT_LANG = idObj.code;
 
-      // Atualiza imediatamente o rótulo do botão "Projetos/Repositórios"
+      updateHeaderTagline();
       updateProjectsTexts();
+      updateLastCommitBadge();
+      updateStatsLocale();
 
       // Chamadas seguras (evitam erro caso a função não exista)
       if (typeof updateHeaderTagline === 'function') updateHeaderTagline();
