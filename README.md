@@ -94,7 +94,7 @@ Disponível em versão de teste por 7 dias, após o qual pode ser adquirida pela
 
 - [**Agenda Avaliações Acadêmicas**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas): Sistema para gerenciamento de atividades avaliativas em ambientes educacionais, usando PySide6 e módulos personalizados.
 - [**Manager Compression PySide6 / PyQt6**](https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1) – [PyQt6](https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1): Aplicativos de backup e compressão de arquivos com interface gráfica intuitiva, suporte a múltiplos formatos.
-- [**Eisenhower Organizer Matrix**](https://github.com/fernandoncidade/eisenhower_organizing): Aplicativo para organização de tarefas na matriz de Eisenhower, com interface gráfica em PySide6.
+- [**Eisenhower Organizer Matrix**](https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix): Aplicativo para organização de tarefas na matriz de Eisenhower, com interface gráfica em PySide6.
 - [**Programa Urna Eletrônica**](https://github.com/fernandoncidade/Programa_Urna_Eletronica): Sistema de votação eletrônica em C++, simulando urna eletrônica com apuração automática.
 
 ## 📊 Dashboards de Análise de Dados
@@ -236,7 +236,7 @@ Available as a 7-day trial version, after which it can be purchased via the [Mic
 
 - [**Academic Evaluations Scheduler**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas): System for managing academic assessment activities, using PySide6 and custom modules.
 - [**Manager Compression PySide6 / PyQt6**](https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1) – [PyQt6](https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1): Applications for backup and file compression with an intuitive GUI, supporting multiple formats.
-- [**Eisenhower Organizer Matrix**](https://github.com/fernandoncidade/eisenhower_organizing): Task organization app based on the Eisenhower matrix, with PySide6 GUI.
+- [**Eisenhower Organizer Matrix**](https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix): Task organization app based on the Eisenhower matrix, with PySide6 GUI.
 - [**Electronic Ballot Program**](https://github.com/fernandoncidade/Programa_Urna_Eletronica): Electronic voting system in C++, simulating a ballot box with automatic tallying.
 
 ## 📊 Data Analysis Dashboards
@@ -378,7 +378,7 @@ Disponible en versión de prueba de 7 días, tras los cuales puede adquirirse en
 
 - [**Agenda Evaluaciones Académicas**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas): Sistema para gestión de actividades evaluativas en entornos educativos, usando PySide6 y módulos personalizados.
 - [**Manager Compression PySide6 / PyQt6**](https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1) – [PyQt6](https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1): Aplicaciones de backup y compresión de archivos con interfaz gráfica intuitiva y soporte para varios formatos.
-- [**Eisenhower Organizer Matrix**](https://github.com/fernandoncidade/eisenhower_organizing): App para organización de tareas en la matriz de Eisenhower, con GUI en PySide6.
+- [**Eisenhower Organizer Matrix**](https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix): App para organización de tareas en la matriz de Eisenhower, con GUI en PySide6.
 - [**Programa Urna Electrónica**](https://github.com/fernandoncidade/Programa_Urna_Eletronica): Sistema de votación electrónica en C++, simulando urna electrónica con recuento automático.
 
 ## 📊 Dashboards de Análisis de Datos
@@ -520,7 +520,7 @@ Disponible en version d'essai de 7 jours, puis achetable sur la [Microsoft Store
 
 - [**Agenda des Évaluations Académiques**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas) : Système de gestion des activités d'évaluation en milieu éducatif, utilisant PySide6 et modules personnalisés.
 - [**Manager Compression PySide6 / PyQt6**](https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1) – [PyQt6](https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1) : Applications de sauvegarde et compression de fichiers avec interface graphique intuitive, support de multiples formats.
-- [**Eisenhower Organizer Matrix**](https://github.com/fernandoncidade/eisenhower_organizing) : Application pour l'organisation des tâches selon la matrice Eisenhower, avec GUI PySide6.
+- [**Eisenhower Organizer Matrix**](https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix) : Application pour l'organisation des tâches selon la matrice Eisenhower, avec GUI PySide6.
 - [**Programme Urne Électronique**](https://github.com/fernandoncidade/Programa_Urna_Eletronica) : Système de vote électronique en C++, simulant une urne électronique avec dépouillement automatique.
 
 ## 📊 Tableaux de bord d'analyse de données
@@ -662,7 +662,7 @@ Disponibile in versione di prova per 7 giorni, dopo i quali può essere acquista
 
 - [**Agenda Valutazioni Accademiche**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas): Sistema per la gestione delle attività valutative in ambito educativo, usando PySide6 e moduli personalizzati.
 - [**Manager Compression PySide6 / PyQt6**](https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1) – [PyQt6](https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1): Applicazioni di backup e compressione file con interfaccia grafica intuitiva e supporto per diversi formati.
-- [**Eisenhower Organizer Matrix**](https://github.com/fernandoncidade/eisenhower_organizing): App per l'organizzazione delle attività nella matrice Eisenhower, con GUI PySide6.
+- [**Eisenhower Organizer Matrix**](https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix): App per l'organizzazione delle attività nella matrice Eisenhower, con GUI PySide6.
 - [**Programma Urna Elettronica**](https://github.com/fernandoncidade/Programa_Urna_Eletronica): Sistema di voto elettronico in C++, simulando una urna elettronica con conteggio automatico.
 
 ## 📊 Dashboard di Analisi Dati
@@ -804,7 +804,7 @@ Verfügbar als 7-tägige Testversion, danach über den [Microsoft Store](https:/
 
 - [**Akademische Bewertungsagenda**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas): System zur Verwaltung von Bewertungstätigkeiten im Bildungsbereich mit PySide6 und eigenen Modulen.
 - [**Manager Compression PySide6 / PyQt6**](https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1) – [PyQt6](https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1): Anwendungen für Backup und Dateikomprimierung mit intuitiver GUI und Unterstützung für mehrere Formate.
-- [**Eisenhower Organizer Matrix**](https://github.com/fernandoncidade/eisenhower_organizing): Aufgabenorganisations-App basierend auf der Eisenhower-Matrix mit PySide6-GUI.
+- [**Eisenhower Organizer Matrix**](https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix): Aufgabenorganisations-App basierend auf der Eisenhower-Matrix mit PySide6-GUI.
 - [**Elektronisches Wahlprogramm**](https://github.com/fernandoncidade/Programa_Urna_Eletronica): Elektronisches Wahlsystem in C++, simuliert eine Wahlurne mit automatischer Auszählung.
 
 ## 📊 Datenanalyse-Dashboards
