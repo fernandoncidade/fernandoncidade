@@ -72,6 +72,12 @@
     .screenshots img, .stats img{
       max-width:100%; border-radius:8px; box-shadow:0 0 10px #00000010; margin:.4rem
     }
+    /* Reduz a imagem file_manager4.png em todos os idiomas */
+    .screenshots img[src*="file_manager4.png"] {
+      width:100%;
+      max-width:720px; /* ajuste aqui se quiser menor/maior */
+      height:auto;
+    }
     .cta{
       display:inline-block; background:var(--accent); color:#fff; padding:.6em 1.1em; border-radius:8px; font-weight:700; box-shadow:0 2px 8px #00d1b244
     }
