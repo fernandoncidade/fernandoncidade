@@ -145,6 +145,12 @@
         document.getElementById(l.section).classList.remove('active');
         document.getElementById(l.btn).classList.remove('active');
       });
+      // Esconde a aba de projetos ao trocar de idioma
+      const projSec = document.getElementById('sec-projects');
+      if (projSec) projSec.classList.remove('active');
+      const projBtn = document.getElementById('btn-projects');
+      if (projBtn) projBtn.classList.remove('active');
+
       document.getElementById(idObj.section).classList.add('active');
       document.getElementById(idObj.btn).classList.add('active');
       document.documentElement.lang = idObj.htmlLang;
@@ -154,7 +160,6 @@
       updateLastCommitBadge();
       updateStatsLocale();
 
-      // rolar até o topo do bloco de idiomas
       const top = document.querySelector('.languages');
       if (top) window.scrollTo({ top: top.offsetTop - 16, behavior: 'smooth' });
     }
@@ -201,12 +206,35 @@
         `https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade&layout=compact&theme=merko&locale=${l.langs}`;
     }
 
+    // Nova função: mostrar aba de projetos
+    function showProjects() {
+      // Desativa todas as seções/btns de idioma
+      LANGS.forEach(l => {
+        const sec = document.getElementById(l.section);
+        const btn = document.getElementById(l.btn);
+        if (sec) sec.classList.remove('active');
+        if (btn) btn.classList.remove('active');
+      });
+      // Ativa a seção de projetos
+      const projSec = document.getElementById('sec-projects');
+      const projBtn = document.getElementById('btn-projects');
+      if (projSec) projSec.classList.add('active');
+      if (projBtn) projBtn.classList.add('active');
+
+      const top = document.querySelector('.languages');
+      if (top) window.scrollTo({ top: top.offsetTop - 16, behavior: 'smooth' });
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
       // listeners dos botões
       LANGS.forEach(l => {
         const b = document.getElementById(l.btn);
         if (b) b.addEventListener('click', () => activateLang(l));
       });
+      // listener da aba de projetos
+      const pb = document.getElementById('btn-projects');
+      if (pb) pb.addEventListener('click', showProjects);
+
       // ativar padrão
       activateLang(LANGS[0]);
     });
@@ -235,6 +263,8 @@
       <button id="btn-frfr">🇫🇷 Français (FR)</button>
       <button id="btn-itit">🇮🇹 Italiano (IT)</button>
       <button id="btn-dede">🇩🇪 Deutsch (DE)</button>
+      <!-- Novo botão de aba -->
+      <button id="btn-projects">📂 Projetos/Repositórios</button>
     </div>
 
     <div class="badge-row">
@@ -852,6 +882,44 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- NOVA ABA: Projetos/Repositórios -->
+    <section id="sec-projects" class="lang-section">
+      <div class="note">
+        Lista de projetos e repositórios públicos de fernandoncidade.
+      </div>
+      <div class="grid">
+        <div class="col-4"><div class="card"><h3>README do Perfil</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/fernandoncidade">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Eisenhower Organizer Matrix</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>sloth-highlander-theme-1</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/sloth-highlander-theme-1">Abrir repositório</a></p></div></div>
+
+        <div class="col-4"><div class="card"><h3>Linceu Lighthouse Binary</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>File Manager</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/File_Manager">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Dashboard Taipy</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Dashboard_Taipy">Abrir repositório</a></p></div></div>
+
+        <div class="col-4"><div class="card"><h3>Programa Matriz NM</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Matriz_NM">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Todos os Tipos de Matrizes</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Todos_Tipos_Matrizes">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Quociente e Resto</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Quociente_Resto">Abrir repositório</a></p></div></div>
+
+        <div class="col-4"><div class="card"><h3>Programa Múltiplo</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Multiplo">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Média Aritmética</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Media_Aritmetica">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Maior Inteiro</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Determinar_Maior_Inteiro">Abrir repositório</a></p></div></div>
+
+        <div class="col-4"><div class="card"><h3>Urna Eletrônica (C++)</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Urna_Eletronica">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Expressões Relacionais</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Expressoes_Relacionais">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>IMC</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_IMC">Abrir repositório</a></p></div></div>
+
+        <div class="col-4"><div class="card"><h3>Carteira de Motorista</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Carteira_Motorista">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Manager Compression PyQt6</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Manager Compression PySide6</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1">Abrir repositório</a></p></div></div>
+
+        <div class="col-4"><div class="card"><h3>Agenda Avaliações Acadêmicas</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Dash Streamlit Management</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Pareto/ABC (Streamlit)</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Abrir repositório</a></p></div></div>
+
+        <div class="col-4"><div class="card"><h3>Pareto/ABC (Tkinter)</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Abrir repositório</a></p></div></div>
       </div>
     </section>
   </div>
