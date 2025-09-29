@@ -140,6 +140,16 @@
       dede: { stats:"de",    streak:"de",    graph:"de",    langs:"de" }
     };
 
+    // Tradução do botão da aba de projetos
+    const PROJECTS_T = {
+      ptbr: "📂 Projetos/Repositórios",
+      enus: "📂 Projects/Repositories",
+      eses: "📂 Proyectos/Repositorios",
+      frfr: "📂 Projets/Dépôts",
+      itit: "📂 Progetti/Repository",
+      dede: "📂 Projekte/Repositories"
+    };
+
     function activateLang(idObj) {
       LANGS.forEach(l => {
         document.getElementById(l.section).classList.remove('active');
@@ -159,6 +169,7 @@
       updateHeaderTagline();
       updateLastCommitBadge();
       updateStatsLocale();
+      updateProjectsTabLabel();
 
       const top = document.querySelector('.languages');
       if (top) window.scrollTo({ top: top.offsetTop - 16, behavior: 'smooth' });
@@ -204,6 +215,15 @@
       const langs = section.querySelector('.top-langs');
       if (langs) langs.src =
         `https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade&layout=compact&theme=merko&locale=${l.langs}`;
+    }
+
+    // Atualiza o rótulo do botão de projetos conforme o idioma atual
+    function updateProjectsTabLabel() {
+      const btn = document.getElementById('btn-projects');
+      if (!btn) return;
+      const t = PROJECTS_T[CURRENT_LANG] || PROJECTS_T.ptbr;
+      btn.textContent = t;
+      btn.title = t.replace("📂 ", "");
     }
 
     // Nova função: mostrar aba de projetos
