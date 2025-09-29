@@ -175,14 +175,16 @@
 
     function updateStatsLocale() {
       const l = LOCALES[CURRENT_LANG] || LOCALES.ptbr;
+      const section = document.querySelector('.lang-section.active');
+      if (!section) return;
 
-      const stats = document.getElementById('gh-stats');
+      const stats = section.querySelector('.gh-stats');
       if (stats) stats.src = `https://github-readme-stats.vercel.app/api?username=fernandoncidade&theme=blue-green&show_icons=True&locale=${l.stats}`;
 
-      const streak = document.getElementById('gh-streak');
+      const streak = section.querySelector('.gh-streak');
       if (streak) streak.src = `https://streak-stats.demolab.com?user=fernandoncidade&theme=microsoft-dark&locale=${l.streak}&date_format=j%20M%5B%20Y%5D`;
 
-      const graph = document.getElementById('gh-activity');
+      const graph = section.querySelector('.gh-activity');
       const titles = {
         ptbr: "Gráfico%20de%20Atividade%20de%20fernandoncidade",
         enus: "fernandoncidade's%20Activity%20Graph",
@@ -194,7 +196,7 @@
       if (graph) graph.src =
         `https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&area=true&custom_title=${titles[CURRENT_LANG] || titles.ptbr}&locale=${l.graph}`;
 
-      const langs = document.getElementById('top-langs');
+      const langs = section.querySelector('.top-langs');
       if (langs) langs.src =
         `https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade&layout=compact&theme=merko&locale=${l.langs}`;
     }
@@ -376,14 +378,10 @@
 
         <div class="col-12 card center stats">
           <h3>📈 GitHub Stats</h3>
-          <img id="gh-stats-en" alt="" style="display:none">
-          <img id="gh-streak-en" alt="" style="display:none">
-          <img id="gh-activity-en" alt="" style="display:none">
-          <img id="top-langs-en" alt="" style="display:none">
-          <img id="gh-stats" alt="GitHub Stats">
-          <img id="gh-streak" alt="GitHub Streak">
-          <img id="gh-activity" alt="GitHub Activity Graph">
-          <img id="top-langs" alt="Top Langs">
+          <img class="gh-stats" alt="GitHub Stats">
+          <img class="gh-streak" alt="GitHub Streak">
+          <img class="gh-activity" alt="GitHub Activity Graph">
+          <img class="top-langs" alt="Top Langs">
         </div>
 
         <div class="col-12 card">
@@ -461,10 +459,10 @@
 
         <div class="col-12 card center stats">
           <h3>📈 Estadísticas de GitHub</h3>
-          <img id="gh-stats" alt="GitHub Stats">
-          <img id="gh-streak" alt="GitHub Streak">
-          <img id="gh-activity" alt="GitHub Activity Graph">
-          <img id="top-langs" alt="Top Langs">
+          <img class="gh-stats" alt="GitHub Stats">
+          <img class="gh-streak" alt="GitHub Streak">
+          <img class="gh-activity" alt="GitHub Activity Graph">
+          <img class="top-langs" alt="Top Langs">
         </div>
 
         <div class="col-12 card">
@@ -542,10 +540,10 @@
 
         <div class="col-12 card center stats">
           <h3>📈 Statistiques GitHub</h3>
-          <img id="gh-stats" alt="GitHub Stats">
-          <img id="gh-streak" alt="GitHub Streak">
-          <img id="gh-activity" alt="GitHub Activity Graph">
-          <img id="top-langs" alt="Top Langs">
+          <img class="gh-stats" alt="GitHub Stats">
+          <img class="gh-streak" alt="GitHub Streak">
+          <img class="gh-activity" alt="GitHub Activity Graph">
+          <img class="top-langs" alt="Top Langs">
         </div>
 
         <div class="col-12 card">
@@ -623,10 +621,10 @@
 
         <div class="col-12 card center stats">
           <h3>📈 Statistiche GitHub</h3>
-          <img id="gh-stats" alt="GitHub Stats">
-          <img id="gh-streak" alt="GitHub Streak">
-          <img id="gh-activity" alt="GitHub Activity Graph">
-          <img id="top-langs" alt="Top Langs">
+          <img class="gh-stats" alt="GitHub Stats">
+          <img class="gh-streak" alt="GitHub Streak">
+          <img class="gh-activity" alt="GitHub Activity Graph">
+          <img class="top-langs" alt="Top Langs">
         </div>
 
         <div class="col-12 card">
@@ -704,10 +702,10 @@
 
         <div class="col-12 card center stats">
           <h3>📈 GitHub-Statistiken</h3>
-          <img id="gh-stats" alt="GitHub Stats">
-          <img id="gh-streak" alt="GitHub Streak">
-          <img id="gh-activity" alt="GitHub Activity Graph">
-          <img id="top-langs" alt="Top Langs">
+          <img class="gh-stats" alt="GitHub Stats">
+          <img class="gh-streak" alt="GitHub Streak">
+          <img class="gh-activity" alt="GitHub Activity Graph">
+          <img class="top-langs" alt="Top Langs">
         </div>
 
         <div class="col-12 card">
