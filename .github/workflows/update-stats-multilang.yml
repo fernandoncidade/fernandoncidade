@@ -143,10 +143,10 @@ jobs:
           sed -i "s/<!-- PYQT6_HOURS -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_HOURS }}/g" README.md
           sed -i "s/<!-- PYQT6_PROD -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_PROD }}/g" README.md
 
-          sed -i "s/<!-- EISENHOWER_LINES -->/${{ env.EISENHOWER_ORGANIZING_LINES }}/g" README.md
-          sed -i "s/<!-- EISENHOWER_COMMITS -->/${{ env.EISENHOWER_ORGANIZING_COMMITS }}/g" README.md
-          sed -i "s/<!-- EISENHOWER_HOURS -->/${{ env.EISENHOWER_ORGANIZING_HOURS }}/g" README.md
-          sed -i "s/<!-- EISENHOWER_PROD -->/${{ env.EISENHOWER_ORGANIZING_PROD }}/g" README.md
+          sed -i "s/<!-- EISENHOWER_LINES -->/${{ env.EISENHOWER_ORGANIZER_MATRIX_LINES }}/g" README.md
+          sed -i "s/<!-- EISENHOWER_COMMITS -->/${{ env.EISENHOWER_ORGANIZER_MATRIX_COMMITS }}/g" README.md
+          sed -i "s/<!-- EISENHOWER_HOURS -->/${{ env.EISENHOWER_ORGANIZER_MATRIX_HOURS }}/g" README.md
+          sed -i "s/<!-- EISENHOWER_PROD -->/${{ env.EISENHOWER_ORGANIZER_MATRIX_PROD }}/g" README.md
 
           sed -i "s/<!-- URNA_LINES -->/${{ env.PROGRAMA_URNA_ELETRONICA_LINES }}/g" README.md
           sed -i "s/<!-- URNA_COMMITS -->/${{ env.PROGRAMA_URNA_ELETRONICA_COMMITS }}/g" README.md
