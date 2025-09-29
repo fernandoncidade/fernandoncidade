@@ -96,6 +96,206 @@
       .col-3{grid-column:span 6}
       .container{padding:.9rem .5rem 1.4rem}
     }
+
+    /* ===== Dinâmica/UX extra ===== */
+    :root {
+      --bg-dark:#0b1220; --text-dark:#e9f2ff;
+      --card-dark:#0f1829; --border-dark:#1f2b42;
+      --pill-dark:#0e1c2e; --link:#0f8bff;
+    }
+    html, body { scroll-behavior:smooth }
+    body { transition: background-color .25s ease, color .25s ease }
+    body.dark{
+      background:var(--bg-dark); color:var(--text-dark)
+    }
+    body.dark .container{ background:#0d1526; border-color:var(--border-dark) }
+    body.dark .card{ background:var(--card-dark); border-color:var(--border-dark) }
+    body.dark .languages button{ background:var(--pill-dark); color:var(--text-dark); border-color:var(--border-dark) }
+    body.dark a{ color:#2c3e50 }
+    body.dark .note{ background:#0f2a24; border-left-color:#1abc9c }
+    body.dark .lang-section{
+      background:#0d1526;           /* mesmo tom do container no dark */
+      border-color:var(--border-dark);
+    }
+    /* Opcional: suaviza os cards no dark para menos “recorte” */
+    body.dark .card{
+      background:#0f1829;
+      border-color:var(--border-dark);
+      box-shadow:0 2px 10px #00000055; /* sombra um pouco mais visível no dark */
+    }
+
+    /* Sticky barra de idiomas com blur */
+    .languages{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter:saturate(140%) blur(6px);
+      background:rgba(255,255,255,.65);
+      border-radius:12px; padding:.6rem .6rem;
+    }
+    body.dark .languages{ background:rgba(13,21,38,.55) }
+
+    /* Botão voltar ao topo */
+    .btn-top{
+      position:fixed; right:16px; bottom:18px; z-index:20;
+      width:42px; height:42px; border-radius:999px; border:1px solid var(--border);
+      background:#0f8bff; color:#fff; cursor:pointer; box-shadow:0 6px 18px #00000033;
+      display:none; align-items:center; justify-content:center; font-size:18px
+    }
+    .btn-top.show{ display:flex }
+
+    /* Animação revelar ao rolar */
+    .reveal{ opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease }
+    .reveal.in{ opacity:1; transform:none }
+
+    /* Ripple simples nos botões */
+    .languages button, .cta{ position:relative; overflow:hidden }
+    .ripple{
+      position:absolute; border-radius:50%; transform:scale(0);
+      background:rgba(255,255,255,.35); animation:ripple .6s ease-out;
+      pointer-events:none;
+    }
+    @keyframes ripple{ to{ transform:scale(12); opacity:0 } }
+
+    /* Toast */
+    .toast{
+      position:fixed; top:14px; right:14px; z-index:30;
+      background:#111827; color:#e5e7eb; padding:.55rem .8rem; border-radius:8px;
+      box-shadow:0 8px 24px #00000055; display:none; font-size:.95rem
+    }
+    .toast.show{ display:block; animation:fade .25s ease }
+
+    /* Acessibilidade: reduzir movimento */
+    @media (prefers-reduced-motion: reduce){
+      *{ animation:none!important; transition:none!important }
+    }
+
+    /* Tema escuro: cores dos rótulos/estados dos botões de idioma */
+    body.dark .languages button{
+      color:#e9f2ff;                  /* texto claro */
+      border-color:var(--border-dark);
+      background:var(--pill-dark);
+    }
+    body.dark .languages button:hover{
+      color:#d6fff6;                  /* leve toque “mint” */
+      border-color:#1abc9c;           /* usa o accent */
+      background:#0e1c2e;             /* pill um pouco mais clara */
+    }
+    body.dark .languages button.active{
+      color:#b9fff0;                  /* texto em tom do accent */
+      border-color:#1abc9c;
+      background:rgba(26,188,156,.18);/* accent translúcido */
+      font-weight:700;
+    }
+
+    /* Tema escuro: subtópicos (PT-BR) de Principais Projetos e Dashboards */
+    body.dark #sec-ptbr ul.subtopics,
+    body.dark #sec-ptbr ul.subtopics li,
+    body.dark #sec-ptbr ul.subtopics a{
+      color:#e9f2ff;
+    }
+    body.dark #sec-ptbr ul.subtopics a:hover{
+      color:#d6fff6;
+    }
+
+    /* Tema escuro: subtópicos (PT-BR) de Principais Projetos e Dashboards */
+    body.dark #sec-enus ul.subtopics,
+    body.dark #sec-enus ul.subtopics li,
+    body.dark #sec-enus ul.subtopics a{
+      color:#e9f2ff;
+    }
+    body.dark #sec-enus ul.subtopics a:hover{
+      color:#d6fff6;
+    }
+
+    /* Tema escuro: subtópicos (PT-BR) de Principais Projetos e Dashboards */
+    body.dark #sec-eses ul.subtopics,
+    body.dark #sec-eses ul.subtopics li,
+    body.dark #sec-eses ul.subtopics a{
+      color:#e9f2ff;
+    }
+    body.dark #sec-eses ul.subtopics a:hover{
+      color:#d6fff6;
+    }
+
+    /* Tema escuro: subtópicos (PT-BR) de Principais Projetos e Dashboards */
+    body.dark #sec-frfr ul.subtopics,
+    body.dark #sec-frfr ul.subtopics li,
+    body.dark #sec-frfr ul.subtopics a{
+      color:#e9f2ff;
+    }
+    body.dark #sec-frfr ul.subtopics a:hover{
+      color:#d6fff6;
+    }
+
+    /* Tema escuro: subtópicos (PT-BR) de Principais Projetos e Dashboards */
+    body.dark #sec-itit ul.subtopics,
+    body.dark #sec-itit ul.subtopics li,
+    body.dark #sec-itit ul.subtopics a{
+      color:#e9f2ff;
+    }
+    body.dark #sec-itit ul.subtopics a:hover{
+      color:#d6fff6;
+    }
+
+    /* Tema escuro: subtópicos (PT-BR) de Principais Projetos e Dashboards */
+    body.dark #sec-dede ul.subtopics,
+    body.dark #sec-dede ul.subtopics li,
+    body.dark #sec-dede ul.subtopics a{
+      color:#e9f2ff;
+    }
+    body.dark #sec-dede ul.subtopics a:hover{
+      color:#d6fff6;
+    }
+
+    /* Tema escuro: rótulos dos botões da sessão "Contato" (todas as línguas) */
+    body.dark .lang-section .header-links a{
+      color:#e9f2ff;
+    }
+    body.dark .lang-section .header-links a:hover{
+      color:#d6fff6;
+    }
+
+    /* Tema escuro: rótulos dos botões do topo (GitHub, LinkedIn, Lattes, Instagram, ORCID) */
+    body.dark .header .header-links a{
+      color:#e9f2ff;
+    }
+    body.dark .header .header-links a:hover{
+      color:#d6fff6;
+    }
+
+    /* Tema claro: botões "Contato" iguais aos botões de idiomas */
+    body:not(.dark) .lang-section .header-links a{
+      background:#f3f7fb;
+      color:#223;
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:.45em .9em;
+      font-size:1rem;
+      box-shadow:0 1px 4px #0000000a;
+      text-decoration:none;
+    }
+    body:not(.dark) .lang-section .header-links a:hover{
+      text-decoration:none; /* evita sublinhado no hover */
+    }
+
+    /* Hover (tema claro) — igual aos botões de idiomas */
+    body:not(.dark) .languages button:hover,
+    body:not(.dark) .lang-section .header-links a:hover,
+    body:not(.dark) .header .header-links a:hover{
+      border-color:var(--accent);
+      background:#e6fffa;
+      color:#0c3b40;
+      text-decoration:none;
+    }
+
+    /* Hover (tema escuro) — igual aos botões de idiomas */
+    body.dark .languages button:hover,
+    body.dark .lang-section .header-links a:hover,
+    body.dark .header .header-links a:hover{
+      color:#d6fff6;
+      border-color:#1abc9c;
+      background:#0e1c2e;
+      text-decoration:none;
+    }
   </style>
 
   <script>
@@ -214,11 +414,20 @@
       const section = document.querySelector('.lang-section.active');
       if (!section) return;
 
+      // Detecta tema atual para ajustar os temas dos widgets
+      const isDark = document.body.classList.contains('dark') || (localStorage.getItem('fcc_theme') === 'dark');
+
       const stats = section.querySelector('.gh-stats');
-      if (stats) stats.src = `https://github-readme-stats.vercel.app/api?username=fernandoncidade&theme=blue-green&show_icons=True&locale=${l.stats}`;
+      if (stats) {
+        const statsTheme = isDark ? 'blue-green' : 'flag-india';
+        stats.src = `https://github-readme-stats.vercel.app/api?username=fernandoncidade&theme=${statsTheme}&show_icons=True&locale=${l.stats}`;
+      }
 
       const streak = section.querySelector('.gh-streak');
-      if (streak) streak.src = `https://streak-stats.demolab.com?user=fernandoncidade&theme=microsoft-dark&locale=${l.streak}&date_format=j%20M%5B%20Y%5D`;
+      if (streak) {
+        const streakTheme = isDark ? 'microsoft-dark' : 'ayu-light';
+        streak.src = `https://streak-stats.demolab.com?user=fernandoncidade&theme=${streakTheme}&locale=${l.streak}&date_format=j%20M%5B%20Y%5D`;
+      }
 
       const graph = section.querySelector('.gh-activity');
       const titles = {
@@ -229,12 +438,18 @@
         itit: "Grafico%20di%20Attività%20di%20fernandoncidade",
         dede: "Aktivitätsdiagramm%20von%20fernandoncidade"
       };
-      if (graph) graph.src =
-        `https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&area=true&custom_title=${titles[CURRENT_LANG] || titles.ptbr}&locale=${l.graph}`;
+      if (graph) {
+        const graphTheme = isDark ? 'merko' : 'minimal';
+        graph.src =
+          `https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=${graphTheme}&area=true&custom_title=${titles[CURRENT_LANG] || titles.ptbr}&locale=${l.graph}`;
+      }
 
       const langs = section.querySelector('.top-langs');
-      if (langs) langs.src =
-        `https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade&layout=compact&theme=merko&locale=${l.langs}`;
+      if (langs) {
+        const langsTheme = isDark ? 'merko' : 'default';
+        langs.src =
+          `https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade&layout=compact&theme=${langsTheme}&locale=${l.langs}`;
+      }
     }
 
     // Atualiza o rótulo do botão de projetos conforme o idioma atual
@@ -304,7 +519,7 @@
       <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
       <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
-      <a href="https://www.instagram.com/fernandoncidade" target="_blank">Instagram</a>
+      <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank">Instagram</a>
       <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
     </div>
   </div>
@@ -320,6 +535,8 @@
       <button id="btn-dede">🇩🇪 Deutsch (DE)</button>
       <!-- Novo botão de aba -->
       <button id="btn-projects">📂 Projetos/Repositórios</button>
+      <!-- Toggle de tema -->
+      <button id="btn-theme" title="Alternar tema (Alt+T)">🌓 Tema</button>
     </div>
 
     <div class="badge-row">
@@ -350,7 +567,7 @@
 
           <div class="card">
             <h3>🎯 Principais Projetos</h3>
-            <ul>
+            <ul class="subtopics">
               <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda Avaliações Acadêmicas</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1">Manager Compression PySide6</a> • <a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1">PyQt6</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix">Eisenhower Organizer Matrix</a></li>
@@ -360,7 +577,7 @@
 
           <div class="card">
             <h3>📊 Dashboards</h3>
-            <ul>
+            <ul class="subtopics">
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
@@ -389,7 +606,7 @@
               <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
               <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
               <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
-              <a href="https://www.instagram.com/fernandoncidade" target="_blank">Instagram</a>
+              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank">Instagram</a>
               <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
             </p>
           </div>
@@ -452,7 +669,7 @@
 
           <div class="card">
             <h3>🎯 Main Projects</h3>
-            <ul>
+            <ul class="subtopics">
               <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Academic Evaluations Scheduler</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1">Manager Compression PySide6</a> • <a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1">PyQt6</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix">Eisenhower Organizer Matrix</a></li>
@@ -462,7 +679,7 @@
 
           <div class="card">
             <h3>📊 Dashboards</h3>
-            <ul>
+            <ul class="subtopics">
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
@@ -491,7 +708,7 @@
               <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
               <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
               <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
-              <a href="https://www.instagram.com/fernandoncidade" target="_blank">Instagram</a>
+              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank">Instagram</a>
               <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
             </p>
           </div>
@@ -554,7 +771,7 @@
 
           <div class="card">
             <h3>🎯 Proyectos principales</h3>
-            <ul>
+            <ul class="subtopics">
               <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda de Evaluaciones Académicas</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1">Manager Compression PySide6</a> • <a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1">PyQt6</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix">Eisenhower Organizer Matrix</a></li>
@@ -564,7 +781,7 @@
 
           <div class="card">
             <h3>📊 Dashboards</h3>
-            <ul>
+            <ul class="subtopics">
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
@@ -593,7 +810,7 @@
               <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
               <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
               <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
-              <a href="https://www.instagram.com/fernandoncidade" target="_blank">Instagram</a>
+              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank">Instagram</a>
               <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
             </p>
           </div>
@@ -656,7 +873,7 @@
 
           <div class="card">
             <h3>🎯 Projets principaux</h3>
-            <ul>
+            <ul class="subtopics">
               <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda des évaluations académiques</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1">Manager Compression PySide6</a> • <a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1">PyQt6</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix">Eisenhower Organizer Matrix</a></li>
@@ -666,7 +883,7 @@
 
           <div class="card">
             <h3>📊 Tableaux de bord</h3>
-            <ul>
+            <ul class="subtopics">
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
@@ -695,7 +912,7 @@
               <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
               <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
               <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
-              <a href="https://www.instagram.com/fernandoncidade" target="_blank">Instagram</a>
+              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank">Instagram</a>
               <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
             </p>
           </div>
@@ -758,7 +975,7 @@
 
           <div class="card">
             <h3>🎯 Progetti principali</h3>
-            <ul>
+            <ul class="subtopics">
               <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda Valutazioni Accademiche</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1">Manager Compression PySide6</a> • <a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1">PyQt6</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix">Eisenhower Organizer Matrix</a></li>
@@ -768,7 +985,7 @@
 
           <div class="card">
             <h3>📊 Cruscotti</h3>
-            <ul>
+            <ul class="subtopics">
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (Tkinter)</a></li>
@@ -797,7 +1014,7 @@
               <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
               <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
               <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
-              <a href="https://www.instagram.com/fernandoncidade" target="_blank">Instagram</a>
+              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank">Instagram</a>
               <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
             </p>
           </div>
@@ -860,7 +1077,7 @@
 
           <div class="card">
             <h3>🎯 Hauptprojekte</h3>
-            <ul>
+            <ul class="subtopics">
               <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Planer akademischer Bewertungen</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1">Manager Compression PySide6</a> • <a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1">PyQt6</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix">Eisenhower Organizer Matrix</a></li>
@@ -870,7 +1087,7 @@
 
           <div class="card">
             <h3>📊 Dashboards</h3>
-            <ul>
+            <ul class="subtopics">
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
               <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
@@ -899,7 +1116,7 @@
               <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
               <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
               <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
-              <a href="https://www.instagram.com/fernandoncidade" target="_blank">Instagram</a>
+              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank">Instagram</a>
               <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
             </p>
           </div>
@@ -986,5 +1203,140 @@
       <a href="https://github.com/fernandoncidade" target="_blank">Perfil no GitHub</a>
     </div>
   </div>
+
+  <!-- Toast e botão topo -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <button id="btn-top" class="btn-top" title="Voltar ao topo">↑</button>
+
+  <script>
+    /* ...existing code... */
+
+    // ===== UX extra: tema, reveal, ripple, atalhos, topo, lazy =====
+    const THEME_KEY = 'fcc_theme';
+    function toast(msg, ms=1400){
+      const t = document.getElementById('toast'); if(!t) return;
+      t.textContent = msg; t.classList.add('show');
+      clearTimeout(t.__tid); t.__tid = setTimeout(()=>t.classList.remove('show'), ms);
+    }
+    function applyTheme(theme){
+      document.body.classList.toggle('dark', theme === 'dark');
+      // Opcional: ajustar sombra/cores com o tema aqui
+    }
+    function toggleTheme(){
+      const cur = localStorage.getItem(THEME_KEY) || 'light';
+      const next = cur === 'light' ? 'dark' : 'light';
+      localStorage.setItem(THEME_KEY, next);
+      applyTheme(next);
+      toast(`Tema: ${next === 'dark' ? 'escuro' : 'claro'}`);
+      updateStatsLocale(); // atualiza Top Langs conforme o tema
+    }
+
+    // Ripple em cliques
+    function attachRipple(el){
+      el.addEventListener('pointerdown', e=>{
+        const r = document.createElement('span'); r.className='ripple';
+        const rect = el.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        r.style.width = r.style.height = size+'px';
+        r.style.left = (e.clientX - rect.left - size/2)+'px';
+        r.style.top  = (e.clientY - rect.top  - size/2)+'px';
+        el.appendChild(r);
+        setTimeout(()=>r.remove(), 600);
+      });
+    }
+
+    // Revelar ao rolar
+    function setupReveal(){
+      const els = document.querySelectorAll('.card, .stats img, .screenshots img');
+      els.forEach(el => el.classList.add('reveal'));
+      const io = new IntersectionObserver((entries)=>{
+
+        entries.forEach(ent=>{
+          if(ent.isIntersecting){ ent.target.classList.add('in'); io.unobserve(ent.target); }
+        });
+      }, { threshold:.12, rootMargin:'0px 0px -10% 0px' });
+      els.forEach(el=>io.observe(el));
+    }
+
+    // Lazy e decoding em imagens
+    function setupImagesPerf(){
+      document.querySelectorAll('img').forEach(img=>{
+        if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
+        img.setAttribute('decoding','async');
+      });
+    }
+
+    // Atalhos de teclado
+    function setupShortcuts(){
+      const map = {
+        '1':0,'2':1,'3':2,'4':3,'5':4,'6':5
+      };
+      window.addEventListener('keydown', (e)=>{
+        if(e.altKey && map[e.key] !== undefined){
+          e.preventDefault(); activateLang(LANGS[map[e.key]]);
+          toast('Idioma alterado');
+        }else if(e.altKey && (e.key==='p' || e.key==='P')){
+          e.preventDefault(); showProjects(); toast('Aba de projetos');
+        }else if(e.altKey && (e.key==='t' || e.key==='T')){
+          e.preventDefault(); toggleTheme();
+        }else if(e.key === 'Home'){
+          window.scrollTo({top:0, behavior:'smooth'});
+        }
+      });
+    }
+
+    // Botão voltar ao topo
+    function setupBackToTop(){
+      const btn = document.getElementById('btn-top');
+      if(!btn) return;
+      btn.addEventListener('click', ()=>window.scrollTo({top:0, behavior:'smooth'}));
+      window.addEventListener('scroll', ()=>{
+        const y = window.scrollY || document.documentElement.scrollTop;
+        if(y > 320) btn.classList.add('show'); else btn.classList.remove('show');
+      });
+    }
+
+    // Enriquecer títulos com atalhos
+    function setupHints(){
+      const hints = ['Alt+1','Alt+2','Alt+3','Alt+4','Alt+5','Alt+6'];
+      LANGS.forEach((l, i)=>{
+        const b = document.getElementById(l.btn);
+        if(b && !b.title) b.title = `Trocar idioma (${hints[i]})`;
+      });
+      const pb = document.getElementById('btn-projects');
+      if(pb && !pb.title) pb.title = 'Abrir aba de projetos (Alt+P)';
+    }
+
+    // Hook nos listeners existentes ao carregar
+    window.addEventListener('DOMContentLoaded', () => {
+      // Tema inicial
+      applyTheme(localStorage.getItem(THEME_KEY) || 'light');
+      updateStatsLocale(); // ajusta Top Langs ao tema aplicado
+
+      // Ripple nos botões e CTAs
+      document.querySelectorAll('.languages button, a.cta').forEach(attachRipple);
+
+      // Otimizações e efeitos
+      setupImagesPerf();
+      setupReveal();
+      setupShortcuts();
+      setupBackToTop();
+      setupHints();
+
+      // Botão de tema
+      const tb = document.getElementById('btn-theme');
+      if(tb) tb.addEventListener('click', toggleTheme);
+
+      // Acrescenta toasts aos botões de idioma/projetos
+      LANGS.forEach(l=>{
+        const b = document.getElementById(l.btn);
+        if(b){
+          b.addEventListener('click', ()=> toast('Idioma alterado'));
+        }
+      });
+      const pb = document.getElementById('btn-projects');
+      if(pb){ pb.addEventListener('click', ()=> toast('Aba de projetos')); }
+    });
+  </script>
 </body>
 </html>
