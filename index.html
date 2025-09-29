@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>fernandoncidade • Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/fernandoncidade/Linceu_Lighthouse_Binary/main/icones/file_manager3.png">
+  <style>
+    :root {
+      --main-bg:#f7f9fc; --container-bg:#fff;
+      --primary:#2c3e50; --accent:#1abc9c;
+      --muted:#6b7b8c; --border:#e5eaf0;
+      --radius:12px; --shadow:0 6px 18px #00000012;
+    }
+    html,body{margin:0;padding:0;background:var(--main-bg)}
+    body{font-family:Arial,Helvetica,sans-serif;color:#1f2d3d}
+    a{color:#0f8bff;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .header{
+      background:#0f172a;color:#e6f7ff;
+      padding:2.2rem 1rem 1.6rem; text-align:center
+    }
+    .avatar{
+      width:92px;height:92px;border-radius:50%;
+      border:3px solid #00e5c8;margin-bottom:.6rem;
+      box-shadow:0 3px 12px #00e5c84a; object-fit:cover;
+    }
+    .title{margin:.2rem 0 .2rem 0;font-size:2.1rem;letter-spacing:.2px}
+    .tagline{margin:.2rem 0 0 0;color:#a3ffd6;font-weight:600}
+    .header-links{
+      margin-top:.8rem; display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap
+    }
+    .header-links a{
+      background:#0b2239;color:#eaf9ff;border:1px solid #0b2f4f;
+      padding:.45em .9em;border-radius:999px;font-size:.95rem
+    }
+    .container{
+      max-width:1100px;margin:1.6rem auto;background:var(--container-bg);
+      border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:1.4rem 1.2rem 2rem
+    }
+    .languages{margin:0 0 1rem 0;text-align:center}
+    .languages button{
+      margin:.2rem .25rem; padding:.45em .9em; font-size:1rem;
+      border:1px solid var(--border); border-radius:999px; cursor:pointer;
+      background:#f3f7fb; color:#223; box-shadow:0 1px 4px #0000000a;
+    }
+    .languages button.active{background:#e6fffa;border-color:var(--accent);color:#0c3b40;font-weight:700}
+    .badge-row{text-align:center;margin:1rem 0 .7rem}
+    .badge-row img{vertical-align:middle;margin:0 .25rem}
+    .lang-section{display:none;animation:fade .25s ease; border:1px solid #e9f3ff; background:#fbfeff; border-radius:10px; padding:1rem 1.2rem; margin:1rem 0}
+    .lang-section.active{display:block}
+    @keyframes fade{from{opacity:0}to{opacity:1}}
+    h2{color:var(--primary);margin:1rem 0 .4rem}
+    h3{color:#2f4357;margin:1.1rem 0 .4rem}
+    p{line-height:1.7}
+    ul,ol{line-height:1.8}
+    li{margin:.25rem 0}
+    .grid{
+      display:grid; gap:1rem;
+      grid-template-columns:repeat(12,1fr);
+    }
+    .card{
+      border:1px solid var(--border); border-radius:10px; background:#fff; padding:.9rem;
+      box-shadow:0 2px 10px #0000000a;
+    }
+    .col-12{grid-column:span 12}
+    .col-6{grid-column:span 6}
+    .col-4{grid-column:span 4}
+    .col-3{grid-column:span 3}
+    .center{text-align:center}
+    .screenshots img, .stats img{
+      max-width:100%; border-radius:8px; box-shadow:0 0 10px #00000010; margin:.4rem
+    }
+    .cta{
+      display:inline-block; background:var(--accent); color:#fff; padding:.6em 1.1em; border-radius:8px; font-weight:700; box-shadow:0 2px 8px #00d1b244
+    }
+    .cta.secondary{
+      background:#0f8bff
+    }
+    .note{
+      background:#e9fbf7; border-left:6px solid var(--accent); padding:.8rem 1rem; border-radius:6px; margin:.8rem 0
+    }
+    .footer{
+      text-align:center;color:#6b7b8c;margin:1.6rem 0 2.2rem;font-size:.98rem
+    }
+    @media(max-width:900px){
+      .col-6{grid-column:span 12}
+      .col-4{grid-column:span 12}
+      .col-3{grid-column:span 6}
+      .container{padding:.9rem .5rem 1.4rem}
+    }
+  </style>
+
+  <script>
+    // Idiomas suportados
+    const LANGS = [
+      { btn: "btn-ptbr", section: "sec-ptbr", code: "ptbr", htmlLang: "pt-br" },
+      { btn: "btn-enus", section: "sec-enus", code: "enus", htmlLang: "en" },
+      { btn: "btn-eses", section: "sec-eses", code: "eses", htmlLang: "es" },
+      { btn: "btn-frfr", section: "sec-frfr", code: "frfr", htmlLang: "fr" },
+      { btn: "btn-itit", section: "sec-itit", code: "itit", htmlLang: "it" },
+      { btn: "btn-dede", section: "sec-dede", code: "dede", htmlLang: "de" }
+    ];
+    let CURRENT_LANG = LANGS[0].code;
+
+    // Traduções simples do cabeçalho
+    const HEADER_T = {
+      ptbr: "Desenvolvedor de Software • Python • C++ • GUI",
+      enus: "Software Developer • Python • C++ • GUI",
+      eses: "Desarrollador de Software • Python • C++ • GUI",
+      frfr: "Développeur Logiciel • Python • C++ • GUI",
+      itit: "Sviluppatore Software • Python • C++ • GUI",
+      dede: "Softwareentwickler • Python • C++ • GUI"
+    };
+
+    // Badge "last commit" traduzido
+    const BADGE_LAST_COMMIT = {
+      ptbr: { label:"Estatísticas%20atualizadas%20em", alt:"Estatísticas atualizadas em" },
+      enus: { label:"Statistics%20updated%20on", alt:"Statistics updated on" },
+      eses: { label:"Estadísticas%20actualizadas%20en", alt:"Estadísticas atualizadas en" },
+      frfr: { label:"Statistiques%20mises%20%C3%A0%20jour%20le", alt:"Statistiques mises à jour le" },
+      itit: { label:"Statistiche%20aggiornate%20al", alt:"Statistiche aggiornate al" },
+      dede: { label:"Statistiken%20aktualisiert%20am", alt:"Statistiken aktualisiert am" }
+    };
+
+    // Locales para imagens de estatísticas
+    const LOCALES = {
+      ptbr: { stats:"pt-br", streak:"pt_BR", graph:"pt-br", langs:"pt-br" },
+      enus: { stats:"en",    streak:"en",    graph:"en",    langs:"en" },
+      eses: { stats:"es",    streak:"es",    graph:"es",    langs:"es" },
+      frfr: { stats:"fr",    streak:"fr",    graph:"fr",    langs:"fr" },
+      itit: { stats:"it",    streak:"it",    graph:"it",    langs:"it" },
+      dede: { stats:"de",    streak:"de",    graph:"de",    langs:"de" }
+    };
+
+    function activateLang(idObj) {
+      LANGS.forEach(l => {
+        document.getElementById(l.section).classList.remove('active');
+        document.getElementById(l.btn).classList.remove('active');
+      });
+      document.getElementById(idObj.section).classList.add('active');
+      document.getElementById(idObj.btn).classList.add('active');
+      document.documentElement.lang = idObj.htmlLang;
+      CURRENT_LANG = idObj.code;
+
+      updateHeaderTagline();
+      updateLastCommitBadge();
+      updateStatsLocale();
+
+      // rolar até o topo do bloco de idiomas
+      const top = document.querySelector('.languages');
+      if (top) window.scrollTo({ top: top.offsetTop - 16, behavior: 'smooth' });
+    }
+
+    function updateHeaderTagline() {
+      const t = HEADER_T[CURRENT_LANG] || HEADER_T.ptbr;
+      const el = document.getElementById('tagline');
+      if (el) el.innerText = t;
+    }
+
+    function updateLastCommitBadge() {
+      const info = BADGE_LAST_COMMIT[CURRENT_LANG] || BADGE_LAST_COMMIT.ptbr;
+      const img = document.getElementById('badge-last-commit');
+      if (!img) return;
+      img.src = "https://img.shields.io/github/last-commit/fernandoncidade/fernandoncidade?label=" + info.label + "&style=flat-square";
+      img.alt = info.alt;
+    }
+
+    function updateStatsLocale() {
+      const l = LOCALES[CURRENT_LANG] || LOCALES.ptbr;
+
+      const stats = document.getElementById('gh-stats');
+      if (stats) stats.src = `https://github-readme-stats.vercel.app/api?username=fernandoncidade&theme=blue-green&show_icons=True&locale=${l.stats}`;
+
+      const streak = document.getElementById('gh-streak');
+      if (streak) streak.src = `https://streak-stats.demolab.com?user=fernandoncidade&theme=microsoft-dark&locale=${l.streak}&date_format=j%20M%5B%20Y%5D`;
+
+      const graph = document.getElementById('gh-activity');
+      const titles = {
+        ptbr: "Gráfico%20de%20Atividade%20de%20fernandoncidade",
+        enus: "fernandoncidade's%20Activity%20Graph",
+        eses: "Gráfico%20de%20Actividad%20de%20fernandoncidade",
+        frfr: "Graphique%20d'activité%20de%20fernandoncidade",
+        itit: "Grafico%20di%20Attività%20di%20fernandoncidade",
+        dede: "Aktivitätsdiagramm%20von%20fernandoncidade"
+      };
+      if (graph) graph.src =
+        `https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&area=true&custom_title=${titles[CURRENT_LANG] || titles.ptbr}&locale=${l.graph}`;
+
+      const langs = document.getElementById('top-langs');
+      if (langs) langs.src =
+        `https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade&layout=compact&theme=merko&locale=${l.langs}`;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // listeners dos botões
+      LANGS.forEach(l => {
+        const b = document.getElementById(l.btn);
+        if (b) b.addEventListener('click', () => activateLang(l));
+      });
+      // ativar padrão
+      activateLang(LANGS[0]);
+    });
+  </script>
+</head>
+<body>
+  <div class="header">
+    <img class="avatar" src="https://avatars.githubusercontent.com/u/125649486?v=4" alt="Avatar">
+    <h1 class="title">Fernando Nillsson Cidade</h1>
+    <div id="tagline" class="tagline">Desenvolvedor de Software • Python • C++ • GUI</div>
+    <div class="header-links">
+      <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
+      <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
+      <a href="https://www.instagram.com/fernandoncidade" target="_blank">Instagram</a>
+      <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="languages">
+      <b>Idiomas / Languages:</b><br>
+      <button id="btn-ptbr" class="active">🇧🇷 Português (BR)</button>
+      <button id="btn-enus">🇺🇸 English (US)</button>
+      <button id="btn-eses">🇪🇸 Español (ES)</button>
+      <button id="btn-frfr">🇫🇷 Français (FR)</button>
+      <button id="btn-itit">🇮🇹 Italiano (IT)</button>
+      <button id="btn-dede">🇩🇪 Deutsch (DE)</button>
+    </div>
+
+    <div class="badge-row">
+      <img id="badge-last-commit"
+           src="https://img.shields.io/github/last-commit/fernandoncidade/fernandoncidade?label=Estatísticas%20atualizadas%20em&style=flat-square"
+           alt="Estatísticas atualizadas em">
+    </div>
+
+    <!-- PT-BR -->
+    <section id="sec-ptbr" class="lang-section active">
+      <div class="note">
+        <b>Olá, eu sou o Fernando!</b> Sou desenvolvedor com foco em Python, C++ e GUIs (PySide6, PyQt6, Tkinter). Interesses em automação, análise de dados e soluções práticas.
+      </div>
+
+      <div class="grid">
+        <div class="col-12 card">
+          <h2>📌 Destaque: Linceu Lighthouse Binary</h2>
+          <p>Ferramenta de monitoramento de integridade de arquivos (FIM), interface multilíngue, estatísticas e exportações flexíveis.</p>
+          <p>
+            <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary" target="_blank">Ver repositório</a>
+            &nbsp;
+            <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank">Microsoft Store</a>
+          </p>
+          <div class="screenshots center">
+            <a href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary" target="_blank">
+              <img src="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/icones/file_manager4.png" alt="Linceu Lighthouse">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-6 card">
+          <h3>🚀 Habilidades</h3>
+          <ul>
+            <li>Linguagens: Python, C++</li>
+            <li>GUI: PySide6, PyQt6, Tkinter</li>
+            <li>Dados: Pandas, Plotly, Streamlit</li>
+            <li>Científico: NumPy, SciPy, Matplotlib</li>
+            <li>Arquivos & Backup, Git/GitHub</li>
+          </ul>
+        </div>
+
+        <div class="col-6 card">
+          <h3>🎯 Principais Projetos</h3>
+          <ul>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda Avaliações Acadêmicas</a></li>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1">Manager Compression PySide6</a> • <a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1">PyQt6</a></li>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/eisenhower_organizing">Eisenhower Organizing</a></li>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Programa_Urna_Eletronica">Programa Urna Eletrônica (C++)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 card">
+          <h3>📊 Dashboards</h3>
+          <ul>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 card center stats">
+          <h3>📈 Estatísticas GitHub</h3>
+          <img id="gh-stats" alt="GitHub Stats">
+          <img id="gh-streak" alt="GitHub Streak">
+          <img id="gh-activity" alt="GitHub Activity Graph">
+          <img id="top-langs" alt="Top Langs">
+        </div>
+
+        <div class="col-12 card">
+          <h3>🎓 Formação</h3>
+          <p>Aluno de Engenharia Civil (UFPR). Estudos anteriores em Licenciatura em Física (UTFPR), experiência em docência no Ensino Médio.</p>
+          <h3>🎯 Objetivos</h3>
+          <ul>
+            <li>Aprimorar automação, análise de dados e IA</li>
+            <li>Ampliar contribuições open source</li>
+            <li>Explorar novas tecnologias e padrões</li>
+          </ul>
+          <h3>📫 Contato</h3>
+          <p class="header-links">
+            <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
+            <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
+            <a href="https://www.instagram.com/fernandoncidade" target="_blank">Instagram</a>
+            <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EN-US -->
+    <section id="sec-enus" class="lang-section">
+      <div class="note">
+        <b>Hello! I'm Fernando.</b> Software developer focused on Python, C++ and GUIs (PySide6, PyQt6, Tkinter). Passionate about automation, data analysis and practical solutions.
+      </div>
+
+      <div class="grid">
+        <div class="col-12 card">
+          <h2>📌 Highlight: Linceu Lighthouse Binary</h2>
+          <p>File Integrity Monitoring (FIM) tool with multilingual UI, statistics and flexible exports.</p>
+          <p>
+            <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary" target="_blank">Open repository</a>
+            &nbsp;
+            <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank">Microsoft Store</a>
+          </p>
+          <div class="screenshots center">
+            <a href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary" target="_blank">
+              <img src="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/icones/file_manager4.png" alt="Linceu Lighthouse">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-6 card">
+          <h3>🚀 Skills</h3>
+          <ul>
+            <li>Languages: Python, C++</li>
+            <li>GUI: PySide6, PyQt6, Tkinter</li>
+            <li>Data: Pandas, Plotly, Streamlit</li>
+            <li>Scientific: NumPy, SciPy, Matplotlib</li>
+            <li>Files & Backup, Git/GitHub</li>
+          </ul>
+        </div>
+
+        <div class="col-6 card">
+          <h3>🎯 Main Projects</h3>
+          <ul>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Academic Evaluations Scheduler</a></li>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1">Manager Compression PySide6</a> • <a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1">PyQt6</a></li>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/eisenhower_organizing">Eisenhower Organizing</a></li>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Programa_Urna_Eletronica">Electronic Ballot (C++)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 card">
+          <h3>📊 Dashboards</h3>
+          <ul>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 card center stats">
+          <h3>📈 GitHub Stats</h3>
+          <img id="gh-stats-en" alt="" style="display:none">
+          <img id="gh-streak-en" alt="" style="display:none">
+          <img id="gh-activity-en" alt="" style="display:none">
+          <img id="top-langs-en" alt="" style="display:none">
+          <img id="gh-stats" alt="GitHub Stats">
+          <img id="gh-streak" alt="GitHub Streak">
+          <img id="gh-activity" alt="GitHub Activity Graph">
+          <img id="top-langs" alt="Top Langs">
+        </div>
+
+        <div class="col-12 card">
+          <h3>🎓 Academic Background</h3>
+          <p>Civil Engineering student (UFPR). Former Physics Teaching student (UTFPR), with high school teaching experience.</p>
+          <h3>🎯 Goals</h3>
+          <ul>
+            <li>Improve in automation, data analysis and AI</li>
+            <li>Expand open source contributions</li>
+            <li>Explore new technologies and standards</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ES-ES -->
+    <section id="sec-eses" class="lang-section">
+      <div class="note">
+        <b>¡Hola! Soy Fernando.</b> Desarrollador con enfoque en Python, C++ y GUIs (PySide6, PyQt6, Tkinter). Interesado en automatización, análisis de datos y soluciones prácticas.
+      </div>
+
+      <div class="grid">
+        <div class="col-12 card">
+          <h2>📌 Destacado: Linceu Lighthouse Binary</h2>
+          <p>Herramienta FIM com interface multilingüe, estatísticas e exportações flexíveis.</p>
+          <p>
+            <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary" target="_blank">Ver repositorio</a>
+            &nbsp;
+            <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank">Microsoft Store</a>
+          </p>
+        </div>
+
+        <div class="col-6 card">
+          <h3>🚀 Habilidades</h3>
+          <ul>
+            <li>Lenguajes: Python, C++</li>
+            <li>GUI: PySide6, PyQt6, Tkinter</li>
+            <li>Datos: Pandas, Plotly, Streamlit</li>
+            <li>Científico: NumPy, SciPy, Matplotlib</li>
+            <li>Archivos & Backup, Git/GitHub</li>
+          </ul>
+        </div>
+
+        <div class="col-6 card">
+          <h3>🎯 Proyectos</h3>
+          <ul>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda Evaluaciones Académicas</a></li>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1">Manager Compression PySide6</a> • <a target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1">PyQt6</a></li>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/eisenhower_organizing">Eisenhower Organizing</a></li>
+            <li><a target="_blank" href="https://github.com/fernandoncidade/Programa_Urna_Eletronica">Urna Electrónica (C++)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 card center stats">
+          <h3>📈 Estadísticas</h3>
+          <img id="gh-stats" alt="GitHub Stats">
+          <img id="gh-streak" alt="GitHub Streak">
+          <img id="gh-activity" alt="GitHub Activity Graph">
+          <img id="top-langs" alt="Top Langs">
+        </div>
+      </div>
+    </section>
+
+    <!-- FR-FR -->
+    <section id="sec-frfr" class="lang-section">
+      <div class="note">
+        <b>Bonjour ! Je suis Fernando.</b> Développeur axé sur Python, C++ et GUIs (PySide6, PyQt6, Tkinter). Intéressé par l’automatisation, l’analyse de données et des solutions pratiques.
+      </div>
+
+      <div class="grid">
+        <div class="col-12 card">
+          <h2>📌 À la Une : Linceu Lighthouse Binary</h2>
+          <p>Outil FIM avec interface multilingue, statistiques et exports flexibles.</p>
+          <p>
+            <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary" target="_blank">Voir le dépôt</a>
+            &nbsp;
+            <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank">Microsoft Store</a>
+          </p>
+        </div>
+
+        <div class="col-12 card center stats">
+          <h3>📈 Statistiques GitHub</h3>
+          <img id="gh-stats" alt="GitHub Stats">
+          <img id="gh-streak" alt="GitHub Streak">
+          <img id="gh-activity" alt="GitHub Activity Graph">
+          <img id="top-langs" alt="Top Langs">
+        </div>
+      </div>
+    </section>
+
+    <!-- IT-IT -->
+    <section id="sec-itit" class="lang-section">
+      <div class="note">
+        <b>Ciao! Sono Fernando.</b> Sviluppatore focalizzato su Python, C++ e GUI (PySide6, PyQt6, Tkinter). Interessato ad automazione, analisi dati e soluzioni pratiche.
+      </div>
+
+      <div class="grid">
+        <div class="col-12 card">
+          <h2>📌 In Evidenza: Linceu Lighthouse Binary</h2>
+          <p>Strumento FIM con interfaccia multilingue, statistiche ed export flessibili.</p>
+          <p>
+            <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary" target="_blank">Vedi repository</a>
+            &nbsp;
+            <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank">Microsoft Store</a>
+          </p>
+        </div>
+
+        <div class="col-12 card center stats">
+          <h3>📈 Statistiche GitHub</h3>
+          <img id="gh-stats" alt="GitHub Stats">
+          <img id="gh-streak" alt="GitHub Streak">
+          <img id="gh-activity" alt="GitHub Activity Graph">
+          <img id="top-langs" alt="Top Langs">
+        </div>
+      </div>
+    </section>
+
+    <!-- DE-DE -->
+    <section id="sec-dede" class="lang-section">
+      <div class="note">
+        <b>Hallo! Ich bin Fernando.</b> Entwickler mit Fokus auf Python, C++ und GUIs (PySide6, PyQt6, Tkinter). Interessen: Automatisierung, Datenanalyse, praktische Lösungen.
+      </div>
+
+      <div class="grid">
+        <div class="col-12 card">
+          <h2>📌 Highlight: Linceu Lighthouse Binary</h2>
+          <p>FIM-Tool mit mehrsprachiger Oberfläche, Statistiken und flexiblem Export.</p>
+          <p>
+            <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary" target="_blank">Repository ansehen</a>
+            &nbsp;
+            <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank">Microsoft Store</a>
+          </p>
+        </div>
+
+        <div class="col-12 card center stats">
+          <h3>📈 GitHub Statistiken</h3>
+          <img id="gh-stats" alt="GitHub Stats">
+          <img id="gh-streak" alt="GitHub Streak">
+          <img id="gh-activity" alt="GitHub Activity Graph">
+          <img id="top-langs" alt="Top Langs">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="footer">
+    <div id="footer-main">
+      Feito por Fernando Nillsson Cidade •
+      <a href="https://github.com/fernandoncidade/fernandoncidade" target="_blank">README do Perfil</a> •
+      <a href="https://github.com/fernandoncidade" target="_blank">Perfil no GitHub</a>
+    </div>
+  </div>
+</body>
+</html>
