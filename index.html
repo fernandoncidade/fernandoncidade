@@ -204,10 +204,13 @@
       document.documentElement.lang = idObj.htmlLang;
       CURRENT_LANG = idObj.code;
 
-      updateHeaderTagline();
-      updateLastCommitBadge();
-      updateStatsLocale();
-      updateProjectsTexts(); // << traduz botão/aba de projetos
+      // Atualiza imediatamente o rótulo do botão "Projetos/Repositórios"
+      updateProjectsTexts();
+
+      // Chamadas seguras (evitam erro caso a função não exista)
+      if (typeof updateHeaderTagline === 'function') updateHeaderTagline();
+      if (typeof updateLastCommitBadge === 'function') updateLastCommitBadge();
+      if (typeof updateStatsLocale === 'function') updateStatsLocale();
 
       const top = document.querySelector('.languages');
       if (top) window.scrollTo({ top: top.offsetTop - 16, behavior: 'smooth' });
@@ -246,7 +249,9 @@
 
       // ativar padrão
       activateLang(LANGS[0]);
-      updateProjectsTexts(); // << inicializa rótulos da aba projetos
+
+      // Garante rótulos corretos já na carga inicial
+      updateProjectsTexts();
     });
   </script>
 </head>
@@ -901,10 +906,6 @@
         Lista de projetos e repositórios públicos de fernandoncidade.
       </div>
       <div class="grid">
-        <div class="col-4"><div class="card"><h3>README do Perfil</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/fernandoncidade">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Eisenhower Organizer Matrix</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>sloth-highlander-theme-1</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/sloth-highlander-theme-1">Abrir repositório</a></p></div></div>
-
         <div class="col-4"><div class="card"><h3>Linceu Lighthouse Binary</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary">Abrir repositório</a></p></div></div>
         <div class="col-4"><div class="card"><h3>File Manager</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/File_Manager">Abrir repositório</a></p></div></div>
         <div class="col-4"><div class="card"><h3>Dashboard Taipy</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Dashboard_Taipy">Abrir repositório</a></p></div></div>
