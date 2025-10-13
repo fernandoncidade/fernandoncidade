@@ -77,8 +77,8 @@ Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento 
 ## 🏮 Destaque de Projeto: Linceu Lighthouse Binary
 
 <div align="center">
-  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary">
-    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
+    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
@@ -86,8 +86,8 @@ Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento 
 Ferramenta avançada de monitoramento de integridade de arquivos (FIM), com interface multilíngue, estatísticas detalhadas e exportação flexível de dados.  
 Disponível em versão de teste por 7 dias, após o qual pode ser adquirida pela [Microsoft Store](https://www.microsoft.com/store/apps/9NN8Z5Z700TM).
 
-- [Repositório Linceu Lighthouse Binary](https://github.com/fernandoncidade/Linceu_Lighthouse_Binary)
-- [Leia o README multilíngue](https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/README.md)
+- [Repositório Linceu Lighthouse Binary](https://github.com/fernandoncidade/Linceu_Lighthouse)
+- [Leia o README multilíngue](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Principais Projetos
@@ -219,8 +219,8 @@ I'm a software developer with experience in Python, C++, and GUI development. I'
 ## 🏮 Project Highlight: Linceu Lighthouse Binary
 
 <div align="center">
-  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary">
-    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
+    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
@@ -228,8 +228,8 @@ I'm a software developer with experience in Python, C++, and GUI development. I'
 Advanced file integrity monitoring tool (FIM) with multilingual interface, detailed statistics, and flexible data export.  
 Available as a 7-day trial version, after which it can be purchased via the [Microsoft Store](https://www.microsoft.com/store/apps/9NN8Z5Z700TM).
 
-- [Linceu Lighthouse Binary Repository](https://github.com/fernandoncidade/Linceu_Lighthouse_Binary)
-- [Read the multilingual README](https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/README.md)
+- [Linceu Lighthouse Binary Repository](https://github.com/fernandoncidade/Linceu_Lighthouse)
+- [Read the multilingual README](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Main Projects
@@ -361,8 +361,8 @@ Soy desarrollador de software con experiencia en Python, C++ y desarrollo de int
 ## 🏮 Proyecto Destacado: Linceu Lighthouse Binary
 
 <div align="center">
-  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary">
-    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
+    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
@@ -370,8 +370,8 @@ Soy desarrollador de software con experiencia en Python, C++ y desarrollo de int
 Herramienta avanzada de monitorización de integridad de archivos (FIM), con interfaz multilingüe, estadísticas detalladas y exportación flexible de datos.  
 Disponible en versión de prueba de 7 días, tras los cuales puede adquirirse en la [Microsoft Store](https://www.microsoft.com/store/apps/9NN8Z5Z700TM).
 
-- [Repositorio Linceu Lighthouse Binary](https://github.com/fernandoncidade/Linceu_Lighthouse_Binary)
-- [Lee el README multilingüe](https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/README.md)
+- [Repositorio Linceu Lighthouse Binary](https://github.com/fernandoncidade/Linceu_Lighthouse)
+- [Lee el README multilingüe](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Principales Proyectos
@@ -503,8 +503,8 @@ Je suis développeur logiciel avec expérience en Python, C++ et développement 
 ## 🏮 Projet phare : Linceu Lighthouse Binary
 
 <div align="center">
-  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary">
-    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
+    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
@@ -512,8 +512,8 @@ Je suis développeur logiciel avec expérience en Python, C++ et développement 
 Outil avancé de surveillance de l'intégrité des fichiers (FIM), avec interface multilingue, statistiques détaillées et exportation flexible des données.  
 Disponible en version d'essai de 7 jours, puis achetable sur la [Microsoft Store](https://www.microsoft.com/store/apps/9NN8Z5Z700TM).
 
-- [Dépôt Linceu Lighthouse Binary](https://github.com/fernandoncidade/Linceu_Lighthouse_Binary)
-- [Lire le README multilingue](https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/README.md)
+- [Dépôt Linceu Lighthouse Binary](https://github.com/fernandoncidade/Linceu_Lighthouse)
+- [Lire le README multilingue](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Projets Principaux
@@ -645,8 +645,8 @@ Sono uno sviluppatore software con esperienza in Python, C++ e sviluppo di inter
 ## 🏮 Progetto in Evidenza: Linceu Lighthouse Binary
 
 <div align="center">
-  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary">
-    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
+    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
@@ -654,8 +654,8 @@ Sono uno sviluppatore software con esperienza in Python, C++ e sviluppo di inter
 Strumento avanzato per il monitoraggio dell'integrità dei file (FIM), con interfaccia multilingue, statistiche dettagliate ed esportazione flessibile dei dati.  
 Disponibile in versione di prova per 7 giorni, dopo i quali può essere acquistato tramite [Microsoft Store](https://www.microsoft.com/store/apps/9NN8Z5Z700TM).
 
-- [Repository Linceu Lighthouse Binary](https://github.com/fernandoncidade/Linceu_Lighthouse_Binary)
-- [Leggi il README multilingue](https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/README.md)
+- [Repository Linceu Lighthouse Binary](https://github.com/fernandoncidade/Linceu_Lighthouse)
+- [Leggi il README multilingue](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Principali Progetti
@@ -787,8 +787,8 @@ Ich bin Softwareentwickler mit Erfahrung in Python, C++ und GUI-Entwicklung. Ich
 ## 🏮 Projekt-Highlight: Linceu Lighthouse Binary
 
 <div align="center">
-  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary">
-    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
+    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
@@ -796,8 +796,8 @@ Ich bin Softwareentwickler mit Erfahrung in Python, C++ und GUI-Entwicklung. Ich
 Fortschrittliches Tool zur Überwachung der Dateiintegrität (FIM) mit mehrsprachiger Oberfläche, detaillierten Statistiken und flexiblem Datenexport.  
 Verfügbar als 7-tägige Testversion, danach über den [Microsoft Store](https://www.microsoft.com/store/apps/9NN8Z5Z700TM) erhältlich.
 
-- [Linceu Lighthouse Binary Repository](https://github.com/fernandoncidade/Linceu_Lighthouse_Binary)
-- [Lies das mehrsprachige README](https://github.com/fernandoncidade/Linceu_Lighthouse_Binary/blob/main/README.md)
+- [Linceu Lighthouse Binary Repository](https://github.com/fernandoncidade/Linceu_Lighthouse)
+- [Lies das mehrsprachige README](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Hauptprojekte
