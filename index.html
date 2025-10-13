@@ -6,27 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/jpg" href="https://raw.githubusercontent.com/fernandoncidade/fernandoncidade/main/image_perfil/photo_2024-12-26_12-19-42.jpg">
   <style>
+    /* ============================
+       Variáveis CSS (tema / cores)
+       - Centraliza as cores e medidas usadas no layout.
+       - Facilita customização: altere aqui para modificar aparência global.
+    ============================ */
     :root {
-      --main-bg:#f7f9fc; --container-bg:#fff;
-      --primary:#2c3e50; --accent:#1abc9c;
-      --muted:#6b7b8c; --border:#e5eaf0;
-      --radius:12px; --shadow:0 6px 18px #00000012;
+      --main-bg:#f7f9fc; /* cor de fundo da página no tema claro */
+      --container-bg:#fff; /* fundo dos containers brancos */
+      --primary:#2c3e50; /* cor principal do texto/títulos */
+      --accent:#1abc9c; /* cor de destaque/ênfase (mint) */
+      --muted:#6b7b8c; /* cor para textos secundários */
+      --border:#e5eaf0; /* cor das bordas e separadores */
+      --radius:12px; /* raio padrão de cantos arredondados */
+      --shadow:0 6px 18px #00000012; /* sombra padrão dos containers */
     }
+
+    /* Reset e tipografia básica */
     html,body{margin:0;padding:0;background:var(--main-bg)}
     body{font-family:Arial,Helvetica,sans-serif;color:#1f2d3d}
     a{color:#0f8bff;text-decoration:none}
     a:hover{text-decoration:underline}
+
+    /* Cabeçalho: área superior com avatar, nome e links principais */
     .header{
       background:#0f172a;color:#e6f7ff;
       padding:2.2rem 1rem 1.6rem; text-align:center
     }
+
+    /* Avatar redondo com borda e sombra */
     .avatar{
       width:92px;height:92px;border-radius:50%;
       border:3px solid #00e5c8;margin-bottom:.6rem;
       box-shadow:0 3px 12px #00e5c84a; object-fit:cover;
     }
+
     .title{margin:.2rem 0 .2rem 0;font-size:2.1rem;letter-spacing:.2px}
     .tagline{margin:.2rem 0 0 0;color:#a3ffd6;font-weight:600}
+
+    /* Links no cabeçalho (GitHub, LinkedIn, etc.) */
     .header-links{
       margin-top:.8rem; display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap
     }
@@ -34,11 +52,15 @@
       background:#0b2239;color:#eaf9ff;border:1px solid #0b2f4f;
       padding:.45em .9em;border-radius:999px;font-size:.95rem
     }
+
+    /* Container central do conteúdo com largura máxima e sombra */
     .container{
       max-width:1100px;margin:1.6rem auto;background:var(--container-bg);
       border-radius:var(--radius); box-shadow:var(--shadow);
       padding:1.4rem 1.2rem 2rem
     }
+
+    /* Barra de seleção de idiomas: botões estilo "pill" */
     .languages{margin:0 0 1rem 0;text-align:center}
     .languages button{
       margin:.2rem .25rem; padding:.45em .9em; font-size:1rem;
@@ -46,16 +68,25 @@
       background:#f3f7fb; color:#223; box-shadow:0 1px 4px #0000000a;
     }
     .languages button.active{background:#e6fffa;border-color:var(--accent);color:#0c3b40;font-weight:700}
+
     .badge-row{text-align:center;margin:1rem 0 .7rem}
     .badge-row img{vertical-align:middle;margin:0 .25rem}
+
+    /* Cada seção por idioma fica dentro de .lang-section.
+       Por padrão escondemos e apenas a ativa é exibida.
+       A animação é uma transição simples de fade-in ao ativar. */
     .lang-section{display:none;animation:fade .25s ease; border:1px solid #e9f3ff; background:#fbfeff; border-radius:10px; padding:1rem 1.2rem; margin:1rem 0}
     .lang-section.active{display:block}
     @keyframes fade{from{opacity:0}to{opacity:1}}
+
+    /* Tipos de títulos e parágrafos */
     h2{color:var(--primary);margin:1rem 0 .4rem}
     h3{color:#2f4357;margin:1.1rem 0 .4rem}
     p{line-height:1.7}
     ul,ol{line-height:1.8}
     li{margin:.25rem 0}
+
+    /* Grid simples usando 12 colunas flexíveis */
     .grid{
       display:grid; gap:1rem;
       grid-template-columns:repeat(12,1fr);
@@ -69,27 +100,39 @@
     .col-4{grid-column:span 4}
     .col-3{grid-column:span 3}
     .center{text-align:center}
+
+    /* Estilos para imagens de screenshots e widgets de estatísticas */
     .screenshots img, .stats img{
       max-width:100%; border-radius:8px; box-shadow:0 0 10px #00000010; margin:.4rem
     }
-    /* Reduz a imagem file_manager4.png em todos os idiomas */
+
+    /* Ajuste específico: reduz a imagem file_manager4.png em todos os idiomas
+       - Usa seletor de atributo para evitar criar regras extras por idioma.
+       - Mantém proporção com height:auto. */
     .screenshots img[src*="file_manager4.png"] {
       width:100%;
       max-width:720px; /* ajuste aqui se quiser menor/maior */
       height:auto;
     }
+
+    /* Estilos para botões de call-to-action (CTA) */
     .cta{
       display:inline-block; background:var(--accent); color:#fff; padding:.6em 1.1em; border-radius:8px; font-weight:700; box-shadow:0 2px 8px #00d1b244
     }
     .cta.secondary{
       background:#0f8bff
     }
+
+    /* Caixa de nota informativa usada no topo de cada idioma */
     .note{
       background:#e9fbf7; border-left:6px solid var(--accent); padding:.8rem 1rem; border-radius:6px; margin:.8rem 0
     }
+
     .footer{
       text-align:center;color:#6b7b8c;margin:1.6rem 0 2.2rem;font-size:.98rem
     }
+
+    /* Regras responsivas: em telas menores as colunas col-6/col-4 empilham */
     @media(max-width:900px){
       .col-6{grid-column:span 12}
       .col-4{grid-column:span 12}
@@ -97,7 +140,10 @@
       .container{padding:.9rem .5rem 1.4rem}
     }
 
-    /* ===== Dinâmica/UX extra ===== */
+    /* ========== Dinâmica / UX extra (tema escuro e animações) ==========
+       - Define variáveis adicionais para o tema escuro e regras para alternar
+       - Mantém animações suaves e performance com prefers-reduced-motion.
+    ==================================================================== */
     :root {
       --bg-dark:#0b1220; --text-dark:#e9f2ff;
       --card-dark:#0f1829; --border-dark:#1f2b42;
@@ -105,6 +151,7 @@
     }
     html, body { scroll-behavior:smooth }
     body { transition: background-color .25s ease, color .25s ease }
+    /* Quando body possui a classe .dark, aplicamos as variações escuras */
     body.dark{
       background:var(--bg-dark); color:var(--text-dark)
     }
@@ -114,17 +161,19 @@
     body.dark a{ color:#2c3e50 }
     body.dark .note{ background:#0f2a24; border-left-color:#1abc9c }
     body.dark .lang-section{
-      background:#0d1526;           /* mesmo tom do container no dark */
+      background:#0d1526;           /* mantém tom similar ao container no dark */
       border-color:var(--border-dark);
     }
-    /* Opcional: suaviza os cards no dark para menos “recorte” */
+
+    /* Sombra dos cards mais forte no tema escuro para melhor contraste */
     body.dark .card{
       background:#0f1829;
       border-color:var(--border-dark);
-      box-shadow:0 2px 10px #00000055; /* sombra um pouco mais visível no dark */
+      box-shadow:0 2px 10px #00000055;
     }
 
-    /* Sticky barra de idiomas com blur */
+    /* Barra de idiomas fixa (sticky) com blur/transparência para bom contraste
+       - Compatibilidade Safari com -webkit-backdrop-filter */
     .languages{
       position:sticky; top:0; z-index:10;
       -webkit-backdrop-filter: saturate(140%) blur(6px); /* adicionado para Safari */
@@ -134,7 +183,7 @@
     }
     body.dark .languages{ background:rgba(13,21,38,.55) }
 
-    /* Botão voltar ao topo */
+    /* Botão flutuante "voltar ao topo" */
     .btn-top{
       position:fixed; right:16px; bottom:18px; z-index:20;
       width:42px; height:42px; border-radius:999px; border:1px solid var(--border);
@@ -143,11 +192,13 @@
     }
     .btn-top.show{ display:flex }
 
-    /* Animação revelar ao rolar */
+    /* Animação de revelação ao rolar:
+       - Elementos começam escondidos (reveal) e recebem .in quando visíveis.
+       - Isso melhora percepção da página sem carregar JS pesado. */
     .reveal{ opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease }
     .reveal.in{ opacity:1; transform:none }
 
-    /* Ripple simples nos botões */
+    /* Efeito "ripple" simples (círculo no clique) usado em botões */
     .languages button, .cta{ position:relative; overflow:hidden }
     .ripple{
       position:absolute; border-radius:50%; transform:scale(0);
@@ -156,7 +207,7 @@
     }
     @keyframes ripple{ to{ transform:scale(12); opacity:0 } }
 
-    /* Toast */
+    /* Toasts (mensagens rápidas) */
     .toast{
       position:fixed; top:14px; right:14px; z-index:30;
       background:#111827; color:#e5e7eb; padding:.55rem .8rem; border-radius:8px;
@@ -164,30 +215,30 @@
     }
     .toast.show{ display:block; animation:fade .25s ease }
 
-    /* Acessibilidade: reduzir movimento */
+    /* Acessibilidade: se usuário prefere menos movimento, desligamos animações */
     @media (prefers-reduced-motion: reduce){
       *{ animation:none!important; transition:none!important }
     }
 
-    /* Tema escuro: cores dos rótulos/estados dos botões de idioma */
+    /* Ajustes de cores no tema escuro para diversos elementos específicos */
     body.dark .languages button{
-      color:#e9f2ff;                  /* texto claro */
+      color:#e9f2ff;
       border-color:var(--border-dark);
       background:var(--pill-dark);
     }
     body.dark .languages button:hover{
-      color:#d6fff6;                  /* leve toque “mint” */
-      border-color:#1abc9c;           /* usa o accent */
-      background:#0e1c2e;             /* pill um pouco mais clara */
+      color:#d6fff6;
+      border-color:#1abc9c;
+      background:#0e1c2e;
     }
     body.dark .languages button.active{
-      color:#b9fff0;                  /* texto em tom do accent */
+      color:#b9fff0;
       border-color:#1abc9c;
-      background:rgba(26,188,156,.18);/* accent translúcido */
+      background:rgba(26,188,156,.18);
       font-weight:700;
     }
 
-    /* Tema escuro: subtópicos (PT-BR) de Principais Projetos e Dashboards */
+    /* Algumas regras adicionais para garantir legibilidade de links nas seções traduzidas */
     body.dark #sec-ptbr ul.subtopics,
     body.dark #sec-ptbr ul.subtopics li,
     body.dark #sec-ptbr ul.subtopics a{
@@ -197,7 +248,7 @@
       color:#d6fff6;
     }
 
-    /* Tema escuro: subtópicos (PT-BR) de Principais Projetos e Dashboards */
+    /* Repetido para outras seções de idioma (manter consistência visual) */
     body.dark #sec-enus ul.subtopics,
     body.dark #sec-enus ul.subtopics li,
     body.dark #sec-enus ul.subtopics a{
@@ -207,7 +258,6 @@
       color:#d6fff6;
     }
 
-    /* Tema escuro: subtópicos (PT-BR) de Principais Projetos e Dashboards */
     body.dark #sec-eses ul.subtopics,
     body.dark #sec-eses ul.subtopics li,
     body.dark #sec-eses ul.subtopics a{
@@ -217,7 +267,6 @@
       color:#d6fff6;
     }
 
-    /* Tema escuro: subtópicos (PT-BR) de Principais Projetos e Dashboards */
     body.dark #sec-frfr ul.subtopics,
     body.dark #sec-frfr ul.subtopics li,
     body.dark #sec-frfr ul.subtopics a{
@@ -227,7 +276,6 @@
       color:#d6fff6;
     }
 
-    /* Tema escuro: subtópicos (PT-BR) de Principais Projetos e Dashboards */
     body.dark #sec-itit ul.subtopics,
     body.dark #sec-itit ul.subtopics li,
     body.dark #sec-itit ul.subtopics a{
@@ -237,7 +285,6 @@
       color:#d6fff6;
     }
 
-    /* Tema escuro: subtópicos (PT-BR) de Principais Projetos e Dashboards */
     body.dark #sec-dede ul.subtopics,
     body.dark #sec-dede ul.subtopics li,
     body.dark #sec-dede ul.subtopics a{
@@ -247,7 +294,7 @@
       color:#d6fff6;
     }
 
-    /* Tema escuro: rótulos dos botões da sessão "Contato" (todas as línguas) */
+    /* Links de contato (em cada idioma) adaptados para tema escuro/claro */
     body.dark .lang-section .header-links a{
       color:#e9f2ff;
     }
@@ -255,7 +302,6 @@
       color:#d6fff6;
     }
 
-    /* Tema escuro: rótulos dos botões do topo (GitHub, LinkedIn, Lattes, Instagram, ORCID) */
     body.dark .header .header-links a{
       color:#e9f2ff;
     }
@@ -263,7 +309,7 @@
       color:#d6fff6;
     }
 
-    /* Tema claro: botões "Contato" iguais aos botões de idiomas */
+    /* Tema claro: estiliza os links de contato dentro das seções (para consistência) */
     body:not(.dark) .lang-section .header-links a{
       background:#f3f7fb;
       color:#223;
@@ -278,7 +324,7 @@
       text-decoration:none; /* evita sublinhado no hover */
     }
 
-    /* Hover (tema claro) — igual aos botões de idiomas */
+    /* Comportamento de hover para tema claro/escuro (consistência visual) */
     body:not(.dark) .languages button:hover,
     body:not(.dark) .lang-section .header-links a:hover,
     body:not(.dark) .header .header-links a:hover{
@@ -288,7 +334,6 @@
       text-decoration:none;
     }
 
-    /* Hover (tema escuro) — igual aos botões de idiomas */
     body.dark .languages button:hover,
     body.dark .lang-section .header-links a:hover,
     body.dark .header .header-links a:hover{
@@ -300,7 +345,16 @@
   </style>
 
   <script>
-    // Idiomas suportados
+    // ============================
+    // Configurações de idiomas e internacionalização (I18N)
+    // - LANGS: lista de objetos que representam cada idioma suportado.
+    //   Cada objeto contém:
+    //     btn: id do botão que ativa o idioma
+    //     section: id da seção HTML contendo o conteúdo traduzido
+    //     code: código interno usado no script para identificar o idioma
+    //     htmlLang: valor que será aplicado ao atributo <html lang="...">
+    // - CURRENT_LANG: código do idioma atualmente ativo (inicia no primeiro)
+    // ============================
     const LANGS = [
       { btn: "btn-ptbr", section: "sec-ptbr", code: "ptbr", htmlLang: "pt-br" },
       { btn: "btn-enus", section: "sec-enus", code: "enus", htmlLang: "en" },
@@ -311,7 +365,8 @@
     ];
     let CURRENT_LANG = LANGS[0].code;
 
-    // Traduções simples do cabeçalho
+    // Traduções simples do texto de tagline exibido no cabeçalho.
+    // Usado por updateHeaderTagline() para ajustar conforme CURRENT_LANG.
     const HEADER_T = {
       ptbr: "Desenvolvedor de Software • Python • C++ • GUI",
       enus: "Software Developer • Python • C++ • GUI",
@@ -321,7 +376,8 @@
       dede: "Softwareentwickler • Python • C++ • GUI"
     };
 
-    // Badge "last commit" traduzido
+    // Badge "último commit" em diferentes línguas.
+    // Cada entrada tem label (usada na query string da shields.io) e alt (texto alternativo)
     const BADGE_LAST_COMMIT = {
       ptbr: { label:"Estatísticas%20atualizadas%20em", alt:"Estatísticas atualizadas em" },
       enus: { label:"Statistics%20updated%20on", alt:"Statistics updated on" },
@@ -331,7 +387,8 @@
       dede: { label:"Statistiken%20aktualisiert%20am", alt:"Statistiken aktualisiert am" }
     };
 
-    // Locales para imagens de estatísticas
+    // LOCALES: mapeamento de códigos de locale usados pelos widgets de imagem
+    // - stats, streak, graph, langs são parâmetros de localidade que os serviços aceitam
     const LOCALES = {
       ptbr: { stats:"pt-br", streak:"pt_BR", graph:"pt-br", langs:"pt-br" },
       enus: { stats:"en",    streak:"en",    graph:"en",    langs:"en" },
@@ -341,7 +398,7 @@
       dede: { stats:"de",    streak:"de",    graph:"de",    langs:"de" }
     };
 
-    // Tradução do botão da aba de projetos
+    // Rótulo do botão de "Projetos" em cada idioma (usado para atualizar o texto)
     const PROJECTS_T = {
       ptbr: "📂 Projetos/Repositórios",
       enus: "📂 Projects/Repositories",
@@ -351,7 +408,7 @@
       dede: "📂 Projekte/Repositories"
     };
 
-    // Textos da seção de projetos
+    // Texto explicativo da seção de projetos (nota) por idioma
     const PROJECTS_NOTE_T = {
       ptbr: "Lista de projetos e repositórios públicos de fernandoncidade.",
       enus: "List of public projects and repositories by fernandoncidade.",
@@ -361,6 +418,7 @@
       dede: "Liste öffentlicher Projekte und Repositories von fernandoncidade."
     };
 
+    // Texto do botão CTA dentro da seção de projetos (traduzido)
     const PROJECTS_CTA_T = {
       ptbr: "Abrir repositório",
       enus: "Open repository",
@@ -370,38 +428,52 @@
       dede: "Repository öffnen"
     };
 
+    // ============================
+    // Funções de ativação e atualização de idioma
+    // - activateLang: torna uma seção de idioma visível, oculta as outras e atualiza
+    //   elementos dependentes (tagline, badges, widgets, etc).
+    //   Recebe o objeto de LANGS correspondente ao idioma a ativar.
+    // ============================
     function activateLang(idObj) {
+      // Desativa todas as seções e botões de idioma
       LANGS.forEach(l => {
         document.getElementById(l.section).classList.remove('active');
         document.getElementById(l.btn).classList.remove('active');
       });
-      // Esconde a aba de projetos ao trocar de idioma
+      // Ao trocar de idioma, escondemos a aba de projetos (se estiver aberta)
       const projSec = document.getElementById('sec-projects');
       if (projSec) projSec.classList.remove('active');
       const projBtn = document.getElementById('btn-projects');
       if (projBtn) projBtn.classList.remove('active');
 
+      // Ativa a seção e o botão do idioma selecionado
       document.getElementById(idObj.section).classList.add('active');
       document.getElementById(idObj.btn).classList.add('active');
+
+      // Ajusta atributo lang do HTML para acessibilidade e SEO
       document.documentElement.lang = idObj.htmlLang;
       CURRENT_LANG = idObj.code;
 
+      // Atualiza textos/badges/widgets dependentes do idioma
       updateHeaderTagline();
       updateLastCommitBadge();
       updateStatsLocale();
       updateProjectsTabLabel();
       updateProjectsSectionTexts();
 
+      // Rola a página para a barra de idiomas (melhora UX em mobile)
       const top = document.querySelector('.languages');
       if (top) window.scrollTo({ top: top.offsetTop - 16, behavior: 'smooth' });
     }
 
+    // Atualiza o texto da tagline no cabeçalho conforme idioma atual
     function updateHeaderTagline() {
       const t = HEADER_T[CURRENT_LANG] || HEADER_T.ptbr;
       const el = document.getElementById('tagline');
       if (el) el.innerText = t;
     }
 
+    // Atualiza a imagem do badge "last commit" com label traduzido e alt apropriado
     function updateLastCommitBadge() {
       const info = BADGE_LAST_COMMIT[CURRENT_LANG] || BADGE_LAST_COMMIT.ptbr;
       const img = document.getElementById('badge-last-commit');
@@ -410,26 +482,32 @@
       img.alt = info.alt;
     }
 
+    // Atualiza as URLs das imagens de widgets de estatísticas (GitHub stats, streak, graph, top langs)
+    // - Usa LOCALES para ajustar os parâmetros de locale.
+    // - Também adapta temas dos widgets conforme o tema atual (claro/escuro).
     function updateStatsLocale() {
       const l = LOCALES[CURRENT_LANG] || LOCALES.ptbr;
       const section = document.querySelector('.lang-section.active');
       if (!section) return;
 
-      // Detecta tema atual para ajustar os temas dos widgets
+      // Detecta se o tema atual é escuro (classe .dark em body ou chave no localStorage)
       const isDark = document.body.classList.contains('dark') || (localStorage.getItem('fcc_theme') === 'dark');
 
+      // GitHub Stats: serviço que gera uma imagem com estatísticas do perfil
       const stats = section.querySelector('.gh-stats');
       if (stats) {
         const statsTheme = isDark ? 'blue-green' : 'flag-india';
         stats.src = `https://github-readme-stats.vercel.app/api?username=fernandoncidade&theme=${statsTheme}&show_icons=True&locale=${l.stats}`;
       }
 
+      // Streak: gráfico de sequência de contribuições
       const streak = section.querySelector('.gh-streak');
       if (streak) {
         const streakTheme = isDark ? 'microsoft-dark' : 'ayu-light';
         streak.src = `https://streak-stats.demolab.com?user=fernandoncidade&theme=${streakTheme}&locale=${l.streak}&date_format=j%20M%5B%20Y%5D`;
       }
 
+      // Activity graph: gráfico de atividade (com título customizado por idioma)
       const graph = section.querySelector('.gh-activity');
       const titles = {
         ptbr: "Gráfico%20de%20Atividade%20de%20fernandoncidade",
@@ -445,6 +523,7 @@
           `https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=${graphTheme}&area=true&custom_title=${titles[CURRENT_LANG] || titles.ptbr}&locale=${l.graph}`;
       }
 
+      // Top languages: imagem com linguagens mais usadas
       const langs = section.querySelector('.top-langs');
       if (langs) {
         const langsTheme = isDark ? 'merko' : 'default';
@@ -453,7 +532,7 @@
       }
     }
 
-    // Atualiza o rótulo do botão de projetos conforme o idioma atual
+    // Atualiza rótulo do botão de projetos conforme idioma atual
     function updateProjectsTabLabel() {
       const btn = document.getElementById('btn-projects');
       if (!btn) return;
@@ -462,7 +541,7 @@
       btn.title = t.replace("📂 ", "");
     }
 
-    // Atualiza textos da seção de projetos (nota e CTAs)
+    // Atualiza textos dentro da seção de projetos: a nota inicial e os rótulos dos CTAs
     function updateProjectsSectionTexts() {
       const sec = document.getElementById('sec-projects');
       if (!sec) return;
@@ -474,7 +553,9 @@
       ctas.forEach(a => { a.textContent = label; });
     }
 
-    // Nova função: mostrar aba de projetos
+    // Função para mostrar a aba "Projetos/Repositórios"
+    // - Oculta todas as seções de idioma e ativa a seção de projetos
+    // - Também atualiza o rótulo e textos desta aba conforme idioma atual
     function showProjects() {
       // Desativa todas as seções/btns de idioma
       LANGS.forEach(l => {
@@ -492,12 +573,15 @@
       updateProjectsTabLabel();      // garante rótulo do botão correto
       updateProjectsSectionTexts();  // traduz nota e CTAs
 
+      // Rolar até a barra de idiomas (UX consistente com activateLang)
       const top = document.querySelector('.languages');
       if (top) window.scrollTo({ top: top.offsetTop - 16, behavior: 'smooth' });
     }
 
+    // Ao carregar o DOM, conectamos listeners aos botões de idioma e de projetos,
+    // e ativamos o idioma padrão.
     window.addEventListener('DOMContentLoaded', () => {
-      // listeners dos botões
+      // listeners dos botões de idioma
       LANGS.forEach(l => {
         const b = document.getElementById(l.btn);
         if (b) b.addEventListener('click', () => activateLang(l));
@@ -506,7 +590,7 @@
       const pb = document.getElementById('btn-projects');
       if (pb) pb.addEventListener('click', showProjects);
 
-      // ativar padrão
+      // ativa o idioma padrão (primeiro da lista)
       activateLang(LANGS[0]);
     });
   </script>
@@ -534,9 +618,9 @@
       <button id="btn-frfr">🇫🇷 Français (FR)</button>
       <button id="btn-itit">🇮🇹 Italiano (IT)</button>
       <button id="btn-dede">🇩🇪 Deutsch (DE)</button>
-      <!-- Novo botão de aba -->
+      <!-- Novo botão de aba: abre a seção "Projetos/Repositórios" -->
       <button id="btn-projects">📂 Projetos/Repositórios</button>
-      <!-- Toggle de tema -->
+      <!-- Toggle de tema (claro/escuro). Atalho Alt+T ativado no JS -->
       <button id="btn-theme" title="Alternar tema (Alt+T)">🌓 Tema</button>
     </div>
 
@@ -546,6 +630,11 @@
            alt="Estatísticas atualizadas em">
     </div>
 
+    <!-- =========================
+         Seções por idioma (cada uma tem id correspondente em LANGS)
+         - O conteúdo é uma cópia traduzida da mesma estrutura (habilidades, projetos, dashboards, etc.)
+         - Apenas a seção com classe .active é exibida pelo CSS.
+       ========================= -->
     <!-- PT-BR -->
     <section id="sec-ptbr" class="lang-section active">
       <div class="note">
@@ -587,6 +676,7 @@
 
           <div class="card center stats">
             <h3>📈 Estatísticas GitHub</h3>
+            <!-- Imagens dos widgets são preenchidas dinamicamente por updateStatsLocale() -->
             <img class="gh-stats" alt="GitHub Stats">
             <img class="gh-streak" alt="GitHub Streak">
             <img class="gh-activity" alt="GitHub Activity Graph">
@@ -1196,7 +1286,226 @@
       </div>
     </section>
 
-    <!-- NOVA ABA: Projetos/Repositórios -->
+    <!-- IT-IT -->
+    <section id="sec-itit" class="lang-section">
+      <div class="note">
+        <b>Ciao! Sono Fernando.</b> Sviluppatore software focalizzato su Python, C++ e GUI (PySide6, PyQt6, Tkinter). Interessi in automazione, analisi dei dati e soluzioni pratiche.
+      </div>
+
+      <div class="grid">
+        <!-- Colonna sinistra: contenuto generale -->
+        <div class="col-6">
+          <div class="card">
+            <h3>🚀 Competenze</h3>
+            <ul>
+              <li>Linguaggi: Python, C++</li>
+              <li>GUI: PySide6, PyQt6, Tkinter</li>
+              <li>Dati: Pandas, Plotly, Streamlit</li>
+              <li>Scientifico: NumPy, SciPy, Matplotlib</li>
+              <li>File & Backup, Git/GitHub</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>🎯 Progetti principali</h3>
+            <ul class="subtopics">
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda Valutazioni Accademiche</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>📊 Cruscotti</h3>
+            <ul class="subtopics">
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (Tkinter)</a></li>
+            </ul>
+          </div>
+
+          <div class="card center stats">
+            <h3>📈 Statistiche GitHub</h3>
+            <img class="gh-stats" alt="Statistiche GitHub">
+            <img class="gh-streak" alt="GitHub Streak">
+            <img class="gh-activity" alt="Grafico attività GitHub">
+            <img class="top-langs" alt="Linguaggi più usati">
+          </div>
+
+          <div class="card">
+            <h3>🎓 Formazione</h3>
+            <p>Studente di Ingegneria Civile (UFPR). Studi precedenti in Didattica della Fisica (UTFPR), con esperienza di insegnamento nelle scuole superiori.</p>
+            <h3>🎯 Obiettivi</h3>
+            <ul>
+              <li>Migliorare automazione, analisi dei dati e IA</li>
+              <li>Ampliare i contributi open source</li>
+              <li>Esplorare nuove tecnologie e buone pratiche</li>
+            </ul>
+            <h3>📫 Contatti</h3>
+            <p class="header-links">
+              <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
+              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Colonna destra: in evidenza (Linceu + Eisenhower) -->
+        <div class="col-6">
+          <div class="card">
+            <h2>📌 In evidenza: Linceu Lighthouse</h2>
+            <p>Strumento di monitoraggio dell'integrità dei file (FIM) con interfaccia multilingue, statistiche ed esportazioni flessibili.</p>
+            <p>
+              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank" rel="noopener noreferrer">Vedi repository</a>
+              &nbsp;
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h2>📌 In evidenza: Eisenhower Task Organizer</h2>
+            <p>Applicazione per prioritizzare le attività con la Matrice di Eisenhower, focalizzata su produttività e semplicità.</p>
+            <p>
+              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank" rel="noopener noreferrer">Vedi repository</a>
+              &nbsp;
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h2>📌 In evidenza: Agenda Avaliações Acadêmicas</h2>
+            <p>Gestore delle valutazioni accademiche.</p>
+            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Vedi repository</a></p>
+          </div>
+
+          <div class="card">
+            <h2>📌 In evidenza: Compression Manager</h2>
+            <p>Applicazione per backup e compressione dei file.</p>
+            <p>
+              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank" rel="noopener noreferrer">Vedi repository</a>
+              &nbsp;
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DE-DE -->
+    <section id="sec-dede" class="lang-section">
+      <div class="note">
+        <b>Hallo! Ich bin Fernando.</b> Softwareentwickler mit Fokus auf Python, C++ und GUIs (PySide6, PyQt6, Tkinter). Interessen: Automatisierung, Datenanalyse und praktische Lösungen.
+      </div>
+
+      <div class="grid">
+        <!-- Linke Spalte: allgemeine Inhalte -->
+        <div class="col-6">
+          <div class="card">
+            <h3>🚀 Fähigkeiten</h3>
+            <ul>
+              <li>Sprachen: Python, C++</li>
+              <li>GUI: PySide6, PyQt6, Tkinter</li>
+              <li>Daten: Pandas, Plotly, Streamlit</li>
+              <li>Wissenschaftlich: NumPy, SciPy, Matplotlib</li>
+              <li>Dateien & Backup, Git/GitHub</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>🎯 Hauptprojekte</h3>
+            <ul class="subtopics">
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Planer akademischer Bewertungen</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>📊 Dashboards</h3>
+            <ul class="subtopics">
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
+            </ul>
+          </div>
+
+          <div class="card center stats">
+            <h3>📈 GitHub-Statistiken</h3>
+            <img class="gh-stats" alt="GitHub-Statistiken">
+            <img class="gh-streak" alt="GitHub-Streak">
+            <img class="gh-activity" alt="GitHub-Aktivitätsdiagramm">
+            <img class="top-langs" alt="Top-Sprachen">
+          </div>
+
+          <div class="card">
+            <h3>🎓 Ausbildung</h3>
+            <p>Studierender des Bauingenieurwesens (UFPR). Zuvor Studium der Physikdidaktik (UTFPR) und Erfahrung im Unterricht an weiterführenden Schulen.</p>
+            <h3>🎯 Ziele</h3>
+            <ul>
+              <li>Automatisierung, Datenanalyse und KI-Kompetenzen verbessern</li>
+              <li>Open-Source-Beiträge ausbauen</li>
+              <li>Neue Technologien und Best Practices erkunden</li>
+            </ul>
+            <h3>📫 Kontakt</h3>
+            <p class="header-links">
+              <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
+              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Rechte Spalte: Highlights (Linceu + Eisenhower) -->
+        <div class="col-6">
+          <div class="card">
+            <h2>📌 Highlight: Linceu Lighthouse</h2>
+            <p>Tool zur Überwachung der Dateiintegrität (FIM) mit mehrsprachiger Oberfläche, Statistiken und flexiblen Exporten.</p>
+            <p>
+              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank" rel="noopener noreferrer">Repository ansehen</a>
+              &nbsp;
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h2>📌 Highlight: Eisenhower Task Organizer</h2>
+            <p>App zur Priorisierung von Aufgaben mit der Eisenhower-Matrix, fokussiert auf Produktivität und Einfachheit.</p>
+            <p>
+              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank" rel="noopener noreferrer">Repository ansehen</a>
+              &nbsp;
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h2>📌 Highlight: Academic Evaluations Scheduler</h2>
+            <p>Repository for academic evaluations management.</p>
+            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Repository ansehen</a></p>
+          </div>
+
+          <div class="card">
+            <h2>📌 Highlight: Compression Manager</h2>
+            <p>Backup- und Kompressionsanwendung mit intuitiver GUI.</p>
+            <p>
+              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank" rel="noopener noreferrer">Repository ansehen</a>
+              &nbsp;
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOVA ABA: Projetos/Repositórios
+         - Esta seção lista vários repositórios (cards) com CTA que abrem o GitHub
+         - updateProjectsSectionTexts() atualiza a nota e os labels dos CTAs conforme idioma
+    -->
     <section id="sec-projects" class="lang-section">
       <div class="note">
         Lista de projetos e repositórios públicos de fernandoncidade.
@@ -1243,34 +1552,42 @@
     </div>
   </div>
 
-  <!-- Toast e botão topo -->
+  <!-- Toast (mensagens rápidas) e botão flutuante voltar ao topo -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <button id="btn-top" class="btn-top" title="Voltar ao topo">↑</button>
 
   <script>
-    /* ...existing code... */
 
     // ===== UX extra: tema, reveal, ripple, atalhos, topo, lazy =====
+    // - Funções auxiliares para melhorar a experiência: toasts, alternar tema, ripple, etc.
     const THEME_KEY = 'fcc_theme';
+
+    // Exibe uma pequena notificação (toast) no canto superior direito
+    // msg: texto; ms: duração em milissegundos
     function toast(msg, ms=1400){
       const t = document.getElementById('toast'); if(!t) return;
       t.textContent = msg; t.classList.add('show');
       clearTimeout(t.__tid); t.__tid = setTimeout(()=>t.classList.remove('show'), ms);
     }
+
+    // Aplica tema (espera 'dark' ou outro valor -> light por padrão)
     function applyTheme(theme){
       document.body.classList.toggle('dark', theme === 'dark');
-      // Opcional: ajustar sombra/cores com o tema aqui
+      // Observação: aqui poderia ajustar outras preferências de UI relacionadas ao tema
     }
+
+    // Alterna tema e persiste escolha em localStorage, também mostra toast
     function toggleTheme(){
       const cur = localStorage.getItem(THEME_KEY) || 'light';
       const next = cur === 'light' ? 'dark' : 'light';
       localStorage.setItem(THEME_KEY, next);
       applyTheme(next);
       toast(`Tema: ${next === 'dark' ? 'escuro' : 'claro'}`);
-      updateStatsLocale(); // atualiza Top Langs conforme o tema
+      updateStatsLocale(); // atualiza widgets de estatísticas para tema correto
     }
 
-    // Segurança: adiciona rel="noopener noreferrer" a links que abrem em nova aba
+    // Segurança: garante que links que abrem em nova aba tenham rel seguro
+    // - Adiciona noopener e noreferrer quando faltarem, evitando exposição do window.opener.
     function secureExternalLinks(){
       document.querySelectorAll('a[target="_blank" rel="noopener noreferrer"]').forEach(a=>{
         let rel = (a.getAttribute('rel') || '').trim();
@@ -1280,7 +1597,7 @@
       });
     }
 
-    // Ripple em cliques
+    // Efeito visual "ripple" em botões ao pressionar (cria um span temporário)
     function attachRipple(el){
       el.addEventListener('pointerdown', e=>{
         const r = document.createElement('span'); r.className='ripple';
@@ -1294,7 +1611,8 @@
       });
     }
 
-    // Revelar ao rolar
+    // Setup para revelar elementos quando entram na viewport usando IntersectionObserver
+    // - Marca elementos com .reveal e adiciona .in quando visíveis para animar
     function setupReveal(){
       const els = document.querySelectorAll('.card, .stats img, .screenshots img');
       els.forEach(el => el.classList.add('reveal'));
@@ -1307,7 +1625,7 @@
       els.forEach(el=>io.observe(el));
     }
 
-    // Lazy e decoding em imagens
+    // Melhora perfomance de imagens: lazy-loading e decoding async
     function setupImagesPerf(){
       document.querySelectorAll('img').forEach(img=>{
         if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
@@ -1315,7 +1633,11 @@
       });
     }
 
-    // Atalhos de teclado
+    // Atalhos de teclado convenientes:
+    // - Alt+1..6 para trocar idiomas
+    // - Alt+P para abrir aba de projetos
+    // - Alt+T para alternar tema
+    // - Home para voltar ao topo
     function setupShortcuts(){
       const map = {
         '1':0,'2':1,'3':2,'4':3,'5':4,'6':5
@@ -1334,7 +1656,7 @@
       });
     }
 
-    // Botão voltar ao topo
+    // Botão flutuante "voltar ao topo" com visibilidade controlada pelo scroll
     function setupBackToTop(){
       const btn = document.getElementById('btn-top');
       if(!btn) return;
@@ -1345,7 +1667,7 @@
       });
     }
 
-    // Enriquecer títulos com atalhos
+    // Adiciona dicas de atalhos (title) nos botões de idioma e projetos
     function setupHints(){
       const hints = ['Alt+1','Alt+2','Alt+3','Alt+4','Alt+5','Alt+6'];
       LANGS.forEach((l, i)=>{
@@ -1356,13 +1678,13 @@
       if(pb && !pb.title) pb.title = 'Abrir aba de projetos (Alt+P)';
     }
 
-    // Hook nos listeners existentes ao carregar
+    // Inicialização: conecta listeners e aplica preferências salvas
     window.addEventListener('DOMContentLoaded', () => {
-      // Tema inicial
+      // Aplica tema salvo (ou padrão 'light') e atualiza widgets
       applyTheme(localStorage.getItem(THEME_KEY) || 'light');
       updateStatsLocale(); // ajusta Top Langs ao tema aplicado
 
-      // Ripple nos botões e CTAs
+      // Anexa ripple a botões de idioma e CTAs principais
       document.querySelectorAll('.languages button, a.cta').forEach(attachRipple);
 
       // Otimizações e efeitos
@@ -1372,11 +1694,11 @@
       setupBackToTop();
       setupHints();
 
-      // Botão de tema
+      // Listener do botão de alternância de tema
       const tb = document.getElementById('btn-theme');
       if(tb) tb.addEventListener('click', toggleTheme);
 
-      // Acrescenta toasts aos botões de idioma/projetos
+      // Toasts curtos quando idiomas ou aba de projetos são acionados
       LANGS.forEach(l=>{
         const b = document.getElementById(l.btn);
         if(b){
@@ -1386,7 +1708,7 @@
       const pb = document.getElementById('btn-projects');
       if(pb){ pb.addEventListener('click', ()=> toast('Aba de projetos')); }
 
-      // Segurança: corrige links com target="_blank" rel="noopener noreferrer"
+      // Reforça segurança em links externos
       secureExternalLinks();
     });
   </script>
