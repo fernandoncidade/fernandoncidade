@@ -26,9 +26,8 @@ jobs:
 
           repositories=(
             "Agenda_Avaliacoes_Academicas"
-            "Manager_Compression_PySide6_v.0.0.1"
-            "Manager_Compression_PyQt6_v.0.0.1"
-            "Eisenhower_Organizer_Matrix"
+            "Compression_Manager"
+            "Eisenhower_Task_Organizer"
             "Programa_Urna_Eletronica"
             "Dashboard_Streamlit-Plotly-Pandas_Management"
             "Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve"
@@ -43,6 +42,7 @@ jobs:
             "Programa_Multiplo"
             "Programa_Media_Aritmetica"
             "Programa_Determinar_Maior_Inteiro"
+            "Linceu_Lighthouse"
           )
 
           total_lines=0
@@ -133,20 +133,17 @@ jobs:
           sed -i "s/<!-- AGENDA_HOURS -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_HOURS }}/g" README.md
           sed -i "s/<!-- AGENDA_PROD -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_PROD }}/g" README.md
 
-          sed -i "s/<!-- PYSIDE6_LINES -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V_0_0_1_LINES }}/g" README.md
-          sed -i "s/<!-- PYSIDE6_COMMITS -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V_0_0_1_COMMITS }}/g" README.md
-          sed -i "s/<!-- PYSIDE6_HOURS -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V_0_0_1_HOURS }}/g" README.md
-          sed -i "s/<!-- PYSIDE6_PROD -->/${{ env.MANAGER_COMPRESSION_PYSIDE6_V_0_0_1_PROD }}/g" README.md
+          # Compression Manager (substitui os antigos PySide6/PyQt6)
+          sed -i "s/<!-- COMPRESSION_LINES -->/${{ env.COMPRESSION_MANAGER_LINES }}/g" README.md
+          sed -i "s/<!-- COMPRESSION_COMMITS -->/${{ env.COMPRESSION_MANAGER_COMMITS }}/g" README.md
+          sed -i "s/<!-- COMPRESSION_HOURS -->/${{ env.COMPRESSION_MANAGER_HOURS }}/g" README.md
+          sed -i "s/<!-- COMPRESSION_PROD -->/${{ env.COMPRESSION_MANAGER_PROD }}/g" README.md
 
-          sed -i "s/<!-- PYQT6_LINES -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_LINES }}/g" README.md
-          sed -i "s/<!-- PYQT6_COMMITS -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_COMMITS }}/g" README.md
-          sed -i "s/<!-- PYQT6_HOURS -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_HOURS }}/g" README.md
-          sed -i "s/<!-- PYQT6_PROD -->/${{ env.MANAGER_COMPRESSION_PYQT6_V_0_0_1_PROD }}/g" README.md
-
-          sed -i "s/<!-- EISENHOWER_LINES -->/${{ env.EISENHOWER_ORGANIZER_MATRIX_LINES }}/g" README.md
-          sed -i "s/<!-- EISENHOWER_COMMITS -->/${{ env.EISENHOWER_ORGANIZER_MATRIX_COMMITS }}/g" README.md
-          sed -i "s/<!-- EISENHOWER_HOURS -->/${{ env.EISENHOWER_ORGANIZER_MATRIX_HOURS }}/g" README.md
-          sed -i "s/<!-- EISENHOWER_PROD -->/${{ env.EISENHOWER_ORGANIZER_MATRIX_PROD }}/g" README.md
+          # Eisenhower Task Organizer (substitui Eisenhower_Organizer_Matrix)
+          sed -i "s/<!-- EISENHOWER_LINES -->/${{ env.EISENHOWER_TASK_ORGANIZER_LINES }}/g" README.md
+          sed -i "s/<!-- EISENHOWER_COMMITS -->/${{ env.EISENHOWER_TASK_ORGANIZER_COMMITS }}/g" README.md
+          sed -i "s/<!-- EISENHOWER_HOURS -->/${{ env.EISENHOWER_TASK_ORGANIZER_HOURS }}/g" README.md
+          sed -i "s/<!-- EISENHOWER_PROD -->/${{ env.EISENHOWER_TASK_ORGANIZER_PROD }}/g" README.md
 
           sed -i "s/<!-- URNA_LINES -->/${{ env.PROGRAMA_URNA_ELETRONICA_LINES }}/g" README.md
           sed -i "s/<!-- URNA_COMMITS -->/${{ env.PROGRAMA_URNA_ELETRONICA_COMMITS }}/g" README.md
@@ -167,6 +164,12 @@ jobs:
           sed -i "s/<!-- PARETO_COMMITS -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_COMMITS }}/g" README.md
           sed -i "s/<!-- PARETO_HOURS -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_HOURS }}/g" README.md
           sed -i "s/<!-- PARETO_PROD -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_PROD }}/g" README.md
+
+          # Novo repositório: Linceu Lighthouse
+          sed -i "s/<!-- LIGHTHOUSE_LINES -->/${{ env.LINCEU_LIGHTHOUSE_LINES }}/g" README.md
+          sed -i "s/<!-- LIGHTHOUSE_COMMITS -->/${{ env.LINCEU_LIGHTHOUSE_COMMITS }}/g" README.md
+          sed -i "s/<!-- LIGHTHOUSE_HOURS -->/${{ env.LINCEU_LIGHTHOUSE_HOURS }}/g" README.md
+          sed -i "s/<!-- LIGHTHOUSE_PROD -->/${{ env.LINCEU_LIGHTHOUSE_PROD }}/g" README.md
 
           sed -i "s/<!-- SLOTH_LINES -->/${{ env.SLOTH_HIGHLANDER_THEME_1_LINES }}/g" README.md
           sed -i "s/<!-- SLOTH_COMMITS -->/${{ env.SLOTH_HIGHLANDER_THEME_1_COMMITS }}/g" README.md
