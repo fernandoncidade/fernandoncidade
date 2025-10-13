@@ -517,11 +517,11 @@
     <h1 class="title">Fernando Nillsson Cidade</h1>
     <div id="tagline" class="tagline">Desenvolvedor de Software • Python • C++ • GUI</div>
     <div class="header-links">
-      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
-      <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
+      <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
+      <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
+      <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank">Instagram</a>
+      <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
     </div>
   </div>
 
@@ -569,19 +569,19 @@
           <div class="card">
             <h3>🎯 Principais Projetos</h3>
             <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda Avaliações Acadêmicas</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda Avaliações Acadêmicas</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
             </ul>
           </div>
 
           <div class="card">
             <h3>📊 Dashboards</h3>
             <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
             </ul>
           </div>
 
@@ -604,11 +604,11 @@
             </ul>
             <h3>📫 Contato</h3>
             <p class="header-links">
-              <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
-              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
+              <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
+              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
+              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
+              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank">Instagram</a>
+              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
             </p>
           </div>
         </div>
@@ -619,9 +619,9 @@
             <h2>📌 Destaque: Linceu Lighthouse</h2>
             <p>Ferramenta de monitoramento de integridade de arquivos (FIM), interface multilíngue, estatísticas e exportações flexíveis.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank">Ver repositório</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank">Microsoft Store</a>
             </p>
           </div>
 
@@ -629,25 +629,25 @@
             <h2>📌 Destaque: Eisenhower Task Organizer</h2>
             <p>Aplicativo para priorizar tarefas usando a Matriz de Eisenhower, com foco em produtividade e simplicidade.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank">Ver repositório</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank">Microsoft Store</a>
             </p>
           </div>
 
           <div class="card">
             <h2>📌 Destaque: Agenda Avaliações Acadêmicas</h2>
             <p>Sistema para gerenciamento de atividades avaliativas em ambientes educacionais.</p>
-            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Ver repositório</a></p>
+            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank">Ver repositório</a></p>
           </div>
 
           <div class="card">
             <h2>📌 Destaque: Compression Manager</h2>
             <p>Aplicativo de backup e compressão de arquivos com interface gráfica intuitiva.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank">Ver repositório</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank">Microsoft Store</a>
             </p>
           </div>
         </div>
@@ -677,19 +677,19 @@
           <div class="card">
             <h3>🎯 Main Projects</h3>
             <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Academic Evaluations Scheduler</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Academic Evaluations Scheduler</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
             </ul>
           </div>
 
           <div class="card">
             <h3>📊 Dashboards</h3>
             <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
             </ul>
           </div>
 
@@ -712,11 +712,11 @@
             </ul>
             <h3>📫 Contact</h3>
             <p class="header-links">
-              <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
-              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
+              <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
+              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
+              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
+              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank">Instagram</a>
+              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
             </p>
           </div>
         </div>
@@ -727,9 +727,9 @@
             <h2>📌 Highlight: Linceu Lighthouse</h2>
             <p>File Integrity Monitoring (FIM) tool with multilingual UI, statistics and flexible exports.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank" rel="noopener noreferrer">Open repository</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank">Open repository</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank">Microsoft Store</a>
             </p>
           </div>
 
@@ -737,25 +737,25 @@
             <h2>📌 Highlight: Eisenhower Task Organizer</h2>
             <p>App to prioritize tasks using the Eisenhower Matrix, focused on productivity and simplicity.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank" rel="noopener noreferrer">Open repository</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank">Open repository</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank">Microsoft Store</a>
             </p>
           </div>
 
           <div class="card">
             <h2>📌 Highlight: Academic Evaluations Scheduler</h2>
             <p>Repository for the Academic Evaluations Scheduler.</p>
-            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Open repository</a></p>
+            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank">Open repository</a></p>
           </div>
 
           <div class="card">
             <h2>📌 Highlight: Compression Manager</h2>
             <p>Backup and compression application with intuitive GUI.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank" rel="noopener noreferrer">Open repository</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank">Open repository</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank">Microsoft Store</a>
             </p>
           </div>
         </div>
@@ -785,19 +785,19 @@
           <div class="card">
             <h3>🎯 Proyectos principales</h3>
             <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda de Evaluaciones Académicas</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda de Evaluaciones Académicas</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
             </ul>
           </div>
 
           <div class="card">
             <h3>📊 Dashboards</h3>
             <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
             </ul>
           </div>
 
@@ -820,11 +820,11 @@
             </ul>
             <h3>📫 Contacto</h3>
             <p class="header-links">
-              <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
-              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
+              <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
+              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
+              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
+              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank">Instagram</a>
+              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
             </p>
           </div>
         </div>
@@ -835,9 +835,9 @@
             <h2>📌 Destacado: Linceu Lighthouse</h2>
             <p>Herramienta de monitoreo de integridad de archivos (FIM) con interfaz multilingüe, estadísticas e exportações flexíveis.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank">Ver repositorio</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank">Microsoft Store</a>
             </p>
           </div>
 
@@ -845,25 +845,25 @@
             <h2>📌 Destacado: Eisenhower Task Organizer</h2>
             <p>Aplicación para priorizar tareas con la Matriz de Eisenhower, enfocada en productividad y simplicidad.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank">Ver repositorio</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank">Microsoft Store</a>
             </p>
           </div>
 
           <div class="card">
             <h2>📌 Destacado: Agenda Avaliações Acadêmicas</h2>
             <p>Gestor de actividades evaluativas.</p>
-            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Ver repositorio</a></p>
+            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank">Ver repositorio</a></p>
           </div>
 
           <div class="card">
             <h2>📌 Destacado: Compression Manager</h2>
             <p>Aplicación de backup y compresión de archivos.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank">Ver repositorio</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank">Microsoft Store</a>
             </p>
           </div>
         </div>
@@ -893,19 +893,19 @@
           <div class="card">
             <h3>🎯 Projets principaux</h3>
             <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda des évaluations académiques</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda des évaluations académiques</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
             </ul>
           </div>
 
           <div class="card">
             <h3>📊 Tableaux de bord</h3>
             <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
             </ul>
           </div>
 
@@ -928,11 +928,11 @@
             </ul>
             <h3>📫 Contact</h3>
             <p class="header-links">
-              <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
-              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
+              <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
+              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
+              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
+              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank">Instagram</a>
+              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
             </p>
           </div>
         </div>
@@ -943,9 +943,9 @@
             <h2>📌 À la une : Linceu Lighthouse</h2>
             <p>Outil de surveillance de l’intégrité des fichiers (FIM) avec interface multilingue, statistiques e exportações flexíveis.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank" rel="noopener noreferrer">Voir le dépôt</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank">Voir le dépôt</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank">Microsoft Store</a>
             </p>
           </div>
 
@@ -953,9 +953,9 @@
             <h2>📌 À la une : Eisenhower Organizer Matrix</h2>
             <p>Application pour prioriser les tâches avec la matrice d’Eisenhower, axée sur la productivité et la simplicité.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix" target="_blank" rel="noopener noreferrer">Voir le dépôt</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix" target="_blank">Voir le dépôt</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank">Microsoft Store</a>
             </p>
           </div>
 
@@ -963,7 +963,7 @@
             <h2>📌 À la une : Agenda des avaliações académiques</h2>
             <p>Gestionnaire pour les activités d’évaluation en milieu éducatif.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Voir le dépôt</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank">Voir le dépôt</a>
             </p>
           </div>
 
@@ -971,9 +971,9 @@
             <h2>📌 À la une : Compression Manager</h2>
             <p>Application de sauvegarde et de compression de fichiers avec une interface utilisateur intuitive.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank" rel="noopener noreferrer">Voir le dépôt</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank">Voir le dépôt</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank">Microsoft Store</a>
             </p>
           </div>
         </div>
@@ -1003,19 +1003,19 @@
           <div class="card">
             <h3>🎯 Progetti principali</h3>
             <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda Valutazioni Accademiche</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda Valutazioni Accademiche</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
             </ul>
           </div>
 
           <div class="card">
             <h3>📊 Cruscotti</h3>
             <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (Tkinter)</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (Tkinter)</a></li>
             </ul>
           </div>
 
@@ -1038,11 +1038,11 @@
             </ul>
             <h3>📫 Contatti</h3>
             <p class="header-links">
-              <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
-              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
+              <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
+              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
+              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
+              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank">Instagram</a>
+              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
             </p>
           </div>
         </div>
@@ -1053,9 +1053,9 @@
             <h2>📌 In evidenza: Linceu Lighthouse</h2>
             <p>Strumento di monitoraggio dell'integrità dei file (FIM) con interfaccia multilingue, statistiche ed esportazioni flessibili.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank" rel="noopener noreferrer">Vedi repository</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank">Vedi repository</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank">Microsoft Store</a>
             </p>
           </div>
 
@@ -1063,25 +1063,25 @@
             <h2>📌 In evidenza: Eisenhower Task Organizer</h2>
             <p>Applicazione per prioritizzare le attività con la Matrice di Eisenhower, focalizzata su produttività e semplicità.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank" rel="noopener noreferrer">Vedi repository</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank">Vedi repository</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank">Microsoft Store</a>
             </p>
           </div>
 
           <div class="card">
             <h2>📌 In evidenza: Agenda Avaliações Acadêmicas</h2>
             <p>Gestore delle valutazioni accademiche.</p>
-            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Vedi repository</a></p>
+            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank">Vedi repository</a></p>
           </div>
 
           <div class="card">
             <h2>📌 In evidenza: Compression Manager</h2>
             <p>Applicazione per backup e compressione dei file.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank" rel="noopener noreferrer">Vedi repository</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank">Vedi repository</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank">Microsoft Store</a>
             </p>
           </div>
         </div>
@@ -1111,19 +1111,19 @@
           <div class="card">
             <h3>🎯 Hauptprojekte</h3>
             <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Planer akademischer Bewertungen</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Planer akademischer Bewertungen</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
             </ul>
           </div>
 
           <div class="card">
             <h3>📊 Dashboards</h3>
             <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
+              <li><a target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
             </ul>
           </div>
 
@@ -1146,11 +1146,11 @@
             </ul>
             <h3>📫 Kontakt</h3>
             <p class="header-links">
-              <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
-              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
+              <a href="https://github.com/fernandoncidade" target="_blank">GitHub</a>
+              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank">LinkedIn</a>
+              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank">Lattes</a>
+              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank">Instagram</a>
+              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank">ORCID</a>
             </p>
           </div>
         </div>
@@ -1161,9 +1161,9 @@
             <h2>📌 Highlight: Linceu Lighthouse</h2>
             <p>Tool zur Überwachung der Dateiintegrität (FIM) mit mehrsprachiger Oberfläche, Statistiken und flexiblen Exporten.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank" rel="noopener noreferrer">Repository ansehen</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank">Repository ansehen</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank">Microsoft Store</a>
             </p>
           </div>
 
@@ -1171,25 +1171,25 @@
             <h2>📌 Highlight: Eisenhower Task Organizer</h2>
             <p>App zur Priorisierung von Aufgaben mit der Eisenhower-Matrix, fokussiert auf Produktivität und Einfachheit.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank" rel="noopener noreferrer">Repository ansehen</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank">Repository ansehen</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank">Microsoft Store</a>
             </p>
           </div>
 
           <div class="card">
             <h2>📌 Highlight: Academic Evaluations Scheduler</h2>
             <p>Repository for academic evaluations management.</p>
-            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Repository ansehen</a></p>
+            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank">Repository ansehen</a></p>
           </div>
 
           <div class="card">
             <h2>📌 Highlight: Compression Manager</h2>
             <p>Backup- und Kompressionsanwendung mit intuitiver GUI.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank" rel="noopener noreferrer">Repository ansehen</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank">Repository ansehen</a>
               &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank">Microsoft Store</a>
             </p>
           </div>
         </div>
@@ -1202,35 +1202,35 @@
         Lista de projetos e repositórios públicos de fernandoncidade.
       </div>
       <div class="grid">
-        <div class="col-4"><div class="card"><h3>README do Perfil</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/fernandoncidade">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Eisenhower Organizer Matrix</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>sloth-highlander-theme-1</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/sloth-highlander-theme-1">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>README do Perfil</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/fernandoncidade">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Eisenhower Organizer Matrix</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>sloth-highlander-theme-1</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/sloth-highlander-theme-1">Abrir repositório</a></p></div></div>
 
-        <div class="col-4"><div class="card"><h3>Linceu Lighthouse Binary</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Compression Manager</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Eisenhower Task Organizer</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Linceu Lighthouse Binary</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Compression Manager</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Compression_Manager">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Eisenhower Task Organizer</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Abrir repositório</a></p></div></div>
 
-        <div class="col-4"><div class="card"><h3>Programa Matriz NM</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Matriz_NM">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Todos os Tipos de Matrizes</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Todos_Tipos_Matrizes">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Quociente e Resto</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Quociente_Resto">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Programa Matriz NM</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Matriz_NM">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Todos os Tipos de Matrizes</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Todos_Tipos_Matrizes">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Quociente e Resto</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Quociente_Resto">Abrir repositório</a></p></div></div>
 
-        <div class="col-4"><div class="card"><h3>Programa Múltiplo</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Multiplo">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Média Aritmética</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Media_Aritmetica">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Maior Inteiro</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Determinar_Maior_Inteiro">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Programa Múltiplo</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Multiplo">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Média Aritmética</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Media_Aritmetica">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Maior Inteiro</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Determinar_Maior_Inteiro">Abrir repositório</a></p></div></div>
 
-        <div class="col-4"><div class="card"><h3>Urna Eletrônica (C++)</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Urna_Eletronica">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Expressões Relacionais</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Expressoes_Relacionais">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>IMC</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_IMC">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Urna Eletrônica (C++)</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Urna_Eletronica">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Expressões Relacionais</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Expressoes_Relacionais">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>IMC</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_IMC">Abrir repositório</a></p></div></div>
 
-        <div class="col-4"><div class="card"><h3>Carteira de Motorista</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Carteira_Motorista">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Manager Compression PyQt6</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Manager Compression PySide6</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Carteira de Motorista</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Programa_Carteira_Motorista">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Manager Compression PyQt6</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Manager Compression PySide6</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1">Abrir repositório</a></p></div></div>
 
-        <div class="col-4"><div class="card"><h3>Agenda Avaliações Acadêmicas</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Dash Streamlit Management</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Pareto/ABC (Streamlit)</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Agenda Avaliações Acadêmicas</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Dash Streamlit Management</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Pareto/ABC (Streamlit)</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Abrir repositório</a></p></div></div>
 
-        <div class="col-4"><div class="card"><h3>Pareto/ABC (Tkinter)</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Pareto/ABC (Tkinter)</h3><p><a class="cta" target="_blank" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Abrir repositório</a></p></div></div>
       </div>
     </section>
   </div>
@@ -1238,8 +1238,8 @@
   <div class="footer">
     <div id="footer-main">
       Feito por Fernando Nillsson Cidade •
-      <a href="https://github.com/fernandoncidade/fernandoncidade" target="_blank" rel="noopener noreferrer">README do Perfil</a> •
-      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">Perfil no GitHub</a>
+      <a href="https://github.com/fernandoncidade/fernandoncidade" target="_blank">README do Perfil</a> •
+      <a href="https://github.com/fernandoncidade" target="_blank">Perfil no GitHub</a>
     </div>
   </div>
 
@@ -1272,7 +1272,7 @@
 
     // Segurança: adiciona rel="noopener noreferrer" a links que abrem em nova aba
     function secureExternalLinks(){
-      document.querySelectorAll('a[target="_blank" rel="noopener noreferrer"]').forEach(a=>{
+      document.querySelectorAll('a[target="_blank"]').forEach(a=>{
         let rel = (a.getAttribute('rel') || '').trim();
         if(!/\bnoopener\b/.test(rel)) rel = (rel + ' noopener').trim();
         if(!/\bnoreferrer\b/.test(rel)) rel = (rel + ' noreferrer').trim();
@@ -1386,10 +1386,9 @@
       const pb = document.getElementById('btn-projects');
       if(pb){ pb.addEventListener('click', ()=> toast('Aba de projetos')); }
 
-      // Segurança: corrige links com target="_blank" rel="noopener noreferrer"
+      // Segurança: corrige links com target="_blank"
       secureExternalLinks();
     });
   </script>
 </body>
 </html>
-
