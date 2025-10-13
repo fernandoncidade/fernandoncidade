@@ -24,7 +24,7 @@
   <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="60" height="60"/>
 </div>
 
-<details open>
+<details>
 <summary>Clique para expandir o README em português</summary>
 
 ## 📊 Estatísticas dos Meus Repositórios
