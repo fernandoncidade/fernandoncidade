@@ -18,14 +18,14 @@
 
 ![Última atualização](https://img.shields.io/github/last-commit/fernandoncidade/fernandoncidade?label=Estatísticas%20atualizadas%20em&style=flat-square)
 
+<details>
+<summary>Clique para expandir o README em português</summary>
+
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="60" height="60"/>
   <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="60" height="60"/>
   <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="60" height="60"/>
 </div>
-
-<details>
-<summary>Clique para expandir o README em português</summary>
 
 ## 📊 Estatísticas dos Meus Repositórios
 
@@ -161,14 +161,14 @@ Disponível em versão de teste por 7 dias, após o qual pode ser adquirida pela
 
 ![Last update](https://img.shields.io/github/last-commit/fernandoncidade/fernandoncidade?label=Statistics%20updated%20on&style=flat-square)
 
+<details>
+<summary>Click to expand the README in English</summary>
+
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="60" height="60"/>
   <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="60" height="60"/>
   <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="60" height="60"/>
 </div>
-
-<details>
-<summary>Click to expand the README in English</summary>
 
 ## 📊 My Repository Statistics
 
@@ -304,14 +304,14 @@ Available as a 7-day trial version, after which it can be purchased via the [Mic
 
 ![Última actualización](https://img.shields.io/github/last-commit/fernandoncidade/fernandoncidade?label=Estadísticas%20actualizadas%20en&style=flat-square)
 
+<details>
+<summary>Haz clic para expandir el README en español</summary>
+
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="60" height="60"/>
   <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="60" height="60"/>
   <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="60" height="60"/>
 </div>
-
-<details>
-<summary>Haz clic para expandir el README en español</summary>
 
 ## 📊 Estadísticas de Mis Repositorios
 
@@ -447,14 +447,14 @@ Disponible en versión de prueba de 7 días, tras los cuales puede adquirirse en
 
 ![Dernière mise à jour](https://img.shields.io/github/last-commit/fernandoncidade/fernandoncidade?label=Statistiques%20mises%20à%20jour%20le&style=flat-square)
 
+<details>
+<summary>Cliquez pour afficher le README en français</summary>
+
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="60" height="60"/>
   <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="60" height="60"/>
   <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="60" height="60"/>
 </div>
-
-<details>
-<summary>Cliquez pour afficher le README en français</summary>
 
 ## 📊 Statistiques de mes Répertoires
 
@@ -590,14 +590,14 @@ Disponible en version d'essai de 7 jours, puis achetable sur la [Microsoft Store
 
 ![Ultimo aggiornamento](https://img.shields.io/github/last-commit/fernandoncidade/fernandoncidade?label=Statistiche%20aggiornate%20al&style=flat-square)
 
+<details>
+<summary>Fai clic per espandere il README in italiano</summary>
+
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="60" height="60"/>
   <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="60" height="60"/>
   <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="60" height="60"/>
 </div>
-
-<details>
-<summary>Fai clic per espandere il README in italiano</summary>
 
 ## 📊 Statistiche dei Miei Repository
 
@@ -733,14 +733,14 @@ Disponibile in versione di prova per 7 giorni, dopo i quali può essere acquista
 
 ![Letztes Update](https://img.shields.io/github/last-commit/fernandoncidade/fernandoncidade?label=Statistiken%20aktualisiert%20am&style=flat-square)
 
+<details>
+<summary>Klicken Sie hier, um das README auf Deutsch anzuzeigen</summary>
+
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="60" height="60"/>
   <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif" width="60" height="60"/>
   <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="60" height="60"/>
 </div>
-
-<details>
-<summary>Klicken Sie hier, um das README auf Deutsch anzuzeigen</summary>
 
 ## 📊 Statistiken meiner Repositories
 
