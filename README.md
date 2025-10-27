@@ -78,7 +78,7 @@ Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento 
 
 <div align="center">
   <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
-    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+    <img src="https://github.com/fernandoncidade/fernandoncidade/blob/main/image_perfil/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
@@ -221,7 +221,7 @@ I'm a software developer with experience in Python, C++, and GUI development. I'
 
 <div align="center">
   <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
-    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+    <img src="https://github.com/fernandoncidade/fernandoncidade/blob/main/image_perfil/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
@@ -364,7 +364,7 @@ Soy desarrollador de software con experiencia en Python, C++ y desarrollo de int
 
 <div align="center">
   <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
-    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+    <img src="https://github.com/fernandoncidade/fernandoncidade/blob/main/image_perfil/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
@@ -507,7 +507,7 @@ Je suis développeur logiciel avec expérience en Python, C++ et développement 
 
 <div align="center">
   <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
-    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+    <img src="https://github.com/fernandoncidade/fernandoncidade/blob/main/image_perfil/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
@@ -650,7 +650,7 @@ Sono uno sviluppatore software con esperienza in Python, C++ e sviluppo di inter
 
 <div align="center">
   <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
-    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+    <img src="https://github.com/fernandoncidade/fernandoncidade/blob/main/image_perfil/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
@@ -793,7 +793,7 @@ Ich bin Softwareentwickler mit Erfahrung in Python, C++ und GUI-Entwicklung. Ich
 
 <div align="center">
   <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
-    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+    <img src="https://github.com/fernandoncidade/fernandoncidade/blob/main/image_perfil/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
