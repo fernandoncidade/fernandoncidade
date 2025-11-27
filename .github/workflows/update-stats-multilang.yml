@@ -43,6 +43,8 @@ jobs:
             "Programa_Media_Aritmetica"
             "Programa_Determinar_Maior_Inteiro"
             "Linceu_Lighthouse"
+            "Economia_APP"
+            "Lumen"
           )
 
           total_lines=0
@@ -221,6 +223,18 @@ jobs:
           sed -i "s/<!-- MAIORINT_COMMITS -->/${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_COMMITS }}/g" README.md
           sed -i "s/<!-- MAIORINT_HOURS -->/${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_HOURS }}/g" README.md
           sed -i "s/<!-- MAIORINT_PROD -->/${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_PROD }}/g" README.md
+
+          # Economia_APP
+          sed -i "s/<!-- ECONOMIA_LINES -->/${{ env.ECONOMIA_APP_LINES }}/g" README.md
+          sed -i "s/<!-- ECONOMIA_COMMITS -->/${{ env.ECONOMIA_APP_COMMITS }}/g" README.md
+          sed -i "s/<!-- ECONOMIA_HOURS -->/${{ env.ECONOMIA_APP_HOURS }}/g" README.md
+          sed -i "s/<!-- ECONOMIA_PROD -->/${{ env.ECONOMIA_APP_PROD }}/g" README.md
+
+          # Lumen
+          sed -i "s/<!-- LUMEN_LINES -->/${{ env.LUMEN_LINES }}/g" README.md
+          sed -i "s/<!-- LUMEN_COMMITS -->/${{ env.LUMEN_COMMITS }}/g" README.md
+          sed -i "s/<!-- LUMEN_HOURS -->/${{ env.LUMEN_HOURS }}/g" README.md
+          sed -i "s/<!-- LUMEN_PROD -->/${{ env.LUMEN_PROD }}/g" README.md
 
       - name: Commit e push das alterações
         run: |

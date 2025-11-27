@@ -31,9 +31,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: 25927.5
-### 📝 Total de Linhas Escritas: 409210
-### 💻 Total de Commits: 202
+### 🕒 Total de Tempo Trabalhado: <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Linhas Escritas: <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -41,24 +41,26 @@
 
 | Repositório | Linguagem | Horas | Linhas | Commits | Produtividade (L/H) |
 |-------------|-----------|-------|--------|---------|---------------|
-| 📅 **Agenda Avaliações Acadêmicas** | Python | 679.6 | 10194 | 3 | 15.00 |
-| 🗜️ **Compression Manager** | Python | 765.4 | 8832 | 5 | 11.54 |
-| 📋 **Eisenhower Task Organizer** | Python | 432.7 | 6490 | 5 | 15.00 |
-| 🗳️ **Programa Urna Eletrônica** | C++ | 1488.8 | 22332 | 6 | 15.00 |
-| 📊 **Dashboard Streamlit Management** | Python | 128.7 | 2340 | 8 | 18.18 |
-| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8 | 2232 | 3 | 18.18 |
-| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 149.2 | 2712 | 1 | 18.18 |
-| 📊 **Dashboard Taipy** | Python | 12113.4 | 201890 | 2 | 16.67 |
-| 🔦 **Linceu Lighthouse** | Python | 8054.0 | 120810 | 11 | 15.00 |
-| 🗂️ **File Manager** | C++ | 1069.9 | 16048 | 5 | 15.00 |
-| 🧮 **Programa Matriz NM** | C++ | 18.1 | 326 | 2 | 18.01 |
-| 🧮 **Programa Todos Tipos Matrizes** | C++ | 24.8 | 446 | 2 | 17.98 |
-| ➗ **Programa Quociente Resto** | C++ | 15.6 | 280 | 2 | 17.95 |
-| 🔢 **Programa Múltiplo** | C++ | 19.0 | 342 | 2 | 18.00 |
-| 📏 **Programa Média Aritmética** | C++ | 42.8 | 770 | 2 | 17.99 |
-| 🔝 **Programa Determinar Maior Inteiro** | C++ | 16.7 | 300 | 2 | 17.96 |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 588.7 | 8830 | 24 | 15.00 |
-| 📄 **README do Perfil** | Markdown | 197.3 | 4036 | 117 | 20.46 |
+| 📅 **Agenda Avaliações Acadêmicas** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 🗜️ **Compression Manager** | Python | <!-- COMPRESSION_HOURS --> | <!-- COMPRESSION_LINES --> | <!-- COMPRESSION_COMMITS --> | <!-- COMPRESSION_PROD --> |
+| 📋 **Eisenhower Task Organizer** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
+| 🗳️ **Programa Urna Eletrônica** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
+| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
+| 📊 **Dashboard Taipy** | Python | <!-- TAIPY_HOURS --> | <!-- TAIPY_LINES --> | <!-- TAIPY_COMMITS --> | <!-- TAIPY_PROD --> |
+| 🔦 **Linceu Lighthouse** | Python | <!-- LIGHTHOUSE_HOURS --> | <!-- LIGHTHOUSE_LINES --> | <!-- LIGHTHOUSE_COMMITS --> | <!-- LIGHTHOUSE_PROD --> |
+| 🗂️ **File Manager** | C++ | <!-- FILEMANAGER_HOURS --> | <!-- FILEMANAGER_LINES --> | <!-- FILEMANAGER_COMMITS --> | <!-- FILEMANAGER_PROD --> |
+| 🧮 **Programa Matriz NM** | C++ | <!-- MATRIZNM_HOURS --> | <!-- MATRIZNM_LINES --> | <!-- MATRIZNM_COMMITS --> | <!-- MATRIZNM_PROD --> |
+| 🧮 **Programa Todos Tipos Matrizes** | C++ | <!-- MATRIZES_HOURS --> | <!-- MATRIZES_LINES --> | <!-- MATRIZES_COMMITS --> | <!-- MATRIZES_PROD --> |
+| ➗ **Programa Quociente Resto** | C++ | <!-- QUOCRESTO_HOURS --> | <!-- QUOCRESTO_LINES --> | <!-- QUOCRESTO_COMMITS --> | <!-- QUOCRESTO_PROD --> |
+| 🔢 **Programa Múltiplo** | C++ | <!-- MULTIPLO_HOURS --> | <!-- MULTIPLO_LINES --> | <!-- MULTIPLO_COMMITS --> | <!-- MULTIPLO_PROD --> |
+| 📏 **Programa Média Aritmética** | C++ | <!-- MEDIAARIT_HOURS --> | <!-- MEDIAARIT_LINES --> | <!-- MEDIAARIT_COMMITS --> | <!-- MEDIAARIT_PROD --> |
+| 🔝 **Programa Determinar Maior Inteiro** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
+| 📄 **README do Perfil** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+| 💼 **Economia APP** | Python | <!-- ECONOMIA_HOURS --> | <!-- ECONOMIA_LINES --> | <!-- ECONOMIA_COMMITS --> | <!-- ECONOMIA_PROD --> |
+| 🌟 **Lumen** | Python | <!-- LUMEN_HOURS --> | <!-- LUMEN_LINES --> | <!-- LUMEN_COMMITS --> | <!-- LUMEN_PROD --> |
 
 ## 🌻 Sobre Mim 🌻
 
@@ -74,20 +76,35 @@ Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento 
 - **Metodologias de Organização e Produtividade:** Matriz de Eisenhower
 - **Controle de Versionamento:** Git e GitHub
 
-## 🏮 Destaque de Projeto: Linceu Lighthouse Binary
+## 🏮 Destaque de Projeto: Linceu Lighthouse
 
 <div align="center">
   <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
-    <img src="https://github.com/fernandoncidade/fernandoncidade/blob/main/image_perfil/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/source/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
-**Linceu Lighthouse Binary**  
+**Linceu Lighthouse**  
 Ferramenta avançada de monitoramento de integridade de arquivos (FIM), com interface multilíngue, estatísticas detalhadas e exportação flexível de dados.  
 Disponível em versão de teste por 7 dias, após o qual pode ser adquirida pela [Microsoft Store](https://www.microsoft.com/store/apps/9NN8Z5Z700TM).
 
-- [Repositório Linceu Lighthouse Binary](https://github.com/fernandoncidade/Linceu_Lighthouse)
+- [Repositório Linceu Lighthouse](https://github.com/fernandoncidade/Linceu_Lighthouse)
 - [Leia o README multilíngue](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
+- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+
+## 🌟 Destaque de Projeto: Lumen
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Lumen">
+    <img src="https://github.com/fernandoncidade/Lumen/blob/main/source/assets/icones/autismo.png" alt="Lumen Print" width="320"/>
+  </a>
+</div>
+
+**Lumen**  
+Projeto "Lumen" — repositório com foco em soluções leves para visualização/organização de dados e utilitários de apoio ao fluxo de trabalho.  
+
+- [Repositório Lumen](https://github.com/fernandoncidade/Lumen)
+- [Leia o README do Lumen](https://github.com/fernandoncidade/Lumen/blob/main/README.md)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Principais Projetos
@@ -174,9 +191,9 @@ Disponível em versão de teste por 7 dias, após o qual pode ser adquirida pela
 
 <div align="center">
 
-### 🕒 Total Working Time: 25927.5
-### 📝 Total Lines Written: 409210
-### 💻 Total Commits: 202
+### 🕒 Total Working Time: <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total Lines Written: <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -184,24 +201,26 @@ Disponível em versão de teste por 7 dias, após o qual pode ser adquirida pela
 
 | Repository | Language | Hours | Lines | Commits | Productivity (L/H) |
 |------------|----------|-------|-------|---------|--------------|
-| 📅 **Academic Evaluations Scheduler** | Python | 679.6 | 10194 | 3 | 15.00 |
-| 🗜️ **Compression Manager** | Python | 765.4 | 8832 | 5 | 11.54 |
-| 📋 **Eisenhower Task Organizer** | Python | 432.7 | 6490 | 5 | 15.00 |
-| 🗳️ **Electronic Ballot Program** | C++ | 1488.8 | 22332 | 6 | 15.00 |
-| 📊 **Dashboard Streamlit Management** | Python | 128.7 | 2340 | 8 | 18.18 |
-| 📈 **Pareto/ABC Streamlit Dashboard** | Python | 122.8 | 2232 | 3 | 18.18 |
-| 🖥️ **TkInter Pareto/ABC Dashboard** | Python | 149.2 | 2712 | 1 | 18.18 |
-| 📊 **Taipy Dashboard** | Python | 12113.4 | 201890 | 2 | 16.67 |
-| 🔦 **Linceu Lighthouse** | Python | 8054.0 | 120810 | 11 | 15.00 |
-| 🗂️ **File Manager** | C++ | 1069.9 | 16048 | 5 | 15.00 |
-| 🧮 **Matrix NM Program** | C++ | 18.1 | 326 | 2 | 18.01 |
-| 🧮 **All Types of Matrices Program** | C++ | 24.8 | 446 | 2 | 17.98 |
-| ➗ **Quotient and Remainder Program** | C++ | 15.6 | 280 | 2 | 17.95 |
-| 🔢 **Multiple Program** | C++ | 19.0 | 342 | 2 | 18.00 |
-| 📏 **Arithmetic Mean Program** | C++ | 42.8 | 770 | 2 | 17.99 |
-| 🔝 **Find Largest Integer Program** | C++ | 16.7 | 300 | 2 | 17.96 |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 588.7 | 8830 | 24 | 15.00 |
-| 📄 **Profile README** | Markdown | 197.3 | 4036 | 117 | 20.46 |
+| 📅 **Academic Evaluations Scheduler** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 🗜️ **Compression Manager** | Python | <!-- COMPRESSION_HOURS --> | <!-- COMPRESSION_LINES --> | <!-- COMPRESSION_COMMITS --> | <!-- COMPRESSION_PROD --> |
+| 📋 **Eisenhower Task Organizer** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
+| 🗳️ **Electronic Ballot Program** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
+| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
+| 📈 **Pareto/ABC Streamlit Dashboard** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
+| 🖥️ **TkInter Pareto/ABC Dashboard** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
+| 📊 **Taipy Dashboard** | Python | <!-- TAIPY_HOURS --> | <!-- TAIPY_LINES --> | <!-- TAIPY_COMMITS --> | <!-- TAIPY_PROD --> |
+| 🔦 **Linceu Lighthouse** | Python | <!-- LIGHTHOUSE_HOURS --> | <!-- LIGHTHOUSE_LINES --> | <!-- LIGHTHOUSE_COMMITS --> | <!-- LIGHTHOUSE_PROD --> |
+| 🗂️ **File Manager** | C++ | <!-- FILEMANAGER_HOURS --> | <!-- FILEMANAGER_LINES --> | <!-- FILEMANAGER_COMMITS --> | <!-- FILEMANAGER_PROD --> |
+| 🧮 **Matrix NM Program** | C++ | <!-- MATRIZNM_HOURS --> | <!-- MATRIZNM_LINES --> | <!-- MATRIZNM_COMMITS --> | <!-- MATRIZNM_PROD --> |
+| 🧮 **All Types of Matrices Program** | C++ | <!-- MATRIZES_HOURS --> | <!-- MATRIZES_LINES --> | <!-- MATRIZES_COMMITS --> | <!-- MATRIZES_PROD --> |
+| ➗ **Quotient and Remainder Program** | C++ | <!-- QUOCRESTO_HOURS --> | <!-- QUOCRESTO_LINES --> | <!-- QUOCRESTO_COMMITS --> | <!-- QUOCRESTO_PROD --> |
+| 🔢 **Multiple Program** | C++ | <!-- MULTIPLO_HOURS --> | <!-- MULTIPLO_LINES --> | <!-- MULTIPLO_COMMITS --> | <!-- MULTIPLO_PROD --> |
+| 📏 **Arithmetic Mean Program** | C++ | <!-- MEDIAARIT_HOURS --> | <!-- MEDIAARIT_LINES --> | <!-- MEDIAARIT_COMMITS --> | <!-- MEDIAARIT_PROD --> |
+| 🔝 **Find Largest Integer Program** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
+| 📄 **Profile README** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+| 💼 **Economia APP** | Python | <!-- ECONOMIA_HOURS --> | <!-- ECONOMIA_LINES --> | <!-- ECONOMIA_COMMITS --> | <!-- ECONOMIA_PROD --> |
+| 🌟 **Lumen** | Python | <!-- LUMEN_HOURS --> | <!-- LUMEN_LINES --> | <!-- LUMEN_COMMITS --> | <!-- LUMEN_PROD --> |
 
 ## 🌻 About Me 🌻
 
@@ -217,20 +236,35 @@ I'm a software developer with experience in Python, C++, and GUI development. I'
 - **Organization & Productivity:** Eisenhower Matrix
 - **Version Control:** Git and GitHub
 
-## 🏮 Project Highlight: Linceu Lighthouse Binary
+## 🏮 Project Highlight: Linceu Lighthouse
 
 <div align="center">
   <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
-    <img src="https://github.com/fernandoncidade/fernandoncidade/blob/main/image_perfil/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/source/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
-**Linceu Lighthouse Binary**  
+**Linceu Lighthouse**  
 Advanced file integrity monitoring tool (FIM) with multilingual interface, detailed statistics, and flexible data export.  
 Available as a 7-day trial version, after which it can be purchased via the [Microsoft Store](https://www.microsoft.com/store/apps/9NN8Z5Z700TM).
 
-- [Linceu Lighthouse Binary Repository](https://github.com/fernandoncidade/Linceu_Lighthouse)
+- [Linceu Lighthouse Repository](https://github.com/fernandoncidade/Linceu_Lighthouse)
 - [Read the multilingual README](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
+- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+
+## 🌟 Project Highlight: Lumen
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Lumen">
+    <img src="https://github.com/fernandoncidade/Lumen/blob/main/source/assets/icones/autismo.png" alt="Lumen Print" width="320"/>
+  </a>
+</div>
+
+**Lumen**  
+Project "Lumen" — repository focused on lightweight solutions for data visualization/organization and utilities to support the workflow.
+
+- [Lumen Repository](https://github.com/fernandoncidade/Lumen)
+- [Read the Lumen README](https://github.com/fernandoncidade/Lumen/blob/main/README.md)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Main Projects
@@ -317,9 +351,9 @@ Available as a 7-day trial version, after which it can be purchased via the [Mic
 
 <div align="center">
 
-### 🕒 Total de Tiempo Trabajado: 25927.5
-### 📝 Total de Líneas Escritas: 409210
-### 💻 Total de Commits: 202
+### 🕒 Total de Tiempo Trabajado: <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Líneas Escritas: <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -327,24 +361,26 @@ Available as a 7-day trial version, after which it can be purchased via the [Mic
 
 | Repositorio | Lenguaje | Horas | Líneas | Commits | Productividad (L/H) |
 |-------------|----------|-------|--------|---------|---------------|
-| 📅 **Agenda Evaluaciones Académicas** | Python | 679.6 | 10194 | 3 | 15.00 |
-| 🗜️ **Compression Manager** | Python | 765.4 | 8832 | 5 | 11.54 |
-| 📋 **Eisenhower Task Organizer** | Python | 432.7 | 6490 | 5 | 15.00 |
-| 🗳️ **Programa Urna Electrónica** | C++ | 1488.8 | 22332 | 6 | 15.00 |
-| 📊 **Dashboard Streamlit Management** | Python | 128.7 | 2340 | 8 | 18.18 |
-| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8 | 2232 | 3 | 18.18 |
-| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 149.2 | 2712 | 1 | 18.18 |
-| 📊 **Dashboard Taipy** | Python | 12113.4 | 201890 | 2 | 16.67 |
-| 🔦 **Linceu Lighthouse** | Python | 8054.0 | 120810 | 11 | 15.00 |
-| 🗂️ **File Manager** | C++ | 1069.9 | 16048 | 5 | 15.00 |
-| 🧮 **Programa Matriz NM** | C++ | 18.1 | 326 | 2 | 18.01 |
-| 🧮 **Programa Todos Tipos de Matrices** | C++ | 24.8 | 446 | 2 | 17.98 |
-| ➗ **Programa Cociente y Resto** | C++ | 15.6 | 280 | 2 | 17.95 |
-| 🔢 **Programa Múltiplo** | C++ | 19.0 | 342 | 2 | 18.00 |
-| 📏 **Programa Media Aritmética** | C++ | 42.8 | 770 | 2 | 17.99 |
-| 🔝 **Programa Determinar el Mayor Entero** | C++ | 16.7 | 300 | 2 | 17.96 |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 588.7 | 8830 | 24 | 15.00 |
-| 📄 **README del Perfil** | Markdown | 197.3 | 4036 | 117 | 20.46 |
+| 📅 **Agenda Evaluaciones Académicas** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 🗜️ **Compression Manager** | Python | <!-- COMPRESSION_HOURS --> | <!-- COMPRESSION_LINES --> | <!-- COMPRESSION_COMMITS --> | <!-- COMPRESSION_PROD --> |
+| 📋 **Eisenhower Task Organizer** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
+| 🗳️ **Programa Urna Electrónica** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
+| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
+| 📊 **Dashboard Taipy** | Python | <!-- TAIPY_HOURS --> | <!-- TAIPY_LINES --> | <!-- TAIPY_COMMITS --> | <!-- TAIPY_PROD --> |
+| 🔦 **Linceu Lighthouse** | Python | <!-- LIGHTHOUSE_HOURS --> | <!-- LIGHTHOUSE_LINES --> | <!-- LIGHTHOUSE_COMMITS --> | <!-- LIGHTHOUSE_PROD --> |
+| 🗂️ **File Manager** | C++ | <!-- FILEMANAGER_HOURS --> | <!-- FILEMANAGER_LINES --> | <!-- FILEMANAGER_COMMITS --> | <!-- FILEMANAGER_PROD --> |
+| 🧮 **Programa Matriz NM** | C++ | <!-- MATRIZNM_HOURS --> | <!-- MATRIZNM_LINES --> | <!-- MATRIZNM_COMMITS --> | <!-- MATRIZNM_PROD --> |
+| 🧮 **Programa Todos Tipos de Matrices** | C++ | <!-- MATRIZES_HOURS --> | <!-- MATRIZES_LINES --> | <!-- MATRIZES_COMMITS --> | <!-- MATRIZES_PROD --> |
+| ➗ **Programa Cociente y Resto** | C++ | <!-- QUOCRESTO_HOURS --> | <!-- QUOCRESTO_LINES --> | <!-- QUOCRESTO_COMMITS --> | <!-- QUOCRESTO_PROD --> |
+| 🔢 **Programa Múltiplo** | C++ | <!-- MULTIPLO_HOURS --> | <!-- MULTIPLO_LINES --> | <!-- MULTIPLO_COMMITS --> | <!-- MULTIPLO_PROD --> |
+| 📏 **Programa Media Aritmética** | C++ | <!-- MEDIAARIT_HOURS --> | <!-- MEDIAARIT_LINES --> | <!-- MEDIAARIT_COMMITS --> | <!-- MEDIAARIT_PROD --> |
+| 🔝 **Programa Determinar el Mayor Entero** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
+| 📄 **README del Perfil** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+| 💼 **Economia APP** | Python | <!-- ECONOMIA_HOURS --> | <!-- ECONOMIA_LINES --> | <!-- ECONOMIA_COMMITS --> | <!-- ECONOMIA_PROD --> |
+| 🌟 **Lumen** | Python | <!-- LUMEN_HOURS --> | <!-- LUMEN_LINES --> | <!-- LUMEN_COMMITS --> | <!-- LUMEN_PROD --> |
 
 ## 🌻 Sobre Mí 🌻
 
@@ -360,20 +396,35 @@ Soy desarrollador de software con experiencia en Python, C++ y desarrollo de int
 - **Organización y Productividad:** Matriz de Eisenhower
 - **Control de Versiones:** Git y GitHub
 
-## 🏮 Proyecto Destacado: Linceu Lighthouse Binary
+## 🏮 Proyecto Destacado: Linceu Lighthouse
 
 <div align="center">
   <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
-    <img src="https://github.com/fernandoncidade/fernandoncidade/blob/main/image_perfil/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/source/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
-**Linceu Lighthouse Binary**  
+**Linceu Lighthouse**  
 Herramienta avanzada de monitorización de integridad de archivos (FIM), con interfaz multilingüe, estadísticas detalladas y exportación flexible de datos.  
 Disponible en versión de prueba de 7 días, tras los cuales puede adquirirse en la [Microsoft Store](https://www.microsoft.com/store/apps/9NN8Z5Z700TM).
 
-- [Repositorio Linceu Lighthouse Binary](https://github.com/fernandoncidade/Linceu_Lighthouse)
+- [Repositorio Linceu Lighthouse](https://github.com/fernandoncidade/Linceu_Lighthouse)
 - [Lee el README multilingüe](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
+- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+
+## 🌟 Proyecto Destacado: Lumen
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Lumen">
+    <img src="https://github.com/fernandoncidade/Lumen/blob/main/source/assets/icones/autismo.png" alt="Lumen Print" width="320"/>
+  </a>
+</div>
+
+**Lumen**  
+Proyecto "Lumen" — repositorio enfocado en soluciones ligeras para la visualización/organización de datos y utilidades que apoyan el flujo de trabajo.
+
+- [Repositorio Lumen](https://github.com/fernandoncidade/Lumen)
+- [Lee el README de Lumen](https://github.com/fernandoncidade/Lumen/blob/main/README.md)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Principales Proyectos
@@ -460,9 +511,9 @@ Disponible en versión de prueba de 7 días, tras los cuales puede adquirirse en
 
 <div align="center">
 
-### 🕒 Temps de travail total : 25927.5
-### 📝 Nombre total de lignes écrites : 409210
-### 💻 Nombre total de commits : 202
+### 🕒 Temps de travail total : <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Nombre total de lignes écrites : <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Nombre total de commits : <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -470,24 +521,26 @@ Disponible en versión de prueba de 7 días, tras los cuales puede adquirirse en
 
 | Répertoire | Langage | Heures | Lignes | Commits | Productivité (L/H) |
 |------------|---------|--------|--------|---------|--------------|
-| 📅 **Agenda des Évaluations Académiques** | Python | 679.6 | 10194 | 3 | 15.00 |
-| 🗜️ **Compression Manager** | Python | 765.4 | 8832 | 5 | 11.54 |
-| 📋 **Eisenhower Task Organizer** | Python | 432.7 | 6490 | 5 | 15.00 |
-| 🗳️ **Programme Urne Électronique** | C++ | 1488.8 | 22332 | 6 | 15.00 |
-| 📊 **Dashboard Streamlit Management** | Python | 128.7 | 2340 | 8 | 18.18 |
-| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8 | 2232 | 3 | 18.18 |
-| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 149.2 | 2712 | 1 | 18.18 |
-| 📊 **Dashboard Taipy** | Python | 12113.4 | 201890 | 2 | 16.67 |
-| 🔦 **Linceu Lighthouse** | Python | 8054.0 | 120810 | 11 | 15.00 |
-| 🗂️ **File Manager** | C++ | 1069.9 | 16048 | 5 | 15.00 |
-| 🧮 **Programme Matrice NM** | C++ | 18.1 | 326 | 2 | 18.01 |
-| 🧮 **Programme Toutes Types de Matrices** | C++ | 24.8 | 446 | 2 | 17.98 |
-| ➗ **Programme Quotient et Reste** | C++ | 15.6 | 280 | 2 | 17.95 |
-| 🔢 **Programme Multiple** | C++ | 19.0 | 342 | 2 | 18.00 |
-| 📏 **Programme Moyenne Arithmétique** | C++ | 42.8 | 770 | 2 | 17.99 |
-| 🔝 **Programme Déterminer le Plus Grand Entier** | C++ | 16.7 | 300 | 2 | 17.96 |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 588.7 | 8830 | 24 | 15.00 |
-| 📄 **README du Profil** | Markdown | 197.3 | 4036 | 117 | 20.46 |
+| 📅 **Agenda des Évaluations Académiques** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 🗜️ **Compression Manager** | Python | <!-- COMPRESSION_HOURS --> | <!-- COMPRESSION_LINES --> | <!-- COMPRESSION_COMMITS --> | <!-- COMPRESSION_PROD --> |
+| 📋 **Eisenhower Task Organizer** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
+| 🗳️ **Programme Urne Électronique** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
+| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
+| 📊 **Dashboard Taipy** | Python | <!-- TAIPY_HOURS --> | <!-- TAIPY_LINES --> | <!-- TAIPY_COMMITS --> | <!-- TAIPY_PROD --> |
+| 🔦 **Linceu Lighthouse** | Python | <!-- LIGHTHOUSE_HOURS --> | <!-- LIGHTHOUSE_LINES --> | <!-- LIGHTHOUSE_COMMITS --> | <!-- LIGHTHOUSE_PROD --> |
+| 🗂️ **File Manager** | C++ | <!-- FILEMANAGER_HOURS --> | <!-- FILEMANAGER_LINES --> | <!-- FILEMANAGER_COMMITS --> | <!-- FILEMANAGER_PROD --> |
+| 🧮 **Programme Matrice NM** | C++ | <!-- MATRIZNM_HOURS --> | <!-- MATRIZNM_LINES --> | <!-- MATRIZNM_COMMITS --> | <!-- MATRIZNM_PROD --> |
+| 🧮 **Programme Toutes Types de Matrices** | C++ | <!-- MATRIZES_HOURS --> | <!-- MATRIZES_LINES --> | <!-- MATRIZES_COMMITS --> | <!-- MATRIZES_PROD --> |
+| ➗ **Programme Quotient et Reste** | C++ | <!-- QUOCRESTO_HOURS --> | <!-- QUOCRESTO_LINES --> | <!-- QUOCRESTO_COMMITS --> | <!-- QUOCRESTO_PROD --> |
+| 🔢 **Programme Multiple** | C++ | <!-- MULTIPLO_HOURS --> | <!-- MULTIPLO_LINES --> | <!-- MULTIPLO_COMMITS --> | <!-- MULTIPLO_PROD --> |
+| 📏 **Programme Moyenne Arithmétique** | C++ | <!-- MEDIAARIT_HOURS --> | <!-- MEDIAARIT_LINES --> | <!-- MEDIAARIT_COMMITS --> | <!-- MEDIAARIT_PROD --> |
+| 🔝 **Programme Déterminer le Plus Grand Entier** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
+| 📄 **README du Profil** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+| 💼 **Economia APP** | Python | <!-- ECONOMIA_HOURS --> | <!-- ECONOMIA_LINES --> | <!-- ECONOMIA_COMMITS --> | <!-- ECONOMIA_PROD --> |
+| 🌟 **Lumen** | Python | <!-- LUMEN_HOURS --> | <!-- LUMEN_LINES --> | <!-- LUMEN_COMMITS --> | <!-- LUMEN_PROD --> |
 
 ## 🌻 À propos de moi 🌻
 
@@ -503,20 +556,35 @@ Je suis développeur logiciel avec expérience en Python, C++ et développement 
 - **Organisation et Productivité :** Matrice Eisenhower
 - **Gestion de Version :** Git et GitHub
 
-## 🏮 Projet phare : Linceu Lighthouse Binary
+## 🏮 Projet phare : Linceu Lighthouse
 
 <div align="center">
   <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
-    <img src="https://github.com/fernandoncidade/fernandoncidade/blob/main/image_perfil/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/source/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
-**Linceu Lighthouse Binary**  
+**Linceu Lighthouse**  
 Outil avancé de surveillance de l'intégrité des fichiers (FIM), avec interface multilingue, statistiques détaillées et exportation flexible des données.  
 Disponible en version d'essai de 7 jours, puis achetable sur la [Microsoft Store](https://www.microsoft.com/store/apps/9NN8Z5Z700TM).
 
-- [Dépôt Linceu Lighthouse Binary](https://github.com/fernandoncidade/Linceu_Lighthouse)
+- [Dépôt Linceu Lighthouse](https://github.com/fernandoncidade/Linceu_Lighthouse)
 - [Lire le README multilingue](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
+- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+
+## 🌟 Projet en Vedette : Lumen
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Lumen">
+    <img src="https://github.com/fernandoncidade/Lumen/blob/main/source/assets/icones/autismo.png" alt="Lumen Print" width="320"/>
+  </a>
+</div>
+
+**Lumen**  
+Projet « Lumen » — dépôt axé sur des solutions légères pour la visualisation/l'organisation des données et des utilitaires pour soutenir le flux de travail.
+
+- [Dépôt Lumen](https://github.com/fernandoncidade/Lumen)
+- [Lire le README de Lumen](https://github.com/fernandoncidade/Lumen/blob/main/README.md)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Projets Principaux
@@ -603,9 +671,9 @@ Disponible en version d'essai de 7 jours, puis achetable sur la [Microsoft Store
 
 <div align="center">
 
-### 🕒 Tempo Totale di Lavoro: 25927.5
-### 📝 Totale Righe Scritte: 409210
-### 💻 Totale Commit: 202
+### 🕒 Tempo Totale di Lavoro: <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Totale Righe Scritte: <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Totale Commit: <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -613,24 +681,26 @@ Disponible en version d'essai de 7 jours, puis achetable sur la [Microsoft Store
 
 | Repository | Linguaggio | Ore | Righe | Commit | Produttività (R/O) |
 |------------|------------|-----|-------|--------|--------------|
-| 📅 **Agenda Valutazioni Accademiche** | Python | 679.6 | 10194 | 3 | 15.00 |
-| 🗜️ **Compression Manager** | Python | 765.4 | 8832 | 5 | 11.54 |
-| 📋 **Eisenhower Task Organizer** | Python | 432.7 | 6490 | 5 | 15.00 |
-| 🗳️ **Programma Urna Elettronica** | C++ | 1488.8 | 22332 | 6 | 15.00 |
-| 📊 **Dashboard Streamlit Management** | Python | 128.7 | 2340 | 8 | 18.18 |
-| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8 | 2232 | 3 | 18.18 |
-| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 149.2 | 2712 | 1 | 18.18 |
-| 📊 **Dashboard Taipy** | Python | 12113.4 | 201890 | 2 | 16.67 |
-| 🔦 **Linceu Lighthouse** | Python | 8054.0 | 120810 | 11 | 15.00 |
-| 🗂️ **File Manager** | C++ | 1069.9 | 16048 | 5 | 15.00 |
-| 🧮 **Programma Matrice NM** | C++ | 18.1 | 326 | 2 | 18.01 |
-| 🧮 **Programma Tutti Tipi di Matrici** | C++ | 24.8 | 446 | 2 | 17.98 |
-| ➗ **Programma Quoziente e Resto** | C++ | 15.6 | 280 | 2 | 17.95 |
-| 🔢 **Programma Multiplo** | C++ | 19.0 | 342 | 2 | 18.00 |
-| 📏 **Programma Media Aritmetica** | C++ | 42.8 | 770 | 2 | 17.99 |
-| 🔝 **Programma Determina Maggiore Intero** | C++ | 16.7 | 300 | 2 | 17.96 |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 588.7 | 8830 | 24 | 15.00 |
-| 📄 **README del Profilo** | Markdown | 197.3 | 4036 | 117 | 20.46 |
+| 📅 **Agenda Valutazioni Accademiche** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 🗜️ **Compression Manager** | Python | <!-- COMPRESSION_HOURS --> | <!-- COMPRESSION_LINES --> | <!-- COMPRESSION_COMMITS --> | <!-- COMPRESSION_PROD --> |
+| 📋 **Eisenhower Task Organizer** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
+| 🗳️ **Programma Urna Elettronica** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
+| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
+| 📊 **Dashboard Taipy** | Python | <!-- TAIPY_HOURS --> | <!-- TAIPY_LINES --> | <!-- TAIPY_COMMITS --> | <!-- TAIPY_PROD --> |
+| 🔦 **Linceu Lighthouse** | Python | <!-- LIGHTHOUSE_HOURS --> | <!-- LIGHTHOUSE_LINES --> | <!-- LIGHTHOUSE_COMMITS --> | <!-- LIGHTHOUSE_PROD --> |
+| 🗂️ **File Manager** | C++ | <!-- FILEMANAGER_HOURS --> | <!-- FILEMANAGER_LINES --> | <!-- FILEMANAGER_COMMITS --> | <!-- FILEMANAGER_PROD --> |
+| 🧮 **Programma Matrice NM** | C++ | <!-- MATRIZNM_HOURS --> | <!-- MATRIZNM_LINES --> | <!-- MATRIZNM_COMMITS --> | <!-- MATRIZNM_PROD --> |
+| 🧮 **Programma Tutti Tipi di Matrici** | C++ | <!-- MATRIZES_HOURS --> | <!-- MATRIZES_LINES --> | <!-- MATRIZES_COMMITS --> | <!-- MATRIZES_PROD --> |
+| ➗ **Programma Quoziente e Resto** | C++ | <!-- QUOCRESTO_HOURS --> | <!-- QUOCRESTO_LINES --> | <!-- QUOCRESTO_COMMITS --> | <!-- QUOCRESTO_PROD --> |
+| 🔢 **Programma Multiplo** | C++ | <!-- MULTIPLO_HOURS --> | <!-- MULTIPLO_LINES --> | <!-- MULTIPLO_COMMITS --> | <!-- MULTIPLO_PROD --> |
+| 📏 **Programma Media Aritmetica** | C++ | <!-- MEDIAARIT_HOURS --> | <!-- MEDIAARIT_LINES --> | <!-- MEDIAARIT_COMMITS --> | <!-- MEDIAARIT_PROD --> |
+| 🔝 **Programma Determina Maggiore Intero** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
+| 📄 **README del Profilo** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+| 💼 **Economia APP** | Python | <!-- ECONOMIA_HOURS --> | <!-- ECONOMIA_LINES --> | <!-- ECONOMIA_COMMITS --> | <!-- ECONOMIA_PROD --> |
+| 🌟 **Lumen** | Python | <!-- LUMEN_HOURS --> | <!-- LUMEN_LINES --> | <!-- LUMEN_COMMITS --> | <!-- LUMEN_PROD --> |
 
 ## 🌻 Su di Me 🌻
 
@@ -646,20 +716,35 @@ Sono uno sviluppatore software con esperienza in Python, C++ e sviluppo di inter
 - **Organizzazione e Produttività:** Matrice Eisenhower
 - **Controllo Versioni:** Git e GitHub
 
-## 🏮 Progetto in Evidenza: Linceu Lighthouse Binary
+## 🏮 Progetto in Evidenza: Linceu Lighthouse
 
 <div align="center">
   <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
-    <img src="https://github.com/fernandoncidade/fernandoncidade/blob/main/image_perfil/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/source/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
-**Linceu Lighthouse Binary**  
+**Linceu Lighthouse**  
 Strumento avanzato per il monitoraggio dell'integrità dei file (FIM), con interfaccia multilingue, statistiche dettagliate ed esportazione flessibile dei dati.  
 Disponibile in versione di prova per 7 giorni, dopo i quali può essere acquistato tramite [Microsoft Store](https://www.microsoft.com/store/apps/9NN8Z5Z700TM).
 
-- [Repository Linceu Lighthouse Binary](https://github.com/fernandoncidade/Linceu_Lighthouse)
+- [Repository Linceu Lighthouse](https://github.com/fernandoncidade/Linceu_Lighthouse)
 - [Leggi il README multilingue](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
+- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+
+## 🌟 Progetto in Evidenza: Lumen
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Lumen">
+    <img src="https://github.com/fernandoncidade/Lumen/blob/main/source/assets/icones/autismo.png" alt="Lumen Print" width="320"/>
+  </a>
+</div>
+
+**Lumen**  
+Progetto "Lumen" — repository focalizzato su soluzioni leggere per la visualizzazione/organizzazione dei dati e utility a supporto del flusso di lavoro.
+
+- [Repository Lumen](https://github.com/fernandoncidade/Lumen)
+- [Leggi il README di Lumen](https://github.com/fernandoncidade/Lumen/blob/main/README.md)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Principali Progetti
@@ -746,9 +831,9 @@ Disponibile in versione di prova per 7 giorni, dopo i quali può essere acquista
 
 <div align="center">
 
-### 🕒 Gesamtarbeitszeit: 25927.5
-### 📝 Gesamtzahl der geschriebenen Zeilen: 409210
-### 💻 Gesamtzahl der Commits: 202
+### 🕒 Gesamtarbeitszeit: <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Gesamtzahl der geschriebenen Zeilen: <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Gesamtzahl der Commits: <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -756,24 +841,26 @@ Disponibile in versione di prova per 7 giorni, dopo i quali può essere acquista
 
 | Repository | Sprache | Stunden | Zeilen | Commits | Produktivität (Z/S) |
 |------------|--------|---------|--------|---------|---------------|
-| 📅 **Akademische Bewertungsagenda** | Python | 679.6 | 10194 | 3 | 15.00 |
-| 🗜️ **Compression Manager** | Python | 765.4 | 8832 | 5 | 11.54 |
-| 📋 **Eisenhower Task Organizer** | Python | 432.7 | 6490 | 5 | 15.00 |
-| 🗳️ **Elektronisches Wahlprogramm** | C++ | 1488.8 | 22332 | 6 | 15.00 |
-| 📊 **Dashboard Streamlit Management** | Python | 128.7 | 2340 | 8 | 18.18 |
-| 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8 | 2232 | 3 | 18.18 |
-| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 149.2 | 2712 | 1 | 18.18 |
-| 📊 **Dashboard Taipy** | Python | 12113.4 | 201890 | 2 | 16.67 |
-| 🔦 **Linceu Lighthouse** | Python | 8054.0 | 120810 | 11 | 15.00 |
-| 🗂️ **File Manager** | C++ | 1069.9 | 16048 | 5 | 15.00 |
-| 🧮 **Matrix NM Programm** | C++ | 18.1 | 326 | 2 | 18.01 |
-| 🧮 **Alle Matrizenarten Programm** | C++ | 24.8 | 446 | 2 | 17.98 |
-| ➗ **Quotienten und Rest Programm** | C++ | 15.6 | 280 | 2 | 17.95 |
-| 🔢 **Multiplikationsprogramm** | C++ | 19.0 | 342 | 2 | 18.00 |
-| 📏 **Arithmetisches Mittel Programm** | C++ | 42.8 | 770 | 2 | 17.99 |
-| 🔝 **Bestimme das größte Ganze Programm** | C++ | 16.7 | 300 | 2 | 17.96 |
-| 🎨 **sloth-highlander-theme-1** | CSS/HTML | 588.7 | 8830 | 24 | 15.00 |
-| 📄 **Profil-README** | Markdown | 197.3 | 4036 | 117 | 20.46 |
+| 📅 **Akademische Bewertungsagenda** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 🗜️ **Compression Manager** | Python | <!-- COMPRESSION_HOURS --> | <!-- COMPRESSION_LINES --> | <!-- COMPRESSION_COMMITS --> | <!-- COMPRESSION_PROD --> |
+| 📋 **Eisenhower Task Organizer** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
+| 🗳️ **Elektronisches Wahlprogramm** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
+| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
+| 📊 **Dashboard Taipy** | Python | <!-- TAIPY_HOURS --> | <!-- TAIPY_LINES --> | <!-- TAIPY_COMMITS --> | <!-- TAIPY_PROD --> |
+| 🔦 **Linceu Lighthouse** | Python | <!-- LIGHTHOUSE_HOURS --> | <!-- LIGHTHOUSE_LINES --> | <!-- LIGHTHOUSE_COMMITS --> | <!-- LIGHTHOUSE_PROD --> |
+| 🗂️ **File Manager** | C++ | <!-- FILEMANAGER_HOURS --> | <!-- FILEMANAGER_LINES --> | <!-- FILEMANAGER_COMMITS --> | <!-- FILEMANAGER_PROD --> |
+| 🧮 **Matrix NM Programm** | C++ | <!-- MATRIZNM_HOURS --> | <!-- MATRIZNM_LINES --> | <!-- MATRIZNM_COMMITS --> | <!-- MATRIZNM_PROD --> |
+| 🧮 **Alle Matrizenarten Programm** | C++ | <!-- MATRIZES_HOURS --> | <!-- MATRIZES_LINES --> | <!-- MATRIZES_COMMITS --> | <!-- MATRIZES_PROD --> |
+| ➗ **Quotienten und Rest Programm** | C++ | <!-- QUOCRESTO_HOURS --> | <!-- QUOCRESTO_LINES --> | <!-- QUOCRESTO_COMMITS --> | <!-- QUOCRESTO_PROD --> |
+| 🔢 **Multiplikationsprogramm** | C++ | <!-- MULTIPLO_HOURS --> | <!-- MULTIPLO_LINES --> | <!-- MULTIPLO_COMMITS --> | <!-- MULTIPLO_PROD --> |
+| 📏 **Arithmetisches Mittel Programm** | C++ | <!-- MEDIAARIT_HOURS --> | <!-- MEDIAARIT_LINES --> | <!-- MEDIAARIT_COMMITS --> | <!-- MEDIAARIT_PROD --> |
+| 🔝 **Bestimme das größte Ganze Programm** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
+| 📄 **Profil-README** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+| 💼 **Economia APP** | Python | <!-- ECONOMIA_HOURS --> | <!-- ECONOMIA_LINES --> | <!-- ECONOMIA_COMMITS --> | <!-- ECONOMIA_PROD --> |
+| 🌟 **Lumen** | Python | <!-- LUMEN_HOURS --> | <!-- LUMEN_LINES --> | <!-- LUMEN_COMMITS --> | <!-- LUMEN_PROD --> |
 
 ## 🌻 Über mich 🌻
 
@@ -789,20 +876,35 @@ Ich bin Softwareentwickler mit Erfahrung in Python, C++ und GUI-Entwicklung. Ich
 - **Organisation & Produktivität:** Eisenhower-Matrix
 - **Versionskontrolle:** Git und GitHub
 
-## 🏮 Projekt-Highlight: Linceu Lighthouse Binary
+## 🏮 Projekt-Highlight: Linceu Lighthouse
 
 <div align="center">
   <a href="https://github.com/fernandoncidade/Linceu_Lighthouse">
-    <img src="https://github.com/fernandoncidade/fernandoncidade/blob/main/image_perfil/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+    <img src="https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/source/assets/icones/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
   </a>
 </div>
 
-**Linceu Lighthouse Binary**  
+**Linceu Lighthouse**  
 Fortschrittliches Tool zur Überwachung der Dateiintegrität (FIM) mit mehrsprachiger Oberfläche, detaillierten Statistiken und flexiblem Datenexport.  
 Verfügbar als 7-tägige Testversion, danach über den [Microsoft Store](https://www.microsoft.com/store/apps/9NN8Z5Z700TM) erhältlich.
 
-- [Linceu Lighthouse Binary Repository](https://github.com/fernandoncidade/Linceu_Lighthouse)
+- [Linceu Lighthouse Repository](https://github.com/fernandoncidade/Linceu_Lighthouse)
 - [Lies das mehrsprachige README](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
+- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+
+## 🌟 Projekthighlight: Lumen
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Lumen">
+    <img src="https://github.com/fernandoncidade/Lumen/blob/main/source/assets/icones/autismo.png" alt="Lumen Print" width="320"/>
+  </a>
+</div>
+
+**Lumen**  
+Projekt "Lumen" — Repository mit Fokus auf leichte Lösungen zur Datenvisualisierung/-organisation und auf Hilfsprogramme zur Unterstützung des Workflows.
+
+- [Lumen Repository](https://github.com/fernandoncidade/Lumen)
+- [Lies das README von Lumen](https://github.com/fernandoncidade/Lumen/blob/main/README.md)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Hauptprojekte
