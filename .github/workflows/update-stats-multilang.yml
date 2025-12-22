@@ -2,10 +2,10 @@ name: Atualizar Estatísticas de Código
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # UTC (domingo 00:00)
+    - cron: '0 0 * * 0'
   workflow_dispatch:
   repository_dispatch:
-    types: [update-stats]
+    types: [update-stats, repo-push]  # <-- adiciona repo-push
 
 concurrency:
   group: update-stats
