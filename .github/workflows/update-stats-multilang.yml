@@ -2,7 +2,7 @@ name: Atualizar Estatísticas de Código
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # Executa todo domingo à meia-noite
+    - cron: '0 0 * * 0'  # UTC (domingo 00:00)
   workflow_dispatch:
 
 jobs:
@@ -11,7 +11,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           path: main-repo
 
@@ -21,8 +21,12 @@ jobs:
           sudo apt-get install -y cloc
 
       - name: Clonar e analisar repositórios
+        shell: bash
         run: |
+          set -euo pipefail
+
           mkdir -p repos
+          stats_file="$GITHUB_WORKSPACE/main-repo/stats.md"
 
           repositories=(
             "Agenda_Avaliacoes_Academicas"
@@ -51,21 +55,30 @@ jobs:
           total_commits=0
           total_horas=0
 
-          echo "| Repositório | Linguagem | Horas Estimadas | Linhas | Commits | Produtividade |" > stats.md
-          echo "|-------------|-----------|-----------------|--------|---------|---------------|" >> stats.md
+          {
+            echo "| Repositório | Linguagem | Horas Estimadas | Linhas | Commits | Produtividade |"
+            echo "|-------------|-----------|-----------------|--------|---------|---------------|"
+          } > "$stats_file"
 
           for repo in "${repositories[@]}"; do
             echo "Processando repositório: $repo"
-            git clone https://github.com/fernandoncidade/$repo repos/$repo || continue
-            cd repos/$repo
 
-            cloc_output=$(cloc --exclude-dir=node_modules,.git --quiet --csv .)
-            lines=$(echo "$cloc_output" | awk -F',' 'NR>1 {sum += $5} END {print sum+0}')
-            lines=${lines:-0}
-            linguagem=$(echo "$cloc_output" | awk -F',' 'NR>1 && $5>0 {if ($5>max) {max=$5; lang=$2}} END {print lang}')
-            linguagem=${linguagem:-"N/A"}
-            commits=$(git rev-list --count HEAD)
-            commits=${commits:-0}
+            if ! git clone "https://github.com/fernandoncidade/$repo" "repos/$repo"; then
+              echo "Falha ao clonar $repo (pulando)"
+              continue
+            fi
+
+            cd "repos/$repo"
+
+            cloc_output="$(cloc --exclude-dir=node_modules,.git --quiet --csv . || true)"
+            lines="$(echo "$cloc_output" | awk -F',' 'NR>1 {sum += $5} END {print sum+0}')"
+            lines="${lines:-0}"
+
+            linguagem="$(echo "$cloc_output" | awk -F',' 'NR>1 && $5>0 {if ($5>max) {max=$5; lang=$2}} END {print lang}')"
+            linguagem="${linguagem:-N/A}"
+
+            commits="$(git rev-list --count HEAD 2>/dev/null || echo 0)"
+            commits="${commits:-0}"
 
             case "$linguagem" in
               "Python") taxa_base=15 ;;
@@ -78,7 +91,6 @@ jobs:
               *) taxa_base=18 ;;
             esac
 
-            # Removido *"Patrol"* da lógica de complexidade
             case "$repo" in
               *"Monitor"*) complexidade=1.2 ;;
               *"Dashboard"*) complexidade=0.9 ;;
@@ -87,154 +99,163 @@ jobs:
               *) complexidade=1.0 ;;
             esac
 
-            if [ $lines -gt 5000 ]; then
+            if [ "$lines" -gt 5000 ]; then
               tamanho_ajuste=1.2
-            elif [ $lines -gt 2000 ]; then
+            elif [ "$lines" -gt 2000 ]; then
               tamanho_ajuste=1.1
             else
               tamanho_ajuste=1.0
             fi
 
-            taxa_efetiva=$(awk "BEGIN {print $taxa_base / ($complexidade * $tamanho_ajuste)}")
-            horas=$(awk "BEGIN {h = $lines / $taxa_efetiva; print (h > 10) ? h : 10}")
-            horas=$(printf "%.1f" $horas)
-            produtividade=$(awk "BEGIN {printf \"%.2f\", $lines / $horas}")
+            taxa_efetiva="$(awk "BEGIN {print $taxa_base / ($complexidade * $tamanho_ajuste)}")"
+            horas="$(awk "BEGIN {h = $lines / $taxa_efetiva; print (h > 10) ? h : 10}")"
+            horas="$(printf "%.1f" "$horas")"
+            produtividade="$(awk "BEGIN {printf \"%.2f\", $lines / $horas}")"
 
-            echo "| $repo | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> ../stats.md
+            echo "| $repo | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> "$stats_file"
 
-            repo_env=$(echo "$repo" | sed -e 's/-/_/g' -e 's/\./_/g' | tr '[:lower:]' '[:upper:]')
-            echo "${repo_env}_LINES=$lines" >> $GITHUB_ENV
-            echo "${repo_env}_COMMITS=$commits" >> $GITHUB_ENV
-            echo "${repo_env}_HOURS=$horas" >> $GITHUB_ENV
-            echo "${repo_env}_PROD=$produtividade" >> $GITHUB_ENV
+            repo_env="$(echo "$repo" | sed -e 's/-/_/g' -e 's/\./_/g' | tr '[:lower:]' '[:upper:]')"
+            {
+              echo "${repo_env}_LINES=$lines"
+              echo "${repo_env}_COMMITS=$commits"
+              echo "${repo_env}_HOURS=$horas"
+              echo "${repo_env}_PROD=$produtividade"
+            } >> "$GITHUB_ENV"
 
             total_lines=$((total_lines + lines))
             total_commits=$((total_commits + commits))
-            total_horas=$(awk "BEGIN {printf \"%.1f\", $total_horas + $horas}")
+            total_horas="$(awk "BEGIN {printf \"%.1f\", $total_horas + $horas}")"
 
-            cd ../..
+            cd "$GITHUB_WORKSPACE"
             echo "Repositório $repo processado: $lines linhas, $commits commits, $horas horas estimadas"
           done
 
-          echo "TOTAL_LINES=$total_lines" >> $GITHUB_ENV
-          echo "TOTAL_COMMITS=$total_commits" >> $GITHUB_ENV
-          echo "TOTAL_HOURS=$total_horas" >> $GITHUB_ENV
+          {
+            echo "TOTAL_LINES=$total_lines"
+            echo "TOTAL_COMMITS=$total_commits"
+            echo "TOTAL_HOURS=$total_horas"
+          } >> "$GITHUB_ENV"
 
-          echo "| **TOTAL** | - | ${total_horas}h | $total_lines | $total_commits | - |" >> stats.md
-          mv stats.md main-repo/stats.md
+          echo "| **TOTAL** | - | ${total_horas}h | $total_lines | $total_commits | - |" >> "$stats_file"
 
-      - name: Atualizar README
+      - name: Atualizar README (idempotente)
+        shell: bash
         run: |
+          set -euo pipefail
           cd main-repo
-          sed -i "s/<!-- TOTAL_LINES_PLACEHOLDER -->/${{ env.TOTAL_LINES }}/g" README.md
-          sed -i "s/<!-- TOTAL_COMMITS_PLACEHOLDER -->/${{ env.TOTAL_COMMITS }}/g" README.md
-          sed -i "s/<!-- TOTAL_HOURS_PLACEHOLDER -->/${{ env.TOTAL_HOURS }}/g" README.md
 
-          sed -i "s/<!-- AGENDA_LINES -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_LINES }}/g" README.md
-          sed -i "s/<!-- AGENDA_COMMITS -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_COMMITS }}/g" README.md
-          sed -i "s/<!-- AGENDA_HOURS -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_HOURS }}/g" README.md
-          sed -i "s/<!-- AGENDA_PROD -->/${{ env.AGENDA_AVALIACOES_ACADEMICAS_PROD }}/g" README.md
+          replace_marker () {
+            local marker="$1"
+            local value="$2"
+            # Substitui tanto o placeholder puro quanto "valor antigo + placeholder"
+            perl -i -pe "s/(?:\\b[0-9]+(?:\\.[0-9]+)?\\s*h?\\s*)?<!--\\s*\\Q${marker}\\E\\s*-->/${value} <!-- ${marker} -->/g" README.md
+          }
 
-          # Compression Manager (substitui os antigos PySide6/PyQt6)
-          sed -i "s/<!-- COMPRESSION_LINES -->/${{ env.COMPRESSION_MANAGER_LINES }}/g" README.md
-          sed -i "s/<!-- COMPRESSION_COMMITS -->/${{ env.COMPRESSION_MANAGER_COMMITS }}/g" README.md
-          sed -i "s/<!-- COMPRESSION_HOURS -->/${{ env.COMPRESSION_MANAGER_HOURS }}/g" README.md
-          sed -i "s/<!-- COMPRESSION_PROD -->/${{ env.COMPRESSION_MANAGER_PROD }}/g" README.md
+          replace_marker "TOTAL_LINES_PLACEHOLDER" "${{ env.TOTAL_LINES }}"
+          replace_marker "TOTAL_COMMITS_PLACEHOLDER" "${{ env.TOTAL_COMMITS }}"
+          replace_marker "TOTAL_HOURS_PLACEHOLDER" "${{ env.TOTAL_HOURS }}h"
 
-          # Eisenhower Task Organizer (substitui Eisenhower_Organizer_Matrix)
-          sed -i "s/<!-- EISENHOWER_LINES -->/${{ env.EISENHOWER_TASK_ORGANIZER_LINES }}/g" README.md
-          sed -i "s/<!-- EISENHOWER_COMMITS -->/${{ env.EISENHOWER_TASK_ORGANIZER_COMMITS }}/g" README.md
-          sed -i "s/<!-- EISENHOWER_HOURS -->/${{ env.EISENHOWER_TASK_ORGANIZER_HOURS }}/g" README.md
-          sed -i "s/<!-- EISENHOWER_PROD -->/${{ env.EISENHOWER_TASK_ORGANIZER_PROD }}/g" README.md
+          replace_marker "AGENDA_LINES" "${{ env.AGENDA_AVALIACOES_ACADEMICAS_LINES }}"
+          replace_marker "AGENDA_COMMITS" "${{ env.AGENDA_AVALIACOES_ACADEMICAS_COMMITS }}"
+          replace_marker "AGENDA_HOURS" "${{ env.AGENDA_AVALIACOES_ACADEMICAS_HOURS }}h"
+          replace_marker "AGENDA_PROD" "${{ env.AGENDA_AVALIACOES_ACADEMICAS_PROD }}"
 
-          sed -i "s/<!-- URNA_LINES -->/${{ env.PROGRAMA_URNA_ELETRONICA_LINES }}/g" README.md
-          sed -i "s/<!-- URNA_COMMITS -->/${{ env.PROGRAMA_URNA_ELETRONICA_COMMITS }}/g" README.md
-          sed -i "s/<!-- URNA_HOURS -->/${{ env.PROGRAMA_URNA_ELETRONICA_HOURS }}/g" README.md
-          sed -i "s/<!-- URNA_PROD -->/${{ env.PROGRAMA_URNA_ELETRONICA_PROD }}/g" README.md
+          replace_marker "COMPRESSION_LINES" "${{ env.COMPRESSION_MANAGER_LINES }}"
+          replace_marker "COMPRESSION_COMMITS" "${{ env.COMPRESSION_MANAGER_COMMITS }}"
+          replace_marker "COMPRESSION_HOURS" "${{ env.COMPRESSION_MANAGER_HOURS }}h"
+          replace_marker "COMPRESSION_PROD" "${{ env.COMPRESSION_MANAGER_PROD }}"
 
-          sed -i "s/<!-- MANEGEMENT_LINES -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_LINES }}/g" README.md
-          sed -i "s/<!-- MANEGEMENT_COMMITS -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_COMMITS }}/g" README.md
-          sed -i "s/<!-- MANEGEMENT_HOURS -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_HOURS }}/g" README.md
-          sed -i "s/<!-- MANEGEMENT_PROD -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_PROD }}/g" README.md
+          replace_marker "EISENHOWER_LINES" "${{ env.EISENHOWER_TASK_ORGANIZER_LINES }}"
+          replace_marker "EISENHOWER_COMMITS" "${{ env.EISENHOWER_TASK_ORGANIZER_COMMITS }}"
+          replace_marker "EISENHOWER_HOURS" "${{ env.EISENHOWER_TASK_ORGANIZER_HOURS }}h"
+          replace_marker "EISENHOWER_PROD" "${{ env.EISENHOWER_TASK_ORGANIZER_PROD }}"
 
-          sed -i "s/<!-- STREAMLIT_LINES -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_LINES }}/g" README.md
-          sed -i "s/<!-- STREAMLIT_COMMITS -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_COMMITS }}/g" README.md
-          sed -i "s/<!-- STREAMLIT_HOURS -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_HOURS }}/g" README.md
-          sed -i "s/<!-- STREAMLIT_PROD -->/${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_PROD }}/g" README.md
+          replace_marker "URNA_LINES" "${{ env.PROGRAMA_URNA_ELETRONICA_LINES }}"
+          replace_marker "URNA_COMMITS" "${{ env.PROGRAMA_URNA_ELETRONICA_COMMITS }}"
+          replace_marker "URNA_HOURS" "${{ env.PROGRAMA_URNA_ELETRONICA_HOURS }}h"
+          replace_marker "URNA_PROD" "${{ env.PROGRAMA_URNA_ELETRONICA_PROD }}"
 
-          sed -i "s/<!-- PARETO_LINES -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_LINES }}/g" README.md
-          sed -i "s/<!-- PARETO_COMMITS -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_COMMITS }}/g" README.md
-          sed -i "s/<!-- PARETO_HOURS -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_HOURS }}/g" README.md
-          sed -i "s/<!-- PARETO_PROD -->/${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_PROD }}/g" README.md
+          replace_marker "MANEGEMENT_LINES" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_LINES }}"
+          replace_marker "MANEGEMENT_COMMITS" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_COMMITS }}"
+          replace_marker "MANEGEMENT_HOURS" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_HOURS }}h"
+          replace_marker "MANEGEMENT_PROD" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_PROD }}"
 
-          # Novo repositório: Linceu Lighthouse
-          sed -i "s/<!-- LIGHTHOUSE_LINES -->/${{ env.LINCEU_LIGHTHOUSE_LINES }}/g" README.md
-          sed -i "s/<!-- LIGHTHOUSE_COMMITS -->/${{ env.LINCEU_LIGHTHOUSE_COMMITS }}/g" README.md
-          sed -i "s/<!-- LIGHTHOUSE_HOURS -->/${{ env.LINCEU_LIGHTHOUSE_HOURS }}/g" README.md
-          sed -i "s/<!-- LIGHTHOUSE_PROD -->/${{ env.LINCEU_LIGHTHOUSE_PROD }}/g" README.md
+          replace_marker "STREAMLIT_LINES" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_LINES }}"
+          replace_marker "STREAMLIT_COMMITS" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_COMMITS }}"
+          replace_marker "STREAMLIT_HOURS" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_HOURS }}h"
+          replace_marker "STREAMLIT_PROD" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_PROD }}"
 
-          sed -i "s/<!-- SLOTH_LINES -->/${{ env.SLOTH_HIGHLANDER_THEME_1_LINES }}/g" README.md
-          sed -i "s/<!-- SLOTH_COMMITS -->/${{ env.SLOTH_HIGHLANDER_THEME_1_COMMITS }}/g" README.md
-          sed -i "s/<!-- SLOTH_HOURS -->/${{ env.SLOTH_HIGHLANDER_THEME_1_HOURS }}/g" README.md
-          sed -i "s/<!-- SLOTH_PROD -->/${{ env.SLOTH_HIGHLANDER_THEME_1_PROD }}/g" README.md
+          replace_marker "PARETO_LINES" "${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_LINES }}"
+          replace_marker "PARETO_COMMITS" "${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_COMMITS }}"
+          replace_marker "PARETO_HOURS" "${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_HOURS }}h"
+          replace_marker "PARETO_PROD" "${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_PROD }}"
 
-          sed -i "s/<!-- README_LINES -->/${{ env.FERNANDONCIDADE_LINES }}/g" README.md
-          sed -i "s/<!-- README_COMMITS -->/${{ env.FERNANDONCIDADE_COMMITS }}/g" README.md
-          sed -i "s/<!-- README_HOURS -->/${{ env.FERNANDONCIDADE_HOURS }}/g" README.md
-          sed -i "s/<!-- README_PROD -->/${{ env.FERNANDONCIDADE_PROD }}/g" README.md
+          replace_marker "TAIPY_LINES" "${{ env.DASHBOARD_TAIPY_LINES }}"
+          replace_marker "TAIPY_COMMITS" "${{ env.DASHBOARD_TAIPY_COMMITS }}"
+          replace_marker "TAIPY_HOURS" "${{ env.DASHBOARD_TAIPY_HOURS }}h"
+          replace_marker "TAIPY_PROD" "${{ env.DASHBOARD_TAIPY_PROD }}"
 
-          # Novos repositórios adicionados
-          sed -i "s/<!-- TAIPY_LINES -->/${{ env.DASHBOARD_TAIPY_LINES }}/g" README.md
-          sed -i "s/<!-- TAIPY_COMMITS -->/${{ env.DASHBOARD_TAIPY_COMMITS }}/g" README.md
-          sed -i "s/<!-- TAIPY_HOURS -->/${{ env.DASHBOARD_TAIPY_HOURS }}/g" README.md
-          sed -i "s/<!-- TAIPY_PROD -->/${{ env.DASHBOARD_TAIPY_PROD }}/g" README.md
+          replace_marker "LIGHTHOUSE_LINES" "${{ env.LINCEU_LIGHTHOUSE_LINES }}"
+          replace_marker "LIGHTHOUSE_COMMITS" "${{ env.LINCEU_LIGHTHOUSE_COMMITS }}"
+          replace_marker "LIGHTHOUSE_HOURS" "${{ env.LINCEU_LIGHTHOUSE_HOURS }}h"
+          replace_marker "LIGHTHOUSE_PROD" "${{ env.LINCEU_LIGHTHOUSE_PROD }}"
 
-          sed -i "s/<!-- FILEMANAGER_LINES -->/${{ env.FILE_MANAGER_LINES }}/g" README.md
-          sed -i "s/<!-- FILEMANAGER_COMMITS -->/${{ env.FILE_MANAGER_COMMITS }}/g" README.md
-          sed -i "s/<!-- FILEMANAGER_HOURS -->/${{ env.FILE_MANAGER_HOURS }}/g" README.md
-          sed -i "s/<!-- FILEMANAGER_PROD -->/${{ env.FILE_MANAGER_PROD }}/g" README.md
+          replace_marker "SLOTH_LINES" "${{ env.SLOTH_HIGHLANDER_THEME_1_LINES }}"
+          replace_marker "SLOTH_COMMITS" "${{ env.SLOTH_HIGHLANDER_THEME_1_COMMITS }}"
+          replace_marker "SLOTH_HOURS" "${{ env.SLOTH_HIGHLANDER_THEME_1_HOURS }}h"
+          replace_marker "SLOTH_PROD" "${{ env.SLOTH_HIGHLANDER_THEME_1_PROD }}"
 
-          sed -i "s/<!-- MATRIZNM_LINES -->/${{ env.PROGRAMA_MATRIZ_NM_LINES }}/g" README.md
-          sed -i "s/<!-- MATRIZNM_COMMITS -->/${{ env.PROGRAMA_MATRIZ_NM_COMMITS }}/g" README.md
-          sed -i "s/<!-- MATRIZNM_HOURS -->/${{ env.PROGRAMA_MATRIZ_NM_HOURS }}/g" README.md
-          sed -i "s/<!-- MATRIZNM_PROD -->/${{ env.PROGRAMA_MATRIZ_NM_PROD }}/g" README.md
+          replace_marker "README_LINES" "${{ env.FERNANDONCIDADE_LINES }}"
+          replace_marker "README_COMMITS" "${{ env.FERNANDONCIDADE_COMMITS }}"
+          replace_marker "README_HOURS" "${{ env.FERNANDONCIDADE_HOURS }}h"
+          replace_marker "README_PROD" "${{ env.FERNANDONCIDADE_PROD }}"
 
-          sed -i "s/<!-- MATRIZES_LINES -->/${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_LINES }}/g" README.md
-          sed -i "s/<!-- MATRIZES_COMMITS -->/${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_COMMITS }}/g" README.md
-          sed -i "s/<!-- MATRIZES_HOURS -->/${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_HOURS }}/g" README.md
-          sed -i "s/<!-- MATRIZES_PROD -->/${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_PROD }}/g" README.md
+          replace_marker "FILEMANAGER_LINES" "${{ env.FILE_MANAGER_LINES }}"
+          replace_marker "FILEMANAGER_COMMITS" "${{ env.FILE_MANAGER_COMMITS }}"
+          replace_marker "FILEMANAGER_HOURS" "${{ env.FILE_MANAGER_HOURS }}h"
+          replace_marker "FILEMANAGER_PROD" "${{ env.FILE_MANAGER_PROD }}"
 
-          sed -i "s/<!-- QUOCRESTO_LINES -->/${{ env.PROGRAMA_QUOCIENTE_RESTO_LINES }}/g" README.md
-          sed -i "s/<!-- QUOCRESTO_COMMITS -->/${{ env.PROGRAMA_QUOCIENTE_RESTO_COMMITS }}/g" README.md
-          sed -i "s/<!-- QUOCRESTO_HOURS -->/${{ env.PROGRAMA_QUOCIENTE_RESTO_HOURS }}/g" README.md
-          sed -i "s/<!-- QUOCRESTO_PROD -->/${{ env.PROGRAMA_QUOCIENTE_RESTO_PROD }}/g" README.md
+          replace_marker "MATRIZNM_LINES" "${{ env.PROGRAMA_MATRIZ_NM_LINES }}"
+          replace_marker "MATRIZNM_COMMITS" "${{ env.PROGRAMA_MATRIZ_NM_COMMITS }}"
+          replace_marker "MATRIZNM_HOURS" "${{ env.PROGRAMA_MATRIZ_NM_HOURS }}h"
+          replace_marker "MATRIZNM_PROD" "${{ env.PROGRAMA_MATRIZ_NM_PROD }}"
 
-          sed -i "s/<!-- MULTIPLO_LINES -->/${{ env.PROGRAMA_MULTIPLO_LINES }}/g" README.md
-          sed -i "s/<!-- MULTIPLO_COMMITS -->/${{ env.PROGRAMA_MULTIPLO_COMMITS }}/g" README.md
-          sed -i "s/<!-- MULTIPLO_HOURS -->/${{ env.PROGRAMA_MULTIPLO_HOURS }}/g" README.md
-          sed -i "s/<!-- MULTIPLO_PROD -->/${{ env.PROGRAMA_MULTIPLO_PROD }}/g" README.md
+          replace_marker "MATRIZES_LINES" "${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_LINES }}"
+          replace_marker "MATRIZES_COMMITS" "${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_COMMITS }}"
+          replace_marker "MATRIZES_HOURS" "${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_HOURS }}h"
+          replace_marker "MATRIZES_PROD" "${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_PROD }}"
 
-          sed -i "s/<!-- MEDIAARIT_LINES -->/${{ env.PROGRAMA_MEDIA_ARITMETICA_LINES }}/g" README.md
-          sed -i "s/<!-- MEDIAARIT_COMMITS -->/${{ env.PROGRAMA_MEDIA_ARITMETICA_COMMITS }}/g" README.md
-          sed -i "s/<!-- MEDIAARIT_HOURS -->/${{ env.PROGRAMA_MEDIA_ARITMETICA_HOURS }}/g" README.md
-          sed -i "s/<!-- MEDIAARIT_PROD -->/${{ env.PROGRAMA_MEDIA_ARITMETICA_PROD }}/g" README.md
+          replace_marker "QUOCRESTO_LINES" "${{ env.PROGRAMA_QUOCIENTE_RESTO_LINES }}"
+          replace_marker "QUOCRESTO_COMMITS" "${{ env.PROGRAMA_QUOCIENTE_RESTO_COMMITS }}"
+          replace_marker "QUOCRESTO_HOURS" "${{ env.PROGRAMA_QUOCIENTE_RESTO_HOURS }}h"
+          replace_marker "QUOCRESTO_PROD" "${{ env.PROGRAMA_QUOCIENTE_RESTO_PROD }}"
 
-          sed -i "s/<!-- MAIORINT_LINES -->/${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_LINES }}/g" README.md
-          sed -i "s/<!-- MAIORINT_COMMITS -->/${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_COMMITS }}/g" README.md
-          sed -i "s/<!-- MAIORINT_HOURS -->/${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_HOURS }}/g" README.md
-          sed -i "s/<!-- MAIORINT_PROD -->/${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_PROD }}/g" README.md
+          replace_marker "MULTIPLO_LINES" "${{ env.PROGRAMA_MULTIPLO_LINES }}"
+          replace_marker "MULTIPLO_COMMITS" "${{ env.PROGRAMA_MULTIPLO_COMMITS }}"
+          replace_marker "MULTIPLO_HOURS" "${{ env.PROGRAMA_MULTIPLO_HOURS }}h"
+          replace_marker "MULTIPLO_PROD" "${{ env.PROGRAMA_MULTIPLO_PROD }}"
 
-          # Economia_APP
-          sed -i "s/<!-- ECONOMIA_LINES -->/${{ env.ECONOMIA_APP_LINES }}/g" README.md
-          sed -i "s/<!-- ECONOMIA_COMMITS -->/${{ env.ECONOMIA_APP_COMMITS }}/g" README.md
-          sed -i "s/<!-- ECONOMIA_HOURS -->/${{ env.ECONOMIA_APP_HOURS }}/g" README.md
-          sed -i "s/<!-- ECONOMIA_PROD -->/${{ env.ECONOMIA_APP_PROD }}/g" README.md
+          replace_marker "MEDIAARIT_LINES" "${{ env.PROGRAMA_MEDIA_ARITMETICA_LINES }}"
+          replace_marker "MEDIAARIT_COMMITS" "${{ env.PROGRAMA_MEDIA_ARITMETICA_COMMITS }}"
+          replace_marker "MEDIAARIT_HOURS" "${{ env.PROGRAMA_MEDIA_ARITMETICA_HOURS }}h"
+          replace_marker "MEDIAARIT_PROD" "${{ env.PROGRAMA_MEDIA_ARITMETICA_PROD }}"
 
-          # Lumen
-          sed -i "s/<!-- LUMEN_LINES -->/${{ env.LUMEN_LINES }}/g" README.md
-          sed -i "s/<!-- LUMEN_COMMITS -->/${{ env.LUMEN_COMMITS }}/g" README.md
-          sed -i "s/<!-- LUMEN_HOURS -->/${{ env.LUMEN_HOURS }}/g" README.md
-          sed -i "s/<!-- LUMEN_PROD -->/${{ env.LUMEN_PROD }}/g" README.md
+          replace_marker "MAIORINT_LINES" "${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_LINES }}"
+          replace_marker "MAIORINT_COMMITS" "${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_COMMITS }}"
+          replace_marker "MAIORINT_HOURS" "${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_HOURS }}h"
+          replace_marker "MAIORINT_PROD" "${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_PROD }}"
+
+          replace_marker "ECONOMIA_LINES" "${{ env.ECONOMIA_APP_LINES }}"
+          replace_marker "ECONOMIA_COMMITS" "${{ env.ECONOMIA_APP_COMMITS }}"
+          replace_marker "ECONOMIA_HOURS" "${{ env.ECONOMIA_APP_HOURS }}h"
+          replace_marker "ECONOMIA_PROD" "${{ env.ECONOMIA_APP_PROD }}"
+
+          replace_marker "LUMEN_LINES" "${{ env.LUMEN_LINES }}"
+          replace_marker "LUMEN_COMMITS" "${{ env.LUMEN_COMMITS }}"
+          replace_marker "LUMEN_HOURS" "${{ env.LUMEN_HOURS }}h"
+          replace_marker "LUMEN_PROD" "${{ env.LUMEN_PROD }}"
+
+          git diff -- README.md stats.md || true
 
       - name: Commit e push das alterações
         run: |
