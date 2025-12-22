@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '0 0 * * 0'  # UTC (domingo 00:00)
   workflow_dispatch:
+  repository_dispatch:
+    types: [update-stats]
+
+concurrency:
+  group: update-stats
+  cancel-in-progress: true
 
 jobs:
   update-stats:
