@@ -258,42 +258,6 @@
       color:#d6fff6;
     }
 
-    body.dark #sec-eses ul.subtopics,
-    body.dark #sec-eses ul.subtopics li,
-    body.dark #sec-eses ul.subtopics a{
-      color:#e9f2ff;
-    }
-    body.dark #sec-eses ul.subtopics a:hover{
-      color:#d6fff6;
-    }
-
-    body.dark #sec-frfr ul.subtopics,
-    body.dark #sec-frfr ul.subtopics li,
-    body.dark #sec-frfr ul.subtopics a{
-      color:#e9f2ff;
-    }
-    body.dark #sec-frfr ul.subtopics a:hover{
-      color:#d6fff6;
-    }
-
-    body.dark #sec-itit ul.subtopics,
-    body.dark #sec-itit ul.subtopics li,
-    body.dark #sec-itit ul.subtopics a{
-      color:#e9f2ff;
-    }
-    body.dark #sec-itit ul.subtopics a:hover{
-      color:#d6fff6;
-    }
-
-    body.dark #sec-dede ul.subtopics,
-    body.dark #sec-dede ul.subtopics li,
-    body.dark #sec-dede ul.subtopics a{
-      color:#e9f2ff;
-    }
-    body.dark #sec-dede ul.subtopics a:hover{
-      color:#d6fff6;
-    }
-
     /* Links de contato (em cada idioma) adaptados para tema escuro/claro */
     body.dark .lang-section .header-links a{
       color:#e9f2ff;
@@ -357,11 +321,7 @@
     // ============================
     const LANGS = [
       { btn: "btn-ptbr", section: "sec-ptbr", code: "ptbr", htmlLang: "pt-br" },
-      { btn: "btn-enus", section: "sec-enus", code: "enus", htmlLang: "en" },
-      { btn: "btn-eses", section: "sec-eses", code: "eses", htmlLang: "es" },
-      { btn: "btn-frfr", section: "sec-frfr", code: "frfr", htmlLang: "fr" },
-      { btn: "btn-itit", section: "sec-itit", code: "itit", htmlLang: "it" },
-      { btn: "btn-dede", section: "sec-dede", code: "dede", htmlLang: "de" }
+      { btn: "btn-enus", section: "sec-enus", code: "enus", htmlLang: "en" }
     ];
     let CURRENT_LANG = LANGS[0].code;
 
@@ -369,63 +329,39 @@
     // Usado por updateHeaderTagline() para ajustar conforme CURRENT_LANG.
     const HEADER_T = {
       ptbr: "Desenvolvedor de Software • Python • C++ • GUI",
-      enus: "Software Developer • Python • C++ • GUI",
-      eses: "Desarrollador de Software • Python • C++ • GUI",
-      frfr: "Développeur Logiciel • Python • C++ • GUI",
-      itit: "Sviluppatore Software • Python • C++ • GUI",
-      dede: "Softwareentwickler • Python • C++ • GUI"
+      enus: "Software Developer • Python • C++ • GUI"
     };
 
     // Badge "último commit" em diferentes línguas.
     // Cada entrada tem label (usada na query string da shields.io) e alt (texto alternativo)
     const BADGE_LAST_COMMIT = {
       ptbr: { label:"Estatísticas%20atualizadas%20em", alt:"Estatísticas atualizadas em" },
-      enus: { label:"Statistics%20updated%20on", alt:"Statistics updated on" },
-      eses: { label:"Estadísticas%20actualizadas%20en", alt:"Estadísticas atualizadas en" },
-      frfr: { label:"Statistiques%20mises%20%C3%A0%20jour%20le", alt:"Statistiques mises à jour le" },
-      itit: { label:"Statistiche%20aggiornate%20al", alt:"Statistiche aggiornate al" },
-      dede: { label:"Statistiken%20aktualisiert%20am", alt:"Statistiken aktualisiert am" }
+      enus: { label:"Statistics%20updated%20on", alt:"Statistics updated on" }
     };
 
     // LOCALES: mapeamento de códigos de locale usados pelos widgets de imagem
     // - stats, streak, graph, langs são parâmetros de localidade que os serviços aceitam
     const LOCALES = {
       ptbr: { stats:"pt-br", streak:"pt_BR", graph:"pt-br", langs:"pt-br" },
-      enus: { stats:"en",    streak:"en",    graph:"en",    langs:"en" },
-      eses: { stats:"es",    streak:"es",    graph:"es",    langs:"es" },
-      frfr: { stats:"fr",    streak:"fr",    graph:"fr",    langs:"fr" },
-      itit: { stats:"it",    streak:"it",    graph:"it",    langs:"it" },
-      dede: { stats:"de",    streak:"de",    graph:"de",    langs:"de" }
+      enus: { stats:"en",    streak:"en",    graph:"en",    langs:"en" }
     };
 
     // Rótulo do botão de "Projetos" em cada idioma (usado para atualizar o texto)
     const PROJECTS_T = {
       ptbr: "📂 Projetos/Repositórios",
-      enus: "📂 Projects/Repositories",
-      eses: "📂 Proyectos/Repositorios",
-      frfr: "📂 Projets/Dépôts",
-      itit: "📂 Progetti/Repository",
-      dede: "📂 Projekte/Repositories"
+      enus: "📂 Projects/Repositories"
     };
 
     // Texto explicativo da seção de projetos (nota) por idioma
     const PROJECTS_NOTE_T = {
       ptbr: "Lista de projetos e repositórios públicos de fernandoncidade.",
-      enus: "List of public projects and repositories by fernandoncidade.",
-      eses: "Lista de proyectos y repositorios públicos de fernandoncidade.",
-      frfr: "Liste des projets et dépôts publics de fernandoncidade.",
-      itit: "Elenco dei progetti e repository pubblici di fernandoncidade.",
-      dede: "Liste öffentlicher Projekte und Repositories von fernandoncidade."
+      enus: "List of public projects and repositories by fernandoncidade."
     };
 
     // Texto do botão CTA dentro da seção de projetos (traduzido)
     const PROJECTS_CTA_T = {
       ptbr: "Abrir repositório",
-      enus: "Open repository",
-      eses: "Abrir repositorio",
-      frfr: "Ouvrir le dépôt",
-      itit: "Apri repository",
-      dede: "Repository öffnen"
+      enus: "Open repository"
     };
 
     // ============================
@@ -511,11 +447,7 @@
       const graph = section.querySelector('.gh-activity');
       const titles = {
         ptbr: "Gráfico%20de%20Atividade%20de%20fernandoncidade",
-        enus: "fernandoncidade's%20Activity%20Graph",
-        eses: "Gráfico%20de%20Actividad%20de%20fernandoncidade",
-        frfr: "Graphique%20d'activité%20de%20fernandoncidade",
-        itit: "Grafico%20di%20Attività%20di%20fernandoncidade",
-        dede: "Aktivitätsdiagramm%20von%20fernandoncidade"
+        enus: "fernandoncidade's%20Activity%20Graph"
       };
       if (graph) {
         const graphTheme = isDark ? 'merko' : 'minimal';
@@ -614,10 +546,6 @@
       <b>Idiomas / Languages:</b><br>
       <button id="btn-ptbr" class="active">🇧🇷 Português (BR)</button>
       <button id="btn-enus">🇺🇸 English (US)</button>
-      <button id="btn-eses">🇪🇸 Español (ES)</button>
-      <button id="btn-frfr">🇫🇷 Français (FR)</button>
-      <button id="btn-itit">🇮🇹 Italiano (IT)</button>
-      <button id="btn-dede">🇩🇪 Deutsch (DE)</button>
       <!-- Novo botão de aba: abre a seção "Projetos/Repositórios" -->
       <button id="btn-projects">📂 Projetos/Repositórios</button>
       <!-- Toggle de tema (claro/escuro). Atalho Alt+T ativado no JS -->
@@ -896,528 +824,6 @@
       </div>
     </section>
 
-    <!-- ES-ES -->
-    <section id="sec-eses" class="lang-section">
-      <div class="note">
-        <b>¡Hola! Soy Fernando.</b> Desarrollador de software enfocado en Python, C++ y GUIs (PySide6, PyQt6, Tkinter). Intereses en automatización, análisis de datos y soluciones prácticas.
-      </div>
-
-      <div class="grid">
-        <!-- Columna izquierda: contenido general -->
-        <div class="col-6">
-          <div class="card">
-            <h3>🚀 Habilidades</h3>
-            <ul>
-              <li>Lenguajes: Python, C++</li>
-              <li>GUI: PySide6, PyQt6, Tkinter</li>
-              <li>Datos: Pandas, Plotly, Streamlit</li>
-              <li>Científico: NumPy, SciPy, Matplotlib</li>
-              <li>Archivos y copias de seguridad, Git/GitHub</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>🎯 Proyectos principales</h3>
-            <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda de Evaluaciones Académicas</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Lumen">Lúmen</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Economia_APP">Economia APP</a></li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>📊 Dashboards</h3>
-            <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
-            </ul>
-          </div>
-
-          <div class="card center stats">
-            <h3>📈 Estadísticas de GitHub</h3>
-            <img class="gh-stats" alt="GitHub Stats">
-            <img class="gh-streak" alt="GitHub Streak">
-            <img class="gh-activity" alt="GitHub Activity Graph">
-            <img class="top-langs" alt="Top Langs">
-          </div>
-
-          <div class="card">
-            <h3>🎓 Formación</h3>
-            <p>Estudiante de Ingeniería Civil (UFPR). Estudios previos en Profesorado de Física (UTFPR), con experiencia docente en educación secundaria.</p>
-            <h3>🎯 Objetivos</h3>
-            <ul>
-              <li>Mejorar automatización, análisis de datos e IA</li>
-              <li>Ampliar contribuciones open source</li>
-              <li>Explorar nuevas tecnologías y buenas prácticas</li>
-            </ul>
-            <h3>📫 Contacto</h3>
-            <p class="header-links">
-              <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
-              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
-            </p>
-          </div>
-        </div>
-
-        <!-- Columna derecha: destacados (Linceu + Eisenhower) -->
-        <div class="col-6">
-          <div class="card">
-            <h2>📌 Destacado: Linceu Lighthouse</h2>
-            <p>Herramienta de monitoreo de integridad de archivos (FIM) con interfaz multilingüe, estadísticas e exportações flexíveis.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 Destacado: Lúmen</h2>
-            <p>Aplicación de escritorio orientada a apoyar a jóvenes y adultos neurodivergentes (TEA, TDAH, Dislexia) en el estudio y la organización. Integra un lector accesible con voces neuronales, herramientas de priorización de tareas, temporizadores Pomodoro, mapas mentales y recursos para la explicación activa (Método Feynman).</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Lumen" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9N70CLLMVRPN" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 Destacado: Eisenhower Task Organizer</h2>
-            <p>Aplicación para priorizar tareas con la Matriz de Eisenhower, enfocada en productividad y simplicidad.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 Destacado: Agenda Avaliações Acadêmicas</h2>
-            <p>Gestor de actividades evaluativas.</p>
-            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Ver repositorio</a></p>
-          </div>
-
-          <div class="card">
-            <h2>📌 Destacado: Compression Manager</h2>
-            <p>Aplicación de backup y compresión de archivos.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 Destacado: Economia APP</h2>
-            <p>Economia APP es una herramienta de apoyo para el estudio de Economía de la Ingeniería (asignatura TT007) que automatiza cálculos financieros frecuentes — intereses simples y compuestos, anualidades, gradientes, equivalencia de tasas, amortización (SAC, Price, SAM), análisis de inversiones (VAN / VAUE) y depreciación — y muestra los pasos detallados y el historial de resultados.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Economia_APP" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PLR0KD6KSJJ" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FR-FR -->
-    <section id="sec-frfr" class="lang-section">
-      <div class="note">
-        <b>Bonjour ! Je suis Fernando.</b> Développeur logiciel axé sur Python, C++ et les interfaces graphiques (PySide6, PyQt6, Tkinter). Intérêts : automatisation, analyse de données et solutions pratiques.
-      </div>
-
-      <div class="grid">
-        <!-- Colonne gauche : contenu général -->
-        <div class="col-6">
-          <div class="card">
-            <h3>🚀 Compétences</h3>
-            <ul>
-              <li>Langages : Python, C++</li>
-              <li>GUI : PySide6, PyQt6, Tkinter</li>
-              <li>Données : Pandas, Plotly, Streamlit</li>
-              <li>Scientifique : NumPy, SciPy, Matplotlib</li>
-              <li>Fichiers & sauvegarde, Git/GitHub</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>🎯 Projets principaux</h3>
-            <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda des évaluations académiques</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Lumen">Lúmen</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Economia_APP">Economia APP</a></li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>📊 Tableaux de bord</h3>
-            <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
-            </ul>
-          </div>
-
-          <div class="card center stats">
-            <h3>📈 Statistiques GitHub</h3>
-            <img class="gh-stats" alt="Statistiques GitHub">
-            <img class="gh-streak" alt="Série GitHub">
-            <img class="gh-activity" alt="Graphique d'activité GitHub">
-            <img class="top-langs" alt="Langages les plus utilisés">
-          </div>
-
-          <div class="card">
-            <h3>🎓 Formation</h3>
-            <p>Étudiant en génie civil (UFPR). Études antérieures en licence d’enseignement de la physique (UTFPR), expérience d’enseignement au lycée.</p>
-            <h3>🎯 Objectifs</h3>
-            <ul>
-              <li>Améliorer l’automatisation, l’analyse de données et les compétences en IA</li>
-              <li>Accroître les contributions open source</li>
-              <li>Explorer de nouvelles technologies et bonnes pratiques</li>
-            </ul>
-            <h3>📫 Contact</h3>
-            <p class="header-links">
-              <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
-              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
-            </p>
-          </div>
-        </div>
-
-        <!-- Colonne droite : mises en avant (Linceu + Eisenhower + outros) -->
-        <div class="col-6">
-          <div class="card">
-            <h2>📌 À la une : Linceu Lighthouse</h2>
-            <p>Outil de surveillance de l’intégrité des fichiers (FIM) avec interface multilingue, statistiques e exportações flexíveis.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank" rel="noopener noreferrer">Voir le dépôt</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 À la une : Lúmen</h2>
-            <p>Application de bureau destinée à soutenir les jeunes et les adultes neurodivergents (TSA, TDAH, dyslexie) dans l'étude et l'organisation. Intègre un lecteur accessible avec voix neuronales, outils de priorisation des tâches, minuteurs Pomodoro, cartes heuristiques et ressources pour l'explication active (méthode Feynman).</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Lumen" target="_blank" rel="noopener noreferrer">Voir le dépôt</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9N70CLLMVRPN" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 À la une : Eisenhower Organizer Matrix</h2>
-            <p>Application pour prioriser les tâches avec la matrice d’Eisenhower, axée sur la productivité et la simplicité.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Organizer_Matrix" target="_blank" rel="noopener noreferrer">Voir le dépôt</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 À la une : Agenda des avaliações académiques</h2>
-            <p>Gestionnaire pour les activités d’évaluation en milieu éducatif.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Voir le dépôt</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 À la une : Compression Manager</h2>
-            <p>Application de sauvegarde et de compression de fichiers avec une interface utilisateur intuitive.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank" rel="noopener noreferrer">Voir le dépôt</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 À la une : Economia APP</h2>
-            <p>Economia APP est un outil d'aide à l'étude de l'Économie de l'Ingénierie (cours TT007) qui automatise les calculs financiers fréquents — intérêts simples et composés, annuités, gradients, équivalence des taux, amortissements (SAC, Price, SAM), analyse des investissements (VAN / VAUE) et amortissement — et affiche les étapes détaillées ainsi que l'historique des résultats.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Economia_APP" target="_blank" rel="noopener noreferrer">Voir le dépôt</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PLR0KD6KSJJ" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- IT-IT -->
-    <section id="sec-itit" class="lang-section">
-      <div class="note">
-        <b>Ciao! Sono Fernando.</b> Sviluppatore software focalizzato su Python, C++ e GUI (PySide6, PyQt6, Tkinter). Interessi in automazione, analisi dei dati e soluzioni pratiche.
-      </div>
-
-      <div class="grid">
-        <!-- Colonna sinistra: contenuto generale -->
-        <div class="col-6">
-          <div class="card">
-            <h3>🚀 Competenze</h3>
-            <ul>
-              <li>Linguaggi: Python, C++</li>
-              <li>GUI: PySide6, PyQt6, Tkinter</li>
-              <li>Dati: Pandas, Plotly, Streamlit</li>
-              <li>Scientifico: NumPy, SciPy, Matplotlib</li>
-              <li>File & Backup, Git/GitHub</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>🎯 Progetti principali</h3>
-            <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda Valutazioni Accademiche</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Lumen">Lúmen</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Economia_APP">Economia APP</a></li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>📊 Cruscotti</h3>
-            <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (Tkinter)</a></li>
-            </ul>
-          </div>
-
-          <div class="card center stats">
-            <h3>📈 Statistiche GitHub</h3>
-            <img class="gh-stats" alt="Statistiche GitHub">
-            <img class="gh-streak" alt="GitHub Streak">
-            <img class="gh-activity" alt="Grafico attività GitHub">
-            <img class="top-langs" alt="Linguaggi più usati">
-          </div>
-
-          <div class="card">
-            <h3>🎓 Formazione</h3>
-            <p>Studente di Ingegneria Civile (UFPR). Studi precedenti in Didattica della Fisica (UTFPR), con esperienza di insegnamento nelle scuole superiori.</p>
-            <h3>🎯 Obiettivi</h3>
-            <ul>
-              <li>Migliorare automazione, analisi dei dati e IA</li>
-              <li>Ampliare i contributi open source</li>
-              <li>Esplorare nuove tecnologie e buone pratiche</li>
-            </ul>
-            <h3>📫 Contatti</h3>
-            <p class="header-links">
-              <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
-              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
-            </p>
-          </div>
-        </div>
-
-        <!-- Colonna destra: in evidenza (Linceu + Eisenhower) -->
-        <div class="col-6">
-          <div class="card">
-            <h2>📌 In evidenza: Linceu Lighthouse</h2>
-            <p>Strumento di monitoraggio dell'integrità dei file (FIM) con interfaccia multilingue, statistiche ed esportazioni flessibili.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank" rel="noopener noreferrer">Vedi repository</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 In evidenza: Lúmen</h2>
-            <p>Applicazione desktop pensata per supportare giovani e adulti neurodivergenti (Spettro autistico, ADHD, Dislessia) nello studio e nell'organizzazione. Integra un lettore accessibile con voci neurali, strumenti per la prioritizzazione delle attività, timer Pomodoro, mappe mentali e risorse per la spiegazione attiva (Metodo Feynman).</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Lumen" target="_blank" rel="noopener noreferrer">Vedi repository</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9N70CLLMVRPN" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 In evidenza: Eisenhower Task Organizer</h2>
-            <p>Applicazione per prioritizzare le attività con la Matrice di Eisenhower, focalizzata su produttività e semplicità.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank" rel="noopener noreferrer">Vedi repository</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 In evidenza: Agenda Avaliações Acadêmicas</h2>
-            <p>Gestore delle valutazioni accademiche.</p>
-            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Vedi repository</a></p>
-          </div>
-
-          <div class="card">
-            <h2>📌 In evidenza: Compression Manager</h2>
-            <p>Applicazione per backup e compressione dei file.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank" rel="noopener noreferrer">Vedi repository</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 In evidenza: Economia APP</h2>
-            <p>Economia APP è uno strumento di supporto per lo studio dell'Economia d'Ingegneria (corso TT007) che automatizza i calcoli finanziari ricorrenti — interessi semplici e composti, rendite, gradienti, equivalenza di tassi, ammortamenti (SAC, Price, SAM), analisi degli investimenti (VAN / VAUE) e ammortamento — e mostra i passaggi dettagliati e la cronologia dei risultati.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Economia_APP" target="_blank" rel="noopener noreferrer">Vedi repository</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PLR0KD6KSJJ" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DE-DE -->
-    <section id="sec-dede" class="lang-section">
-      <div class="note">
-        <b>Hallo! Ich bin Fernando.</b> Softwareentwickler mit Fokus auf Python, C++ und GUIs (PySide6, PyQt6, Tkinter). Interessen: Automatisierung, Datenanalyse und praktische Lösungen.
-      </div>
-
-      <div class="grid">
-        <!-- Linke Spalte: allgemeine Inhalte -->
-        <div class="col-6">
-          <div class="card">
-            <h3>🚀 Fähigkeiten</h3>
-            <ul>
-              <li>Sprachen: Python, C++</li>
-              <li>GUI: PySide6, PyQt6, Tkinter</li>
-              <li>Daten: Pandas, Plotly, Streamlit</li>
-              <li>Wissenschaftlich: NumPy, SciPy, Matplotlib</li>
-              <li>Dateien & Backup, Git/GitHub</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>🎯 Hauptprojekte</h3>
-            <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Planer akademischer Bewertungen</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Lumen">Lúmen</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Economia_APP">Economia APP</a></li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>📊 Dashboards</h3>
-            <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Streamlit/Plotly/Pandas Management</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Pareto/ABC (Streamlit)</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Pareto/ABC (TkInter)</a></li>
-            </ul>
-          </div>
-
-          <div class="card center stats">
-            <h3>📈 GitHub-Statistiken</h3>
-            <img class="gh-stats" alt="GitHub-Statistiken">
-            <img class="gh-streak" alt="GitHub-Streak">
-            <img class="gh-activity" alt="GitHub-Aktivitätsdiagramm">
-            <img class="top-langs" alt="Top-Sprachen">
-          </div>
-
-          <div class="card">
-            <h3>🎓 Ausbildung</h3>
-            <p>Studierender des Bauingenieurwesens (UFPR). Zuvor Studium der Physikdidaktik (UTFPR) und Erfahrung im Unterricht an weiterführenden Schulen.</p>
-            <h3>🎯 Ziele</h3>
-            <ul>
-              <li>Automatisierung, Datenanalyse und KI-Kompetenzen verbessern</li>
-              <li>Open-Source-Beiträge ausbauen</li>
-              <li>Neue Technologien und Best Practices erkunden</li>
-            </ul>
-            <h3>📫 Kontakt</h3>
-            <p class="header-links">
-              <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
-              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
-            </p>
-          </div>
-        </div>
-
-        <!-- Rechte Spalte: Highlights (Linceu + Eisenhower) -->
-        <div class="col-6">
-          <div class="card">
-            <h2>📌 Highlight: Linceu Lighthouse</h2>
-            <p>Tool zur Überwachung der Dateiintegrität (FIM) mit mehrsprachiger Oberfläche, Statistiken und flexiblen Exporten.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank" rel="noopener noreferrer">Repository ansehen</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 Highlight: Lúmen</h2>
-            <p>Desktop-Anwendung zur Unterstützung neurodivergenter Jugendlicher und Erwachsener (Autismus-Spektrum, ADHS, Legasthenie) beim Lernen und bei der Organisation. Integriert einen barrierefreien Reader mit neuronalen Stimmen, Werkzeuge zur Aufgabenpriorisierung, Pomodoro-Timer, Mindmaps und Ressourcen für aktives Erklären (Feynman-Methode).</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Lumen" target="_blank" rel="noopener noreferrer">Repository ansehen</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9N70CLLMVRPN" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 Highlight: Eisenhower Task Organizer</h2>
-            <p>App zur Priorisierung von Aufgaben mit der Eisenhower-Matrix, fokussiert auf Produktivität und Einfachheit.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank" rel="noopener noreferrer">Repository ansehen</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 Highlight: Academic Evaluations Scheduler</h2>
-            <p>Repository for academic evaluations management.</p>
-            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Repository ansehen</a></p>
-          </div>
-
-          <div class="card">
-            <h2>📌 Highlight: Compression Manager</h2>
-            <p>Backup- und Kompressionsanwendung mit intuitiver GUI.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank" rel="noopener noreferrer">Repository ansehen</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-
-          <div class="card">
-            <h2>📌 Highlight: Economia APP</h2>
-            <p>Economia APP ist ein Lernhilfsmittel für Ingenieurökonomie (Kurs TT007), das häufige Finanzberechnungen automatisiert — einfache und zusammengesetzte Zinsen, Annuitäten, Gradienten, Zinsäquivalenz, Tilgung (SAC, Price, SAM), Investitionsanalyse (Kapitalwert / VAUE) und Abschreibungen — und detaillierte Schritte sowie eine Ergebnisübersicht anzeigt.</p>
-            <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Economia_APP" target="_blank" rel="noopener noreferrer">Repository ansehen</a>
-              &nbsp;
-              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PLR0KD6KSJJ" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- NOVA ABA: Projetos/Repositórios
          - Esta seção lista vários repositórios (cards) com CTA que abrem o GitHub
          - updateProjectsSectionTexts() atualiza a nota e os labels dos CTAs conforme idioma
@@ -1556,9 +962,7 @@
     // - Alt+T para alternar tema
     // - Home para voltar ao topo
     function setupShortcuts(){
-      const map = {
-        '1':0,'2':1,'3':2,'4':3,'5':4,'6':5
-      };
+      const map = { '1':0,'2':1 };
       window.addEventListener('keydown', (e)=>{
         if(e.altKey && map[e.key] !== undefined){
           e.preventDefault(); activateLang(LANGS[map[e.key]]);
@@ -1586,7 +990,7 @@
 
     // Adiciona dicas de atalhos (title) nos botões de idioma e projetos
     function setupHints(){
-      const hints = ['Alt+1','Alt+2','Alt+3','Alt+4','Alt+5','Alt+6'];
+      const hints = ['Alt+1','Alt+2'];
       LANGS.forEach((l, i)=>{
         const b = document.getElementById(l.btn);
         if(b && !b.title) b.title = `Trocar idioma (${hints[i]})`;
@@ -1631,4 +1035,3 @@
   </script>
 </body>
 </html>
-
