@@ -1,7 +1,7 @@
 <!-- Multilanguage README.md for fernandoncidade Profile -->
 
 <p align="center">
-  <b>Selecione o idioma / Select language / Selecciona idioma / Sélectionnez la langue / Seleziona la lingua / Sprache auswählen:</b><br>
+  <b>Selecione o idioma / Select language:</b><br>
   <a href="#ptbr">🇧🇷 Português (BR)</a> |
   <a href="#enus">🇺🇸 English (US)</a>
 </p>
