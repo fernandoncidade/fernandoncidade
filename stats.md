@@ -8,7 +8,7 @@
 | Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve | CSV | 122.8h | 2232 | 3 | 18.18 l/h |
 | Dashboard_TkInter_Pareto-Diagram_ABC-Curve | CSV | 149.2h | 2712 | 1 | 18.18 l/h |
 | sloth-highlander-theme-1 | JSON | 604.1h | 9062 | 26 | 15.00 l/h |
-| fernandoncidade | HTML | 86.2h | 2938 | 163 | 34.08 l/h |
+| fernandoncidade | HTML | 86.2h | 2938 | 164 | 34.08 l/h |
 | Dashboard_Taipy | CSV | 12119.3h | 201988 | 3 | 16.67 l/h |
 | File_Manager | Text | 1069.9h | 16048 | 5 | 15.00 l/h |
 | Programa_Matriz_NM | XML | 18.1h | 326 | 2 | 18.01 l/h |
@@ -19,5 +19,5 @@
 | Programa_Determinar_Maior_Inteiro | XML | 16.7h | 300 | 2 | 17.96 l/h |
 | Linceu_Lighthouse | Qt Linguist | 8373.1h | 125596 | 34 | 15.00 l/h |
 | Economia_APP | Python | 1715.8h | 21448 | 15 | 12.50 l/h |
-| Lumen | Python | 4014.2h | 50178 | 61 | 12.50 l/h |
-| **TOTAL** | - | 32735.9h | 490482 | 375 | - |
+| Lumen | Python | 4109.8h | 51372 | 63 | 12.50 l/h |
+| **TOTAL** | - | 32831.5h | 491676 | 378 | - |

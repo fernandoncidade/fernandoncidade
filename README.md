@@ -27,9 +27,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: 32735.9h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total de Linhas Escritas: 490482 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total de Commits: 375 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total de Tempo Trabalhado: 32831.5h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Linhas Escritas: 491676 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: 378 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -54,9 +54,9 @@
 | 📏 **Programa Média Aritmética** | C++ | 42.8h <!-- MEDIAARIT_HOURS --> | 770 <!-- MEDIAARIT_LINES --> | 2 <!-- MEDIAARIT_COMMITS --> | 17.99 <!-- MEDIAARIT_PROD --> |
 | 🔝 **Programa Determinar Maior Inteiro** | C++ | 16.7h <!-- MAIORINT_HOURS --> | 300 <!-- MAIORINT_LINES --> | 2 <!-- MAIORINT_COMMITS --> | 17.96 <!-- MAIORINT_PROD --> |
 | 🎨 **sloth-highlander-theme-1** | CSS/HTML | 604.1h <!-- SLOTH_HOURS --> | 9062 <!-- SLOTH_LINES --> | 26 <!-- SLOTH_COMMITS --> | 15.00 <!-- SLOTH_PROD --> |
-| 📄 **README do Perfil** | Markdown | 86.2h <!-- README_HOURS --> | 2938 <!-- README_LINES --> | 163 <!-- README_COMMITS --> | 34.08 <!-- README_PROD --> |
+| 📄 **README do Perfil** | Markdown | 86.2h <!-- README_HOURS --> | 2938 <!-- README_LINES --> | 164 <!-- README_COMMITS --> | 34.08 <!-- README_PROD --> |
 | 💼 **Economia APP** | Python | 1715.8h <!-- ECONOMIA_HOURS --> | 21448 <!-- ECONOMIA_LINES --> | 15 <!-- ECONOMIA_COMMITS --> | 12.50 <!-- ECONOMIA_PROD --> |
-| 🌟 **Lumen** | Python | 4014.2h <!-- LUMEN_HOURS --> | 50178 <!-- LUMEN_LINES --> | 61 <!-- LUMEN_COMMITS --> | 12.50 <!-- LUMEN_PROD --> |
+| 🌟 **Lumen** | Python | 4109.8h <!-- LUMEN_HOURS --> | 51372 <!-- LUMEN_LINES --> | 63 <!-- LUMEN_COMMITS --> | 12.50 <!-- LUMEN_PROD --> |
 
 ## 🌻 Sobre Mim 🌻
 
@@ -187,9 +187,9 @@ Projeto "Lumen" — repositório com foco em soluções leves para visualizaçã
 
 <div align="center">
 
-### 🕒 Total Working Time: 32735.9h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total Lines Written: 490482 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total Commits: 375 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total Working Time: 32831.5h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total Lines Written: 491676 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total Commits: 378 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -214,9 +214,9 @@ Projeto "Lumen" — repositório com foco em soluções leves para visualizaçã
 | 📏 **Arithmetic Mean Program** | C++ | 42.8h <!-- MEDIAARIT_HOURS --> | 770 <!-- MEDIAARIT_LINES --> | 2 <!-- MEDIAARIT_COMMITS --> | 17.99 <!-- MEDIAARIT_PROD --> |
 | 🔝 **Find Largest Integer Program** | C++ | 16.7h <!-- MAIORINT_HOURS --> | 300 <!-- MAIORINT_LINES --> | 2 <!-- MAIORINT_COMMITS --> | 17.96 <!-- MAIORINT_PROD --> |
 | 🎨 **sloth-highlander-theme-1** | CSS/HTML | 604.1h <!-- SLOTH_HOURS --> | 9062 <!-- SLOTH_LINES --> | 26 <!-- SLOTH_COMMITS --> | 15.00 <!-- SLOTH_PROD --> |
-| 📄 **Profile README** | Markdown | 86.2h <!-- README_HOURS --> | 2938 <!-- README_LINES --> | 163 <!-- README_COMMITS --> | 34.08 <!-- README_PROD --> |
+| 📄 **Profile README** | Markdown | 86.2h <!-- README_HOURS --> | 2938 <!-- README_LINES --> | 164 <!-- README_COMMITS --> | 34.08 <!-- README_PROD --> |
 | 💼 **Economia APP** | Python | 1715.8h <!-- ECONOMIA_HOURS --> | 21448 <!-- ECONOMIA_LINES --> | 15 <!-- ECONOMIA_COMMITS --> | 12.50 <!-- ECONOMIA_PROD --> |
-| 🌟 **Lumen** | Python | 4014.2h <!-- LUMEN_HOURS --> | 50178 <!-- LUMEN_LINES --> | 61 <!-- LUMEN_COMMITS --> | 12.50 <!-- LUMEN_PROD --> |
+| 🌟 **Lumen** | Python | 4109.8h <!-- LUMEN_HOURS --> | 51372 <!-- LUMEN_LINES --> | 63 <!-- LUMEN_COMMITS --> | 12.50 <!-- LUMEN_PROD --> |
 
 ## 🌻 About Me 🌻
 
