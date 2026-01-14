@@ -27,9 +27,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: 32831.5h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total de Linhas Escritas: 491676 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total de Commits: 378 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total de Tempo Trabalhado: 33513.0h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Linhas Escritas: 500182 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: 390 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -39,7 +39,7 @@
 |-------------|-----------|-------|--------|---------|---------------|
 | 📅 **Agenda Avaliações Acadêmicas** | Python | 855.4h <!-- AGENDA_HOURS --> | 10692 <!-- AGENDA_LINES --> | 7 <!-- AGENDA_COMMITS --> | 12.50 <!-- AGENDA_PROD --> |
 | 🗜️ **Compression Manager** | Python | 1019.6h <!-- COMPRESSION_HOURS --> | 9804 <!-- COMPRESSION_LINES --> | 13 <!-- COMPRESSION_COMMITS --> | 9.62 <!-- COMPRESSION_PROD --> |
-| 📋 **Eisenhower Task Organizer** | Python | 851.8h <!-- EISENHOWER_HOURS --> | 10648 <!-- EISENHOWER_LINES --> | 18 <!-- EISENHOWER_COMMITS --> | 12.50 <!-- EISENHOWER_PROD --> |
+| 📋 **Eisenhower Task Organizer** | Python | 881.1h <!-- EISENHOWER_HOURS --> | 11014 <!-- EISENHOWER_LINES --> | 20 <!-- EISENHOWER_COMMITS --> | 12.50 <!-- EISENHOWER_PROD --> |
 | 🗳️ **Programa Urna Eletrônica** | C++ | 1488.8h <!-- URNA_HOURS --> | 22332 <!-- URNA_LINES --> | 6 <!-- URNA_COMMITS --> | 15.00 <!-- URNA_PROD --> |
 | 📊 **Dashboard Streamlit Management** | Python | 128.7h <!-- MANEGEMENT_HOURS --> | 2340 <!-- MANEGEMENT_LINES --> | 8 <!-- MANEGEMENT_COMMITS --> | 18.18 <!-- MANEGEMENT_PROD --> |
 | 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8h <!-- STREAMLIT_HOURS --> | 2232 <!-- STREAMLIT_LINES --> | 3 <!-- STREAMLIT_COMMITS --> | 18.18 <!-- STREAMLIT_PROD --> |
@@ -54,9 +54,9 @@
 | 📏 **Programa Média Aritmética** | C++ | 42.8h <!-- MEDIAARIT_HOURS --> | 770 <!-- MEDIAARIT_LINES --> | 2 <!-- MEDIAARIT_COMMITS --> | 17.99 <!-- MEDIAARIT_PROD --> |
 | 🔝 **Programa Determinar Maior Inteiro** | C++ | 16.7h <!-- MAIORINT_HOURS --> | 300 <!-- MAIORINT_LINES --> | 2 <!-- MAIORINT_COMMITS --> | 17.96 <!-- MAIORINT_PROD --> |
 | 🎨 **sloth-highlander-theme-1** | CSS/HTML | 604.1h <!-- SLOTH_HOURS --> | 9062 <!-- SLOTH_LINES --> | 26 <!-- SLOTH_COMMITS --> | 15.00 <!-- SLOTH_PROD --> |
-| 📄 **README do Perfil** | Markdown | 86.2h <!-- README_HOURS --> | 2938 <!-- README_LINES --> | 164 <!-- README_COMMITS --> | 34.08 <!-- README_PROD --> |
+| 📄 **README do Perfil** | Markdown | 85.6h <!-- README_HOURS --> | 2918 <!-- README_LINES --> | 168 <!-- README_COMMITS --> | 34.09 <!-- README_PROD --> |
 | 💼 **Economia APP** | Python | 1715.8h <!-- ECONOMIA_HOURS --> | 21448 <!-- ECONOMIA_LINES --> | 15 <!-- ECONOMIA_COMMITS --> | 12.50 <!-- ECONOMIA_PROD --> |
-| 🌟 **Lumen** | Python | 4109.8h <!-- LUMEN_HOURS --> | 51372 <!-- LUMEN_LINES --> | 63 <!-- LUMEN_COMMITS --> | 12.50 <!-- LUMEN_PROD --> |
+| 🌟 **Lumen** | Python | 4762.6h <!-- LUMEN_HOURS --> | 59532 <!-- LUMEN_LINES --> | 69 <!-- LUMEN_COMMITS --> | 12.50 <!-- LUMEN_PROD --> |
 
 ## 🌻 Sobre Mim 🌻
 
@@ -185,9 +185,9 @@ Projeto "Lumen" — repositório com foco em soluções leves para visualizaçã
 
 <div align="center">
 
-### 🕒 Total Working Time: 32831.5h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total Lines Written: 491676 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total Commits: 378 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total Working Time: 33513.0h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total Lines Written: 500182 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total Commits: 390 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -197,7 +197,7 @@ Projeto "Lumen" — repositório com foco em soluções leves para visualizaçã
 |------------|----------|-------|-------|---------|--------------|
 | 📅 **Academic Evaluations Scheduler** | Python | 855.4h <!-- AGENDA_HOURS --> | 10692 <!-- AGENDA_LINES --> | 7 <!-- AGENDA_COMMITS --> | 12.50 <!-- AGENDA_PROD --> |
 | 🗜️ **Compression Manager** | Python | 1019.6h <!-- COMPRESSION_HOURS --> | 9804 <!-- COMPRESSION_LINES --> | 13 <!-- COMPRESSION_COMMITS --> | 9.62 <!-- COMPRESSION_PROD --> |
-| 📋 **Eisenhower Task Organizer** | Python | 851.8h <!-- EISENHOWER_HOURS --> | 10648 <!-- EISENHOWER_LINES --> | 18 <!-- EISENHOWER_COMMITS --> | 12.50 <!-- EISENHOWER_PROD --> |
+| 📋 **Eisenhower Task Organizer** | Python | 881.1h <!-- EISENHOWER_HOURS --> | 11014 <!-- EISENHOWER_LINES --> | 20 <!-- EISENHOWER_COMMITS --> | 12.50 <!-- EISENHOWER_PROD --> |
 | 🗳️ **Electronic Ballot Program** | C++ | 1488.8h <!-- URNA_HOURS --> | 22332 <!-- URNA_LINES --> | 6 <!-- URNA_COMMITS --> | 15.00 <!-- URNA_PROD --> |
 | 📊 **Dashboard Streamlit Management** | Python | 128.7h <!-- MANEGEMENT_HOURS --> | 2340 <!-- MANEGEMENT_LINES --> | 8 <!-- MANEGEMENT_COMMITS --> | 18.18 <!-- MANEGEMENT_PROD --> |
 | 📈 **Pareto/ABC Streamlit Dashboard** | Python | 122.8h <!-- STREAMLIT_HOURS --> | 2232 <!-- STREAMLIT_LINES --> | 3 <!-- STREAMLIT_COMMITS --> | 18.18 <!-- STREAMLIT_PROD --> |
@@ -212,9 +212,9 @@ Projeto "Lumen" — repositório com foco em soluções leves para visualizaçã
 | 📏 **Arithmetic Mean Program** | C++ | 42.8h <!-- MEDIAARIT_HOURS --> | 770 <!-- MEDIAARIT_LINES --> | 2 <!-- MEDIAARIT_COMMITS --> | 17.99 <!-- MEDIAARIT_PROD --> |
 | 🔝 **Find Largest Integer Program** | C++ | 16.7h <!-- MAIORINT_HOURS --> | 300 <!-- MAIORINT_LINES --> | 2 <!-- MAIORINT_COMMITS --> | 17.96 <!-- MAIORINT_PROD --> |
 | 🎨 **sloth-highlander-theme-1** | CSS/HTML | 604.1h <!-- SLOTH_HOURS --> | 9062 <!-- SLOTH_LINES --> | 26 <!-- SLOTH_COMMITS --> | 15.00 <!-- SLOTH_PROD --> |
-| 📄 **Profile README** | Markdown | 86.2h <!-- README_HOURS --> | 2938 <!-- README_LINES --> | 164 <!-- README_COMMITS --> | 34.08 <!-- README_PROD --> |
+| 📄 **Profile README** | Markdown | 85.6h <!-- README_HOURS --> | 2918 <!-- README_LINES --> | 168 <!-- README_COMMITS --> | 34.09 <!-- README_PROD --> |
 | 💼 **Economia APP** | Python | 1715.8h <!-- ECONOMIA_HOURS --> | 21448 <!-- ECONOMIA_LINES --> | 15 <!-- ECONOMIA_COMMITS --> | 12.50 <!-- ECONOMIA_PROD --> |
-| 🌟 **Lumen** | Python | 4109.8h <!-- LUMEN_HOURS --> | 51372 <!-- LUMEN_LINES --> | 63 <!-- LUMEN_COMMITS --> | 12.50 <!-- LUMEN_PROD --> |
+| 🌟 **Lumen** | Python | 4762.6h <!-- LUMEN_HOURS --> | 59532 <!-- LUMEN_LINES --> | 69 <!-- LUMEN_COMMITS --> | 12.50 <!-- LUMEN_PROD --> |
 
 ## 🌻 About Me 🌻
 
