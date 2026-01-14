@@ -429,6 +429,14 @@
       // Detecta se o tema atual é escuro (classe .dark em body ou chave no localStorage)
       const isDark = document.body.classList.contains('dark') || (localStorage.getItem('fcc_theme') === 'dark');
 
+      // Top languages: imagem com linguagens mais usadas
+      const langs = section.querySelector('.top-langs');
+      if (langs) {
+        const langsTheme = isDark ? 'merko' : 'default';
+        langs.src =
+                `https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade&layout=compact&theme=${langsTheme}&locale=${l.langs}`;
+      }
+
       // Streak: gráfico de sequência de contribuições
       const streak = section.querySelector('.gh-streak');
       if (streak) {
@@ -446,14 +454,6 @@
         const graphTheme = isDark ? 'merko' : 'minimal';
         graph.src =
           `https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=${graphTheme}&area=true&custom_title=${titles[CURRENT_LANG] || titles.ptbr}&locale=${l.graph}`;
-      }
-
-      // Top languages: imagem com linguagens mais usadas
-      const langs = section.querySelector('.top-langs');
-      if (langs) {
-        const langsTheme = isDark ? 'merko' : 'default';
-        langs.src =
-          `https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade&layout=compact&theme=${langsTheme}&locale=${l.langs}`;
       }
     }
 
@@ -600,9 +600,9 @@
           <div class="card center stats">
             <h3>📈 Estatísticas GitHub</h3>
             <!-- Imagens dos widgets são preenchidas dinamicamente por updateStatsLocale() -->
+            <img class="top-langs" alt="Top Langs">
             <img class="gh-streak" alt="GitHub Streak">
             <img class="gh-activity" alt="GitHub Activity Graph">
-            <img class="top-langs" alt="Top Langs">
           </div>
 
           <div class="card">
@@ -729,9 +729,9 @@
 
           <div class="card center stats">
             <h3>📈 GitHub Stats</h3>
+            <img class="top-langs" alt="Top Langs">
             <img class="gh-streak" alt="GitHub Streak">
             <img class="gh-activity" alt="GitHub Activity Graph">
-            <img class="top-langs" alt="Top Langs">
           </div>
 
           <div class="card">

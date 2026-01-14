@@ -148,11 +148,11 @@ Projeto "Lumen" — repositório com foco em soluções leves para visualizaçã
 
 ## 📈 Estatísticas GitHub
 
+[![Top Langs](https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade\&layout=compact&theme=merko&locale=pt-br)](https://github.com/ishandutta2007/beautiful-github-homepage)
+
 [![GitHub Streak](https://streak-stats.demolab.com?user=fernandoncidade&theme=ads-juicy-fresh&locale=pt_BR&date_format=j%20M%5B%20Y%5D)](https://git.io/streak-stats)
 
 [![fernandoncidade's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&area=true&custom_title=Gráfico%20de%20Atividade%20de%20fernandoncidade&locale=pt-br)](https://github.com/ashutosh00710/github-readme-activity-graph)
-
-[![Top Langs](https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade\&layout=compact&theme=merko&locale=pt-br)](https://github.com/ishandutta2007/beautiful-github-homepage)
 
 <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em><b>Sempre codando com paixão!</b> 🚀</em> <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60">
 
@@ -306,11 +306,11 @@ Project "Lumen" — repository focused on lightweight solutions for data visuali
 
 ## 📈 GitHub Stats
 
+[![Top Langs](https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade\&layout=compact&theme=merko&locale=en)](https://github.com/ishandutta2007/beautiful-github-homepage)
+
 [![GitHub Streak](https://streak-stats.demolab.com?user=fernandoncidade&theme=ads-juicy-fresh&date_format=M%20j%5B%2C%20Y%5D)](https://git.io/streak-stats)
 
 [![fernandoncidade's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&area=true&custom_title=fernandoncidade's%20Activity%20Graph&locale=en)](https://github.com/ashutosh00710/github-readme-activity-graph)
-
-[![Top Langs](https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade\&layout=compact&theme=merko&locale=en)](https://github.com/ishandutta2007/beautiful-github-homepage)
 
 <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em><b>Always coding with passion!</b> 🚀</em> <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60">
 
