@@ -148,9 +148,7 @@ Projeto "Lumen" — repositório com foco em soluções leves para visualizaçã
 
 ## 📈 Estatísticas GitHub
 
-![Estatísticas do GitHub](https://github-readme-stats.vercel.app/api?username=fernandoncidade&theme=blue-green&show_icons=True&locale=pt-br)
-
-[![GitHub Streak](https://streak-stats.demolab.com?user=fernandoncidade&theme=microsoft-dark&locale=pt_BR&date_format=j%20M%5B%20Y%5D)](https://git.io/streak-stats)
+[![GitHub Streak](https://streak-stats.demolab.com?user=fernandoncidade&theme=ads-juicy-fresh&locale=pt_BR&date_format=j%20M%5B%20Y%5D)](https://git.io/streak-stats)
 
 [![fernandoncidade's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&area=true&custom_title=Gráfico%20de%20Atividade%20de%20fernandoncidade&locale=pt-br)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
@@ -308,9 +306,7 @@ Project "Lumen" — repository focused on lightweight solutions for data visuali
 
 ## 📈 GitHub Stats
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=fernandoncidade&theme=blue-green&show_icons=True&locale=en)
-
-[![GitHub Streak](https://streak-stats.demolab.com?user=fernandoncidade&theme=microsoft-dark&locale=en&date_format=j%20M%5B%20Y%5D)](https://git.io/streak-stats)
+[![GitHub Streak](https://streak-stats.demolab.com?user=fernandoncidade&theme=ads-juicy-fresh&date_format=M%20j%5B%2C%20Y%5D)](https://git.io/streak-stats)
 
 [![fernandoncidade's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&area=true&custom_title=fernandoncidade's%20Activity%20Graph&locale=en)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
