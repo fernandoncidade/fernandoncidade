@@ -342,8 +342,8 @@
     // LOCALES: mapeamento de códigos de locale usados pelos widgets de imagem
     // - stats, streak, graph, langs são parâmetros de localidade que os serviços aceitam
     const LOCALES = {
-      ptbr: { stats:"pt-br", streak:"pt_BR", graph:"pt-br", langs:"pt-br" },
-      enus: { stats:"en",    streak:"en",    graph:"en",    langs:"en" }
+      ptbr: { streak:"pt_BR", graph:"pt-br", langs:"pt-br" },
+      enus: { streak:"en",    graph:"en",    langs:"en" }
     };
 
     // Rótulo do botão de "Projetos" em cada idioma (usado para atualizar o texto)
@@ -429,17 +429,10 @@
       // Detecta se o tema atual é escuro (classe .dark em body ou chave no localStorage)
       const isDark = document.body.classList.contains('dark') || (localStorage.getItem('fcc_theme') === 'dark');
 
-      // GitHub Stats: serviço que gera uma imagem com estatísticas do perfil
-      const stats = section.querySelector('.gh-stats');
-      if (stats) {
-        const statsTheme = isDark ? 'blue-green' : 'flag-india';
-        stats.src = `https://github-readme-stats.vercel.app/api?username=fernandoncidade&theme=${statsTheme}&show_icons=True&locale=${l.stats}`;
-      }
-
       // Streak: gráfico de sequência de contribuições
       const streak = section.querySelector('.gh-streak');
       if (streak) {
-        const streakTheme = isDark ? 'microsoft-dark' : 'ayu-light';
+        const streakTheme = isDark ? 'ads-juicy-fresh' : 'whatsapp-light';
         streak.src = `https://streak-stats.demolab.com?user=fernandoncidade&theme=${streakTheme}&locale=${l.streak}&date_format=j%20M%5B%20Y%5D`;
       }
 
@@ -607,7 +600,6 @@
           <div class="card center stats">
             <h3>📈 Estatísticas GitHub</h3>
             <!-- Imagens dos widgets são preenchidas dinamicamente por updateStatsLocale() -->
-            <img class="gh-stats" alt="GitHub Stats">
             <img class="gh-streak" alt="GitHub Streak">
             <img class="gh-activity" alt="GitHub Activity Graph">
             <img class="top-langs" alt="Top Langs">
@@ -737,7 +729,6 @@
 
           <div class="card center stats">
             <h3>📈 GitHub Stats</h3>
-            <img class="gh-stats" alt="GitHub Stats">
             <img class="gh-streak" alt="GitHub Streak">
             <img class="gh-activity" alt="GitHub Activity Graph">
             <img class="top-langs" alt="Top Langs">
