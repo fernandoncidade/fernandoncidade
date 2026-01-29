@@ -420,31 +420,26 @@
 
     // Atualiza as URLs das imagens de widgets de estatísticas (GitHub stats, streak, graph, top langs)
     // - Usa LOCALES para ajustar os parâmetros de locale.
-    // - Também adapta temas dos widgets conforme o tema atual (claro/escuro).
+    // Atualiza as URLs das imagens de widgets de estatísticas
     function updateStatsLocale() {
       const l = LOCALES[CURRENT_LANG] || LOCALES.ptbr;
       const section = document.querySelector('.lang-section.active');
       if (!section) return;
 
-      // Detecta se o tema atual é escuro (classe .dark em body ou chave no localStorage)
+      // Detecta se o tema atual é escuro
       const isDark = document.body.classList.contains('dark') || (localStorage.getItem('fcc_theme') === 'dark');
 
-      // Top languages: imagem com linguagens mais usadas
-      const langs = section.querySelector('.top-langs');
-      if (langs) {
-        const langsTheme = isDark ? 'merko' : 'default';
-        langs.src =
-                `https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade&layout=compact&theme=${langsTheme}&locale=${l.langs}`;
+      // --- ALTERAÇÃO AQUI: Lógica do Widget Insights ---
+      const insights = section.querySelector('.gh-insights');
+      if (insights) {
+        // Define o tema da API com base na variável isDark
+        const themeParam = isDark ? 'github_dark' : 'github_light';
+
+        insights.src =
+          `https://yourinsights.vercel.app/api/insight?username=fernandoncidade&theme=${themeParam}&graph=true&languages=true&streak=true&stats=true&header=true&summary=true&profile=true`;
       }
 
-      // Streak: gráfico de sequência de contribuições
-      const streak = section.querySelector('.gh-streak');
-      if (streak) {
-        const streakTheme = isDark ? 'ads-juicy-fresh' : 'whatsapp-light';
-        streak.src = `https://streak-stats.demolab.com?user=fernandoncidade&theme=${streakTheme}&locale=${l.streak}&date_format=j%20M%5B%20Y%5D`;
-      }
-
-      // Activity graph: gráfico de atividade (com título customizado por idioma)
+      // Activity graph
       const graph = section.querySelector('.gh-activity');
       const titles = {
         ptbr: "Gráfico%20de%20Atividade%20de%20fernandoncidade",
@@ -454,6 +449,14 @@
         const graphTheme = isDark ? 'merko' : 'minimal';
         graph.src =
           `https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=${graphTheme}&area=true&custom_title=${titles[CURRENT_LANG] || titles.ptbr}&locale=${l.graph}`;
+      }
+
+      // Top languages
+      const langs = section.querySelector('.top-langs');
+      if (langs) {
+        const langsTheme = isDark ? 'merko' : 'default';
+        langs.src =
+                `https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade&layout=compact&theme=${langsTheme}&locale=${l.langs}`;
       }
     }
 
@@ -539,9 +542,7 @@
       <b>Idiomas / Languages:</b><br>
       <button id="btn-ptbr" class="active">🇧🇷 Português (BR)</button>
       <button id="btn-enus">🇺🇸 English (US)</button>
-      <!-- Novo botão de aba: abre a seção "Projetos/Repositórios" -->
       <button id="btn-projects">📂 Projetos/Repositórios</button>
-      <!-- Toggle de tema (claro/escuro). Atalho Alt+T ativado no JS -->
       <button id="btn-theme" title="Alternar tema (Alt+T)">🌓 Tema</button>
     </div>
 
@@ -551,19 +552,12 @@
            alt="Estatísticas atualizadas em">
     </div>
 
-    <!-- =========================
-         Seções por idioma (cada uma tem id correspondente em LANGS)
-         - O conteúdo é uma cópia traduzida da mesma estrutura (habilidades, projetos, dashboards, etc.)
-         - Apenas a seção com classe .active é exibida pelo CSS.
-       ========================= -->
-    <!-- PT-BR -->
     <section id="sec-ptbr" class="lang-section active">
       <div class="note">
         <b>Olá, eu sou o Fernando!</b> Sou desenvolvedor com foco em Python, C++ e GUIs (PySide6, PyQt6, Tkinter). Interesses em automação, análise de dados e soluções práticas.
       </div>
 
       <div class="grid">
-        <!-- Coluna esquerda: conteúdo geral -->
         <div class="col-6">
           <div class="card">
             <h3>🚀 Habilidades</h3>
@@ -581,7 +575,7 @@
             <ul class="subtopics">
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda Avaliações Acadêmicas</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Organizer">Eisenhower Organizer</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Lumen">Lúmen</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Economia_APP">Economia APP</a></li>
@@ -599,10 +593,12 @@
 
           <div class="card center stats">
             <h3>📈 Estatísticas GitHub</h3>
-            <!-- Imagens dos widgets são preenchidas dinamicamente por updateStatsLocale() -->
-            <img class="top-langs" alt="Top Langs">
-            <img class="gh-streak" alt="GitHub Streak">
+            <img class="gh-insights"
+                 src="https://yourinsights.vercel.app/api/insight?username=fernandoncidade&theme=light&graph=true&languages=true&streak=true&stats=true&header=true&summary=true&profile=true"
+                 alt="GitHub Insights">
+
             <img class="gh-activity" alt="GitHub Activity Graph">
+            <img class="top-langs" alt="Top Langs">
           </div>
 
           <div class="card">
@@ -625,7 +621,6 @@
           </div>
         </div>
 
-        <!-- Coluna direita: destaques (Linceu + Eisenhower) -->
         <div class="col-6">
           <div class="card">
             <h2>📌 Destaque: Linceu Lighthouse</h2>
@@ -648,10 +643,10 @@
           </div>
 
           <div class="card">
-            <h2>📌 Destaque: Eisenhower Task Organizer</h2>
+            <h2>📌 Destaque: Eisenhower Organizer</h2>
             <p>Aplicativo para priorizar tarefas usando a Matriz de Eisenhower, com foco em produtividade e simplicidade.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Organizer" target="_blank" rel="noopener noreferrer">Ver repositório</a>
               &nbsp;
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
             </p>
@@ -686,14 +681,12 @@
       </div>
     </section>
 
-    <!-- EN-US -->
     <section id="sec-enus" class="lang-section">
       <div class="note">
         <b>Hello! I'm Fernando.</b> Software developer focused on Python, C++ and GUIs (PySide6, PyQt6, Tkinter). Interests in automation, data analysis and practical solutions.
       </div>
 
       <div class="grid">
-        <!-- Left column: general content -->
         <div class="col-6">
           <div class="card">
             <h3>🚀 Skills</h3>
@@ -711,7 +704,7 @@
             <ul class="subtopics">
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Academic Evaluations Scheduler</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Eisenhower Task Organizer</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Organizer">Eisenhower Organizer</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Lumen">Lúmen</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Economia_APP">Economia APP</a></li>
@@ -729,9 +722,12 @@
 
           <div class="card center stats">
             <h3>📈 GitHub Stats</h3>
-            <img class="top-langs" alt="Top Langs">
-            <img class="gh-streak" alt="GitHub Streak">
+            <img class="gh-insights"
+                 src="https://yourinsights.vercel.app/api/insight?username=fernandoncidade&theme=light&graph=true&languages=true&streak=true&stats=true&header=true&summary=true&profile=true"
+                 alt="GitHub Insights">
+
             <img class="gh-activity" alt="GitHub Activity Graph">
+            <img class="top-langs" alt="Top Langs">
           </div>
 
           <div class="card">
@@ -754,7 +750,6 @@
           </div>
         </div>
 
-        <!-- Right column: highlights (Linceu + Eisenhower) -->
         <div class="col-6">
           <div class="card">
             <h2>📌 Highlight: Linceu Lighthouse</h2>
@@ -777,10 +772,10 @@
           </div>
 
           <div class="card">
-            <h2>📌 Highlight: Eisenhower Task Organizer</h2>
+            <h2>📌 Highlight: Eisenhower Organizer</h2>
             <p>App to prioritize tasks using the Eisenhower Matrix, focused on productivity and simplicity.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer" target="_blank" rel="noopener noreferrer">Open repository</a>
+              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Organizer" target="_blank" rel="noopener noreferrer">Open repository</a>
               &nbsp;
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
             </p>
@@ -815,10 +810,6 @@
       </div>
     </section>
 
-    <!-- NOVA ABA: Projetos/Repositórios
-         - Esta seção lista vários repositórios (cards) com CTA que abrem o GitHub
-         - updateProjectsSectionTexts() atualiza a nota e os labels dos CTAs conforme idioma
-    -->
     <section id="sec-projects" class="lang-section">
       <div class="note">
         Lista de projetos e repositórios públicos de fernandoncidade.
@@ -830,7 +821,7 @@
         <div class="col-4"><div class="card"><h3>Lúmen</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Lumen">Abrir repositório</a></p></div></div>
 
         <div class="col-4"><div class="card"><h3>Compression Manager</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Eisenhower Task Organizer</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Task_Organizer">Abrir repositório</a></p></div></div>
+        <div class="col-4"><div class="card"><h3>Eisenhower Organizer</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Organizer">Abrir repositório</a></p></div></div>
         <div class="col-4"><div class="card"><h3>Economia APP</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Economia_APP">Abrir repositório</a></p></div></div>
 
         <div class="col-4"><div class="card"><h3>Programa Matriz NM</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Matriz_NM">Abrir repositório</a></p></div></div>
@@ -866,7 +857,6 @@
     </div>
   </div>
 
-  <!-- Toast (mensagens rápidas) e botão flutuante voltar ao topo -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <button id="btn-top" class="btn-top" title="Voltar ao topo">↑</button>
 
