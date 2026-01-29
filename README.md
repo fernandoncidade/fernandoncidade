@@ -39,7 +39,7 @@
 |-------------|-----------|-------|--------|---------|---------------|
 | 📅 **Agenda Avaliações Acadêmicas** | Python | 855.4h <!-- AGENDA_HOURS --> | 10692 <!-- AGENDA_LINES --> | 7 <!-- AGENDA_COMMITS --> | 12.50 <!-- AGENDA_PROD --> |
 | 🗜️ **Compression Manager** | Python | 1019.6h <!-- COMPRESSION_HOURS --> | 9804 <!-- COMPRESSION_LINES --> | 13 <!-- COMPRESSION_COMMITS --> | 9.62 <!-- COMPRESSION_PROD --> |
-| 📋 **Eisenhower Task Organizer** | Python | 1429.8h <!-- EISENHOWER_HOURS --> | 17872 <!-- EISENHOWER_LINES --> | 30 <!-- EISENHOWER_COMMITS --> | 12.50 <!-- EISENHOWER_PROD --> |
+| 📋 **Eisenhower Organizer** | Python | 1429.8h <!-- EISENHOWER_HOURS --> | 17872 <!-- EISENHOWER_LINES --> | 30 <!-- EISENHOWER_COMMITS --> | 12.50 <!-- EISENHOWER_PROD --> |
 | 🗳️ **Programa Urna Eletrônica** | C++ | 1488.8h <!-- URNA_HOURS --> | 22332 <!-- URNA_LINES --> | 6 <!-- URNA_COMMITS --> | 15.00 <!-- URNA_PROD --> |
 | 📊 **Dashboard Streamlit Management** | Python | 128.7h <!-- MANEGEMENT_HOURS --> | 2340 <!-- MANEGEMENT_LINES --> | 8 <!-- MANEGEMENT_COMMITS --> | 18.18 <!-- MANEGEMENT_PROD --> |
 | 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8h <!-- STREAMLIT_HOURS --> | 2232 <!-- STREAMLIT_LINES --> | 3 <!-- STREAMLIT_COMMITS --> | 18.18 <!-- STREAMLIT_PROD --> |
@@ -107,7 +107,7 @@ Projeto "Lumen" — repositório com foco em soluções leves para visualizaçã
 
 - [**Agenda Avaliações Acadêmicas**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas): Sistema para gerenciamento de atividades avaliativas em ambientes educacionais, usando PySide6 e módulos personalizados.
 - [**Compression Manager**](https://github.com/fernandoncidade/Compression_Manager): Aplicativo de backup e compressão de arquivos com interface gráfica intuitiva, suporte a múltiplos formatos.
-- [**Eisenhower Task Organizer**](https://github.com/fernandoncidade/Eisenhower_Task_Organizer): Aplicativo para organização de tarefas na matriz de Eisenhower, com interface gráfica em PySide6.
+- [**Eisenhower Organizer**](https://github.com/fernandoncidade/Eisenhower_Organizer): Aplicativo para organização de tarefas na matriz de Eisenhower, com interface gráfica em PySide6.
 - [**Programa Urna Eletrônica**](https://github.com/fernandoncidade/Programa_Urna_Eletronica): Sistema de votação eletrônica em C++, simulando urna eletrônica com apuração automática.
 
 ## 📊 Dashboards de Análise de Dados
@@ -148,11 +148,13 @@ Projeto "Lumen" — repositório com foco em soluções leves para visualizaçã
 
 ## 📈 Estatísticas GitHub
 
-[![Top Langs](https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade\&layout=compact&theme=merko&locale=pt-br)](https://github.com/ishandutta2007/beautiful-github-homepage)
-
-[![GitHub Streak](https://streak-stats.demolab.com?user=fernandoncidade&theme=ads-juicy-fresh&locale=pt_BR&date_format=j%20M%5B%20Y%5D)](https://git.io/streak-stats)
+<p align="center">
+  <img src="https://yourinsights.vercel.app/api/insight?username=fernandoncidade&theme=github_dark&graph=true&languages=true&streak=true&stats=true&header=true&summary=true&profile=true" alt="GitHub Insights" />
+</p>
 
 [![fernandoncidade's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&area=true&custom_title=Gráfico%20de%20Atividade%20de%20fernandoncidade&locale=pt-br)](https://github.com/ashutosh00710/github-readme-activity-graph)
+
+[![Top Langs](https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade\&layout=compact&theme=merko&locale=pt-br)](https://github.com/ishandutta2007/beautiful-github-homepage)
 
 <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em><b>Sempre codando com paixão!</b> 🚀</em> <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60">
 
@@ -197,7 +199,7 @@ Projeto "Lumen" — repositório com foco em soluções leves para visualizaçã
 |------------|----------|-------|-------|---------|--------------|
 | 📅 **Academic Evaluations Scheduler** | Python | 855.4h <!-- AGENDA_HOURS --> | 10692 <!-- AGENDA_LINES --> | 7 <!-- AGENDA_COMMITS --> | 12.50 <!-- AGENDA_PROD --> |
 | 🗜️ **Compression Manager** | Python | 1019.6h <!-- COMPRESSION_HOURS --> | 9804 <!-- COMPRESSION_LINES --> | 13 <!-- COMPRESSION_COMMITS --> | 9.62 <!-- COMPRESSION_PROD --> |
-| 📋 **Eisenhower Task Organizer** | Python | 1429.8h <!-- EISENHOWER_HOURS --> | 17872 <!-- EISENHOWER_LINES --> | 30 <!-- EISENHOWER_COMMITS --> | 12.50 <!-- EISENHOWER_PROD --> |
+| 📋 **Eisenhower Organizer** | Python | 1429.8h <!-- EISENHOWER_HOURS --> | 17872 <!-- EISENHOWER_LINES --> | 30 <!-- EISENHOWER_COMMITS --> | 12.50 <!-- EISENHOWER_PROD --> |
 | 🗳️ **Electronic Ballot Program** | C++ | 1488.8h <!-- URNA_HOURS --> | 22332 <!-- URNA_LINES --> | 6 <!-- URNA_COMMITS --> | 15.00 <!-- URNA_PROD --> |
 | 📊 **Dashboard Streamlit Management** | Python | 128.7h <!-- MANEGEMENT_HOURS --> | 2340 <!-- MANEGEMENT_LINES --> | 8 <!-- MANEGEMENT_COMMITS --> | 18.18 <!-- MANEGEMENT_PROD --> |
 | 📈 **Pareto/ABC Streamlit Dashboard** | Python | 122.8h <!-- STREAMLIT_HOURS --> | 2232 <!-- STREAMLIT_LINES --> | 3 <!-- STREAMLIT_COMMITS --> | 18.18 <!-- STREAMLIT_PROD --> |
@@ -265,7 +267,7 @@ Project "Lumen" — repository focused on lightweight solutions for data visuali
 
 - [**Academic Evaluations Scheduler**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas): System for managing academic assessment activities, using PySide6 and custom modules.
 - [**Compression Manager**](https://github.com/fernandoncidade/Compression_Manager): Applications for backup and file compression with an intuitive GUI, supporting multiple formats.
-- [**Eisenhower Task Organizer**](https://github.com/fernandoncidade/Eisenhower_Task_Organizer): Task organization app based on the Eisenhower matrix, with PySide6 GUI.
+- [**Eisenhower Organizer**](https://github.com/fernandoncidade/Eisenhower_Organizer): Task organization app based on the Eisenhower matrix, with PySide6 GUI.
 - [**Electronic Ballot Program**](https://github.com/fernandoncidade/Programa_Urna_Eletronica): Electronic voting system in C++, simulating a ballot box with automatic tallying.
 
 ## 📊 Data Analysis Dashboards
@@ -306,11 +308,13 @@ Project "Lumen" — repository focused on lightweight solutions for data visuali
 
 ## 📈 GitHub Stats
 
-[![Top Langs](https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade\&layout=compact&theme=merko&locale=en)](https://github.com/ishandutta2007/beautiful-github-homepage)
-
-[![GitHub Streak](https://streak-stats.demolab.com?user=fernandoncidade&theme=ads-juicy-fresh&date_format=M%20j%5B%2C%20Y%5D)](https://git.io/streak-stats)
+<p align="center">
+  <img src="https://yourinsights.vercel.app/api/insight?username=fernandoncidade&theme=github_dark&graph=true&languages=true&streak=true&stats=true&header=true&summary=true&profile=true" alt="GitHub Insights" />
+</p>
 
 [![fernandoncidade's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&area=true&custom_title=fernandoncidade's%20Activity%20Graph&locale=en)](https://github.com/ashutosh00710/github-readme-activity-graph)
+
+[![Top Langs](https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade\&layout=compact&theme=merko&locale=en)](https://github.com/ishandutta2007/beautiful-github-homepage)
 
 <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em><b>Always coding with passion!</b> 🚀</em> <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60">
 
