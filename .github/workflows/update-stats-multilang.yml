@@ -39,7 +39,7 @@ jobs:
           repositories=(
             "Agenda_Avaliacoes_Academicas"
             "Compression_Manager"
-            "Eisenhower_Task_Organizer"
+            "Eisenhower_Organizer"
             "Programa_Urna_Eletronica"
             "Dashboard_Streamlit-Plotly-Pandas_Management"
             "Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve"
@@ -177,10 +177,10 @@ jobs:
           replace_marker "COMPRESSION_HOURS" "${{ env.COMPRESSION_MANAGER_HOURS }}h"
           replace_marker "COMPRESSION_PROD" "${{ env.COMPRESSION_MANAGER_PROD }}"
 
-          replace_marker "EISENHOWER_LINES" "${{ env.EISENHOWER_TASK_ORGANIZER_LINES }}"
-          replace_marker "EISENHOWER_COMMITS" "${{ env.EISENHOWER_TASK_ORGANIZER_COMMITS }}"
-          replace_marker "EISENHOWER_HOURS" "${{ env.EISENHOWER_TASK_ORGANIZER_HOURS }}h"
-          replace_marker "EISENHOWER_PROD" "${{ env.EISENHOWER_TASK_ORGANIZER_PROD }}"
+          replace_marker "EISENHOWER_LINES" "${{ env.EISENHOWER_ORGANIZER_LINES }}"
+          replace_marker "EISENHOWER_COMMITS" "${{ env.EISENHOWER_ORGANIZER_COMMITS }}"
+          replace_marker "EISENHOWER_HOURS" "${{ env.EISENHOWER_ORGANIZER_HOURS }}h"
+          replace_marker "EISENHOWER_PROD" "${{ env.EISENHOWER_ORGANIZER_PROD }}"
 
           replace_marker "URNA_LINES" "${{ env.PROGRAMA_URNA_ELETRONICA_LINES }}"
           replace_marker "URNA_COMMITS" "${{ env.PROGRAMA_URNA_ELETRONICA_COMMITS }}"
