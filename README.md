@@ -81,7 +81,9 @@ Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento 
 </div>
 
 **Lumen**  
-Projeto "Lumen" — repositório com foco em soluções leves para visualização/organização de dados e utilitários de apoio ao fluxo de trabalho [Microsoft Store](ms-windows-store://pdp/?productid=9N70CLLMVRPN) - [Microsoft Web Store](https://apps.microsoft.com/detail/9N70CLLMVRPN).
+Projeto "Lumen" — repositório com foco em soluções leves para visualização/organização de dados e utilitários de apoio ao fluxo de trabalho.
+- [Microsoft Store](ms-windows-store://pdp/?productid=9N70CLLMVRPN)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9N70CLLMVRPN)
 
 - [Repositório Lumen](https://github.com/fernandoncidade/Lumen)
 - [Leia o README do Lumen](https://github.com/fernandoncidade/Lumen/blob/main/README.md)
@@ -96,7 +98,9 @@ Projeto "Lumen" — repositório com foco em soluções leves para visualizaçã
 </div>
 
 **Eisenhower Organizer**  
-EISENHOWER ORGANIZER é um aplicativo leve para organizar tarefas usando a Matriz de Eisenhower (Importante/Urgente). Permite criar, classificar, marcar como concluídas e exportar/importar tarefas de forma simples e rápida [Microsoft Store](ms-windows-store://pdp/?productid=9P289X0185C3) - [Microsoft Web Store](https://apps.microsoft.com/detail/9P289X0185C3).
+EISENHOWER ORGANIZER é um aplicativo leve para organizar tarefas usando a Matriz de Eisenhower (Importante/Urgente). Permite criar, classificar, marcar como concluídas e exportar/importar tarefas de forma simples e rápida.
+- [Microsoft Store](ms-windows-store://pdp/?productid=9P289X0185C3)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9P289X0185C3)
 
 - [Repositório Eisenhower Organizer](https://github.com/fernandoncidade/Eisenhower_Organizer)
 - [Leia o README do Eisenhower Organizer](https://github.com/fernandoncidade/Eisenhower_Organizer/blob/main/README.md)
@@ -111,7 +115,9 @@ EISENHOWER ORGANIZER é um aplicativo leve para organizar tarefas usando a Matri
 </div>
 
 **Linceu Lighthouse**  
-Ferramenta avançada de monitoramento de integridade de arquivos (FIM), com interface multilíngue, estatísticas detalhadas e exportação flexível de dados [Microsoft Store](ms-windows-store://pdp/?productid=9NN8Z5Z700TM) - [Microsoft Web Store](https://apps.microsoft.com/detail/9NN8Z5Z700TM).
+Ferramenta avançada de monitoramento de integridade de arquivos (FIM), com interface multilíngue, estatísticas detalhadas e exportação flexível de dados.
+- [Microsoft Store](ms-windows-store://pdp/?productid=9NN8Z5Z700TM)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9NN8Z5Z700TM)
 
 - [Repositório Linceu Lighthouse](https://github.com/fernandoncidade/Linceu_Lighthouse)
 - [Leia o README multilíngue](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
@@ -254,7 +260,9 @@ I'm a software developer with experience in Python, C++, and GUI development. I'
 </div>
 
 **Lumen**  
-Project "Lumen" — repository focused on lightweight solutions for data visualization/organization and utilities to support the workflow [Microsoft Store](ms-windows-store://pdp/?productid=9N70CLLMVRPN) - [Microsoft Web Store](https://apps.microsoft.com/detail/9N70CLLMVRPN).
+Project "Lumen" — repository focused on lightweight solutions for data visualization/organization and utilities to support the workflow.
+- [Microsoft Store](ms-windows-store://pdp/?productid=9N70CLLMVRPN)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9N70CLLMVRPN)
 
 - [Lumen Repository](https://github.com/fernandoncidade/Lumen)
 - [Read the Lumen README](https://github.com/fernandoncidade/Lumen/blob/main/README.md)
@@ -269,7 +277,9 @@ Project "Lumen" — repository focused on lightweight solutions for data visuali
 </div>
 
 **Eisenhower Organizer**  
-EISENHOWER ORGANIZER is a lightweight application for organizing tasks using the Eisenhower Matrix (Important/Urgent). It allows you to create, sort, mark as completed, and export/import tasks quickly and easily [Microsoft Store](ms-windows-store://pdp/?productid=9P289X0185C3) - [Microsoft Web Store](https://apps.microsoft.com/detail/9P289X0185C3).
+EISENHOWER ORGANIZER is a lightweight application for organizing tasks using the Eisenhower Matrix (Important/Urgent). It allows you to create, sort, mark as completed, and export/import tasks quickly and easily.
+- [Microsoft Store](ms-windows-store://pdp/?productid=9P289X0185C3)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9P289X0185C3)
 
 - [Eisenhower Organizer Repository](https://github.com/fernandoncidade/Eisenhower_Organizer)
 - [Read the Eisenhower Organizer README](https://github.com/fernandoncidade/Eisenhower_Organizer/blob/main/README.md)
@@ -284,7 +294,9 @@ EISENHOWER ORGANIZER is a lightweight application for organizing tasks using the
 </div>
 
 **Linceu Lighthouse**  
-Advanced file integrity monitoring tool (FIM) with multilingual interface, detailed statistics, and flexible data export [Microsoft Store](ms-windows-store://pdp/?productid=9NN8Z5Z700TM) - [Microsoft Web Store](https://apps.microsoft.com/detail/9NN8Z5Z700TM).
+Advanced file integrity monitoring tool (FIM) with multilingual interface, detailed statistics, and flexible data export.
+- [Microsoft Store](ms-windows-store://pdp/?productid=9NN8Z5Z700TM)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9NN8Z5Z700TM)
 
 - [Linceu Lighthouse Repository](https://github.com/fernandoncidade/Linceu_Lighthouse)
 - [Read the multilingual README](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
