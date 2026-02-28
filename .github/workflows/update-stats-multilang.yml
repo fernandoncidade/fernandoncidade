@@ -36,6 +36,26 @@ jobs:
           mkdir -p repos
           stats_file="$GITHUB_WORKSPACE/main-repo/stats.md"
 
+          clone_repo_with_retry () {
+            local repo_name="$1"
+            local destination="$2"
+            local attempt
+
+            rm -rf "$destination"
+
+            for attempt in 1 2 3; do
+              if git clone "https://github.com/fernandoncidade/${repo_name}.git" "$destination"; then
+                return 0
+              fi
+
+              echo "Tentativa ${attempt}/3 falhou para ${repo_name}"
+              rm -rf "$destination"
+              sleep $((attempt * 2))
+            done
+
+            return 1
+          }
+
           repositories=(
             "Agenda_Avaliacoes_Academicas"
             "Compression_Manager"
@@ -72,7 +92,7 @@ jobs:
           for repo in "${repositories[@]}"; do
             echo "Processando repositório: $repo"
 
-            if ! git clone "https://github.com/fernandoncidade/$repo" "repos/$repo"; then
+            if ! clone_repo_with_retry "$repo" "repos/$repo"; then
               echo "Falha ao clonar $repo (pulando)"
               continue
             fi
@@ -161,7 +181,7 @@ jobs:
           replace_marker () {
             local marker="$1"
             local value="$2"
-            perl -i -pe "s/(?:\\b[0-9]+(?:\\.[0-9]+)?\\s*h?\\s*)?<!--\\s*\\Q${marker}\\E\\s*-->/${value} <!-- ${marker} -->/g" README.md
+            perl -i -pe "s/(?:\\b[0-9]+(?:\\.[0-9]+)?\\s*h?\\s*|h\\s*)?<!--\\s*\\Q${marker}\\E\\s*-->/${value} <!-- ${marker} -->/g" README.md
           }
 
           replace_marker "TOTAL_LINES_PLACEHOLDER" "${{ env.TOTAL_LINES }}"
@@ -268,10 +288,10 @@ jobs:
           replace_marker "LUMEN_HOURS" "${{ env.LUMEN_HOURS }}h"
           replace_marker "LUMEN_PROD" "${{ env.LUMEN_PROD }}"
 
-          replace_marker "COMPARE_LINES" "${{ env.COMPARE_LINES }}"
-          replace_marker "COMPARE_COMMITS" "${{ env.COMPARE_COMMITS }}"
-          replace_marker "COMPARE_HOURS" "${{ env.COMPARE_HOURS }}h"
-          replace_marker "COMPARE_PROD" "${{ env.COMPARE_PROD }}"
+          replace_marker "COMPARE_LINES" "${{ env.COMPARE_FOLLOWING_FOLLOWER_LINES }}"
+          replace_marker "COMPARE_COMMITS" "${{ env.COMPARE_FOLLOWING_FOLLOWER_COMMITS }}"
+          replace_marker "COMPARE_HOURS" "${{ env.COMPARE_FOLLOWING_FOLLOWER_HOURS }}h"
+          replace_marker "COMPARE_PROD" "${{ env.COMPARE_FOLLOWING_FOLLOWER_PROD }}"
 
           git diff -- README.md stats.md || true
 
