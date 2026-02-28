@@ -57,6 +57,7 @@ jobs:
             "Linceu_Lighthouse"
             "Economia_APP"
             "Lumen"
+            "Compare_Following_Follower"
           )
 
           total_lines=0
@@ -266,6 +267,11 @@ jobs:
           replace_marker "LUMEN_COMMITS" "${{ env.LUMEN_COMMITS }}"
           replace_marker "LUMEN_HOURS" "${{ env.LUMEN_HOURS }}h"
           replace_marker "LUMEN_PROD" "${{ env.LUMEN_PROD }}"
+
+          replace_marker "COMPARE_LINES" "${{ env.COMPARE_LINES }}"
+          replace_marker "COMPARE_COMMITS" "${{ env.COMPARE_COMMITS }}"
+          replace_marker "COMPARE_HOURS" "${{ env.COMPARE_HOURS }}h"
+          replace_marker "COMPARE_PROD" "${{ env.COMPARE_PROD }}"
 
           git diff -- README.md stats.md || true
 

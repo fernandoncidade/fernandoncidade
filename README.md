@@ -27,9 +27,15 @@
 
 <div align="center">
 
+<<<<<<< Updated upstream
 ### 🕒 Total de Tempo Trabalhado: 32931.7h <!-- TOTAL_HOURS_PLACEHOLDER -->
 ### 📝 Total de Linhas Escritas: 494302 <!-- TOTAL_LINES_PLACEHOLDER -->
 ### 💻 Total de Commits: 328 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+=======
+### 🕒 Total de Tempo Trabalhado: 30169.9h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Linhas Escritas: 459748 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: 309 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+>>>>>>> Stashed changes
 
 </div>
 
@@ -37,6 +43,7 @@
 
 | Repositório | Linguagem | Horas | Linhas | Commits | Produtividade (L/H) |
 |-------------|-----------|-------|--------|---------|---------------|
+<<<<<<< Updated upstream
 | 📅 **Agenda Avaliações Acadêmicas** | Python | 855.4h <!-- AGENDA_HOURS --> | 10692 <!-- AGENDA_LINES --> | 7 <!-- AGENDA_COMMITS --> | 12.50 <!-- AGENDA_PROD --> |
 | 🗜️ **Compression Manager** | Python | 1019.6h <!-- COMPRESSION_HOURS --> | 9804 <!-- COMPRESSION_LINES --> | 13 <!-- COMPRESSION_COMMITS --> | 9.62 <!-- COMPRESSION_PROD --> |
 | 📋 **Eisenhower Organizer** | Python | 1763.5h <!-- EISENHOWER_HOURS --> | 22044 <!-- EISENHOWER_LINES --> | 19 <!-- EISENHOWER_COMMITS --> | 12.50 <!-- EISENHOWER_PROD --> |
@@ -57,6 +64,29 @@
 | 📄 **README do Perfil** | Markdown | 87.6h <!-- README_HOURS --> | 2986 <!-- README_LINES --> | 190 <!-- README_COMMITS --> | 34.09 <!-- README_PROD --> |
 | 💼 **Economia APP** | Python | 1715.8h <!-- ECONOMIA_HOURS --> | 21448 <!-- ECONOMIA_LINES --> | 15 <!-- ECONOMIA_COMMITS --> | 12.50 <!-- ECONOMIA_PROD --> |
 | 🌟 **Lumen** | Python | 2760.3h <!-- LUMEN_HOURS --> | 34504 <!-- LUMEN_LINES --> | 7 <!-- LUMEN_COMMITS --> | 12.50 <!-- LUMEN_PROD --> |
+=======
+| 📅 **Agenda Avaliações Acadêmicas** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 🗜️ **Compression Manager** | Python | <!-- COMPRESSION_HOURS --> | <!-- COMPRESSION_LINES --> | <!-- COMPRESSION_COMMITS --> | <!-- COMPRESSION_PROD --> |
+| 📋 **Eisenhower Organizer** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
+| 🗳️ **Programa Urna Eletrônica** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
+| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
+| 📈 **Dashboard Pareto/ABC Streamlit** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
+| 🖥️ **Dashboard TkInter Pareto/ABC** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
+| 📊 **Dashboard Taipy** | Python | <!-- TAIPY_HOURS --> | <!-- TAIPY_LINES --> | <!-- TAIPY_COMMITS --> | <!-- TAIPY_PROD --> |
+| 🔦 **Linceu Lighthouse** | Python | <!-- LIGHTHOUSE_HOURS --> | <!-- LIGHTHOUSE_LINES --> | <!-- LIGHTHOUSE_COMMITS --> | <!-- LIGHTHOUSE_PROD --> |
+| 🗂️ **File Manager** | C++ | <!-- FILEMANAGER_HOURS --> | <!-- FILEMANAGER_LINES --> | <!-- FILEMANAGER_COMMITS --> | <!-- FILEMANAGER_PROD --> |
+| 🧮 **Programa Matriz NM** | C++ | <!-- MATRIZNM_HOURS --> | <!-- MATRIZNM_LINES --> | <!-- MATRIZNM_COMMITS --> | <!-- MATRIZNM_PROD --> |
+| 🧮 **Programa Todos Tipos Matrizes** | C++ | <!-- MATRIZES_HOURS --> | <!-- MATRIZES_LINES --> | <!-- MATRIZES_COMMITS --> | <!-- MATRIZES_PROD --> |
+| ➗ **Programa Quociente Resto** | C++ | <!-- QUOCRESTO_HOURS --> | <!-- QUOCRESTO_LINES --> | <!-- QUOCRESTO_COMMITS --> | <!-- QUOCRESTO_PROD --> |
+| 🔢 **Programa Múltiplo** | C++ | <!-- MULTIPLO_HOURS --> | <!-- MULTIPLO_LINES --> | <!-- MULTIPLO_COMMITS --> | <!-- MULTIPLO_PROD --> |
+| 📏 **Programa Média Aritmética** | C++ | <!-- MEDIAARIT_HOURS --> | <!-- MEDIAARIT_LINES --> | <!-- MEDIAARIT_COMMITS --> | <!-- MEDIAARIT_PROD --> |
+| 🔝 **Programa Determinar Maior Inteiro** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
+| 📄 **README do Perfil** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+| 💼 **Economia APP** | Python | <!-- ECONOMIA_HOURS --> | <!-- ECONOMIA_LINES --> | <!-- ECONOMIA_COMMITS --> | <!-- ECONOMIA_PROD --> |
+| 🌟 **Lumen** | Python | <!-- LUMEN_HOURS --> | <!-- LUMEN_LINES --> | <!-- LUMEN_COMMITS --> | <!-- LUMEN_PROD --> |
+| 👥 **Compare - Following and Follower** | Python | <!-- COMPARE_HOURS --> | <!-- COMPARE_LINES --> | <!-- COMPARE_COMMITS --> | <!-- COMPARE_PROD --> |
+>>>>>>> Stashed changes
 
 ## 🌻 Sobre Mim 🌻
 
@@ -118,6 +148,20 @@ Ferramenta avançada de monitoramento de integridade de arquivos (FIM), com inte
 
 - [Repositório Linceu Lighthouse](https://github.com/fernandoncidade/Linceu_Lighthouse)
 - [Leia o README multilíngue](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
+- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+
+## 👥 Destaque de Projeto: Compare - Following and Follower
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Compare_Following_Follower">
+    <img src="https://github.com/fernandoncidade/Compare_Following_Follower/blob/main/source/assets/icons/FollowingFollower_256-256.png" alt="Compare - Following and Follower Print" width="320"/>
+  </a>
+</div>
+
+**Compare - Following and Follower**  
+Compare - Following and Follower é um aplicativo desktop para comparar, de forma prática, quem você segue e quem te segue no GitHub. Uma ferramenta para transformar listas grandes de seguidores em decisões claras, sem precisar abrir perfil por perfil.
+- [Repositório Compare - Following and Follower](https://github.com/fernandoncidade/Compare_Following_Follower)
+- [Leia o README do Compare - Following and Follower](https://github.com/fernandoncidade/Compare_Following_Follower/blob/main/README.md)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Principais Projetos
@@ -203,9 +247,15 @@ Ferramenta avançada de monitoramento de integridade de arquivos (FIM), com inte
 
 <div align="center">
 
+<<<<<<< Updated upstream
 ### 🕒 Total Working Time: 32931.7h <!-- TOTAL_HOURS_PLACEHOLDER -->
 ### 📝 Total Lines Written: 494302 <!-- TOTAL_LINES_PLACEHOLDER -->
 ### 💻 Total Commits: 328 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+=======
+### 🕒 Total Working Time: 30169.9h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total Lines Written: 459748 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total Commits: 309 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+>>>>>>> Stashed changes
 
 </div>
 
@@ -213,6 +263,7 @@ Ferramenta avançada de monitoramento de integridade de arquivos (FIM), com inte
 
 | Repository | Language | Hours | Lines | Commits | Productivity (L/H) |
 |------------|----------|-------|-------|---------|--------------|
+<<<<<<< Updated upstream
 | 📅 **Academic Evaluations Scheduler** | Python | 855.4h <!-- AGENDA_HOURS --> | 10692 <!-- AGENDA_LINES --> | 7 <!-- AGENDA_COMMITS --> | 12.50 <!-- AGENDA_PROD --> |
 | 🗜️ **Compression Manager** | Python | 1019.6h <!-- COMPRESSION_HOURS --> | 9804 <!-- COMPRESSION_LINES --> | 13 <!-- COMPRESSION_COMMITS --> | 9.62 <!-- COMPRESSION_PROD --> |
 | 📋 **Eisenhower Organizer** | Python | 1763.5h <!-- EISENHOWER_HOURS --> | 22044 <!-- EISENHOWER_LINES --> | 19 <!-- EISENHOWER_COMMITS --> | 12.50 <!-- EISENHOWER_PROD --> |
@@ -233,6 +284,29 @@ Ferramenta avançada de monitoramento de integridade de arquivos (FIM), com inte
 | 📄 **Profile README** | Markdown | 87.6h <!-- README_HOURS --> | 2986 <!-- README_LINES --> | 190 <!-- README_COMMITS --> | 34.09 <!-- README_PROD --> |
 | 💼 **Economia APP** | Python | 1715.8h <!-- ECONOMIA_HOURS --> | 21448 <!-- ECONOMIA_LINES --> | 15 <!-- ECONOMIA_COMMITS --> | 12.50 <!-- ECONOMIA_PROD --> |
 | 🌟 **Lumen** | Python | 2760.3h <!-- LUMEN_HOURS --> | 34504 <!-- LUMEN_LINES --> | 7 <!-- LUMEN_COMMITS --> | 12.50 <!-- LUMEN_PROD --> |
+=======
+| 📅 **Academic Evaluations Scheduler** | Python | <!-- AGENDA_HOURS --> | <!-- AGENDA_LINES --> | <!-- AGENDA_COMMITS --> | <!-- AGENDA_PROD --> |
+| 🗜️ **Compression Manager** | Python | <!-- COMPRESSION_HOURS --> | <!-- COMPRESSION_LINES --> | <!-- COMPRESSION_COMMITS --> | <!-- COMPRESSION_PROD --> |
+| 📋 **Eisenhower Organizer** | Python | <!-- EISENHOWER_HOURS --> | <!-- EISENHOWER_LINES --> | <!-- EISENHOWER_COMMITS --> | <!-- EISENHOWER_PROD --> |
+| 🗳️ **Electronic Ballot Program** | C++ | <!-- URNA_HOURS --> | <!-- URNA_LINES --> | <!-- URNA_COMMITS --> | <!-- URNA_PROD --> |
+| 📊 **Dashboard Streamlit Management** | Python | <!-- MANEGEMENT_HOURS --> | <!-- MANEGEMENT_LINES --> | <!-- MANEGEMENT_COMMITS --> | <!-- MANEGEMENT_PROD --> |
+| 📈 **Pareto/ABC Streamlit Dashboard** | Python | <!-- STREAMLIT_HOURS --> | <!-- STREAMLIT_LINES --> | <!-- STREAMLIT_COMMITS --> | <!-- STREAMLIT_PROD --> |
+| 🖥️ **TkInter Pareto/ABC Dashboard** | Python | <!-- PARETO_HOURS --> | <!-- PARETO_LINES --> | <!-- PARETO_COMMITS --> | <!-- PARETO_PROD --> |
+| 📊 **Taipy Dashboard** | Python | <!-- TAIPY_HOURS --> | <!-- TAIPY_LINES --> | <!-- TAIPY_COMMITS --> | <!-- TAIPY_PROD --> |
+| 🔦 **Linceu Lighthouse** | Python | <!-- LIGHTHOUSE_HOURS --> | <!-- LIGHTHOUSE_LINES --> | <!-- LIGHTHOUSE_COMMITS --> | <!-- LIGHTHOUSE_PROD --> |
+| 🗂️ **File Manager** | C++ | <!-- FILEMANAGER_HOURS --> | <!-- FILEMANAGER_LINES --> | <!-- FILEMANAGER_COMMITS --> | <!-- FILEMANAGER_PROD --> |
+| 🧮 **Matrix NM Program** | C++ | <!-- MATRIZNM_HOURS --> | <!-- MATRIZNM_LINES --> | <!-- MATRIZNM_COMMITS --> | <!-- MATRIZNM_PROD --> |
+| 🧮 **All Types of Matrices Program** | C++ | <!-- MATRIZES_HOURS --> | <!-- MATRIZES_LINES --> | <!-- MATRIZES_COMMITS --> | <!-- MATRIZES_PROD --> |
+| ➗ **Quotient and Remainder Program** | C++ | <!-- QUOCRESTO_HOURS --> | <!-- QUOCRESTO_LINES --> | <!-- QUOCRESTO_COMMITS --> | <!-- QUOCRESTO_PROD --> |
+| 🔢 **Multiple Program** | C++ | <!-- MULTIPLO_HOURS --> | <!-- MULTIPLO_LINES --> | <!-- MULTIPLO_COMMITS --> | <!-- MULTIPLO_PROD --> |
+| 📏 **Arithmetic Mean Program** | C++ | <!-- MEDIAARIT_HOURS --> | <!-- MEDIAARIT_LINES --> | <!-- MEDIAARIT_COMMITS --> | <!-- MEDIAARIT_PROD --> |
+| 🔝 **Find Largest Integer Program** | C++ | <!-- MAIORINT_HOURS --> | <!-- MAIORINT_LINES --> | <!-- MAIORINT_COMMITS --> | <!-- MAIORINT_PROD --> |
+| 🎨 **sloth-highlander-theme-1** | CSS/HTML | <!-- SLOTH_HOURS --> | <!-- SLOTH_LINES --> | <!-- SLOTH_COMMITS --> | <!-- SLOTH_PROD --> |
+| 📄 **Profile README** | Markdown | <!-- README_HOURS --> | <!-- README_LINES --> | <!-- README_COMMITS --> | <!-- README_PROD --> |
+| 💼 **Economia APP** | Python | <!-- ECONOMIA_HOURS --> | <!-- ECONOMIA_LINES --> | <!-- ECONOMIA_COMMITS --> | <!-- ECONOMIA_PROD --> |
+| 🌟 **Lumen** | Python | <!-- LUMEN_HOURS --> | <!-- LUMEN_LINES --> | <!-- LUMEN_COMMITS --> | <!-- LUMEN_PROD --> |
+| 👥 **Compare - Following and Follower** | Python | <!-- COMPARE_HOURS --> | <!-- COMPARE_LINES --> | <!-- COMPARE_COMMITS --> | <!-- COMPARE_PROD --> |
+>>>>>>> Stashed changes
 
 ## 🌻 About Me 🌻
 
@@ -294,6 +368,20 @@ Advanced file integrity monitoring tool (FIM) with multilingual interface, detai
 
 - [Linceu Lighthouse Repository](https://github.com/fernandoncidade/Linceu_Lighthouse)
 - [Read the multilingual README](https://github.com/fernandoncidade/Linceu_Lighthouse/blob/main/README.md)
+- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+
+## 👥 Project Highlight: Compare - Following and Follower
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Compare_Following_Follower">
+    <img src="https://github.com/fernandoncidade/Compare_Following_Follower/blob/main/source/assets/icons/FollowingFollower_256-256.png" alt="Compare - Following and Follower Print" width="320"/>
+  </a>
+</div>
+
+**Compare - Following and Follower**  
+Compare - Following and Follower is a desktop app to compare, in a practical way, who you follow and who follows you on GitHub. A tool to turn large follower lists into clear decisions, without opening profile by profile.
+- [Compare - Following and Follower Repository](https://github.com/fernandoncidade/Compare_Following_Follower)
+- [Read the Compare - Following and Follower README](https://github.com/fernandoncidade/Compare_Following_Follower/blob/main/README.md)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Main Projects
