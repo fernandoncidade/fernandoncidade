@@ -2,13 +2,12 @@
 |-------------|-----------|-----------------|--------|---------|---------------|
 | Agenda_Avaliacoes_Academicas | Python | 855.4h | 10692 | 7 | 12.50 l/h |
 | Compression_Manager | Python | 1019.6h | 9804 | 13 | 9.62 l/h |
-| Eisenhower_Organizer | Python | 1763.5h | 22044 | 19 | 12.50 l/h |
 | Programa_Urna_Eletronica | JSON | 1488.8h | 22332 | 6 | 15.00 l/h |
 | Dashboard_Streamlit-Plotly-Pandas_Management | CSV | 128.7h | 2340 | 8 | 18.18 l/h |
 | Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve | CSV | 122.8h | 2232 | 3 | 18.18 l/h |
 | Dashboard_TkInter_Pareto-Diagram_ABC-Curve | CSV | 149.2h | 2712 | 1 | 18.18 l/h |
 | sloth-highlander-theme-1 | JSON | 604.1h | 9062 | 26 | 15.00 l/h |
-| fernandoncidade | HTML | 87.6h | 2986 | 190 | 34.09 l/h |
+| fernandoncidade | HTML | 89.3h | 3044 | 193 | 34.09 l/h |
 | Dashboard_Taipy | CSV | 12119.3h | 201988 | 3 | 16.67 l/h |
 | File_Manager | Text | 1069.9h | 16048 | 5 | 15.00 l/h |
 | Programa_Matriz_NM | XML | 18.1h | 326 | 2 | 18.01 l/h |
@@ -17,7 +16,6 @@
 | Programa_Multiplo | XML | 19.0h | 342 | 2 | 18.00 l/h |
 | Programa_Media_Aritmetica | XML | 42.8h | 770 | 2 | 17.99 l/h |
 | Programa_Determinar_Maior_Inteiro | XML | 16.7h | 300 | 2 | 17.96 l/h |
-| Linceu_Lighthouse | Qt Linguist | 8909.7h | 133646 | 13 | 15.00 l/h |
 | Economia_APP | Python | 1715.8h | 21448 | 15 | 12.50 l/h |
-| Lumen | Python | 2760.3h | 34504 | 7 | 12.50 l/h |
-| **TOTAL** | - | 32931.7h | 494302 | 328 | - |
+| Compare_Following_Follower | Python | 1748.5h | 21856 | 3 | 12.50 l/h |
+| **TOTAL** | - | 21248.4h | 326022 | 295 | - |
