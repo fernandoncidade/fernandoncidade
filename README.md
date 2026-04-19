@@ -29,7 +29,7 @@
 
 ### 🕒 Total de Tempo Trabalhado: 21250.0h <!-- TOTAL_HOURS_PLACEHOLDER -->
 ### 📝 Total de Linhas Escritas: 326072 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total de Commits: 308 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 💻 Total de Commits: 309 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -39,13 +39,13 @@
 |-------------|-----------|-------|--------|---------|---------------|
 | 📅 **Agenda Avaliações Acadêmicas** | Python | 855.4h <!-- AGENDA_HOURS --> | 10692 <!-- AGENDA_LINES --> | 7 <!-- AGENDA_COMMITS --> | 12.50 <!-- AGENDA_PROD --> |
 | 🗜️ **Compression Manager** | Python | 1019.6h <!-- COMPRESSION_HOURS --> | 9804 <!-- COMPRESSION_LINES --> | 13 <!-- COMPRESSION_COMMITS --> | 9.62 <!-- COMPRESSION_PROD --> |
-| 📋 **Eisenhower Organizer** | Python | h <!-- EISENHOWER_HOURS --> |     <!-- EISENHOWER_LINES --> |     <!-- EISENHOWER_COMMITS --> |     <!-- EISENHOWER_PROD --> |
+| 📋 **Eisenhower Organizer** | Python | h <!-- EISENHOWER_HOURS --> |      <!-- EISENHOWER_LINES --> |      <!-- EISENHOWER_COMMITS --> |      <!-- EISENHOWER_PROD --> |
 | 🗳️ **Programa Urna Eletrônica** | C++ | 1488.8h <!-- URNA_HOURS --> | 22332 <!-- URNA_LINES --> | 6 <!-- URNA_COMMITS --> | 15.00 <!-- URNA_PROD --> |
 | 📊 **Dashboard Streamlit Management** | Python | 128.7h <!-- MANEGEMENT_HOURS --> | 2340 <!-- MANEGEMENT_LINES --> | 8 <!-- MANEGEMENT_COMMITS --> | 18.18 <!-- MANEGEMENT_PROD --> |
 | 📈 **Dashboard Pareto/ABC Streamlit** | Python | 122.8h <!-- STREAMLIT_HOURS --> | 2232 <!-- STREAMLIT_LINES --> | 3 <!-- STREAMLIT_COMMITS --> | 18.18 <!-- STREAMLIT_PROD --> |
 | 🖥️ **Dashboard TkInter Pareto/ABC** | Python | 149.2h <!-- PARETO_HOURS --> | 2712 <!-- PARETO_LINES --> | 1 <!-- PARETO_COMMITS --> | 18.18 <!-- PARETO_PROD --> |
 | 📊 **Dashboard Taipy** | Python | 12119.3h <!-- TAIPY_HOURS --> | 201988 <!-- TAIPY_LINES --> | 3 <!-- TAIPY_COMMITS --> | 16.67 <!-- TAIPY_PROD --> |
-| 🔦 **Linceu Lighthouse** | Python | h <!-- LIGHTHOUSE_HOURS --> |     <!-- LIGHTHOUSE_LINES --> |     <!-- LIGHTHOUSE_COMMITS --> |     <!-- LIGHTHOUSE_PROD --> |
+| 🔦 **Linceu Lighthouse** | Python | h <!-- LIGHTHOUSE_HOURS --> |      <!-- LIGHTHOUSE_LINES --> |      <!-- LIGHTHOUSE_COMMITS --> |      <!-- LIGHTHOUSE_PROD --> |
 | 🗂️ **File Manager** | C++ | 1069.9h <!-- FILEMANAGER_HOURS --> | 16048 <!-- FILEMANAGER_LINES --> | 5 <!-- FILEMANAGER_COMMITS --> | 15.00 <!-- FILEMANAGER_PROD --> |
 | 🧮 **Programa Matriz NM** | C++ | 18.1h <!-- MATRIZNM_HOURS --> | 326 <!-- MATRIZNM_LINES --> | 2 <!-- MATRIZNM_COMMITS --> | 18.01 <!-- MATRIZNM_PROD --> |
 | 🧮 **Programa Todos Tipos Matrizes** | C++ | 24.8h <!-- MATRIZES_HOURS --> | 446 <!-- MATRIZES_LINES --> | 2 <!-- MATRIZES_COMMITS --> | 17.98 <!-- MATRIZES_PROD --> |
@@ -54,9 +54,9 @@
 | 📏 **Programa Média Aritmética** | C++ | 42.8h <!-- MEDIAARIT_HOURS --> | 770 <!-- MEDIAARIT_LINES --> | 2 <!-- MEDIAARIT_COMMITS --> | 17.99 <!-- MEDIAARIT_PROD --> |
 | 🔝 **Programa Determinar Maior Inteiro** | C++ | 16.7h <!-- MAIORINT_HOURS --> | 300 <!-- MAIORINT_LINES --> | 2 <!-- MAIORINT_COMMITS --> | 17.96 <!-- MAIORINT_PROD --> |
 | 🎨 **sloth-highlander-theme-1** | CSS/HTML | 604.1h <!-- SLOTH_HOURS --> | 9062 <!-- SLOTH_LINES --> | 26 <!-- SLOTH_COMMITS --> | 15.00 <!-- SLOTH_PROD --> |
-| 📄 **README do Perfil** | Markdown | 90.6h <!-- README_HOURS --> | 3090 <!-- README_LINES --> | 205 <!-- README_COMMITS --> | 34.11 <!-- README_PROD --> |
+| 📄 **README do Perfil** | Markdown | 90.6h <!-- README_HOURS --> | 3090 <!-- README_LINES --> | 206 <!-- README_COMMITS --> | 34.11 <!-- README_PROD --> |
 | 💼 **Economia APP** | Python | 1715.8h <!-- ECONOMIA_HOURS --> | 21448 <!-- ECONOMIA_LINES --> | 15 <!-- ECONOMIA_COMMITS --> | 12.50 <!-- ECONOMIA_PROD --> |
-| 🌟 **Lumen** | Python | h <!-- LUMEN_HOURS --> |     <!-- LUMEN_LINES --> |     <!-- LUMEN_COMMITS --> |     <!-- LUMEN_PROD --> |
+| 🌟 **Lumen** | Python | h <!-- LUMEN_HOURS --> |      <!-- LUMEN_LINES --> |      <!-- LUMEN_COMMITS --> |      <!-- LUMEN_PROD --> |
 | 👥 **Compare - Following and Follower** | Python | 1748.8h <!-- COMPARE_HOURS --> |  21860 <!-- COMPARE_LINES --> |  4 <!-- COMPARE_COMMITS --> |  12.50 <!-- COMPARE_PROD --> |
 
 ## 🌻 Sobre Mim 🌻
@@ -220,7 +220,7 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 
 ### 🕒 Total Working Time: 21250.0h <!-- TOTAL_HOURS_PLACEHOLDER -->
 ### 📝 Total Lines Written: 326072 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total Commits: 308 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 💻 Total Commits: 309 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -230,13 +230,13 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 |------------|----------|-------|-------|---------|--------------|
 | 📅 **Academic Evaluations Scheduler** | Python | 855.4h <!-- AGENDA_HOURS --> | 10692 <!-- AGENDA_LINES --> | 7 <!-- AGENDA_COMMITS --> | 12.50 <!-- AGENDA_PROD --> |
 | 🗜️ **Compression Manager** | Python | 1019.6h <!-- COMPRESSION_HOURS --> | 9804 <!-- COMPRESSION_LINES --> | 13 <!-- COMPRESSION_COMMITS --> | 9.62 <!-- COMPRESSION_PROD --> |
-| 📋 **Eisenhower Organizer** | Python | h <!-- EISENHOWER_HOURS --> |     <!-- EISENHOWER_LINES --> |     <!-- EISENHOWER_COMMITS --> |     <!-- EISENHOWER_PROD --> |
+| 📋 **Eisenhower Organizer** | Python | h <!-- EISENHOWER_HOURS --> |      <!-- EISENHOWER_LINES --> |      <!-- EISENHOWER_COMMITS --> |      <!-- EISENHOWER_PROD --> |
 | 🗳️ **Electronic Ballot Program** | C++ | 1488.8h <!-- URNA_HOURS --> | 22332 <!-- URNA_LINES --> | 6 <!-- URNA_COMMITS --> | 15.00 <!-- URNA_PROD --> |
 | 📊 **Dashboard Streamlit Management** | Python | 128.7h <!-- MANEGEMENT_HOURS --> | 2340 <!-- MANEGEMENT_LINES --> | 8 <!-- MANEGEMENT_COMMITS --> | 18.18 <!-- MANEGEMENT_PROD --> |
 | 📈 **Pareto/ABC Streamlit Dashboard** | Python | 122.8h <!-- STREAMLIT_HOURS --> | 2232 <!-- STREAMLIT_LINES --> | 3 <!-- STREAMLIT_COMMITS --> | 18.18 <!-- STREAMLIT_PROD --> |
 | 🖥️ **TkInter Pareto/ABC Dashboard** | Python | 149.2h <!-- PARETO_HOURS --> | 2712 <!-- PARETO_LINES --> | 1 <!-- PARETO_COMMITS --> | 18.18 <!-- PARETO_PROD --> |
 | 📊 **Taipy Dashboard** | Python | 12119.3h <!-- TAIPY_HOURS --> | 201988 <!-- TAIPY_LINES --> | 3 <!-- TAIPY_COMMITS --> | 16.67 <!-- TAIPY_PROD --> |
-| 🔦 **Linceu Lighthouse** | Python | h <!-- LIGHTHOUSE_HOURS --> |     <!-- LIGHTHOUSE_LINES --> |     <!-- LIGHTHOUSE_COMMITS --> |     <!-- LIGHTHOUSE_PROD --> |
+| 🔦 **Linceu Lighthouse** | Python | h <!-- LIGHTHOUSE_HOURS --> |      <!-- LIGHTHOUSE_LINES --> |      <!-- LIGHTHOUSE_COMMITS --> |      <!-- LIGHTHOUSE_PROD --> |
 | 🗂️ **File Manager** | C++ | 1069.9h <!-- FILEMANAGER_HOURS --> | 16048 <!-- FILEMANAGER_LINES --> | 5 <!-- FILEMANAGER_COMMITS --> | 15.00 <!-- FILEMANAGER_PROD --> |
 | 🧮 **Matrix NM Program** | C++ | 18.1h <!-- MATRIZNM_HOURS --> | 326 <!-- MATRIZNM_LINES --> | 2 <!-- MATRIZNM_COMMITS --> | 18.01 <!-- MATRIZNM_PROD --> |
 | 🧮 **All Types of Matrices Program** | C++ | 24.8h <!-- MATRIZES_HOURS --> | 446 <!-- MATRIZES_LINES --> | 2 <!-- MATRIZES_COMMITS --> | 17.98 <!-- MATRIZES_PROD --> |
@@ -245,9 +245,9 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 | 📏 **Arithmetic Mean Program** | C++ | 42.8h <!-- MEDIAARIT_HOURS --> | 770 <!-- MEDIAARIT_LINES --> | 2 <!-- MEDIAARIT_COMMITS --> | 17.99 <!-- MEDIAARIT_PROD --> |
 | 🔝 **Find Largest Integer Program** | C++ | 16.7h <!-- MAIORINT_HOURS --> | 300 <!-- MAIORINT_LINES --> | 2 <!-- MAIORINT_COMMITS --> | 17.96 <!-- MAIORINT_PROD --> |
 | 🎨 **sloth-highlander-theme-1** | CSS/HTML | 604.1h <!-- SLOTH_HOURS --> | 9062 <!-- SLOTH_LINES --> | 26 <!-- SLOTH_COMMITS --> | 15.00 <!-- SLOTH_PROD --> |
-| 📄 **Profile README** | Markdown | 90.6h <!-- README_HOURS --> | 3090 <!-- README_LINES --> | 205 <!-- README_COMMITS --> | 34.11 <!-- README_PROD --> |
+| 📄 **Profile README** | Markdown | 90.6h <!-- README_HOURS --> | 3090 <!-- README_LINES --> | 206 <!-- README_COMMITS --> | 34.11 <!-- README_PROD --> |
 | 💼 **Economia APP** | Python | 1715.8h <!-- ECONOMIA_HOURS --> | 21448 <!-- ECONOMIA_LINES --> | 15 <!-- ECONOMIA_COMMITS --> | 12.50 <!-- ECONOMIA_PROD --> |
-| 🌟 **Lumen** | Python | h <!-- LUMEN_HOURS --> |     <!-- LUMEN_LINES --> |     <!-- LUMEN_COMMITS --> |     <!-- LUMEN_PROD --> |
+| 🌟 **Lumen** | Python | h <!-- LUMEN_HOURS --> |      <!-- LUMEN_LINES --> |      <!-- LUMEN_COMMITS --> |      <!-- LUMEN_PROD --> |
 | 👥 **Compare - Following and Follower** | Python | 1748.8h <!-- COMPARE_HOURS --> |  21860 <!-- COMPARE_LINES --> |  4 <!-- COMPARE_COMMITS --> |  12.50 <!-- COMPARE_PROD --> |
 
 ## 🌻 About Me 🌻
