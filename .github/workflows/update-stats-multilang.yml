@@ -91,6 +91,21 @@ jobs:
           PY
           }
 
+          display_language () {
+            local repo_name="$1"
+            local detected_language="$2"
+
+            case "$repo_name" in
+              "Agenda_Avaliacoes_Academicas_cpp") echo "C++" ;;
+              "File_Manager") echo "C++" ;;
+              "Launcher_EBook") echo "C++" ;;
+              Programa_*) echo "C++" ;;
+              Dashboard_*) echo "Python" ;;
+              "sloth-highlander-theme-1") echo "CSS/HTML" ;;
+              *) echo "${detected_language:-N/A}" ;;
+            esac
+          }
+
           mapfile -t repositories < <(fetch_public_repositories)
 
           if [ "${#repositories[@]}" -eq 0 ]; then
@@ -106,11 +121,15 @@ jobs:
             echo "| Repositório | Linguagem | Horas Estimadas | Linhas | Commits | Produtividade |"
             echo "|-------------|-----------|-----------------|--------|---------|---------------|"
           } > "$stats_file"
-          cp "$stats_file" "$stats_pt_file"
 
           {
-            echo "| Repository | Language | Estimated Hours | Lines | Commits | Productivity |"
-            echo "|------------|----------|-----------------|-------|---------|--------------|"
+            echo "| Repositório | Linguagem | Horas | Linhas | Commits | Produtividade (L/H) |"
+            echo "|-------------|-----------|-------|--------|---------|---------------|"
+          } > "$stats_pt_file"
+
+          {
+            echo "| Repository | Language | Hours | Lines | Commits | Productivity (L/H) |"
+            echo "|------------|----------|-------|-------|---------|--------------|"
           } > "$stats_en_file"
 
           for repo_info in "${repositories[@]}"; do
@@ -125,18 +144,70 @@ jobs:
 
             cd "repos/$repo"
 
-            cloc_output="$(cloc --exclude-dir=node_modules,.git --quiet --csv . || true)"
-            lines="$(echo "$cloc_output" | awk -F',' 'NR>1 {sum += $5} END {print sum+0}')"
-            lines="${lines:-0}"
+            cloc_csv="$(mktemp)"
+            if ! cloc --exclude-dir=node_modules,.git --quiet --csv --out="$cloc_csv" .; then
+              : > "$cloc_csv"
+            fi
 
-            # Linguagem dominante (ignorando SUM)
-            linguagem="$(echo "$cloc_output" | awk -F',' 'NR>1 && $1!="SUM" && $5>0 {if ($5>max) {max=$5; lang=$1}} END {print (lang=="" ? "N/A" : lang)}')"
-            linguagem="${linguagem:-N/A}"
+            IFS=$'\t' read -r lines detected_language < <(python3 - "$cloc_csv" <<'PY'
+          import csv
+          import sys
+          from pathlib import Path
+
+          def to_int(value):
+              try:
+                  return int(float((value or "0").strip()))
+              except ValueError:
+                  return 0
+
+          path = Path(sys.argv[1])
+          if not path.exists() or path.stat().st_size == 0:
+              print("0\tN/A")
+              raise SystemExit
+
+          with path.open(newline="", encoding="utf-8", errors="replace") as handle:
+              rows = list(csv.reader(handle))
+
+          if not rows:
+              print("0\tN/A")
+              raise SystemExit
+
+          header = [column.strip().lower() for column in rows[0]]
+          language_idx = header.index("language") if "language" in header else 0
+          code_idx = header.index("code") if "code" in header else 4
+
+          total_lines = 0
+          dominant_language = "N/A"
+          dominant_lines = -1
+
+          for row in rows[1:]:
+              if len(row) <= max(language_idx, code_idx):
+                  continue
+
+              language = row[language_idx].strip() or "N/A"
+              code = to_int(row[code_idx])
+
+              if language.upper().startswith("SUM"):
+                  continue
+
+              total_lines += code
+              if code > dominant_lines:
+                  dominant_language = language
+                  dominant_lines = code
+
+          print(f"{total_lines}\t{dominant_language}")
+          PY
+            )
+            rm -f "$cloc_csv"
+
+            lines="${lines:-0}"
+            detected_language="${detected_language:-N/A}"
+            linguagem="$(display_language "$repo" "$detected_language")"
 
             commits="$(git rev-list --count HEAD 2>/dev/null || echo 0)"
             commits="${commits:-0}"
 
-            case "$linguagem" in
+            case "$detected_language" in
               "Python") taxa_base=15 ;;
               "JavaScript") taxa_base=20 ;;
               "C++") taxa_base=10 ;;

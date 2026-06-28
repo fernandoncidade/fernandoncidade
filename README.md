@@ -27,9 +27,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: 21442.0h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total de Linhas Escritas: 328472 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total de Commits: 329 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total de Tempo Trabalhado: 21789.9h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Linhas Escritas: 331635 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: 330 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -50,6 +50,7 @@
 | fernandoncidade | HTML | 90.6h | 3090 | 216 | 34.11 l/h |
 | Dashboard_Taipy | Python | 12119.3h | 201988 | 3 | 16.67 l/h |
 | File_Manager | C++ | 1069.9h | 16048 | 5 | 15.00 l/h |
+| Launcher_EBook | C++ | 347.9h | 3163 | 1 | 9.09 l/h |
 | Programa_Matriz_NM | C++ | 18.1h | 326 | 2 | 18.01 l/h |
 | Programa_Todos_Tipos_Matrizes | C++ | 24.8h | 446 | 2 | 17.98 l/h |
 | Programa_Quociente_Resto | C++ | 15.6h | 280 | 2 | 17.95 l/h |
@@ -58,7 +59,7 @@
 | Programa_Determinar_Maior_Inteiro | C++ | 16.7h | 300 | 2 | 17.96 l/h |
 | Economia_APP | Python | 1715.8h | 21448 | 15 | 12.50 l/h |
 | Compare_Following_Follower | Python | 1748.8h | 21860 | 4 | 12.50 l/h |
-| **TOTAL** | - | 21442.0h | 328472 | 329 | - |
+| **TOTAL** | - | 21789.9h | 331635 | 330 | - |
 <!-- PUBLIC_REPOS_STATS_PT_END -->
 
 ## 🌻 Sobre Mim 🌻
@@ -135,6 +136,7 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 
 - [**Agenda Avaliações Acadêmicas**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas): Sistema para gerenciamento de atividades avaliativas em ambientes educacionais, usando PySide6 e módulos personalizados.
 - [**Compression Manager**](https://github.com/fernandoncidade/Compression_Manager): Aplicativo de backup e compressão de arquivos com interface gráfica intuitiva, suporte a múltiplos formatos.
+- [**Launcher EBook**](https://github.com/fernandoncidade/Launcher_EBook): Aplicação desktop em C++/Qt6 para catalogar e-books e documentos locais, exibir metadados básicos, reportar estatísticas e abrir arquivos com aplicativos associados do sistema ou com um executável escolhido pelo usuário.
 - [**Programa Urna Eletrônica**](https://github.com/fernandoncidade/Programa_Urna_Eletronica): Sistema de votação eletrônica em C++, simulando urna eletrônica com apuração automática.
 
 ## 📊 Dashboards de Análise de Dados
@@ -214,9 +216,9 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 
 <div align="center">
 
-### 🕒 Total Working Time: 21442.0h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total Lines Written: 328472 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total Commits: 329 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total Working Time: 21789.9h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total Lines Written: 331635 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total Commits: 330 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -237,6 +239,7 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 | fernandoncidade | HTML | 90.6h | 3090 | 216 | 34.11 l/h |
 | Dashboard_Taipy | Python | 12119.3h | 201988 | 3 | 16.67 l/h |
 | File_Manager | C++ | 1069.9h | 16048 | 5 | 15.00 l/h |
+| Launcher_EBook | C++ | 347.9h | 3163 | 1 | 9.09 l/h |
 | Programa_Matriz_NM | C++ | 18.1h | 326 | 2 | 18.01 l/h |
 | Programa_Todos_Tipos_Matrizes | C++ | 24.8h | 446 | 2 | 17.98 l/h |
 | Programa_Quociente_Resto | C++ | 15.6h | 280 | 2 | 17.95 l/h |
@@ -245,7 +248,7 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 | Programa_Determinar_Maior_Inteiro | C++ | 16.7h | 300 | 2 | 17.96 l/h |
 | Economia_APP | Python | 1715.8h | 21448 | 15 | 12.50 l/h |
 | Compare_Following_Follower | Python | 1748.8h | 21860 | 4 | 12.50 l/h |
-| **TOTAL** | - | 21442.0h | 328472 | 329 | - |
+| **TOTAL** | - | 21789.9h | 331635 | 330 | - |
 <!-- PUBLIC_REPOS_STATS_EN_END -->
 
 ## 🌻 About Me 🌻
@@ -322,6 +325,7 @@ Compare - Following and Follower is a desktop app to compare, in a practical way
 
 - [**Academic Evaluations Scheduler**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas): System for managing academic assessment activities, using PySide6 and custom modules.
 - [**Compression Manager**](https://github.com/fernandoncidade/Compression_Manager): Applications for backup and file compression with an intuitive GUI, supporting multiple formats.
+- [**Launcher EBook**](https://github.com/fernandoncidade/Launcher_EBook): C++/Qt6 desktop application for cataloging local e-books and documents, displaying basic metadata, reporting statistics, and opening files with system-associated apps or a user-selected executable.
 - [**Electronic Ballot Program**](https://github.com/fernandoncidade/Programa_Urna_Eletronica): Electronic voting system in C++, simulating a ballot box with automatic tallying.
 
 ## 📊 Data Analysis Dashboards
