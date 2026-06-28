@@ -87,7 +87,7 @@ Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento 
 Aplicativo com foco em soluções leves para visualização/organização de dados e utilitários de apoio ao fluxo de trabalho.
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9N70CLLMVRPN)
 
-- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+- ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt)
 
 ## 📋 Destaque de Projeto: Eisenhower Organizer
 
@@ -101,7 +101,7 @@ Aplicativo com foco em soluções leves para visualização/organização de dad
 EISENHOWER ORGANIZER é um aplicativo leve para organizar tarefas usando a Matriz de Eisenhower (Importante/Urgente). Permite criar, classificar, marcar como concluídas e exportar/importar tarefas de forma simples e rápida.
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9P289X0185C3)
 
-- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+- ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt)
 
 ## 🏮 Destaque de Projeto: Linceu Lighthouse
 
@@ -115,7 +115,7 @@ EISENHOWER ORGANIZER é um aplicativo leve para organizar tarefas usando a Matri
 Ferramenta avançada de monitoramento de integridade de arquivos (FIM), com interface multilíngue, estatísticas detalhadas e exportação flexível de dados.
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9NN8Z5Z700TM)
 
-- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+- ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt)
 
 ## 👥 Destaque de Projeto: Compare - Following and Follower
 
@@ -274,7 +274,7 @@ I'm a software developer with experience in Python, C++, and GUI development. I'
 Application focused on lightweight solutions for data visualization/organization and utilities to support the workflow.
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9N70CLLMVRPN)
 
-- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+- ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt)
 
 ## 📋 Project Highlight: Eisenhower Organizer
 
@@ -288,7 +288,7 @@ Application focused on lightweight solutions for data visualization/organization
 EISENHOWER ORGANIZER is a lightweight application for organizing tasks using the Eisenhower Matrix (Important/Urgent). It allows you to create, sort, mark as completed, and export/import tasks quickly and easily.
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9P289X0185C3)
 
-- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+- ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt)
 
 ## 🏮 Project Highlight: Linceu Lighthouse
 
@@ -302,7 +302,7 @@ EISENHOWER ORGANIZER is a lightweight application for organizing tasks using the
 Advanced file integrity monitoring tool (FIM) with multilingual interface, detailed statistics, and flexible data export.
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9NN8Z5Z700TM)
 
-- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
+- ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt)
 
 ## 👥 Project Highlight: Compare - Following and Follower
 
