@@ -1,3 +1,21 @@
 | Repository | Language | Estimated Hours | Lines | Commits | Productivity |
 |------------|----------|-----------------|-------|---------|--------------|
-| **TOTAL** | - | 0h | 0 | 0 | - |
+| Agenda_Avaliacoes_Academicas | Python | 1047.2h | 13090 | 11 | 12.50 l/h |
+| Compression_Manager | Python | 1019.6h | 9804 | 13 | 9.62 l/h |
+| Programa_Urna_Eletronica | JSON | 1488.8h | 22332 | 6 | 15.00 l/h |
+| Dashboard_Streamlit-Plotly-Pandas_Management | CSV | 128.7h | 2340 | 8 | 18.18 l/h |
+| Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve | CSV | 122.8h | 2232 | 3 | 18.18 l/h |
+| Dashboard_TkInter_Pareto-Diagram_ABC-Curve | CSV | 149.2h | 2712 | 1 | 18.18 l/h |
+| sloth-highlander-theme-1 | JSON | 604.3h | 9064 | 32 | 15.00 l/h |
+| fernandoncidade | HTML | 90.6h | 3090 | 216 | 34.11 l/h |
+| Dashboard_Taipy | CSV | 12119.3h | 201988 | 3 | 16.67 l/h |
+| File_Manager | Text | 1069.9h | 16048 | 5 | 15.00 l/h |
+| Programa_Matriz_NM | XML | 18.1h | 326 | 2 | 18.01 l/h |
+| Programa_Todos_Tipos_Matrizes | XML | 24.8h | 446 | 2 | 17.98 l/h |
+| Programa_Quociente_Resto | XML | 15.6h | 280 | 2 | 17.95 l/h |
+| Programa_Multiplo | XML | 19.0h | 342 | 2 | 18.00 l/h |
+| Programa_Media_Aritmetica | XML | 42.8h | 770 | 2 | 17.99 l/h |
+| Programa_Determinar_Maior_Inteiro | XML | 16.7h | 300 | 2 | 17.96 l/h |
+| Economia_APP | Python | 1715.8h | 21448 | 15 | 12.50 l/h |
+| Compare_Following_Follower | Python | 1748.8h | 21860 | 4 | 12.50 l/h |
+| **TOTAL** | - | 21442.0h | 328472 | 329 | - |

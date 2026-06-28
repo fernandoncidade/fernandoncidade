@@ -35,16 +35,19 @@ jobs:
 
           mkdir -p repos
           stats_file="$GITHUB_WORKSPACE/main-repo/stats.md"
+          stats_pt_file="$GITHUB_WORKSPACE/main-repo/stats_pt.md"
+          stats_en_file="$GITHUB_WORKSPACE/main-repo/stats_en.md"
 
           clone_repo_with_retry () {
             local repo_name="$1"
-            local destination="$2"
+            local clone_url="$2"
+            local destination="$3"
             local attempt
 
             rm -rf "$destination"
 
             for attempt in 1 2 3; do
-              if git clone "https://github.com/fernandoncidade/${repo_name}.git" "$destination"; then
+              if git clone "$clone_url" "$destination"; then
                 return 0
               fi
 
@@ -56,29 +59,44 @@ jobs:
             return 1
           }
 
-          repositories=(
-            "Agenda_Avaliacoes_Academicas"
-            "Compression_Manager"
-            "Eisenhower_Organizer"
-            "Programa_Urna_Eletronica"
-            "Dashboard_Streamlit-Plotly-Pandas_Management"
-            "Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve"
-            "Dashboard_TkInter_Pareto-Diagram_ABC-Curve"
-            "sloth-highlander-theme-1"
-            "fernandoncidade"
-            "Dashboard_Taipy"
-            "File_Manager"
-            "Programa_Matriz_NM"
-            "Programa_Todos_Tipos_Matrizes"
-            "Programa_Quociente_Resto"
-            "Programa_Multiplo"
-            "Programa_Media_Aritmetica"
-            "Programa_Determinar_Maior_Inteiro"
-            "Linceu_Lighthouse"
-            "Economia_APP"
-            "Lumen"
-            "Compare_Following_Follower"
-          )
+          fetch_public_repositories () {
+            python3 - <<'PY'
+          import json
+          import urllib.request
+
+          headers = {
+              "Accept": "application/vnd.github+json",
+              "User-Agent": "fernandoncidade-public-stats",
+          }
+
+          page = 1
+          while True:
+              url = (
+                  "https://api.github.com/users/fernandoncidade/repos"
+                  f"?per_page=100&type=owner&sort=full_name&page={page}"
+              )
+              request = urllib.request.Request(url, headers=headers)
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  repos = json.load(response)
+
+              if not repos:
+                  break
+
+              for repo in repos:
+                  if repo.get("private") or repo.get("fork"):
+                      continue
+                  print(f"{repo['name']}\t{repo['clone_url']}")
+
+              page += 1
+          PY
+          }
+
+          mapfile -t repositories < <(fetch_public_repositories)
+
+          if [ "${#repositories[@]}" -eq 0 ]; then
+            echo "Nenhum repositório público encontrado pela API do GitHub."
+            exit 1
+          fi
 
           total_lines=0
           total_commits=0
@@ -88,11 +106,19 @@ jobs:
             echo "| Repositório | Linguagem | Horas Estimadas | Linhas | Commits | Produtividade |"
             echo "|-------------|-----------|-----------------|--------|---------|---------------|"
           } > "$stats_file"
+          cp "$stats_file" "$stats_pt_file"
 
-          for repo in "${repositories[@]}"; do
+          {
+            echo "| Repository | Language | Estimated Hours | Lines | Commits | Productivity |"
+            echo "|------------|----------|-----------------|-------|---------|--------------|"
+          } > "$stats_en_file"
+
+          for repo_info in "${repositories[@]}"; do
+            IFS=$'\t' read -r repo clone_url <<< "$repo_info"
+
             echo "Processando repositório: $repo"
 
-            if ! clone_repo_with_retry "$repo" "repos/$repo"; then
+            if ! clone_repo_with_retry "$repo" "$clone_url" "repos/$repo"; then
               echo "Falha ao clonar $repo (pulando)"
               continue
             fi
@@ -104,7 +130,7 @@ jobs:
             lines="${lines:-0}"
 
             # Linguagem dominante (ignorando SUM)
-            linguagem="$(echo "$cloc_output" | awk -F',' 'NR>1 && $2!="SUM" && $5>0 {if ($5>max) {max=$5; lang=$2}} END {print (lang=="" ? "N/A" : lang)}')"
+            linguagem="$(echo "$cloc_output" | awk -F',' 'NR>1 && $1!="SUM" && $5>0 {if ($5>max) {max=$5; lang=$1}} END {print (lang=="" ? "N/A" : lang)}')"
             linguagem="${linguagem:-N/A}"
 
             commits="$(git rev-list --count HEAD 2>/dev/null || echo 0)"
@@ -143,18 +169,8 @@ jobs:
             produtividade="$(awk "BEGIN {printf \"%.2f\", $lines / $horas}")"
 
             echo "| $repo | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> "$stats_file"
-
-            # Repo env robusto: manter só A-Z0-9_
-            repo_env="$(echo "$repo" \
-              | sed -e 's/[^[:alnum:]]/_/g' \
-              | tr '[:lower:]' '[:upper:]')"
-
-            {
-              echo "${repo_env}_LINES=$lines"
-              echo "${repo_env}_COMMITS=$commits"
-              echo "${repo_env}_HOURS=$horas"
-              echo "${repo_env}_PROD=$produtividade"
-            } >> "$GITHUB_ENV"
+            echo "| $repo | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> "$stats_pt_file"
+            echo "| $repo | $linguagem | ${horas}h | $lines | $commits | $produtividade l/h |" >> "$stats_en_file"
 
             total_lines=$((total_lines + lines))
             total_commits=$((total_commits + commits))
@@ -171,6 +187,8 @@ jobs:
           } >> "$GITHUB_ENV"
 
           echo "| **TOTAL** | - | ${total_horas}h | $total_lines | $total_commits | - |" >> "$stats_file"
+          echo "| **TOTAL** | - | ${total_horas}h | $total_lines | $total_commits | - |" >> "$stats_pt_file"
+          echo "| **TOTAL** | - | ${total_horas}h | $total_lines | $total_commits | - |" >> "$stats_en_file"
 
       - name: Atualizar README (idempotente)
         shell: bash
@@ -188,112 +206,40 @@ jobs:
           replace_marker "TOTAL_COMMITS_PLACEHOLDER" "${{ env.TOTAL_COMMITS }}"
           replace_marker "TOTAL_HOURS_PLACEHOLDER" "${{ env.TOTAL_HOURS }}h"
 
-          replace_marker "AGENDA_LINES" "${{ env.AGENDA_AVALIACOES_ACADEMICAS_LINES }}"
-          replace_marker "AGENDA_COMMITS" "${{ env.AGENDA_AVALIACOES_ACADEMICAS_COMMITS }}"
-          replace_marker "AGENDA_HOURS" "${{ env.AGENDA_AVALIACOES_ACADEMICAS_HOURS }}h"
-          replace_marker "AGENDA_PROD" "${{ env.AGENDA_AVALIACOES_ACADEMICAS_PROD }}"
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
 
-          replace_marker "COMPRESSION_LINES" "${{ env.COMPRESSION_MANAGER_LINES }}"
-          replace_marker "COMPRESSION_COMMITS" "${{ env.COMPRESSION_MANAGER_COMMITS }}"
-          replace_marker "COMPRESSION_HOURS" "${{ env.COMPRESSION_MANAGER_HOURS }}h"
-          replace_marker "COMPRESSION_PROD" "${{ env.COMPRESSION_MANAGER_PROD }}"
+          readme_path = Path("README.md")
+          readme = readme_path.read_text(encoding="utf-8")
 
-          replace_marker "EISENHOWER_LINES" "${{ env.EISENHOWER_ORGANIZER_LINES }}"
-          replace_marker "EISENHOWER_COMMITS" "${{ env.EISENHOWER_ORGANIZER_COMMITS }}"
-          replace_marker "EISENHOWER_HOURS" "${{ env.EISENHOWER_ORGANIZER_HOURS }}h"
-          replace_marker "EISENHOWER_PROD" "${{ env.EISENHOWER_ORGANIZER_PROD }}"
+          blocks = [
+              (
+                  "PUBLIC_REPOS_STATS_PT_START",
+                  "PUBLIC_REPOS_STATS_PT_END",
+                  Path("stats_pt.md").read_text(encoding="utf-8").strip(),
+              ),
+              (
+                  "PUBLIC_REPOS_STATS_EN_START",
+                  "PUBLIC_REPOS_STATS_EN_END",
+                  Path("stats_en.md").read_text(encoding="utf-8").strip(),
+              ),
+          ]
 
-          replace_marker "URNA_LINES" "${{ env.PROGRAMA_URNA_ELETRONICA_LINES }}"
-          replace_marker "URNA_COMMITS" "${{ env.PROGRAMA_URNA_ELETRONICA_COMMITS }}"
-          replace_marker "URNA_HOURS" "${{ env.PROGRAMA_URNA_ELETRONICA_HOURS }}h"
-          replace_marker "URNA_PROD" "${{ env.PROGRAMA_URNA_ELETRONICA_PROD }}"
+          for start, end, body in blocks:
+              pattern = re.compile(
+                  rf"<!--\s*{re.escape(start)}\s*-->.*?<!--\s*{re.escape(end)}\s*-->",
+                  re.S,
+              )
+              replacement = f"<!-- {start} -->\n{body}\n<!-- {end} -->"
+              readme, count = pattern.subn(replacement, readme)
+              if count == 0:
+                  raise SystemExit(f"Marcadores não encontrados: {start}/{end}")
 
-          replace_marker "MANEGEMENT_LINES" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_LINES }}"
-          replace_marker "MANEGEMENT_COMMITS" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_COMMITS }}"
-          replace_marker "MANEGEMENT_HOURS" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_HOURS }}h"
-          replace_marker "MANEGEMENT_PROD" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_MANAGEMENT_PROD }}"
+          readme_path.write_text(readme, encoding="utf-8")
+          PY
 
-          replace_marker "STREAMLIT_LINES" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_LINES }}"
-          replace_marker "STREAMLIT_COMMITS" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_COMMITS }}"
-          replace_marker "STREAMLIT_HOURS" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_HOURS }}h"
-          replace_marker "STREAMLIT_PROD" "${{ env.DASHBOARD_STREAMLIT_PLOTLY_PANDAS_PARETO_DIAGRAM_ABC_CURVE_PROD }}"
-
-          replace_marker "PARETO_LINES" "${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_LINES }}"
-          replace_marker "PARETO_COMMITS" "${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_COMMITS }}"
-          replace_marker "PARETO_HOURS" "${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_HOURS }}h"
-          replace_marker "PARETO_PROD" "${{ env.DASHBOARD_TKINTER_PARETO_DIAGRAM_ABC_CURVE_PROD }}"
-
-          replace_marker "TAIPY_LINES" "${{ env.DASHBOARD_TAIPY_LINES }}"
-          replace_marker "TAIPY_COMMITS" "${{ env.DASHBOARD_TAIPY_COMMITS }}"
-          replace_marker "TAIPY_HOURS" "${{ env.DASHBOARD_TAIPY_HOURS }}h"
-          replace_marker "TAIPY_PROD" "${{ env.DASHBOARD_TAIPY_PROD }}"
-
-          replace_marker "LIGHTHOUSE_LINES" "${{ env.LINCEU_LIGHTHOUSE_LINES }}"
-          replace_marker "LIGHTHOUSE_COMMITS" "${{ env.LINCEU_LIGHTHOUSE_COMMITS }}"
-          replace_marker "LIGHTHOUSE_HOURS" "${{ env.LINCEU_LIGHTHOUSE_HOURS }}h"
-          replace_marker "LIGHTHOUSE_PROD" "${{ env.LINCEU_LIGHTHOUSE_PROD }}"
-
-          replace_marker "SLOTH_LINES" "${{ env.SLOTH_HIGHLANDER_THEME_1_LINES }}"
-          replace_marker "SLOTH_COMMITS" "${{ env.SLOTH_HIGHLANDER_THEME_1_COMMITS }}"
-          replace_marker "SLOTH_HOURS" "${{ env.SLOTH_HIGHLANDER_THEME_1_HOURS }}h"
-          replace_marker "SLOTH_PROD" "${{ env.SLOTH_HIGHLANDER_THEME_1_PROD }}"
-
-          replace_marker "README_LINES" "${{ env.FERNANDONCIDADE_LINES }}"
-          replace_marker "README_COMMITS" "${{ env.FERNANDONCIDADE_COMMITS }}"
-          replace_marker "README_HOURS" "${{ env.FERNANDONCIDADE_HOURS }}h"
-          replace_marker "README_PROD" "${{ env.FERNANDONCIDADE_PROD }}"
-
-          replace_marker "FILEMANAGER_LINES" "${{ env.FILE_MANAGER_LINES }}"
-          replace_marker "FILEMANAGER_COMMITS" "${{ env.FILE_MANAGER_COMMITS }}"
-          replace_marker "FILEMANAGER_HOURS" "${{ env.FILE_MANAGER_HOURS }}h"
-          replace_marker "FILEMANAGER_PROD" "${{ env.FILE_MANAGER_PROD }}"
-
-          replace_marker "MATRIZNM_LINES" "${{ env.PROGRAMA_MATRIZ_NM_LINES }}"
-          replace_marker "MATRIZNM_COMMITS" "${{ env.PROGRAMA_MATRIZ_NM_COMMITS }}"
-          replace_marker "MATRIZNM_HOURS" "${{ env.PROGRAMA_MATRIZ_NM_HOURS }}h"
-          replace_marker "MATRIZNM_PROD" "${{ env.PROGRAMA_MATRIZ_NM_PROD }}"
-
-          replace_marker "MATRIZES_LINES" "${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_LINES }}"
-          replace_marker "MATRIZES_COMMITS" "${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_COMMITS }}"
-          replace_marker "MATRIZES_HOURS" "${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_HOURS }}h"
-          replace_marker "MATRIZES_PROD" "${{ env.PROGRAMA_TODOS_TIPOS_MATRIZES_PROD }}"
-
-          replace_marker "QUOCRESTO_LINES" "${{ env.PROGRAMA_QUOCIENTE_RESTO_LINES }}"
-          replace_marker "QUOCRESTO_COMMITS" "${{ env.PROGRAMA_QUOCIENTE_RESTO_COMMITS }}"
-          replace_marker "QUOCRESTO_HOURS" "${{ env.PROGRAMA_QUOCIENTE_RESTO_HOURS }}h"
-          replace_marker "QUOCRESTO_PROD" "${{ env.PROGRAMA_QUOCIENTE_RESTO_PROD }}"
-
-          replace_marker "MULTIPLO_LINES" "${{ env.PROGRAMA_MULTIPLO_LINES }}"
-          replace_marker "MULTIPLO_COMMITS" "${{ env.PROGRAMA_MULTIPLO_COMMITS }}"
-          replace_marker "MULTIPLO_HOURS" "${{ env.PROGRAMA_MULTIPLO_HOURS }}h"
-          replace_marker "MULTIPLO_PROD" "${{ env.PROGRAMA_MULTIPLO_PROD }}"
-
-          replace_marker "MEDIAARIT_LINES" "${{ env.PROGRAMA_MEDIA_ARITMETICA_LINES }}"
-          replace_marker "MEDIAARIT_COMMITS" "${{ env.PROGRAMA_MEDIA_ARITMETICA_COMMITS }}"
-          replace_marker "MEDIAARIT_HOURS" "${{ env.PROGRAMA_MEDIA_ARITMETICA_HOURS }}h"
-          replace_marker "MEDIAARIT_PROD" "${{ env.PROGRAMA_MEDIA_ARITMETICA_PROD }}"
-
-          replace_marker "MAIORINT_LINES" "${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_LINES }}"
-          replace_marker "MAIORINT_COMMITS" "${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_COMMITS }}"
-          replace_marker "MAIORINT_HOURS" "${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_HOURS }}h"
-          replace_marker "MAIORINT_PROD" "${{ env.PROGRAMA_DETERMINAR_MAIOR_INTEIRO_PROD }}"
-
-          replace_marker "ECONOMIA_LINES" "${{ env.ECONOMIA_APP_LINES }}"
-          replace_marker "ECONOMIA_COMMITS" "${{ env.ECONOMIA_APP_COMMITS }}"
-          replace_marker "ECONOMIA_HOURS" "${{ env.ECONOMIA_APP_HOURS }}h"
-          replace_marker "ECONOMIA_PROD" "${{ env.ECONOMIA_APP_PROD }}"
-
-          replace_marker "LUMEN_LINES" "${{ env.LUMEN_LINES }}"
-          replace_marker "LUMEN_COMMITS" "${{ env.LUMEN_COMMITS }}"
-          replace_marker "LUMEN_HOURS" "${{ env.LUMEN_HOURS }}h"
-          replace_marker "LUMEN_PROD" "${{ env.LUMEN_PROD }}"
-
-          replace_marker "COMPARE_LINES" "${{ env.COMPARE_FOLLOWING_FOLLOWER_LINES }}"
-          replace_marker "COMPARE_COMMITS" "${{ env.COMPARE_FOLLOWING_FOLLOWER_COMMITS }}"
-          replace_marker "COMPARE_HOURS" "${{ env.COMPARE_FOLLOWING_FOLLOWER_HOURS }}h"
-          replace_marker "COMPARE_PROD" "${{ env.COMPARE_FOLLOWING_FOLLOWER_PROD }}"
-
-          git diff -- README.md stats.md || true
+          git diff -- README.md stats.md stats_pt.md stats_en.md || true
 
       - name: Sanity check (branch e status)
         shell: bash
@@ -316,6 +262,6 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
 
-          git add README.md stats.md
+          git add README.md stats.md stats_pt.md stats_en.md
           git commit -m "Atualiza estatísticas de código [skip ci]" || echo "No changes to commit"
           git push origin "$branch"

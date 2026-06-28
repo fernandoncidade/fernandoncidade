@@ -364,6 +364,34 @@
       enus: "Open repository"
     };
 
+    const PUBLIC_REPOS_FALLBACK = [
+      { name: "Agenda_Avaliacoes_Academicas", html_url: "https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" },
+      { name: "Agenda_Avaliacoes_Academicas_cpp", html_url: "https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas_cpp" },
+      { name: "Compare_Following_Follower", html_url: "https://github.com/fernandoncidade/Compare_Following_Follower" },
+      { name: "Compression_Manager", html_url: "https://github.com/fernandoncidade/Compression_Manager" },
+      { name: "Dashboard_Streamlit-Plotly-Pandas_Management", html_url: "https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management" },
+      { name: "Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve", html_url: "https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve" },
+      { name: "Dashboard_Taipy", html_url: "https://github.com/fernandoncidade/Dashboard_Taipy" },
+      { name: "Dashboard_TkInter_Pareto-Diagram_ABC-Curve", html_url: "https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve" },
+      { name: "Economia_APP", html_url: "https://github.com/fernandoncidade/Economia_APP" },
+      { name: "fernandoncidade", html_url: "https://github.com/fernandoncidade/fernandoncidade" },
+      { name: "File_Manager", html_url: "https://github.com/fernandoncidade/File_Manager" },
+      { name: "Launcher_EBook", html_url: "https://github.com/fernandoncidade/Launcher_EBook" },
+      { name: "Programa_Carteira_Motorista", html_url: "https://github.com/fernandoncidade/Programa_Carteira_Motorista" },
+      { name: "Programa_Determinar_Maior_Inteiro", html_url: "https://github.com/fernandoncidade/Programa_Determinar_Maior_Inteiro" },
+      { name: "Programa_Expressoes_Relacionais", html_url: "https://github.com/fernandoncidade/Programa_Expressoes_Relacionais" },
+      { name: "Programa_IMC", html_url: "https://github.com/fernandoncidade/Programa_IMC" },
+      { name: "Programa_Matriz_NM", html_url: "https://github.com/fernandoncidade/Programa_Matriz_NM" },
+      { name: "Programa_Media_Aritmetica", html_url: "https://github.com/fernandoncidade/Programa_Media_Aritmetica" },
+      { name: "Programa_Multiplo", html_url: "https://github.com/fernandoncidade/Programa_Multiplo" },
+      { name: "Programa_Quociente_Resto", html_url: "https://github.com/fernandoncidade/Programa_Quociente_Resto" },
+      { name: "Programa_Todos_Tipos_Matrizes", html_url: "https://github.com/fernandoncidade/Programa_Todos_Tipos_Matrizes" },
+      { name: "Programa_Urna_Eletronica", html_url: "https://github.com/fernandoncidade/Programa_Urna_Eletronica" },
+      { name: "sloth-highlander-theme-1", html_url: "https://github.com/fernandoncidade/sloth-highlander-theme-1" }
+    ];
+    let publicReposRendered = false;
+    let publicReposCache = PUBLIC_REPOS_FALLBACK;
+
     // ============================
     // Funções de ativação e atualização de idioma
     // - activateLang: torna uma seção de idioma visível, oculta as outras e atualiza
@@ -481,6 +509,65 @@
       ctas.forEach(a => { a.textContent = label; });
     }
 
+    function normalizePublicRepos(repos) {
+      return repos
+        .filter(repo => repo && repo.name && repo.html_url && !repo.private && !repo.fork)
+        .sort((a, b) => a.name.localeCompare(b.name, "pt-BR", { sensitivity: "base" }));
+    }
+
+    function renderPublicRepositories(repos) {
+      const grid = document.getElementById('public-repos-grid');
+      if (!grid) return;
+
+      const publicRepos = normalizePublicRepos(repos);
+      const items = publicRepos.length ? publicRepos : PUBLIC_REPOS_FALLBACK;
+      const label = PROJECTS_CTA_T[CURRENT_LANG] || PROJECTS_CTA_T.ptbr;
+      publicReposCache = items;
+
+      grid.innerHTML = items.map(repo => {
+        const title = repo.name === "fernandoncidade"
+          ? (CURRENT_LANG === "enus" ? "Profile README" : "README do Perfil")
+          : repo.name.replaceAll("_", " ");
+
+        return `
+          <div class="col-4">
+            <div class="card">
+              <h3>${title}</h3>
+              <p><a class="cta" target="_blank" rel="noopener noreferrer" href="${repo.html_url}">${label}</a></p>
+            </div>
+          </div>`;
+      }).join('');
+
+      if (typeof attachRipple === "function") {
+        grid.querySelectorAll('a.cta').forEach(attachRipple);
+      }
+
+      publicReposRendered = true;
+    }
+
+    async function loadPublicRepositories() {
+      const grid = document.getElementById('public-repos-grid');
+      if (!grid) return;
+
+      if (publicReposRendered) {
+        renderPublicRepositories(publicReposCache);
+        return;
+      }
+
+      grid.innerHTML = `<div class="col-12"><div class="card center">${CURRENT_LANG === "enus" ? "Loading public repositories..." : "Carregando repositórios públicos..."}</div></div>`;
+
+      try {
+        const response = await fetch("https://api.github.com/users/fernandoncidade/repos?per_page=100&type=owner&sort=full_name", {
+          headers: { "Accept": "application/vnd.github+json" }
+        });
+
+        if (!response.ok) throw new Error(`GitHub API: ${response.status}`);
+        renderPublicRepositories(await response.json());
+      } catch (error) {
+        renderPublicRepositories(PUBLIC_REPOS_FALLBACK);
+      }
+    }
+
     // Função para mostrar a aba "Projetos/Repositórios"
     // - Oculta todas as seções de idioma e ativa a seção de projetos
     // - Também atualiza o rótulo e textos desta aba conforme idioma atual
@@ -500,6 +587,7 @@
 
       updateProjectsTabLabel();      // garante rótulo do botão correto
       updateProjectsSectionTexts();  // traduz nota e CTAs
+      loadPublicRepositories();
 
       // Rolar até a barra de idiomas (UX consistente com activateLang)
       const top = document.querySelector('.languages');
@@ -575,9 +663,9 @@
             <ul class="subtopics">
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda Avaliações Acadêmicas</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Organizer">Eisenhower Organizer</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Lumen">Lúmen</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9P289X0185C3">Eisenhower Organizer</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM">Linceu Lighthouse</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9N70CLLMVRPN">Lúmen</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Economia_APP">Economia APP</a></li>
             </ul>
           </div>
@@ -626,8 +714,6 @@
             <h2>📌 Destaque: Linceu Lighthouse</h2>
             <p>Ferramenta de monitoramento de integridade de arquivos (FIM), interface multilíngue, estatísticas e exportações flexíveis.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-              &nbsp;
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
             </p>
           </div>
@@ -636,8 +722,6 @@
             <h2>📌 Destaque: Lúmen</h2>
             <p>Aplicativo desktop voltado para apoiar jovens e adultos neurodivergentes (TEA, TDAH, Dislexia) em estudo e organização. Integra leitor acessível com vozes neurais, ferramentas de priorização de tarefas, timers Pomodoro, mapas mentais e recursos para explicação ativa (Método Feynman).</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Lumen" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-              &nbsp;
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9N70CLLMVRPN" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
             </p>
           </div>
@@ -646,8 +730,6 @@
             <h2>📌 Destaque: Eisenhower Organizer</h2>
             <p>Aplicativo para priorizar tarefas usando a Matriz de Eisenhower, com foco em produtividade e simplicidade.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Organizer" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-              &nbsp;
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
             </p>
           </div>
@@ -710,9 +792,9 @@
             <ul class="subtopics">
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Academic Evaluations Scheduler</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Organizer">Eisenhower Organizer</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Linceu Lighthouse</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Lumen">Lúmen</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9P289X0185C3">Eisenhower Organizer</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM">Linceu Lighthouse</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9N70CLLMVRPN">Lúmen</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Economia_APP">Economia APP</a></li>
             </ul>
           </div>
@@ -761,8 +843,6 @@
             <h2>📌 Highlight: Linceu Lighthouse</h2>
             <p>File Integrity Monitoring (FIM) tool with multilingual UI, statistics and flexible exports.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse" target="_blank" rel="noopener noreferrer">Open repository</a>
-              &nbsp;
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
             </p>
           </div>
@@ -771,8 +851,6 @@
             <h2>📌 Highlight: Lúmen</h2>
             <p>Desktop application designed to support neurodivergent youth and adults (ASD, ADHD, Dyslexia) in studying and organization. Integrates an accessible reader with neural voices, task prioritization tools, Pomodoro timers, mind maps and resources for active explanation (Feynman Method).</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Lumen" target="_blank" rel="noopener noreferrer">Open repository</a>
-              &nbsp;
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9N70CLLMVRPN" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
             </p>
           </div>
@@ -781,8 +859,6 @@
             <h2>📌 Highlight: Eisenhower Organizer</h2>
             <p>App to prioritize tasks using the Eisenhower Matrix, focused on productivity and simplicity.</p>
             <p>
-              <a class="cta" href="https://github.com/fernandoncidade/Eisenhower_Organizer" target="_blank" rel="noopener noreferrer">Open repository</a>
-              &nbsp;
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
             </p>
           </div>
@@ -826,38 +902,7 @@
       <div class="note">
         Lista de projetos e repositórios públicos de fernandoncidade.
       </div>
-      <div class="grid">
-        <div class="col-4"><div class="card"><h3>README do Perfil</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/fernandoncidade">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>sloth-highlander-theme-1</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/sloth-highlander-theme-1">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Linceu Lighthouse</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Lúmen</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Lumen">Abrir repositório</a></p></div></div>
-
-        <div class="col-4"><div class="card"><h3>Compression Manager</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Eisenhower Organizer</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Eisenhower_Organizer">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Economia APP</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Economia_APP">Abrir repositório</a></p></div></div>
-
-        <div class="col-4"><div class="card"><h3>Programa Matriz NM</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Matriz_NM">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Todos os Tipos de Matrizes</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Todos_Tipos_Matrizes">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Quociente e Resto</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Quociente_Resto">Abrir repositório</a></p></div></div>
-
-        <div class="col-4"><div class="card"><h3>Programa Múltiplo</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Multiplo">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Média Aritmética</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Media_Aritmetica">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Maior Inteiro</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Determinar_Maior_Inteiro">Abrir repositório</a></p></div></div>
-
-        <div class="col-4"><div class="card"><h3>Urna Eletrônica (C++)</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Urna_Eletronica">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Expressões Relacionais</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Expressoes_Relacionais">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>IMC</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_IMC">Abrir repositório</a></p></div></div>
-
-        <div class="col-4"><div class="card"><h3>Carteira de Motorista</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Programa_Carteira_Motorista">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Manager Compression PyQt6</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Manager_Compression_PyQt6_v.0.0.1">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Manager Compression PySide6</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Manager_Compression_PySide6_v.0.0.1">Abrir repositório</a></p></div></div>
-
-        <div class="col-4"><div class="card"><h3>Agenda Avaliações Acadêmicas</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Dash Streamlit Management</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management">Abrir repositório</a></p></div></div>
-        <div class="col-4"><div class="card"><h3>Pareto/ABC (Streamlit)</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve">Abrir repositório</a></p></div></div>
-
-        <div class="col-4"><div class="card"><h3>Pareto/ABC (Tkinter)</h3><p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve">Abrir repositório</a></p></div></div>
-      </div>
+      <div class="grid" id="public-repos-grid"></div>
     </section>
   </div>
 
