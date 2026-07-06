@@ -27,9 +27,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: 20461.7h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total de Linhas Escritas: 294459 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total de Commits: 404 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total de Tempo Trabalhado: 20470.1h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Linhas Escritas: 294713 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: 408 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -49,8 +49,8 @@
 | Dashboard_Taipy | Python | 6059.6h | 100994 | 3 | 16.67 l/h |
 | Dashboard_TkInter_Pareto-Diagram_ABC-Curve | Python | 67.8h | 1356 | 1 | 20.00 l/h |
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
-| Eisenhower_Organizer_Lumen | HTML | 50.3h | 1510 | 2 | 30.02 l/h |
-| fernandoncidade | HTML | 44.2h | 1656 | 222 | 37.47 l/h |
+| Eisenhower_Organizer_Lumen | HTML | 58.6h | 1759 | 5 | 30.02 l/h |
+| fernandoncidade | HTML | 44.3h | 1661 | 223 | 37.49 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | Launcher_EBook | C++ | 347.9h | 3163 | 1 | 9.09 l/h |
 | Linceu_Lighthouse_py | Qt Linguist | 4495.4h | 67431 | 14 | 15.00 l/h |
@@ -66,7 +66,7 @@
 | Programa_Todos_Tipos_Matrizes | C++ | 12.4h | 223 | 2 | 17.98 l/h |
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 277.0h | 4532 | 32 | 16.36 l/h |
-| **TOTAL** | - | 20461.7h | 294459 | 404 | - |
+| **TOTAL** | - | 20470.1h | 294713 | 408 | - |
 <!-- PUBLIC_REPOS_STATS_PT_END -->
 
 ## 🌻 Sobre Mim 🌻
@@ -223,9 +223,9 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 
 <div align="center">
 
-### 🕒 Total Working Time: 20461.7h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total Lines Written: 294459 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total Commits: 404 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total Working Time: 20470.1h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total Lines Written: 294713 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total Commits: 408 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -245,8 +245,8 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 | Dashboard_Taipy | Python | 6059.6h | 100994 | 3 | 16.67 l/h |
 | Dashboard_TkInter_Pareto-Diagram_ABC-Curve | Python | 67.8h | 1356 | 1 | 20.00 l/h |
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
-| Eisenhower_Organizer_Lumen | HTML | 50.3h | 1510 | 2 | 30.02 l/h |
-| fernandoncidade | HTML | 44.2h | 1656 | 222 | 37.47 l/h |
+| Eisenhower_Organizer_Lumen | HTML | 58.6h | 1759 | 5 | 30.02 l/h |
+| fernandoncidade | HTML | 44.3h | 1661 | 223 | 37.49 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | Launcher_EBook | C++ | 347.9h | 3163 | 1 | 9.09 l/h |
 | Linceu_Lighthouse_py | Qt Linguist | 4495.4h | 67431 | 14 | 15.00 l/h |
@@ -262,7 +262,7 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 | Programa_Todos_Tipos_Matrizes | C++ | 12.4h | 223 | 2 | 17.98 l/h |
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 277.0h | 4532 | 32 | 16.36 l/h |
-| **TOTAL** | - | 20461.7h | 294459 | 404 | - |
+| **TOTAL** | - | 20470.1h | 294713 | 408 | - |
 <!-- PUBLIC_REPOS_STATS_EN_END -->
 
 ## 🌻 About Me 🌻
