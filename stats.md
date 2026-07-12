@@ -10,7 +10,7 @@
 | Dashboard_TkInter_Pareto-Diagram_ABC-Curve | Python | 67.8h | 1356 | 1 | 20.00 l/h |
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Eisenhower_Organizer_Lumen | HTML | 58.6h | 1759 | 5 | 30.02 l/h |
-| fernandoncidade | HTML | 44.3h | 1661 | 224 | 37.49 l/h |
+| fernandoncidade | HTML | 44.0h | 1651 | 225 | 37.52 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | Launcher_EBook | C++ | 347.9h | 3163 | 1 | 9.09 l/h |
 | Programa_Carteira_Motorista | C++ | 21.5h | 387 | 2 | 18.00 l/h |
@@ -24,4 +24,4 @@
 | Programa_Todos_Tipos_Matrizes | C++ | 12.4h | 223 | 2 | 17.98 l/h |
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 35 | 15.00 l/h |
-| **TOTAL** | - | 12177.5h | 179897 | 353 | - |
+| **TOTAL** | - | 12177.2h | 179887 | 354 | - |
