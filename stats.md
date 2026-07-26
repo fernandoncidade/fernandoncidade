@@ -1,7 +1,7 @@
 | Repositório | Linguagem | Horas Estimadas | Linhas | Commits | Produtividade |
 |-------------|-----------|-----------------|--------|---------|---------------|
 | Agenda_Avaliacoes_Academicas | Python | 523.6h | 6545 | 11 | 12.50 l/h |
-| Agenda_Avaliacoes_Academicas_cpp | C++ | 907.3h | 7561 | 1 | 8.33 l/h |
+| Agenda_Avaliacoes_Academicas_cpp | C++ | 911.5h | 7596 | 3 | 8.33 l/h |
 | Compare_Following_Follower | Python | 874.4h | 10930 | 4 | 12.50 l/h |
 | Compression_Manager | Python | 467.3h | 4902 | 13 | 10.49 l/h |
 | Dashboard_Streamlit-Plotly-Pandas_Management | Python | 58.5h | 1170 | 8 | 20.00 l/h |
@@ -10,9 +10,9 @@
 | Dashboard_TkInter_Pareto-Diagram_ABC-Curve | Python | 67.8h | 1356 | 1 | 20.00 l/h |
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Eisenhower_Organizer_Lumen | HTML | 58.6h | 1759 | 5 | 30.02 l/h |
-| fernandoncidade | HTML | 44.0h | 1651 | 226 | 37.52 l/h |
+| fernandoncidade | HTML | 44.0h | 1651 | 227 | 37.52 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
-| Launcher_EBook | C++ | 347.9h | 3163 | 1 | 9.09 l/h |
+| Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
 | Programa_Carteira_Motorista | C++ | 21.5h | 387 | 2 | 18.00 l/h |
 | Programa_Determinar_Maior_Inteiro | C++ | 10.0h | 150 | 2 | 15.00 l/h |
 | Programa_Expressoes_Relacionais | C++ | 10.0h | 140 | 2 | 14.00 l/h |
@@ -24,4 +24,4 @@
 | Programa_Todos_Tipos_Matrizes | C++ | 12.4h | 223 | 2 | 17.98 l/h |
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 35 | 15.00 l/h |
-| **TOTAL** | - | 12177.2h | 179887 | 355 | - |
+| **TOTAL** | - | 12185.7h | 179961 | 359 | - |
