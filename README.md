@@ -27,9 +27,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: 18467.5h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total de Linhas Escritas: 246750 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total de Commits: 385 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total de Tempo Trabalhado: 18636.4h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Linhas Escritas: 248158 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: 387 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -50,9 +50,9 @@
 | Dashboard_TkInter_Pareto-Diagram_ABC-Curve | Python | 67.8h | 1356 | 1 | 20.00 l/h |
 | EcoLZMA_cpp | C++ | 1430.0h | 11917 | 1 | 8.33 l/h |
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
-| Economia_APP_cpp | C++ | 2538.5h | 21154 | 1 | 8.33 l/h |
+| Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
 | Eisenhower_Organizer_Lumen | HTML | 58.6h | 1759 | 5 | 30.02 l/h |
-| fernandoncidade | HTML | 44.4h | 1666 | 240 | 37.52 l/h |
+| fernandoncidade | HTML | 44.4h | 1666 | 241 | 37.52 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
 | Programa_Carteira_Motorista | C++ | 21.5h | 387 | 2 | 18.00 l/h |
@@ -67,7 +67,7 @@
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 43 | 15.00 l/h |
-| **TOTAL** | - | 18467.5h | 246750 | 385 | - |
+| **TOTAL** | - | 18636.4h | 248158 | 387 | - |
 <!-- PUBLIC_REPOS_STATS_PT_END -->
 
 ## 🌻 Sobre Mim 🌻
@@ -224,9 +224,9 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 
 <div align="center">
 
-### 🕒 Total Working Time: 18467.5h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total Lines Written: 246750 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total Commits: 385 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total Working Time: 18636.4h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total Lines Written: 248158 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total Commits: 387 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -247,9 +247,9 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 | Dashboard_TkInter_Pareto-Diagram_ABC-Curve | Python | 67.8h | 1356 | 1 | 20.00 l/h |
 | EcoLZMA_cpp | C++ | 1430.0h | 11917 | 1 | 8.33 l/h |
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
-| Economia_APP_cpp | C++ | 2538.5h | 21154 | 1 | 8.33 l/h |
+| Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
 | Eisenhower_Organizer_Lumen | HTML | 58.6h | 1759 | 5 | 30.02 l/h |
-| fernandoncidade | HTML | 44.4h | 1666 | 240 | 37.52 l/h |
+| fernandoncidade | HTML | 44.4h | 1666 | 241 | 37.52 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
 | Programa_Carteira_Motorista | C++ | 21.5h | 387 | 2 | 18.00 l/h |
@@ -264,7 +264,7 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 43 | 15.00 l/h |
-| **TOTAL** | - | 18467.5h | 246750 | 385 | - |
+| **TOTAL** | - | 18636.4h | 248158 | 387 | - |
 <!-- PUBLIC_REPOS_STATS_EN_END -->
 
 ## 🌻 About Me 🌻
