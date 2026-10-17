@@ -1,5 +1,6 @@
 | Repositório | Linguagem | Horas | Linhas | Commits | Produtividade (L/H) |
 |-------------|-----------|-------|--------|---------|---------------|
+| ACL_Auditor_cpp | C++ | 2444.9h | 20374 | 1 | 8.33 l/h |
 | Agenda_Avaliacoes_Academicas | Python | 523.6h | 6545 | 11 | 12.50 l/h |
 | Agenda_Avaliacoes_Academicas_cpp | C++ | 911.5h | 7596 | 3 | 8.33 l/h |
 | Compare_Following_Follower | Python | 886.3h | 11079 | 5 | 12.50 l/h |
@@ -12,10 +13,10 @@
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
 | Eisenhower_Organizer_Lumen | HTML | 58.6h | 1759 | 5 | 30.02 l/h |
-| fernandoncidade | HTML | 44.4h | 1666 | 242 | 37.52 l/h |
+| fernandoncidade | HTML | 44.6h | 1671 | 243 | 37.47 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
-| Munin_cpp | C++ | 1792.7h | 14939 | 1 | 8.33 l/h |
+| Munin_App_cpp | C++ | 1951.2h | 16260 | 1 | 8.33 l/h |
 | Programa_Carteira_Motorista | C++ | 21.5h | 387 | 2 | 18.00 l/h |
 | Programa_Determinar_Maior_Inteiro | C++ | 10.0h | 150 | 2 | 15.00 l/h |
 | Programa_Expressoes_Relacionais | C++ | 10.0h | 140 | 2 | 14.00 l/h |
@@ -28,4 +29,4 @@
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 43 | 15.00 l/h |
-| **TOTAL** | - | 20429.1h | 263097 | 389 | - |
+| **TOTAL** | - | 23032.7h | 284797 | 391 | - |
