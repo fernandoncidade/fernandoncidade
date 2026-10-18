@@ -27,9 +27,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: 23032.7h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total de Linhas Escritas: 284797 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total de Commits: 391 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total de Tempo Trabalhado: 23032.8h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Linhas Escritas: 284802 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: 392 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -53,7 +53,7 @@
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
 | Eisenhower_Organizer_Lumen | HTML | 58.6h | 1759 | 5 | 30.02 l/h |
-| fernandoncidade | HTML | 44.6h | 1671 | 243 | 37.47 l/h |
+| fernandoncidade | HTML | 44.7h | 1676 | 244 | 37.49 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
 | Munin_App_cpp | C++ | 1951.2h | 16260 | 1 | 8.33 l/h |
@@ -69,7 +69,7 @@
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 43 | 15.00 l/h |
-| **TOTAL** | - | 23032.7h | 284797 | 391 | - |
+| **TOTAL** | - | 23032.8h | 284802 | 392 | - |
 <!-- PUBLIC_REPOS_STATS_PT_END -->
 
 ## 🌻 Sobre Mim 🌻
@@ -226,9 +226,9 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 
 <div align="center">
 
-### 🕒 Total Working Time: 23032.7h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total Lines Written: 284797 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total Commits: 391 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total Working Time: 23032.8h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total Lines Written: 284802 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total Commits: 392 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -252,7 +252,7 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
 | Eisenhower_Organizer_Lumen | HTML | 58.6h | 1759 | 5 | 30.02 l/h |
-| fernandoncidade | HTML | 44.6h | 1671 | 243 | 37.47 l/h |
+| fernandoncidade | HTML | 44.7h | 1676 | 244 | 37.49 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
 | Munin_App_cpp | C++ | 1951.2h | 16260 | 1 | 8.33 l/h |
@@ -268,7 +268,7 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 43 | 15.00 l/h |
-| **TOTAL** | - | 23032.7h | 284797 | 391 | - |
+| **TOTAL** | - | 23032.8h | 284802 | 392 | - |
 <!-- PUBLIC_REPOS_STATS_EN_END -->
 
 ## 🌻 About Me 🌻

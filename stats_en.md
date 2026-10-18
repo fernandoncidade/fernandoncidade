@@ -13,7 +13,7 @@
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
 | Eisenhower_Organizer_Lumen | HTML | 58.6h | 1759 | 5 | 30.02 l/h |
-| fernandoncidade | HTML | 44.6h | 1671 | 243 | 37.47 l/h |
+| fernandoncidade | HTML | 44.7h | 1676 | 244 | 37.49 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
 | Munin_App_cpp | C++ | 1951.2h | 16260 | 1 | 8.33 l/h |
@@ -29,4 +29,4 @@
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 43 | 15.00 l/h |
-| **TOTAL** | - | 23032.7h | 284797 | 391 | - |
+| **TOTAL** | - | 23032.8h | 284802 | 392 | - |
