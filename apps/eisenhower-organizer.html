@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eisenhower Organizer • Gestão Ágil e Leve de Prioridades em C++</title>
+  <meta name="description" content="Eisenhower Organizer: O organizador de tarefas nativo mais leve para Windows. Matriz de prioridades 4Q, consumo mínimo de memória e inicialização instantânea.">
+  <link rel="icon" type="image/png" href="../image_perfil/eisenhower.png">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">← Voltar ao Início</span>
+        <span class="lang-en">← Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="../image_perfil/eisenhower.png" alt="Ícone Eisenhower Organizer" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">C++</span>
+            <span class="tech-badge">Qt 6</span>
+            <span class="tech-badge platform">Windows 10 / 11</span>
+            <span class="tech-badge offline">100% Offline</span>
+            <span class="tech-badge">Ultra-Leve (&lt; 20 MB RAM)</span>
+          </div>
+
+          <h1 class="app-hero-title">Eisenhower Organizer</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Gerenciamento Ágil de Prioridades e Tarefas Essenciais com Baixíssimo Consumo de Memória.
+          </p>
+          <p class="app-hero-tagline lang-en">
+            Agile Priority and Essential Task Management with Minimal Memory Footprint.
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://apps.microsoft.com/detail/9P289X0185C3" class="btn-cta btn-cta-store" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.5 3H2v8.5h9.5V3zm1 0V11.5H22V3h-9.5zM2 12.5V21h9.5v-8.5H2zm10.5 0V21H22v-8.5h-9.5z"/></svg>
+              <span class="lang-pt">Obter na Microsoft Store</span>
+              <span class="lang-en">Get from Microsoft Store</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[Eisenhower%20Organizer]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade de Conteúdo -->
+    <div class="app-sections-grid">
+
+      <!-- Visão do Usuário / Negócio -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚡</span>
+          <span class="lang-pt">Visão do Usuário & Eficiência Pura</span>
+          <span class="lang-en">End-User Value & Pure Efficiency</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Foco Exclusivo no que Realmente Importa</span>
+          <span class="lang-en">Laser Focus on What Truly Moves the Needle</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O <strong>Eisenhower Organizer</strong> é a solução definitiva para quem está cansado de aplicativos de tarefas pesados, cheios de menus complexos, logins obrigatórios e carregamentos lentos. Construído para ser uma extensão direta do seu fluxo de pensamento, o aplicativo permite organizar dezenas de tarefas diárias em quatro quadrantes de prioridade através de uma interface limpa, instantânea e elegante.
+        </p>
+        <p class="section-lead lang-en">
+          <strong>Eisenhower Organizer</strong> is the definitive antidote to bloated task managers packed with forced cloud accounts, sluggish web wrappers, and excessive menus. Designed to be an instantaneous extension of your thought process, it lets you organize daily priorities across four decisive quadrants with zero friction.
+        </p>
+
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">🚀</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Inicialização Instantânea em Menos de 150 ms</div>
+            <div class="highlight-banner-title lang-en">Instant Startup Under 150 Milliseconds</div>
+            <div class="highlight-banner-text lang-pt">
+              Abra, organize sua mente e volte ao trabalho. O Eisenhower Organizer não utiliza Electron ou frameworks de navegadores embutidos: ele roda nativamente no Windows com velocidade inigualável.
+            </div>
+            <div class="highlight-banner-text lang-en">
+              Open it, structure your day, and get back to deep work. Eisenhower Organizer avoids heavy web runtimes or Electron wrappers, executing purely on native Windows code.
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">📌</span>
+            <h3 class="feature-title lang-pt">Priorização por Quadrantes</h3>
+            <h3 class="feature-title lang-en">Quadrant Prioritization</h3>
+            <p class="feature-desc lang-pt">
+              Separe claramente o "Urgente e Importante" do ruído diário. Saiba exatamente qual tarefa deve ser concluída antes de qualquer outra.
+            </p>
+            <p class="feature-desc lang-en">
+              Ruthlessly segregate "Urgent & Important" from daily noise. Pinpoint the single high-leverage task to execute first.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🖱️</span>
+            <h3 class="feature-title lang-pt">Arrastar e Soltar (Drag-and-Drop)</h3>
+            <h3 class="feature-title lang-en">Fluid Drag-and-Drop</h3>
+            <p class="feature-desc lang-pt">
+              Mova tarefas entre quadrantes de forma natural com o mouse ou atalhos rápidos de teclado conforme prioridades mudarem ao longo do dia.
+            </p>
+            <p class="feature-desc lang-en">
+              Move tasks smoothly between quadrants using native drag-and-drop gestures or rapid keyboard shortcuts as priorities evolve.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🪶</span>
+            <h3 class="feature-title lang-pt">Consumo Mínimo de Hardware</h3>
+            <h3 class="feature-title lang-en">Ultra-Low Hardware Footprint</h3>
+            <p class="feature-desc lang-pt">
+              Ocupa menos de 20 MB de memória RAM. Deixe o aplicativo aberto o dia inteiro sem sentir a menor lentidão no seu computador.
+            </p>
+            <p class="feature-desc lang-en">
+              Uses under 20 MB of system RAM. Leave the organizer running 24/7 without experiencing any slowdown on your workstation.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">💾</span>
+            <h3 class="feature-title lang-pt">Persistência Automática e Segura</h3>
+            <h3 class="feature-title lang-en">Instant Auto-Save Persistence</h3>
+            <p class="feature-desc lang-pt">
+              Cada caractere digitado é gravado imediatamente em formato seguro no disco local. Nunca perca uma ideia ou anotação importante.
+            </p>
+            <p class="feature-desc lang-en">
+              Every keystroke and status change is persisted instantaneously on your local drive with zero risk of accidental state loss.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Engenharia Nativa & Otimização de Recursos</span>
+          <span class="lang-en">Native Engineering & Resource Minimalism</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Código Nativo C++ sem Camadas Intermediárias</span>
+          <span class="lang-en">Native C++ Code Free from Bloatware</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O Eisenhower Organizer foi desenhado como um modelo exemplar de software utilitário moderno: binário único otimizado com MSVC, dependências estritamente necessárias e consumo quase nulo de ciclos de CPU quando ocioso.
+        </p>
+        <p class="section-lead lang-en">
+          Eisenhower Organizer was architected as a reference model for modern desktop utilities: single compact binary compiled with MSVC optimizations, minimal dependencies, and virtually 0.0% CPU usage while idle.
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Gerenciamento Eficiente de Widgets</span>
+              <span class="dev-spec-name lang-en">Optimized Widget Lifecycle</span>
+              <span class="dev-spec-tag">Qt6 C++ Native</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Usa reciclagem de itens e renderização direta no framebuffer do Windows, reduzindo repinturas desnecessárias e poupando energia em notebooks.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Leverages direct native framebuffer rendering and lazy widget repainting to prolong battery life on laptops.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Formato de Armazenamento Confiável</span>
+              <span class="dev-spec-name lang-en">Reliable Local State Storage</span>
+              <span class="dev-spec-tag">Atomic Write-Replace File I/O</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              A persistência de tarefas adota o padrão de gravação atômica em arquivo temporário com substituição atômica (ReplaceFileW), impedindo corrupção em falhas de energia.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              State persistence utilizes atomic temp-file flushing followed by Win32 ReplaceFileW swaps, guarding against data corruption upon unexpected shutdowns.
+            </p>
+          </div>
+        </div>
+
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagem / Padrão</th>
+                <th class="lang-en">Language / Standard</th>
+                <td>
+                  <span class="lang-pt">C++ Nativo de Baixo Consumo (MSVC 2022)</span>
+                  <span class="lang-en">Low-Footprint Native C++ (MSVC 2022)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Framework de GUI</th>
+                <th class="lang-en">GUI Framework</th>
+                <td>
+                  <span class="lang-pt">Qt 6.x (Widgets Nativos com tema escuro automático)</span>
+                  <span class="lang-en">Qt 6.x (Native widgets with automatic dark mode)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Tempo de Abertura</th>
+                <th class="lang-en">Startup Time</th>
+                <td>
+                  <span class="lang-pt">&lt; 150 ms em SSDs convencionais</span>
+                  <span class="lang-en">&lt; 150 ms on standard SSDs</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Uso de RAM em Ociosidade</th>
+                <th class="lang-en">Idle RAM Usage</th>
+                <td>
+                  <span class="lang-pt">~18 a 22 MB de memória de trabalho</span>
+                  <span class="lang-en">~18 to 22 MB working set memory</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Segurança</th>
+                <th class="lang-en">Security</th>
+                <td>
+                  <span class="lang-pt">Zero telemetria, zero conexão à internet, 100% offline</span>
+                  <span class="lang-en">Zero telemetry, zero internet connection, 100% offline</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Distribuição</th>
+                <th class="lang-en">Distribution</th>
+                <td>
+                  <span class="lang-pt">Certificado na Microsoft Store</span>
+                  <span class="lang-en">Microsoft Store Certified</span>
+                </td>
+              </tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="eisenpo.html" class="related-app-card">
+          <img src="../image_perfil/eisenpo.png" alt="EisenPo" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">EisenPo</div>
+            <div class="related-app-tag">C++ • Pomodoro & Feynman</div>
+          </div>
+        </a>
+        <a href="lumen.html" class="related-app-card">
+          <img src="../image_perfil/autismo.png" alt="Lúmen" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Lúmen</div>
+            <div class="related-app-tag">C++ • Acessibilidade Cognitiva</div>
+          </div>
+        </a>
+        <a href="launcher-ebook.html" class="related-app-card">
+          <img src="../image_perfil/launcherebook2_256-256.png" alt="Launcher EBook" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Launcher EBook</div>
+            <div class="related-app-tag">C++17 • Leitura Digital</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>

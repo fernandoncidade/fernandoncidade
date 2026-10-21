@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda Avaliações Acadêmicas • Gestão de Provas, Médias e Semestre em Python</title>
+  <meta name="description" content="Agenda Avaliações Acadêmicas: Sistema desktop para universitários e estudantes. Controle de disciplinas, cálculo de médias ponderadas, calendário de provas e simulação de nota necessária.">
+  <link rel="icon" type="image/x-icon" href="../image_perfil/ReviewsManager.ico">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">← Voltar ao Início</span>
+        <span class="lang-en">← Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="../image_perfil/ReviewsManager.ico" alt="Ícone Agenda Avaliações Acadêmicas" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">Python 3.10+</span>
+            <span class="tech-badge">PySide6 / Qt</span>
+            <span class="tech-badge platform">Windows (Desktop)</span>
+            <span class="tech-badge offline">100% Offline</span>
+            <span class="tech-badge">SQLite Local</span>
+          </div>
+
+          <h1 class="app-hero-title">Agenda Avaliações Acadêmicas</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Planejamento Semestral de Provas, Controle de Médias Ponderadas e Calendário Acadêmico Inteligente.
+          </p>
+          <p class="app-hero-tagline lang-en">
+            Academic Semester Calendar, Weighted Average Calculator, and Exam Deadline Planner.
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" class="btn-cta btn-cta-github" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span class="lang-pt">Ver Repositório no GitHub</span>
+              <span class="lang-en">View GitHub Repository</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[Agenda%20Avaliacoes%20Academicas]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade de Conteúdo -->
+    <div class="app-sections-grid">
+
+      <!-- Visão do Usuário / Negócio -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>🎓</span>
+          <span class="lang-pt">Visão do Estudante & Sucesso Acadêmico</span>
+          <span class="lang-en">Student Success & Semester Mastery</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Organize seu Semestre e Nunca Perca uma Prova</span>
+          <span class="lang-en">Master Your Semester & Never Miss an Exam Deadline</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          A <strong>Agenda Avaliações Acadêmicas</strong> é o assistente definitivo para universitários, pesquisadores e estudantes do ensino técnico e superior que precisam gerenciar múltiplas disciplinas simultaneamente. O software centraliza cronogramas de provas, entregas de trabalhos de laboratório, critérios de pesos das notas e calcula automaticamente o desempenho necessário nas avaliações finais para aprovação direta sem exames de recuperação.
+        </p>
+        <p class="section-lead lang-en">
+          <strong>Academic Evaluations Scheduler</strong> is the definitive study companion for undergraduate, graduate, and vocational students juggling multiple intense courses. It brings together exam schedules, lab report deadlines, and weighted grading criteria while calculating target scores required on final assessments to secure passing grades.
+        </p>
+
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">🎯</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Simulador de "Quanto Preciso Tirar na Próxima Prova?"</div>
+            <div class="highlight-banner-title lang-en">Target Score Simulator: "What Grade Do I Need?"</div>
+            <div class="highlight-banner-text lang-pt">
+              Insira as notas que você já obteve e os pesos restantes da disciplina: o aplicativo calcula na hora a pontuação mínima que você precisa alcançar na prova final para ser aprovado com tranquilidade.
+            </div>
+            <div class="highlight-banner-text lang-en">
+              Input existing grades and upcoming assignment weights: the app computes the exact passing threshold you need on your remaining exams to achieve graduation criteria with zero stress.
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">📅</span>
+            <h3 class="feature-title lang-pt">Calendário Integrado de Prazos</h3>
+            <h3 class="feature-title lang-en">Integrated Exam Calendar</h3>
+            <p class="feature-desc lang-pt">
+              Visualize semanas de provas com antecedência através de uma linha do tempo clara organizada por datas de entrega e ordem de urgência.
+            </p>
+            <p class="feature-desc lang-en">
+              Visualize midterm and finals weeks with clear chronological timelines arranged by deadlines and urgency status.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">📐</span>
+            <h3 class="feature-title lang-pt">Médias Ponderadas e Aritméticas</h3>
+            <h3 class="feature-title lang-en">Weighted & Arithmetic Averages</h3>
+            <p class="feature-desc lang-pt">
+              Configure regras de cálculo personalizadas por matéria (pesos de listas, provas teóricas, seminários e projetos práticos).
+            </p>
+            <p class="feature-desc lang-en">
+              Configure tailored grading formulas per course (homework sets, midterm tests, laboratory projects, and final presentations).
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">💾</span>
+            <h3 class="feature-title lang-pt">Banco de Dados SQLite Local</h3>
+            <h3 class="feature-title lang-en">Local SQLite Persistence</h3>
+            <p class="feature-desc lang-pt">
+              Seu histórico de notas semestrais e matérias concluídas fica salvo permanentemente no seu disco rígido com backup simplificado.
+            </p>
+            <p class="feature-desc lang-en">
+              Your academic grades history and semester milestones are securely persisted in a clean relational database on your drive.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">📊</span>
+            <h3 class="feature-title lang-pt">Painel Visual de Desempenho</h3>
+            <h3 class="feature-title lang-en">Visual Grade Analytics</h3>
+            <p class="feature-desc lang-pt">
+              Acompanhe seu Coeficiente de Rendimento (CR) e identifique rapidamente matérias que exigem maior dedicação antes do fim do período.
+            </p>
+            <p class="feature-desc lang-en">
+              Track your Grade Point Average (GPA) across terms and identify which subjects require study reinforcement before finals week.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Engenharia Python & Arquitetura Relacional</span>
+          <span class="lang-en">Python Engineering & Relational Schema</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Estrutura Modular e Persistência Confiável</span>
+          <span class="lang-en">Modular Architecture & Relational Persistence</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          Desenvolvido com <strong>Python 3.10+</strong> e <strong>PySide6</strong>, o sistema adota um padrão de arquitetura em camadas (UI, Lógica de Negócios e Acesso a Dados), separando as regras de cálculo acadêmico das telas gráficas.
+        </p>
+        <p class="section-lead lang-en">
+          Engineered using <strong>Python 3.10+</strong> and <strong>PySide6</strong>, the system applies a robust layered architecture (Presentation, Business Logic, and Data Access Layer), decoupling academic formulas from GUI event handling.
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Esquema Relacional Disciplina-Avaliação</span>
+              <span class="dev-spec-name lang-en">Relational Course-Grade Schema</span>
+              <span class="dev-spec-tag">SQLite3 / Foreign Keys</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Modelagem com integridade referencial em cascata: exclusões ou atualizações de matérias refletem automaticamente nas avaliações vinculadas.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Enforces foreign key referential integrity with cascading updates and deletes between courses and evaluation units.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Model-View com QTableView e Delegados</span>
+              <span class="dev-spec-name lang-en">Qt Model-View Architecture</span>
+              <span class="dev-spec-tag">QAbstractTableModel / QItemDelegate</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Permite edição rápida de notas e datas diretamente na tabela com validação em tempo real de limites numéricos (0.0 a 10.0).
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Enables in-place tabular grade editing backed by custom item delegates enforcing real-time numeric bounds validation.
+            </p>
+          </div>
+        </div>
+
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagem / Versão</th>
+                <th class="lang-en">Language / Version</th>
+                <td>
+                  <span class="lang-pt">Python 3.10+ com Type Annotations</span>
+                  <span class="lang-en">Python 3.10+ with Type Annotations</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Framework de GUI</th>
+                <th class="lang-en">GUI Framework</th>
+                <td>
+                  <span class="lang-pt">PySide6 (Qt para Python, layouts responsivos)</span>
+                  <span class="lang-en">PySide6 (Qt for Python, responsive layouts)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Banco de Dados</th>
+                <th class="lang-en">Database Engine</th>
+                <td>
+                  <span class="lang-pt">SQLite3 Local (Sem dependência de servidores)</span>
+                  <span class="lang-en">Local SQLite3 (Zero server dependency)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Privacidade</th>
+                <th class="lang-en">Privacy</th>
+                <td>
+                  <span class="lang-pt">100% Offline, dados salvos exclusivamente no computador</span>
+                  <span class="lang-en">100% Offline, data stored strictly on local device</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Repositório</th>
+                <th class="lang-en">Repository</th>
+                <td>
+                  <span class="lang-pt">Código aberto sob licença MIT no GitHub</span>
+                  <span class="lang-en">Open Source under MIT License on GitHub</span>
+                </td>
+              </tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="economia-app.html" class="related-app-card">
+          <img src="../image_perfil/economia.png" alt="Economia APP" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Economia APP</div>
+            <div class="related-app-tag">Python / C++ • Finanças</div>
+          </div>
+        </a>
+        <a href="eisenpo.html" class="related-app-card">
+          <img src="../image_perfil/eisenpo.png" alt="EisenPo" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">EisenPo</div>
+            <div class="related-app-tag">C++ • Matriz Pomodoro</div>
+          </div>
+        </a>
+        <a href="launcher-ebook.html" class="related-app-card">
+          <img src="../image_perfil/launcherebook2_256-256.png" alt="Launcher EBook" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Launcher EBook</div>
+            <div class="related-app-tag">C++17 • Leitura Digital</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Repositório GitHub</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>

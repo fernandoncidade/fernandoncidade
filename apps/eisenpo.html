@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EisenPo • Matriz de Eisenhower, Pomodoro e Técnica Feynman em C++</title>
+  <meta name="description" content="EisenPo: Sistema integrado de produtividade cognitiva no Windows. Priorização de tarefas, ciclos Pomodoro customizados, método Feynman de aprendizado e exportação XLSX/PDF.">
+  <link rel="icon" type="image/png" href="../image_perfil/eisenpo.png">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">← Voltar ao Início</span>
+        <span class="lang-en">← Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="../image_perfil/eisenpo.png" alt="Ícone EisenPo" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">C++</span>
+            <span class="tech-badge">Qt 6</span>
+            <span class="tech-badge platform">Windows 10 / 11</span>
+            <span class="tech-badge offline">100% Offline</span>
+            <span class="tech-badge">Exportação XLSX / PDF</span>
+          </div>
+
+          <h1 class="app-hero-title">EisenPo</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Produtividade Cognitiva Integrada: Matriz de Eisenhower, Timer Pomodoro e Aprendizado pelo Método Feynman.
+          </p>
+          <p class="app-hero-tagline lang-en">
+            Integrated Cognitive Productivity: Eisenhower Matrix, Pomodoro Focus Cycles, and Feynman Learning Loop.
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://apps.microsoft.com/detail/9MW96RN044TT" class="btn-cta btn-cta-store" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.5 3H2v8.5h9.5V3zm1 0V11.5H22V3h-9.5zM2 12.5V21h9.5v-8.5H2zm10.5 0V21H22v-8.5h-9.5z"/></svg>
+              <span class="lang-pt">Obter na Microsoft Store</span>
+              <span class="lang-en">Get from Microsoft Store</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[EisenPo]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade de Conteúdo -->
+    <div class="app-sections-grid">
+
+      <!-- Visão do Usuário / Negócio -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>🧠</span>
+          <span class="lang-pt">Visão do Usuário & Foco Mental</span>
+          <span class="lang-en">User Value & Mental Clarity</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Elimine a Sobrecarga Mental com Metodologia Comprovada</span>
+          <span class="lang-en">Overcome Mental Overload with Proven Science</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O <strong>EisenPo</strong> é muito mais do que um simples aplicativo de lista de tarefas (to-do list). Ele une as três metodologias mais consagradas de alta performance em uma única interface nativa, elegante e sem distrações: a <strong>Matriz de Decisão de Eisenhower</strong> (separando o que é Urgente do que é Importante), o <strong>Timer Pomodoro</strong> com intervalos de descanso fisiológico e a <strong>Técnica Feynman</strong> para fixação definitiva de conhecimentos.
+        </p>
+        <p class="section-lead lang-en">
+          <strong>EisenPo</strong> is far beyond a simple to-do list. It synthesizes the three most respected cognitive productivity frameworks into a single native, zero-distraction application: the <strong>Eisenhower Decision Matrix</strong> (triaging Urgent vs. Important), customizable <strong>Pomodoro Deep Work Cycles</strong>, and the <strong>Feynman Learning Technique</strong> for rapid concept mastery.
+        </p>
+
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">🎯</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Privacidade Total e Livre de Algoritmos Viciantes</div>
+            <div class="highlight-banner-title lang-en">Complete Privacy & Free from Addictive Dark Patterns</div>
+            <div class="highlight-banner-text lang-pt">
+              Diferente de serviços em nuvem que exigem assinaturas mensais e monetizam seus hábitos, o EisenPo funciona 100% offline no seu Windows. Seus pensamentos, metas e notas nunca saem do seu computador.
+            </div>
+            <div class="highlight-banner-text lang-en">
+              Unlike cloud SaaS subscriptions that mine your personal data, EisenPo operates 100% locally on your Windows machine. Your thoughts, goals, and reflections remain strictly confidential.
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">📊</span>
+            <h3 class="feature-title lang-pt">Matriz de 4 Quadrantes</h3>
+            <h3 class="feature-title lang-en">4-Quadrant Matrix</h3>
+            <p class="feature-desc lang-pt">
+              Classifique tarefas instantaneamente entre "Fazer Agora", "Agendar", "Delegar" e "Eliminar", eliminando a paralisia por análise.
+            </p>
+            <p class="feature-desc lang-en">
+              Instantly triage tasks into "Do First", "Schedule", "Delegate", and "Eliminate", preventing decision fatigue and chronic procrastination.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">⏱️</span>
+            <h3 class="feature-title lang-pt">Timer Pomodoro Ajustável</h3>
+            <h3 class="feature-title lang-en">Adaptive Pomodoro Timer</h3>
+            <p class="feature-desc lang-pt">
+              Ciclos de trabalho profundo de 25 min com pausas curtas (5 min) e pausas longas (15 min), com notificações visuais e sonoras suaves.
+            </p>
+            <p class="feature-desc lang-en">
+              Tailored deep work sprints with short and long rest breaks, customizable sound notifications, and unobtrusive task counters.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">💡</span>
+            <h3 class="feature-title lang-pt">Módulo Técnica Feynman</h3>
+            <h3 class="feature-title lang-en">Feynman Mastery Module</h3>
+            <p class="feature-desc lang-pt">
+              Explique conceitos difíceis em linguagem simples, identifique lacunas de aprendizado e refine suas explicações para retenção duradoura.
+            </p>
+            <p class="feature-desc lang-en">
+              Deconstruct difficult topics in plain language, identify knowledge gaps, and solidify conceptual understanding through active recall.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">📁</span>
+            <h3 class="feature-title lang-pt">Exportação XLSX e PDF</h3>
+            <h3 class="feature-title lang-en">XLSX & PDF Exporting</h3>
+            <p class="feature-desc lang-pt">
+              Gere relatórios elegantes e planilhas das tarefas concluídas e horas produtivas para prestação de contas, estudos ou faturamento.
+            </p>
+            <p class="feature-desc lang-en">
+              Generate structured Excel spreadsheets and polished PDF summaries of completed sessions for project logging or study tracking.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Engenharia C++ & Arquitetura Local</span>
+          <span class="lang-en">C++ Engineering & Local Architecture</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Design Nativo Eficiente e Sem Dependências de Nuvem</span>
+          <span class="lang-en">Native Zero-Overhead Desktop Architecture</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          Desenvolvido inteiramente em <strong>C++</strong> nativo com a biblioteca <strong>Qt 6</strong>, o EisenPo inicia em menos de 200 milissegundos e consome uma fração insignificante da memória RAM (&lt; 28 MB), permitindo que permaneça aberto o dia inteiro sem impactar o desempenho de jogos, compiladores ou softwares pesados.
+        </p>
+        <p class="section-lead lang-en">
+          Built natively in modern <strong>C++</strong> using <strong>Qt 6</strong>, EisenPo launches in under 200 milliseconds and idles with a negligible RAM footprint (&lt; 28 MB), letting it run persistently in the background without stealing resources from compilers, IDEs, or games.
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Motor de Temporização de Alta Precisão</span>
+              <span class="dev-spec-name lang-en">High-Resolution Timing Engine</span>
+              <span class="dev-spec-tag">QElapsedTimer / std::chrono</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              O cronômetro utiliza o relógio monotônico do sistema operacional para manter contagem perfeita de segundos mesmo durante suspensão ou hibernação do computador.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Backed by system monotonic high-resolution clocks, ensuring precise second-level timekeeping even through sleep or hibernation events.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Camada de Dados Atômica Local</span>
+              <span class="dev-spec-name lang-en">Atomic Local Storage Model</span>
+              <span class="dev-spec-tag">SQLite3 Transactional</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Tarefas e notas são gravadas com commits atômicos, protegendo a integridade dos dados mesmo diante de desligamentos repentinos de energia.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              State transitions, notes, and task queues are persisted via atomic transactional commits, preventing corruption during abrupt power loss.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Pipeline de Exportação Vetorial</span>
+              <span class="dev-spec-name lang-en">Vector Document Generation Pipeline</span>
+              <span class="dev-spec-tag">QPdfWriter / XLSX Engine</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Gera documentos PDF vetoriais nítidos e planilhas formatadas sem necessidade de ter Microsoft Office ou suítes de terceiros instaladas.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Directly synthesizes vector PDF documents and native XLSX workbooks without relying on external Office automation runtimes.
+            </p>
+          </div>
+        </div>
+
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagem / Padrão</th>
+                <th class="lang-en">Language / Standard</th>
+                <td>
+                  <span class="lang-pt">C++ Nativo de Alto Desempenho (MSVC 2022)</span>
+                  <span class="lang-en">High-Performance Native C++ (MSVC 2022)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Framework de GUI</th>
+                <th class="lang-en">GUI Framework</th>
+                <td>
+                  <span class="lang-pt">Qt 6.x (Suporte a Dark / Light Mode e HiDPI)</span>
+                  <span class="lang-en">Qt 6.x (Dark / Light Mode &amp; HiDPI support)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Pegada de Memória</th>
+                <th class="lang-en">Memory Footprint</th>
+                <td>
+                  <span class="lang-pt">~25 a 30 MB de RAM em modo de foco contínuo</span>
+                  <span class="lang-en">~25 to 30 MB RAM in continuous focus mode</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Armazenamento</th>
+                <th class="lang-en">Data Persistence</th>
+                <td>
+                  <span class="lang-pt">SQLite3 Local (Sem conexões externas, 100% privado)</span>
+                  <span class="lang-en">Local SQLite3 (Zero external connections, 100% private)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Exportação</th>
+                <th class="lang-en">Export Capabilities</th>
+                <td>
+                  <span class="lang-pt">Microsoft Excel (.xlsx), Adobe PDF (.pdf)</span>
+                  <span class="lang-en">Microsoft Excel (.xlsx), Adobe PDF (.pdf)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Disponibilidade</th>
+                <th class="lang-en">Availability</th>
+                <td>
+                  <span class="lang-pt">Certificado e distribuído na Microsoft Store</span>
+                  <span class="lang-en">Certified and distributed on the Microsoft Store</span>
+                </td>
+              </tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="eisenhower-organizer.html" class="related-app-card">
+          <img src="../image_perfil/eisenhower.png" alt="Eisenhower Organizer" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Eisenhower Organizer</div>
+            <div class="related-app-tag">C++ • Tarefas Essenciais</div>
+          </div>
+        </a>
+        <a href="lumen.html" class="related-app-card">
+          <img src="../image_perfil/autismo.png" alt="Lúmen" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Lúmen</div>
+            <div class="related-app-tag">C++ • Acessibilidade Cognitiva</div>
+          </div>
+        </a>
+        <a href="launcher-ebook.html" class="related-app-card">
+          <img src="../image_perfil/launcherebook2_256-256.png" alt="Launcher EBook" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Launcher EBook</div>
+            <div class="related-app-tag">C++17 • Leitura Digital</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://apps.microsoft.com/detail/9MW96RN044TT" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economia APP • Engenharia Econômica, VPL, TIR e Amortização SAC/Price</title>
+  <meta name="description" content="Economia APP: Software de engenharia econômica e matemática financeira para Windows. Cálculo de VPL, TIR, Payback, tabelas de amortização SAC e Price com memória de cálculo passo a passo.">
+  <link rel="icon" type="image/png" href="../image_perfil/economia.png">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">← Voltar ao Início</span>
+        <span class="lang-en">← Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="../image_perfil/economia.png" alt="Ícone Economia APP" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">Python 3.10+ / C++</span>
+            <span class="tech-badge">Qt / PySide</span>
+            <span class="tech-badge platform">Windows 10 / 11</span>
+            <span class="tech-badge offline">100% Offline</span>
+            <span class="tech-badge">Matemática Financeira</span>
+          </div>
+
+          <h1 class="app-hero-title">Economia APP</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Engenharia Econômica e Finanças Corporativas: VPL, TIR, Payback e Amortização Detalhada (SAC/Price).
+          </p>
+          <p class="app-hero-tagline lang-en">
+            Engineering Economics & Corporate Finance: NPV, IRR, Payback, and Step-by-Step Amortization (SAC/Price).
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://apps.microsoft.com/detail/9PLR0KD6KSJJ" class="btn-cta btn-cta-store" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.5 3H2v8.5h9.5V3zm1 0V11.5H22V3h-9.5zM2 12.5V21h9.5v-8.5H2zm10.5 0V21H22v-8.5h-9.5z"/></svg>
+              <span class="lang-pt">Obter na Microsoft Store</span>
+              <span class="lang-en">Get from Microsoft Store</span>
+            </a>
+            <a href="https://github.com/fernandoncidade/Economia_APP" class="btn-cta btn-cta-github" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span class="lang-pt">Repositório Python</span>
+              <span class="lang-en">Python Repo</span>
+            </a>
+            <a href="https://github.com/fernandoncidade/Economia_APP_cpp" class="btn-cta btn-cta-github" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span class="lang-pt">Repositório C++</span>
+              <span class="lang-en">C++ Repo</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[Economia%20APP]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade de Conteúdo -->
+    <div class="app-sections-grid">
+
+      <!-- Visão do Usuário / Negócio -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>📈</span>
+          <span class="lang-pt">Decisões Financeiras & Engenharia</span>
+          <span class="lang-en">Financial Decisions & Engineering</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Rigor Matemático e Clareza para Viabilidade de Projetos</span>
+          <span class="lang-en">Mathematical Precision for Capital Budgeting</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O <strong>Economia APP</strong> é uma ferramenta profissional desenvolvida para engenheiros, analistas de negócios, investidores e estudantes que precisam avaliar a viabilidade econômico-financeira de projetos com precisão científica. Em vez de depender de fórmulas opacas em planilhas sujeitas a erros de digitação, o Economia APP oferece simulações completas com memória de cálculo detalhada passo a passo.
+        </p>
+        <p class="section-lead lang-en">
+          <strong>Economia APP</strong> is an analytical workstation tailored for engineers, financial analysts, corporate planners, and students who demand transparent, audit-ready capital investment appraisals. Rather than relying on fragile spreadsheet formulas prone to broken references, Economia APP delivers step-by-step verifiable calculation memory.
+        </p>
+
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">💡</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Memória de Cálculo Didática e Transparente</div>
+            <div class="highlight-banner-title lang-en">Clear & Step-by-Step Calculation Auditing</div>
+            <div class="highlight-banner-text lang-pt">
+              Veja exatamente cada fórmula matemática aplicada, os fatores de equivalência temporal e as iterações numéricas que levaram ao resultado final, facilitando defesas acadêmicas e reuniões de diretoria.
+            </div>
+            <div class="highlight-banner-text lang-en">
+              Inspect every algebraic step, time-value equivalence factor, and numerical root-finding iteration, facilitating flawless academic defenses and corporate board approvals.
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">💰</span>
+            <h3 class="feature-title lang-pt">VPL & TIR Precisa</h3>
+            <h3 class="feature-title lang-en">Precise NPV & IRR</h3>
+            <p class="feature-desc lang-pt">
+              Cálculo de Valor Presente Líquido (VPL) e Taxa Interna de Retorno (TIR / MTIR) com convergência numérica robusta mesmo para fluxos não convencionais.
+            </p>
+            <p class="feature-desc lang-en">
+              Compute Net Present Value (NPV) and Internal Rate of Return (IRR / MIRR) with rock-solid numerical convergence even on non-conventional cash flows.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🏦</span>
+            <h3 class="feature-title lang-pt">Sistemas de Amortização (SAC / Price)</h3>
+            <h3 class="feature-title lang-en">Amortization Schedules (SAC / Price)</h3>
+            <p class="feature-desc lang-pt">
+              Gere tabelas completas de financiamento pelo Sistema de Amortização Constante (SAC), Tabela Price (Francês) e Americano com saldo devedor e juros período a período.
+            </p>
+            <p class="feature-desc lang-en">
+              Synthesize full loan schedules under SAC (Constant Amortization), Price (French System), and American models tracking principal balance and interest per period.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">⏳</span>
+            <h3 class="feature-title lang-pt">Payback Simples e Descontado</h3>
+            <h3 class="feature-title lang-en">Simple & Discounted Payback</h3>
+            <p class="feature-desc lang-pt">
+              Descubra o tempo exato necessário para recuperar o capital investido considerando o custo de oportunidade da Taxa Mínima de Atratividade (TMA).
+            </p>
+            <p class="feature-desc lang-en">
+              Determine the exact break-even timeline to recoup initial capital expenditures factoring in the Minimum Attractive Rate of Return (MARR).
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">📊</span>
+            <h3 class="feature-title lang-pt">Exportação de Relatórios Financeiros</h3>
+            <h3 class="feature-title lang-en">Financial Report Exports</h3>
+            <p class="feature-desc lang-pt">
+              Exporte planilhas em CSV e relatórios estruturados para anexar a relatórios técnicos de engenharia e planos de negócios.
+            </p>
+            <p class="feature-desc lang-en">
+              Export clean tabular CSV files and formatted summary briefs ready to attach to engineering feasibility studies and pitch decks.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Engenharia de Software & Algoritmos</span>
+          <span class="lang-en">Software Engineering & Numerical Algorithms</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Implementações Paralelas em Python e C++</span>
+          <span class="lang-en">Dual Python & C++ Engine Implementations</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O projeto Economia APP se destaca por possuir duas implementações de código aberto disponíveis no GitHub: uma em <strong>Python / PySide</strong> (priorizando flexibilidade e prototipagem ágil) e outra em <strong>C++ nativo</strong> (priorizando máxima velocidade de cálculo e ausência de interpretador).
+        </p>
+        <p class="section-lead lang-en">
+          The Economia APP initiative features dual open-source implementations on GitHub: a <strong>Python / PySide</strong> version (prioritizing rapid extension) and a native <strong>C++ engine</strong> (prioritizing zero interpreter overhead and microsecond numerical iterations).
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Convergência Numérica da TIR</span>
+              <span class="dev-spec-name lang-en">IRR Root-Finding Convergence</span>
+              <span class="dev-spec-tag">Newton-Raphson / Brent-Dekker</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Utiliza algoritmos de busca de raízes híbridos com tratamento de derivadas analíticas para convergir para taxas de juros exatas mesmo quando polinômios possuem múltiplas inflexões de sinal.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Employs hybrid root-finding routines with analytical first-derivative evaluation, guaranteeing fast convergence even on polynomial equations with multiple sign alternations.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Aritmética de Alta Precisão</span>
+              <span class="dev-spec-name lang-en">Fixed-Point Decimal Arithmetic</span>
+              <span class="dev-spec-tag">Arbitrary Precision / Double-Precision IEEE 754</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Evita erros clássicos de arredondamento de ponto flutuante em amortizações de longo prazo (como 360 ou 420 parcelas), garantindo conciliação centavo a centavo.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Mitigates binary floating-point round-off drift across long-tenor amortizations (e.g., 360 to 420 installments), guaranteeing cent-accurate balance reconciliation.
+            </p>
+          </div>
+        </div>
+
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagens Disponíveis</th>
+                <th class="lang-en">Available Languages</th>
+                <td>
+                  <span class="lang-pt">Python 3.10+ (PySide6) e C++17 Nativo (Qt6)</span>
+                  <span class="lang-en">Python 3.10+ (PySide6) and Native C++17 (Qt6)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Precisão Numérica</th>
+                <th class="lang-en">Numerical Precision</th>
+                <td>
+                  <span class="lang-pt">Padrão contábil e de engenharia com arredondamento ABNT</span>
+                  <span class="lang-en">Accounting &amp; engineering standard with ABNT rounding</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Modelos Financeiros</th>
+                <th class="lang-en">Financial Models</th>
+                <td>
+                  <span class="lang-pt">VPL, TIR, MTIR, Payback Simples/Descontado, SAC, Price, Americano</span>
+                  <span class="lang-en">NPV, IRR, MIRR, Simple/Discounted Payback, SAC, Price, Bullet</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Plataformas</th>
+                <th class="lang-en">Platforms</th>
+                <td>
+                  <span class="lang-pt">Windows 10 / 11 (Certificado na Store e compilação multiplataforma)</span>
+                  <span class="lang-en">Windows 10 / 11 (Store Certified &amp; cross-platform build)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Repositórios de Código</th>
+                <th class="lang-en">Code Repositories</th>
+                <td>
+                  <span class="lang-pt">Economia_APP (Python) e Economia_APP_cpp (C++) no GitHub</span>
+                  <span class="lang-en">Economia_APP (Python) &amp; Economia_APP_cpp (C++) on GitHub</span>
+                </td>
+              </tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="compression-manager.html" class="related-app-card">
+          <img src="../image_perfil/Manager-BackUp.png" alt="Compression Manager" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Compression Manager</div>
+            <div class="related-app-tag">Python / Qt • Backup AES-256</div>
+          </div>
+        </a>
+        <a href="agenda-avaliacoes-academicas.html" class="related-app-card">
+          <img src="../image_perfil/ReviewsManager.ico" alt="Agenda Avaliações Acadêmicas" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Agenda Avaliações Acadêmicas</div>
+            <div class="related-app-tag">Python • Gestão de Notas</div>
+          </div>
+        </a>
+        <a href="linceu-lighthouse.html" class="related-app-card">
+          <img src="../image_perfil/linceu_sem_fundo.png" alt="Linceu Lighthouse" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Linceu Lighthouse</div>
+            <div class="related-app-tag">C++17 • Auditoria Forense</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://apps.microsoft.com/detail/9PLR0KD6KSJJ" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>

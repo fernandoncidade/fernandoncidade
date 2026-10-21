@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linceu Lighthouse • Auditoria Forense e Monitoramento de Arquivos em C++</title>
+  <meta name="description" content="Linceu Lighthouse: Monitoramento de diretórios em tempo real, auditoria forense com hash SHA-256/SHA-3 e banco de dados SQLite WAL. 100% offline para Windows.">
+  <link rel="icon" type="image/png" href="../image_perfil/linceu_sem_fundo.png">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">← Voltar ao Início</span>
+        <span class="lang-en">← Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="../image_perfil/linceu_sem_fundo.png" alt="Ícone Linceu Lighthouse" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">C++17</span>
+            <span class="tech-badge">Qt 6</span>
+            <span class="tech-badge platform">Windows 10 / 11 (x64)</span>
+            <span class="tech-badge offline">100% Offline</span>
+            <span class="tech-badge">SQLite WAL</span>
+          </div>
+
+          <h1 class="app-hero-title">Linceu Lighthouse</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Auditoria Forense de Arquivos, Monitoramento em Tempo Real de Diretórios e Verificação de Integridade Criptográfica para Windows.
+          </p>
+          <p class="app-hero-tagline lang-en">
+            Forensic File Audit, Real-Time Directory Monitoring, and Cryptographic Integrity Verification Engine for Windows.
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" class="btn-cta btn-cta-store" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.5 3H2v8.5h9.5V3zm1 0V11.5H22V3h-9.5zM2 12.5V21h9.5v-8.5H2zm10.5 0V21H22v-8.5h-9.5z"/></svg>
+              <span class="lang-pt">Obter na Microsoft Store</span>
+              <span class="lang-en">Get from Microsoft Store</span>
+            </a>
+            <a href="https://github.com/fernandoncidade/Linceu_Lighthouse_cpp" class="btn-cta btn-cta-github" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span class="lang-pt">Ver Repositório no GitHub</span>
+              <span class="lang-en">View GitHub Repository</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[Linceu%20Lighthouse]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Conteúdo Principal -->
+    <div class="app-sections-grid">
+
+      <!-- Visão de Usuários / Clientes -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>🛡️</span>
+          <span class="lang-pt">Visão do Usuário & Valor de Negócio</span>
+          <span class="lang-en">End-User & Business Value</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Controle Absoluto sobre seus Arquivos Críticos</span>
+          <span class="lang-en">Absolute Control Over Your Critical Files</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O <strong>Linceu Lighthouse</strong> foi projetado para profissionais, empresas e usuários que exigem visibilidade forense instantânea sobre alterações em sistemas de arquivos no Windows. Seja para monitorar diretórios de banco de dados, servidores de arquivos compartilhados, projetos de código-fonte ou pastas sensíveis de documentos, o Linceu registra cada criação, modificação, renomeação e exclusão com precisão de milissegundos.
+        </p>
+        <p class="section-lead lang-en">
+          <strong>Linceu Lighthouse</strong> is engineered for professionals, businesses, and power users who require instant forensic visibility over file system modifications on Windows. Whether monitoring database directories, shared file servers, source code trees, or confidential document folders, Linceu tracks every creation, write, rename, and deletion with millisecond precision.
+        </p>
+
+        <!-- Banner de Privacidade -->
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">🔒</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Garantia de Privacidade: 100% Local e Offline</div>
+            <div class="highlight-banner-title lang-en">Privacy Guarantee: 100% Local & Offline</div>
+            <div class="highlight-banner-text lang-pt">
+              Nenhum byte de dados ou telemetria sai do seu computador. O Linceu Lighthouse opera completamente desconectado de servidores externos, processando hashes e transações de banco de dados diretamente no disco local.
+            </div>
+            <div class="highlight-banner-text lang-en">
+              No data or telemetry ever leaves your computer. Linceu Lighthouse operates entirely decoupled from external servers, processing hashes and database transactions strictly on your local disk.
+            </div>
+          </div>
+        </div>
+
+        <!-- Grade de Funcionalidades -->
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">⚡</span>
+            <h3 class="feature-title lang-pt">Monitoramento Kernel em Tempo Real</h3>
+            <h3 class="feature-title lang-en">Real-Time Kernel Monitoring</h3>
+            <p class="feature-desc lang-pt">
+              Captura eventos imediatamente através das APIs assíncronas de baixo nível do Windows, sem necessidade de varredura periódica pesada.
+            </p>
+            <p class="feature-desc lang-en">
+              Instantly catches file system modifications via native Windows asynchronous kernel hooks without polling overhead.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🔑</span>
+            <h3 class="feature-title lang-pt">Assinatura Criptográfica SHA-256</h3>
+            <h3 class="feature-title lang-en">SHA-256 Cryptographic Hash</h3>
+            <p class="feature-desc lang-pt">
+              Calcula a impressão digital exata de cada arquivo para identificar alterações de conteúdo mesmo quando datas de modificação forem manipuladas.
+            </p>
+            <p class="feature-desc lang-en">
+              Computes exact file fingerprints to detect unauthorized content tampering even if modification timestamps are forged.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🗄️</span>
+            <h3 class="feature-title lang-pt">Histórico Auditável SQLite WAL</h3>
+            <h3 class="feature-title lang-en">Auditable SQLite WAL History</h3>
+            <p class="feature-desc lang-pt">
+              Armazena milhões de eventos em banco de dados local de alta confiabilidade com suporte a escrita paralela em tempo real (Write-Ahead Logging).
+            </p>
+            <p class="feature-desc lang-en">
+              Stores millions of historical events with high durability and concurrent non-blocking writes using Write-Ahead Logging.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">📊</span>
+            <h3 class="feature-title lang-pt">Exportação de Relatórios Forenses</h3>
+            <h3 class="feature-title lang-en">Forensic Report Export</h3>
+            <p class="feature-desc lang-pt">
+              Gere relatórios completos em formato CSV ou JSON para auditorias de conformidade (LGPD, GDPR, SOC 2, ISO 27001).
+            </p>
+            <p class="feature-desc lang-en">
+              Generate structured CSV and JSON audit trails ready for regulatory compliance (GDPR, LGPD, SOC 2, ISO 27001).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Arquitetura de Software & Engenharia</span>
+          <span class="lang-en">Software Architecture & Engineering</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Engenharia C++ de Alto Desempenho</span>
+          <span class="lang-en">High-Performance C++ Engineering</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          Construído em <strong>C++17</strong> e interface nativa em <strong>Qt 6</strong>, o Linceu Lighthouse foi desenvolvido com foco em consumo mínimo de recursos computacionais, baixa latência de I/O e robustez multithread. Ele utiliza threads desacopladas de captura de eventos e escrita em lote no banco de dados para evitar gargalos na interface gráfica.
+        </p>
+        <p class="section-lead lang-en">
+          Built in <strong>C++17</strong> with native <strong>Qt 6</strong> presentation, Linceu Lighthouse was engineered with a strict focus on minimal resource consumption, low I/O latency, and multi-threaded resilience. It isolates kernel event capture from database persistence via lock-free or ring-buffer queues to eliminate UI freezes.
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Subssistema de Notificação Win32</span>
+              <span class="dev-spec-name lang-en">Win32 Notification Subsystem</span>
+              <span class="dev-spec-tag">ReadDirectoryChangesW</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Utiliza buffers alinhados e I/O completion assíncrono para receber notificações diretas do driver NTFS/FAT32 com latência inferior a 1 ms, tratando renomeações complexas e transientes.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Leverages aligned buffers and asynchronous I/O completion to receive direct notification packets from NTFS/FAT32 drivers with sub-millisecond dispatch.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Pipeline Criptográfico Multi-Thread</span>
+              <span class="dev-spec-name lang-en">Multi-Threaded Hashing Pipeline</span>
+              <span class="dev-spec-tag">QCryptographicHash / OpenSSL</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              O hashing de arquivos é executado em um thread pool de background dedicado, evitando qualquer degradação da taxa de quadros (60 FPS) da interface visual mesmo sob rajadas de I/O de milhares de arquivos.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              File cryptographic checksums run in a dedicated background worker pool, guaranteeing a stable 60 FPS UI responsiveness even during heavy bursts of disk I/O.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Camada de Persistência Transacional</span>
+              <span class="dev-spec-name lang-en">Transactional Persistence Layer</span>
+              <span class="dev-spec-tag">SQLite3 + WAL Mode</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Configurado com <code>PRAGMA journal_mode=WAL</code> e <code>synchronous=NORMAL</code>, viabilizando leituras concorrentes ultrarrápidas sem bloquear inserções simultâneas de eventos.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Configured with <code>PRAGMA journal_mode=WAL</code> and <code>synchronous=NORMAL</code>, unlocking concurrent lock-free reads while high-frequency inserts stream continuously.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tabela de Especificações -->
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagem / Padrão</th>
+                <th class="lang-en">Language / Standard</th>
+                <td>
+                  <span class="lang-pt">C++17 (MSVC 2022 / MinGW-w64)</span>
+                  <span class="lang-en">C++17 (MSVC 2022 / MinGW-w64)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Framework de GUI</th>
+                <th class="lang-en">GUI Framework</th>
+                <td>
+                  <span class="lang-pt">Qt 6.x (Widgets nativos com temas dinâmicos)</span>
+                  <span class="lang-en">Qt 6.x (Native widgets with dynamic theming)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Consumo Médio de RAM</th>
+                <th class="lang-en">Average RAM Footprint</th>
+                <td>
+                  <span class="lang-pt">~35 MB em execução contínua de monitoramento</span>
+                  <span class="lang-en">~35 MB during continuous background monitoring</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">APIs do Sistema Operacional</th>
+                <th class="lang-en">Operating System APIs</th>
+                <td>
+                  <span class="lang-pt">Win32 File Management APIs, Windows Shell Notification</span>
+                  <span class="lang-en">Win32 File Management APIs, Windows Shell Notification</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Banco de Dados</th>
+                <th class="lang-en">Database Engine</th>
+                <td>
+                  <span class="lang-pt">SQLite 3.x (WAL mode, transações em lote)</span>
+                  <span class="lang-en">SQLite 3.x (WAL mode, batch transactions)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Licenciamento</th>
+                <th class="lang-en">Licensing</th>
+                <td>
+                  <span class="lang-pt">GPL-3.0 / Open Source / Certificado na Microsoft Store</span>
+                  <span class="lang-en">GPL-3.0 / Open Source / Microsoft Store Certified</span>
+                </td>
+              </tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="acl-auditor.html" class="related-app-card">
+          <img src="../image_perfil/acl_auditor.png" alt="ACL Auditor" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">ACL Auditor</div>
+            <div class="related-app-tag">C++20 • NTFS Security</div>
+          </div>
+        </a>
+        <a href="munin-app.html" class="related-app-card">
+          <img src="../image_perfil/munin.png" alt="Munin App" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Munin App</div>
+            <div class="related-app-tag">C++20 • SIMD Regex</div>
+          </div>
+        </a>
+        <a href="compression-manager.html" class="related-app-card">
+          <img src="../image_perfil/Manager-BackUp.png" alt="Compression Manager" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Compression Manager</div>
+            <div class="related-app-tag">Python / Qt • Backup AES-256</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>

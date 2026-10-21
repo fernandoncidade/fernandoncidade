@@ -74,80 +74,204 @@
 
 ## 🌻 Sobre Mim 🌻
 
-Sou desenvolvedor de software com experiência em Python, C++ e desenvolvimento de interfaces gráficas (GUI). Tenho interesse especial em automação de tarefas, análise de dados e criação de soluções práticas para o dia a dia, utilizando frameworks modernos como PySide6, PyQt6 e Streamlit.
+Sou desenvolvedor de software com experiência sólida em C++ (C++17/C++20), Python e engenharia de interfaces gráficas desktop (GUI). Tenho foco em ferramentas de alta performance, auditoria de segurança de sistemas de arquivos, processamento de logs massivos em tempo real, automação e soluções práticas para o cotidiano, combinando Qt6, Win32 API, instruções SIMD e bancos locais com soberania total de dados (100% offline).
 
 ## 🚀 Habilidades
 
-- **Linguagens:** Python, C++
-- **Desenvolvimento de GUI:** PySide6, PyQt6, Tkinter
-- **Análise de Dados e Visualização:** Pandas, Plotly, Streamlit
-- **Científico e Numérico:** Numpy, Scipy, Matplotlib
-- **Gerenciamento de Arquivos e Backup:** Automação e compressão de dados
-- **Metodologias de Organização e Produtividade:** Matriz de Eisenhower
+- **Linguagens:** C++ (C++17, C++20), Python (3.10+)
+- **Desenvolvimento de GUI & Desktop:** Qt6 (Widgets, QSS, Mica/Windows DWM), PySide6, PyQt6, Tkinter
+- **Sistemas & Performance:** Win32 API, Memory-Mapped Files (Zero-Copy), Instruções SIMD (AVX2, SSE4.2), Multithreading, SQLite Local
+- **Segurança & Auditoria:** Permissões NTFS, Auditoria SMB, Análise de Acesso Efetivo (Effective Access), File Integrity Monitoring (FIM), ReadDirectoryChangesW, Hashes Criptográficos
+- **Análise de Dados e Visualização:** Pandas, Plotly, Streamlit, Taipy
+- **Científico e Numérico:** NumPy, SciPy, Matplotlib
+- **Gerenciamento de Arquivos e Backup:** Automação, compressão de dados (LZMA, LZ77)
+- **Metodologias de Organização e Produtividade:** Matriz de Eisenhower, Pomodoro, Método Feynman
 - **Controle de Versionamento:** Git e GitHub
 
-## 🌟 Destaque de Projeto: Lumen
+## 🏪 Aplicativos na Loja da Microsoft (Microsoft Store)
 
 <div align="center">
-  <a href="https://apps.microsoft.com/detail/9N70CLLMVRPN">
-    <img src="image_perfil/autismo.png" alt="Lumen Print" width="320"/>
-  </a>
+
+| Aplicativo | Ícone | Descrição | Microsoft Store | Repositório |
+|---|:---:|---|:---:|:---:|
+| **Linceu Lighthouse** | <img src="image_perfil/linceu_sem_fundo.png" width="44"/> | Plataforma local de inteligência, histórico e auditoria de arquivos (FIM) | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NN8Z5Z700TM) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp) |
+| **ACL Auditor** | <img src="image_perfil/acl_auditor.png" width="44"/> | Auditoria de permissões NTFS & SMB, cálculo de acesso efetivo e riscos | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NX5XZLL8WXW) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/ACL_Auditor_cpp) |
+| **Munin App** | <img src="image_perfil/munin.png" width="44"/> | Leitor de logs massivos ultraveloz com Memory-Mapped Files e SIMD | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9PP4GVHR5THC) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Munin_App_cpp) |
+| **EisenPo** | <img src="image_perfil/eisenpo.png" width="44"/> | Gestão de tarefas por Matriz de Eisenhower com módulos Pomodoro e Feynman | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9MW96RN044TT) | — |
+| **EISENHOWER ORGANIZER** | <img src="image_perfil/eisenhower.png" width="44"/> | Organização e priorização ágil de tarefas pela Matriz de Eisenhower | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9P289X0185C3) | — |
+| **Lúmen** | <img src="image_perfil/autismo.png" width="44"/> | Apoio a estudo, foco e organização para neurodivergentes (TEA, TDAH, Dislexia) | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9N70CLLMVRPN) | — |
+| **COMPRESSION MANAGER** | <img src="image_perfil/Manager-BackUp.png" width="44"/> | Gerenciador de compressão e automação de backups multifórmato | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9PJMT90R953K) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Compression_Manager) |
+| **Economia APP** | <img src="image_perfil/economia.png" width="44"/> | Cálculos de Engenharia Econômica e finanças com passos detalhados | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9PLR0KD6KSJJ) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Economia_APP) |
+
 </div>
 
-**Lumen**  
-Aplicativo com foco em soluções leves para visualização/organização de dados e utilitários de apoio ao fluxo de trabalho.
-- [Microsoft Web Store](https://apps.microsoft.com/detail/9N70CLLMVRPN)
-
-- ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt)
-
-## 📋 Destaque de Projeto: Eisenhower Organizer
-
-<div align="center">
-  <a href="https://apps.microsoft.com/detail/9P289X0185C3">
-    <img src="image_perfil/eisenhower.png" alt="Eisenhower Organizer Print" width="320"/>
-  </a>
-</div>
-
-**Eisenhower Organizer**  
-EISENHOWER ORGANIZER é um aplicativo leve para organizar tarefas usando a Matriz de Eisenhower (Importante/Urgente). Permite criar, classificar, marcar como concluídas e exportar/importar tarefas de forma simples e rápida.
-- [Microsoft Web Store](https://apps.microsoft.com/detail/9P289X0185C3)
-
-- ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt)
+---
 
 ## 🏮 Destaque de Projeto: Linceu Lighthouse
 
 <div align="center">
-  <a href="https://apps.microsoft.com/detail/9NN8Z5Z700TM">
-    <img src="image_perfil/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse_cpp">
+    <img src="image_perfil/linceu_sem_fundo.png" alt="Linceu Lighthouse Logo" width="220"/>
   </a>
 </div>
 
 **Linceu Lighthouse**  
-Ferramenta avançada de monitoramento de integridade de arquivos (FIM), com interface multilíngue, estatísticas detalhadas e exportação flexível de dados.
+Plataforma desktop nativa em **C++17 e Qt6** para inteligência, rastreamento histórico e auditoria determinística do sistema de arquivos do Windows.
+- **Monitoramento Semântico em Tempo Real:** Captura via APIs Win32 assíncronas (`ReadDirectoryChangesW`) com correlação de eventos complexos para identificação real de `RENAMED` e `MOVED`.
+- **Inteligência Local sem IA:** Banco de dados relacional SQLite local enriquecido com mais de 30 categorias de metadados antes e depois de cada modificação, acompanhado por 17 visualizações gráficas nativas e mapas de calor.
+- **Segurança e Linha de Base:** Linha de base criptográfica (baseline), cálculo determinístico de score de risco e exportação de relatórios auditáveis.
+- **100% Local & Offline:** Zero nuvem, zero telemetria e isolamento completo.
+- [Repositório GitHub: Linceu_Lighthouse_cpp](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp)
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9NN8Z5Z700TM)
+- ![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![Windows](https://img.shields.io/badge/Platform-Windows-0078D4?logo=windows) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
 
+## 🛡️ Destaque de Projeto: ACL Auditor
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/ACL_Auditor_cpp">
+    <img src="image_perfil/acl_auditor.png" alt="ACL Auditor Logo" width="220"/>
+  </a>
+</div>
+
+**ACL Auditor**  
+Auditor enterprise-grade de permissões NTFS e compartilhamentos SMB no Windows, construído nativamente em **C++20 e Qt 6.11**.
+- **Análise de Acesso Efetivo (Effective Access):** Responde com exatidão causal o motivo pelo qual um usuário ou grupo possui determinada permissão, simulando tokens, grupos aninhados e regras de herança.
+- **Detecção de Riscos e Conformidade:** Identifica vulnerabilidades de segurança, diretórios graváveis por todos (*world-writable*), SIDs órfãos e caminhos de escalonamento de privilégios em serviços do Windows (caminhos não citados / *unquoted paths*).
+- **Remediação Segura com Rollback:** Gera planos de remediação auditáveis garantindo backup obrigatório (`icacls /save`) e restauração segura (`icacls /restore`).
+- **Relatórios Auditáveis:** Exportação completa de snapshots e relatórios técnicos em HTML e PDF.
+- [Repositório GitHub: ACL_Auditor_cpp](https://github.com/fernandoncidade/ACL_Auditor_cpp)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9NX5XZLL8WXW)
+- ![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus) ![Qt 6.11](https://img.shields.io/badge/Qt-6.11-brightgreen?logo=qt) ![NTFS & SMB](https://img.shields.io/badge/Windows-NTFS%20%26%20SMB-0078D4?logo=windows) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
+
+## ⚡ Destaque de Projeto: Munin App
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Munin_App_cpp">
+    <img src="image_perfil/munin.png" alt="Munin App Logo" width="220"/>
+  </a>
+</div>
+
+**Munin App**  
+Visualizador e analisador de logs massivos de altíssimo desempenho para Windows, arquitetado em **C++20 com Qt6**.
+- **Abertura Instantânea de Gigabytes:** Leitura *zero-copy* sob demanda via *Memory-Mapped Files* Win32 (`CreateFileMappingW` e `MapViewOfFile`), eliminando esgotamento de memória RAM.
+- **Indexação SIMD > 3 GB/s:** Escaneamento vetorial ultrarrápido com instruções AVX2 e SSE4.2 com fallback escalar para indexar offsets em tempo recorde.
+- **Busca Paralela Multi-Core:** Particionamento dinâmico entre todos os núcleos de CPU com suporte a Regex JIT e filtragem instantânea de linhas.
+- **Live Tail & Time-Slice:** Acompanhamento contínuo em tempo real via eventos do kernel sem loops de polling e histograma temporal de distribuição de volume por carimbos de data/hora.
+- **Inspetor Hierárquico JSON:** Dissecação e árvore formatada com realce sintático para logs estruturados modernos.
+- [Repositório GitHub: Munin_App_cpp](https://github.com/fernandoncidade/Munin_App_cpp)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9PP4GVHR5THC)
+- ![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![SIMD AVX2](https://img.shields.io/badge/SIMD-AVX2%20%2F%20SSE4.2-orange) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
+
+## 📋 Destaque de Projeto: EisenPo
+
+<div align="center">
+  <a href="https://apps.microsoft.com/detail/9MW96RN044TT">
+    <img src="image_perfil/eisenpo.png" alt="EisenPo Logo" width="220"/>
+  </a>
+</div>
+
+**EisenPo**  
+Aplicação desktop nativa em **C++ e Qt6** para organização e priorização de tarefas com base na Matriz de Eisenhower (Urgente/Importante).
+- **Quatro Quadrantes Dinâmicos:** Classificação ágil entre tarefas pendentes e concluídas com movimentação automática.
+- **Exportação & Importação:** Suporte a planilhas Excel (XLSX), arquivos PDF estruturados e persistência local segura em JSON.
+- **Módulos e Plugins Opcionais:** Inclui módulo de foco Pomodoro com ciclos de trabalho/pausa sincronizados e integração com o Método Feynman para aprendizado e revisão ativa de conceitos.
+- **Visualização Temporal:** Calendário integrado para exibição de tarefas por dia, semana e mês.
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9MW96RN044TT)
+- ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![Pomodoro](https://img.shields.io/badge/Focus-Pomodoro%20%26%20Feynman-red)
+
+## 🌟 Destaque de Projeto: Lúmen
+
+<div align="center">
+  <a href="https://apps.microsoft.com/detail/9N70CLLMVRPN">
+    <img src="image_perfil/autismo.png" alt="Lúmen Logo" width="220"/>
+  </a>
+</div>
+
+**Lúmen**  
+Aplicativo desktop em **C++ e Qt6** voltado para apoiar jovens e adultos neurodivergentes (TEA, TDAH, Dislexia) no estudo, foco e organização pessoal.
+- Integra leitor acessível com vozes neurais, ferramentas de priorização de tarefas, timers Pomodoro com alertas visuais suaves, mapas mentais e recursos para explicação ativa (Método Feynman).
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9N70CLLMVRPN)
+- ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![Acessibilidade](https://img.shields.io/badge/Acessibilidade-TEA%20%7C%20TDAH%20%7C%20Dislexia-teal)
+
+## 🗂️ Destaque de Projeto: Eisenhower Organizer
+
+<div align="center">
+  <a href="https://apps.microsoft.com/detail/9P289X0185C3">
+    <img src="image_perfil/eisenhower.png" alt="Eisenhower Organizer Logo" width="220"/>
+  </a>
+</div>
+
+**Eisenhower Organizer**  
+Aplicativo leve e rápido para organizar tarefas usando a Matriz de Eisenhower (Importante/Urgente). Permite criar, classificar, marcar como concluídas e exportar/importar tarefas de forma simples e intuitiva.
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9P289X0185C3)
 - ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt)
+
+## 📦 Destaque de Projeto: Compression Manager
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Compression_Manager">
+    <img src="image_perfil/Manager-BackUp.png" alt="Compression Manager Logo" width="220"/>
+  </a>
+</div>
+
+**Compression Manager**  
+Aplicativo desktop completo para automação de backups e compressão de arquivos. Conta com interface gráfica intuitiva, suporte a múltiplos formatos de arquivamento e perfis rápidos de backup.
+- [Repositório GitHub: Compression_Manager](https://github.com/fernandoncidade/Compression_Manager)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9PJMT90R953K)
+- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![Qt](https://img.shields.io/badge/GUI-Qt%20Framework-brightgreen?logo=qt)
+
+## 💰 Destaque de Projeto: Economia APP
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Economia_APP">
+    <img src="image_perfil/economia.png" alt="Economia APP Logo" width="220"/>
+  </a>
+</div>
+
+**Economia APP**  
+Ferramenta para cálculos financeiros e suporte à disciplina de Engenharia Econômica. Automatiza cálculos de juros simples e compostos, anuidades, gradientes, equivalência de taxas, tabelas de amortização (SAC, Price, SAM), análise de viabilidade de investimentos (VPL / VAUE) e depreciação com memória de cálculo detalhada.
+- [Repositório GitHub: Economia_APP](https://github.com/fernandoncidade/Economia_APP)
+- [Repositório GitHub: Economia_APP_cpp](https://github.com/fernandoncidade/Economia_APP_cpp)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9PLR0KD6KSJJ)
+- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Finanças](https://img.shields.io/badge/Engenharia-Econ%C3%B4mica-green)
+
+## 📚 Destaque de Projeto: Launcher EBook
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Launcher_EBook">
+    <img src="image_perfil/launcherebook2_256-256.png" alt="Launcher EBook Logo" width="220"/>
+  </a>
+</div>
+
+**Launcher EBook**  
+Aplicação desktop nativa em **C++/Qt6** para catalogar e-books e documentos locais, exibir metadados básicos, gerar estatísticas de acervo e abrir arquivos com aplicativos associados do sistema ou com um executável personalizado.
+- [Repositório GitHub: Launcher_EBook](https://github.com/fernandoncidade/Launcher_EBook)
+- ![C++](https://img.shields.io/badge/C%2B%2B-Qt6-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt)
 
 ## 👥 Destaque de Projeto: Compare - Following and Follower
 
 <div align="center">
   <a href="https://github.com/fernandoncidade/Compare_Following_Follower">
-    <img src="https://github.com/fernandoncidade/Compare_Following_Follower/blob/main/source/assets/icons/FollowingFollower_256-256.png" alt="Compare - Following and Follower Print" width="320"/>
+    <img src="https://raw.githubusercontent.com/fernandoncidade/Compare_Following_Follower/main/source/assets/icons/FollowingFollower_256-256.png" alt="Compare - Following and Follower Print" width="220"/>
   </a>
 </div>
 
 **Compare - Following and Follower**  
-Compare - Following and Follower é um aplicativo desktop para comparar, de forma prática, quem você segue e quem te segue no GitHub. Uma ferramenta para transformar listas grandes de seguidores em decisões claras, sem precisar abrir perfil por perfil.
-- [Repositório Compare - Following and Follower](https://github.com/fernandoncidade/Compare_Following_Follower)
-- [Leia o README do Compare - Following and Follower](https://github.com/fernandoncidade/Compare_Following_Follower/blob/main/README.md)
+Aplicativo desktop em Python/PySide6 para comparar, de forma prática e visual, quem você segue e quem te segue no GitHub, transformando grandes listas em relatórios claros para gestão do seu perfil.
+- [Repositório GitHub: Compare_Following_Follower](https://github.com/fernandoncidade/Compare_Following_Follower)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Principais Projetos
 
-- [**Agenda Avaliações Acadêmicas**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas): Sistema para gerenciamento de atividades avaliativas em ambientes educacionais, usando PySide6 e módulos personalizados.
-- [**Compression Manager**](https://github.com/fernandoncidade/Compression_Manager): Aplicativo de backup e compressão de arquivos com interface gráfica intuitiva, suporte a múltiplos formatos.
-- [**Launcher EBook**](https://github.com/fernandoncidade/Launcher_EBook): Aplicação desktop em C++/Qt6 para catalogar e-books e documentos locais, exibir metadados básicos, reportar estatísticas e abrir arquivos com aplicativos associados do sistema ou com um executável escolhido pelo usuário.
-- [**Programa Urna Eletrônica**](https://github.com/fernandoncidade/Programa_Urna_Eletronica): Sistema de votação eletrônica em C++, simulando urna eletrônica com apuração automática.
+- [**Linceu Lighthouse**](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp): Plataforma local de inteligência, histórico e auditoria determinística de atividades de arquivos no Windows (C++17 / Qt6 / SQLite).
+- [**ACL Auditor**](https://github.com/fernandoncidade/ACL_Auditor_cpp): Auditor enterprise-grade de permissões NTFS e compartilhamentos SMB com análise de acesso efetivo e riscos (C++20 / Qt 6.11).
+- [**Munin App**](https://github.com/fernandoncidade/Munin_App_cpp): Visualizador de logs massivos ultraveloz com Win32 Memory-Mapped Files e aceleração SIMD AVX2/SSE4.2 (C++20 / Qt6).
+- [**Compression Manager**](https://github.com/fernandoncidade/Compression_Manager): Aplicativo completo de backup e compressão de arquivos com interface gráfica intuitiva.
+- [**Economia APP**](https://github.com/fernandoncidade/Economia_APP): Ferramenta para cálculos financeiros e Engenharia Econômica com passos detalhados e histórico.
+- [**Launcher EBook**](https://github.com/fernandoncidade/Launcher_EBook): Aplicação desktop em C++/Qt6 para catalogação de e-books e documentos locais.
+- [**Agenda Avaliações Acadêmicas**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas): Sistema para gerenciamento de atividades avaliativas em ambientes educacionais, usando PySide6.
+- [**Compare - Following and Follower**](https://github.com/fernandoncidade/Compare_Following_Follower): Aplicativo desktop para comparar seguidores e seguidos no GitHub.
+- [**Programa Urna Eletrônica**](https://github.com/fernandoncidade/Programa_Urna_Eletronica): Sistema de votação eletrônica em C++, simulando urna com apuração automática.
 
 ## 📊 Dashboards de Análise de Dados
 - [Streamlit/Plotly/Pandas Management](https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management)
@@ -174,9 +298,7 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 
 [![Website](https://img.shields.io/badge/Site-fernandoncidade.github.io-blue?style=for-the-badge&logo=google-chrome)](https://fernandoncidade.github.io/fernandoncidade/)
 [![GitHub](https://img.shields.io/badge/GitHub-fernandoncidade-181717?style=for-the-badge&logo=github)](https://github.com/fernandoncidade)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-fernando--nillsson--cidade-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/fernando-nillsson-cidade)
 [![Lattes](https://img.shields.io/badge/Lattes-fernando__n__cidade-orange?style=for-the-badge)](http://lattes.cnpq.br/1220810284745516)
-[![Instagram](https://img.shields.io/badge/Instagram-fernandonillssoncidade-E4405F?style=for-the-badge&logo=instagram)](https://www.instagram.com/fernandonillssoncidade)
 [![ORCID](https://img.shields.io/badge/ORCID-fernando_nillsson_cidade-orange?style=for-the-badge)](https://orcid.org/0009-0009-5146-9830)
 
 </div>
@@ -190,10 +312,6 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 <p align="center">
   <img src="https://yourinsights.vercel.app/api/insight?username=fernandoncidade&theme=github_dark&graph=true&languages=true&streak=true&stats=true&header=true&summary=true&profile=true" alt="GitHub Insights" />
 </p>
-
-[![fernandoncidade's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&area=true&custom_title=Gráfico%20de%20Atividade%20de%20fernandoncidade&locale=pt-br)](https://github.com/ashutosh00710/github-readme-activity-graph)
-
-[![Top Langs](https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade\&layout=compact&theme=merko&locale=pt-br)](https://github.com/ishandutta2007/beautiful-github-homepage)
 
 <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em><b>Sempre codando com paixão!</b> 🚀</em> <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60">
 
@@ -273,80 +391,204 @@ Compare - Following and Follower é um aplicativo desktop para comparar, de form
 
 ## 🌻 About Me 🌻
 
-I'm a software developer with experience in Python, C++, and GUI development. I'm particularly interested in task automation, data analysis, and creating practical solutions for everyday life using modern frameworks like PySide6, PyQt6, and Streamlit.
+I'm a software developer with solid experience in C++ (C++17/C++20), Python, and desktop graphical user interface (GUI) engineering. My work focuses on high-performance tooling, file system security auditing, real-time massive log parsing, automation, and everyday workflow utilities, leveraging Qt6, the Win32 API, SIMD vector instructions, and local databases with total data sovereignty (100% offline).
 
 ## 🚀 Skills
 
-- **Languages:** Python, C++
-- **GUI Development:** PySide6, PyQt6, Tkinter
-- **Data Analysis & Visualization:** Pandas, Plotly, Streamlit
-- **Scientific & Numerical:** Numpy, Scipy, Matplotlib
-- **File Management & Backup:** Data automation and compression
-- **Organization & Productivity:** Eisenhower Matrix
+- **Languages:** C++ (C++17, C++20), Python (3.10+)
+- **GUI & Desktop Development:** Qt6 (Widgets, QSS, Mica/Windows DWM), PySide6, PyQt6, Tkinter
+- **Systems & Performance:** Win32 API, Memory-Mapped Files (Zero-Copy), SIMD Vector Instructions (AVX2, SSE4.2), Multithreading, Local SQLite
+- **Security & Auditing:** NTFS Permissions, SMB Share Auditing, Effective Access Analysis, File Integrity Monitoring (FIM), ReadDirectoryChangesW, Cryptographic Hashes
+- **Data Analysis & Visualization:** Pandas, Plotly, Streamlit, Taipy
+- **Scientific & Numerical:** NumPy, SciPy, Matplotlib
+- **File Management & Backup:** Automation, data compression (LZMA, LZ77)
+- **Productivity & Methodologies:** Eisenhower Matrix, Pomodoro, Feynman Technique
 - **Version Control:** Git and GitHub
 
-## 🌟 Project Highlight: Lumen
+## 🏪 Microsoft Store Applications
 
 <div align="center">
-  <a href="https://apps.microsoft.com/detail/9N70CLLMVRPN">
-    <img src="image_perfil/autismo.png" alt="Lumen Print" width="320"/>
-  </a>
+
+| Application | Icon | Description | Microsoft Store | Repository |
+|---|:---:|---|:---:|:---:|
+| **Linceu Lighthouse** | <img src="image_perfil/linceu_sem_fundo.png" width="44"/> | Local file activity intelligence, history, and audit platform (FIM) | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NN8Z5Z700TM) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp) |
+| **ACL Auditor** | <img src="image_perfil/acl_auditor.png" width="44"/> | Windows NTFS & SMB permission auditor, effective access & risk detection | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NX5XZLL8WXW) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/ACL_Auditor_cpp) |
+| **Munin App** | <img src="image_perfil/munin.png" width="44"/> | Ultra-high performance massive log reader with Win32 Memory-Mapped Files & SIMD | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9PP4GVHR5THC) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Munin_App_cpp) |
+| **EisenPo** | <img src="image_perfil/eisenpo.png" width="44"/> | Eisenhower Matrix task management with integrated Pomodoro & Feynman modules | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9MW96RN044TT) | — |
+| **EISENHOWER ORGANIZER** | <img src="image_perfil/eisenhower.png" width="44"/> | Agile task organization & prioritization using the Eisenhower Matrix | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9P289X0185C3) | — |
+| **Lúmen** | <img src="image_perfil/autismo.png" width="44"/> | Study, focus & organization assistant for neurodivergent individuals (ASD, ADHD, Dyslexia) | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9N70CLLMVRPN) | — |
+| **COMPRESSION MANAGER** | <img src="image_perfil/Manager-BackUp.png" width="44"/> | Multiformat archive compression and backup automation manager | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9PJMT90R953K) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Compression_Manager) |
+| **Economia APP** | <img src="image_perfil/economia.png" width="44"/> | Engineering Economics & financial calculations with detailed step-by-step memory | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9PLR0KD6KSJJ) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Economia_APP) |
+
 </div>
 
-**Lumen**  
-Application focused on lightweight solutions for data visualization/organization and utilities to support the workflow.
-- [Microsoft Web Store](https://apps.microsoft.com/detail/9N70CLLMVRPN)
-
-- ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt)
-
-## 📋 Project Highlight: Eisenhower Organizer
-
-<div align="center">
-  <a href="https://apps.microsoft.com/detail/9P289X0185C3">
-    <img src="image_perfil/eisenhower.png" alt="Eisenhower Organizer Print" width="320"/>
-  </a>
-</div>
-
-**Eisenhower Organizer**  
-EISENHOWER ORGANIZER is a lightweight application for organizing tasks using the Eisenhower Matrix (Important/Urgent). It allows you to create, sort, mark as completed, and export/import tasks quickly and easily.
-- [Microsoft Web Store](https://apps.microsoft.com/detail/9P289X0185C3)
-
-- ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt)
+---
 
 ## 🏮 Project Highlight: Linceu Lighthouse
 
 <div align="center">
-  <a href="https://apps.microsoft.com/detail/9NN8Z5Z700TM">
-    <img src="image_perfil/file_manager4.png" alt="Linceu Lighthouse Print" width="320"/>
+  <a href="https://github.com/fernandoncidade/Linceu_Lighthouse_cpp">
+    <img src="image_perfil/linceu_sem_fundo.png" alt="Linceu Lighthouse Logo" width="220"/>
   </a>
 </div>
 
 **Linceu Lighthouse**  
-Advanced file integrity monitoring tool (FIM) with multilingual interface, detailed statistics, and flexible data export.
+Native Windows desktop application engineered in **C++17 and Qt6** providing deterministic intelligence, historical timeline tracking, and auditing over the file system.
+- **Real-Time Semantic Monitoring:** Captures system events via asynchronous Win32 APIs (`ReadDirectoryChangesW`) with complex correlation algorithms to detect true `RENAMED` and `MOVED` operations.
+- **Local Intelligence without AI:** Automatic local SQLite database enriched with 30+ metadata categories before and after each modification, accompanied by 17 native charts and heatmaps.
+- **Cryptographic Baseline & Security:** Cryptographic integrity baselines, deterministic risk scoring, and audit-ready report generation.
+- **100% Local & Offline:** Zero cloud, zero telemetry, and complete network isolation.
+- [GitHub Repository: Linceu_Lighthouse_cpp](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp)
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9NN8Z5Z700TM)
+- ![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![Windows](https://img.shields.io/badge/Platform-Windows-0078D4?logo=windows) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
 
+## 🛡️ Project Highlight: ACL Auditor
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/ACL_Auditor_cpp">
+    <img src="image_perfil/acl_auditor.png" alt="ACL Auditor Logo" width="220"/>
+  </a>
+</div>
+
+**ACL Auditor**  
+Enterprise-grade Windows NTFS and SMB permission auditor and security risk analyzer engineered in **C++20 and Qt 6.11**.
+- **Effective Access Explanation:** Decodes causal permission access for any user or group, simulating token evaluation, nested groups, and inheritance chains.
+- **Risk & Vulnerability Detection:** Discovers security misconfigurations, world-writable directories, orphaned SIDs, and privilege escalation vectors in Windows services (unquoted service paths, writable executables).
+- **Safe Remediation with Guaranteed Rollback:** Generates auditable PowerShell/batch scripts enforcing mandatory backups (`icacls /save`) and guaranteed restoration (`icacls /restore`).
+- **Auditable Reports:** Comprehensive snapshots and technical exports formatted in HTML and PDF.
+- [GitHub Repository: ACL_Auditor_cpp](https://github.com/fernandoncidade/ACL_Auditor_cpp)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9NX5XZLL8WXW)
+- ![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus) ![Qt 6.11](https://img.shields.io/badge/Qt-6.11-brightgreen?logo=qt) ![NTFS & SMB](https://img.shields.io/badge/Windows-NTFS%20%26%20SMB-0078D4?logo=windows) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
+
+## ⚡ Project Highlight: Munin App
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Munin_App_cpp">
+    <img src="image_perfil/munin.png" alt="Munin App Logo" width="220"/>
+  </a>
+</div>
+
+**Munin App**  
+High-performance massive log reader and diagnostic analyzer for Windows, designed natively in **C++20 with Qt6**.
+- **Instant Gigabyte File Opening:** Zero-copy on-demand paging via Win32 *Memory-Mapped Files* (`CreateFileMappingW` and `MapViewOfFile`), eliminating RAM exhaustion.
+- **SIMD Indexing > 3 GB/s:** High-speed vector parsing with AVX2 and SSE4.2 instructions and scalar fallback to index line offsets in milliseconds.
+- **Multi-Core Parallel Search:** Partitioned search across all CPU logical cores with JIT Regex matching and instant line filtering.
+- **Live Tail & Time-Slice Histogram:** Continuous real-time log monitoring via Windows kernel notifications without polling loops, plus timestamp distribution histograms for anomaly detection.
+- **Hierarchical JSON Inspector:** Interactive syntax-highlighted tree panel for modern structured logs.
+- [GitHub Repository: Munin_App_cpp](https://github.com/fernandoncidade/Munin_App_cpp)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9PP4GVHR5THC)
+- ![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![SIMD AVX2](https://img.shields.io/badge/SIMD-AVX2%20%2F%20SSE4.2-orange) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
+
+## 📋 Project Highlight: EisenPo
+
+<div align="center">
+  <a href="https://apps.microsoft.com/detail/9MW96RN044TT">
+    <img src="image_perfil/eisenpo.png" alt="EisenPo Logo" width="220"/>
+  </a>
+</div>
+
+**EisenPo**  
+Native desktop productivity application in **C++ and Qt6** for organizing and prioritizing tasks through the Eisenhower Matrix (Urgent/Important).
+- **Four Dynamic Quadrants:** Agile sorting between pending and completed tasks with automatic list transitions.
+- **Export & Import Support:** Full support for Excel spreadsheets (XLSX), structured PDF files, and persistent local JSON.
+- **Optional Plugins & Modules:** Dedicated Pomodoro focus module with synchronized work/break intervals and Feynman Technique integration for conceptual study and active review.
+- **Calendar & Timeline View:** Visual inspection of scheduled tasks by day, week, and month.
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9MW96RN044TT)
+- ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![Pomodoro](https://img.shields.io/badge/Focus-Pomodoro%20%26%20Feynman-red)
+
+## 🌟 Project Highlight: Lúmen
+
+<div align="center">
+  <a href="https://apps.microsoft.com/detail/9N70CLLMVRPN">
+    <img src="image_perfil/autismo.png" alt="Lúmen Logo" width="220"/>
+  </a>
+</div>
+
+**Lúmen**  
+Desktop application built in **C++ and Qt6** designed to assist neurodivergent students and professionals (ASD, ADHD, Dyslexia) in studying, focusing, and task management.
+- Integrates an accessible reader with neural voice support, prioritization utilities, Pomodoro timers with gentle visual cues, mind mapping, and active explanation tools (Feynman Method).
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9N70CLLMVRPN)
+- ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![Accessibility](https://img.shields.io/badge/Accessibility-ASD%20%7C%20ADHD%20%7C%20Dyslexia-teal)
+
+## 🗂️ Project Highlight: Eisenhower Organizer
+
+<div align="center">
+  <a href="https://apps.microsoft.com/detail/9P289X0185C3">
+    <img src="image_perfil/eisenhower.png" alt="Eisenhower Organizer Logo" width="220"/>
+  </a>
+</div>
+
+**Eisenhower Organizer**  
+Lightweight and agile task manager based on the Eisenhower Matrix (Important/Urgent). Allows creating, categorizing, marking as completed, and importing/exporting tasks with speed and simplicity.
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9P289X0185C3)
 - ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt)
+
+## 📦 Project Highlight: Compression Manager
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Compression_Manager">
+    <img src="image_perfil/Manager-BackUp.png" alt="Compression Manager Logo" width="220"/>
+  </a>
+</div>
+
+**Compression Manager**  
+Comprehensive desktop application for automated backups and file compression with an intuitive user interface and multiformat archive support.
+- [GitHub Repository: Compression_Manager](https://github.com/fernandoncidade/Compression_Manager)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9PJMT90R953K)
+- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![Qt](https://img.shields.io/badge/GUI-Qt%20Framework-brightgreen?logo=qt)
+
+## 💰 Project Highlight: Economia APP
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Economia_APP">
+    <img src="image_perfil/economia.png" alt="Economia APP Logo" width="220"/>
+  </a>
+</div>
+
+**Economia APP**  
+Study and professional calculation aid for Engineering Economics. Automates frequent financial computations (simple/compound interest, annuities, gradients, rate equivalence, amortization schedules SAC/Price/SAM, NPV, EUAW, and depreciation) with step-by-step solution history.
+- [GitHub Repository: Economia_APP](https://github.com/fernandoncidade/Economia_APP)
+- [GitHub Repository: Economia_APP_cpp](https://github.com/fernandoncidade/Economia_APP_cpp)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9PLR0KD6KSJJ)
+- ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![C++](https://img.shields.io/badge/C%2B%2B-Language-blue?logo=cplusplus) ![Finance](https://img.shields.io/badge/Engineering-Economics-green)
+
+## 📚 Project Highlight: Launcher EBook
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Launcher_EBook">
+    <img src="image_perfil/launcherebook2_256-256.png" alt="Launcher EBook Logo" width="220"/>
+  </a>
+</div>
+
+**Launcher EBook**  
+C++/Qt6 desktop application for cataloging local e-books and documents, displaying essential metadata, computing collection statistics, and opening files with default system viewers or a custom executable.
+- [GitHub Repository: Launcher_EBook](https://github.com/fernandoncidade/Launcher_EBook)
+- ![C++](https://img.shields.io/badge/C%2B%2B-Qt6-blue?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt)
 
 ## 👥 Project Highlight: Compare - Following and Follower
 
 <div align="center">
   <a href="https://github.com/fernandoncidade/Compare_Following_Follower">
-    <img src="https://github.com/fernandoncidade/Compare_Following_Follower/blob/main/source/assets/icons/FollowingFollower_256-256.png" alt="Compare - Following and Follower Print" width="320"/>
+    <img src="https://raw.githubusercontent.com/fernandoncidade/Compare_Following_Follower/main/source/assets/icons/FollowingFollower_256-256.png" alt="Compare - Following and Follower Print" width="220"/>
   </a>
 </div>
 
 **Compare - Following and Follower**  
-Compare - Following and Follower is a desktop app to compare, in a practical way, who you follow and who follows you on GitHub. A tool to turn large follower lists into clear decisions, without opening profile by profile.
-- [Compare - Following and Follower Repository](https://github.com/fernandoncidade/Compare_Following_Follower)
-- [Read the Compare - Following and Follower README](https://github.com/fernandoncidade/Compare_Following_Follower/blob/main/README.md)
+Python/PySide6 desktop app to easily audit and compare your GitHub connections (who you follow vs. who follows you back), transforming long follower lists into clean, actionable decisions.
+- [GitHub Repository: Compare_Following_Follower](https://github.com/fernandoncidade/Compare_Following_Follower)
 - ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python) ![PySide6](https://img.shields.io/badge/PySide6-Qt%20Framework-brightgreen?logo=qt)
 
 ## 🎯 Main Projects
 
-- [**Academic Evaluations Scheduler**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas): System for managing academic assessment activities, using PySide6 and custom modules.
-- [**Compression Manager**](https://github.com/fernandoncidade/Compression_Manager): Applications for backup and file compression with an intuitive GUI, supporting multiple formats.
-- [**Launcher EBook**](https://github.com/fernandoncidade/Launcher_EBook): C++/Qt6 desktop application for cataloging local e-books and documents, displaying basic metadata, reporting statistics, and opening files with system-associated apps or a user-selected executable.
-- [**Electronic Ballot Program**](https://github.com/fernandoncidade/Programa_Urna_Eletronica): Electronic voting system in C++, simulating a ballot box with automatic tallying.
+- [**Linceu Lighthouse**](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp): Local file activity intelligence, history, and deterministic audit platform for Windows (C++17 / Qt6 / SQLite).
+- [**ACL Auditor**](https://github.com/fernandoncidade/ACL_Auditor_cpp): Enterprise-grade Windows NTFS & SMB permission auditor with effective access explanation and risk detection (C++20 / Qt 6.11).
+- [**Munin App**](https://github.com/fernandoncidade/Munin_App_cpp): Ultra-fast massive log viewer and analyzer leveraging Win32 Memory-Mapped Files and SIMD acceleration (C++20 / Qt6).
+- [**Compression Manager**](https://github.com/fernandoncidade/Compression_Manager): Comprehensive backup and file compression application with an intuitive GUI.
+- [**Economia APP**](https://github.com/fernandoncidade/Economia_APP): Financial and Engineering Economics calculation tool with detailed step-by-step history.
+- [**Launcher EBook**](https://github.com/fernandoncidade/Launcher_EBook): C++/Qt6 desktop application for cataloging local e-books and documents.
+- [**Academic Evaluations Scheduler**](https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas): System for managing academic assessment activities using PySide6.
+- [**Compare - Following and Follower**](https://github.com/fernandoncidade/Compare_Following_Follower): Desktop app to compare followers and following on GitHub.
+- [**Electronic Ballot Program**](https://github.com/fernandoncidade/Programa_Urna_Eletronica): Electronic voting system in C++, simulating an electronic ballot box with automatic tallying.
 
 ## 📊 Data Analysis Dashboards
 - [Streamlit/Plotly/Pandas Management](https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Management)
@@ -373,9 +615,7 @@ Compare - Following and Follower is a desktop app to compare, in a practical way
 
 [![Website](https://img.shields.io/badge/Site-fernandoncidade.github.io-blue?style=for-the-badge&logo=google-chrome)](https://fernandoncidade.github.io/fernandoncidade/)
 [![GitHub](https://img.shields.io/badge/GitHub-fernandoncidade-181717?style=for-the-badge&logo=github)](https://github.com/fernandoncidade)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-fernando--nillsson--cidade-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/fernando-nillsson-cidade)
 [![Lattes](https://img.shields.io/badge/Lattes-fernando__n__cidade-orange?style=for-the-badge)](http://lattes.cnpq.br/1220810284745516)
-[![Instagram](https://img.shields.io/badge/Instagram-fernandonillssoncidade-E4405F?style=for-the-badge&logo=instagram)](https://www.instagram.com/fernandonillssoncidade)
 [![ORCID](https://img.shields.io/badge/ORCID-fernando_nillsson_cidade-orange?style=for-the-badge)](https://orcid.org/0009-0009-5146-9830)
 
 </div>
@@ -389,10 +629,6 @@ Compare - Following and Follower is a desktop app to compare, in a practical way
 <p align="center">
   <img src="https://yourinsights.vercel.app/api/insight?username=fernandoncidade&theme=github_dark&graph=true&languages=true&streak=true&stats=true&header=true&summary=true&profile=true" alt="GitHub Insights" />
 </p>
-
-[![fernandoncidade's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=merko&area=true&custom_title=fernandoncidade's%20Activity%20Graph&locale=en)](https://github.com/ashutosh00710/github-readme-activity-graph)
-
-[![Top Langs](https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade\&layout=compact&theme=merko&locale=en)](https://github.com/ishandutta2007/beautiful-github-homepage)
 
 <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60"> <em><b>Always coding with passion!</b> 🚀</em> <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="60">
 

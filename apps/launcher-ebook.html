@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launcher EBook • Gerenciador de Livros Digitais e PDFs em C++17</title>
+  <meta name="description" content="Launcher EBook: Catálogo veloz e organizado de e-books, manuais e PDFs locais para Windows. Indexação recursiva, miniaturas de capa e abertura no leitor padrão.">
+  <link rel="icon" type="image/png" href="../image_perfil/launcherebook2_256-256.png">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">← Voltar ao Início</span>
+        <span class="lang-en">← Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="../image_perfil/launcherebook2_256-256.png" alt="Ícone Launcher EBook" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">C++17</span>
+            <span class="tech-badge">Qt 6</span>
+            <span class="tech-badge platform">Windows 10 / 11</span>
+            <span class="tech-badge offline">100% Offline</span>
+            <span class="tech-badge">Biblioteca Digital</span>
+          </div>
+
+          <h1 class="app-hero-title">Launcher EBook</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Gerenciador de Biblioteca Digital Local, Indexação Veloz de PDFs e EPUBs e Abertura em Leitor Preferido.
+          </p>
+          <p class="app-hero-tagline lang-en">
+            Local Digital Library Hub, Fast PDF & EPUB Indexing, and Instant Launch in Preferred Reader.
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://github.com/fernandoncidade/Launcher_EBook" class="btn-cta btn-cta-github" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span class="lang-pt">Ver Repositório no GitHub</span>
+              <span class="lang-en">View GitHub Repository</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[Launcher%20EBook]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade de Conteúdo -->
+    <div class="app-sections-grid">
+
+      <!-- Visão do Usuário / Negócio -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>📚</span>
+          <span class="lang-pt">Visão do Leitor & Organização</span>
+          <span class="lang-en">Reader Value & Library Curation</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Sua Biblioteca Digital Inteira na Ponta dos Dedos</span>
+          <span class="lang-en">Your Entire Digital Library at Your Fingertips</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O <strong>Launcher EBook</strong> é um hub leve e veloz para colecionadores de livros técnicos, apostilas, artigos acadêmicos e PDFs que se encontram espalhados em diferentes pastas e discos rígidos. O aplicativo varre seus diretórios, extrai metadados e capas, e permite abrir qualquer publicação instantaneamente no leitor padrão configurado em seu sistema (Adobe Acrobat, SumatraPDF, Calibre ou navegador).
+        </p>
+        <p class="section-lead lang-en">
+          <strong>Launcher EBook</strong> is a streamlined library manager for developers, researchers, and book lovers whose PDF manuals, research papers, and technical books are scattered across storage drives. The app scans your disk directories, organizes titles with thumbnail covers, and opens any book immediately in your preferred native reader.
+        </p>
+
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">📖</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Sem Travamentos e Sem Bloqueios de Formato</div>
+            <div class="highlight-banner-title lang-en">No Bloat, No Proprietary DRM Locking</div>
+            <div class="highlight-banner-text lang-pt">
+              Diferente de suítes pesadas que tentam forçar lojas próprias ou alterar a organização dos seus arquivos no disco, o Launcher EBook respeita suas pastas originais e funciona como um catálogo veloz e transparente.
+            </div>
+            <div class="highlight-banner-text lang-en">
+              Unlike invasive e-reader platforms that mandate cloud logins and rearrange your hard drive, Launcher EBook acts as a non-destructive indexing layer respecting your original directory trees.
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">🔍</span>
+            <h3 class="feature-title lang-pt">Busca Instantânea por Título e Autor</h3>
+            <h3 class="feature-title lang-en">Instant Title & Author Search</h3>
+            <p class="feature-desc lang-pt">
+              Filtre milhares de publicações em tempo real à medida que digita, encontrando manuais técnicos em frações de segundo.
+            </p>
+            <p class="feature-desc lang-en">
+              Filter through thousands of documents in real-time as you type, locating technical books and papers in fractions of a second.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🖼️</span>
+            <h3 class="feature-title lang-pt">Cache Local de Miniaturas</h3>
+            <h3 class="feature-title lang-en">Fast Thumbnail Cover Cache</h3>
+            <p class="feature-desc lang-pt">
+              Gera e armazena capas visuais para uma navegação agradável em grade, com rolagem fluida e carregamento assíncrono.
+            </p>
+            <p class="feature-desc lang-en">
+              Extracts and caches book covers for an aesthetic grid view with smooth 60 FPS scrolling and asynchronous lazy loading.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🏷️</span>
+            <h3 class="feature-title lang-pt">Categorização por Coleções</h3>
+            <h3 class="feature-title lang-en">Custom Subject Collections</h3>
+            <p class="feature-desc lang-pt">
+              Agrupe livros por assuntos (ex.: C++, Algoritmos, Finanças, Ficção) para manter seus estudos sempre bem direcionados.
+            </p>
+            <p class="feature-desc lang-en">
+              Tag and organize titles into custom topical shelves (e.g., C++, Machine Learning, Economics) to keep research organized.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">⚡</span>
+            <h3 class="feature-title lang-pt">Disparo Nativo do Sistema</h3>
+            <h3 class="feature-title lang-en">System-Native Reader Dispatch</h3>
+            <p class="feature-desc lang-pt">
+              Utiliza a API de Shell do Windows para acionar seu leitor favorito sem sobrecarregar a memória com renderizadores pesados.
+            </p>
+            <p class="feature-desc lang-en">
+              Leverages native Windows ShellExecute APIs to launch your preferred lightweight desktop PDF viewer without memory bloat.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Engenharia C++ & Arquitetura de I/O</span>
+          <span class="lang-en">C++ Engineering & File I/O Architecture</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Indexação Assíncrona e Baixo Consumo de RAM</span>
+          <span class="lang-en">Asynchronous Indexing & Low-Memory Footprint</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          Desenvolvido em <strong>C++17</strong> e <strong>Qt 6</strong>, o Launcher EBook implementa um mecanismo de varredura recursiva multithread que analisa milhares de arquivos no sistema de arquivos local sem congelar a interface.
+        </p>
+        <p class="section-lead lang-en">
+          Engineered with <strong>C++17</strong> and <strong>Qt 6</strong>, Launcher EBook incorporates a multi-threaded recursive filesystem scanner that indexes thousands of documents without freezing the graphical user interface.
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Varredura Multithread Desacoplada</span>
+              <span class="dev-spec-name lang-en">Decoupled Worker Thread Traversal</span>
+              <span class="dev-spec-tag">QThread / QDirIterator</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              A identificação de arquivos PDF e EPUB roda em background, emitindo sinais com blocos de resultados para preencher a interface de forma gradual e fluida.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Document discovery traverses directories asynchronously, batching signals back to the main UI thread for smooth progressive rendering.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Integração com Shell Nativo</span>
+              <span class="dev-spec-name lang-en">Native Windows Shell Execution</span>
+              <span class="dev-spec-tag">ShellExecuteW / QDesktopServices</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              O lançamento do aplicativo associado respeita as configurações de tipos de arquivos do usuário no Windows Registry.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              External reader invocation delegates directly to Windows Registry association handlers via native Shell APIs.
+            </p>
+          </div>
+        </div>
+
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagem / Padrão</th>
+                <th class="lang-en">Language / Standard</th>
+                <td>
+                  <span class="lang-pt">C++17 (MSVC / MinGW-w64)</span>
+                  <span class="lang-en">C++17 (MSVC / MinGW-w64)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Framework de GUI</th>
+                <th class="lang-en">GUI Framework</th>
+                <td>
+                  <span class="lang-pt">Qt 6.x (Suporte a Dark Mode e HiDPI)</span>
+                  <span class="lang-en">Qt 6.x (Dark Mode &amp; HiDPI support)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Formatos Suportados</th>
+                <th class="lang-en">Supported Formats</th>
+                <td>
+                  <span class="lang-pt">PDF, EPUB, MOBI, DJVU, CBZ (Quadrinhos)</span>
+                  <span class="lang-en">PDF, EPUB, MOBI, DJVU, CBZ (Comic Books)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Privacidade</th>
+                <th class="lang-en">Privacy</th>
+                <td>
+                  <span class="lang-pt">100% Offline, sem coleta de dados ou telemetria</span>
+                  <span class="lang-en">100% Offline, zero data collection or telemetry</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Código-Fonte</th>
+                <th class="lang-en">Source Code</th>
+                <td>
+                  <span class="lang-pt">Disponível publicamente no GitHub (Código Aberto)</span>
+                  <span class="lang-en">Publicly available on GitHub (Open Source)</span>
+                </td>
+              </tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="munin-app.html" class="related-app-card">
+          <img src="../image_perfil/munin.png" alt="Munin App" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Munin App</div>
+            <div class="related-app-tag">C++20 • SIMD Regex</div>
+          </div>
+        </a>
+        <a href="eisenpo.html" class="related-app-card">
+          <img src="../image_perfil/eisenpo.png" alt="EisenPo" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">EisenPo</div>
+            <div class="related-app-tag">C++ • Matriz Pomodoro</div>
+          </div>
+        </a>
+        <a href="lumen.html" class="related-app-card">
+          <img src="../image_perfil/autismo.png" alt="Lúmen" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Lúmen</div>
+            <div class="related-app-tag">C++ • Acessibilidade Cognitiva</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade/Launcher_EBook" target="_blank" rel="noopener noreferrer">Repositório GitHub</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>

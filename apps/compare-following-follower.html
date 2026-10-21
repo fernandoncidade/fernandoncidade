@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Following & Follower • Auditoria de Redes do GitHub em Python e PySide6</title>
+  <meta name="description" content="Compare Following & Follower: Aplicativo desktop para auditar conexões no GitHub. Descubra não-seguidores, conexões mútuas e analise sua rede com segurança.">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/fernandoncidade/Compare_Following_Follower/main/source/assets/icons/FollowingFollower_256-256.png">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">← Voltar ao Início</span>
+        <span class="lang-en">← Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="https://raw.githubusercontent.com/fernandoncidade/Compare_Following_Follower/main/source/assets/icons/FollowingFollower_256-256.png" alt="Ícone Compare Following Follower" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">Python 3.10+</span>
+            <span class="tech-badge">PySide6 / Qt</span>
+            <span class="tech-badge platform">Windows / Linux / macOS</span>
+            <span class="tech-badge offline">100% Offline Local</span>
+            <span class="tech-badge">GitHub REST API</span>
+          </div>
+
+          <h1 class="app-hero-title">Compare - Following and Follower</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Análise e Auditoria de Redes do GitHub: Identificação de Não-Seguidores, Conexões Mútuas e Histórico.
+          </p>
+          <p class="app-hero-tagline lang-en">
+            GitHub Network Audit & Analytics: Identify Non-Followers, Mutual Connections, and Historical Changes.
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://github.com/fernandoncidade/Compare_Following_Follower" class="btn-cta btn-cta-github" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span class="lang-pt">Ver Repositório no GitHub</span>
+              <span class="lang-en">View GitHub Repository</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[Compare%20Following%20Follower]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade de Conteúdo -->
+    <div class="app-sections-grid">
+
+      <!-- Visão do Usuário / Negócio -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>👥</span>
+          <span class="lang-pt">Visão do Desenvolvedor & Networking</span>
+          <span class="lang-en">Developer Value & Network Insights</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Auditoria Clara da sua Comunidade no GitHub</span>
+          <span class="lang-en">Clear Auditing of Your GitHub Community</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O <strong>Compare - Following and Follower</strong> é uma ferramenta desktop essencial para programadores, criadores de conteúdo open source e entusiastas de tecnologia que desejam compreender a reciprocidade de suas conexões no GitHub. Ele compara suas listas de <em>Seguindo</em> e <em>Seguidores</em>, identificando instantaneamente quem não te segue de volta e quem são seus parceiros mútuos mais dedicados.
+        </p>
+        <p class="section-lead lang-en">
+          <strong>Compare - Following and Follower</strong> is an indispensable desktop utility for open-source developers, maintainers, and tech creators seeking transparency over their GitHub network relationships. It cross-compares your <em>Following</em> and <em>Followers</em> lists, cleanly identifying non-followers and mutual collaborators.
+        </p>
+
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">🔐</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Segurança Absoluta: Suas Credenciais Nunca Saem da Máquina</div>
+            <div class="highlight-banner-title lang-en">Absolute Security: Your Credentials Never Leave Your Machine</div>
+            <div class="highlight-banner-text lang-pt">
+              Diferente de websites suspeitos que pedem login e podem comprometer sua conta, o aplicativo roda 100% no seu computador, utilizando tokens pessoais (PAT) de forma estritamente local e efêmera.
+            </div>
+            <div class="highlight-banner-text lang-en">
+              Unlike dubious third-party web services that demand OAuth credentials and compromise developer accounts, this utility runs strictly on your machine, managing Personal Access Tokens (PAT) locally.
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">🔍</span>
+            <h3 class="feature-title lang-pt">Detecção Rápida de Não-Seguidores</h3>
+            <h3 class="feature-title lang-en">Non-Followers Identification</h3>
+            <p class="feature-desc lang-pt">
+              Descubra com um clique contas que você segue mas que não te seguem de volta, permitindo limpar sua timeline de perfis inativos.
+            </p>
+            <p class="feature-desc lang-en">
+              Isolate in a single click accounts you follow that do not follow back, helping you declutter your developer timeline.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🤝</span>
+            <h3 class="feature-title lang-pt">Conexões Mútuas</h3>
+            <h3 class="feature-title lang-en">Mutual Collaborators</h3>
+            <p class="feature-desc lang-pt">
+              Identifique quem são seus verdadeiros parceiros e apoiadores de código que compartilham interesse mútuo pelos mesmos projetos.
+            </p>
+            <p class="feature-desc lang-en">
+              Identify your core peer network—developers who share mutual follow relationships across your open-source projects.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">⚡</span>
+            <h3 class="feature-title lang-pt">Gerenciamento de Taxa de Requisições</h3>
+            <h3 class="feature-title lang-en">Rate Limit Smart Throttling</h3>
+            <p class="feature-desc lang-pt">
+              Monitora em tempo real a cota da API do GitHub, evitando bloqueios temporários de IP e gerindo paginação de milhares de perfis.
+            </p>
+            <p class="feature-desc lang-en">
+              Monitors GitHub API rate limits in real-time, preventing HTTP 429 throttling when fetching large community profiles.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">📋</span>
+            <h3 class="feature-title lang-pt">Exportação em CSV e JSON</h3>
+            <h3 class="feature-title lang-en">CSV & JSON Data Exports</h3>
+            <p class="feature-desc lang-pt">
+              Salve históricos de auditoria para analisar a evolução e o crescimento da sua base técnica ao longo dos meses.
+            </p>
+            <p class="feature-desc lang-en">
+              Export comprehensive audit lists with usernames, avatar URLs, and profile links to track audience growth over time.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Engenharia Python & Integração de API</span>
+          <span class="lang-en">Python Engineering & API Integration</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Consumo Assíncrono da API REST do GitHub</span>
+          <span class="lang-en">Asynchronous GitHub REST API Consumption</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          Desenvolvido com <strong>Python 3.10+</strong> e <strong>PySide6</strong>, o aplicativo implementa uma arquitetura reativa que consome a API REST v3 do GitHub através de requisições paginadas concorrentes, desacoplando a resposta da rede da interface gráfica por meio de signals e slots do Qt.
+        </p>
+        <p class="section-lead lang-en">
+          Built using <strong>Python 3.10+</strong> and <strong>PySide6</strong>, the tool implements a reactive network pipeline fetching GitHub REST API v3 paginated endpoints in background worker threads, keeping UI rendering at a fluid 60 FPS.
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Paginação Otimizada com Headers de Link</span>
+              <span class="dev-spec-name lang-en">RFC 5988 Link Header Pagination</span>
+              <span class="dev-spec-tag">requests / urllib3</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Lê os cabeçalhos <code>Link: rel="next"</code> para calcular o progresso total da coleta de dados com barra de progresso em porcentagem exata.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Parses RFC 5988 <code>Link: rel="next"</code> response headers to calculate precise download progress across massive profile rosters.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Operações de Conjunto em Tempo O(1)</span>
+              <span class="dev-spec-name lang-en">O(1) Set-Theoretic Discrepancy Matching</span>
+              <span class="dev-spec-tag">Python Hash Sets</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              A comparação entre seguidores e seguidos é processada através de estruturas <code>set()</code> nativas de Python, permitindo avaliar 50.000 perfis em menos de 10 milissegundos.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Network cross-matching evaluates sets via Python native hash sets (<code>set.difference</code> and <code>set.intersection</code>), resolving 50,000 records in sub-10ms.
+            </p>
+          </div>
+        </div>
+
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagem / Padrão</th>
+                <th class="lang-en">Language / Standard</th>
+                <td>
+                  <span class="lang-pt">Python 3.10+ (Type Hints, PEP 8)</span>
+                  <span class="lang-en">Python 3.10+ (Type Hints, PEP 8)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Interface Gráfica</th>
+                <th class="lang-en">GUI Framework</th>
+                <td>
+                  <span class="lang-pt">PySide6 (Qt para Python com temas personalizados)</span>
+                  <span class="lang-en">PySide6 (Qt for Python with custom themes)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">API de Dados</th>
+                <th class="lang-en">Data Protocol</th>
+                <td>
+                  <span class="lang-pt">GitHub REST API v3 (HTTPS com autenticação Bearer)</span>
+                  <span class="lang-en">GitHub REST API v3 (HTTPS with Bearer authentication)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Formatos de Exportação</th>
+                <th class="lang-en">Export Formats</th>
+                <td>
+                  <span class="lang-pt">CSV (separado por vírgulas), JSON estruturado</span>
+                  <span class="lang-en">CSV (comma-separated), structured JSON</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Licença</th>
+                <th class="lang-en">License</th>
+                <td>
+                  <span class="lang-pt">Código Aberto (GitHub)</span>
+                  <span class="lang-en">Open Source (GitHub)</span>
+                </td>
+              </tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="compression-manager.html" class="related-app-card">
+          <img src="../image_perfil/Manager-BackUp.png" alt="Compression Manager" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Compression Manager</div>
+            <div class="related-app-tag">Python / Qt • Backup AES-256</div>
+          </div>
+        </a>
+        <a href="agenda-avaliacoes-academicas.html" class="related-app-card">
+          <img src="../image_perfil/ReviewsManager.ico" alt="Agenda Avaliações Acadêmicas" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Agenda Avaliações Acadêmicas</div>
+            <div class="related-app-tag">Python • Gestão de Notas</div>
+          </div>
+        </a>
+        <a href="munin-app.html" class="related-app-card">
+          <img src="../image_perfil/munin.png" alt="Munin App" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Munin App</div>
+            <div class="related-app-tag">C++20 • SIMD Regex</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade/Compare_Following_Follower" target="_blank" rel="noopener noreferrer">Repositório GitHub</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>

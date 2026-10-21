@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACL Auditor • Inspeção de Permissões NTFS e Segurança Corporativa em C++20</title>
+  <meta name="description" content="ACL Auditor: Diagnóstico avançado de listas de controle de acesso (DACL/SACL), herança de permissões, simulação de direitos efetivos e reversão para Windows e Windows Server.">
+  <link rel="icon" type="image/png" href="../image_perfil/acl_auditor.png">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">← Voltar ao Início</span>
+        <span class="lang-en">← Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="../image_perfil/acl_auditor.png" alt="Ícone ACL Auditor" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">C++20</span>
+            <span class="tech-badge">Qt 6.11</span>
+            <span class="tech-badge platform">Windows 10 / 11 / Server</span>
+            <span class="tech-badge offline">100% Offline</span>
+            <span class="tech-badge">NTFS / SMB</span>
+          </div>
+
+          <h1 class="app-hero-title">ACL Auditor</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Inspeção Profunda de Permissões NTFS/SMB, Simulação de Direitos Efetivos e Diagnóstico de Segurança Corporativa.
+          </p>
+          <p class="app-hero-tagline lang-en">
+            Deep NTFS/SMB Permissions Inspection, Effective Access Simulation, and Enterprise Security Auditing.
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://apps.microsoft.com/detail/9NX5XZLL8WXW" class="btn-cta btn-cta-store" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.5 3H2v8.5h9.5V3zm1 0V11.5H22V3h-9.5zM2 12.5V21h9.5v-8.5H2zm10.5 0V21H22v-8.5h-9.5z"/></svg>
+              <span class="lang-pt">Obter na Microsoft Store</span>
+              <span class="lang-en">Get from Microsoft Store</span>
+            </a>
+            <a href="https://github.com/fernandoncidade/ACL_Auditor_cpp" class="btn-cta btn-cta-github" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span class="lang-pt">Ver Repositório no GitHub</span>
+              <span class="lang-en">View GitHub Repository</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[ACL%20Auditor]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade de Conteúdo -->
+    <div class="app-sections-grid">
+
+      <!-- Visão do Usuário / Negócio -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>🛡️</span>
+          <span class="lang-pt">Visão do Usuário & Valor Corporativo</span>
+          <span class="lang-en">End-User & Enterprise Value</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Segurança e Governança Descomplicada para Windows</span>
+          <span class="lang-en">Streamlined Security & Governance for Windows</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O <strong>ACL Auditor</strong> soluciona um dos maiores desafios de administradores de sistemas (SysAdmins), engenheiros DevOps e analistas de segurança da informação: entender com precisão quem realmente tem acesso a quais pastas e arquivos corporativos. O aplicativo disseca as complexas listas de controle de acesso (DACLs) do NTFS e compartilhamentos de rede SMB, transformando cadeias confusas de herança em gráficos e relatórios visíveis, compreensíveis e auditáveis.
+        </p>
+        <p class="section-lead lang-en">
+          <strong>ACL Auditor</strong> resolves one of the most critical challenges faced by system administrators, DevOps engineers, and SecOps analysts: understanding exactly who has permission to what in corporate filesystems. The app deconstructs complex NTFS Discretionary Access Control Lists (DACLs) and SMB shares, translating nested inheritance chains into clear, actionable, and audit-ready insights.
+        </p>
+
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">🎯</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Prevenção contra Vazamentos e Escalação de Privilégios</div>
+            <div class="highlight-banner-title lang-en">Leak Prevention & Privilege Escalation Mitigation</div>
+            <div class="highlight-banner-text lang-pt">
+              Detecte permissões excessivas herdadas, contas órfãs com SIDs desativados e regras permissivas (como "Everyone/Todos com Full Control") antes que se tornem vetores de ataque ou falhas em auditorias de conformidade.
+            </div>
+            <div class="highlight-banner-text lang-en">
+              Instantly catch excessive inherited rights, orphan SIDs from deleted users, and dangerous broad rules (such as "Everyone Full Control") before they turn into breach vectors or compliance audit failures.
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">🔍</span>
+            <h3 class="feature-title lang-pt">Simulador de Acesso Efetivo</h3>
+            <h3 class="feature-title lang-en">Effective Access Simulator</h3>
+            <p class="feature-desc lang-pt">
+              Informe qualquer usuário ou grupo do Active Directory/Local para simular exatamente quais permissões finais serão aplicadas considerando heranças e negações.
+            </p>
+            <p class="feature-desc lang-en">
+              Input any Active Directory or local user/group to calculate real resolved permissions factoring in token group memberships, denies, and inheritance.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🌲</span>
+            <h3 class="feature-title lang-pt">Árvore de Herança Visual</h3>
+            <h3 class="feature-title lang-en">Visual Inheritance Tree</h3>
+            <p class="feature-desc lang-pt">
+              Visualize em segundos onde a cadeia de herança foi bloqueada ou substituída através de uma árvore hierárquica clara com indicadores de estado.
+            </p>
+            <p class="feature-desc lang-en">
+              Pinpoint in seconds where inheritance was severed, overridden, or explicitly modified using an intuitive hierarchical view with status badges.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">⏪</span>
+            <h3 class="feature-title lang-pt">Motor de Rollback Seguro</h3>
+            <h3 class="feature-title lang-en">Safe Rollback Engine</h3>
+            <p class="feature-desc lang-pt">
+              Crie snapshots de descritores de segurança antes de realizar ajustes em massa. Se algo falhar, restaure as permissões anteriores com um clique.
+            </p>
+            <p class="feature-desc lang-en">
+              Create point-in-time security descriptor snapshots before executing batch permission updates, enabling instantaneous single-click recovery.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">📑</span>
+            <h3 class="feature-title lang-pt">Relatórios de Conformidade</h3>
+            <h3 class="feature-title lang-en">Compliance Auditing Exports</h3>
+            <p class="feature-desc lang-pt">
+              Exporte matrizes completas de acesso em formatos padronizados para evidências em certificações ISO 27001, PCI-DSS e SOX.
+            </p>
+            <p class="feature-desc lang-en">
+              Export complete access matrices in industry-standard formats ready as authoritative evidence for ISO 27001, PCI-DSS, and SOX audits.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Engenharia C++20 & APIs Nativas</span>
+          <span class="lang-en">C++20 Engineering & Native APIs</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Arquitetura de Baixo Nível Win32</span>
+          <span class="lang-en">Low-Level Win32 Security Architecture</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          Desenvolvido com os recursos modernos do <strong>C++20</strong> (como <code>std::span</code>, conceitos e gerenciamento seguro de ponteiros via RAII) e <strong>Qt 6.11</strong>, o ACL Auditor interage diretamente com as APIs de segurança do kernel Windows (Advapi32.dll / Secur32.dll), garantindo tempos de resposta instantâneos sem sobrecarregar o subsistema WMI ou scripts lentos em PowerShell.
+        </p>
+        <p class="section-lead lang-en">
+          Engineered using modern <strong>C++20</strong> features (such as <code>std::span</code>, concepts, and strict RAII pointer wrappers) coupled with <strong>Qt 6.11</strong>, ACL Auditor interacts directly with native kernel security libraries (Advapi32.dll / Secur32.dll), providing instant execution free from heavy WMI or PowerShell overhead.
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Leitura Direta de Descritores de Segurança</span>
+              <span class="dev-spec-name lang-en">Direct Security Descriptor Extraction</span>
+              <span class="dev-spec-tag">GetNamedSecurityInfoW</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Recupera DACL, SACL, Owner e Primary Group em formato binário autônomo, processando ACEs (Access Control Entries) com conversão direta de SIDs para nomes via cache local otimizado.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Extracts DACL, SACL, Owner, and Primary Group in self-relative binary representation, parsing ACE entries with high-speed local SID resolution caching.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Cálculo de Direitos Efetivos</span>
+              <span class="dev-spec-name lang-en">Effective Rights Evaluation Engine</span>
+              <span class="dev-spec-tag">GetEffectiveRightsFromAclW / Authz</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Simula a validação do Security Reference Monitor (SRM) do Windows, avaliando tokens de acesso, identificadores de segurança e máscaras de bits de acesso (GenericRead, Write, Execute, Delete, TakeOwnership).
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Faithfully emulates Windows Security Reference Monitor (SRM) checks, evaluating client tokens, SIDs, and access bitmasks (GenericRead, Write, Execute, Delete, TakeOwnership).
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Recursão Assíncrona e Cancelável</span>
+              <span class="dev-spec-name lang-en">Asynchronous & Cancellable Traversal</span>
+              <span class="dev-spec-tag">QThreadPool + Win32 FindFirstFileExW</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              A varredura de árvores profundas em discos com centenas de milhares de pastas ocorre em threads operárias com suporte a cancelamento cooperativo instantâneo e baixo consumo de pilha.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              High-depth filesystem traversal across millions of entries runs in worker threads backed by cooperative cancellation tokens and minimal call-stack pressure.
+            </p>
+          </div>
+        </div>
+
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagem / Padrão</th>
+                <th class="lang-en">Language / Standard</th>
+                <td>
+                  <span class="lang-pt">C++20 (MSVC 2022 / Clang-cl)</span>
+                  <span class="lang-en">C++20 (MSVC 2022 / Clang-cl)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Interface Gráfica</th>
+                <th class="lang-en">GUI Framework</th>
+                <td>
+                  <span class="lang-pt">Qt 6.11 (Widgets de alto contraste, suporte a HiDPI 4K)</span>
+                  <span class="lang-en">Qt 6.11 (High-contrast widgets, 4K HiDPI support)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">APIs de Segurança</th>
+                <th class="lang-en">Security APIs</th>
+                <td>
+                  <span class="lang-pt">Advapi32, Secur32, Netapi32 (Subsistema de Segurança Win32)</span>
+                  <span class="lang-en">Advapi32, Secur32, Netapi32 (Win32 Security Subsystem)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Sistemas de Arquivos</th>
+                <th class="lang-en">Filesystems Supported</th>
+                <td>
+                  <span class="lang-pt">NTFS 3.1+, ReFS, SMB 3.0+ (Rede Corporativa / NAS)</span>
+                  <span class="lang-en">NTFS 3.1+, ReFS, SMB 3.0+ (Enterprise Network / NAS)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Isolamento e Segurança</th>
+                <th class="lang-en">Isolation & Safety</th>
+                <td>
+                  <span class="lang-pt">Sem telemetria externa, 100% de processamento local</span>
+                  <span class="lang-en">Zero external telemetry, 100% local processing</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Distribuição</th>
+                <th class="lang-en">Distribution</th>
+                <td>
+                  <span class="lang-pt">Certificado na Microsoft Store / Pacote Binário Nativo</span>
+                  <span class="lang-en">Microsoft Store Certified / Native Binary Package</span>
+                </td>
+              </tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="linceu-lighthouse.html" class="related-app-card">
+          <img src="../image_perfil/linceu_sem_fundo.png" alt="Linceu Lighthouse" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Linceu Lighthouse</div>
+            <div class="related-app-tag">C++17 • Auditoria Forense</div>
+          </div>
+        </a>
+        <a href="munin-app.html" class="related-app-card">
+          <img src="../image_perfil/munin.png" alt="Munin App" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Munin App</div>
+            <div class="related-app-tag">C++20 • SIMD Regex</div>
+          </div>
+        </a>
+        <a href="compression-manager.html" class="related-app-card">
+          <img src="../image_perfil/Manager-BackUp.png" alt="Compression Manager" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Compression Manager</div>
+            <div class="related-app-tag">Python / Qt • Backup AES-256</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://apps.microsoft.com/detail/9NX5XZLL8WXW" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>

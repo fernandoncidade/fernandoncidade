@@ -23,8 +23,8 @@
     }
 
     /* Reset e tipografia básica */
-    html,body{margin:0;padding:0;background:var(--main-bg)}
-    body{font-family:Arial,Helvetica,sans-serif;color:#1f2d3d}
+    html,body{margin:0;padding:0;min-height:100%;background:var(--main-bg)}
+    body{font-family:Arial,Helvetica,sans-serif;color:#1f2d3d;display:flex;flex-direction:column;min-height:100vh}
     a{color:#0f8bff;text-decoration:none}
     a:hover{text-decoration:underline}
 
@@ -44,7 +44,7 @@
     .title{margin:.2rem 0 .2rem 0;font-size:2.1rem;letter-spacing:.2px}
     .tagline{margin:.2rem 0 0 0;color:#a3ffd6;font-weight:600}
 
-    /* Links no cabeçalho (GitHub, LinkedIn, etc.) */
+    /* Links no cabeçalho (GitHub, Lattes, ORCID, etc.) */
     .header-links{
       margin-top:.8rem; display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap
     }
@@ -55,9 +55,10 @@
 
     /* Container central do conteúdo com largura máxima e sombra */
     .container{
-      max-width:1100px;margin:1.6rem auto;background:var(--container-bg);
+      max-width:1100px;margin:1.6rem auto 0;background:var(--container-bg);
       border-radius:var(--radius); box-shadow:var(--shadow);
-      padding:1.4rem 1.2rem 2rem
+      padding:1.4rem 1.2rem 1.6rem;
+      flex:1 0 auto;
     }
 
     /* Barra de seleção de idiomas: botões estilo "pill" */
@@ -106,21 +107,342 @@
       max-width:100%; border-radius:8px; box-shadow:0 0 10px #00000010; margin:.4rem
     }
 
-    /* Ajuste específico: reduz a imagem file_manager4.png em todos os idiomas
-       - Usa seletor de atributo para evitar criar regras extras por idioma.
-       - Mantém proporção com height:auto. */
-    .screenshots img[src*="file_manager4.png"] {
-      width:100%;
-      max-width:720px; /* ajuste aqui se quiser menor/maior */
-      height:auto;
+    /* Estilos para cards de projetos com ícones e layout moderno */
+    .project-card{
+      position:relative;
+      transition:transform .2s ease, box-shadow .2s ease;
+      margin-bottom:1rem;
+    }
+    .project-card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 18px #00000015;
+    }
+    .card-header-flex{
+      display:flex;
+      align-items:center;
+      gap:.9rem;
+      margin-bottom:.6rem;
+    }
+    .project-icon{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      object-fit:contain;
+      background:#f4f8fb;
+      padding:4px;
+      border:1px solid var(--border);
+      box-shadow:0 2px 6px #0000000d;
+      flex-shrink:0;
+    }
+    .badge-tech{
+      display:inline-block;
+      font-size:.72rem;
+      font-weight:700;
+      color:var(--accent);
+      background:#e6fffa;
+      border:1px solid #1abc9c33;
+      border-radius:6px;
+      padding:.15rem .45rem;
+      text-transform:uppercase;
+      letter-spacing:.4px;
+      margin-bottom:.2rem;
+    }
+    .card-actions{
+      display:flex;
+      gap:.5rem;
+      flex-wrap:wrap;
+      margin-top:.8rem;
+    }
+    .repo-card-icon{
+      width:36px;
+      height:36px;
+      border-radius:8px;
+      object-fit:contain;
+      background:#f4f8fb;
+      padding:2px;
+      border:1px solid var(--border);
+      flex-shrink:0;
+    }
+    .repo-card-icon-placeholder{
+      font-size:1.4rem;
+      line-height:1;
+      display:inline-block;
+    }
+
+    /* Lista estilizada de aplicativos da Loja da Microsoft */
+    .store-apps-list{
+      display:flex;
+      flex-direction:column;
+      gap:.55rem;
+      margin-top:.6rem;
+    }
+    .store-app-item{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:.6rem;
+      padding:.5rem .7rem;
+      border-radius:8px;
+      border:1px solid var(--border);
+      background:#f9fbfd;
+      transition:background-color .15s ease, border-color .15s ease;
+    }
+    .store-app-item:hover{
+      background:#f0f7ff;
+      border-color:#bcd9ff;
+    }
+    .store-app-info{
+      display:flex;
+      align-items:center;
+      gap:.65rem;
+      min-width:0;
+    }
+    .store-app-icon{
+      width:32px;
+      height:32px;
+      border-radius:6px;
+      object-fit:contain;
+      background:#fff;
+      padding:2px;
+      border:1px solid var(--border);
+      flex-shrink:0;
+    }
+    .store-app-name{
+      font-weight:600;
+      font-size:.9rem;
+      color:var(--primary);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .store-app-tag{
+      font-size:.73rem;
+      color:var(--muted);
+      display:block;
+    }
+    .store-app-btn{
+      padding:.32rem .65rem;
+      font-size:.78rem;
+      font-weight:700;
+      border-radius:6px;
+      background:#0078d4;
+      color:#fff;
+      text-decoration:none;
+      flex-shrink:0;
+      box-shadow:0 2px 6px #0078d433;
+    }
+    .store-app-btn:hover{
+      background:#0063b1;
+      text-decoration:none;
     }
 
     /* Estilos para botões de call-to-action (CTA) */
     .cta{
-      display:inline-block; background:var(--accent); color:#fff; padding:.6em 1.1em; border-radius:8px; font-weight:700; box-shadow:0 2px 8px #00d1b244
+      display:inline-block; background:var(--accent); color:#fff; padding:.55em 1em; border-radius:8px; font-weight:700; box-shadow:0 2px 8px #00d1b244
     }
     .cta.secondary{
-      background:#0f8bff
+      background:#0078d4;
+      box-shadow:0 2px 8px #0078d433;
+    }
+    .cta.tertiary{
+      background:#475569;
+      box-shadow:0 2px 8px #47556933;
+      border:none;
+      cursor:pointer;
+      font-family:inherit;
+    }
+    .cta.tertiary:hover{
+      background:#334155;
+      text-decoration:none;
+    }
+
+    /* Modal Dialog para Envio de Mensagens */
+    .message-dialog{
+      border:none;
+      border-radius:14px;
+      padding:0;
+      max-width:580px;
+      width:92%;
+      background:#ffffff;
+      color:#1f2d3d;
+      box-shadow:0 20px 50px rgba(0,0,0,0.35);
+      overflow:hidden;
+    }
+    .message-dialog::backdrop{
+      background:rgba(11,18,32,0.65);
+      backdrop-filter:blur(5px);
+      -webkit-backdrop-filter:blur(5px);
+    }
+    .dialog-content{
+      padding:1.4rem 1.6rem 1.6rem;
+    }
+    .dialog-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      border-bottom:1px solid var(--border);
+      padding-bottom:1rem;
+      margin-bottom:1.1rem;
+      gap:.8rem;
+    }
+    .dialog-title-group{
+      display:flex;
+      align-items:center;
+      gap:.6rem;
+    }
+    .dialog-icon{
+      font-size:1.8rem;
+      line-height:1;
+    }
+    .dialog-title{
+      margin:0;
+      font-size:1.25rem;
+      color:#0f172a;
+    }
+    .dialog-subtitle{
+      font-size:.84rem;
+      color:var(--muted);
+      display:block;
+      margin-top:2px;
+    }
+    .dialog-close-btn{
+      background:none;
+      border:none;
+      font-size:1.6rem;
+      line-height:1;
+      color:var(--muted);
+      cursor:pointer;
+      padding:.2rem .4rem;
+      border-radius:6px;
+      transition:color .15s ease, background .15s ease;
+    }
+    .dialog-close-btn:hover{
+      color:#e53e3e;
+      background:#fee2e2;
+    }
+    .message-form{
+      display:flex;
+      flex-direction:column;
+      gap:.95rem;
+    }
+    .form-group{
+      display:flex;
+      flex-direction:column;
+      gap:.35rem;
+    }
+    .form-row{
+      display:flex;
+      gap:.9rem;
+    }
+    .form-row .form-group{
+      flex:1;
+    }
+    .form-group label{
+      font-size:.88rem;
+      font-weight:600;
+      color:#2d3748;
+    }
+    .form-control{
+      font-family:inherit;
+      font-size:.95rem;
+      padding:.65rem .8rem;
+      border-radius:8px;
+      border:1px solid var(--border);
+      background:#f8fafc;
+      color:#1f2d3d;
+      transition:border-color .15s ease, box-shadow .15s ease;
+      box-sizing:border-box;
+      width:100%;
+    }
+    .form-control:focus{
+      outline:none;
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(26,188,156,0.2);
+      background:#fff;
+    }
+    .subject-input-wrapper{
+      display:flex;
+      align-items:stretch;
+    }
+    .subject-prefix{
+      background:#eef6fc;
+      border:1px solid var(--border);
+      border-right:none;
+      border-radius:8px 0 0 8px;
+      padding:.65rem .75rem;
+      font-size:.85rem;
+      font-weight:700;
+      color:#0078d4;
+      display:flex;
+      align-items:center;
+      white-space:nowrap;
+      flex-shrink:0;
+    }
+    .subject-input-wrapper .form-control{
+      border-radius:0 8px 8px 0;
+    }
+    .form-hint{
+      font-size:.76rem;
+      color:var(--muted);
+      margin-top:2px;
+    }
+    .form-status{
+      font-size:.88rem;
+      padding:.65rem .85rem;
+      border-radius:8px;
+      display:none;
+      margin-top:.2rem;
+    }
+    .form-status.show{
+      display:block;
+    }
+    .form-status.success{
+      background:#e6fffa;
+      color:#0c5e53;
+      border:1px solid #a7f3d0;
+    }
+    .form-status.error{
+      background:#fef2f2;
+      color:#991b1b;
+      border:1px solid #fecaca;
+    }
+    .form-status.loading{
+      background:#eff6ff;
+      color:#1e40af;
+      border:1px solid #bfdbfe;
+    }
+    .dialog-actions{
+      display:flex;
+      flex-direction:column;
+      gap:.6rem;
+      margin-top:.4rem;
+    }
+    .dialog-actions button,
+    .dialog-actions a{
+      text-align:center;
+      justify-content:center;
+      padding:.65rem 1rem;
+      font-size:.92rem;
+      border:none;
+      cursor:pointer;
+      font-family:inherit;
+    }
+    @media(max-width:600px){
+      .form-row{
+        flex-direction:column;
+        gap:.8rem;
+      }
+      .subject-input-wrapper{
+        flex-direction:column;
+      }
+      .subject-prefix{
+        border-radius:8px 8px 0 0;
+        border-right:1px solid var(--border);
+        border-bottom:none;
+      }
+      .subject-input-wrapper .form-control{
+        border-radius:0 0 8px 8px;
+      }
     }
 
     /* Caixa de nota informativa usada no topo de cada idioma */
@@ -128,8 +450,40 @@
       background:#e9fbf7; border-left:6px solid var(--accent); padding:.8rem 1rem; border-radius:6px; margin:.8rem 0
     }
 
+    /* Rodapé profissional estilizado, em harmonia com o cabeçalho escuro */
     .footer{
-      text-align:center;color:#6b7b8c;margin:1.6rem 0 2.2rem;font-size:.98rem
+      background:#0f172a;
+      color:#94a3b8;
+      border-top:1px solid #1e293b;
+      padding:1.8rem 1rem 2.2rem;
+      margin:2.5rem 0 0 0;
+      text-align:center;
+      font-size:.95rem;
+      line-height:1.8;
+      box-shadow:0 -4px 20px rgba(0,0,0,0.06);
+      width:100%;
+      box-sizing:border-box;
+    }
+    .footer a{
+      color:#00e5c8;
+      text-decoration:none;
+      font-weight:600;
+      transition:color .2s ease;
+      padding:0 .25rem;
+    }
+    .footer a:hover{
+      color:#a3ffd6;
+      text-decoration:underline;
+    }
+    .footer-divider{
+      display:inline-block;
+      margin:0 .5rem;
+      color:#334155;
+    }
+    .footer-sub{
+      margin-top:.35rem;
+      font-size:.82rem;
+      color:#64748b;
     }
 
     /* Regras responsivas: em telas menores as colunas col-6/col-4 empilham */
@@ -151,9 +505,12 @@
     }
     html, body { scroll-behavior:smooth }
     body { transition: background-color .25s ease, color .25s ease }
-    /* Quando body possui a classe .dark, aplicamos as variações escuras */
-    body.dark{
-      background:var(--bg-dark); color:var(--text-dark)
+    /* Quando html/body possuem a classe .dark, aplicamos as variações escuras */
+    html.dark, body.dark{
+      background:var(--bg-dark); color:var(--text-dark);
+      --main-bg:var(--bg-dark);
+      --container-bg:#0d1526;
+      --border:var(--border-dark);
     }
     body.dark .container{ background:#0d1526; border-color:var(--border-dark) }
     body.dark .card{ background:var(--card-dark); border-color:var(--border-dark) }
@@ -164,12 +521,106 @@
       background:#0d1526;           /* mantém tom similar ao container no dark */
       border-color:var(--border-dark);
     }
+    body.dark .footer{
+      background:#080d1a;
+      border-top:1px solid #17243c;
+      color:#8193a8;
+      box-shadow:0 -4px 24px rgba(0,0,0,0.4);
+    }
+    body.dark .footer a{ color:#00e5c8 }
+    body.dark .footer a:hover{ color:#a3ffd6 }
+    body.dark .footer-divider{ color:#1e293b }
+    body.dark .footer-sub{ color:#475569 }
 
     /* Sombra dos cards mais forte no tema escuro para melhor contraste */
     body.dark .card{
       background:#0f1829;
       border-color:var(--border-dark);
       box-shadow:0 2px 10px #00000055;
+    }
+    body.dark .project-card:hover{
+      border-color:#1abc9c;
+    }
+    body.dark .store-app-item{
+      background:#131e33;
+      border-color:var(--border-dark);
+    }
+    body.dark .store-app-item:hover{
+      background:#192742;
+      border-color:#2a4365;
+    }
+    body.dark .store-app-name{
+      color:#e9f2ff;
+    }
+    body.dark .store-app-icon,
+    body.dark .project-icon,
+    body.dark .repo-card-icon{
+      background:#162238;
+      border-color:var(--border-dark);
+    }
+    body.dark .badge-tech{
+      background:#16263d;
+      color:#79c0ff;
+      border-color:#2a4365;
+    }
+    body.dark .cta.tertiary{
+      background:#334155;
+      color:#e2e8f0;
+      border:1px solid #475569;
+    }
+    body.dark .cta.tertiary:hover{
+      background:#475569;
+    }
+    body.dark .message-dialog{
+      background:#0f1829;
+      color:#e9f2ff;
+      border:1px solid var(--border-dark);
+      box-shadow:0 20px 50px rgba(0,0,0,0.6);
+    }
+    body.dark .dialog-header{
+      border-color:var(--border-dark);
+    }
+    body.dark .dialog-title{
+      color:#e9f2ff;
+    }
+    body.dark .dialog-close-btn{
+      color:#94a3b8;
+    }
+    body.dark .dialog-close-btn:hover{
+      color:#f87171;
+      background:#2d1b24;
+    }
+    body.dark .form-group label{
+      color:#cbd5e1;
+    }
+    body.dark .form-control{
+      background:#131e33;
+      color:#e9f2ff;
+      border-color:var(--border-dark);
+    }
+    body.dark .form-control:focus{
+      background:#16233d;
+      border-color:var(--accent);
+    }
+    body.dark .subject-prefix{
+      background:#17253d;
+      border-color:var(--border-dark);
+      color:#79c0ff;
+    }
+    body.dark .form-status.success{
+      background:#0b2e27;
+      color:#a7f3d0;
+      border-color:#165b4c;
+    }
+    body.dark .form-status.error{
+      background:#3b181d;
+      color:#fca5a5;
+      border-color:#7f1d1d;
+    }
+    body.dark .form-status.loading{
+      background:#172a4d;
+      color:#bfdbfe;
+      border-color:#1e40af;
     }
 
     /* Barra de idiomas fixa (sticky) com blur/transparência para bom contraste
@@ -183,14 +634,46 @@
     }
     body.dark .languages{ background:rgba(13,21,38,.55) }
 
-    /* Botão flutuante "voltar ao topo" */
+    /* Botão flutuante "voltar ao topo" com design integrado e moderno */
     .btn-top{
-      position:fixed; right:16px; bottom:18px; z-index:20;
-      width:42px; height:42px; border-radius:999px; border:1px solid var(--border);
-      background:#0f8bff; color:#fff; cursor:pointer; box-shadow:0 6px 18px #00000033;
-      display:none; align-items:center; justify-content:center; font-size:18px
+      position:fixed; right:20px; bottom:20px; z-index:90;
+      width:46px; height:46px; border-radius:50%;
+      border:1px solid rgba(0, 229, 200, 0.45);
+      background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color:#00e5c8; cursor:pointer;
+      box-shadow:0 8px 24px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 229, 200, 0.22);
+      display:flex; align-items:center; justify-content:center;
+      opacity:0; visibility:hidden;
+      transform:translateY(16px) scale(0.9);
+      transition:opacity .25s ease, transform .25s ease, visibility .25s ease, background .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
     }
-    .btn-top.show{ display:flex }
+    .btn-top.show{
+      opacity:1; visibility:visible;
+      transform:translateY(0) scale(1);
+    }
+    .btn-top:hover{
+      background:#00e5c8; color:#090d16;
+      border-color:#00e5c8;
+      transform:translateY(-4px) scale(1.08);
+      box-shadow:0 12px 28px rgba(0, 229, 200, 0.45), 0 4px 12px rgba(0, 0, 0, 0.35);
+    }
+    .btn-top:active{ transform:translateY(-1px) scale(0.98); }
+    .btn-top:focus-visible{ outline:2px solid #00e5c8; outline-offset:3px; }
+    .btn-top svg{ transition:transform .2s ease; }
+    .btn-top:hover svg{ transform:translateY(-2px); }
+    body.dark .btn-top{
+      background:linear-gradient(135deg, #0d1526 0%, #17243c 100%);
+      border-color:rgba(0, 229, 200, 0.55);
+      color:#00e5c8;
+      box-shadow:0 8px 24px rgba(0, 0, 0, 0.55), 0 2px 10px rgba(0, 229, 200, 0.3);
+    }
+    body.dark .btn-top:hover{
+      background:#00e5c8; color:#080d1a;
+      border-color:#00e5c8;
+      box-shadow:0 12px 30px rgba(0, 229, 200, 0.55);
+    }
 
     /* Animação de revelação ao rolar:
        - Elementos começam escondidos (reveal) e recebem .in quando visíveis.
@@ -306,6 +789,81 @@
       background:#0e1c2e;
       text-decoration:none;
     }
+
+    /* Tema escuro para novos componentes */
+    body.dark .project-icon{
+      background:#152238;
+      border-color:var(--border-dark);
+      box-shadow:0 2px 8px #00000044;
+    }
+    body.dark .badge-tech{
+      background:rgba(26,188,156,.18);
+      color:#79ffe1;
+      border-color:#1abc9c55;
+    }
+    body.dark .store-app-item{
+      background:#111d33;
+      border-color:var(--border-dark);
+    }
+    body.dark .store-app-item:hover{
+      background:#152644;
+      border-color:#0f8bff66;
+    }
+    body.dark .store-app-name{
+      color:#e9f2ff;
+    }
+    body.dark .store-app-icon{
+      background:#0d1526;
+      border-color:var(--border-dark);
+    }
+    body.dark .repo-card-icon{
+      background:#152238;
+      border-color:var(--border-dark);
+    }
+    body.dark .project-card:hover{
+      box-shadow:0 6px 18px #00000077;
+    }
+
+    /* Links de Navegação para Subpáginas Exclusivas dos Aplicativos */
+    .project-icon-link, .store-app-icon-link {
+      display:inline-flex;
+      text-decoration:none;
+      transition:transform .2s ease;
+      cursor:pointer;
+    }
+    .project-icon-link:hover .project-icon,
+    .project-icon-link:hover .repo-card-icon,
+    .store-app-icon-link:hover .store-app-icon {
+      transform:scale(1.05);
+      border-color:var(--accent);
+      box-shadow:0 4px 12px rgba(26,188,156,0.25);
+    }
+    .project-title-link {
+      color:var(--primary);
+      text-decoration:none;
+      transition:color .15s ease;
+      cursor:pointer;
+    }
+    .project-title-link:hover {
+      color:var(--accent);
+      text-decoration:none;
+    }
+    body.dark .project-title-link {
+      color:#e9f2ff;
+    }
+    body.dark .project-title-link:hover {
+      color:#00e5c8;
+    }
+    .store-app-title-link {
+      text-decoration:none;
+      cursor:pointer;
+    }
+    .store-app-title-link:hover .store-app-name {
+      color:var(--accent);
+    }
+    body.dark .store-app-title-link:hover .store-app-name {
+      color:#00e5c8;
+    }
   </style>
 
   <script>
@@ -365,6 +923,7 @@
     };
 
     const PUBLIC_REPOS_FALLBACK = [
+      { name: "ACL_Auditor_cpp", html_url: "https://github.com/fernandoncidade/ACL_Auditor_cpp" },
       { name: "Agenda_Avaliacoes_Academicas", html_url: "https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" },
       { name: "Agenda_Avaliacoes_Academicas_cpp", html_url: "https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas_cpp" },
       { name: "Compare_Following_Follower", html_url: "https://github.com/fernandoncidade/Compare_Following_Follower" },
@@ -373,10 +932,14 @@
       { name: "Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve", html_url: "https://github.com/fernandoncidade/Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve" },
       { name: "Dashboard_Taipy", html_url: "https://github.com/fernandoncidade/Dashboard_Taipy" },
       { name: "Dashboard_TkInter_Pareto-Diagram_ABC-Curve", html_url: "https://github.com/fernandoncidade/Dashboard_TkInter_Pareto-Diagram_ABC-Curve" },
+      { name: "EcoLZMA_cpp", html_url: "https://github.com/fernandoncidade/EcoLZMA_cpp" },
       { name: "Economia_APP", html_url: "https://github.com/fernandoncidade/Economia_APP" },
+      { name: "Economia_APP_cpp", html_url: "https://github.com/fernandoncidade/Economia_APP_cpp" },
       { name: "fernandoncidade", html_url: "https://github.com/fernandoncidade/fernandoncidade" },
       { name: "File_Manager", html_url: "https://github.com/fernandoncidade/File_Manager" },
       { name: "Launcher_EBook", html_url: "https://github.com/fernandoncidade/Launcher_EBook" },
+      { name: "Linceu_Lighthouse_cpp", html_url: "https://github.com/fernandoncidade/Linceu_Lighthouse_cpp" },
+      { name: "Munin_App_cpp", html_url: "https://github.com/fernandoncidade/Munin_App_cpp" },
       { name: "Programa_Carteira_Motorista", html_url: "https://github.com/fernandoncidade/Programa_Carteira_Motorista" },
       { name: "Programa_Determinar_Maior_Inteiro", html_url: "https://github.com/fernandoncidade/Programa_Determinar_Maior_Inteiro" },
       { name: "Programa_Expressoes_Relacionais", html_url: "https://github.com/fernandoncidade/Programa_Expressoes_Relacionais" },
@@ -387,8 +950,42 @@
       { name: "Programa_Quociente_Resto", html_url: "https://github.com/fernandoncidade/Programa_Quociente_Resto" },
       { name: "Programa_Todos_Tipos_Matrizes", html_url: "https://github.com/fernandoncidade/Programa_Todos_Tipos_Matrizes" },
       { name: "Programa_Urna_Eletronica", html_url: "https://github.com/fernandoncidade/Programa_Urna_Eletronica" },
+      { name: "SlidingWindowLZ77_cpp", html_url: "https://github.com/fernandoncidade/SlidingWindowLZ77_cpp" },
       { name: "sloth-highlander-theme-1", html_url: "https://github.com/fernandoncidade/sloth-highlander-theme-1" }
     ];
+
+    const REPO_ICONS = {
+      "Linceu_Lighthouse_cpp": "image_perfil/linceu_sem_fundo.png",
+      "ACL_Auditor_cpp": "image_perfil/acl_auditor.png",
+      "Munin_App_cpp": "image_perfil/munin.png",
+      "Compression_Manager": "image_perfil/Manager-BackUp.png",
+      "Economia_APP": "image_perfil/economia.png",
+      "Economia_APP_cpp": "image_perfil/economia.png",
+      "Launcher_EBook": "image_perfil/launcherebook2_256-256.png",
+      "Compare_Following_Follower": "https://raw.githubusercontent.com/fernandoncidade/Compare_Following_Follower/main/source/assets/icons/FollowingFollower_256-256.png"
+    };
+
+    const REPO_STORE_URLS = {
+      "Linceu_Lighthouse_cpp": "https://apps.microsoft.com/detail/9NN8Z5Z700TM",
+      "ACL_Auditor_cpp": "https://apps.microsoft.com/detail/9NX5XZLL8WXW",
+      "Munin_App_cpp": "https://apps.microsoft.com/detail/9PP4GVHR5THC",
+      "Compression_Manager": "https://apps.microsoft.com/detail/9PJMT90R953K",
+      "Economia_APP": "https://apps.microsoft.com/detail/9PLR0KD6KSJJ",
+      "Economia_APP_cpp": "https://apps.microsoft.com/detail/9PLR0KD6KSJJ"
+    };
+
+    const REPO_SUBPAGES = {
+      "Linceu_Lighthouse_cpp": "apps/linceu-lighthouse.html",
+      "ACL_Auditor_cpp": "apps/acl-auditor.html",
+      "Munin_App_cpp": "apps/munin-app.html",
+      "Compression_Manager": "apps/compression-manager.html",
+      "Economia_APP": "apps/economia-app.html",
+      "Economia_APP_cpp": "apps/economia-app.html",
+      "Launcher_EBook": "apps/launcher-ebook.html",
+      "Compare_Following_Follower": "apps/compare-following-follower.html",
+      "Agenda_Avaliacoes_Academicas": "apps/agenda-avaliacoes-academicas.html",
+      "Agenda_Avaliacoes_Academicas_cpp": "apps/agenda-avaliacoes-academicas.html"
+    };
     let publicReposRendered = false;
     let publicReposCache = PUBLIC_REPOS_FALLBACK;
 
@@ -398,7 +995,7 @@
     //   elementos dependentes (tagline, badges, widgets, etc).
     //   Recebe o objeto de LANGS correspondente ao idioma a ativar.
     // ============================
-    function activateLang(idObj) {
+    function activateLang(idObj, shouldScroll = true) {
       // Desativa todas as seções e botões de idioma
       LANGS.forEach(l => {
         document.getElementById(l.section).classList.remove('active');
@@ -417,6 +1014,9 @@
       // Ajusta atributo lang do HTML para acessibilidade e SEO
       document.documentElement.lang = idObj.htmlLang;
       CURRENT_LANG = idObj.code;
+      try {
+        localStorage.setItem('fcc_lang', idObj.code);
+      } catch (e) {}
 
       // Atualiza textos/badges/widgets dependentes do idioma
       updateHeaderTagline();
@@ -424,10 +1024,14 @@
       updateStatsLocale();
       updateProjectsTabLabel();
       updateProjectsSectionTexts();
+      if (typeof updateMessageModalLocale === 'function') updateMessageModalLocale();
+      if (typeof updateFooterLocale === 'function') updateFooterLocale();
 
-      // Rola a página para a barra de idiomas (melhora UX em mobile)
-      const top = document.querySelector('.languages');
-      if (top) window.scrollTo({ top: top.offsetTop - 16, behavior: 'smooth' });
+      // Rola a página para a barra de idiomas (melhora UX em mobile quando acionado por clique)
+      if (shouldScroll) {
+        const top = document.querySelector('.languages');
+        if (top) window.scrollTo({ top: top.offsetTop - 16, behavior: 'smooth' });
+      }
     }
 
     // Atualiza o texto da tagline no cabeçalho conforme idioma atual
@@ -446,45 +1050,20 @@
       img.alt = info.alt;
     }
 
-    // Atualiza as URLs das imagens de widgets de estatísticas (GitHub stats, streak, graph, top langs)
-    // - Usa LOCALES para ajustar os parâmetros de locale.
     // Atualiza as URLs das imagens de widgets de estatísticas
     function updateStatsLocale() {
-      const l = LOCALES[CURRENT_LANG] || LOCALES.ptbr;
       const section = document.querySelector('.lang-section.active');
       if (!section) return;
 
       // Detecta se o tema atual é escuro
       const isDark = document.body.classList.contains('dark') || (localStorage.getItem('fcc_theme') === 'dark');
 
-      // --- ALTERAÇÃO AQUI: Lógica do Widget Insights ---
+      // Lógica do Widget Insights
       const insights = section.querySelector('.gh-insights');
       if (insights) {
-        // Define o tema da API com base na variável isDark
         const themeParam = isDark ? 'github_dark' : 'github_light';
-
         insights.src =
           `https://yourinsights.vercel.app/api/insight?username=fernandoncidade&theme=${themeParam}&graph=true&languages=true&streak=true&stats=true&header=true&summary=true&profile=true`;
-      }
-
-      // Activity graph
-      const graph = section.querySelector('.gh-activity');
-      const titles = {
-        ptbr: "Gráfico%20de%20Atividade%20de%20fernandoncidade",
-        enus: "fernandoncidade's%20Activity%20Graph"
-      };
-      if (graph) {
-        const graphTheme = isDark ? 'merko' : 'minimal';
-        graph.src =
-          `https://github-readme-activity-graph.vercel.app/graph?username=fernandoncidade&theme=${graphTheme}&area=true&custom_title=${titles[CURRENT_LANG] || titles.ptbr}&locale=${l.graph}`;
-      }
-
-      // Top languages
-      const langs = section.querySelector('.top-langs');
-      if (langs) {
-        const langsTheme = isDark ? 'merko' : 'default';
-        langs.src =
-                `https://beautiful-github-homepage.vercel.app/api/top-langs/?username=fernandoncidade&layout=compact&theme=${langsTheme}&locale=${l.langs}`;
       }
     }
 
@@ -529,11 +1108,41 @@
           ? (CURRENT_LANG === "enus" ? "Profile README" : "README do Perfil")
           : repo.name.replaceAll("_", " ");
 
+        const iconSrc = REPO_ICONS[repo.name];
+        const storeUrl = REPO_STORE_URLS[repo.name];
+        const subpageUrl = REPO_SUBPAGES[repo.name];
+        const subpageTitle = CURRENT_LANG === "enus" ? `View ${title} subpage` : `Ver subpágina do ${title}`;
+
+        const iconInner = iconSrc 
+          ? `<img src="${iconSrc}" alt="${title}" class="repo-card-icon">` 
+          : `<span class="repo-card-icon-placeholder">📁</span>`;
+
+        const iconHtml = subpageUrl 
+          ? `<a href="${subpageUrl}" class="project-icon-link" title="${subpageTitle}">${iconInner}</a>` 
+          : iconInner;
+
+        const titleHtml = subpageUrl
+          ? `<h3 style="margin:0;font-size:1.05rem;"><a href="${subpageUrl}" class="project-title-link" title="${subpageTitle}">${title}</a></h3>`
+          : `<h3 style="margin:0;font-size:1.05rem;">${title}</h3>`;
+
+        const storeBtnHtml = storeUrl 
+          ? `<a class="cta secondary" target="_blank" rel="noopener noreferrer" href="${storeUrl}">Microsoft Store</a>` 
+          : '';
+
         return `
           <div class="col-4">
-            <div class="card">
-              <h3>${title}</h3>
-              <p><a class="cta" target="_blank" rel="noopener noreferrer" href="${repo.html_url}">${label}</a></p>
+            <div class="card project-card">
+              <div class="card-header-flex">
+                ${iconHtml}
+                <div>
+                  ${titleHtml}
+                </div>
+              </div>
+              <div class="card-actions">
+                <a class="cta" target="_blank" rel="noopener noreferrer" href="${repo.html_url}">${label}</a>
+                ${storeBtnHtml}
+                <button type="button" class="cta tertiary btn-open-msg" data-repo="${repo.name}" data-app="${title}">💬 ${CURRENT_LANG === "enus" ? "Message" : "Mensagem"}</button>
+              </div>
             </div>
           </div>`;
       }).join('');
@@ -595,7 +1204,7 @@
     }
 
     // Ao carregar o DOM, conectamos listeners aos botões de idioma e de projetos,
-    // e ativamos o idioma padrão.
+    // e ativamos o idioma persistido no localStorage (sincronizado com subpáginas).
     window.addEventListener('DOMContentLoaded', () => {
       // listeners dos botões de idioma
       LANGS.forEach(l => {
@@ -606,8 +1215,33 @@
       const pb = document.getElementById('btn-projects');
       if (pb) pb.addEventListener('click', showProjects);
 
-      // ativa o idioma padrão (primeiro da lista)
-      activateLang(LANGS[0]);
+      // Recupera idioma salvo no localStorage (sincronizado com subpáginas) ou usa o padrão (ptbr)
+      let initialLang = LANGS[0];
+      try {
+        const saved = localStorage.getItem('fcc_lang');
+        if (saved) {
+          const match = LANGS.find(l => l.code === saved || (saved === 'en' && l.code === 'enus') || (saved === 'pt' && l.code === 'ptbr'));
+          if (match) initialLang = match;
+        }
+      } catch (e) {}
+      activateLang(initialLang, false);
+    });
+
+    // Garante sincronização bidirecional mesmo ao navegar pelo histórico (botão Voltar do navegador / BFCache)
+    window.addEventListener('pageshow', () => {
+      try {
+        const saved = localStorage.getItem('fcc_lang');
+        if (saved) {
+          const match = LANGS.find(l => l.code === saved || (saved === 'en' && l.code === 'enus') || (saved === 'pt' && l.code === 'ptbr'));
+          if (match && match.code !== CURRENT_LANG) {
+            activateLang(match, false);
+          }
+        }
+        const savedTheme = localStorage.getItem('fcc_theme');
+        if (savedTheme && typeof applyTheme === 'function') {
+          applyTheme(savedTheme);
+        }
+      } catch (e) {}
     });
   </script>
 </head>
@@ -618,9 +1252,7 @@
     <div id="tagline" class="tagline">Desenvolvedor de Software • Python • C++ • GUI</div>
     <div class="header-links">
       <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
-      <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
       <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
     </div>
   </div>
@@ -650,24 +1282,155 @@
           <div class="card">
             <h3>🚀 Habilidades</h3>
             <ul>
-              <li>Linguagens: Python, C++</li>
-              <li>GUI: PySide6, PyQt6, Tkinter</li>
-              <li>Dados: Pandas, Plotly, Streamlit</li>
-              <li>Científico: NumPy, SciPy, Matplotlib</li>
-              <li>Arquivos & Backup, Git/GitHub</li>
+              <li><b>Linguagens:</b> C++ (C++17, C++20), Python (3.10+)</li>
+              <li><b>GUI & Desktop:</b> Qt6 (Widgets, QSS, Mica/Windows DWM), PySide6, PyQt6, Tkinter</li>
+              <li><b>Sistemas & Performance:</b> Win32 API, Memory-Mapped Files (Zero-Copy), SIMD (AVX2, SSE4.2), Multithreading, SQLite Local</li>
+              <li><b>Segurança & Auditoria:</b> Permissões NTFS, Auditoria SMB, Effective Access, File Integrity Monitoring (FIM), Hashes Criptográficos</li>
+              <li><b>Dados & Visualização:</b> Pandas, Plotly, Streamlit, Taipy, NumPy, SciPy, Matplotlib</li>
+              <li><b>Arquivos & Backup:</b> Automação, compressão (LZMA, LZ77), Git/GitHub</li>
             </ul>
           </div>
 
           <div class="card">
             <h3>🎯 Principais Projetos</h3>
             <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda Avaliações Acadêmicas</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9P289X0185C3">Eisenhower Organizer</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM">Linceu Lighthouse</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9N70CLLMVRPN">Lúmen</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Economia_APP">Economia APP</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse_cpp">Linceu Lighthouse (C++17 / Qt6)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/ACL_Auditor_cpp">ACL Auditor (C++20 / Qt 6.11)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Munin_App_cpp">Munin App (C++20 / Qt6)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9MW96RN044TT">EisenPo (C++ / Qt6)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9N70CLLMVRPN">Lúmen (C++ / Qt6)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9P289X0185C3">Eisenhower Organizer (C++ / Qt6)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager (Python / Qt)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Economia_APP">Economia APP (Python / C++)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Launcher_EBook">Launcher EBook (C++ / Qt6)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Agenda Avaliações Acadêmicas (Python / PySide6)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compare_Following_Follower">Compare - Following and Follower (Python / PySide6)</a></li>
             </ul>
+          </div>
+
+          <div class="card">
+            <h3>🏪 Aplicativos na Microsoft Store</h3>
+            <div class="store-apps-list">
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/linceu-lighthouse.html" class="store-app-icon-link" title="Ver subpágina do Linceu Lighthouse">
+                    <img src="image_perfil/linceu_sem_fundo.png" alt="Linceu Lighthouse" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/linceu-lighthouse.html" class="store-app-title-link" title="Ver subpágina do Linceu Lighthouse">
+                      <span class="store-app-name">Linceu Lighthouse</span>
+                    </a>
+                    <span class="store-app-tag">Monitoramento & Integridade (FIM)</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Obter</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/acl-auditor.html" class="store-app-icon-link" title="Ver subpágina do ACL Auditor">
+                    <img src="image_perfil/acl_auditor.png" alt="ACL Auditor" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/acl-auditor.html" class="store-app-title-link" title="Ver subpágina do ACL Auditor">
+                      <span class="store-app-name">ACL Auditor</span>
+                    </a>
+                    <span class="store-app-tag">Auditoria NTFS & Permissões SMB</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9NX5XZLL8WXW" target="_blank" rel="noopener noreferrer">Obter</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/munin-app.html" class="store-app-icon-link" title="Ver subpágina do Munin App">
+                    <img src="image_perfil/munin.png" alt="Munin App" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/munin-app.html" class="store-app-title-link" title="Ver subpágina do Munin App">
+                      <span class="store-app-name">Munin App</span>
+                    </a>
+                    <span class="store-app-tag">Leitor de Logs Massivos (SIMD)</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9PP4GVHR5THC" target="_blank" rel="noopener noreferrer">Obter</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/eisenpo.html" class="store-app-icon-link" title="Ver subpágina do EisenPo">
+                    <img src="image_perfil/eisenpo.png" alt="EisenPo" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/eisenpo.html" class="store-app-title-link" title="Ver subpágina do EisenPo">
+                      <span class="store-app-name">EisenPo</span>
+                    </a>
+                    <span class="store-app-tag">Matriz Eisenhower, Pomodoro & Feynman</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9MW96RN044TT" target="_blank" rel="noopener noreferrer">Obter</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/eisenhower-organizer.html" class="store-app-icon-link" title="Ver subpágina do Eisenhower Organizer">
+                    <img src="image_perfil/eisenhower.png" alt="Eisenhower Organizer" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/eisenhower-organizer.html" class="store-app-title-link" title="Ver subpágina do Eisenhower Organizer">
+                      <span class="store-app-name">EISENHOWER ORGANIZER</span>
+                    </a>
+                    <span class="store-app-tag">Gestão & Priorização de Tarefas</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Obter</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/lumen.html" class="store-app-icon-link" title="Ver subpágina do Lúmen">
+                    <img src="image_perfil/autismo.png" alt="Lúmen" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/lumen.html" class="store-app-title-link" title="Ver subpágina do Lúmen">
+                      <span class="store-app-name">Lúmen</span>
+                    </a>
+                    <span class="store-app-tag">Apoio a Estudos (TEA / TDAH / Dislexia)</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9N70CLLMVRPN" target="_blank" rel="noopener noreferrer">Obter</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/compression-manager.html" class="store-app-icon-link" title="Ver subpágina do Compression Manager">
+                    <img src="image_perfil/Manager-BackUp.png" alt="Compression Manager" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/compression-manager.html" class="store-app-title-link" title="Ver subpágina do Compression Manager">
+                      <span class="store-app-name">COMPRESSION MANAGER</span>
+                    </a>
+                    <span class="store-app-tag">Backup & Compressão Inteligente</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Obter</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/economia-app.html" class="store-app-icon-link" title="Ver subpágina do Economia APP">
+                    <img src="image_perfil/economia.png" alt="Economia APP" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/economia-app.html" class="store-app-title-link" title="Ver subpágina do Economia APP">
+                      <span class="store-app-name">Economia APP</span>
+                    </a>
+                    <span class="store-app-tag">Engenharia Econômica & Finanças</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9PLR0KD6KSJJ" target="_blank" rel="noopener noreferrer">Obter</a>
+              </div>
+            </div>
           </div>
 
           <div class="card">
@@ -684,9 +1447,6 @@
             <img class="gh-insights"
                  src="https://yourinsights.vercel.app/api/insight?username=fernandoncidade&theme=light&graph=true&languages=true&streak=true&stats=true&header=true&summary=true&profile=true"
                  alt="GitHub Insights">
-
-            <img class="gh-activity" alt="GitHub Activity Graph">
-            <img class="top-langs" alt="Top Langs">
           </div>
 
           <div class="card">
@@ -701,69 +1461,203 @@
             <h3>📫 Contato</h3>
             <p class="header-links">
               <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
-              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
             </p>
           </div>
         </div>
 
         <div class="col-6">
-          <div class="card">
-            <h2>📌 Destaque: Linceu Lighthouse</h2>
-            <p>Ferramenta de monitoramento de integridade de arquivos (FIM), interface multilíngue, estatísticas e exportações flexíveis.</p>
-            <p>
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/linceu-lighthouse.html" class="project-icon-link" title="Ver subpágina do Linceu Lighthouse">
+                <img src="image_perfil/linceu_sem_fundo.png" alt="Linceu Lighthouse" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++17 • Qt6 • 100% Offline</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/linceu-lighthouse.html" class="project-title-link" title="Ver subpágina do Linceu Lighthouse">Linceu Lighthouse</a></h2>
+              </div>
+            </div>
+            <p>Plataforma local de inteligência, histórico e auditoria determinística de atividades de arquivos no Windows. Monitoramento em tempo real com APIs Win32 assíncronas (<code>ReadDirectoryChangesW</code>), correlação semântica de eventos Rename/Move, baseline criptográfica, banco SQLite local com mais de 30 categorias de metadados e 17 visualizações gráficas nativas.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse_cpp" target="_blank" rel="noopener noreferrer">Ver repositório</a>
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="Linceu_Lighthouse_cpp" data-app="Linceu Lighthouse">💬 Mensagem</button>
+            </div>
           </div>
 
-          <div class="card">
-            <h2>📌 Destaque: Lúmen</h2>
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/acl-auditor.html" class="project-icon-link" title="Ver subpágina do ACL Auditor">
+                <img src="image_perfil/acl_auditor.png" alt="ACL Auditor" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++20 • Qt 6.11 • NTFS & SMB</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/acl-auditor.html" class="project-title-link" title="Ver subpágina do ACL Auditor">ACL Auditor</a></h2>
+              </div>
+            </div>
+            <p>Auditor enterprise-grade de permissões NTFS e compartilhamentos SMB no Windows. Análise explicativa de acesso efetivo (Effective Access), simulação de tokens e cadeias de herança, detecção de vulnerabilidades e riscos de escalonamento em serviços do Windows, com relatórios auditáveis em HTML e PDF.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/ACL_Auditor_cpp" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NX5XZLL8WXW" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="ACL_Auditor_cpp" data-app="ACL Auditor">💬 Mensagem</button>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/munin-app.html" class="project-icon-link" title="Ver subpágina do Munin App">
+                <img src="image_perfil/munin.png" alt="Munin App" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++20 • Qt6 • SIMD AVX2 • Zero-Copy</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/munin-app.html" class="project-title-link" title="Ver subpágina do Munin App">Munin App</a></h2>
+              </div>
+            </div>
+            <p>Visualizador e analisador de logs massivos de altíssimo desempenho para Windows. Abertura instantânea de arquivos gigantescos via Memory-Mapped Files Win32, indexação vetorial SIMD (AVX2/SSE4.2) a mais de 3 GB/s, busca paralela multi-core com Regex JIT, monitoramento Live Tail em tempo real, histograma temporal time-slice e inspetor hierárquico de JSON.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/Munin_App_cpp" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PP4GVHR5THC" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="Munin_App_cpp" data-app="Munin App">💬 Mensagem</button>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/eisenpo.html" class="project-icon-link" title="Ver subpágina do EisenPo">
+                <img src="image_perfil/eisenpo.png" alt="EisenPo" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++ • Qt6 • Matriz de Eisenhower</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/eisenpo.html" class="project-title-link" title="Ver subpágina do EisenPo">EisenPo</a></h2>
+              </div>
+            </div>
+            <p>Aplicação para priorização de tarefas usando a Matriz de Eisenhower (Urgente/Importante). Conta com persistência local em JSON, exportação/importação em planilhas Excel (XLSX) e PDF, visualização por calendário (dia, semana, mês) e módulos opcionais integrados de foco Pomodoro e Método Feynman.</p>
+            <div class="card-actions">
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9MW96RN044TT" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="" data-app="EisenPo">💬 Mensagem</button>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/lumen.html" class="project-icon-link" title="Ver subpágina do Lúmen">
+                <img src="image_perfil/autismo.png" alt="Lúmen" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++ • Qt6 • Acessibilidade</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/lumen.html" class="project-title-link" title="Ver subpágina do Lúmen">Lúmen</a></h2>
+              </div>
+            </div>
             <p>Aplicativo desktop voltado para apoiar jovens e adultos neurodivergentes (TEA, TDAH, Dislexia) em estudo e organização. Integra leitor acessível com vozes neurais, ferramentas de priorização de tarefas, timers Pomodoro, mapas mentais e recursos para explicação ativa (Método Feynman).</p>
-            <p>
+            <div class="card-actions">
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9N70CLLMVRPN" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="" data-app="Lúmen">💬 Mensagem</button>
+            </div>
           </div>
 
-          <div class="card">
-            <h2>📌 Destaque: Eisenhower Organizer</h2>
-            <p>Aplicativo para priorizar tarefas usando a Matriz de Eisenhower, com foco em produtividade e simplicidade.</p>
-            <p>
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/eisenhower-organizer.html" class="project-icon-link" title="Ver subpágina do Eisenhower Organizer">
+                <img src="image_perfil/eisenhower.png" alt="Eisenhower Organizer" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++ • Qt6 • Produtividade</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/eisenhower-organizer.html" class="project-title-link" title="Ver subpágina do Eisenhower Organizer">Eisenhower Organizer</a></h2>
+              </div>
+            </div>
+            <p>Aplicativo leve para priorizar tarefas usando a Matriz de Eisenhower, com foco em produtividade, velocidade e simplicidade no gerenciamento diário.</p>
+            <div class="card-actions">
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="" data-app="EISENHOWER ORGANIZER">💬 Mensagem</button>
+            </div>
           </div>
 
-          <div class="card">
-            <h2>📌 Destaque: Agenda Avaliações Acadêmicas</h2>
-            <p>Sistema para gerenciamento de atividades avaliativas em ambientes educacionais.</p>
-            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Ver repositório</a></p>
-          </div>
-
-          <div class="card">
-            <h2>📌 Destaque: Compare - Following and Follower</h2>
-            <p>Compare - Following and Follower é um aplicativo desktop para comparar, de forma prática, quem você segue e quem te segue no GitHub. Uma ferramenta para transformar listas grandes de seguidores em decisões claras, sem precisar abrir perfil por perfil.</p>
-            <p><a class="cta" href="https://github.com/fernandoncidade/Compare_Following_Follower" target="_blank" rel="noopener noreferrer">Ver repositório</a></p>
-          </div>
-
-          <div class="card">
-            <h2>📌 Destaque: Compression Manager</h2>
-            <p>Aplicativo de backup e compressão de arquivos com interface gráfica intuitiva.</p>
-            <p>
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/compression-manager.html" class="project-icon-link" title="Ver subpágina do Compression Manager">
+                <img src="image_perfil/Manager-BackUp.png" alt="Compression Manager" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">Python 3.10+ • Qt • Backup</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/compression-manager.html" class="project-title-link" title="Ver subpágina do Compression Manager">Compression Manager</a></h2>
+              </div>
+            </div>
+            <p>Aplicativo de backup e compressão de arquivos com interface gráfica intuitiva, automação de rotinas e suporte a múltiplos formatos de arquivamento.</p>
+            <div class="card-actions">
               <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-              &nbsp;
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="Compression_Manager" data-app="COMPRESSION MANAGER">💬 Mensagem</button>
+            </div>
           </div>
 
-          <div class="card">
-            <h2>📌 Destaque: Economia APP</h2>
-            <p>Economia APP é uma ferramenta de apoio ao estudo de Economia de Engenharia (disciplina TT007) que automatiza cálculos financeiros frequentes — juros simples e compostos, anuidades, gradientes, equivalência de taxas, amortização (SAC, Price, SAM), análise de investimentos (VPL / VAUE) e depreciação — e apresenta passos detalhados e histórico dos resultados.</p>
-            <p>
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/economia-app.html" class="project-icon-link" title="Ver subpágina do Economia APP">
+                <img src="image_perfil/economia.png" alt="Economia APP" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">Python • C++ • Finanças</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/economia-app.html" class="project-title-link" title="Ver subpágina do Economia APP">Economia APP</a></h2>
+              </div>
+            </div>
+            <p>Ferramenta de apoio ao estudo de Economia de Engenharia que automatiza cálculos financeiros frequentes (juros simples/compostos, anuidades, equivalência, amortização SAC/Price/SAM, VPL, VAUE e depreciação) com memória de cálculo detalhada.</p>
+            <div class="card-actions">
               <a class="cta" href="https://github.com/fernandoncidade/Economia_APP" target="_blank" rel="noopener noreferrer">Ver repositório</a>
-              &nbsp;
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9PLR0KD6KSJJ" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="Economia_APP" data-app="Economia APP">💬 Mensagem</button>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/launcher-ebook.html" class="project-icon-link" title="Ver subpágina do Launcher EBook">
+                <img src="image_perfil/launcherebook2_256-256.png" alt="Launcher EBook" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++ • Qt6 • Desktop</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/launcher-ebook.html" class="project-title-link" title="Ver subpágina do Launcher EBook">Launcher EBook</a></h2>
+              </div>
+            </div>
+            <p>Aplicação desktop em C++/Qt6 para catalogação e gerenciamento de e-books e documentos locais com metadados e estatísticas de leitura.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/Launcher_EBook" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="Launcher_EBook" data-app="Launcher EBook">💬 Mensagem</button>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/compare-following-follower.html" class="project-icon-link" title="Ver subpágina do Compare Following Follower">
+                <img src="https://raw.githubusercontent.com/fernandoncidade/Compare_Following_Follower/main/source/assets/icons/FollowingFollower_256-256.png" alt="Compare Following Follower" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">Python 3.10+ • PySide6</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/compare-following-follower.html" class="project-title-link" title="Ver subpágina do Compare Following Follower">Compare - Following and Follower</a></h2>
+              </div>
+            </div>
+            <p>Aplicativo desktop para comparar de forma prática conexões no GitHub (quem você segue e quem te segue), permitindo auditoria visual rápida da sua rede.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/Compare_Following_Follower" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="Compare_Following_Follower" data-app="Compare - Following and Follower">💬 Mensagem</button>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/agenda-avaliacoes-academicas.html" class="project-icon-link" title="Ver subpágina da Agenda Avaliações Acadêmicas">
+                <span class="repo-card-icon-placeholder" style="font-size:2.2rem;margin-right:4px;">🎓</span>
+              </a>
+              <div>
+                <span class="badge-tech">Python • PySide6</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/agenda-avaliacoes-academicas.html" class="project-title-link" title="Ver subpágina da Agenda Avaliações Acadêmicas">Agenda Avaliações Acadêmicas</a></h2>
+              </div>
+            </div>
+            <p>Sistema para gerenciamento de atividades avaliativas em ambientes educacionais, usando PySide6 e módulos personalizados para acompanhamento do calendário escolar.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="Agenda_Avaliacoes_Academicas" data-app="Agenda Avaliações Acadêmicas">💬 Mensagem</button>
+            </div>
           </div>
         </div>
       </div>
@@ -779,24 +1673,155 @@
           <div class="card">
             <h3>🚀 Skills</h3>
             <ul>
-              <li>Languages: Python, C++</li>
-              <li>GUI: PySide6, PyQt6, Tkinter</li>
-              <li>Data: Pandas, Plotly, Streamlit</li>
-              <li>Scientific: NumPy, SciPy, Matplotlib</li>
-              <li>Files & Backup, Git/GitHub</li>
+              <li><b>Languages:</b> C++ (C++17, C++20), Python (3.10+)</li>
+              <li><b>GUI & Desktop:</b> Qt6 (Widgets, QSS, Mica/Windows DWM), PySide6, PyQt6, Tkinter</li>
+              <li><b>Systems & Performance:</b> Win32 API, Memory-Mapped Files (Zero-Copy), SIMD (AVX2, SSE4.2), Multithreading, Local SQLite</li>
+              <li><b>Security & Auditing:</b> NTFS Permissions, SMB Auditing, Effective Access, File Integrity Monitoring (FIM), Cryptographic Hashes</li>
+              <li><b>Data & Visualization:</b> Pandas, Plotly, Streamlit, Taipy, NumPy, SciPy, Matplotlib</li>
+              <li><b>Files & Backup:</b> Automation, compression (LZMA, LZ77), Git/GitHub</li>
             </ul>
           </div>
 
           <div class="card">
             <h3>🎯 Main Projects</h3>
             <ul class="subtopics">
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Academic Evaluations Scheduler</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9P289X0185C3">Eisenhower Organizer</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM">Linceu Lighthouse</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9N70CLLMVRPN">Lúmen</a></li>
-              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Economia_APP">Economia APP</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse_cpp">Linceu Lighthouse (C++17 / Qt6)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/ACL_Auditor_cpp">ACL Auditor (C++20 / Qt 6.11)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Munin_App_cpp">Munin App (C++20 / Qt6)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9MW96RN044TT">EisenPo (C++ / Qt6)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9N70CLLMVRPN">Lúmen (C++ / Qt6)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9P289X0185C3">Eisenhower Organizer (C++ / Qt6)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compression_Manager">Compression Manager (Python / Qt)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Economia_APP">Economia APP (Python / C++)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Launcher_EBook">Launcher EBook (C++ / Qt6)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas">Academic Evaluations Scheduler (Python / PySide6)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Compare_Following_Follower">Compare - Following and Follower (Python / PySide6)</a></li>
             </ul>
+          </div>
+
+          <div class="card">
+            <h3>🏪 Microsoft Store Applications</h3>
+            <div class="store-apps-list">
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/linceu-lighthouse.html" class="store-app-icon-link" title="View Linceu Lighthouse subpage">
+                    <img src="image_perfil/linceu_sem_fundo.png" alt="Linceu Lighthouse" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/linceu-lighthouse.html" class="store-app-title-link" title="View Linceu Lighthouse subpage">
+                      <span class="store-app-name">Linceu Lighthouse</span>
+                    </a>
+                    <span class="store-app-tag">File Integrity Monitoring (FIM)</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Get</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/acl-auditor.html" class="store-app-icon-link" title="View ACL Auditor subpage">
+                    <img src="image_perfil/acl_auditor.png" alt="ACL Auditor" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/acl-auditor.html" class="store-app-title-link" title="View ACL Auditor subpage">
+                      <span class="store-app-name">ACL Auditor</span>
+                    </a>
+                    <span class="store-app-tag">NTFS & SMB Permission Auditor</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9NX5XZLL8WXW" target="_blank" rel="noopener noreferrer">Get</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/munin-app.html" class="store-app-icon-link" title="View Munin App subpage">
+                    <img src="image_perfil/munin.png" alt="Munin App" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/munin-app.html" class="store-app-title-link" title="View Munin App subpage">
+                      <span class="store-app-name">Munin App</span>
+                    </a>
+                    <span class="store-app-tag">Massive Log Viewer (SIMD)</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9PP4GVHR5THC" target="_blank" rel="noopener noreferrer">Get</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/eisenpo.html" class="store-app-icon-link" title="View EisenPo subpage">
+                    <img src="image_perfil/eisenpo.png" alt="EisenPo" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/eisenpo.html" class="store-app-title-link" title="View EisenPo subpage">
+                      <span class="store-app-name">EisenPo</span>
+                    </a>
+                    <span class="store-app-tag">Eisenhower Matrix, Pomodoro & Feynman</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9MW96RN044TT" target="_blank" rel="noopener noreferrer">Get</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/eisenhower-organizer.html" class="store-app-icon-link" title="View Eisenhower Organizer subpage">
+                    <img src="image_perfil/eisenhower.png" alt="Eisenhower Organizer" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/eisenhower-organizer.html" class="store-app-title-link" title="View Eisenhower Organizer subpage">
+                      <span class="store-app-name">EISENHOWER ORGANIZER</span>
+                    </a>
+                    <span class="store-app-tag">Task Organization & Prioritization</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Get</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/lumen.html" class="store-app-icon-link" title="View Lúmen subpage">
+                    <img src="image_perfil/autismo.png" alt="Lúmen" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/lumen.html" class="store-app-title-link" title="View Lúmen subpage">
+                      <span class="store-app-name">Lúmen</span>
+                    </a>
+                    <span class="store-app-tag">Study Support (ASD / ADHD / Dyslexia)</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9N70CLLMVRPN" target="_blank" rel="noopener noreferrer">Get</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/compression-manager.html" class="store-app-icon-link" title="View Compression Manager subpage">
+                    <img src="image_perfil/Manager-BackUp.png" alt="Compression Manager" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/compression-manager.html" class="store-app-title-link" title="View Compression Manager subpage">
+                      <span class="store-app-name">COMPRESSION MANAGER</span>
+                    </a>
+                    <span class="store-app-tag">Intelligent Backup & Compression</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Get</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/economia-app.html" class="store-app-icon-link" title="View Economia APP subpage">
+                    <img src="image_perfil/economia.png" alt="Economia APP" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/economia-app.html" class="store-app-title-link" title="View Economia APP subpage">
+                      <span class="store-app-name">Economia APP</span>
+                    </a>
+                    <span class="store-app-tag">Engineering Economics & Finance</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9PLR0KD6KSJJ" target="_blank" rel="noopener noreferrer">Get</a>
+              </div>
+            </div>
           </div>
 
           <div class="card">
@@ -813,9 +1838,6 @@
             <img class="gh-insights"
                  src="https://yourinsights.vercel.app/api/insight?username=fernandoncidade&theme=light&graph=true&languages=true&streak=true&stats=true&header=true&summary=true&profile=true"
                  alt="GitHub Insights">
-
-            <img class="gh-activity" alt="GitHub Activity Graph">
-            <img class="top-langs" alt="Top Langs">
           </div>
 
           <div class="card">
@@ -830,69 +1852,203 @@
             <h3>📫 Contact</h3>
             <p class="header-links">
               <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/fernando-nillsson-cidade" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
-              <a href="https://www.instagram.com/fernandonillssoncidade" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a href="https://orcid.org/0009-0009-5146-9830" target="_blank" rel="noopener noreferrer">ORCID</a>
             </p>
           </div>
         </div>
 
         <div class="col-6">
-          <div class="card">
-            <h2>📌 Highlight: Linceu Lighthouse</h2>
-            <p>File Integrity Monitoring (FIM) tool with multilingual UI, statistics and flexible exports.</p>
-            <p>
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/linceu-lighthouse.html" class="project-icon-link" title="View Linceu Lighthouse subpage">
+                <img src="image_perfil/linceu_sem_fundo.png" alt="Linceu Lighthouse" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++17 • Qt6 • 100% Offline</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/linceu-lighthouse.html" class="project-title-link" title="View Linceu Lighthouse subpage">Linceu Lighthouse</a></h2>
+              </div>
+            </div>
+            <p>Deterministic local file activity intelligence, timeline history, and audit platform for Windows. Real-time file system monitoring via asynchronous Win32 APIs (<code>ReadDirectoryChangesW</code>), semantic event correlation (detecting true Rename/Move), cryptographic integrity baseline, local SQLite database with 30+ metadata categories, and 17 native charts.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/Linceu_Lighthouse_cpp" target="_blank" rel="noopener noreferrer">Open repository</a>
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9NN8Z5Z700TM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="Linceu_Lighthouse_cpp" data-app="Linceu Lighthouse">💬 Message</button>
+            </div>
           </div>
 
-          <div class="card">
-            <h2>📌 Highlight: Lúmen</h2>
-            <p>Desktop application designed to support neurodivergent youth and adults (ASD, ADHD, Dyslexia) in studying and organization. Integrates an accessible reader with neural voices, task prioritization tools, Pomodoro timers, mind maps and resources for active explanation (Feynman Method).</p>
-            <p>
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/acl-auditor.html" class="project-icon-link" title="View ACL Auditor subpage">
+                <img src="image_perfil/acl_auditor.png" alt="ACL Auditor" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++20 • Qt 6.11 • NTFS & SMB</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/acl-auditor.html" class="project-title-link" title="View ACL Auditor subpage">ACL Auditor</a></h2>
+              </div>
+            </div>
+            <p>Enterprise-grade Windows NTFS and SMB permission auditor. Features causal effective access evaluation, token simulation, nested group expansion, security vulnerability detection, and privilege escalation auditing in Windows services, complete with auditable HTML and PDF exports.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/ACL_Auditor_cpp" target="_blank" rel="noopener noreferrer">Open repository</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9NX5XZLL8WXW" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="ACL_Auditor_cpp" data-app="ACL Auditor">💬 Message</button>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/munin-app.html" class="project-icon-link" title="View Munin App subpage">
+                <img src="image_perfil/munin.png" alt="Munin App" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++20 • Qt6 • SIMD AVX2 • Zero-Copy</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/munin-app.html" class="project-title-link" title="View Munin App subpage">Munin App</a></h2>
+              </div>
+            </div>
+            <p>Ultra-high performance massive log viewer and diagnostic tool for Windows. Instant opening of gigabyte-scale logs via Win32 Memory-Mapped Files, high-throughput SIMD vector indexing (AVX2/SSE4.2) exceeding 3 GB/s, multi-core parallel search with JIT Regex, real-time Live Tail monitoring, time-slice histogram, and structured JSON tree inspector.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/Munin_App_cpp" target="_blank" rel="noopener noreferrer">Open repository</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9PP4GVHR5THC" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="Munin_App_cpp" data-app="Munin App">💬 Message</button>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/eisenpo.html" class="project-icon-link" title="View EisenPo subpage">
+                <img src="image_perfil/eisenpo.png" alt="EisenPo" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++ • Qt6 • Eisenhower Matrix</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/eisenpo.html" class="project-title-link" title="View EisenPo subpage">EisenPo</a></h2>
+              </div>
+            </div>
+            <p>Agile task management and prioritization app based on the Eisenhower Matrix (Urgent/Important). Features persistent local JSON storage, export/import to Excel spreadsheets (XLSX) and PDF, calendar visualization (day, week, month), and integrated modules for Pomodoro focus and Feynman Technique concept review.</p>
+            <div class="card-actions">
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9MW96RN044TT" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="" data-app="EisenPo">💬 Message</button>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/lumen.html" class="project-icon-link" title="View Lúmen subpage">
+                <img src="image_perfil/autismo.png" alt="Lúmen" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++ • Qt6 • Accessibility</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/lumen.html" class="project-title-link" title="View Lúmen subpage">Lúmen</a></h2>
+              </div>
+            </div>
+            <p>Desktop application built to support neurodivergent youth and adults (ASD, ADHD, Dyslexia) in studying and daily organization. Features an accessible reader with neural voices, task prioritization, gentle visual Pomodoro timers, mind maps, and active explanation tools (Feynman Method).</p>
+            <div class="card-actions">
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9N70CLLMVRPN" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="" data-app="Lúmen">💬 Message</button>
+            </div>
           </div>
 
-          <div class="card">
-            <h2>📌 Highlight: Eisenhower Organizer</h2>
-            <p>App to prioritize tasks using the Eisenhower Matrix, focused on productivity and simplicity.</p>
-            <p>
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/eisenhower-organizer.html" class="project-icon-link" title="View Eisenhower Organizer subpage">
+                <img src="image_perfil/eisenhower.png" alt="Eisenhower Organizer" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++ • Qt6 • Productivity</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/eisenhower-organizer.html" class="project-title-link" title="View Eisenhower Organizer subpage">Eisenhower Organizer</a></h2>
+              </div>
+            </div>
+            <p>Lightweight task manager built on the Eisenhower Matrix (Important/Urgent), focused on productivity, speed, and simplicity in daily task prioritization.</p>
+            <div class="card-actions">
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9P289X0185C3" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="" data-app="EISENHOWER ORGANIZER">💬 Message</button>
+            </div>
           </div>
 
-          <div class="card">
-            <h2>📌 Highlight: Academic Evaluations Scheduler</h2>
-            <p>Repository for the Academic Evaluations Scheduler.</p>
-            <p><a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Open repository</a></p>
-          </div>
-
-          <div class="card">
-            <h2>📌 Highlight: Compare - Following and Follower</h2>
-            <p>Compare - Following and Follower is a desktop app to compare, in a practical way, who you follow and who follows you on GitHub. A tool to turn large follower lists into clear decisions, without opening profile by profile.</p>
-            <p><a class="cta" href="https://github.com/fernandoncidade/Compare_Following_Follower" target="_blank" rel="noopener noreferrer">Open repository</a></p>
-          </div>
-
-          <div class="card">
-            <h2>📌 Highlight: Compression Manager</h2>
-            <p>Backup and compression application with intuitive GUI.</p>
-            <p>
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/compression-manager.html" class="project-icon-link" title="View Compression Manager subpage">
+                <img src="image_perfil/Manager-BackUp.png" alt="Compression Manager" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">Python 3.10+ • Qt • Backup</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/compression-manager.html" class="project-title-link" title="View Compression Manager subpage">Compression Manager</a></h2>
+              </div>
+            </div>
+            <p>Complete backup and file compression application with an intuitive user interface, profile management, and support for multiple archive formats.</p>
+            <div class="card-actions">
               <a class="cta" href="https://github.com/fernandoncidade/Compression_Manager" target="_blank" rel="noopener noreferrer">Open repository</a>
-              &nbsp;
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="Compression_Manager" data-app="COMPRESSION MANAGER">💬 Message</button>
+            </div>
           </div>
 
-          <div class="card">
-            <h2>📌 Highlight: Economia APP</h2>
-            <p>Economia APP is a study aid for Engineering Economics (course TT007) that automates frequent financial calculations — simple and compound interest, annuities, gradients, rate equivalence, amortization (SAC, Price, SAM), investment analysis (NPV / VAUE) and depreciation — and shows detailed steps and a history of results.</p>
-            <p>
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/economia-app.html" class="project-icon-link" title="View Economia APP subpage">
+                <img src="image_perfil/economia.png" alt="Economia APP" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">Python • C++ • Finance</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/economia-app.html" class="project-title-link" title="View Economia APP subpage">Economia APP</a></h2>
+              </div>
+            </div>
+            <p>Study and engineering tool automating common financial calculations (simple/compound interest, annuities, rate equivalence, amortization SAC/Price/SAM, NPV, EUAW, and depreciation) with step-by-step resolution records.</p>
+            <div class="card-actions">
               <a class="cta" href="https://github.com/fernandoncidade/Economia_APP" target="_blank" rel="noopener noreferrer">Open repository</a>
-              &nbsp;
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9PLR0KD6KSJJ" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
-            </p>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="Economia_APP" data-app="Economia APP">💬 Message</button>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/launcher-ebook.html" class="project-icon-link" title="View Launcher EBook subpage">
+                <img src="image_perfil/launcherebook2_256-256.png" alt="Launcher EBook" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++ • Qt6 • Desktop</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/launcher-ebook.html" class="project-title-link" title="View Launcher EBook subpage">Launcher EBook</a></h2>
+              </div>
+            </div>
+            <p>C++/Qt6 desktop application for cataloging local e-books and documents, viewing basic metadata, generating library statistics, and launching files with associated viewers.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/Launcher_EBook" target="_blank" rel="noopener noreferrer">Open repository</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="Launcher_EBook" data-app="Launcher EBook">💬 Message</button>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/compare-following-follower.html" class="project-icon-link" title="View Compare - Following and Follower subpage">
+                <img src="https://raw.githubusercontent.com/fernandoncidade/Compare_Following_Follower/main/source/assets/icons/FollowingFollower_256-256.png" alt="Compare Following Follower" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">Python 3.10+ • PySide6</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/compare-following-follower.html" class="project-title-link" title="View Compare - Following and Follower subpage">Compare - Following and Follower</a></h2>
+              </div>
+            </div>
+            <p>Practical desktop application to compare and audit GitHub network connections (following vs. followers), turning large lists into clear decisions.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/Compare_Following_Follower" target="_blank" rel="noopener noreferrer">Open repository</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="Compare_Following_Follower" data-app="Compare - Following and Follower">💬 Message</button>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/agenda-avaliacoes-academicas.html" class="project-icon-link" title="View Academic Evaluations Scheduler subpage">
+                <span class="repo-card-icon-placeholder" style="font-size:2.2rem;margin-right:4px;">🎓</span>
+              </a>
+              <div>
+                <span class="badge-tech">Python • PySide6</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/agenda-avaliacoes-academicas.html" class="project-title-link" title="View Academic Evaluations Scheduler subpage">Academic Evaluations Scheduler</a></h2>
+              </div>
+            </div>
+            <p>Management system for academic evaluation activities, built with PySide6 and custom modules to track course calendars and deadlines.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/Agenda_Avaliacoes_Academicas" target="_blank" rel="noopener noreferrer">Open repository</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="Agenda_Avaliacoes_Academicas" data-app="Academic Evaluations Scheduler">💬 Message</button>
+            </div>
           </div>
         </div>
       </div>
@@ -906,16 +2062,93 @@
     </section>
   </div>
 
-  <div class="footer">
+  <footer class="footer">
     <div id="footer-main">
-      Feito por Fernando Nillsson Cidade •
-      <a href="https://github.com/fernandoncidade/fernandoncidade" target="_blank" rel="noopener noreferrer">README do Perfil</a> •
+      <span>Feito por Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade/fernandoncidade" target="_blank" rel="noopener noreferrer">README do Perfil</a>
+      <span class="footer-divider">•</span>
       <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">Perfil no GitHub</a>
     </div>
-  </div>
+    <div id="footer-sub" class="footer-sub">
+      Python • C++ • Qt / PySide • Open Source
+    </div>
+  </footer>
+
+  <!-- Modal Dialog para Envio de Mensagens -->
+  <dialog id="message-dialog" class="message-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <div class="dialog-title-group">
+          <span class="dialog-icon">💬</span>
+          <div>
+            <h2 id="dialog-title" class="dialog-title">Enviar Mensagem</h2>
+            <span id="dialog-subtitle" class="dialog-subtitle">Direcionada ao repositório ou aplicativo selecionado</span>
+          </div>
+        </div>
+        <button type="button" class="dialog-close-btn" id="dialog-close-btn" aria-label="Fechar">&times;</button>
+      </div>
+
+      <form id="message-form" class="message-form">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_template" value="table">
+
+        <div class="form-group">
+          <label id="msg-repo-label" for="msg-repo">Repositório / Aplicativo de Destino *</label>
+          <select id="msg-repo" name="repositorio" class="form-control" required>
+            <!-- Preenchido dinamicamente via JavaScript -->
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label id="msg-sender-name-label" for="msg-sender-name">Seu Nome Completo *</label>
+            <input type="text" id="msg-sender-name" name="nome_completo" class="form-control" placeholder="Ex.: Maria Silva" required minlength="3" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label id="msg-sender-email-label" for="msg-sender-email">Seu E-mail *</label>
+            <input type="email" id="msg-sender-email" name="email" class="form-control" placeholder="seuemail@exemplo.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label id="msg-subject-label" for="msg-subject">Assunto *</label>
+          <div class="subject-input-wrapper">
+            <span id="subject-prefix" class="subject-prefix">[Linceu_Lighthouse_cpp]</span>
+            <input type="text" id="msg-subject" name="assunto" class="form-control" placeholder="Título da mensagem / dúvida / feedback" required minlength="3">
+          </div>
+          <small id="msg-subject-hint" class="form-hint">A mensagem será encaminhada para <strong>linceu_lighthouse@outlook.com</strong> identificada com este rótulo no assunto.</small>
+        </div>
+
+        <div class="form-group">
+          <label id="msg-body-label" for="msg-body">Sua Mensagem *</label>
+          <textarea id="msg-body" name="mensagem" class="form-control" rows="5" placeholder="Digite sua mensagem detalhada aqui..." required minlength="10"></textarea>
+        </div>
+
+        <div id="msg-status" class="form-status" role="status" aria-live="polite"></div>
+
+        <div class="dialog-actions">
+          <button type="submit" id="btn-submit-msg" class="cta">
+            <span>📨 Enviar para linceu_lighthouse@outlook.com</span>
+          </button>
+          <a id="btn-discussion-link" href="#" target="_blank" rel="noopener noreferrer" class="cta secondary" style="display:none;">
+            <span>🌐 Abrir no GitHub Discussions do Repositório</span>
+          </a>
+          <button type="button" id="btn-mailto-fallback" class="cta tertiary">
+            <span>📧 Enviar via Cliente de E-mail Local (mailto)</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </dialog>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <button id="btn-top" class="btn-top" title="Voltar ao topo">↑</button>
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
 
   <script>
 
@@ -933,8 +2166,40 @@
 
     // Aplica tema (espera 'dark' ou outro valor -> light por padrão)
     function applyTheme(theme){
-      document.body.classList.toggle('dark', theme === 'dark');
-      // Observação: aqui poderia ajustar outras preferências de UI relacionadas ao tema
+      const isDark = theme === 'dark';
+      document.body.classList.toggle('dark', isDark);
+      document.documentElement.classList.toggle('dark', isDark);
+      if(typeof updateFooterLocale === 'function') updateFooterLocale();
+    }
+
+    // Atualiza textos do rodapé e botão voltar ao topo conforme idioma
+    function updateFooterLocale(){
+      const footerMain = document.getElementById('footer-main');
+      if(footerMain){
+        if(CURRENT_LANG === 'enus'){
+          footerMain.innerHTML = `
+            <span>Made by Fernando Nillsson Cidade</span>
+            <span class="footer-divider">•</span>
+            <a href="https://github.com/fernandoncidade/fernandoncidade" target="_blank" rel="noopener noreferrer">Profile README</a>
+            <span class="footer-divider">•</span>
+            <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+          `;
+        } else {
+          footerMain.innerHTML = `
+            <span>Feito por Fernando Nillsson Cidade</span>
+            <span class="footer-divider">•</span>
+            <a href="https://github.com/fernandoncidade/fernandoncidade" target="_blank" rel="noopener noreferrer">README do Perfil</a>
+            <span class="footer-divider">•</span>
+            <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">Perfil no GitHub</a>
+          `;
+        }
+      }
+      const btnTop = document.getElementById('btn-top');
+      if(btnTop){
+        const label = CURRENT_LANG === 'enus' ? 'Back to top' : 'Voltar ao topo';
+        btnTop.title = label;
+        btnTop.setAttribute('aria-label', label);
+      }
     }
 
     // Alterna tema e persiste escolha em localStorage, também mostra toast
@@ -1037,11 +2302,390 @@
       if(pb && !pb.title) pb.title = 'Abrir aba de projetos (Alt+P)';
     }
 
+    // ===== Sistema de Mensagens para Repositórios Públicos e Apps =====
+    const REPO_APP_LIST = [
+      { id: 'Linceu_Lighthouse_cpp', name: 'Linceu Lighthouse', repo: 'Linceu_Lighthouse_cpp', hasDiscussion: true },
+      { id: 'ACL_Auditor_cpp', name: 'ACL Auditor', repo: 'ACL_Auditor_cpp', hasDiscussion: true },
+      { id: 'Munin_App_cpp', name: 'Munin App', repo: 'Munin_App_cpp', hasDiscussion: true },
+      { id: 'Compression_Manager', name: 'COMPRESSION MANAGER', repo: 'Compression_Manager', hasDiscussion: true },
+      { id: 'Economia_APP', name: 'Economia APP', repo: 'Economia_APP', hasDiscussion: true },
+      { id: 'EisenPo', name: 'EisenPo', repo: '', hasDiscussion: false },
+      { id: 'EISENHOWER_ORGANIZER', name: 'EISENHOWER ORGANIZER', repo: '', hasDiscussion: false },
+      { id: 'Lumen', name: 'Lúmen', repo: '', hasDiscussion: false },
+      { id: 'Launcher_EBook', name: 'Launcher EBook', repo: 'Launcher_EBook', hasDiscussion: true },
+      { id: 'Agenda_Avaliacoes_Academicas', name: 'Agenda Avaliações Acadêmicas', name_en: 'Academic Evaluations Scheduler', repo: 'Agenda_Avaliacoes_Academicas', hasDiscussion: true },
+      { id: 'Compare_Following_Follower', name: 'Compare - Following and Follower', repo: 'Compare_Following_Follower', hasDiscussion: true },
+      { id: 'Programa_Urna_Eletronica', name: 'Programa Urna Eletrônica', name_en: 'Electronic Voting Machine Program', repo: 'Programa_Urna_Eletronica', hasDiscussion: true },
+      { id: 'SlidingWindowLZ77_cpp', name: 'SlidingWindowLZ77_cpp', repo: 'SlidingWindowLZ77_cpp', hasDiscussion: true },
+      { id: 'EcoLZMA_cpp', name: 'EcoLZMA_cpp', repo: 'EcoLZMA_cpp', hasDiscussion: true },
+      { id: 'sloth-highlander-theme-1', name: 'sloth-highlander-theme-1', repo: 'sloth-highlander-theme-1', hasDiscussion: true },
+      { id: 'Geral', name: 'Outro Repositório / Geral', name_en: 'Other Repository / General', repo: '', hasDiscussion: false }
+    ];
+
+    const DIALOG_T = {
+      ptbr: {
+        title: "Enviar Mensagem",
+        subtitle: "Direcionada ao repositório ou aplicativo selecionado",
+        closeAria: "Fechar",
+        repoLabel: "Repositório / Aplicativo de Destino *",
+        nameLabel: "Seu Nome Completo *",
+        namePlaceholder: "Ex.: Maria Silva",
+        emailLabel: "Seu E-mail *",
+        emailPlaceholder: "seuemail@exemplo.com",
+        subjectLabel: "Assunto *",
+        subjectPlaceholder: "Título da mensagem / dúvida / feedback",
+        hint: "A mensagem será encaminhada para <strong>linceu_lighthouse@outlook.com</strong> identificada com este rótulo no assunto.",
+        bodyLabel: "Sua Mensagem *",
+        bodyPlaceholder: "Digite sua mensagem detalhada aqui...",
+        submitBtn: "<span>📨 Enviar para linceu_lighthouse@outlook.com</span>",
+        sendingBtn: "<span>⏳ Enviando mensagem...</span>",
+        sentBtn: "<span>✅ Mensagem Enviada!</span>",
+        discBtn: "<span>🌐 Abrir no GitHub Discussions do Repositório</span>",
+        mailtoBtn: "<span>📧 Enviar via Cliente de E-mail Local (mailto)</span>",
+        otherRepo: "Outro Repositório / Geral",
+        loadingMsg: "Enviando mensagem para <strong>linceu_lighthouse@outlook.com</strong>...",
+        successMsg: (target, email) => `✅ Mensagem enviada com sucesso! A notificação foi encaminhada para <strong>linceu_lighthouse@outlook.com</strong> com o rótulo <code>[${target}]</code>. Responderemos para <strong>${email}</strong>.`,
+        toastSuccess: "Mensagem enviada com sucesso!",
+        fileProtocolWarning: "⚠️ A API do FormSubmit bloqueia requisições vindas de arquivos locais (protocolo file://). Abra a página por um servidor local (ex.: http://localhost:8000) ou envie pelo seu cliente de e-mail local clicando no botão abaixo.",
+        activationWarning: "⚠️ O formulário ainda precisa de ativação! Um link de confirmação foi enviado para <strong>linceu_lighthouse@outlook.com</strong>. Clique em 'Activate Form' na caixa de entrada/spam do Outlook para liberar o recebimento de mensagens.",
+        errorFallback: (msg, target) => `⚠️ Não foi possível conectar ao serviço de envio direto (${msg}). Abrindo seu cliente de e-mail (Outlook / Mail) com o assunto <code>[${target}]</code> pré-preenchido para <strong>linceu_lighthouse@outlook.com</strong>...`
+      },
+      enus: {
+        title: "Send Message",
+        subtitle: "Direct to the selected repository or application",
+        closeAria: "Close",
+        repoLabel: "Target Repository / Application *",
+        nameLabel: "Your Full Name *",
+        namePlaceholder: "e.g. John Doe",
+        emailLabel: "Your Email *",
+        emailPlaceholder: "youremail@example.com",
+        subjectLabel: "Subject *",
+        subjectPlaceholder: "Message title / question / feedback",
+        hint: "The message will be forwarded to <strong>linceu_lighthouse@outlook.com</strong> labeled with this subject tag.",
+        bodyLabel: "Your Message *",
+        bodyPlaceholder: "Type your detailed message here...",
+        submitBtn: "<span>📨 Send to linceu_lighthouse@outlook.com</span>",
+        sendingBtn: "<span>⏳ Sending message...</span>",
+        sentBtn: "<span>✅ Message Sent!</span>",
+        discBtn: "<span>🌐 Open in Repository GitHub Discussions</span>",
+        mailtoBtn: "<span>📧 Send via Local Email Client (mailto)</span>",
+        otherRepo: "Other Repository / General",
+        loadingMsg: "Sending message to <strong>linceu_lighthouse@outlook.com</strong>...",
+        successMsg: (target, email) => `✅ Message sent successfully! Notification forwarded to <strong>linceu_lighthouse@outlook.com</strong> with label <code>[${target}]</code>. We will reply to <strong>${email}</strong>.`,
+        toastSuccess: "Message sent successfully!",
+        fileProtocolWarning: "⚠️ FormSubmit blocks submissions from local files (file:// protocol). Please open via a local web server (e.g. http://localhost:8000) or send directly via your local email client using the button below.",
+        activationWarning: "⚠️ Form requires activation! A confirmation link was sent to <strong>linceu_lighthouse@outlook.com</strong>. Please click 'Activate Form' in your Outlook inbox/spam to enable deliveries.",
+        errorFallback: (msg, target) => `⚠️ Direct send service unavailable (${msg}). Opening your local email client (Outlook / Mail) with <code>[${target}]</code> pre-filled to <strong>linceu_lighthouse@outlook.com</strong>...`
+      }
+    };
+
+    function populateRepoDropdown(){
+      const sel = document.getElementById('msg-repo');
+      if(!sel) return;
+      const curVal = sel.value;
+      sel.innerHTML = REPO_APP_LIST.map(item => {
+        const displayName = (CURRENT_LANG === 'enus' && item.name_en) ? item.name_en : item.name;
+        return `<option value="${item.id}" data-name="${displayName}" data-repo="${item.repo}" data-discussion="${item.hasDiscussion}">${displayName}${item.repo ? ` (${item.repo})` : ''}</option>`;
+      }).join('');
+      if(curVal){
+        sel.value = curVal;
+      }
+    }
+
+    function updateMessageModalLocale(){
+      const t = DIALOG_T[CURRENT_LANG] || DIALOG_T.ptbr;
+
+      const titleEl = document.getElementById('dialog-title');
+      const subtitleEl = document.getElementById('dialog-subtitle');
+      const closeBtn = document.getElementById('dialog-close-btn');
+      const repoLabel = document.getElementById('msg-repo-label');
+      const nameLabel = document.getElementById('msg-sender-name-label');
+      const nameInput = document.getElementById('msg-sender-name');
+      const emailLabel = document.getElementById('msg-sender-email-label');
+      const emailInput = document.getElementById('msg-sender-email');
+      const subjectLabel = document.getElementById('msg-subject-label');
+      const subjectInput = document.getElementById('msg-subject');
+      const hintEl = document.getElementById('msg-subject-hint');
+      const bodyLabel = document.getElementById('msg-body-label');
+      const bodyInput = document.getElementById('msg-body');
+      const submitBtn = document.getElementById('btn-submit-msg');
+      const mailtoBtn = document.getElementById('btn-mailto-fallback');
+      const discBtn = document.getElementById('btn-discussion-link');
+
+      if(titleEl) titleEl.textContent = t.title;
+      if(subtitleEl) subtitleEl.textContent = t.subtitle;
+      if(closeBtn){
+        closeBtn.setAttribute('aria-label', t.closeAria);
+        closeBtn.title = t.closeAria;
+      }
+      if(repoLabel) repoLabel.textContent = t.repoLabel;
+      if(nameLabel) nameLabel.textContent = t.nameLabel;
+      if(nameInput) nameInput.placeholder = t.namePlaceholder;
+      if(emailLabel) emailLabel.textContent = t.emailLabel;
+      if(emailInput) emailInput.placeholder = t.emailPlaceholder;
+      if(subjectLabel) subjectLabel.textContent = t.subjectLabel;
+      if(subjectInput) subjectInput.placeholder = t.subjectPlaceholder;
+      if(hintEl) hintEl.innerHTML = t.hint;
+      if(bodyLabel) bodyLabel.textContent = t.bodyLabel;
+      if(bodyInput) bodyInput.placeholder = t.bodyPlaceholder;
+
+      if(submitBtn && !submitBtn.disabled) submitBtn.innerHTML = t.submitBtn;
+      if(mailtoBtn) mailtoBtn.innerHTML = t.mailtoBtn;
+      if(discBtn) discBtn.innerHTML = t.discBtn;
+
+      // Atualiza também os rótulos do dropdown de repositórios preservando a seleção
+      const sel = document.getElementById('msg-repo');
+      const curVal = sel ? sel.value : null;
+      populateRepoDropdown();
+      if(sel && curVal) sel.value = curVal;
+      updateSubjectPrefix();
+    }
+
+    function openMessageModal(repoKey, appName){
+      const dialog = document.getElementById('message-dialog');
+      if(!dialog) return;
+
+      populateRepoDropdown();
+      const sel = document.getElementById('msg-repo');
+      if(sel){
+        if(repoKey){
+          const opt = Array.from(sel.options).find(o => o.value === repoKey || o.dataset.repo === repoKey);
+          if(opt) sel.value = opt.value;
+        } else if(appName){
+          const opt = Array.from(sel.options).find(o => o.dataset.name === appName || o.text.includes(appName));
+          if(opt) sel.value = opt.value;
+        }
+      }
+
+      updateMessageModalLocale();
+      updateSubjectPrefix();
+      clearFormStatus();
+
+      if(typeof dialog.showModal === 'function'){
+        dialog.showModal();
+      }else{
+        dialog.setAttribute('open', '');
+      }
+
+      const nameInput = document.getElementById('msg-sender-name');
+      if(nameInput) nameInput.focus();
+    }
+
+    function updateSubjectPrefix(){
+      const sel = document.getElementById('msg-repo');
+      const prefixEl = document.getElementById('subject-prefix');
+      const discBtn = document.getElementById('btn-discussion-link');
+      if(!sel || !prefixEl) return;
+
+      const opt = sel.selectedOptions[0];
+      const targetName = opt ? (opt.dataset.name || opt.text) : (CURRENT_LANG === 'enus' ? 'Project' : 'Projeto');
+      const repoName = opt ? opt.dataset.repo : '';
+      const hasDisc = opt && opt.dataset.discussion === 'true';
+
+      prefixEl.textContent = `[${targetName}]`;
+
+      if(discBtn){
+        if(hasDisc && repoName){
+          discBtn.style.display = 'inline-block';
+          discBtn.href = `https://github.com/fernandoncidade/${repoName}/discussions`;
+        }else{
+          discBtn.style.display = 'none';
+        }
+      }
+    }
+
+    function clearFormStatus(){
+      const st = document.getElementById('msg-status');
+      if(st){
+        st.className = 'form-status';
+        st.textContent = '';
+        st.style.display = 'none';
+      }
+    }
+
+    function showFormStatus(msg, type='info'){
+      const st = document.getElementById('msg-status');
+      if(!st) return;
+      st.className = `form-status show ${type}`;
+      st.innerHTML = msg;
+    }
+
+    function setupMessageForm(){
+      const dialog = document.getElementById('message-dialog');
+      const closeBtn = document.getElementById('dialog-close-btn');
+      const form = document.getElementById('message-form');
+      const repoSel = document.getElementById('msg-repo');
+      const mailtoBtn = document.getElementById('btn-mailto-fallback');
+
+      if(closeBtn && dialog){
+        closeBtn.addEventListener('click', () => dialog.close());
+      }
+
+      if(dialog){
+        dialog.addEventListener('click', (e) => {
+          const rect = dialog.getBoundingClientRect();
+          if(e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom){
+            dialog.close();
+          }
+        });
+      }
+
+      if(repoSel){
+        repoSel.addEventListener('change', updateSubjectPrefix);
+      }
+
+      // Delegação de cliques em botões .btn-open-msg
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.btn-open-msg');
+        if(btn){
+          e.preventDefault();
+          const repo = btn.dataset.repo || '';
+          const app = btn.dataset.app || '';
+          openMessageModal(repo, app);
+        }
+      });
+
+      if(mailtoBtn){
+        mailtoBtn.addEventListener('click', () => {
+          const sel = document.getElementById('msg-repo');
+          const opt = sel ? sel.selectedOptions[0] : null;
+          const targetName = opt ? (opt.dataset.name || opt.text) : (CURRENT_LANG === 'enus' ? 'Project' : 'Projeto');
+          const name = (document.getElementById('msg-sender-name')?.value || '').trim();
+          const email = (document.getElementById('msg-sender-email')?.value || '').trim();
+          const sub = (document.getElementById('msg-subject')?.value || (CURRENT_LANG === 'enus' ? 'Contact' : 'Contato')).trim();
+          const body = (document.getElementById('msg-body')?.value || '').trim();
+
+          const mailSubject = encodeURIComponent(`[${targetName}] ${sub}${name ? (CURRENT_LANG === 'enus' ? ' - from ' : ' - de ') + name : ''}`);
+          const mailBody = encodeURIComponent(
+            (CURRENT_LANG === 'enus')
+              ? `Full Name: ${name}\nEmail: ${email}\nRepository / Application: ${targetName}\n\nMessage:\n${body}`
+              : `Nome Completo: ${name}\nE-mail: ${email}\nRepositório / Aplicativo: ${targetName}\n\nMensagem:\n${body}`
+          );
+          window.location.href = `mailto:linceu_lighthouse@outlook.com?subject=${mailSubject}&body=${mailBody}`;
+        });
+      }
+
+      if(form){
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          if(!form.checkValidity()){
+            form.reportValidity();
+            return;
+          }
+
+          const sel = document.getElementById('msg-repo');
+          const opt = sel ? sel.selectedOptions[0] : null;
+          const targetName = opt ? (opt.dataset.name || opt.text) : (CURRENT_LANG === 'enus' ? 'Project' : 'Projeto');
+          const name = document.getElementById('msg-sender-name').value.trim();
+          const email = document.getElementById('msg-sender-email').value.trim();
+          const sub = document.getElementById('msg-subject').value.trim();
+          const body = document.getElementById('msg-body').value.trim();
+          const submitBtn = document.getElementById('btn-submit-msg');
+          const t = DIALOG_T[CURRENT_LANG] || DIALOG_T.ptbr;
+
+          const fullSubject = `[${targetName}] ${sub}${name ? (CURRENT_LANG === 'enus' ? ' (from ' : ' (de ') + name + ')' : ''}`;
+
+          // Se estiver rodando localmente pelo protocolo file://, FormSubmit bloqueia requisições
+          if(window.location.protocol === 'file:'){
+            showFormStatus(t.fileProtocolWarning, 'error');
+            const mailSubject = encodeURIComponent(fullSubject);
+            const mailBody = encodeURIComponent(
+              (CURRENT_LANG === 'enus')
+                ? `Full Name: ${name}\nEmail: ${email}\nRepository / Application: ${targetName}\n\nMessage:\n${body}`
+                : `Nome Completo: ${name}\nE-mail: ${email}\nRepositório / Aplicativo: ${targetName}\n\nMensagem:\n${body}`
+            );
+            window.location.href = `mailto:linceu_lighthouse@outlook.com?subject=${mailSubject}&body=${mailBody}`;
+            return;
+          }
+
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = t.sendingBtn;
+          showFormStatus(t.loadingMsg, 'loading');
+
+          try {
+            const res = await fetch("https://formsubmit.co/ajax/linceu_lighthouse@outlook.com", {
+              method: "POST",
+              headers: { 
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              body: JSON.stringify({
+                _subject: fullSubject,
+                _replyto: email,
+                "Nome / Name": name,
+                "E-mail": email,
+                "Repositório / Repository": targetName,
+                "Assunto / Subject": sub,
+                "Mensagem / Message": body
+              })
+            });
+
+            const data = await res.json().catch(() => null);
+            const isSuccess = res.ok && data && (data.success === true || data.success === "true");
+
+            if(isSuccess){
+              showFormStatus(t.successMsg(targetName, email), 'success');
+              submitBtn.innerHTML = t.sentBtn;
+              if(typeof toast === 'function') toast(t.toastSuccess);
+              setTimeout(() => {
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = t.submitBtn;
+                updateSubjectPrefix();
+              }, 4000);
+            } else {
+              const returnedMsg = (data && data.message) ? data.message : `HTTP ${res.status}`;
+              if (returnedMsg.toLowerCase().includes("activation") || returnedMsg.toLowerCase().includes("activate")) {
+                showFormStatus(t.activationWarning, 'error');
+              } else if (returnedMsg.toLowerCase().includes("web server") || returnedMsg.toLowerCase().includes("html file")) {
+                showFormStatus(t.fileProtocolWarning, 'error');
+              } else {
+                showFormStatus(t.errorFallback(returnedMsg, targetName), 'error');
+              }
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = t.submitBtn;
+
+              const mailSubject = encodeURIComponent(fullSubject);
+              const mailBody = encodeURIComponent(
+                (CURRENT_LANG === 'enus')
+                  ? `Full Name: ${name}\nEmail: ${email}\nRepository / Application: ${targetName}\n\nMessage:\n${body}`
+                  : `Nome Completo: ${name}\nE-mail: ${email}\nRepositório / Aplicativo: ${targetName}\n\nMensagem:\n${body}`
+              );
+              window.location.href = `mailto:linceu_lighthouse@outlook.com?subject=${mailSubject}&body=${mailBody}`;
+            }
+          } catch(err) {
+            showFormStatus(t.errorFallback(err.message || 'Network error', targetName), 'error');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = t.submitBtn;
+
+            const mailSubject = encodeURIComponent(fullSubject);
+            const mailBody = encodeURIComponent(
+              (CURRENT_LANG === 'enus')
+                ? `Full Name: ${name}\nEmail: ${email}\nRepository / Application: ${targetName}\n\nMessage:\n${body}`
+                : `Nome Completo: ${name}\nE-mail: ${email}\nRepositório / Aplicativo: ${targetName}\n\nMensagem:\n${body}`
+            );
+            window.location.href = `mailto:linceu_lighthouse@outlook.com?subject=${mailSubject}&body=${mailBody}`;
+          }
+        });
+      }
+    }
+
     // Inicialização: conecta listeners e aplica preferências salvas
     window.addEventListener('DOMContentLoaded', () => {
       // Aplica tema salvo (ou padrão 'light') e atualiza widgets
       applyTheme(localStorage.getItem(THEME_KEY) || 'light');
       updateStatsLocale(); // ajusta Top Langs ao tema aplicado
+
+      // Aplica idioma salvo se houver (sincronização bidirecional com as subpáginas)
+      try {
+        const savedLang = localStorage.getItem('fcc_lang');
+        if (savedLang) {
+          const langObj = LANGS.find(l => l.code === savedLang || (savedLang === 'en' && l.code === 'enus') || (savedLang === 'pt' && l.code === 'ptbr'));
+          if (langObj && langObj.code !== CURRENT_LANG) {
+            activateLang(langObj, false);
+          }
+        }
+      } catch (e) {}
 
       // Anexa ripple a botões de idioma e CTAs principais
       document.querySelectorAll('.languages button, a.cta').forEach(attachRipple);
@@ -1052,6 +2696,9 @@
       setupShortcuts();
       setupBackToTop();
       setupHints();
+      setupMessageForm();
+      if (typeof updateMessageModalLocale === 'function') updateMessageModalLocale();
+      if (typeof updateFooterLocale === 'function') updateFooterLocale();
 
       // Listener do botão de alternância de tema
       const tb = document.getElementById('btn-theme');

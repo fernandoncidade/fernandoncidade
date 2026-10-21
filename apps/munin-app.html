@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Munin App • Busca Textual Ultrarrápida, SIMD e Regex Forense em C++20</title>
+  <meta name="description" content="Munin App: Varredura forense de arquivos em alta velocidade com Memory-Mapped Files, aceleração vetorial SIMD (AVX2/SSE4.2) e expressões regulares JIT no Windows.">
+  <link rel="icon" type="image/png" href="../image_perfil/munin.png">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">← Voltar ao Início</span>
+        <span class="lang-en">← Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="../image_perfil/munin.png" alt="Ícone Munin App" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">C++20</span>
+            <span class="tech-badge">Qt 6</span>
+            <span class="tech-badge platform">Windows 10 / 11 (x64)</span>
+            <span class="tech-badge offline">100% Offline</span>
+            <span class="tech-badge">SIMD AVX2 / SSE4.2</span>
+          </div>
+
+          <h1 class="app-hero-title">Munin App</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Varredura Forense Ultrarrápida de Conteúdo, Busca por Expressões Regulares e Análise Textual em Larga Escala.
+          </p>
+          <p class="app-hero-tagline lang-en">
+            Ultra-Fast Forensic Content Search, Large-Scale Regular Expression Engine, and Memory-Mapped File Analysis.
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://apps.microsoft.com/detail/9PP4GVHR5THC" class="btn-cta btn-cta-store" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.5 3H2v8.5h9.5V3zm1 0V11.5H22V3h-9.5zM2 12.5V21h9.5v-8.5H2zm10.5 0V21H22v-8.5h-9.5z"/></svg>
+              <span class="lang-pt">Obter na Microsoft Store</span>
+              <span class="lang-en">Get from Microsoft Store</span>
+            </a>
+            <a href="https://github.com/fernandoncidade/Munin_App_cpp" class="btn-cta btn-cta-github" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span class="lang-pt">Ver Repositório no GitHub</span>
+              <span class="lang-en">View GitHub Repository</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[Munin%20App]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade de Conteúdo -->
+    <div class="app-sections-grid">
+
+      <!-- Visão do Usuário / Negócio -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>🚀</span>
+          <span class="lang-pt">Visão do Usuário & Produtividade Extrema</span>
+          <span class="lang-en">End-User Value & Raw Productivity</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Encontre Qualquer Trecho em Gigabytes de Arquivos em Segundos</span>
+          <span class="lang-en">Locate Any Snippet Across Gigabytes in Seconds</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O <strong>Munin App</strong> é uma ferramenta de busca e extração forense projetada para quem não pode esperar. Enquanto buscadores convencionais travam a máquina ao ler arquivos gigantes de log, repositórios de código com dezenas de milhares de arquivos ou bases textuais desestruturadas, o Munin varre discos inteiros a velocidades que ultrapassam <strong>3 Gigabytes por segundo</strong>.
+        </p>
+        <p class="section-lead lang-en">
+          <strong>Munin App</strong> is a forensic search and data extraction engine built for those who cannot afford to wait. While conventional search utilities hang when opening multi-gigabyte server logs, large code trees, or dump files, Munin streams across entire drive volumes at speeds exceeding <strong>3 Gigabytes per second</strong>.
+        </p>
+
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">⚡</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Desempenho Imediato sem Indexação Prévia Obrigatória</div>
+            <div class="highlight-banner-title lang-en">Instant Search Without Mandatory Background Indexing</div>
+            <div class="highlight-banner-text lang-pt">
+              Esqueça serviços pesados que consomem CPU e bateria 24 horas por dia criando índices gigantescos. O Munin executa buscas diretas e imediatas sob demanda, lendo os dados de forma pura do disco para a memória.
+            </div>
+            <div class="highlight-banner-text lang-en">
+              No bloated 24/7 background indexers draining your battery and CPU. Munin performs on-demand direct-to-metal scans straight from disk to CPU registers without intermediate cache bloat.
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">🏎️</span>
+            <h3 class="feature-title lang-pt">Velocidade Extrema com SIMD</h3>
+            <h3 class="feature-title lang-en">SIMD-Accelerated Throughput</h3>
+            <p class="feature-desc lang-pt">
+              Utiliza instruções vetoriais AVX2 e SSE4.2 da CPU para comparar até 32 bytes por ciclo de clock simultaneamente.
+            </p>
+            <p class="feature-desc lang-en">
+              Harnesses CPU vector instructions (AVX2 / SSE4.2) to evaluate up to 32 bytes per single processor clock cycle.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🧩</span>
+            <h3 class="feature-title lang-pt">Regex Avançado com Compilação JIT</h3>
+            <h3 class="feature-title lang-en">Advanced Regex with JIT Engine</h3>
+            <p class="feature-desc lang-pt">
+              Suporte completo a padrões complexos de expressões regulares compiladas diretamente em código de máquina para máxima eficiência.
+            </p>
+            <p class="feature-desc lang-en">
+              Full regular expression support compiled directly to native machine instructions via Just-In-Time execution paths.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">📂</span>
+            <h3 class="feature-title lang-pt">Visualização e Pré-Visualização em Contexto</h3>
+            <h3 class="feature-title lang-en">Contextual File Preview</h3>
+            <p class="feature-desc lang-pt">
+              Visualize linhas coincidentes com destaque de sintaxe, numeração de linhas e prévia de contexto antes e depois do resultado.
+            </p>
+            <p class="feature-desc lang-en">
+              Review matching occurrences with instant syntax highlighting, line numbers, and adjustable before/after context windows.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">📤</span>
+            <h3 class="feature-title lang-pt">Exportação Estruturada de Ocorrências</h3>
+            <h3 class="feature-title lang-en">Structured Results Export</h3>
+            <p class="feature-desc lang-pt">
+              Exporte listas de correspondências com caminhos absolutos, números de linha e trechos capturados em CSV, JSON ou texto simples.
+            </p>
+            <p class="feature-desc lang-en">
+              Export findings with absolute paths, line numbers, and extracted tokens into CSV, JSON, or plain text for automated pipelines.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Engenharia de Baixo Nível & Otimizações</span>
+          <span class="lang-en">Low-Level Engineering & Optimization</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Mapeamento em Memória e Paralelismo Vetorial</span>
+          <span class="lang-en">Memory-Mapped I/O & Vector Parallelism</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O Munin App foi concebido para eliminar completamente cópias desnecessárias de buffers entre o espaço do kernel e o espaço do usuário. Em vez de ler blocos de arquivos com <code>ReadFile</code> tradicional, o Munin projeta o arquivo diretamente no espaço de endereçamento virtual através das APIs de <strong>Memory-Mapped Files</strong> do Windows.
+        </p>
+        <p class="section-lead lang-en">
+          Munin App was designed to eliminate superfluous buffer copy overhead between kernel and user address spaces. Instead of traditional fragmented <code>ReadFile</code> streams, Munin maps files directly into the virtual address space using native Windows <strong>Memory-Mapped Files</strong>.
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Subsistema de Leitura Zero-Copy</span>
+              <span class="dev-spec-name lang-en">Zero-Copy Memory-Mapped Architecture</span>
+              <span class="dev-spec-tag">CreateFileMappingW / MapViewOfFile</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              O gerenciador de paginação do Windows transfere páginas do disco diretamente para o cache de memória do sistema, permitindo que a CPU processe os dados sem alocações no heap da aplicação.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              The Windows Virtual Memory Manager pages data straight from storage into page cache, enabling the CPU to crunch bytes with zero heap allocation overhead.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Kernel de Busca Vetorial AVX2</span>
+              <span class="dev-spec-name lang-en">AVX2 Vectorized Search Kernel</span>
+              <span class="dev-spec-tag">_mm256_cmpeq_epi8 / _mm256_movemask_epi8</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Algoritmos especializados utilizam máscaras vetoriais de 256 bits para saltar blocos não coincidentes em ciclos individuais, alcançando taxas de vazão próximas à largura de banda máxima do canal PCIe NVMe.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Custom vector algorithms utilize 256-bit SIMD masks to skip non-matching chunks in single cycles, approaching the physical saturation limits of NVMe PCIe channels.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Thread Pool com Particionamento Balanceado</span>
+              <span class="dev-spec-name lang-en">Work-Stealing Multi-Core Thread Pool</span>
+              <span class="dev-spec-tag">std::jthread / QThreadPool</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Distribuição automática de tarefas entre todos os núcleos lógicos da CPU. Arquivos grandes são subdivididos em blocos independentes para processamento paralelo simultâneo.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Work distribution dynamically scales across all logical CPU cores. Giant files are partitioned into chunk slices processed concurrently without thread lock contention.
+            </p>
+          </div>
+        </div>
+
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagem / Padrão</th>
+                <th class="lang-en">Language / Standard</th>
+                <td>
+                  <span class="lang-pt">C++20 Nativo (MSVC 2022 / Clang / GCC)</span>
+                  <span class="lang-en">Native C++20 (MSVC 2022 / Clang / GCC)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Conjuntos de Instruções</th>
+                <th class="lang-en">Instruction Sets</th>
+                <td>
+                  <span class="lang-pt">x86-64 com fallback dinâmico (AVX2, AVX, SSE4.2, SSE2)</span>
+                  <span class="lang-en">x86-64 with dynamic fallback (AVX2, AVX, SSE4.2, SSE2)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Vazão de Processamento</th>
+                <th class="lang-en">Processing Throughput</th>
+                <td>
+                  <span class="lang-pt">&gt; 3.0 GB/s em SSDs NVMe e arquivos em memória cache</span>
+                  <span class="lang-en">&gt; 3.0 GB/s on NVMe SSDs and memory-cached files</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Motor de Regex</th>
+                <th class="lang-en">Regex Engine</th>
+                <td>
+                  <span class="lang-pt">Motor JIT Otimizado (PCRE2 / QRegularExpression JIT)</span>
+                  <span class="lang-en">Optimized JIT Engine (PCRE2 / QRegularExpression JIT)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Consumo de Memória</th>
+                <th class="lang-en">Memory Profile</th>
+                <td>
+                  <span class="lang-pt">Constante (~40 MB), desacoplado do tamanho do arquivo lido</span>
+                  <span class="lang-en">Constant (~40 MB), decoupled from mapped file size</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Distribuição</th>
+                <th class="lang-en">Distribution</th>
+                <td>
+                  <span class="lang-pt">Certificado na Microsoft Store / Código Aberto (GPL-3.0)</span>
+                  <span class="lang-en">Microsoft Store Certified / Open Source (GPL-3.0)</span>
+                </td>
+              </tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="linceu-lighthouse.html" class="related-app-card">
+          <img src="../image_perfil/linceu_sem_fundo.png" alt="Linceu Lighthouse" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Linceu Lighthouse</div>
+            <div class="related-app-tag">C++17 • Auditoria Forense</div>
+          </div>
+        </a>
+        <a href="acl-auditor.html" class="related-app-card">
+          <img src="../image_perfil/acl_auditor.png" alt="ACL Auditor" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">ACL Auditor</div>
+            <div class="related-app-tag">C++20 • Permissões NTFS</div>
+          </div>
+        </a>
+        <a href="launcher-ebook.html" class="related-app-card">
+          <img src="../image_perfil/launcherebook2_256-256.png" alt="Launcher EBook" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Launcher EBook</div>
+            <div class="related-app-tag">C++17 • Gestor de E-books</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://apps.microsoft.com/detail/9PP4GVHR5THC" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>

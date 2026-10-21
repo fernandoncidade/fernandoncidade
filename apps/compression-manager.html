@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMPRESSION MANAGER • Automação de Backups e Compactação AES-256 em Python e Qt</title>
+  <meta name="description" content="COMPRESSION MANAGER: Gerenciamento inteligente de backups, compressão multi-algoritmo (LZMA, 7z, ZIP, TAR) e criptografia AES-256 contra ransomware no Windows.">
+  <link rel="icon" type="image/png" href="../image_perfil/Manager-BackUp.png">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">← Voltar ao Início</span>
+        <span class="lang-en">← Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="../image_perfil/Manager-BackUp.png" alt="Ícone Compression Manager" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">Python 3.10+</span>
+            <span class="tech-badge">PySide / Qt</span>
+            <span class="tech-badge platform">Windows 10 / 11</span>
+            <span class="tech-badge offline">100% Offline</span>
+            <span class="tech-badge">Criptografia AES-256</span>
+          </div>
+
+          <h1 class="app-hero-title">COMPRESSION MANAGER</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Automação Inteligente de Backups, Compactação Multi-Formato e Proteção Criptográfica AES-256.
+          </p>
+          <p class="app-hero-tagline lang-en">
+            Smart Backup Automation, Multi-Format Compression, and AES-256 Cryptographic Protection.
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://apps.microsoft.com/detail/9PJMT90R953K" class="btn-cta btn-cta-store" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.5 3H2v8.5h9.5V3zm1 0V11.5H22V3h-9.5zM2 12.5V21h9.5v-8.5H2zm10.5 0V21H22v-8.5h-9.5z"/></svg>
+              <span class="lang-pt">Obter na Microsoft Store</span>
+              <span class="lang-en">Get from Microsoft Store</span>
+            </a>
+            <a href="https://github.com/fernandoncidade/Compression_Manager" class="btn-cta btn-cta-github" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span class="lang-pt">Ver Repositório no GitHub</span>
+              <span class="lang-en">View GitHub Repository</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[Compression%20Manager]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade de Conteúdo -->
+    <div class="app-sections-grid">
+
+      <!-- Visão do Usuário / Negócio -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>📦</span>
+          <span class="lang-pt">Visão do Usuário & Segurança de Dados</span>
+          <span class="lang-en">End-User Value & Data Protection</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Proteção Blindada Contra Falhas de Disco e Ransomware</span>
+          <span class="lang-en">Armored Defense Against Hardware Failure & Ransomware</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O <strong>COMPRESSION MANAGER</strong> é uma central completa de cópias de segurança (backup) e arquivamento para profissionais e empresas. Ele permite criar rotinas automatizadas que compactam pastas estratégicas em formatos ultra-eficientes (como LZMA e 7z) e protegem o conteúdo com criptografia militar AES-256 antes de salvá-lo em discos externos, pendrives ou locais de rede.
+        </p>
+        <p class="section-lead lang-en">
+          <strong>COMPRESSION MANAGER</strong> is a comprehensive backup automation and archiving workstation built for professionals and businesses. It enables automated backup recipes that compress mission-critical folders into ultra-dense formats (such as LZMA and 7z) and shield data with military-grade AES-256 encryption before writing to external storage or network shares.
+        </p>
+
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">🛡️</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Arquivos Criptografados que Só Você Pode Abrir</div>
+            <div class="highlight-banner-title lang-en">Encrypted Archives Only You Can Unlock</div>
+            <div class="highlight-banner-text lang-pt">
+              Mesmo que um dispositivo de backup seja perdido ou roubado, a criptografia simétrica AES-256 impede qualquer acesso não autorizado aos seus documentos, bancos de dados e fotos pessoais.
+            </div>
+            <div class="highlight-banner-text lang-en">
+              Even if an external backup drive or USB key is misplaced, AES-256 encryption guarantees that your confidential documents, source code, and databases remain completely inaccessible to unauthorized parties.
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">🗜️</span>
+            <h3 class="feature-title lang-pt">Multi-Algoritmos de Alta Taxa</h3>
+            <h3 class="feature-title lang-en">Multi-Algorithm Compression</h3>
+            <p class="feature-desc lang-pt">
+              Escolha entre LZMA2, Deflate, BZip2 e Zstandard para equilibrar máxima redução de tamanho de arquivo com rapidez de execução.
+            </p>
+            <p class="feature-desc lang-en">
+              Switch seamlessly across LZMA2, Deflate, BZip2, and Zstandard to achieve optimal trade-offs between compression ratio and backup speed.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🔄</span>
+            <h3 class="feature-title lang-pt">Perfis de Backup Automatizados</h3>
+            <h3 class="feature-title lang-en">Automated Backup Profiles</h3>
+            <p class="feature-desc lang-pt">
+              Configure perfis para "Projetos de Código", "Documentos Financeiros" ou "Bancos de Dados" e execute tudo com um único clique.
+            </p>
+            <p class="feature-desc lang-en">
+              Create named preset profiles for code repositories, accounting folders, or system databases and execute recurring backups in one click.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🚫</span>
+            <h3 class="feature-title lang-pt">Filtros Inteligentes de Exclusão</h3>
+            <h3 class="feature-title lang-en">Smart Exclusion Rules</h3>
+            <p class="feature-desc lang-pt">
+              Evite desperdiçar espaço ignorando automaticamente pastas temporárias como <code>node_modules</code>, <code>.git</code>, <code>__pycache__</code> e lixeiras.
+            </p>
+            <p class="feature-desc lang-en">
+              Save disk space and hours of time by filtering out transient artifacts such as <code>node_modules</code>, <code>.git</code>, <code>__pycache__</code>, and cache folders.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">✔️</span>
+            <h3 class="feature-title lang-pt">Verificação de Integridade CRC32/SHA-256</h3>
+            <h3 class="feature-title lang-en">Integrity Verification Checksums</h3>
+            <p class="feature-desc lang-pt">
+              Após a compactação, o sistema verifica automaticamente a integridade dos blocos gerados para certificar que nenhum arquivo foi corrompido.
+            </p>
+            <p class="feature-desc lang-en">
+              Automatic post-compression checksum validation verifies that archived blocks are completely sound and ready for restoration.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Engenharia Python & Arquitetura Concorrente</span>
+          <span class="lang-en">Python Engineering & Concurrent Pipeline</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Processamento Paralelo e Pipelines Não-Bloqueantes</span>
+          <span class="lang-en">Parallel Multi-Threaded Compression Pipelines</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          Desenvolvido com <strong>Python 3.10+</strong> e <strong>PySide6</strong>, o COMPRESSION MANAGER adota uma arquitetura orientada a eventos com trabalhadores concorrentes via <code>QThread</code> e pools de subprocessos, garantindo fluidez total na interface mesmo ao compactar centenas de gigabytes.
+        </p>
+        <p class="section-lead lang-en">
+          Engineered using <strong>Python 3.10+</strong> and <strong>PySide6</strong>, COMPRESSION MANAGER implements an asynchronous event-driven design powered by <code>QThread</code> workers and native multi-core archiving binaries, ensuring uninterrupted UI responsiveness during multi-gigabyte compression passes.
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Módulo Criptográfico de Alto Padrão</span>
+              <span class="dev-spec-name lang-en">Standards-Compliant Cryptography</span>
+              <span class="dev-spec-tag">pycryptodome / AES-256-CBC / GCM</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Geração de chaves robustas derivadas via PBKDF2 com salt aleatório e derivação de hash SHA-256 para prevenir ataques de dicionário e rainbow tables.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Cryptographic keys are derived using PBKDF2 with high iteration counts and cryptographic random salts to defeat dictionary attacks.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Tratamento de I/O por Streaming</span>
+              <span class="dev-spec-name lang-en">Stream-Based Buffer Chunks</span>
+              <span class="dev-spec-tag">Memory-Bounded File Streams</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Os arquivos são compactados e criptografados em fluxos segmentados (chunks de 1 a 4 MB), impedindo que o uso de memória RAM escale proporcionalmente ao tamanho dos arquivos compactados.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              I/O operations stream through fixed 1–4 MB memory chunk buffers, keeping working RAM strictly bounded regardless of whether a 50 MB or 100 GB volume is processed.
+            </p>
+          </div>
+        </div>
+
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagem / Versão</th>
+                <th class="lang-en">Language / Version</th>
+                <td>
+                  <span class="lang-pt">Python 3.10+ com tipagem estática (Type Hints)</span>
+                  <span class="lang-en">Python 3.10+ with static typing (Type Hints)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Framework de GUI</th>
+                <th class="lang-en">GUI Framework</th>
+                <td>
+                  <span class="lang-pt">PySide / Qt Widgets nativos</span>
+                  <span class="lang-en">Native PySide / Qt Widgets</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Formatos Suportados</th>
+                <th class="lang-en">Supported Formats</th>
+                <td>
+                  <span class="lang-pt">7z, ZIP, TAR, TAR.GZ, TAR.BZ2, TAR.XZ / LZMA</span>
+                  <span class="lang-en">7z, ZIP, TAR, TAR.GZ, TAR.BZ2, TAR.XZ / LZMA</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Criptografia</th>
+                <th class="lang-en">Encryption Standard</th>
+                <td>
+                  <span class="lang-pt">AES-256 bit simétrica com autenticação de integridade</span>
+                  <span class="lang-en">Symmetric AES-256 bit with integrity authentication</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Segurança</th>
+                <th class="lang-en">Security</th>
+                <td>
+                  <span class="lang-pt">100% de execução local, sem telemetria externa</span>
+                  <span class="lang-en">100% local execution, zero external telemetry</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Distribuição</th>
+                <th class="lang-en">Distribution</th>
+                <td>
+                  <span class="lang-pt">Certificado na Microsoft Store / Código Aberto no GitHub</span>
+                  <span class="lang-en">Microsoft Store Certified / Open Source on GitHub</span>
+                </td>
+              </tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="linceu-lighthouse.html" class="related-app-card">
+          <img src="../image_perfil/linceu_sem_fundo.png" alt="Linceu Lighthouse" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Linceu Lighthouse</div>
+            <div class="related-app-tag">C++17 • Auditoria Forense</div>
+          </div>
+        </a>
+        <a href="acl-auditor.html" class="related-app-card">
+          <img src="../image_perfil/acl_auditor.png" alt="ACL Auditor" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">ACL Auditor</div>
+            <div class="related-app-tag">C++20 • Permissões NTFS</div>
+          </div>
+        </a>
+        <a href="economia-app.html" class="related-app-card">
+          <img src="../image_perfil/economia.png" alt="Economia APP" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Economia APP</div>
+            <div class="related-app-tag">Python / C++ • Finanças</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://apps.microsoft.com/detail/9PJMT90R953K" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>

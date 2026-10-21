@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lúmen • Acessibilidade Cognitiva, TEA, TDAH e Comunicação Assistiva em C++</title>
+  <meta name="description" content="Lúmen: Plataforma assistiva no Windows desenvolvida para apoiar pessoas neurodivergentes (Autismo/TEA, TDAH e Dislexia) com leitura por voz, mapas mentais e redução de sobrecarga sensorial.">
+  <link rel="icon" type="image/png" href="../image_perfil/autismo.png">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">← Voltar ao Início</span>
+        <span class="lang-en">← Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="../image_perfil/autismo.png" alt="Ícone Lúmen" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">C++</span>
+            <span class="tech-badge">Qt 6</span>
+            <span class="tech-badge platform">Windows 10 / 11</span>
+            <span class="tech-badge offline">100% Offline</span>
+            <span class="tech-badge">Acessibilidade / Neurodiversidade</span>
+          </div>
+
+          <h1 class="app-hero-title">Lúmen</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Plataforma de Acessibilidade Cognitiva, Foco e Comunicação Assistiva para Neurodivergentes (TEA, TDAH, Dislexia).
+          </p>
+          <p class="app-hero-tagline lang-en">
+            Cognitive Accessibility, Focus Support, and Assistive Communication Platform for Neurodivergent Minds (ASD, ADHD, Dyslexia).
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://apps.microsoft.com/detail/9N70CLLMVRPN" class="btn-cta btn-cta-store" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.5 3H2v8.5h9.5V3zm1 0V11.5H22V3h-9.5zM2 12.5V21h9.5v-8.5H2zm10.5 0V21H22v-8.5h-9.5z"/></svg>
+              <span class="lang-pt">Obter na Microsoft Store</span>
+              <span class="lang-en">Get from Microsoft Store</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[Lúmen]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade de Conteúdo -->
+    <div class="app-sections-grid">
+
+      <!-- Visão do Usuário / Negócio -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>💙</span>
+          <span class="lang-pt">Inclusão Real & Valor Social</span>
+          <span class="lang-en">Real Inclusion & Human Value</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Tecnologia Feita com Empatia para Potencializar Talentos Únicos</span>
+          <span class="lang-en">Empathetic Technology Empowering Unique Minds</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O <strong>Lúmen</strong> nasceu para quebrar as barreiras cognitivas e sensoriais que pessoas no espectro autista (TEA), com déficit de atenção e hiperatividade (TDAH) e dislexia enfrentam no dia a dia com softwares comuns. Criado com base em recomendações de ergonomia cognitiva, o Lúmen oferece uma experiência acolhedora que respeita limites sensoriais, estimula a comunicação e simplifica a organização de pensamentos complexos.
+        </p>
+        <p class="section-lead lang-en">
+          <strong>Lúmen</strong> was created to eliminate the cognitive and sensory barriers that neurodivergent individuals—such as those on the autism spectrum (ASD), with ADHD, or experiencing dyslexia—encounter in everyday computer interfaces. Rooted in cognitive ergonomics, Lúmen delivers a welcoming workspace that respects sensory limits, nurtures self-expression, and reduces executive dysfunction.
+        </p>
+
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">🌿</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Ambiente Seguro, Livre de Gatilhos e 100% Privado</div>
+            <div class="highlight-banner-title lang-en">Safe, Trigger-Free & Strictly Confidential Environment</div>
+            <div class="highlight-banner-text lang-pt">
+              Sem animações agressivas, sem sons estridentes e sem anúncios intrusivos. Os dados pessoais, rotinas e anotações do usuário são guardados estritamente no armazenamento local do computador, garantindo proteção total a dados sensíveis de saúde e desenvolvimento.
+            </div>
+            <div class="highlight-banner-text lang-en">
+              No flickering animations, harsh alarms, or invasive tracking ads. The user's personal routines, notes, and progress records remain encrypted and stored strictly on the local machine.
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">🗣️</span>
+            <h3 class="feature-title lang-pt">Leitor Neural de Texto por Voz (TTS)</h3>
+            <h3 class="feature-title lang-en">Neural Text-to-Speech Engine</h3>
+            <p class="feature-desc lang-pt">
+              Converte textos em áudio suave e natural para apoiar pessoas com dislexia ou fadiga visual, com controle preciso de velocidade e tom.
+            </p>
+            <p class="feature-desc lang-en">
+              Converts text into calm, natural synthetic speech to assist users with dyslexia or visual strain, featuring granular speed and tone adjustments.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🗺️</span>
+            <h3 class="feature-title lang-pt">Mapas Mentais Visuais Intuitivos</h3>
+            <h3 class="feature-title lang-en">Visual Idea & Mind Mapping</h3>
+            <p class="feature-desc lang-pt">
+              Organize rotinas, planos de aula ou ideias através de diagramas visuais coloridos e descomplicados, facilitando a tomada de decisão.
+            </p>
+            <p class="feature-desc lang-en">
+              Structure daily schedules, homework, or creative thoughts with color-coded, gentle visual nodes that tame executive function struggles.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">👁️</span>
+            <h3 class="feature-title lang-pt">Tipografia Especial para Dislexia</h3>
+            <h3 class="feature-title lang-en">Dyslexia-Optimized Typography</h3>
+            <p class="feature-desc lang-pt">
+              Suporte a fontes com ponderação de base reforçada e espaçamentos ampliados, reduzindo a rotação involuntária de letras durante a leitura.
+            </p>
+            <p class="feature-desc lang-en">
+              Specialized heavy-bottom fonts with wide letter-spacing options, mitigating letter confusion and reading inversion.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🎨</span>
+            <h3 class="feature-title lang-pt">Perfis de Conforto Sensorial</h3>
+            <h3 class="feature-title lang-en">Sensory Comfort Presets</h3>
+            <p class="feature-desc lang-pt">
+              Paletas de cores pastel, modo escuro suave e atenuação de contrastes que diminuem a sobrecarga visual em ambientes de alta luminosidade.
+            </p>
+            <p class="feature-desc lang-en">
+              Muted pastel palettes, soft contrast dark modes, and zero flash triggers engineered to prevent sensory over-stimulation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Engenharia C++ & Design Acessível</span>
+          <span class="lang-en">C++ Engineering & Accessible Design</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Arquitetura Assistiva Nativamente Integrada ao Windows</span>
+          <span class="lang-en">Native Assistive Architecture for Windows</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          Desenvolvido em <strong>C++</strong> e <strong>Qt 6</strong>, o Lúmen foi projetado para responder instantaneamente e oferecer integração perfeita com as tecnologias assistivas do sistema operacional, como leitores de tela compatíveis com MSAA/UI Automation, sintetizadores de fala nativos e dispositivos de entrada adaptados.
+        </p>
+        <p class="section-lead lang-en">
+          Engineered in modern <strong>C++</strong> and <strong>Qt 6</strong>, Lúmen was built from the ground up to interface seamlessly with Windows accessibility infrastructures, including UI Automation (UIA), native SAPI5 speech engines, and specialized assistive hardware.
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Integração com Mecanismos de Voz Nativos</span>
+              <span class="dev-spec-name lang-en">Native Voice Synthesis Subsystem</span>
+              <span class="dev-spec-tag">QTextToSpeech / Win32 SAPI5</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Utiliza os sintetizadores de voz locais já instalados no Windows, sem requisições de rede ou cobranças de APIs em nuvem, garantindo síntese imediata e privada.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Communicates directly with native speech engines bundled with Windows, avoiding network calls, cloud billing, and latency overhead.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Motor Gráfico de Nós Vetoriais</span>
+              <span class="dev-spec-name lang-en">Vector Scene Graph Node Engine</span>
+              <span class="dev-spec-tag">QGraphicsScene / QPainter</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              O renderizador de mapas mentais calcula posicionamentos com algoritmos de repulsão baseados em forças físicas suaves, renderizando nós em resolução 4K perfeita sem serrilhamento.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              The mind-mapping canvas renders interactive nodes backed by force-directed spatial layouts, generating crisp anti-aliased 4K vector visuals at 60 FPS.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Acessibilidade Total de Teclado e Foco</span>
+              <span class="dev-spec-name lang-en">Full Keyboard & Focus Accessibility</span>
+              <span class="dev-spec-tag">Accessible Widget Framework</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Navegação 100% operável via teclado com anéis de foco visual nítidos, atalhos configuráveis e papéis semânticos acessíveis para leitores de tela como NVDA e Narrator.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              100% keyboard navigable with high-visibility focus indicator rings, customizable shortcuts, and descriptive semantic roles for screen readers (NVDA, Narrator).
+            </p>
+          </div>
+        </div>
+
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagem / Padrão</th>
+                <th class="lang-en">Language / Standard</th>
+                <td>
+                  <span class="lang-pt">C++ Nativo de Baixa Latência (MSVC 2022)</span>
+                  <span class="lang-en">Low-Latency Native C++ (MSVC 2022)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Framework de GUI</th>
+                <th class="lang-en">GUI Framework</th>
+                <td>
+                  <span class="lang-pt">Qt 6.x (QGraphicsView, Módulos de Acessibilidade)</span>
+                  <span class="lang-en">Qt 6.x (QGraphicsView, Accessibility Modules)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Sintetizador de Voz</th>
+                <th class="lang-en">Speech Synthesizer</th>
+                <td>
+                  <span class="lang-pt">Vozes integradas Windows SAPI5 / OneCore (Offline)</span>
+                  <span class="lang-en">Integrated Windows SAPI5 / OneCore Voices (Offline)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Conformidade A11y</th>
+                <th class="lang-en">A11y Standards</th>
+                <td>
+                  <span class="lang-pt">Diretrizes de Acessibilidade Cognitiva W3C / WCAG 2.1 AAA</span>
+                  <span class="lang-en">W3C / WCAG 2.1 AAA Cognitive Accessibility Guidelines</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Segurança dos Dados</th>
+                <th class="lang-en">Data Security</th>
+                <td>
+                  <span class="lang-pt">Zero telemetria, zero nuvem, 100% de processamento no dispositivo</span>
+                  <span class="lang-en">Zero telemetry, zero cloud, 100% on-device processing</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Disponibilidade</th>
+                <th class="lang-en">Availability</th>
+                <td>
+                  <span class="lang-pt">Distribuído com certificação na Microsoft Store</span>
+                  <span class="lang-en">Certified and distributed on the Microsoft Store</span>
+                </td>
+              </tr></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="eisenpo.html" class="related-app-card">
+          <img src="../image_perfil/eisenpo.png" alt="EisenPo" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">EisenPo</div>
+            <div class="related-app-tag">C++ • Matriz Pomodoro</div>
+          </div>
+        </a>
+        <a href="eisenhower-organizer.html" class="related-app-card">
+          <img src="../image_perfil/eisenhower.png" alt="Eisenhower Organizer" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Eisenhower Organizer</div>
+            <div class="related-app-tag">C++ • Tarefas Essenciais</div>
+          </div>
+        </a>
+        <a href="launcher-ebook.html" class="related-app-card">
+          <img src="../image_perfil/launcherebook2_256-256.png" alt="Launcher EBook" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Launcher EBook</div>
+            <div class="related-app-tag">C++17 • Leitura Digital</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://apps.microsoft.com/detail/9N70CLLMVRPN" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>
