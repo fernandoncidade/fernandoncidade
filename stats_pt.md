@@ -12,10 +12,10 @@
 | EcoLZMA_cpp | C++ | 1430.0h | 11917 | 1 | 8.33 l/h |
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
-| fernandoncidade | HTML | 44.7h | 1676 | 245 | 37.49 l/h |
+| fernandoncidade | HTML | 325.7h | 10178 | 248 | 31.25 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
-| Linceu_Lighthouse_cpp | C++ | 16198.2h | 134985 | 4 | 8.33 l/h |
+| Linceu_Lighthouse_cpp | C++ | 16286.6h | 135722 | 4 | 8.33 l/h |
 | Munin_App_cpp | C++ | 2286.0h | 19050 | 1 | 8.33 l/h |
 | Programa_Carteira_Motorista | C++ | 21.5h | 387 | 2 | 18.00 l/h |
 | Programa_Determinar_Maior_Inteiro | C++ | 10.0h | 150 | 2 | 15.00 l/h |
@@ -28,5 +28,5 @@
 | Programa_Todos_Tipos_Matrizes | C++ | 12.4h | 223 | 2 | 17.98 l/h |
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
-| sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 43 | 15.00 l/h |
-| **TOTAL** | - | 39858.9h | 423749 | 392 | - |
+| sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 45 | 15.00 l/h |
+| **TOTAL** | - | 40228.3h | 432988 | 397 | - |
