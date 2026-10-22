@@ -44,6 +44,12 @@
         themeBtn.title = isEn ? 'Switch to Dark Mode' : 'Alternar para Tema Escuro';
       }
     }
+
+    // Sincroniza estado de tema diretamente no modal de imagem ampliada (lightbox)
+    const lb = document.getElementById('carousel-lightbox');
+    if (lb) {
+      lb.classList.toggle('dark', isDark);
+    }
   }
 
   function toggleTheme() {
@@ -174,6 +180,7 @@
     }
 
     setupBackToTop();
+    setupAppCarousels();
   });
 
   // Sincronização ao retornar pelo histórico de navegação (BFCache)
@@ -183,4 +190,277 @@
     const savedTheme = localStorage.getItem(THEME_KEY) || 'light';
     applyTheme(savedTheme);
   });
+
+  // ====================================================================
+  // 6. Sistema Universal de Carrossel de Capturas de Tela & Lightbox
+  // ====================================================================
+  let activeLightboxCarousel = null;
+
+  function createGlobalLightbox() {
+    let lb = document.getElementById('carousel-lightbox');
+    if (lb) return lb;
+
+    lb = document.createElement('div');
+    lb.id = 'carousel-lightbox';
+    lb.className = 'carousel-lightbox';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Visualizador de Imagem em Tela Cheia');
+
+    lb.innerHTML = `
+      <button type="button" class="carousel-lightbox-close" aria-label="Fechar">&times;</button>
+      <button type="button" class="carousel-lightbox-nav prev" aria-label="Imagem Anterior">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <img src="" alt="" class="carousel-lightbox-img">
+      <button type="button" class="carousel-lightbox-nav next" aria-label="Próxima Imagem">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+      <div class="carousel-lightbox-caption"></div>
+    `;
+
+    document.body.appendChild(lb);
+
+    // Inicializa tema no lightbox
+    const isDark = document.body.classList.contains('dark') || (localStorage.getItem(THEME_KEY) === 'dark');
+    lb.classList.toggle('dark', isDark);
+
+    const closeBtn = lb.querySelector('.carousel-lightbox-close');
+    const prevBtn = lb.querySelector('.carousel-lightbox-nav.prev');
+    const nextBtn = lb.querySelector('.carousel-lightbox-nav.next');
+
+    function close() {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+      activeLightboxCarousel = null;
+    }
+
+    closeBtn.addEventListener('click', close);
+
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb) close();
+    });
+
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (activeLightboxCarousel) activeLightboxCarousel.prev();
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (activeLightboxCarousel) activeLightboxCarousel.next();
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') {
+        close();
+      } else if (e.key === 'ArrowLeft') {
+        if (activeLightboxCarousel) activeLightboxCarousel.prev();
+      } else if (e.key === 'ArrowRight') {
+        if (activeLightboxCarousel) activeLightboxCarousel.next();
+      }
+    });
+
+    return lb;
+  }
+
+  function setupAppCarousels() {
+    const carousels = document.querySelectorAll('.app-carousel');
+    if (!carousels.length) return;
+
+    const lightbox = createGlobalLightbox();
+    const lbImg = lightbox.querySelector('.carousel-lightbox-img');
+    const lbCaption = lightbox.querySelector('.carousel-lightbox-caption');
+
+    carousels.forEach((carousel) => {
+      const track = carousel.querySelector('.carousel-track');
+      if (!track) return;
+
+      const viewport = carousel.querySelector('.carousel-viewport');
+      const allSlides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      const prevBtn = carousel.querySelector('.carousel-nav-btn.prev');
+      const nextBtn = carousel.querySelector('.carousel-nav-btn.next');
+      const dotsContainer = carousel.querySelector('.carousel-dots');
+      const allThumbs = Array.from(carousel.querySelectorAll('.carousel-thumb-btn'));
+      const counterEl = carousel.querySelector('.carousel-counter');
+      const captionEl = carousel.querySelector('.carousel-caption');
+      const zoomTrigger = carousel.querySelector('.carousel-zoom-trigger');
+      const filterBtns = Array.from(carousel.querySelectorAll('.carousel-filter-btn'));
+
+      let currentIndex = 0;
+      let activeCategory = 'all';
+
+      function getVisibleSlides() {
+        if (activeCategory === 'all') return allSlides;
+        return allSlides.filter(s => s.dataset.category === activeCategory);
+      }
+
+      function getVisibleThumbs() {
+        if (activeCategory === 'all') return allThumbs;
+        return allThumbs.filter(t => t.dataset.category === activeCategory);
+      }
+
+      function updateDots(visibleCount) {
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < visibleCount; i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
+          dot.setAttribute('aria-label', `Ir para slide ${i + 1}`);
+          dot.addEventListener('click', () => goTo(i));
+          dotsContainer.appendChild(dot);
+        }
+      }
+
+      function syncLightbox() {
+        if (activeLightboxCarousel && activeLightboxCarousel.id === carousel) {
+          const visibleSlides = getVisibleSlides();
+          const curSlide = visibleSlides[currentIndex];
+          if (curSlide) {
+            const img = curSlide.querySelector('.carousel-img');
+            lbImg.src = img ? (img.getAttribute('src') || '') : '';
+            lbImg.alt = img ? (img.getAttribute('alt') || '') : '';
+            const cap = curSlide.dataset.caption || (img ? img.getAttribute('alt') : '');
+            lbCaption.textContent = cap || '';
+          }
+        }
+      }
+
+      function goTo(index) {
+        const visibleSlides = getVisibleSlides();
+        const visibleThumbs = getVisibleThumbs();
+        if (!visibleSlides.length) return;
+
+        currentIndex = (index + visibleSlides.length) % visibleSlides.length;
+
+        // Reposiciona o track
+        // Slides ocultos com display:none não ocupam espaço no fluxo flex,
+        // portanto o deslocamento correto para o slide visível é baseado no currentIndex visível.
+        const targetSlide = visibleSlides[currentIndex];
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Atualiza contador
+        if (counterEl) {
+          counterEl.textContent = `${currentIndex + 1} / ${visibleSlides.length}`;
+        }
+
+        // Atualiza legenda
+        if (captionEl) {
+          const img = targetSlide.querySelector('.carousel-img');
+          captionEl.textContent = targetSlide.dataset.caption || (img ? img.getAttribute('alt') : '') || '';
+        }
+
+        // Atualiza dots
+        if (dotsContainer) {
+          const dots = dotsContainer.querySelectorAll('.carousel-dot');
+          dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+        }
+
+        // Atualiza thumbs
+        allThumbs.forEach(t => t.classList.remove('active'));
+        if (visibleThumbs[currentIndex]) {
+          visibleThumbs[currentIndex].classList.add('active');
+          visibleThumbs[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+
+        syncLightbox();
+      }
+
+      function next() { goTo(currentIndex + 1); }
+      function prev() { goTo(currentIndex - 1); }
+
+      // Listeners dos botões
+      if (prevBtn) prevBtn.addEventListener('click', prev);
+      if (nextBtn) nextBtn.addEventListener('click', next);
+
+      // Thumbs
+      allThumbs.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          const visibleThumbs = getVisibleThumbs();
+          const targetIndex = visibleThumbs.indexOf(thumb);
+          if (targetIndex !== -1) goTo(targetIndex);
+        });
+      });
+
+      // Filtros de módulo
+      if (filterBtns.length) {
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeCategory = btn.dataset.category || 'all';
+
+            allSlides.forEach(slide => {
+              const match = activeCategory === 'all' || slide.dataset.category === activeCategory;
+              slide.classList.toggle('hidden-by-filter', !match);
+            });
+
+            allThumbs.forEach(thumb => {
+              const match = activeCategory === 'all' || thumb.dataset.category === activeCategory;
+              thumb.classList.toggle('hidden-by-filter', !match);
+            });
+
+            const visibleSlides = getVisibleSlides();
+            updateDots(visibleSlides.length);
+            goTo(0);
+          });
+        });
+      }
+
+      // Toque / Swipe para Mobile
+      if (viewport) {
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchEndX = 0;
+
+        viewport.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+          touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        viewport.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          const touchEndY = e.changedTouches[0].screenY;
+          const diffX = touchEndX - touchStartX;
+          const diffY = touchEndY - touchStartY;
+
+          // Se movimento horizontal foi maior que vertical e superior a 40px
+          if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+            if (diffX < 0) next();
+            else prev();
+          }
+        }, { passive: true });
+      }
+
+      // Abertura do Lightbox
+      function openLightbox() {
+        const visibleSlides = getVisibleSlides();
+        const curSlide = visibleSlides[currentIndex];
+        if (!curSlide) return;
+
+        // Garante que o tema ativo (claro ou escuro) esteja aplicado ao modal
+        const isDark = document.body.classList.contains('dark') || (localStorage.getItem(THEME_KEY) === 'dark');
+        lightbox.classList.toggle('dark', isDark);
+
+        activeLightboxCarousel = { id: carousel, next, prev, goTo };
+        syncLightbox();
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      if (zoomTrigger) {
+        zoomTrigger.addEventListener('click', openLightbox);
+      }
+
+      allSlides.forEach(slide => {
+        slide.addEventListener('click', openLightbox);
+      });
+
+      // Inicializa dots e slide inicial
+      updateDots(getVisibleSlides().length);
+      goTo(0);
+    });
+  }
 })();

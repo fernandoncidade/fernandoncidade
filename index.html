@@ -486,6 +486,77 @@
       color:#64748b;
     }
 
+    /* Containers modernos para métricas de tráfego: Pageviews e Unique Visitors */
+    .footer-metrics-container{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:center;
+      gap:.75rem 1.25rem;
+      margin-bottom:1.2rem;
+    }
+    .metric-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.65rem;
+      background:rgba(15, 23, 42, 0.72);
+      border:1px solid rgba(0, 229, 200, 0.28);
+      border-radius:999px;
+      padding:.42rem 1.15rem;
+      font-size:.88rem;
+      color:#e2e8f0;
+      box-shadow:0 4px 14px rgba(0,0,0,0.25);
+      transition:border-color .25s ease, box-shadow .25s ease, transform .2s ease;
+    }
+    .metric-pill:hover{
+      border-color:rgba(0, 229, 200, 0.65);
+      box-shadow:0 6px 20px rgba(0, 229, 200, 0.22);
+      transform:translateY(-1px);
+    }
+    .metric-badge-link,
+    .badge-visitor-link{
+      display:inline-flex;
+      align-items:center;
+      text-decoration:none;
+      line-height:0;
+    }
+    .visitor-badge-img{
+      vertical-align:middle;
+      border-radius:3px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.3);
+      transition:transform .2s ease;
+    }
+    .metric-badge-link:hover .visitor-badge-img,
+    .badge-visitor-link:hover .visitor-badge-img{
+      transform:scale(1.04);
+    }
+    .visitor-live-dot{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#00e5c8;
+      box-shadow:0 0 10px #00e5c8;
+      display:inline-block;
+      flex-shrink:0;
+      animation:pulse-dot 2.2s infinite ease-in-out;
+    }
+    .visitor-unique-dot{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#38bdf8;
+      box-shadow:0 0 10px #38bdf8;
+      display:inline-block;
+      flex-shrink:0;
+      animation:pulse-dot 2.2s infinite ease-in-out;
+      animation-delay:1.1s;
+    }
+    @keyframes pulse-dot{
+      0%, 100% { opacity:1; transform:scale(1); }
+      50% { opacity:.35; transform:scale(0.8); }
+    }
+
     /* Regras responsivas: em telas menores as colunas col-6/col-4 empilham */
     @media(max-width:900px){
       .col-6{grid-column:span 12}
@@ -531,6 +602,16 @@
     body.dark .footer a:hover{ color:#a3ffd6 }
     body.dark .footer-divider{ color:#1e293b }
     body.dark .footer-sub{ color:#475569 }
+    body.dark .metric-pill{
+      background:rgba(8, 13, 26, 0.85);
+      border-color:rgba(0, 229, 200, 0.35);
+      color:#cbd5e1;
+      box-shadow:0 4px 18px rgba(0,0,0,0.5);
+    }
+    body.dark .metric-pill:hover{
+      border-color:#00e5c8;
+      box-shadow:0 6px 22px rgba(0, 229, 200, 0.3);
+    }
 
     /* Sombra dos cards mais forte no tema escuro para melhor contraste */
     body.dark .card{
@@ -897,6 +978,29 @@
       enus: { label:"Statistics%20updated%20on", alt:"Statistics updated on" }
     };
 
+    // Chave permanente de identificação de visitante único no navegador (sem limite de 24h)
+    const UNIQUE_STORAGE_KEY = 'fcc_unique_visitor_recorded_v1';
+
+    // Rótulos e textos das métricas (Pageviews e Visitantes Únicos) para I18N
+    const BADGE_METRICS = {
+      ptbr: {
+        viewsLabel: "Visualizações",
+        viewsAlt: "Visualizações Totais da Página Principal (Pageviews / Hits)",
+        viewsFooter: "Visualizações Totais (Hits):",
+        uniqueLabel: "Visitantes Únicos",
+        uniqueAlt: "Visitantes Únicos da Página Principal (Alcance Real)",
+        uniqueFooter: "Visitantes Únicos:"
+      },
+      enus: {
+        viewsLabel: "Pageviews",
+        viewsAlt: "Main Page Total Pageviews / Hits",
+        viewsFooter: "Total Pageviews (Hits):",
+        uniqueLabel: "Unique Visitors",
+        uniqueAlt: "Main Page Unique Visitors (Real Reach)",
+        uniqueFooter: "Unique Visitors:"
+      }
+    };
+
     // LOCALES: mapeamento de códigos de locale usados pelos widgets de imagem
     // - stats, streak, graph, langs são parâmetros de localidade que os serviços aceitam
     const LOCALES = {
@@ -1021,6 +1125,7 @@
       // Atualiza textos/badges/widgets dependentes do idioma
       updateHeaderTagline();
       updateLastCommitBadge();
+      updateVisitorMetrics(false);
       updateStatsLocale();
       updateProjectsTabLabel();
       updateProjectsSectionTexts();
@@ -1048,6 +1153,54 @@
       if (!img) return;
       img.src = "https://img.shields.io/github/last-commit/fernandoncidade/fernandoncidade?label=" + info.label + "&style=flat-square";
       img.alt = info.alt;
+    }
+
+    // Atualiza ambas as métricas: Pageviews (Hits) e Visitantes Únicos
+    function updateVisitorMetrics(isInitialLoad = false) {
+      const info = BADGE_METRICS[CURRENT_LANG] || BADGE_METRICS.ptbr;
+
+      // 1. Visualizações Totais (Pageviews / Hits) - contabiliza a cada carregamento
+      const bTopViews = document.getElementById('badge-pageviews');
+      const bFooterViews = document.getElementById('footer-views-badge');
+      const footerViewsLabel = document.getElementById('footer-views-label');
+      const linkTopViews = document.getElementById('pageviews-badge-link');
+      const linkFooterViews = document.getElementById('footer-views-link');
+
+      const viewsTs = isInitialLoad ? `&_t=${Date.now()}` : '';
+      const viewsUrl = `https://hits.sh/fernandoncidade.github.io/fernandoncidade.svg?style=flat-square&label=${encodeURIComponent(info.viewsLabel)}&color=00e5c8&labelColor=0f172a${viewsTs}`;
+
+      if (bTopViews) { bTopViews.src = viewsUrl; bTopViews.alt = info.viewsAlt; }
+      if (bFooterViews) { bFooterViews.src = viewsUrl; bFooterViews.alt = info.viewsAlt; }
+      if (linkTopViews) linkTopViews.title = info.viewsAlt;
+      if (linkFooterViews) linkFooterViews.title = info.viewsAlt;
+      if (footerViewsLabel) footerViewsLabel.textContent = info.viewsFooter;
+
+      // 2. Visitantes Únicos (Unique Visitors) - sem janela de 24h (1x por pessoa/navegador)
+      const bTopUnique = document.getElementById('badge-unique');
+      const bFooterUnique = document.getElementById('footer-unique-badge');
+      const footerUniqueLabel = document.getElementById('footer-unique-label');
+      const linkTopUnique = document.getElementById('unique-badge-link');
+      const linkFooterUnique = document.getElementById('footer-unique-link');
+
+      let isReturning = false;
+      try {
+        isReturning = !!localStorage.getItem(UNIQUE_STORAGE_KEY);
+        if (!isReturning && isInitialLoad) {
+          // Registra a primeira visita desta pessoa de forma permanente no navegador
+          localStorage.setItem(UNIQUE_STORAGE_KEY, Date.now().toString());
+        }
+      } catch (e) {}
+
+      // Se for visitante recorrente, usa query_only=true para NÃO incrementar novamente;
+      // Se for a 1ª visita deste navegador, não usa query_only para registrar o novo visitante único!
+      const queryParam = isReturning ? '&query_only=true' : (isInitialLoad ? `&_t=${Date.now()}` : '&query_only=true');
+      const uniqueUrl = `https://visitor-badge.laobi.icu/badge?page_id=fernandoncidade.landing-unique-visitors&left_text=${encodeURIComponent(info.uniqueLabel)}&left_color=%230f172a&right_color=%2300e5c8&radius=3${queryParam}`;
+
+      if (bTopUnique) { bTopUnique.src = uniqueUrl; bTopUnique.alt = info.uniqueAlt; }
+      if (bFooterUnique) { bFooterUnique.src = uniqueUrl; bFooterUnique.alt = info.uniqueAlt; }
+      if (linkTopUnique) linkTopUnique.title = info.uniqueAlt;
+      if (linkFooterUnique) linkFooterUnique.title = info.uniqueAlt;
+      if (footerUniqueLabel) footerUniqueLabel.textContent = info.uniqueFooter;
     }
 
     // Atualiza as URLs das imagens de widgets de estatísticas
@@ -1270,6 +1423,22 @@
       <img id="badge-last-commit"
            src="https://img.shields.io/github/last-commit/fernandoncidade/fernandoncidade?label=Estatísticas%20atualizadas%20em&style=flat-square"
            alt="Estatísticas atualizadas em">
+      <a id="pageviews-badge-link" href="https://hits.sh/fernandoncidade.github.io/fernandoncidade/" target="_blank" rel="noopener noreferrer" title="Visualizações Totais da Página Principal" class="badge-visitor-link">
+        <img id="badge-pageviews"
+             src="https://hits.sh/fernandoncidade.github.io/fernandoncidade.svg?style=flat-square&label=Visualizações&color=00e5c8&labelColor=0f172a"
+             alt="Visualizações Totais da Página Principal"
+             class="visitor-badge-img"
+             loading="eager"
+             decoding="async">
+      </a>
+      <a id="unique-badge-link" href="https://visitor-badge.laobi.icu" target="_blank" rel="noopener noreferrer" title="Visitantes Únicos da Página Principal" class="badge-visitor-link">
+        <img id="badge-unique"
+             src="https://visitor-badge.laobi.icu/badge?page_id=fernandoncidade.landing-unique-visitors&left_text=Visitantes%20%C3%9Anicos&left_color=%230f172a&right_color=%2300e5c8&radius=3&query_only=true"
+             alt="Visitantes Únicos da Página Principal"
+             class="visitor-badge-img"
+             loading="eager"
+             decoding="async">
+      </a>
     </div>
 
     <section id="sec-ptbr" class="lang-section active">
@@ -2063,6 +2232,33 @@
   </div>
 
   <footer class="footer">
+    <div id="footer-metrics-container" class="footer-metrics-container">
+      <div class="metric-pill">
+        <span class="visitor-live-dot" aria-hidden="true"></span>
+        <span id="footer-views-label">Visualizações Totais (Hits):</span>
+        <a id="footer-views-link" href="https://hits.sh/fernandoncidade.github.io/fernandoncidade/" target="_blank" rel="noopener noreferrer" title="Visualizações Totais da Página Principal" class="metric-badge-link">
+          <img id="footer-views-badge"
+               src="https://hits.sh/fernandoncidade.github.io/fernandoncidade.svg?style=flat-square&label=Visualizações&color=00e5c8&labelColor=0f172a"
+               alt="Visualizações Totais da Página Principal"
+               class="visitor-badge-img"
+               loading="eager"
+               decoding="async">
+        </a>
+      </div>
+
+      <div class="metric-pill">
+        <span class="visitor-unique-dot" aria-hidden="true"></span>
+        <span id="footer-unique-label">Visitantes Únicos:</span>
+        <a id="footer-unique-link" href="https://visitor-badge.laobi.icu" target="_blank" rel="noopener noreferrer" title="Visitantes Únicos da Página Principal" class="metric-badge-link">
+          <img id="footer-unique-badge"
+               src="https://visitor-badge.laobi.icu/badge?page_id=fernandoncidade.landing-unique-visitors&left_text=Visitantes%20%C3%9Anicos&left_color=%230f172a&right_color=%2300e5c8&radius=3&query_only=true"
+               alt="Visitantes Únicos da Página Principal"
+               class="visitor-badge-img"
+               loading="eager"
+               decoding="async">
+        </a>
+      </div>
+    </div>
     <div id="footer-main">
       <span>Feito por Fernando Nillsson Cidade</span>
       <span class="footer-divider">•</span>
@@ -2699,6 +2895,7 @@
       setupMessageForm();
       if (typeof updateMessageModalLocale === 'function') updateMessageModalLocale();
       if (typeof updateFooterLocale === 'function') updateFooterLocale();
+      updateVisitorMetrics(true); // Atualiza Pageviews (sempre incrementa) e Visitantes Únicos (incrementa 1x por pessoa)
 
       // Listener do botão de alternância de tema
       const tb = document.getElementById('btn-theme');
