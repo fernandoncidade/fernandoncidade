@@ -11,7 +11,7 @@
 | EcoLZMA_cpp | C++ | 1430.0h | 11917 | 1 | 8.33 l/h |
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
-| fernandoncidade | HTML | 326.0h | 10188 | 252 | 31.25 l/h |
+| fernandoncidade | HTML | 325.2h | 10163 | 253 | 31.25 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
 | Programa_Carteira_Motorista | C++ | 21.5h | 387 | 2 | 18.00 l/h |
@@ -26,4 +26,4 @@
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 45 | 15.00 l/h |
-| **TOTAL** | - | 18859.4h | 254921 | 395 | - |
+| **TOTAL** | - | 18858.6h | 254896 | 396 | - |
