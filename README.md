@@ -27,9 +27,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: 18858.6h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total de Linhas Escritas: 254896 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total de Commits: 396 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total de Tempo Trabalhado: 46126.4h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Linhas Escritas: 509396 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: 404 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -40,10 +40,12 @@
 <!-- PUBLIC_REPOS_STATS_PT_START -->
 | Repositório | Linguagem | Horas | Linhas | Commits | Produtividade (L/H) |
 |-------------|-----------|-------|--------|---------|---------------|
+| ACL_Auditor_cpp | C++ | 2542.8h | 21190 | 1 | 8.33 l/h |
 | Agenda_Avaliacoes_Academicas | Python | 523.6h | 6545 | 11 | 12.50 l/h |
 | Agenda_Avaliacoes_Academicas_cpp | C++ | 911.5h | 7596 | 3 | 8.33 l/h |
 | Compare_Following_Follower | Python | 886.3h | 11079 | 5 | 12.50 l/h |
 | Compression_Manager | Python | 569.9h | 5480 | 14 | 9.62 l/h |
+| Concrete_Mix_Designer_cpp | C++ | 2578.4h | 21487 | 1 | 8.33 l/h |
 | Dashboard_Streamlit-Plotly-Pandas_Management | Python | 58.5h | 1170 | 8 | 20.00 l/h |
 | Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve | Python | 55.8h | 1116 | 3 | 20.00 l/h |
 | Dashboard_Taipy | Python | 6059.6h | 100994 | 3 | 16.67 l/h |
@@ -51,9 +53,12 @@
 | EcoLZMA_cpp | C++ | 1430.0h | 11917 | 1 | 8.33 l/h |
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
-| fernandoncidade | HTML | 325.2h | 10163 | 253 | 31.25 l/h |
+| fernandoncidade | HTML | 361.7h | 11302 | 256 | 31.25 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
+| Huginn_rs | Rust | 3964.9h | 59474 | 1 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
+| Linceu_Lighthouse_cpp | C++ | 16068.2h | 133902 | 1 | 8.33 l/h |
+| Munin_App_cpp | C++ | 2077.0h | 17308 | 1 | 8.33 l/h |
 | Programa_Carteira_Motorista | C++ | 21.5h | 387 | 2 | 18.00 l/h |
 | Programa_Determinar_Maior_Inteiro | C++ | 10.0h | 150 | 2 | 15.00 l/h |
 | Programa_Expressoes_Relacionais | C++ | 10.0h | 140 | 2 | 14.00 l/h |
@@ -66,7 +71,7 @@
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 45 | 15.00 l/h |
-| **TOTAL** | - | 18858.6h | 254896 | 396 | - |
+| **TOTAL** | - | 46126.4h | 509396 | 404 | - |
 <!-- PUBLIC_REPOS_STATS_PT_END -->
 
 ## 🌻 Sobre Mim 🌻
@@ -382,9 +387,9 @@ Aplicativo desktop em Python/PySide6 para comparar, de forma prática e visual, 
 
 <div align="center">
 
-### 🕒 Total Working Time: 18858.6h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total Lines Written: 254896 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total Commits: 396 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total Working Time: 46126.4h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total Lines Written: 509396 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total Commits: 404 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -395,10 +400,12 @@ Aplicativo desktop em Python/PySide6 para comparar, de forma prática e visual, 
 <!-- PUBLIC_REPOS_STATS_EN_START -->
 | Repository | Language | Hours | Lines | Commits | Productivity (L/H) |
 |------------|----------|-------|-------|---------|--------------|
+| ACL_Auditor_cpp | C++ | 2542.8h | 21190 | 1 | 8.33 l/h |
 | Agenda_Avaliacoes_Academicas | Python | 523.6h | 6545 | 11 | 12.50 l/h |
 | Agenda_Avaliacoes_Academicas_cpp | C++ | 911.5h | 7596 | 3 | 8.33 l/h |
 | Compare_Following_Follower | Python | 886.3h | 11079 | 5 | 12.50 l/h |
 | Compression_Manager | Python | 569.9h | 5480 | 14 | 9.62 l/h |
+| Concrete_Mix_Designer_cpp | C++ | 2578.4h | 21487 | 1 | 8.33 l/h |
 | Dashboard_Streamlit-Plotly-Pandas_Management | Python | 58.5h | 1170 | 8 | 20.00 l/h |
 | Dashboard_Streamlit-Plotly-Pandas_Pareto-Diagram_ABC-Curve | Python | 55.8h | 1116 | 3 | 20.00 l/h |
 | Dashboard_Taipy | Python | 6059.6h | 100994 | 3 | 16.67 l/h |
@@ -406,9 +413,12 @@ Aplicativo desktop em Python/PySide6 para comparar, de forma prática e visual, 
 | EcoLZMA_cpp | C++ | 1430.0h | 11917 | 1 | 8.33 l/h |
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
-| fernandoncidade | HTML | 325.2h | 10163 | 253 | 31.25 l/h |
+| fernandoncidade | HTML | 361.7h | 11302 | 256 | 31.25 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
+| Huginn_rs | Rust | 3964.9h | 59474 | 1 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
+| Linceu_Lighthouse_cpp | C++ | 16068.2h | 133902 | 1 | 8.33 l/h |
+| Munin_App_cpp | C++ | 2077.0h | 17308 | 1 | 8.33 l/h |
 | Programa_Carteira_Motorista | C++ | 21.5h | 387 | 2 | 18.00 l/h |
 | Programa_Determinar_Maior_Inteiro | C++ | 10.0h | 150 | 2 | 15.00 l/h |
 | Programa_Expressoes_Relacionais | C++ | 10.0h | 140 | 2 | 14.00 l/h |
@@ -421,7 +431,7 @@ Aplicativo desktop em Python/PySide6 para comparar, de forma prática e visual, 
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 45 | 15.00 l/h |
-| **TOTAL** | - | 18858.6h | 254896 | 396 | - |
+| **TOTAL** | - | 46126.4h | 509396 | 404 | - |
 <!-- PUBLIC_REPOS_STATS_EN_END -->
 
 ## 🌻 About Me 🌻
