@@ -78,8 +78,8 @@ Sou desenvolvedor de software com experiência sólida em C++ (C++17/C++20), Pyt
 
 ## 🚀 Habilidades
 
-- **Linguagens:** C++ (C++17, C++20), Python (3.10+)
-- **Desenvolvimento de GUI & Desktop:** Qt6 (Widgets, QSS, Mica/Windows DWM), PySide6, PyQt6, Tkinter
+- **Linguagens:** C++ (C++17, C++20), Rust (2021/2024), Python (3.10+)
+- **Desenvolvimento de GUI & Desktop:** Qt6 (Widgets, QSS, Mica/Windows DWM), egui/eframe (Rust), PySide6, PyQt6, Tkinter
 - **Sistemas & Performance:** Win32 API, Memory-Mapped Files (Zero-Copy), Instruções SIMD (AVX2, SSE4.2), Multithreading, SQLite Local
 - **Segurança & Auditoria:** Permissões NTFS, Auditoria SMB, Análise de Acesso Efetivo (Effective Access), File Integrity Monitoring (FIM), ReadDirectoryChangesW, Hashes Criptográficos
 - **Análise de Dados e Visualização:** Pandas, Plotly, Streamlit, Taipy
@@ -97,6 +97,8 @@ Sou desenvolvedor de software com experiência sólida em C++ (C++17/C++20), Pyt
 | **Linceu Lighthouse** | <img src="image_perfil/linceu_sem_fundo.png" width="44"/> | Plataforma local de inteligência, histórico e auditoria de arquivos (FIM) | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NN8Z5Z700TM) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp) |
 | **ACL Auditor** | <img src="image_perfil/acl_auditor.png" width="44"/> | Auditoria de permissões NTFS & SMB, cálculo de acesso efetivo e riscos | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NX5XZLL8WXW) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/ACL_Auditor_cpp) |
 | **Munin App** | <img src="image_perfil/munin.png" width="44"/> | Leitor de logs massivos ultraveloz com Memory-Mapped Files e SIMD | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9PP4GVHR5THC) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Munin_App_cpp) |
+| **Huginn** | <img src="image_perfil/huginn.png" width="44"/> | Monitoramento contínuo de arquivos, histórico com 58 metadados e auditoria determinística | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NHQTGB26LMK) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Huginn_rs) |
+| **Concrete Mix Designer** | <img src="image_perfil/concrete_mix_design.png" width="44"/> | Dosagem experimental e racional de concreto pelo Método IPT/EPUSP e normas ABNT NBR | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9PB3M1HPF8M4) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp) |
 | **EisenPo** | <img src="image_perfil/eisenpo.png" width="44"/> | Gestão de tarefas por Matriz de Eisenhower com módulos Pomodoro e Feynman | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9MW96RN044TT) | — |
 | **EISENHOWER ORGANIZER** | <img src="image_perfil/eisenhower.png" width="44"/> | Organização e priorização ágil de tarefas pela Matriz de Eisenhower | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9P289X0185C3) | — |
 | **Lúmen** | <img src="image_perfil/autismo.png" width="44"/> | Apoio a estudo, foco e organização para neurodivergentes (TEA, TDAH, Dislexia) | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9N70CLLMVRPN) | — |
@@ -161,6 +163,43 @@ Visualizador e analisador de logs massivos de altíssimo desempenho para Windows
 - [Repositório GitHub: Munin_App_cpp](https://github.com/fernandoncidade/Munin_App_cpp)
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9PP4GVHR5THC)
 - ![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![SIMD AVX2](https://img.shields.io/badge/SIMD-AVX2%20%2F%20SSE4.2-orange) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
+
+## 🦅 Destaque de Projeto: Huginn
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Huginn_rs">
+    <img src="image_perfil/huginn.png" alt="Huginn Logo" width="220"/>
+  </a>
+</div>
+
+**Huginn**  
+Plataforma desktop nativa em **Rust (2021/2024)** com interface gráfica em modo imediato via **egui/eframe** e aceleração gráfica por hardware (OpenGL/WGPU) para visibilidade total, histórico estruturado e auditoria determinística do sistema de arquivos do Windows.
+- **Monitoramento Contínuo em Tempo Real:** Captura via APIs Win32 assíncronas (`ReadDirectoryChangesW`, engine `notify` e canais `crossbeam-channel`), com correlação semântica precisa de eventos (`RENAMED` e `MOVED` reais sem falsos registros de exclusão).
+- **Histórico Pesquisável e Inteligência sem IA:** Banco de dados relacional SQLite local (`rusqlite` em modo WAL, escrita desacoplada em background com `DbWriter`), enriquecido com 58 categorias abrangentes de metadados antes e depois de cada alteração e 17 visualizações gráficas nativas.
+- **Segurança, Auditoria e Integridade:** Linha de base criptográfica (hashes SHA-256), cálculo determinístico de score de risco (0–100), quarentena segura de arquivos e exportação forense (XLSX, CSV, JSON, XML, TXT e SQLite).
+- **100% Local & Offline (Local-First):** Zero nuvem, zero telemetria, sem contas e sem modelos de IA/LLM — total soberania de dados.
+- [Repositório GitHub: Huginn_rs](https://github.com/fernandoncidade/Huginn_rs)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9NHQTGB26LMK)
+- ![Rust](https://img.shields.io/badge/Rust-2021%2F2024-dea584?logo=rust) ![egui](https://img.shields.io/badge/GUI-egui%20%2F%20eframe-orange) ![WGPU](https://img.shields.io/badge/Graphics-WGPU%20%2F%20OpenGL-red) ![Windows](https://img.shields.io/badge/Platform-Windows-0078D4?logo=windows) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
+
+## 🏗️ Destaque de Projeto: Concrete Mix Designer
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp">
+    <img src="image_perfil/concrete_mix_design.png" alt="Concrete Mix Designer Logo" width="220"/>
+  </a>
+</div>
+
+**Concrete Mix Designer**  
+Aplicação desktop de alta precisão em **C++20 e Qt6** para dosagem experimental e racional de concreto de cimento Portland pelo **Método IPT/EPUSP** (Helene & Terzian, 1992).
+- **Modelagem Matemática Completa:** Integração rigorosa das leis de Abrams (exponencial e polinomial), Lyse (linear) e Molinari (hiperbólica), empacotamento binário de agregados graúdos e determinação experimental do teor de argamassa seca ($\alpha$).
+- **Diagrama de Dosagem IPT em 4 Quadrantes:** Renderização interativa de curvas de regressão via Qt Charts e exportação vetorial em alta resolução (PNG e PDF).
+- **Conformidade Normativa Automatizada:** Verificação instantânea de requisitos das normas ABNT NBR 12655:2022, NBR 6118:2023, NBR 7211:2022, NBR 7212:2025 e NBR 8953:2015.
+- **Traço de Canteiro, Padiolas e Custos:** Conversão de traços de laboratório para canteiro com correção de umidade livre, dimensionamento de padiolas padrão (35 cm × 45 cm), tolerâncias de pesagem de centrais e análise comparativa de custos por $m^3$.
+- **Relatórios Técnicos de Engenharia:** Memorial de cálculo detalhado com exportação nativa em PDF A4 (300 DPI), HTML5 e Markdown (.md).
+- [Repositório GitHub: Concrete_Mix_Designer_cpp](https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9PB3M1HPF8M4)
+- ![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![Civil Engineering](https://img.shields.io/badge/Engineering-Civil%20%2F%20Concrete-orange) ![NBR](https://img.shields.io/badge/Standards-ABNT%20NBR-blue) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
 
 ## 📋 Destaque de Projeto: EisenPo
 
@@ -266,6 +305,8 @@ Aplicativo desktop em Python/PySide6 para comparar, de forma prática e visual, 
 - [**Linceu Lighthouse**](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp): Plataforma local de inteligência, histórico e auditoria determinística de atividades de arquivos no Windows (C++17 / Qt6 / SQLite).
 - [**ACL Auditor**](https://github.com/fernandoncidade/ACL_Auditor_cpp): Auditor enterprise-grade de permissões NTFS e compartilhamentos SMB com análise de acesso efetivo e riscos (C++20 / Qt 6.11).
 - [**Munin App**](https://github.com/fernandoncidade/Munin_App_cpp): Visualizador de logs massivos ultraveloz com Win32 Memory-Mapped Files e aceleração SIMD AVX2/SSE4.2 (C++20 / Qt6).
+- [**Huginn**](https://github.com/fernandoncidade/Huginn_rs): Plataforma local em Rust (egui/WGPU/SQLite) para monitoramento em tempo real, inteligência e auditoria determinística do sistema de arquivos do Windows.
+- [**Concrete Mix Designer**](https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp): Software de alta precisão em C++20/Qt6 para dosagem racional de concreto pelo Método IPT/EPUSP e normas ABNT NBR.
 - [**Compression Manager**](https://github.com/fernandoncidade/Compression_Manager): Aplicativo completo de backup e compressão de arquivos com interface gráfica intuitiva.
 - [**Economia APP**](https://github.com/fernandoncidade/Economia_APP): Ferramenta para cálculos financeiros e Engenharia Econômica com passos detalhados e histórico.
 - [**Launcher EBook**](https://github.com/fernandoncidade/Launcher_EBook): Aplicação desktop em C++/Qt6 para catalogação de e-books e documentos locais.
@@ -395,8 +436,8 @@ I'm a software developer with solid experience in C++ (C++17/C++20), Python, and
 
 ## 🚀 Skills
 
-- **Languages:** C++ (C++17, C++20), Python (3.10+)
-- **GUI & Desktop Development:** Qt6 (Widgets, QSS, Mica/Windows DWM), PySide6, PyQt6, Tkinter
+- **Languages:** C++ (C++17, C++20), Rust (2021/2024), Python (3.10+)
+- **GUI & Desktop Development:** Qt6 (Widgets, QSS, Mica/Windows DWM), egui/eframe (Rust), PySide6, PyQt6, Tkinter
 - **Systems & Performance:** Win32 API, Memory-Mapped Files (Zero-Copy), SIMD Vector Instructions (AVX2, SSE4.2), Multithreading, Local SQLite
 - **Security & Auditing:** NTFS Permissions, SMB Share Auditing, Effective Access Analysis, File Integrity Monitoring (FIM), ReadDirectoryChangesW, Cryptographic Hashes
 - **Data Analysis & Visualization:** Pandas, Plotly, Streamlit, Taipy
@@ -414,6 +455,8 @@ I'm a software developer with solid experience in C++ (C++17/C++20), Python, and
 | **Linceu Lighthouse** | <img src="image_perfil/linceu_sem_fundo.png" width="44"/> | Local file activity intelligence, history, and audit platform (FIM) | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NN8Z5Z700TM) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp) |
 | **ACL Auditor** | <img src="image_perfil/acl_auditor.png" width="44"/> | Windows NTFS & SMB permission auditor, effective access & risk detection | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NX5XZLL8WXW) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/ACL_Auditor_cpp) |
 | **Munin App** | <img src="image_perfil/munin.png" width="44"/> | Ultra-high performance massive log reader with Win32 Memory-Mapped Files & SIMD | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9PP4GVHR5THC) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Munin_App_cpp) |
+| **Huginn** | <img src="image_perfil/huginn.png" width="44"/> | Continuous file monitoring, 58 metadata history, and deterministic audit | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NHQTGB26LMK) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Huginn_rs) |
+| **Concrete Mix Designer** | <img src="image_perfil/concrete_mix_design.png" width="44"/> | Experimental & rational concrete mix proportioning via IPT/EPUSP & ABNT NBRs | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9PB3M1HPF8M4) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp) |
 | **EisenPo** | <img src="image_perfil/eisenpo.png" width="44"/> | Eisenhower Matrix task management with integrated Pomodoro & Feynman modules | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9MW96RN044TT) | — |
 | **EISENHOWER ORGANIZER** | <img src="image_perfil/eisenhower.png" width="44"/> | Agile task organization & prioritization using the Eisenhower Matrix | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9P289X0185C3) | — |
 | **Lúmen** | <img src="image_perfil/autismo.png" width="44"/> | Study, focus & organization assistant for neurodivergent individuals (ASD, ADHD, Dyslexia) | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9N70CLLMVRPN) | — |
@@ -478,6 +521,43 @@ High-performance massive log reader and diagnostic analyzer for Windows, designe
 - [GitHub Repository: Munin_App_cpp](https://github.com/fernandoncidade/Munin_App_cpp)
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9PP4GVHR5THC)
 - ![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![SIMD AVX2](https://img.shields.io/badge/SIMD-AVX2%20%2F%20SSE4.2-orange) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
+
+## 🦅 Project Highlight: Huginn
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Huginn_rs">
+    <img src="image_perfil/huginn.png" alt="Huginn Logo" width="220"/>
+  </a>
+</div>
+
+**Huginn**  
+Native desktop platform built in **Rust (2021/2024)** featuring immediate-mode GUI via **egui/eframe** and hardware acceleration (WGPU/OpenGL) for total forensic visibility, structured history, and deterministic auditing over the Windows file system.
+- **Continuous Real-Time Monitoring:** Captures system events via asynchronous Win32 APIs (`ReadDirectoryChangesW`, `notify` engine, and `crossbeam-channel` queues) with true semantic correlation for `RENAMED` and `MOVED` operations without false delete noise.
+- **Searchable History & AI-Free Intelligence:** Automatic local SQLite database in WAL mode with decoupled background writes via `DbWriter`, indexing 58 comprehensive metadata categories before and after each change, accompanied by 17 native charts.
+- **Security, Integrity & Forensic Evidence:** Cryptographic baseline with SHA-256 hashes, deterministic risk scoring (0–100), safe file quarantine, and forensic evidence packaging (XLSX, CSV, JSON, XML, TXT, and raw SQLite).
+- **100% Local & Offline (Local-First):** Zero cloud, zero telemetry, no mandatory accounts, and no AI/LLM models — absolute privacy and data sovereignty.
+- [GitHub Repository: Huginn_rs](https://github.com/fernandoncidade/Huginn_rs)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9NHQTGB26LMK)
+- ![Rust](https://img.shields.io/badge/Rust-2021%2F2024-dea584?logo=rust) ![egui](https://img.shields.io/badge/GUI-egui%20%2F%20eframe-orange) ![WGPU](https://img.shields.io/badge/Graphics-WGPU%20%2F%20OpenGL-red) ![Windows](https://img.shields.io/badge/Platform-Windows-0078D4?logo=windows) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
+
+## 🏗️ Project Highlight: Concrete Mix Designer
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp">
+    <img src="image_perfil/concrete_mix_design.png" alt="Concrete Mix Designer Logo" width="220"/>
+  </a>
+</div>
+
+**Concrete Mix Designer**  
+High-precision civil engineering desktop application engineered in **C++20 and Qt6** for experimental and rational Portland cement concrete proportioning via the **IPT/EPUSP Method** (Helene & Terzian, 1992).
+- **Complete Mathematical Modeling:** Rigorous integration of Abrams' exponential/polynomial laws, Lyse's linear law, and Molinari's hyperbolic law, coarse aggregate binary packing optimization, and experimental dry mortar content ($\alpha$) analysis.
+- **IPT 4-Quadrant Dosage Diagram:** Interactive regression curve rendering via Qt Charts with high-resolution vector export (PNG and PDF).
+- **Automated Normative Compliance:** Instant verification against Brazilian standards: ABNT NBR 12655:2022, NBR 6118:2023, NBR 7211:2022, NBR 7212:2025, and NBR 8953:2015.
+- **Field Batching, Padiolas & Costs:** Converts laboratory mix proportions to job-site recipes with surface moisture correction, wooden measuring box ("padiola", 35 cm × 45 cm) sizing, central plant weighing tolerances, and comparative cost analysis per $m^3$.
+- **Engineering Calculation Reports:** Automated engineering calculation memorial generation with native export to PDF (A4 300 DPI), HTML5, and Markdown (.md).
+- [GitHub Repository: Concrete_Mix_Designer_cpp](https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9PB3M1HPF8M4)
+- ![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![Civil Engineering](https://img.shields.io/badge/Engineering-Civil%20%2F%20Concrete-orange) ![NBR](https://img.shields.io/badge/Standards-ABNT%20NBR-blue) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
 
 ## 📋 Project Highlight: EisenPo
 
@@ -583,6 +663,8 @@ Python/PySide6 desktop app to easily audit and compare your GitHub connections (
 - [**Linceu Lighthouse**](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp): Local file activity intelligence, history, and deterministic audit platform for Windows (C++17 / Qt6 / SQLite).
 - [**ACL Auditor**](https://github.com/fernandoncidade/ACL_Auditor_cpp): Enterprise-grade Windows NTFS & SMB permission auditor with effective access explanation and risk detection (C++20 / Qt 6.11).
 - [**Munin App**](https://github.com/fernandoncidade/Munin_App_cpp): Ultra-fast massive log viewer and analyzer leveraging Win32 Memory-Mapped Files and SIMD acceleration (C++20 / Qt6).
+- [**Huginn**](https://github.com/fernandoncidade/Huginn_rs): Local Rust platform (egui/WGPU/SQLite) for real-time monitoring, intelligence, and deterministic Windows file system auditing.
+- [**Concrete Mix Designer**](https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp): High-precision C++20/Qt6 engineering software for rational concrete proportioning via the IPT/EPUSP Method and ABNT NBR standards.
 - [**Compression Manager**](https://github.com/fernandoncidade/Compression_Manager): Comprehensive backup and file compression application with an intuitive GUI.
 - [**Economia APP**](https://github.com/fernandoncidade/Economia_APP): Financial and Engineering Economics calculation tool with detailed step-by-step history.
 - [**Launcher EBook**](https://github.com/fernandoncidade/Launcher_EBook): C++/Qt6 desktop application for cataloging local e-books and documents.

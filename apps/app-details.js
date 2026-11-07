@@ -105,6 +105,14 @@
     'agenda-avaliacoes-academicas.html': {
       pt: 'Agenda Avaliações Acadêmicas • Gestão de Provas, Médias e Semestre em Python',
       en: 'Academic Evaluations Scheduler • Semester Exams & Grades Manager in Python'
+    },
+    'huginn.html': {
+      pt: 'Huginn • Monitoramento do Sistema de Arquivos, Histórico e Auditoria em Rust',
+      en: 'Huginn • File System Monitoring, History & Deterministic Audit in Rust'
+    },
+    'concrete_mix_design.html': {
+      pt: 'Concrete Mix Designer • Dosagem Experimental de Concreto pelo Método IPT/EPUSP em C++20',
+      en: 'Concrete Mix Designer • Experimental Concrete Proportioning via IPT/EPUSP in C++20'
     }
   };
 

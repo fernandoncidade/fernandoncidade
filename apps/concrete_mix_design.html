@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concrete Mix Designer • Dosagem Experimental de Concreto pelo Método IPT/EPUSP em C++20</title>
+  <meta name="description" content="Concrete Mix Designer: Software de alta precisão em C++20 e Qt 6 para dosagem experimental e racional de concreto pelo Método IPT/EPUSP, Leis de Abrams, Lyse e Molinari, e normas ABNT NBR.">
+  <link rel="icon" type="image/png" href="../image_perfil/concrete_mix_design.png">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">← Voltar ao Início</span>
+        <span class="lang-en">← Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="../image_perfil/concrete_mix_design.png" alt="Ícone Concrete Mix Designer" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">C++20</span>
+            <span class="tech-badge">Qt 6 / Qt Charts</span>
+            <span class="tech-badge">Engenharia Civil</span>
+            <span class="tech-badge platform">Windows 10 / 11 (x64)</span>
+            <span class="tech-badge offline">100% Offline</span>
+            <span class="tech-badge">ABNT NBR</span>
+          </div>
+
+          <h1 class="app-hero-title">Concrete Mix Designer</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Dosagem Experimental e Racional de Concreto pelo Método IPT/EPUSP, Diagrama em 4 Quadrantes e Normas ABNT NBR.
+          </p>
+          <p class="app-hero-tagline lang-en">
+            Experimental & Rational Concrete Mix Proportioning via IPT/EPUSP Method, 4-Quadrant Diagram & ABNT Standards.
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://apps.microsoft.com/detail/9PB3M1HPF8M4" class="btn-cta btn-cta-store" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.5 3H2v8.5h9.5V3zm1 0V11.5H22V3h-9.5zM2 12.5V21h9.5v-8.5H2zm10.5 0V21H22v-8.5h-9.5z"/></svg>
+              <span class="lang-pt">Obter na Microsoft Store</span>
+              <span class="lang-en">Get from Microsoft Store</span>
+            </a>
+            <a href="https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp" class="btn-cta btn-cta-github" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span class="lang-pt">Ver Repositório no GitHub</span>
+              <span class="lang-en">View GitHub Repository</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[Concrete%20Mix%20Designer]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrossel de Capturas de Tela (Português) -->
+    <section class="app-carousel-section lang-pt app-carousel" aria-label="Capturas de Tela & Fluxo de Dosagem">
+      <div class="carousel-header">
+        <div>
+          <div class="carousel-title-group">
+            <span class="carousel-title-icon" aria-hidden="true">📸</span>
+            <h2 class="carousel-title">Capturas de Tela & Fluxo de Dosagem</h2>
+            <span class="carousel-badge">12 capturas de tela</span>
+          </div>
+          <p class="carousel-subtitle">Interface profissional em 7 abas com Diagrama IPT em 4 quadrantes, simulação experimental e relatórios técnicos.</p>
+        </div>
+      </div>
+
+      <div class="carousel-viewport-wrapper">
+        <div class="carousel-viewport" tabindex="0" role="region" aria-label="Galeria interativa de imagens">
+          <button type="button" class="carousel-nav-btn prev" aria-label="Imagem Anterior">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          
+          <div class="carousel-track">
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Parâmetros de Projeto e Condição de Preparo (NBR 12655)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053540.png" alt="Parâmetros de Projeto e Condição de Preparo" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Durabilidade e Classe de Agressividade Ambiental (NBR 6118)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053550.png" alt="Durabilidade e Classe de Agressividade" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Caracterização de Materiais e Agregados Miúdos e Graúdos">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053600.png" alt="Caracterização de Materiais" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Otimização de Empacotamento Binário de Britas (NBR 7211)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053613.png" alt="Empacotamento Binário de Britas" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Estudo Experimental do Teor de Argamassa Seca (α)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053623.png" alt="Teor de Argamassa Seca" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Traços Piloto Auxiliares (Rico, Intermediário e Pobre)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053633.png" alt="Traços Piloto Auxiliares" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Diagrama de Dosagem IPT em 4 Quadrantes (Abrams, Lyse e Molinari)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053644.png" alt="Diagrama de Dosagem IPT" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Traço Final, Correção de Umidade e Consumo de Materiais por m³">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053653.png" alt="Traço Final e Consumo por m³" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Dimensionamento de Padiolas e Tolerâncias de Centrais (NBR 7212)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053705.png" alt="Dimensionamento de Padiolas" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Análise Comparativa de Custos (Analítico vs. Gráfico)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053725.png" alt="Análise de Custos" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Memorial de Cálculo e Relatório Técnico de Engenharia">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053738.png" alt="Memorial de Cálculo" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Tema Escuro Nativo Windows 11 e Janelas Modeless Independentes">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053749.png" alt="Tema Escuro e Janelas Modeless" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <button type="button" class="carousel-nav-btn next" aria-label="Próxima Imagem">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="carousel-zoom-trigger" title="🔍 Ampliar">
+            <span>🔍</span>
+            <span>🔍 Ampliar</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-footer-bar">
+        <div class="carousel-caption-wrapper">
+          <span class="carousel-counter">1 / 12</span>
+          <span class="carousel-caption"></span>
+        </div>
+      </div>
+
+      <div class="carousel-dots" aria-hidden="true"></div>
+
+      <div class="carousel-thumbnails" aria-label="Miniaturas das capturas de tela">
+        <button type="button" class="carousel-thumb-btn active" aria-label="Ver Imagem 1"><img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053540.png" alt="Thumb 1" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Imagem 2"><img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053550.png" alt="Thumb 2" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Imagem 3"><img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053600.png" alt="Thumb 3" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Imagem 4"><img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053613.png" alt="Thumb 4" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Imagem 5"><img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053623.png" alt="Thumb 5" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Imagem 6"><img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053633.png" alt="Thumb 6" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Imagem 7"><img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053644.png" alt="Thumb 7" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Imagem 8"><img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053653.png" alt="Thumb 8" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Imagem 9"><img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053705.png" alt="Thumb 9" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Imagem 10"><img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053725.png" alt="Thumb 10" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Imagem 11"><img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053738.png" alt="Thumb 11" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Imagem 12"><img src="../listing/listing_Concrete_Mix_Designer_cpp/pt_BR/Captura%20de%20tela%202026-10-26%20053749.png" alt="Thumb 12" loading="lazy" decoding="async"></button>
+      </div>
+    </section>
+
+    <!-- Carrossel de Capturas de Tela (English) -->
+    <section class="app-carousel-section lang-en app-carousel" aria-label="Screenshots & Mix Proportioning Workflow">
+      <div class="carousel-header">
+        <div>
+          <div class="carousel-title-group">
+            <span class="carousel-title-icon" aria-hidden="true">📸</span>
+            <h2 class="carousel-title">Screenshots & Mix Proportioning Workflow</h2>
+            <span class="carousel-badge">12 screenshots</span>
+          </div>
+          <p class="carousel-subtitle">Professional 7-tab interface featuring IPT 4-quadrant diagram, experimental simulation, and technical reports.</p>
+        </div>
+      </div>
+
+      <div class="carousel-viewport-wrapper">
+        <div class="carousel-viewport" tabindex="0" role="region" aria-label="Interactive image gallery">
+          <button type="button" class="carousel-nav-btn prev" aria-label="Previous Image">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          
+          <div class="carousel-track">
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Project Parameters & Preparation Conditions (NBR 12655)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20053905.png" alt="Project Parameters & Preparation Conditions" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Durability & Environmental Aggressiveness Classes (NBR 6118)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20053915.png" alt="Durability & Aggressiveness Classes" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Material Characterization & Aggregate Properties">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20053927.png" alt="Material Characterization" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Binary Coarse Aggregate Blend Optimization (NBR 7211)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20053938.png" alt="Binary Gravel Blend Optimization" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Experimental Dry Mortar Content (α) Analysis">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20053947.png" alt="Dry Mortar Content Optimization" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Auxiliary Trial Mixes (Rich, Intermediate & Lean)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20053957.png" alt="Auxiliary Trial Mixes" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • IPT 4-Quadrant Dosage Diagram (Abrams, Lyse & Molinari)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20054008.png" alt="IPT 4-Quadrant Dosage Diagram" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Final Mix Proportions, Moisture Correction & Consumption per m³">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20054025.png" alt="Final Mix & Consumption" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Field Measuring Boxes (Padiolas) & Batching Tolerances (NBR 7212)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20054224.png" alt="Measuring Boxes & Batching Tolerances" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Comparative Cost Analysis (Analytical vs. Graphical)">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20054233.png" alt="Comparative Cost Analysis" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Engineering Calculation Report & Multi-Format Export">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20054243.png" alt="Technical Engineering Report" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Concrete Mix Designer • Native Windows 11 Dark Mode & Independent Modeless Windows">
+              <img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20054253.png" alt="Dark Mode & Modeless Windows" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <button type="button" class="carousel-nav-btn next" aria-label="Next Image">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="carousel-zoom-trigger" title="🔍 Enlarge">
+            <span>🔍</span>
+            <span>🔍 Enlarge</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-footer-bar">
+        <div class="carousel-caption-wrapper">
+          <span class="carousel-counter">1 / 12</span>
+          <span class="carousel-caption"></span>
+        </div>
+      </div>
+
+      <div class="carousel-dots" aria-hidden="true"></div>
+
+      <div class="carousel-thumbnails" aria-label="Screenshot thumbnails">
+        <button type="button" class="carousel-thumb-btn active" aria-label="View Image 1"><img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20053905.png" alt="Thumb 1" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Image 2"><img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20053915.png" alt="Thumb 2" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Image 3"><img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20053927.png" alt="Thumb 3" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Image 4"><img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20053938.png" alt="Thumb 4" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Image 5"><img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20053947.png" alt="Thumb 5" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Image 6"><img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20053957.png" alt="Thumb 6" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Image 7"><img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20054008.png" alt="Thumb 7" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Image 8"><img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20054025.png" alt="Thumb 8" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Image 9"><img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20054224.png" alt="Thumb 9" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Image 10"><img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20054233.png" alt="Thumb 10" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Image 11"><img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20054243.png" alt="Thumb 11" loading="lazy" decoding="async"></button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Image 12"><img src="../listing/listing_Concrete_Mix_Designer_cpp/en_US/Captura%20de%20tela%202026-10-26%20054253.png" alt="Thumb 12" loading="lazy" decoding="async"></button>
+      </div>
+    </section>
+
+    <!-- Grade de Conteúdo -->
+    <div class="app-sections-grid">
+
+      <!-- Visão do Usuário / Engenharia Civil -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>🏗️</span>
+          <span class="lang-pt">Visão da Engenharia & Dosagem Experimental</span>
+          <span class="lang-en">Civil Engineering Value & Experimental Proportioning</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Dosagem Racional de Concreto com Rigor Técnico e Normativo</span>
+          <span class="lang-en">Rational Concrete Mix Design with Technical & Normative Rigor</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O <strong>Concrete Mix Designer</strong> é uma aplicação desktop nativa desenvolvida para engenheiros civis, tecnologistas de concreto, centrais dosadoras, laboratórios de controle tecnológico, professores e estudantes de graduação. O sistema sistematiza integralmente o processo de dosagem experimental pelo renomado <strong>Método IPT/EPUSP</strong> (Helene & Terzian, 1992), correlacionando propriedades dos materiais, durabilidade normativa e custos em um fluxo linear de 7 abas intuitivas.
+        </p>
+        <p class="section-lead lang-en">
+          <strong>Concrete Mix Designer</strong> is a native desktop engineering suite built for civil engineers, concrete technologists, ready-mix batching plants, quality control laboratories, professors, and engineering students. The platform systematically implements the renowned <strong>IPT/EPUSP Method</strong> (Helene & Terzian, 1992), harmonizing material physics, normative durability, and economics across an intuitive 7-tab workflow.
+        </p>
+
+        <!-- Banner de Conformidade Normativa -->
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">📐</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Conformidade Integral com Normas ABNT NBR</div>
+            <div class="highlight-banner-title lang-en">Strict ABNT Technical Standards Compliance</div>
+            <div class="highlight-banner-text lang-pt">
+              Verificação automatizada contra <strong>ABNT NBR 12655:2022</strong> (preparo e controle), <strong>NBR 6118:2023</strong> (durabilidade, classes de agressividade e cobrimentos nominais CA/CP), <strong>NBR 7211:2022</strong> (agregados), <strong>NBR 7212:2025</strong> (tolerâncias de dosagem em central) e <strong>NBR 8953:2015</strong> (classes de consistência e abatimento).
+            </div>
+            <div class="highlight-banner-text lang-en">
+              Automated compliance auditing against <strong>ABNT NBR 12655:2022</strong> (preparation & control), <strong>NBR 6118:2023</strong> (durability, environmental classes & nominal covers), <strong>NBR 7211:2022</strong> (aggregates), <strong>NBR 7212:2025</strong> (batching plant weighing tolerances), and <strong>NBR 8953:2015</strong> (slump consistency classes).
+            </div>
+          </div>
+        </div>
+
+        <!-- Grade de Funcionalidades -->
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">📊</span>
+            <h3 class="feature-title lang-pt">Diagrama IPT em 4 Quadrantes</h3>
+            <h3 class="feature-title lang-en">IPT 4-Quadrant Dosage Diagram</h3>
+            <p class="feature-desc lang-pt">
+              Ajuste simultâneo por mínimos quadrados da Lei de Abrams (exponencial e polinomial), Lei de Lyse (linear) e Lei de Molinari (hiperbólica), com renderização interativa via Qt Charts e exportação vetorial.
+            </p>
+            <p class="feature-desc lang-en">
+              Simultaneous least-squares curve fitting for Abrams' Law (exponential & polynomial), Lyse's Law (linear), and Molinari's Law (hyperbolic), rendered via interactive Qt Charts with vector export.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🪨</span>
+            <h3 class="feature-title lang-pt">Mistura Binária de Britas</h3>
+            <h3 class="feature-title lang-en">Binary Aggregate Packing</h3>
+            <p class="feature-desc lang-pt">
+              Simulação de empacotamento granular em incrementos de 10% para encontrar a proporção ideal entre Brita 1 e Brita 2 com massa unitária máxima e volume de vazios mínimo.
+            </p>
+            <p class="feature-desc lang-en">
+              Experimental granular packing simulation in 10% steps to determine the optimal Gravel 1 / Gravel 2 ratio yielding maximum dry bulk density and minimum void ratio.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">⚖️</span>
+            <h3 class="feature-title lang-pt">Traço de Canteiro e Padiolas</h3>
+            <h3 class="feature-title lang-en">Field Batching & Padiolas</h3>
+            <p class="feature-desc lang-pt">
+              Cálculo de consumo por m³, correção exata por umidade livre dos agregados, receita para 1 saco de cimento (50 kg) e dimensionamento automático da altura de padiolas de madeira (35 × 45 cm).
+            </p>
+            <p class="feature-desc lang-en">
+              Per-m³ material consumption, rigorous moisture deduction, 1-bag cement (50 kg) field recipe, and automated height sizing for standard wooden measuring boxes (35 × 45 cm base).
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">📄</span>
+            <h3 class="feature-title lang-pt">Memorial de Cálculo & Relatórios</h3>
+            <h3 class="feature-title lang-en">Engineering Calculation Reports</h3>
+            <p class="feature-desc lang-pt">
+              Geração instantânea de memorial completo de cálculo com equações ajustadas, tabelas e parâmetros de projeto, exportável nativamente em PDF A4 (300 DPI), HTML5 e Markdown (.md).
+            </p>
+            <p class="feature-desc lang-en">
+              Instant generation of comprehensive calculation memorials detailing regression equations, data tables, and project metadata, with native export to PDF (A4 300 DPI), HTML5, and Markdown.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores e Engenheiros -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Engenharia de Software & Computação Científica</span>
+          <span class="lang-en">Software Engineering & Scientific Computing</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">C++20 Nativo, Precisão IEEE 754 e Janelas Modeless</span>
+          <span class="lang-en">Native C++20, IEEE 754 Double Precision & Modeless Architecture</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          Desenvolvido inteiramente em C++20 sobre o framework Qt 6, o Concrete Mix Designer executa 100% offline, com tempo de inicialização instantâneo, total soberania de dados do projeto e zero dependência de nuvem.
+        </p>
+        <p class="section-lead lang-en">
+          Built natively in C++20 powered by Qt 6, Concrete Mix Designer operates 100% offline-first, delivering sub-second startup times, total local project data sovereignty, and zero cloud footprint.
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Solucionador Matemático de Dupla Precisão</span>
+              <span class="dev-spec-name lang-en">IEEE 754 Double-Precision Solvers</span>
+              <span class="dev-spec-tag">Least-Squares / Abrams & Molinari</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Todas as regressões não lineares, linearizações logarítmicas e inversões de matriz utilizam tipos <code>double</code> de 64 bits em estrita conformidade com IEEE 754, eliminando erros cumulativos de arredondamento.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              All non-linear regressions, logarithmic linearizations, and matrix operations evaluate via 64-bit <code>double</code> primitives conforming strictly to IEEE 754, preventing cumulative round-off drift.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Arquitetura de Janelas Modeless com Z-Order Independente</span>
+              <span class="dev-spec-name lang-en">Modeless Dialog Architecture with Independent Z-Order</span>
+              <span class="dev-spec-tag">QDialog Modeless / Win32 Window Styles</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Janelas de referência rápida (Manual do Usuário, Normas Técnicas NBR e Sobre) abrem em modo não-modal com alternância livre de foco, permitindo consultar dados normativos sem travar a janela principal de cálculo.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Auxiliary reference windows (User Manual, ABNT Standards, and About dialogs) operate as modeless windows with independent Z-Order, enabling seamless multitasking without locking the main calculation canvas.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Suporte Nativo a Temas Claro e Escuro do Windows 11</span>
+              <span class="dev-spec-name lang-en">Windows 11 Native Light & Dark Mode Integration</span>
+              <span class="dev-spec-tag">DWM API / DwmSetWindowAttribute / QPalette</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              A aplicação responde dinamicamente à preferência do sistema operacional ou escolha manual do usuário, ajustando a barra de título nativa via Desktop Window Manager (DWM) e a paleta de cores dos gráficos.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              The application adapts dynamically to Windows dark/light preferences, coloring title bars through the Desktop Window Manager (DWM) API and synchronizing chart canvas palettes seamlessly.
+            </p>
+          </div>
+        </div>
+
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagem / Padrão</th>
+                <th class="lang-en">Language / Standard</th>
+                <td>
+                  <span class="lang-pt">C++20 Nativo (MSVC 2022 / Clang / MinGW-w64)</span>
+                  <span class="lang-en">Native C++20 (MSVC 2022 / Clang / MinGW-w64)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Framework de GUI & Gráficos</th>
+                <th class="lang-en">GUI & Charts Framework</th>
+                <td>
+                  <span class="lang-pt">Qt 6.x (QtWidgets, Qt Charts, QPalette e DWM API)</span>
+                  <span class="lang-en">Qt 6.x (QtWidgets, Qt Charts, QPalette, and DWM API)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Método de Dosagem</th>
+                <th class="lang-en">Proportioning Method</th>
+                <td>
+                  <span class="lang-pt">Método IPT/EPUSP (Helene & Terzian, 1992) com Leis de Abrams, Lyse e Molinari</span>
+                  <span class="lang-en">IPT/EPUSP Method (Helene & Terzian, 1992) with Abrams, Lyse & Molinari Laws</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Normas ABNT Atendidas</th>
+                <th class="lang-en">Governing Standards</th>
+                <td>
+                  <span class="lang-pt">ABNT NBR 12655:2022, NBR 6118:2023, NBR 7211:2022, NBR 7212:2025, NBR 8953:2015</span>
+                  <span class="lang-en">ABNT NBR 12655:2022, NBR 6118:2023, NBR 7211:2022, NBR 7212:2025, NBR 8953:2015</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Precisão Numérica</th>
+                <th class="lang-en">Numerical Precision</th>
+                <td>
+                  <span class="lang-pt">Ponto flutuante IEEE 754 de precisão dupla (64 bits)</span>
+                  <span class="lang-en">IEEE 754 64-bit double-precision floating-point</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Formatos de Exportação</th>
+                <th class="lang-en">Export Formats</th>
+                <td>
+                  <span class="lang-pt">PDF (A4 vetorial, 300 DPI), HTML5, Markdown (.md), PNG e Área de Transferência</span>
+                  <span class="lang-en">PDF (A4 vector, 300 DPI), HTML5, Markdown (.md), PNG, and Clipboard</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Distribuição</th>
+                <th class="lang-en">Distribution</th>
+                <td>
+                  <span class="lang-pt">Certificado na Microsoft Store / Código Aberto (GPL-3.0)</span>
+                  <span class="lang-en">Microsoft Store Certified / Open Source (GPL-3.0)</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="economia-app.html" class="related-app-card">
+          <img src="../image_perfil/economia.png" alt="Economia APP" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Economia APP</div>
+            <div class="related-app-tag">Python & C++ • Engenharia Econômica</div>
+          </div>
+        </a>
+        <a href="munin-app.html" class="related-app-card">
+          <img src="../image_perfil/munin.png" alt="Munin App" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Munin App</div>
+            <div class="related-app-tag">C++20 • Leitor de Logs SIMD</div>
+          </div>
+        </a>
+        <a href="linceu-lighthouse.html" class="related-app-card">
+          <img src="../image_perfil/linceu_sem_fundo.png" alt="Linceu Lighthouse" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Linceu Lighthouse</div>
+            <div class="related-app-tag">C++17 • Auditoria Forense</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://apps.microsoft.com/detail/9PB3M1HPF8M4" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>

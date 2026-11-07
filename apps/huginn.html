@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huginn • Monitoramento do Sistema de Arquivos, Histórico e Auditoria em Rust</title>
+  <meta name="description" content="Huginn: Plataforma desktop nativa em Rust para monitoramento contínuo do sistema de arquivos, histórico com 58 categorias de metadados, SQLite WAL e auditoria determinística 100% offline no Windows.">
+  <link rel="icon" type="image/png" href="../image_perfil/huginn.png">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">← Voltar ao Início</span>
+        <span class="lang-en">← Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="../image_perfil/huginn.png" alt="Ícone Huginn" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">Rust 2021 / 2024</span>
+            <span class="tech-badge">egui / eframe</span>
+            <span class="tech-badge">WGPU / OpenGL</span>
+            <span class="tech-badge platform">Windows 10 / 11 (x64)</span>
+            <span class="tech-badge offline">100% Offline</span>
+            <span class="tech-badge">SQLite WAL</span>
+          </div>
+
+          <h1 class="app-hero-title">Huginn</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Monitoramento Contínuo do Sistema de Arquivos, Histórico Estruturado com 58 Metadados e Auditoria Determinística sem IA.
+          </p>
+          <p class="app-hero-tagline lang-en">
+            Continuous File System Activity Monitoring, Structured History with 58 Metadata Categories, and Deterministic Auditing Without AI.
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://apps.microsoft.com/detail/9NHQTGB26LMK" class="btn-cta btn-cta-store" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.5 3H2v8.5h9.5V3zm1 0V11.5H22V3h-9.5zM2 12.5V21h9.5v-8.5H2zm10.5 0V21H22v-8.5h-9.5z"/></svg>
+              <span class="lang-pt">Obter na Microsoft Store</span>
+              <span class="lang-en">Get from Microsoft Store</span>
+            </a>
+            <a href="https://github.com/fernandoncidade/Huginn_rs" class="btn-cta btn-cta-github" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span class="lang-pt">Ver Repositório no GitHub</span>
+              <span class="lang-en">View GitHub Repository</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[Huginn]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrossel de Capturas de Tela (Português) -->
+    <section class="app-carousel-section lang-pt app-carousel" aria-label="Capturas de Tela & Interface Gráfica">
+      <div class="carousel-header">
+        <div>
+          <div class="carousel-title-group">
+            <span class="carousel-title-icon" aria-hidden="true">📸</span>
+            <h2 class="carousel-title">Capturas de Tela & Interface Gráfica</h2>
+            <span class="carousel-badge">1 captura de tela</span>
+          </div>
+          <p class="carousel-subtitle">Interface reativa acelerada por hardware via egui/eframe com sinalização cromática de eventos em tempo real.</p>
+        </div>
+      </div>
+
+      <div class="carousel-viewport-wrapper">
+        <div class="carousel-viewport" tabindex="0" role="region" aria-label="Galeria interativa de imagens">
+          <button type="button" class="carousel-nav-btn prev" aria-label="Imagem Anterior">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          
+          <div class="carousel-track">
+            <div class="carousel-slide" data-caption="Huginn • Painel de Monitoramento Contínuo e Histórico de Arquivos">
+              <img src="../listing/listing_Huginn_cpp/pt_BR/Captura%20de%20tela%202026-10-31%20011751.png" alt="Huginn • Painel de Monitoramento Contínuo e Histórico de Arquivos" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <button type="button" class="carousel-nav-btn next" aria-label="Próxima Imagem">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="carousel-zoom-trigger" title="🔍 Ampliar">
+            <span>🔍</span>
+            <span>🔍 Ampliar</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-footer-bar">
+        <div class="carousel-caption-wrapper">
+          <span class="carousel-counter">1 / 1</span>
+          <span class="carousel-caption"></span>
+        </div>
+      </div>
+
+      <div class="carousel-dots" aria-hidden="true"></div>
+
+      <div class="carousel-thumbnails" aria-label="Miniaturas das capturas de tela">
+        <button type="button" class="carousel-thumb-btn active" aria-label="Ver Huginn • Painel de Monitoramento">
+          <img src="../listing/listing_Huginn_cpp/pt_BR/Captura%20de%20tela%202026-10-31%20011751.png" alt="Thumb 1" loading="lazy" decoding="async">
+        </button>
+      </div>
+    </section>
+
+    <!-- Carrossel de Capturas de Tela (English) -->
+    <section class="app-carousel-section lang-en app-carousel" aria-label="Screenshots & Graphical User Interface">
+      <div class="carousel-header">
+        <div>
+          <div class="carousel-title-group">
+            <span class="carousel-title-icon" aria-hidden="true">📸</span>
+            <h2 class="carousel-title">Screenshots & Graphical User Interface</h2>
+            <span class="carousel-badge">1 screenshot</span>
+          </div>
+          <p class="carousel-subtitle">Hardware-accelerated reactive UI via egui/eframe with real-time chromatic event indicators.</p>
+        </div>
+      </div>
+
+      <div class="carousel-viewport-wrapper">
+        <div class="carousel-viewport" tabindex="0" role="region" aria-label="Interactive image gallery">
+          <button type="button" class="carousel-nav-btn prev" aria-label="Previous Image">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          
+          <div class="carousel-track">
+            <div class="carousel-slide" data-caption="Huginn • Continuous Activity Monitoring & File History Dashboard">
+              <img src="../listing/listing_Huginn_cpp/en_US/Captura%20de%20tela%202026-10-31%20011929.png" alt="Huginn • Continuous Activity Monitoring & File History Dashboard" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <button type="button" class="carousel-nav-btn next" aria-label="Next Image">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="carousel-zoom-trigger" title="🔍 Enlarge">
+            <span>🔍</span>
+            <span>🔍 Enlarge</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-footer-bar">
+        <div class="carousel-caption-wrapper">
+          <span class="carousel-counter">1 / 1</span>
+          <span class="carousel-caption"></span>
+        </div>
+      </div>
+
+      <div class="carousel-dots" aria-hidden="true"></div>
+
+      <div class="carousel-thumbnails" aria-label="Screenshot thumbnails">
+        <button type="button" class="carousel-thumb-btn active" aria-label="View Huginn • Monitoring Dashboard">
+          <img src="../listing/listing_Huginn_cpp/en_US/Captura%20de%20tela%202026-10-31%20011929.png" alt="Thumb 1" loading="lazy" decoding="async">
+        </button>
+      </div>
+    </section>
+
+    <!-- Grade de Conteúdo -->
+    <div class="app-sections-grid">
+
+      <!-- Visão do Usuário / Negócio -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>🦅</span>
+          <span class="lang-pt">Visão do Usuário & Auditoria Forense</span>
+          <span class="lang-en">End-User Value & Forensic Auditing</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Visibilidade Total, Histórico Confiável e Integridade Absoluta</span>
+          <span class="lang-en">Total Visibility, Dependable History & Absolute Integrity</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O <strong>Huginn</strong> é uma plataforma nativa de alto desempenho desenvolvida em Rust para fornecer visibilidade forense contínua, histórico estruturado e auditoria determinística sobre o sistema de arquivos do Windows. Projetada para desenvolvedores, administradores de sistemas, peritos e profissionais que lidam com dados sensíveis, a ferramenta combina velocidade extrema, precisão cirúrgica e preservação rigorosa de integridade.
+        </p>
+        <p class="section-lead lang-en">
+          <strong>Huginn</strong> is a high-performance native desktop platform written in Rust engineered to provide continuous forensic visibility, structured historical tracking, and deterministic auditing over the Windows file system. Built for software engineers, sysadmins, auditors, and professionals handling sensitive assets, it pairs blazing speed with surgical precision.
+        </p>
+
+        <!-- Banner de Privacidade Local-First -->
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">🔒</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Compromisso Absoluto com a Privacidade Soberana (Local-First)</div>
+            <div class="highlight-banner-title lang-en">Absolute Sovereignty & Privacy Commitment (Local-First)</div>
+            <div class="highlight-banner-text lang-pt">
+              Seus dados nunca saem do seu computador. O Huginn opera 100% offline, sem dependência de nuvem, sem coleta de telemetria, sem criação de contas e sem modelos de inteligência artificial ou de linguagem (LLM/RAG). Toda a inteligência analítica decorre de algoritmos computacionais determinísticos executados diretamente no processador.
+            </div>
+            <div class="highlight-banner-text lang-en">
+              Your data never leaves your computer. Huginn runs 100% offline, with zero cloud dependency, zero telemetry gathering, no mandatory accounts, and without artificial intelligence or LLM/RAG overhead. Every analytic insight stems from deterministic algorithms executed directly on your processor.
+            </div>
+          </div>
+        </div>
+
+        <!-- Grade de Funcionalidades -->
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">⚡</span>
+            <h3 class="feature-title lang-pt">Monitoramento Kernel Assíncrono</h3>
+            <h3 class="feature-title lang-en">Asynchronous Kernel Monitoring</h3>
+            <p class="feature-desc lang-pt">
+              Acompanhamento em tempo real via <code>ReadDirectoryChangesW</code> do Windows com correlação semântica exata para distinguir operações <code>RENAMED</code> e <code>MOVED</code> de criações ou exclusões avulsas.
+            </p>
+            <p class="feature-desc lang-en">
+              Real-time file system notification streams via Win32 <code>ReadDirectoryChangesW</code> with precise semantic correlation to differentiate true <code>RENAMED</code> and <code>MOVED</code> operations from loose deletes.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🗂️</span>
+            <h3 class="feature-title lang-pt">Histórico com 58 Metadados</h3>
+            <h3 class="feature-title lang-en">58-Metadata Category History</h3>
+            <p class="feature-desc lang-pt">
+              Banco SQLite local em modo WAL com escrita desacoplada em background, capturando atributos completos antes e depois de cada alteração com 17 visualizações gráficas nativas.
+            </p>
+            <p class="feature-desc lang-en">
+              Local SQLite database operating in WAL mode with decoupled background writes, indexing 58 metadata categories before and after every single modification with 17 native charts.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🛡️</span>
+            <h3 class="feature-title lang-pt">Segurança & Baseline Criptográfica</h3>
+            <h3 class="feature-title lang-en">Security & Cryptographic Baseline</h3>
+            <p class="feature-desc lang-pt">
+              Linha de base com hashes SHA-256, cálculo determinístico de score de risco (0–100), quarentena segura de arquivos e restauração assistida com verificação de integridade.
+            </p>
+            <p class="feature-desc lang-en">
+              Cryptographic integrity baselines with SHA-256 hashes, deterministic risk scoring (0–100), safe file quarantine, and assisted integrity-verified restorations.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">📊</span>
+            <h3 class="feature-title lang-pt">Exportação Forense Multi-Formato</h3>
+            <h3 class="feature-title lang-en">Multi-Format Forensic Export</h3>
+            <p class="feature-desc lang-pt">
+              Geração de pacotes de evidência consolidados e relatórios técnicos auditáveis em XLSX, CSV, JSON, XML, TXT e SQLite bruto para conformidade e resolução de incidentes.
+            </p>
+            <p class="feature-desc lang-en">
+              Audit-ready evidence package generation and structured technical reports exported to XLSX, CSV, JSON, XML, TXT, and raw SQLite for compliance and incident investigations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Engenharia de Baixo Nível & Arquitetura Rust</span>
+          <span class="lang-en">Low-Level Engineering & Rust Architecture</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Concorrência Segura, Canais Crossbeam e Aceleração GPU</span>
+          <span class="lang-en">Memory Safety, Crossbeam Channels & GPU Acceleration</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          Construído sob a rigorosa garantia de segurança de memória e ausência de *data races* da linguagem Rust, o Huginn foi desenhado para suportar rajadas massivas de I/O em discos NVMe e volumes de rede sem engasgos ou quedas de quadros na interface.
+        </p>
+        <p class="section-lead lang-en">
+          Engineered under Rust's fearless concurrency and memory safety paradigms, Huginn sustains massive disk I/O bursts across fast NVMe drives and corporate shares without frame stutter or lock contention.
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Pipeline de I/O Kernel Assíncrono</span>
+              <span class="dev-spec-name lang-en">Asynchronous Kernel I/O Pipeline</span>
+              <span class="dev-spec-tag">notify / crossbeam-channel</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Buffers circulares de eventos e canais multi-producer multi-consumer de baixa latência drenam notificações do kernel sem perder eventos durante picos intensos de modificação em lote.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Circular event ring buffers and lock-free multi-producer multi-consumer channels drain Windows kernel notifications reliably during intense multi-file batch operations.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Varredura Paralela Recursiva</span>
+              <span class="dev-spec-name lang-en">Rayon Parallel Baseline Scanner</span>
+              <span class="dev-spec-tag">rayon / work-stealing pool</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Ao iniciar o monitoramento de uma pasta, um pool de threads com divisão de trabalho por *work-stealing* cataloga dezenas de milhares de arquivos por segundo extraindo metadados preliminares.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Baseline snapshots leverage Rayon's parallel work-stealing thread pool to traverse deep directory hierarchies, cataloging tens of thousands of items per second.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Camada de Persistência Desacoplada</span>
+              <span class="dev-spec-name lang-en">Decoupled WAL Persistence Layer</span>
+              <span class="dev-spec-tag">rusqlite + DbWriter Thread</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              A interface gráfica nunca executa operações de escrita síncronas no banco. Todas as inserções são enviadas para um worker dedicado <code>DbWriter</code> com transações agrupadas (batching) em modo WAL.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              The GUI never writes directly to disk. All inserts are routed through a dedicated background <code>DbWriter</code> actor operating transaction batches on SQLite in WAL mode.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Renderização Imediata por Hardware</span>
+              <span class="dev-spec-name lang-en">Hardware-Accelerated Immediate Mode UI</span>
+              <span class="dev-spec-tag">egui / eframe / WGPU</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Interface visual desenhada diretamente na GPU via WGPU/OpenGL com taxa de atualização de 60 FPS fluida, baixíssimo consumo de memória RAM (~35 MB) e renderização vetorial nítida em monitores High-DPI.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Immediate-mode graphical interface drawn directly on the GPU through WGPU/OpenGL, maintaining stable 60 FPS responsiveness, minimal memory usage (~35 MB), and crisp High-DPI scaling.
+            </p>
+          </div>
+        </div>
+
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagem / Padrão</th>
+                <th class="lang-en">Language / Standard</th>
+                <td>
+                  <span class="lang-pt">Rust Nativo (Edição 2021 / 2024, toolchain estável)</span>
+                  <span class="lang-en">Native Rust (2021 / 2024 Edition, stable toolchain)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Framework de GUI</th>
+                <th class="lang-en">GUI Framework</th>
+                <td>
+                  <span class="lang-pt">egui / eframe (Modo Imediato) com aceleração gráfica WGPU / OpenGL</span>
+                  <span class="lang-en">egui / eframe (Immediate Mode) with WGPU / OpenGL GPU acceleration</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Subsistema de Armazenamento</th>
+                <th class="lang-en">Storage Subsystem</th>
+                <td>
+                  <span class="lang-pt">SQLite 3 local (rusqlite, modo WAL, DbWriter assíncrono)</span>
+                  <span class="lang-en">Local SQLite 3 (rusqlite, WAL mode, asynchronous DbWriter actor)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Metadados Catalogados</th>
+                <th class="lang-en">Tracked Metadata</th>
+                <td>
+                  <span class="lang-pt">58 categorias detalhadas antes e depois de cada alteração</span>
+                  <span class="lang-en">58 comprehensive categories indexed before and after each event</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Consumo de Memória</th>
+                <th class="lang-en">RAM Footprint</th>
+                <td>
+                  <span class="lang-pt">~30 a 45 MB em monitoramento contínuo em tempo real</span>
+                  <span class="lang-en">~30 to 45 MB during continuous background surveillance</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Formatos de Exportação</th>
+                <th class="lang-en">Export Formats</th>
+                <td>
+                  <span class="lang-pt">XLSX, CSV, JSON, XML, TXT e banco de dados SQLite (.db)</span>
+                  <span class="lang-en">XLSX, CSV, JSON, XML, TXT, and raw SQLite database (.db)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Distribuição</th>
+                <th class="lang-en">Distribution</th>
+                <td>
+                  <span class="lang-pt">Certificado na Microsoft Store / Código Aberto (GPL-3.0)</span>
+                  <span class="lang-en">Microsoft Store Certified / Open Source (GPL-3.0)</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="linceu-lighthouse.html" class="related-app-card">
+          <img src="../image_perfil/linceu_sem_fundo.png" alt="Linceu Lighthouse" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Linceu Lighthouse</div>
+            <div class="related-app-tag">C++17 • Auditoria Forense</div>
+          </div>
+        </a>
+        <a href="acl-auditor.html" class="related-app-card">
+          <img src="../image_perfil/acl_auditor.png" alt="ACL Auditor" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">ACL Auditor</div>
+            <div class="related-app-tag">C++20 • Permissões NTFS</div>
+          </div>
+        </a>
+        <a href="munin-app.html" class="related-app-card">
+          <img src="../image_perfil/munin.png" alt="Munin App" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Munin App</div>
+            <div class="related-app-tag">C++20 • Leitor de Logs SIMD</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade/Huginn_rs" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://apps.microsoft.com/detail/9NHQTGB26LMK" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>
