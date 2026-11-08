@@ -27,9 +27,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: 46126.4h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total de Linhas Escritas: 509396 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total de Commits: 404 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total de Tempo Trabalhado: 46134.9h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Linhas Escritas: 509536 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: 405 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -53,9 +53,9 @@
 | EcoLZMA_cpp | C++ | 1430.0h | 11917 | 1 | 8.33 l/h |
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
-| fernandoncidade | HTML | 361.7h | 11302 | 256 | 31.25 l/h |
+| fernandoncidade | HTML | 362.5h | 11327 | 257 | 31.25 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
-| Huginn_rs | Rust | 3964.9h | 59474 | 1 | 15.00 l/h |
+| Huginn_rs | Rust | 3972.6h | 59589 | 1 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
 | Linceu_Lighthouse_cpp | C++ | 16068.2h | 133902 | 1 | 8.33 l/h |
 | Munin_App_cpp | C++ | 2077.0h | 17308 | 1 | 8.33 l/h |
@@ -71,7 +71,7 @@
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 45 | 15.00 l/h |
-| **TOTAL** | - | 46126.4h | 509396 | 404 | - |
+| **TOTAL** | - | 46134.9h | 509536 | 405 | - |
 <!-- PUBLIC_REPOS_STATS_PT_END -->
 
 ## 🌻 Sobre Mim 🌻
@@ -387,9 +387,9 @@ Aplicativo desktop em Python/PySide6 para comparar, de forma prática e visual, 
 
 <div align="center">
 
-### 🕒 Total Working Time: 46126.4h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total Lines Written: 509396 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total Commits: 404 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total Working Time: 46134.9h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total Lines Written: 509536 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total Commits: 405 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -413,9 +413,9 @@ Aplicativo desktop em Python/PySide6 para comparar, de forma prática e visual, 
 | EcoLZMA_cpp | C++ | 1430.0h | 11917 | 1 | 8.33 l/h |
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
-| fernandoncidade | HTML | 361.7h | 11302 | 256 | 31.25 l/h |
+| fernandoncidade | HTML | 362.5h | 11327 | 257 | 31.25 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
-| Huginn_rs | Rust | 3964.9h | 59474 | 1 | 15.00 l/h |
+| Huginn_rs | Rust | 3972.6h | 59589 | 1 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
 | Linceu_Lighthouse_cpp | C++ | 16068.2h | 133902 | 1 | 8.33 l/h |
 | Munin_App_cpp | C++ | 2077.0h | 17308 | 1 | 8.33 l/h |
@@ -431,7 +431,7 @@ Aplicativo desktop em Python/PySide6 para comparar, de forma prática e visual, 
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 45 | 15.00 l/h |
-| **TOTAL** | - | 46126.4h | 509396 | 404 | - |
+| **TOTAL** | - | 46134.9h | 509536 | 405 | - |
 <!-- PUBLIC_REPOS_STATS_EN_END -->
 
 ## 🌻 About Me 🌻
