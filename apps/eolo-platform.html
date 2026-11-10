@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eolo Platform • Ações de Vento em Edificações conforme ABNT NBR 6123:2023 em Rust</title>
+  <meta name="description" content="Eolo Platform: Software desktop de engenharia estrutural nativo em Rust para determinação de ações devidas ao vento em edificações segundo a ABNT NBR 6123:2023. Modelagem paramétrica, coeficientes Cpe/Cpi, diagramas de carga 3D acelerados por GPU e memorial de cálculo estrutural auditável.">
+  <link rel="icon" type="image/png" href="../image_perfil/eolo.png">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">Voltar ao Início</span>
+        <span class="lang-en">Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="../image_perfil/eolo.png" alt="Ícone Eolo Platform" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">Rust 2021 / 2024</span>
+            <span class="tech-badge">egui / eframe</span>
+            <span class="tech-badge">WGPU / GPU 3D</span>
+            <span class="tech-badge">ABNT NBR 6123:2023</span>
+            <span class="tech-badge">ABNT NBR 8800:2024</span>
+            <span class="tech-badge platform">Windows 10 / 11 (x64)</span>
+            <span class="tech-badge offline">100% Offline</span>
+          </div>
+
+          <h1 class="app-hero-title">Eolo Platform</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Cálculo e Simulação de Ações Devidas ao Vento em Edificações segundo a ABNT NBR 6123:2023 com Modelagem Paramétrica e Wireframe 3D na GPU.
+          </p>
+          <p class="app-hero-tagline lang-en">
+            Wind Load Calculation and Simulation on Buildings Compliant with ABNT NBR 6123:2023 featuring Parametric Modeling and GPU-Accelerated 3D Wireframes.
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://apps.microsoft.com/detail/9NHTCM7PZ9MM" class="btn-cta btn-cta-store" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.5 3H2v8.5h9.5V3zm1 0V11.5H22V3h-9.5zM2 12.5V21h9.5v-8.5H2zm10.5 0V21H22v-8.5h-9.5z"/></svg>
+              <span class="lang-pt">Obter na Microsoft Store</span>
+              <span class="lang-en">Get from Microsoft Store</span>
+            </a>
+            <a href="https://github.com/fernandoncidade/EoloPlatform_rs" class="btn-cta btn-cta-github" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span class="lang-pt">Ver Repositório no GitHub</span>
+              <span class="lang-en">View GitHub Repository</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[Eolo%20Platform]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrossel de Capturas de Tela (Português) -->
+    <section class="app-carousel-section lang-pt app-carousel" aria-label="Capturas de Tela & Fluxo de Engenharia">
+      <div class="carousel-header">
+        <div>
+          <div class="carousel-title-group">
+            <span class="carousel-title-icon" aria-hidden="true">📸</span>
+            <h2 class="carousel-title">Capturas de Tela & Fluxo de Engenharia</h2>
+            <span class="carousel-badge">5 capturas de tela</span>
+          </div>
+          <p class="carousel-subtitle">Interface profissional em 5 módulos: Fatores Normativos, Geometria Paramétrica, Cargas Críticas, Wireframe 3D na GPU e Memorial ABNT.</p>
+        </div>
+      </div>
+
+      <div class="carousel-viewport-wrapper">
+        <div class="carousel-viewport" tabindex="0" role="region" aria-label="Galeria interativa de imagens">
+          <button type="button" class="carousel-nav-btn prev" aria-label="Imagem Anterior">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          
+          <div class="carousel-track">
+            <div class="carousel-slide" data-caption="Eolo Platform • Localização, Velocidade Básica V0 (Curvas Isopléticas e Estações FAB) e Fatores S1, S2 e S3 (ABNT NBR 6123:2023)">
+              <img src="../listing/listing_EoloPlatform_rs/pt_BR/Captura%20de%20tela%202026-11-08%20021625.png" alt="Localização, Velocidade Básica V0 e Fatores S1, S2, S3" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Eolo Platform • Geometria Paramétrica da Edificação, Tipologia de Cobertura e Coeficientes de Pressão Externa (Cpe / Ce)">
+              <img src="../listing/listing_EoloPlatform_rs/pt_BR/Captura%20de%20tela%202026-11-08%20021635.png" alt="Geometria da Edificação e Coeficientes de Pressão Externa" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Eolo Platform • Aberturas, Permeabilidade, Pressão Interna (Cpi) e Cargas Lineares para Pórticos e Terças (kN/m)">
+              <img src="../listing/listing_EoloPlatform_rs/pt_BR/Captura%20de%20tela%202026-11-08%20021645.png" alt="Aberturas, Pressão Interna e Cargas Lineares" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Eolo Platform • Diagrama de Cargas com Flechas Vetoriais e Wireframe 3D Acelerado na GPU (egui / WGPU)">
+              <img src="../listing/listing_EoloPlatform_rs/pt_BR/Captura%20de%20tela%202026-11-08%20021654.png" alt="Diagrama de Cargas e Wireframe 3D na GPU" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Eolo Platform • Memorial de Cálculo Estrutural em Conformidade ABNT com Exportação HTML, PDF, Markdown e JSON">
+              <img src="../listing/listing_EoloPlatform_rs/pt_BR/Captura%20de%20tela%202026-11-08%20021705.png" alt="Memorial de Cálculo Estrutural e Exportação ABNT" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <button type="button" class="carousel-nav-btn next" aria-label="Próxima Imagem">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="carousel-zoom-trigger" title="🔍 Ampliar">
+            <span>🔍</span>
+            <span>🔍 Ampliar</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-footer-bar">
+        <div class="carousel-caption-wrapper">
+          <span class="carousel-counter">1 / 5</span>
+          <span class="carousel-caption"></span>
+        </div>
+      </div>
+
+      <div class="carousel-dots" aria-hidden="true"></div>
+
+      <div class="carousel-thumbnails" aria-label="Miniaturas das capturas de tela">
+        <button type="button" class="carousel-thumb-btn active" aria-label="Ver Módulo 1 - Localização e V0">
+          <img src="../listing/listing_EoloPlatform_rs/pt_BR/Captura%20de%20tela%202026-11-08%20021625.png" alt="Thumb 1" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Módulo 2 - Geometria e Cpe">
+          <img src="../listing/listing_EoloPlatform_rs/pt_BR/Captura%20de%20tela%202026-11-08%20021635.png" alt="Thumb 2" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Módulo 3 - Aberturas e Cpi">
+          <img src="../listing/listing_EoloPlatform_rs/pt_BR/Captura%20de%20tela%202026-11-08%20021645.png" alt="Thumb 3" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Módulo 4 - Wireframe 3D">
+          <img src="../listing/listing_EoloPlatform_rs/pt_BR/Captura%20de%20tela%202026-11-08%20021654.png" alt="Thumb 4" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Módulo 5 - Memorial de Cálculo">
+          <img src="../listing/listing_EoloPlatform_rs/pt_BR/Captura%20de%20tela%202026-11-08%20021705.png" alt="Thumb 5" loading="lazy" decoding="async">
+        </button>
+      </div>
+    </section>
+
+    <!-- Carrossel de Capturas de Tela (English) -->
+    <section class="app-carousel-section lang-en app-carousel" aria-label="Screenshots & Engineering Workflow">
+      <div class="carousel-header">
+        <div>
+          <div class="carousel-title-group">
+            <span class="carousel-title-icon" aria-hidden="true">📸</span>
+            <h2 class="carousel-title">Screenshots & Engineering Workflow</h2>
+            <span class="carousel-badge">5 screenshots</span>
+          </div>
+          <p class="carousel-subtitle">Professional interface across 5 modules: Code Wind Factors, Parametric Geometry, Critical Loads, GPU 3D Wireframe, and ABNT Reports.</p>
+        </div>
+      </div>
+
+      <div class="carousel-viewport-wrapper">
+        <div class="carousel-viewport" tabindex="0" role="region" aria-label="Interactive image gallery">
+          <button type="button" class="carousel-nav-btn prev" aria-label="Previous Image">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          
+          <div class="carousel-track">
+            <div class="carousel-slide" data-caption="Eolo Platform • Site Location, Basic Wind Speed V0 (Isopleth Curves & FAB Stations), and Factors S1, S2, S3 (ABNT NBR 6123:2023)">
+              <img src="../listing/listing_EoloPlatform_rs/en_US/Captura%20de%20tela%202026-11-08%20021719.png" alt="Site Location, Basic Wind Speed V0, and Factors S1, S2, S3" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Eolo Platform • Parametric Building Geometry, Roof Typology, and External Pressure Coefficients (Cpe / Ce)">
+              <img src="../listing/listing_EoloPlatform_rs/en_US/Captura%20de%20tela%202026-11-08%20021729.png" alt="Parametric Building Geometry & External Coefficients" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Eolo Platform • Openings, Permeability, Internal Pressure (Cpi), and Distributed Linear Loads for Frames & Purlins (kN/m)">
+              <img src="../listing/listing_EoloPlatform_rs/en_US/Captura%20de%20tela%202026-11-08%20021741.png" alt="Openings, Internal Pressure Cpi, and Distributed Linear Loads" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Eolo Platform • Load Diagrams with Vector Arrows and GPU-Accelerated 3D Wireframe (egui / WGPU)">
+              <img src="../listing/listing_EoloPlatform_rs/en_US/Captura%20de%20tela%202026-11-08%20021753.png" alt="Load Diagrams with Vector Arrows and GPU 3D Wireframe" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="Eolo Platform • ABNT Compliant Structural Calculation Report with HTML, PDF, Markdown, and JSON Export">
+              <img src="../listing/listing_EoloPlatform_rs/en_US/Captura%20de%20tela%202026-11-08%20021804.png" alt="Structural Calculation Report & ABNT Export" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <button type="button" class="carousel-nav-btn next" aria-label="Next Image">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="carousel-zoom-trigger" title="🔍 Enlarge">
+            <span>🔍</span>
+            <span>🔍 Enlarge</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-footer-bar">
+        <div class="carousel-caption-wrapper">
+          <span class="carousel-counter">1 / 5</span>
+          <span class="carousel-caption"></span>
+        </div>
+      </div>
+
+      <div class="carousel-dots" aria-hidden="true"></div>
+
+      <div class="carousel-thumbnails" aria-label="Screenshot thumbnails">
+        <button type="button" class="carousel-thumb-btn active" aria-label="View Module 1 - Location and V0">
+          <img src="../listing/listing_EoloPlatform_rs/en_US/Captura%20de%20tela%202026-11-08%20021719.png" alt="Thumb 1" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Module 2 - Geometry and Cpe">
+          <img src="../listing/listing_EoloPlatform_rs/en_US/Captura%20de%20tela%202026-11-08%20021729.png" alt="Thumb 2" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Module 3 - Openings and Cpi">
+          <img src="../listing/listing_EoloPlatform_rs/en_US/Captura%20de%20tela%202026-11-08%20021741.png" alt="Thumb 3" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Module 4 - 3D Wireframe">
+          <img src="../listing/listing_EoloPlatform_rs/en_US/Captura%20de%20tela%202026-11-08%20021753.png" alt="Thumb 4" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Module 5 - Calculation Report">
+          <img src="../listing/listing_EoloPlatform_rs/en_US/Captura%20de%20tela%202026-11-08%20021804.png" alt="Thumb 5" loading="lazy" decoding="async">
+        </button>
+      </div>
+    </section>
+
+    <!-- Grade de Conteúdo -->
+    <div class="app-sections-grid">
+
+      <!-- Visão do Usuário / Engenharia -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>💨</span>
+          <span class="lang-pt">Visão do Engenheiro & Conformidade Normativa</span>
+          <span class="lang-en">Engineering Value & Code Compliance</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Precisão Matemática, Simulação 3D e Rigor da ABNT NBR 6123:2023</span>
+          <span class="lang-en">Mathematical Rigor, 3D Simulation & ABNT NBR 6123:2023 Compliance</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O <strong>Eolo Platform</strong> é um software de engenharia estrutural de alto desempenho desenvolvido em Rust para automatizar o dimensionamento e a verificação de forças e pressões devidas ao vento em galpões industriais e edificações em geral. Alinhado integralmente às prescrições da norma brasileira <strong>ABNT NBR 6123:2023</strong> e <strong>ABNT NBR 8800:2024</strong>, ele substitui tabelas manuais propensas a erro por um motor computacional exato, paramétrico e visual.
+        </p>
+        <p class="section-lead lang-en">
+          <strong>Eolo Platform</strong> is a high-performance structural engineering software engineered in native Rust to automate the calculation, simulation, and verification of wind loads on industrial warehouses and general buildings. Fully compliant with Brazilian standards <strong>ABNT NBR 6123:2023</strong> and <strong>ABNT NBR 8800:2024</strong>, it replaces error-prone manual interpolation with a parametric, exact, and GPU-accelerated computing engine.
+        </p>
+
+        <!-- Banner de Privacidade Local-First -->
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">🔒</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Privacidade Soberana & Execução 100% Offline (Local-First)</div>
+            <div class="highlight-banner-title lang-en">Sovereign Privacy & 100% Offline Execution (Local-First)</div>
+            <div class="highlight-banner-text lang-pt">
+              Todos os modelos geométricos, cálculos e memoriais são processados localmente na sua máquina. O Eolo Platform não requer conexão com a internet, não coleta telemetria nem envia projetos proprietários para a nuvem. Toda a inteligência decorre de algoritmos analíticos determinísticos e aceleração gráfica local.
+            </div>
+            <div class="highlight-banner-text lang-en">
+              All geometric models, structural analyses, and calculation reports are executed locally on your machine. Eolo Platform requires no internet connection, collects zero telemetry, and never uploads proprietary designs to the cloud. All computations stem from deterministic analytical algorithms and local GPU acceleration.
+            </div>
+          </div>
+        </div>
+
+        <!-- Grade de Funcionalidades -->
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">🌪️</span>
+            <h3 class="feature-title lang-pt">Vento Básico & Fatores S<sub>1</sub>, S<sub>2</sub>, S<sub>3</sub></h3>
+            <h3 class="feature-title lang-en">Basic Wind & S<sub>1</sub>, S<sub>2</sub>, S<sub>3</sub> Factors</h3>
+            <p class="feature-desc lang-pt">
+              Determinação do vento básico <em>V</em><sub>0</sub> via mapa de curvas isopléticas ou base integrada de estações meteorológicas da FAB (Tabela C.1). Cálculo exato dos fatores <em>S</em><sub>1</sub> (relevo), <em>S</em><sub>2</sub> (rugosidade I a V e classes dimensionais A/B/C) e <em>S</em><sub>3</sub> (estatístico/ocupação) com redução de 0,92 para elementos de vedação.
+            </p>
+            <p class="feature-desc lang-en">
+              Determination of basic wind speed <em>V</em><sub>0</sub> via isopleth curve lookup or integrated FAB weather stations (Table C.1). Exact evaluation of factors <em>S</em><sub>1</sub> (topography), <em>S</em><sub>2</sub> (roughness categories I to V and dimensional classes A/B/C), and <em>S</em><sub>3</sub> (statistical group) with 0.92 reduction factor for cladding elements.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">📐</span>
+            <h3 class="feature-title lang-pt">Geometria Paramétrica de Coberturas</h3>
+            <h3 class="feature-title lang-en">Parametric Roof Geometry</h3>
+            <p class="feature-desc lang-pt">
+              Modelagem ágil de galpões com telhado a duas águas simétrico (Tabela 7), uma água (Tabela 8), coberturas em arco/abóbadas cilíndricas, sheds industriais com lanternim e marquises isoladas. Identificação automática de zonas de alta sucção nas bordas e oitões.
+            </p>
+            <p class="feature-desc lang-en">
+              Rapid parametric sizing of duo-pitch symmetric gable warehouses (Table 7), mono-pitch buildings (Table 8), curved cylindrical vaults, industrial sawtooth sheds with ventilation monitors, and isolated canopies. Automatic classification of leading-edge high suction zones.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">⚖️</span>
+            <h3 class="feature-title lang-pt">Pressão Interna (C<sub>pi</sub>) & Cargas Lineares</h3>
+            <h3 class="feature-title lang-en">Internal Pressure (C<sub>pi</sub>) & Linear Loads</h3>
+            <p class="feature-desc lang-pt">
+              Avaliação de permeabilidade e aberturas dominantes para encontrar a combinação mais crítica de sobrepressão e sucção (Δ<em>p</em>). Fornece cargas distribuídas lineares (kN/m) em pilares de barlavento/sotavento, vigas e terças prontas para Ftool, SAP2000, CYPE e Eberick.
+            </p>
+            <p class="feature-desc lang-en">
+              Evaluates wall permeability and dominant openings to establish critical governing pressure/suction envelopes (Δ<em>p</em>). Computes distributed linear line loads (kN/m) for windward/leeward columns, rafters, and purlins ready for immediate structural analysis in Ftool, SAP2000, and CYPE.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">📊</span>
+            <h3 class="feature-title lang-pt">Wireframe 3D na GPU & Memorial ABNT</h3>
+            <h3 class="feature-title lang-en">GPU 3D Wireframe & ABNT Reports</h3>
+            <p class="feature-desc lang-pt">
+              Visualização tridimensional acelerada na GPU com flechas vetoriais de carga para incidências a 0° e 90°, corte transversal 2D, cálculo de arraste global (<em>F</em><sub>a</sub>) e momento de tombamento, além de exportação completa do memorial em HTML/PDF, Markdown e JSON.
+            </p>
+            <p class="feature-desc lang-en">
+              Interactive 3D GPU-accelerated wireframe rendering featuring load vector arrows for 0° and 90° angles, 2D cross-section view, global drag force (<em>F</em><sub>a</sub>) and overturning moments, alongside full audit-ready calculation reports in HTML/PDF, Markdown, and JSON.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores e Engenheiros -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Engenharia de Baixo Nível & Arquitetura Rust</span>
+          <span class="lang-en">Low-Level Engineering & Rust Architecture</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Segurança de Memória, Renderização Imediata e Simulação Vetorial</span>
+          <span class="lang-en">Memory Safety, Immediate Mode GUI & Vector Simulation</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          Desenvolvido inteiramente na linguagem de sistemas Rust, o Eolo Platform garante desempenho em tempo real sem pausas de coleta de lixo (*garbage collector*), previsibilidade de memória estrita e renderização visual fluida impulsionada por WGPU.
+        </p>
+        <p class="section-lead lang-en">
+          Built completely in systems-level Rust, Eolo Platform delivers real-time response times free of garbage collector pauses, strict memory footprint predictability, and fluid graphical rendering powered by WGPU.
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Motor Matemático Analítico Determinístico</span>
+              <span class="dev-spec-name lang-en">Deterministic Analytical Mathematical Engine</span>
+              <span class="dev-spec-tag">Rust Core / Zero-Alloc</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Algoritmos normativos puros em Rust compilados de forma nativa realizam todas as interpolações de tabelas da NBR 6123, equações de rajada atmosférica e envoltórias de pressão em nanossegundos.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Pure analytical algorithms compiled natively perform all NBR 6123 table interpolations, atmospheric boundary layer equations, and pressure envelopes in sub-millisecond execution times.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Visualizador 3D Acelerado por Hardware</span>
+              <span class="dev-spec-name lang-en">Hardware-Accelerated 3D Wireframe Viewport</span>
+              <span class="dev-spec-tag">egui / eframe / WGPU</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Interface gráfica em modo imediato desenhando a estrutura de aço, terças, pilares e flechas vetoriais cromáticas diretamente na GPU com taxas de quadros estáveis a 60 FPS e baixo consumo de recursos.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Immediate-mode user interface rendering structural steel framing, purlins, columns, and chromatic load vectors directly on the GPU at steady 60 FPS with minimal system overhead.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Banco de Estações FAB & Curvas Isopléticas</span>
+              <span class="dev-spec-name lang-en">FAB Weather Station Database & Isopleth Modeling</span>
+              <span class="dev-spec-tag">Embedded Datasets</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Estruturas de dados embutidas sem necessidade de banco de dados externo contêm todas as cidades e estações meteorológicas oficiais da Tabela C.1 da ABNT NBR 6123 para consulta instantânea offline.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Embedded binary data structures requiring no external database servers contain all official FAB weather stations from Table C.1 of ABNT NBR 6123 for instantaneous offline retrieval.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Gerador de Memoriais Técnicos Multi-Formato</span>
+              <span class="dev-spec-name lang-en">Multi-Format Engineering Report Generator</span>
+              <span class="dev-spec-tag">HTML / PDF / Markdown / JSON</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Pipelines de geração de documentos estruturados para emissão imediata de memoriais de cálculo completos com referências aos itens da norma, fórmulas aplicadas e dados para aprovação municipal ou ART.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Structured documentation pipeline producing audit-ready calculation memorials with explicit normative clause references, equations, and engineering data ready for technical submission.
+            </p>
+          </div>
+        </div>
+
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagem / Padrão</th>
+                <th class="lang-en">Language / Standard</th>
+                <td>
+                  <span class="lang-pt">Rust Nativo (Edição 2021 / 2024, toolchain estável)</span>
+                  <span class="lang-en">Native Rust (2021 / 2024 Edition, stable toolchain)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Framework de GUI</th>
+                <th class="lang-en">GUI Framework</th>
+                <td>
+                  <span class="lang-pt">egui / eframe (Modo Imediato) com aceleração gráfica WGPU / DirectX 12 / Vulkan</span>
+                  <span class="lang-en">egui / eframe (Immediate Mode) with WGPU / DirectX 12 / Vulkan GPU acceleration</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Normas Técnicas Atendidas</th>
+                <th class="lang-en">Design Codes Applied</th>
+                <td>
+                  <span class="lang-pt">ABNT NBR 6123:2023 (Vento) e ABNT NBR 8800:2024 (Estruturas de Aço)</span>
+                  <span class="lang-en">ABNT NBR 6123:2023 (Wind actions) and ABNT NBR 8800:2024 (Steel design)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Tipologias de Cobertura</th>
+                <th class="lang-en">Supported Roof Typologies</th>
+                <td>
+                  <span class="lang-pt">Duas Águas Simétrico, Uma Água, Arco Cilíndrico, Marquise Isolada e Shed com Lanternim</span>
+                  <span class="lang-en">Symmetric Duo-Pitch, Mono-Pitch, Cylindrical Arch, Isolated Canopy, and Sawtooth Shed</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Visualização Gráfica</th>
+                <th class="lang-en">Graphical Visualization</th>
+                <td>
+                  <span class="lang-pt">Wireframe 3D interativo na GPU com flechas vetoriais de carga e corte transversal 2D</span>
+                  <span class="lang-en">Interactive 3D GPU wireframe with load vector arrows and 2D cross-section view</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Integração Estrutural</th>
+                <th class="lang-en">Structural Software Interop</th>
+                <td>
+                  <span class="lang-pt">Reações lineares (kN/m) prontas para Ftool, SAP2000, CYPE, Robot e Eberick</span>
+                  <span class="lang-en">Distributed line loads (kN/m) formatted for Ftool, SAP2000, CYPE, Robot, and Eberick</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Formatos de Exportação</th>
+                <th class="lang-en">Export Formats</th>
+                <td>
+                  <span class="lang-pt">Memorial em HTML/PDF, Markdown (.md), JSON e área de transferência</span>
+                  <span class="lang-en">Calculation memorial in HTML/PDF, Markdown (.md), JSON, and clipboard</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Distribuição / Licença</th>
+                <th class="lang-en">Distribution / License</th>
+                <td>
+                  <span class="lang-pt">Certificado na Microsoft Store / Código Aberto no GitHub (GPL-3.0)</span>
+                  <span class="lang-en">Microsoft Store Certified / Open Source on GitHub (GPL-3.0)</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="concrete_mix_design.html" class="related-app-card">
+          <img src="../image_perfil/concrete_mix_design.png" alt="Concrete Mix Designer" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Concrete Mix Designer</div>
+            <div class="related-app-tag">C++20 • Dosagem de Concreto NBR</div>
+          </div>
+        </a>
+        <a href="huginn.html" class="related-app-card">
+          <img src="../image_perfil/huginn.png" alt="Huginn Sentinel" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Huginn Sentinel</div>
+            <div class="related-app-tag">Rust • Monitoramento & Integridade</div>
+          </div>
+        </a>
+        <a href="acl-auditor.html" class="related-app-card">
+          <img src="../image_perfil/acl_auditor.png" alt="ACL Auditor" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">ACL Auditor</div>
+            <div class="related-app-tag">C++20 • Permissões NTFS</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade/EoloPlatform_rs" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://apps.microsoft.com/detail/9NHTCM7PZ9MM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>

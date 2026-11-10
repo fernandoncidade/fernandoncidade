@@ -100,7 +100,8 @@ Sou desenvolvedor de software com experiência sólida em C++ (C++17/C++20), Pyt
 | **Linceu Lighthouse** | <img src="image_perfil/linceu_sem_fundo.png" width="44"/> | Plataforma local de inteligência, histórico e auditoria de arquivos (FIM) | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NN8Z5Z700TM) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp) |
 | **ACL Auditor** | <img src="image_perfil/acl_auditor.png" width="44"/> | Auditoria de permissões NTFS & SMB, cálculo de acesso efetivo e riscos | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NX5XZLL8WXW) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/ACL_Auditor_cpp) |
 | **Munin App** | <img src="image_perfil/munin.png" width="44"/> | Leitor de logs massivos ultraveloz com Memory-Mapped Files e SIMD | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9PP4GVHR5THC) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Munin_App_cpp) |
-| **Huginn** | <img src="image_perfil/huginn.png" width="44"/> | Monitoramento contínuo de arquivos, histórico com 58 metadados e auditoria determinística | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NHQTGB26LMK) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Huginn_rs) |
+| **Huginn Sentinel** | <img src="image_perfil/huginn.png" width="44"/> | Monitoramento contínuo de arquivos, histórico com 58 metadados e auditoria determinística | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NHQTGB26LMK) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/HuginnSentinel_rs) |
+| **Eolo Platform** | <img src="image_perfil/eolo.png" width="44"/> | Ações de vento em edificações (ABNT NBR 6123:2023), modelagem 3D e memorial de cálculo | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NHTCM7PZ9MM) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/EoloPlatform_rs) |
 | **Concrete Mix Designer** | <img src="image_perfil/concrete_mix_design.png" width="44"/> | Dosagem experimental e racional de concreto pelo Método IPT/EPUSP e normas ABNT NBR | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9PB3M1HPF8M4) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp) |
 | **EisenPo** | <img src="image_perfil/eisenpo.png" width="44"/> | Gestão de tarefas por Matriz de Eisenhower com módulos Pomodoro e Feynman | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9MW96RN044TT) | — |
 | **EISENHOWER ORGANIZER** | <img src="image_perfil/eisenhower.png" width="44"/> | Organização e priorização ágil de tarefas pela Matriz de Eisenhower | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Disponível-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9P289X0185C3) | — |
@@ -167,21 +168,21 @@ Visualizador e analisador de logs massivos de altíssimo desempenho para Windows
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9PP4GVHR5THC)
 - ![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![SIMD AVX2](https://img.shields.io/badge/SIMD-AVX2%20%2F%20SSE4.2-orange) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
 
-## 🦅 Destaque de Projeto: Huginn
+## 🦅 Destaque de Projeto: Huginn Sentinel
 
 <div align="center">
-  <a href="https://github.com/fernandoncidade/Huginn_rs">
-    <img src="image_perfil/huginn.png" alt="Huginn Logo" width="220"/>
+  <a href="https://github.com/fernandoncidade/HuginnSentinel_rs">
+    <img src="image_perfil/huginn.png" alt="Huginn Sentinel Logo" width="220"/>
   </a>
 </div>
 
-**Huginn**  
+**Huginn Sentinel**  
 Plataforma desktop nativa em **Rust (2021/2024)** com interface gráfica em modo imediato via **egui/eframe** e aceleração gráfica por hardware (OpenGL/WGPU) para visibilidade total, histórico estruturado e auditoria determinística do sistema de arquivos do Windows.
 - **Monitoramento Contínuo em Tempo Real:** Captura via APIs Win32 assíncronas (`ReadDirectoryChangesW`, engine `notify` e canais `crossbeam-channel`), com correlação semântica precisa de eventos (`RENAMED` e `MOVED` reais sem falsos registros de exclusão).
-- **Histórico Pesquisável e Inteligência sem IA:** Banco de dados relacional SQLite local (`rusqlite` em modo WAL, escrita desacoplada em background com `DbWriter`), enriquecido com 58 categorias abrangentes de metadados antes e depois de cada alteração e 17 visualizações gráficas nativas.
+- **Histórico Pesquisável e Inteligência sem IA:** Banco de dados relacional SQLite local (`rusqlite` em modo WAL, escrita desacoplada em background com `DbWriter`), enriquecido com 58 categorias abrangentes de metadados antes e depois de cada alteração, análises estatísticas com boxplots de dispersão volumétrica e 17 visualizações gráficas nativas.
 - **Segurança, Auditoria e Integridade:** Linha de base criptográfica (hashes SHA-256), cálculo determinístico de score de risco (0–100), quarentena segura de arquivos e exportação forense (XLSX, CSV, JSON, XML, TXT e SQLite).
 - **100% Local & Offline (Local-First):** Zero nuvem, zero telemetria, sem contas e sem modelos de IA/LLM — total soberania de dados.
-- [Repositório GitHub: Huginn_rs](https://github.com/fernandoncidade/Huginn_rs)
+- [Repositório GitHub: HuginnSentinel_rs](https://github.com/fernandoncidade/HuginnSentinel_rs)
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9NHQTGB26LMK)
 - ![Rust](https://img.shields.io/badge/Rust-2021%2F2024-dea584?logo=rust) ![egui](https://img.shields.io/badge/GUI-egui%20%2F%20eframe-orange) ![WGPU](https://img.shields.io/badge/Graphics-WGPU%20%2F%20OpenGL-red) ![Windows](https://img.shields.io/badge/Platform-Windows-0078D4?logo=windows) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
 
@@ -203,6 +204,26 @@ Aplicação desktop de alta precisão em **C++20 e Qt6** para dosagem experiment
 - [Repositório GitHub: Concrete_Mix_Designer_cpp](https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp)
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9PB3M1HPF8M4)
 - ![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![Civil Engineering](https://img.shields.io/badge/Engineering-Civil%20%2F%20Concrete-orange) ![NBR](https://img.shields.io/badge/Standards-ABNT%20NBR-blue) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
+
+## 💨 Destaque de Projeto: Eolo Platform
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/EoloPlatform_rs">
+    <img src="image_perfil/eolo.png" alt="Eolo Platform Logo" width="220"/>
+  </a>
+</div>
+
+**Eolo Platform**  
+Plataforma desktop de engenharia estrutural nativa em **Rust (2021/2024)** com interface reativa em **egui/eframe** e aceleração gráfica por hardware (WGPU/GPU) para cálculo, simulação e determinação de **ações devidas ao vento em edificações** em rigorosa conformidade com a norma **ABNT NBR 6123:2023** e **ABNT NBR 8800:2024**.
+- **Parâmetros Meteorológicos e Fatores de Vento:** Velocidade básica V₀ por curvas isopléticas e banco de dados integrado de estações FAB (Tabela C.1), fatores S₁ (topográfico), S₂ (rugosidade do terreno I a V e classes dimensionais A/B/C) e S₃ (fator estatístico/ocupação), determinando a velocidade característica V_k e a pressão dinâmica q (kN/m² e kgf/m²).
+- **Geometria Paramétrica e Tipologias Estruturais:** Suporte a galpões com telhado a duas águas simétrico (Tabela 7), uma água (Tabela 8), coberturas em arco/abóbadas cilíndricas, sheds industriais com lanternim e marquises isoladas. Determinação automatizada de coeficientes de pressão externa (Cpe) para paredes e telhados com zonas de alta sucção nas bordas e oitões.
+- **Aberturas, Permeabilidade e Coeficiente Interno (Cpi):** Modelagem de faces permeáveis e aberturas dominantes, cálculo das combinações críticas de sobrepressão e sucção/arrancamento (Δp) e conversão em cargas distribuídas lineares (kN/m) para pórticos e terças prontas para softwares de análise matricial (Ftool, SAP2000, CYPE, Eberick).
+- **Diagrama de Cargas com Wireframe 3D na GPU:** Renderização interativa do modelo estrutural em 3D e corte transversal 2D com flechas vetoriais cromáticas de sobrepressão e arrancamento nas terças, pilares e vigas para incidências a 0° e 90°, além de cálculo do arraste global (F_a) e momento de tombamento.
+- **Memorial de Cálculo e Exportação Estrutural:** Geração instantânea de memorial de cálculo completo e auditável com exportação em HTML/PDF, Markdown (.md), JSON e cópia de texto.
+- **100% Local-First & Offline:** Totalmente autônomo, sem telemetria, sem nuvem e sem bibliotecas externas pesadas.
+- [Repositório GitHub: EoloPlatform_rs](https://github.com/fernandoncidade/EoloPlatform_rs)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9NHTCM7PZ9MM)
+- ![Rust](https://img.shields.io/badge/Rust-2021%2F2024-dea584?logo=rust) ![egui](https://img.shields.io/badge/GUI-egui%20%2F%20eframe-orange) ![WGPU](https://img.shields.io/badge/Graphics-WGPU%20%2F%20OpenGL-red) ![ABNT NBR 6123](https://img.shields.io/badge/Standards-ABNT%20NBR%206123%3A2023-blue) ![Civil Engineering](https://img.shields.io/badge/Engineering-Civil%20%2F%20Structural-orange) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
 
 ## 📋 Destaque de Projeto: EisenPo
 
@@ -308,7 +329,8 @@ Aplicativo desktop em Python/PySide6 para comparar, de forma prática e visual, 
 - [**Linceu Lighthouse**](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp): Plataforma local de inteligência, histórico e auditoria determinística de atividades de arquivos no Windows (C++17 / Qt6 / SQLite).
 - [**ACL Auditor**](https://github.com/fernandoncidade/ACL_Auditor_cpp): Auditor enterprise-grade de permissões NTFS e compartilhamentos SMB com análise de acesso efetivo e riscos (C++20 / Qt 6.11).
 - [**Munin App**](https://github.com/fernandoncidade/Munin_App_cpp): Visualizador de logs massivos ultraveloz com Win32 Memory-Mapped Files e aceleração SIMD AVX2/SSE4.2 (C++20 / Qt6).
-- [**Huginn**](https://github.com/fernandoncidade/Huginn_rs): Plataforma local em Rust (egui/WGPU/SQLite) para monitoramento em tempo real, inteligência e auditoria determinística do sistema de arquivos do Windows.
+- [**Huginn Sentinel**](https://github.com/fernandoncidade/HuginnSentinel_rs): Plataforma local em Rust (egui/WGPU/SQLite) para monitoramento em tempo real, inteligência e auditoria determinística do sistema de arquivos do Windows.
+- [**Eolo Platform**](https://github.com/fernandoncidade/EoloPlatform_rs): Plataforma de engenharia em Rust (egui/WGPU) para cálculo de ações de vento em edificações conforme ABNT NBR 6123:2023 com diagramas de carga 3D.
 - [**Concrete Mix Designer**](https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp): Software de alta precisão em C++20/Qt6 para dosagem racional de concreto pelo Método IPT/EPUSP e normas ABNT NBR.
 - [**Compression Manager**](https://github.com/fernandoncidade/Compression_Manager): Aplicativo completo de backup e compressão de arquivos com interface gráfica intuitiva.
 - [**Economia APP**](https://github.com/fernandoncidade/Economia_APP): Ferramenta para cálculos financeiros e Engenharia Econômica com passos detalhados e histórico.
@@ -461,7 +483,8 @@ I'm a software developer with solid experience in C++ (C++17/C++20), Python, and
 | **Linceu Lighthouse** | <img src="image_perfil/linceu_sem_fundo.png" width="44"/> | Local file activity intelligence, history, and audit platform (FIM) | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NN8Z5Z700TM) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp) |
 | **ACL Auditor** | <img src="image_perfil/acl_auditor.png" width="44"/> | Windows NTFS & SMB permission auditor, effective access & risk detection | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NX5XZLL8WXW) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/ACL_Auditor_cpp) |
 | **Munin App** | <img src="image_perfil/munin.png" width="44"/> | Ultra-high performance massive log reader with Win32 Memory-Mapped Files & SIMD | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9PP4GVHR5THC) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Munin_App_cpp) |
-| **Huginn** | <img src="image_perfil/huginn.png" width="44"/> | Continuous file monitoring, 58 metadata history, and deterministic audit | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NHQTGB26LMK) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Huginn_rs) |
+| **Huginn Sentinel** | <img src="image_perfil/huginn.png" width="44"/> | Continuous file monitoring, 58 metadata history, and deterministic audit | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NHQTGB26LMK) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/HuginnSentinel_rs) |
+| **Eolo Platform** | <img src="image_perfil/eolo.png" width="44"/> | Wind loads on buildings (ABNT NBR 6123:2023), 3D GPU wireframe, and engineering reports | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9NHTCM7PZ9MM) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/EoloPlatform_rs) |
 | **Concrete Mix Designer** | <img src="image_perfil/concrete_mix_design.png" width="44"/> | Experimental & rational concrete mix proportioning via IPT/EPUSP & ABNT NBRs | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9PB3M1HPF8M4) | [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?logo=github)](https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp) |
 | **EisenPo** | <img src="image_perfil/eisenpo.png" width="44"/> | Eisenhower Matrix task management with integrated Pomodoro & Feynman modules | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9MW96RN044TT) | — |
 | **EISENHOWER ORGANIZER** | <img src="image_perfil/eisenhower.png" width="44"/> | Agile task organization & prioritization using the Eisenhower Matrix | [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Available-0078D4?logo=microsoft)](https://apps.microsoft.com/detail/9P289X0185C3) | — |
@@ -528,21 +551,21 @@ High-performance massive log reader and diagnostic analyzer for Windows, designe
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9PP4GVHR5THC)
 - ![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![SIMD AVX2](https://img.shields.io/badge/SIMD-AVX2%20%2F%20SSE4.2-orange) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
 
-## 🦅 Project Highlight: Huginn
+## 🦅 Project Highlight: Huginn Sentinel
 
 <div align="center">
-  <a href="https://github.com/fernandoncidade/Huginn_rs">
-    <img src="image_perfil/huginn.png" alt="Huginn Logo" width="220"/>
+  <a href="https://github.com/fernandoncidade/HuginnSentinel_rs">
+    <img src="image_perfil/huginn.png" alt="Huginn Sentinel Logo" width="220"/>
   </a>
 </div>
 
-**Huginn**  
+**Huginn Sentinel**  
 Native desktop platform built in **Rust (2021/2024)** featuring immediate-mode GUI via **egui/eframe** and hardware acceleration (WGPU/OpenGL) for total forensic visibility, structured history, and deterministic auditing over the Windows file system.
 - **Continuous Real-Time Monitoring:** Captures system events via asynchronous Win32 APIs (`ReadDirectoryChangesW`, `notify` engine, and `crossbeam-channel` queues) with true semantic correlation for `RENAMED` and `MOVED` operations without false delete noise.
-- **Searchable History & AI-Free Intelligence:** Automatic local SQLite database in WAL mode with decoupled background writes via `DbWriter`, indexing 58 comprehensive metadata categories before and after each change, accompanied by 17 native charts.
+- **Searchable History & AI-Free Intelligence:** Automatic local SQLite database in WAL mode with decoupled background writes via `DbWriter`, indexing 58 comprehensive metadata categories before and after each change, volumetric dispersion boxplot analytics, and 17 native charts.
 - **Security, Integrity & Forensic Evidence:** Cryptographic baseline with SHA-256 hashes, deterministic risk scoring (0–100), safe file quarantine, and forensic evidence packaging (XLSX, CSV, JSON, XML, TXT, and raw SQLite).
 - **100% Local & Offline (Local-First):** Zero cloud, zero telemetry, no mandatory accounts, and no AI/LLM models — absolute privacy and data sovereignty.
-- [GitHub Repository: Huginn_rs](https://github.com/fernandoncidade/Huginn_rs)
+- [GitHub Repository: HuginnSentinel_rs](https://github.com/fernandoncidade/HuginnSentinel_rs)
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9NHQTGB26LMK)
 - ![Rust](https://img.shields.io/badge/Rust-2021%2F2024-dea584?logo=rust) ![egui](https://img.shields.io/badge/GUI-egui%20%2F%20eframe-orange) ![WGPU](https://img.shields.io/badge/Graphics-WGPU%20%2F%20OpenGL-red) ![Windows](https://img.shields.io/badge/Platform-Windows-0078D4?logo=windows) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
 
@@ -564,6 +587,26 @@ High-precision civil engineering desktop application engineered in **C++20 and Q
 - [GitHub Repository: Concrete_Mix_Designer_cpp](https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp)
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9PB3M1HPF8M4)
 - ![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![Civil Engineering](https://img.shields.io/badge/Engineering-Civil%20%2F%20Concrete-orange) ![NBR](https://img.shields.io/badge/Standards-ABNT%20NBR-blue) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
+
+## 💨 Project Highlight: Eolo Platform
+
+<div align="center">
+  <a href="https://github.com/fernandoncidade/EoloPlatform_rs">
+    <img src="image_perfil/eolo.png" alt="Eolo Platform Logo" width="220"/>
+  </a>
+</div>
+
+**Eolo Platform**  
+High-performance structural engineering desktop application written in native **Rust (2021/2024)** featuring immediate-mode GUI via **egui/eframe** and hardware acceleration (WGPU/GPU) for calculating, simulating, and verifying **wind actions on buildings** in strict compliance with Brazilian codes **ABNT NBR 6123:2023** and **ABNT NBR 8800:2024**.
+- **Meteorological Parameters & Wind Factors:** Basic wind speed V₀ via isopleth map lookups and integrated official FAB weather station datasets (Table C.1), factors S₁ (topographic relief), S₂ (terrain roughness categories I to V and dimensional classes A/B/C), and S₃ (occupancy statistical factor), evaluating characteristic wind speed V_k and dynamic pressure q (kN/m² and kgf/m²).
+- **Parametric Geometry & Roof Typologies:** Sizing and analysis for symmetric duo-pitch gable warehouses (Table 7), mono-pitch roofs (Table 8), curved cylindrical arch vaults, industrial sawtooth sheds with ridge monitors, and isolated canopies. Automated derivation of external pressure coefficients (Cpe) for walls and roofs with leading-edge high suction zones.
+- **Openings, Permeability & Internal Pressure (Cpi):** Accurate modeling of permeable wall ratios and dominant openings, establishing critical governing pressure/suction load combinations (Δp) and converting them into distributed linear reactions (kN/m) for columns, rafters, and purlins formatted for matrix structural analysis software (Ftool, SAP2000, CYPE, Robot, Eberick).
+- **GPU-Accelerated 3D Wireframe & Load Diagrams:** Real-time 3D interactive structural model rendering with chromatic load vector arrows for 0° and 90° wind angles, 2D cross-section viewport, global drag force (F_a) and overturning moments calculation.
+- **Automated Engineering Calculation Memorials:** Instant generation of comprehensive and audit-ready calculation reports exported natively to HTML/PDF, Markdown (.md), JSON, and clipboard text.
+- **100% Local-First & Offline:** Completely standalone, zero telemetry, no cloud dependencies, and no heavy runtime overhead.
+- [GitHub Repository: EoloPlatform_rs](https://github.com/fernandoncidade/EoloPlatform_rs)
+- [Microsoft Web Store](https://apps.microsoft.com/detail/9NHTCM7PZ9MM)
+- ![Rust](https://img.shields.io/badge/Rust-2021%2F2024-dea584?logo=rust) ![egui](https://img.shields.io/badge/GUI-egui%20%2F%20eframe-orange) ![WGPU](https://img.shields.io/badge/Graphics-WGPU%20%2F%20OpenGL-red) ![ABNT NBR 6123](https://img.shields.io/badge/Standards-ABNT%20NBR%206123%3A2023-blue) ![Civil Engineering](https://img.shields.io/badge/Engineering-Civil%20%2F%20Structural-orange) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
 
 ## 📋 Project Highlight: EisenPo
 
@@ -669,7 +712,8 @@ Python/PySide6 desktop app to easily audit and compare your GitHub connections (
 - [**Linceu Lighthouse**](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp): Local file activity intelligence, history, and deterministic audit platform for Windows (C++17 / Qt6 / SQLite).
 - [**ACL Auditor**](https://github.com/fernandoncidade/ACL_Auditor_cpp): Enterprise-grade Windows NTFS & SMB permission auditor with effective access explanation and risk detection (C++20 / Qt 6.11).
 - [**Munin App**](https://github.com/fernandoncidade/Munin_App_cpp): Ultra-fast massive log viewer and analyzer leveraging Win32 Memory-Mapped Files and SIMD acceleration (C++20 / Qt6).
-- [**Huginn**](https://github.com/fernandoncidade/Huginn_rs): Local Rust platform (egui/WGPU/SQLite) for real-time monitoring, intelligence, and deterministic Windows file system auditing.
+- [**Huginn Sentinel**](https://github.com/fernandoncidade/HuginnSentinel_rs): Local Rust platform (egui/WGPU/SQLite) for real-time monitoring, intelligence, and deterministic Windows file system auditing.
+- [**Eolo Platform**](https://github.com/fernandoncidade/EoloPlatform_rs): Structural engineering platform in Rust (egui/WGPU) for calculating wind actions on buildings compliant with ABNT NBR 6123:2023 with 3D load diagrams.
 - [**Concrete Mix Designer**](https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp): High-precision C++20/Qt6 engineering software for rational concrete proportioning via the IPT/EPUSP Method and ABNT NBR standards.
 - [**Compression Manager**](https://github.com/fernandoncidade/Compression_Manager): Comprehensive backup and file compression application with an intuitive GUI.
 - [**Economia APP**](https://github.com/fernandoncidade/Economia_APP): Financial and Engineering Economics calculation tool with detailed step-by-step history.

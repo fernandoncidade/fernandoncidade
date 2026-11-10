@@ -107,8 +107,12 @@
       en: 'Academic Evaluations Scheduler • Semester Exams & Grades Manager in Python'
     },
     'huginn.html': {
-      pt: 'Huginn • Monitoramento do Sistema de Arquivos, Histórico e Auditoria em Rust',
-      en: 'Huginn • File System Monitoring, History & Deterministic Audit in Rust'
+      pt: 'Huginn Sentinel • Monitoramento do Sistema de Arquivos, Histórico e Auditoria em Rust',
+      en: 'Huginn Sentinel • File System Monitoring, History & Deterministic Audit in Rust'
+    },
+    'eolo-platform.html': {
+      pt: 'Eolo Platform • Ações de Vento em Edificações conforme ABNT NBR 6123:2023 em Rust',
+      en: 'Eolo Platform • Wind Loads on Buildings per ABNT NBR 6123:2023 in Rust'
     },
     'concrete_mix_design.html': {
       pt: 'Concrete Mix Designer • Dosagem Experimental de Concreto pelo Método IPT/EPUSP em C++20',
