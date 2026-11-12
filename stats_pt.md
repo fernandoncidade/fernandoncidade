@@ -14,7 +14,7 @@
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
 | EoloPlatform_rs | Rust | 1063.5h | 15953 | 1 | 15.00 l/h |
-| fernandoncidade | HTML | 383.9h | 11997 | 260 | 31.25 l/h |
+| fernandoncidade | HTML | 531.5h | 16609 | 263 | 31.25 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | GeoEstabil_rs | Rust | 1589.0h | 23835 | 1 | 15.00 l/h |
 | HuginnSentinel_rs | Rust | 3984.7h | 59770 | 2 | 15.00 l/h |
@@ -33,4 +33,4 @@
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 45 | 15.00 l/h |
-| **TOTAL** | - | 48834.7h | 550290 | 412 | - |
+| **TOTAL** | - | 48982.3h | 554902 | 415 | - |
