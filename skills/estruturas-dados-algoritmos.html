@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Estruturas de Dados, Algoritmos &amp; Complexidade Computacional • Fernando Nillsson Cidade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Habilidade 04/10 — Estruturas de Dados, Algoritmos & Complexidade Computacional (Ring Buffers, Hash Maps O(1), LZ77/LZMA, Regex JIT, Newton-Raphson e Work-Stealing) por Fernando Nillsson Cidade.">
+  <link rel="icon" type="image/png" href="../image_perfil/linceu_sem_fundo.png">
+  <link rel="stylesheet" href="skill-details.css">
+</head>
+<body>
+
+  <header class="skill-topbar">
+    <div class="skill-topbar-inner">
+      <a href="../index.html" class="back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span class="lang-pt">Voltar ao Portfólio</span>
+        <span class="lang-en">Back to Portfolio</span>
+      </a>
+      <div class="topbar-controls">
+        <span class="skill-step-pill"><span class="lang-pt">HABILIDADE 04 / 10</span><span class="lang-en">SKILL 04 / 10</span></span>
+        <button id="btn-theme-toggle" class="control-btn" type="button">🌙 <span class="btn-text">Escuro</span></button>
+        <button id="btn-lang-toggle" class="control-btn" type="button">🌐 <span class="btn-text">EN-US</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="skill-container">
+
+    <section class="skill-hero">
+      <div class="skill-hero-orb orb-1"></div>
+      <div class="skill-hero-orb orb-2"></div>
+      <div class="skill-hero-content">
+        <div class="skill-hero-top-badges">
+          <span class="hero-pill pill-accent"><span class="lang-pt">🚀 Habilidade Técnica 04 de 10</span><span class="lang-en">🚀 Technical Skill 04 of 10</span></span>
+          <span class="hero-pill pill-ufpr"><span class="lang-pt">🎓 Graduando no Bacharelado em Engenharia Civil • UFPR</span><span class="lang-en">🎓 Bachelor of Civil Engineering Undergraduate • UFPR</span></span>
+          <span class="hero-pill pill-autodidact"><span class="lang-pt">💡 100% Autodidata &amp; Curiosidade Científica</span><span class="lang-en">💡 100% Self-Taught &amp; Scientific Curiosity</span></span>
+        </div>
+
+        <div class="skill-hero-main">
+          <div class="skill-hero-icon-box" aria-hidden="true">🧮</div>
+          <div>
+            <h1 class="skill-hero-title">
+              <span class="lang-pt">Estruturas de Dados, Algoritmos &amp; Complexidade Computacional</span>
+              <span class="lang-en">Data Structures, Algorithms &amp; Computational Complexity</span>
+            </h1>
+            <div class="skill-hero-tags">
+              <span class="tech-tag">O(1) Hash Maps &amp; Sets</span>
+              <span class="tech-tag">Lock-Free Ring Buffers</span>
+              <span class="tech-tag">LZ77 &amp; LZMA Compression</span>
+              <span class="tech-tag">Regex JIT • Newton-Raphson</span>
+              <span class="tech-tag">Work-Stealing (Rayon / QThreadPool)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="autodidact-banner lang-pt"><strong>Trajetória Autodidata &amp; Formação Acadêmica:</strong> Graduando no Bacharelado em Engenharia Civil pela Universidade Federal do Paraná (UFPR) — todo o estudo e implementação de estruturas de dados, métodos numéricos e algoritmos de baixa complexidade assintótica descritos abaixo nasceram de dedicação autodidata e curiosidade matemática.</div>
+        <div class="autodidact-banner lang-en"><strong>Self-Taught Journey &amp; Academic Background:</strong> Undergraduate student in the Bachelor of Civil Engineering at the Federal University of Paraná (UFPR) — all study and implementation of data structures, numerical methods, and low-asymptotic-complexity algorithms described below arose from self-taught dedication and mathematical curiosity.</div>
+      </div>
+    </section>
+
+    <section class="skill-full-card">
+      <h2 class="section-heading">
+        <span>📜</span>
+        <span class="lang-pt">Descrição Completa da Habilidade</span>
+        <span class="lang-en">Complete Skill Description</span>
+      </h2>
+      <p class="skill-full-text lang-pt">Buffers circulares (Ring Buffers) e canais lock-free multi-producer multi-consumer (crossbeam-channel), tabelas de dispersão (Hash Sets e Hash Maps com busca e diferença/interseção de conjuntos em tempo constante O(1) para dezenas de milhares de registros), árvores hierárquicas e parsers estruturados (JSON DOM/SAX, XML e árvores de diretórios NTFS), grafos espaciais dirigidos por forças físicas (Force-Directed Graphs para mapas mentais), algoritmos de compressão sem perdas por janela deslizante (LZ77) e codificação de entropia/dicionário (LZMA), autômatos de expressões regulares compilados em código de máquina (Regex JIT via PCRE2 e QRegularExpression), algoritmos numéricos híbridos de busca de raízes polinomiais (Newton-Raphson e Brent-Dekker com derivadas analíticas), regressão não linear por Mínimos Quadrados (Least-Squares), linearização logarítmica, álgebra e inversão de matrizes e escalonamento paralelo por roubo de trabalho (Work-Stealing Thread Pools via Rayon, std::jthread e QThreadPool).</p>
+      <p class="skill-full-text lang-en">Circular Ring Buffers and lock-free multi-producer multi-consumer channels (crossbeam-channel), hash tables (Hash Sets and Hash Maps with O(1) constant-time lookup and set difference/intersection across tens of thousands of records), hierarchical trees and structured parsers (JSON DOM/SAX, XML, and NTFS directory trees), force-directed spatial graphs (Force-Directed Graphs for mind mapping), lossless compression algorithms via sliding window (LZ77) and dictionary/entropy encoding (LZMA), machine-code Just-In-Time compiled regular expression automata (Regex JIT via PCRE2 and QRegularExpression), hybrid numerical polynomial root-finding algorithms (Newton-Raphson and Brent-Dekker with analytical derivatives), non-linear Least-Squares regression, logarithmic linearization, matrix algebra and inversion, and parallel work-stealing scheduling (Work-Stealing Thread Pools via Rayon, std::jthread, and QThreadPool).</p>
+    </section>
+
+    <section class="pillars-section">
+      <h2 class="section-heading">
+        <span>🔬</span>
+        <span class="lang-pt">Estruturas, Complexidade Assintótica &amp; Métodos Numéricos</span>
+        <span class="lang-en">Structures, Asymptotic Complexity &amp; Numerical Methods</span>
+      </h2>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">⚡</div>
+              <h3 class="pillar-title"><span class="lang-pt">Tabelas Hash O(1), Ring Buffers &amp; Grafos</span><span class="lang-en">O(1) Hash Tables, Ring Buffers &amp; Graphs</span></h3>
+            </div>
+            <span class="pillar-tag">O(1) Lookup • Force-Directed</span>
+          </div>
+          <p class="pillar-desc lang-pt">Uso de Hash Maps e Hash Sets para correlação de eventos de kernel, cache de SIDs e operações de diferença de conjuntos em tempo constante O(1), além de Ring Buffers circulares lock-free e grafos espaciais dirigidos por forças físicas para mapas mentais interativos.</p>
+          <p class="pillar-desc lang-en">Use of Hash Maps and Hash Sets for kernel event correlation, SID caching, and constant-time O(1) set difference operations, alongside lock-free circular Ring Buffers and force-directed spatial graphs for interactive mind mapping.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">🗜️</div>
+              <h3 class="pillar-title"><span class="lang-pt">Compressão Sem Perdas (LZ77/LZMA) &amp; Regex JIT</span><span class="lang-en">Lossless Compression (LZ77/LZMA) &amp; Regex JIT</span></h3>
+            </div>
+            <span class="pillar-tag">Sliding Window • PCRE2 JIT</span>
+          </div>
+          <p class="pillar-desc lang-pt">Orquestração de algoritmos de compressão por janela deslizante (LZ77/DEFLATE) e codificação de dicionário de alta taxa (LZMA/7z), combinados com autômatos finitos determinísticos e expressões regulares compiladas Just-In-Time (JIT) para varredura instantânea de gigabytes de texto.</p>
+          <p class="pillar-desc lang-en">Orchestration of sliding-window compression algorithms (LZ77/DEFLATE) and high-ratio dictionary encoding (LZMA/7z), paired with deterministic finite automata and Just-In-Time (JIT) compiled regular expressions for instant multi-gigabyte text scanning.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">📐</div>
+              <h3 class="pillar-title"><span class="lang-pt">Solvers Numéricos &amp; Regressão Não Linear</span><span class="lang-en">Numerical Solvers &amp; Non-Linear Regression</span></h3>
+            </div>
+            <span class="pillar-tag">Newton-Raphson • Least-Squares</span>
+          </div>
+          <p class="pillar-desc lang-pt">Implementação de solvers iterativos de convergência quadrática (Newton-Raphson acoplado a Brent-Dekker) para cálculo de TIR e equilíbrio limite de Bishop, regressão não linear por Mínimos Quadrados, linearização logarítmica e inversão de matrizes.</p>
+          <p class="pillar-desc lang-en">Implementation of quadratic-convergence iterative solvers (Newton-Raphson coupled with Brent-Dekker) for IRR calculation and Bishop limit equilibrium, non-linear Least-Squares regression, logarithmic linearization, and matrix inversion.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">🔀</div>
+              <h3 class="pillar-title"><span class="lang-pt">Escalonamento Paralelo Work-Stealing</span><span class="lang-en">Work-Stealing Parallel Scheduling</span></h3>
+            </div>
+            <span class="pillar-tag">Rayon • QThreadPool • std::jthread</span>
+          </div>
+          <p class="pillar-desc lang-pt">Particionamento de malhas paramétricas (milhares de círculos de ruptura de taludes ou blocos de arquivos de log) em tarefas independentes balanceadas dinamicamente por roubo de trabalho (Work-Stealing) entre todos os núcleos lógicos da CPU.</p>
+          <p class="pillar-desc lang-en">Partitioning of parametric grids (thousands of slope slip circles or log file chunks) into independent tasks dynamically load-balanced via Work-Stealing across all logical CPU cores.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-projects-section">
+      <h2 class="section-heading">
+        <span>📂</span>
+        <span class="lang-pt">Projetos do Portfólio que Aplicam esta Habilidade</span>
+        <span class="lang-en">Portfolio Projects Applying This Skill</span>
+      </h2>
+      <div class="related-projects-grid">
+        <a href="../apps/geoestabil.html" class="related-project-card">
+          <img src="../image_perfil/geoestabil.png" alt="GeoEstabil" class="related-project-icon">
+          <div>
+            <div class="related-project-name">GeoEstabil</div>
+            <div class="related-project-meta">Rust • Solvers Iterativos &amp; Rayon Work-Stealing</div>
+          </div>
+        </a>
+        <a href="../apps/concrete_mix_design.html" class="related-project-card">
+          <img src="../image_perfil/concrete_mix_design.png" alt="Concrete Mix Designer" class="related-project-icon">
+          <div>
+            <div class="related-project-name">Concrete Mix Designer</div>
+            <div class="related-project-meta">C++20 • Regressão Mínimos Quadrados &amp; Matrizes</div>
+          </div>
+        </a>
+        <a href="../apps/economia-app.html" class="related-project-card">
+          <img src="../image_perfil/economia.png" alt="Economia APP" class="related-project-icon">
+          <div>
+            <div class="related-project-name">Economia APP</div>
+            <div class="related-project-meta">C++17 • Newton-Raphson &amp; Brent-Dekker</div>
+          </div>
+        </a>
+        <a href="../apps/compression-manager.html" class="related-project-card">
+          <img src="../image_perfil/Manager-BackUp.png" alt="Compression Manager" class="related-project-icon">
+          <div>
+            <div class="related-project-name">Compression Manager</div>
+            <div class="related-project-meta">Python • Algoritmos LZ77 &amp; LZMA</div>
+          </div>
+        </a>
+        <a href="../apps/lumen.html" class="related-project-card">
+          <img src="../image_perfil/autismo.png" alt="Lúmen" class="related-project-icon">
+          <div>
+            <div class="related-project-name">Lúmen</div>
+            <div class="related-project-meta">C++ • Grafos Force-Directed (Mapas Mentais)</div>
+          </div>
+        </a>
+        <a href="../apps/compare-following-follower.html" class="related-project-card">
+          <img src="../image_perfil/compare.ico" alt="Compare Following &amp; Follower" class="related-project-icon">
+          <div>
+            <div class="related-project-name">Compare Following &amp; Follower</div>
+            <div class="related-project-meta">Python • Diferença de Conjuntos Hash O(1)</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div id="skill-prev-next" class="skill-FromTo-nav"></div>
+
+    <section class="all-skills-matrix">
+      <h2 class="section-heading">
+        <span>🧭</span>
+        <span class="lang-pt">Navegar por Todas as 10 Habilidades</span>
+        <span class="lang-en">Browse All 10 Skills</span>
+      </h2>
+      <div id="all-skills-grid" class="all-skills-grid"></div>
+    </section>
+
+  </main>
+
+  <footer class="skill-footer">
+    <div>
+      <span class="lang-pt">Fernando Nillsson Cidade • Graduando em Engenharia Civil (UFPR) &amp; Desenvolvedor Autodidata</span>
+      <span class="lang-en">Fernando Nillsson Cidade • Civil Engineering Undergraduate (UFPR) &amp; Self-Taught Developer</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html"><span class="lang-pt">Página Principal</span><span class="lang-en">Main Page</span></a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="skill-details.js"></script>
+</body>
+</html>
+

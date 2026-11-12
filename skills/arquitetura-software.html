@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Arquitetura de Software &amp; Padrões de Projeto • Fernando Nillsson Cidade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Habilidade 02/10 — Arquitetura de Software & Padrões de Projeto (Clean Architecture, Signals & Slots, Produtor-Consumidor, Model-View-Delegate e Local-First) por Fernando Nillsson Cidade.">
+  <link rel="icon" type="image/png" href="../image_perfil/linceu_sem_fundo.png">
+  <link rel="stylesheet" href="skill-details.css">
+</head>
+<body>
+
+  <header class="skill-topbar">
+    <div class="skill-topbar-inner">
+      <a href="../index.html" class="back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span class="lang-pt">Voltar ao Portfólio</span>
+        <span class="lang-en">Back to Portfolio</span>
+      </a>
+      <div class="topbar-controls">
+        <span class="skill-step-pill"><span class="lang-pt">HABILIDADE 02 / 10</span><span class="lang-en">SKILL 02 / 10</span></span>
+        <button id="btn-theme-toggle" class="control-btn" type="button">🌙 <span class="btn-text">Escuro</span></button>
+        <button id="btn-lang-toggle" class="control-btn" type="button">🌐 <span class="btn-text">EN-US</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="skill-container">
+
+    <section class="skill-hero">
+      <div class="skill-hero-orb orb-1"></div>
+      <div class="skill-hero-orb orb-2"></div>
+      <div class="skill-hero-content">
+        <div class="skill-hero-top-badges">
+          <span class="hero-pill pill-accent"><span class="lang-pt">🚀 Habilidade Técnica 02 de 10</span><span class="lang-en">🚀 Technical Skill 02 of 10</span></span>
+          <span class="hero-pill pill-ufpr"><span class="lang-pt">🎓 Graduando no Bacharelado em Engenharia Civil • UFPR</span><span class="lang-en">🎓 Bachelor of Civil Engineering Undergraduate • UFPR</span></span>
+          <span class="hero-pill pill-autodidact"><span class="lang-pt">💡 100% Autodidata &amp; Curiosidade Científica</span><span class="lang-en">💡 100% Self-Taught &amp; Scientific Curiosity</span></span>
+        </div>
+
+        <div class="skill-hero-main">
+          <div class="skill-hero-icon-box" aria-hidden="true">🏛️</div>
+          <div>
+            <h1 class="skill-hero-title">
+              <span class="lang-pt">Arquitetura de Software &amp; Padrões de Projeto</span>
+              <span class="lang-en">Software Architecture &amp; Design Patterns</span>
+            </h1>
+            <div class="skill-hero-tags">
+              <span class="tech-tag">Clean &amp; Layered Architecture</span>
+              <span class="tech-tag">Event-Driven (Signals &amp; Slots)</span>
+              <span class="tech-tag">Producer-Consumer / Actor</span>
+              <span class="tech-tag">Model-View-Delegate</span>
+              <span class="tech-tag">100% Local-First / Zero Telemetry</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="autodidact-banner lang-pt"><strong>Trajetória Autodidata &amp; Formação Acadêmica:</strong> Graduando no Bacharelado em Engenharia Civil pela Universidade Federal do Paraná (UFPR) — toda a concepção arquitetural e aplicação de padrões de projeto descritas abaixo vêm de estudo autodidata e curiosidade constante.</div>
+        <div class="autodidact-banner lang-en"><strong>Self-Taught Journey &amp; Academic Background:</strong> Undergraduate student in the Bachelor of Civil Engineering at the Federal University of Paraná (UFPR) — all architectural design and design pattern applications described below come from self-taught study and constant curiosity.</div>
+      </div>
+    </section>
+
+    <section class="skill-full-card">
+      <h2 class="section-heading">
+        <span>📜</span>
+        <span class="lang-pt">Descrição Completa da Habilidade</span>
+        <span class="lang-en">Complete Skill Description</span>
+      </h2>
+      <p class="skill-full-text lang-pt">Arquitetura Limpa e em Camadas (desacoplamento estrito entre Apresentação/UI, Domínio/Regras de Negócio e Persistência/Acesso a Dados), Arquitetura Orientada a Eventos (Signals &amp; Slots e despachantes assíncronos), Modelo de Atores e Produtor-Consumidor (workers dedicados de persistência como DbWriter e filas assíncronas), padrão Model-View-Delegate (QAbstractTableModel e QItemDelegate com validação in-place), arquitetura de janelas não-modais (Modeless Dialogs com Z-Order independente), sistemas extensíveis por módulos/plugins, internacionalização bilíngue nativa em tempo real (I18N PT-BR/EN-US) e arquitetura 100% Local-First / Zero-Trust Offline com soberania total de dados e zero telemetria.</p>
+      <p class="skill-full-text lang-en">Clean and Layered Architecture (strict decoupling across Presentation/UI, Domain/Business Logic, and Persistence/Data Access layers), Event-Driven Architecture (Signals &amp; Slots and asynchronous dispatchers), Actor and Producer-Consumer Models (dedicated persistence workers such as DbWriter and asynchronous queues), Model-View-Delegate pattern (QAbstractTableModel and QItemDelegate with in-place validation), modeless window architecture (Modeless Dialogs with independent Z-Order), modular/plugin-extensible systems, real-time native bilingual internationalization (PT-BR/EN-US I18N), and 100% Local-First / Zero-Trust Offline architecture with total data sovereignty and zero telemetry.</p>
+    </section>
+
+    <section class="pillars-section">
+      <h2 class="section-heading">
+        <span>🔬</span>
+        <span class="lang-pt">Pilares Arquiteturais &amp; Padrões Aplicados</span>
+        <span class="lang-en">Architectural Pillars &amp; Applied Patterns</span>
+      </h2>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">🧱</div>
+              <h3 class="pillar-title"><span class="lang-pt">Desacoplamento em Camadas (Clean Architecture)</span><span class="lang-en">Layered Decoupling (Clean Architecture)</span></h3>
+            </div>
+            <span class="pillar-tag">UI • Domain • Persistence</span>
+          </div>
+          <p class="pillar-desc lang-pt">Separação estrita entre os motores matemáticos/forenses de domínio e a camada de interface gráfica, permitindo que os núcleos de cálculo (como os solvers geotécnicos, eólicos e de dosagem ou coletores de ACLs) operem de forma pura, testável e independente de widgets visuais.</p>
+          <p class="pillar-desc lang-en">Strict separation between mathematical/forensic domain engines and the graphical interface layer, allowing calculation cores (such as geotechnical, wind, and mix design solvers or ACL collectors) to operate purely, testably, and independently of visual widgets.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">🔄</div>
+              <h3 class="pillar-title"><span class="lang-pt">Produtor-Consumidor &amp; Eventos Assíncronos</span><span class="lang-en">Producer-Consumer &amp; Async Events</span></h3>
+            </div>
+            <span class="pillar-tag">Signals &amp; Slots • DbWriter</span>
+          </div>
+          <p class="pillar-desc lang-pt">Isolamento completo entre captura de eventos de alta frequência, processamento analítico e gravação em disco por meio de filas assíncronas e workers dedicados (como DbWriter), garantindo que a thread de interface (GUI Thread) nunca sofra bloqueios de I/O.</p>
+          <p class="pillar-desc lang-en">Complete isolation across high-frequency event capture, analytical processing, and disk persistence through asynchronous queues and dedicated workers (such as DbWriter), ensuring the GUI Thread never suffers from I/O blocking.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">📊</div>
+              <h3 class="pillar-title"><span class="lang-pt">Padrão Model-View-Delegate &amp; Modeless UI</span><span class="lang-en">Model-View-Delegate &amp; Modeless UI Pattern</span></h3>
+            </div>
+            <span class="pillar-tag">QAbstractTableModel • Z-Order</span>
+          </div>
+          <p class="pillar-desc lang-pt">Renderização sob demanda (virtualização de tabelas) para milhões de linhas via QAbstractTableModel e QItemDelegate customizados, combinada com janelas analíticas não-modais (Modeless Dialogs) que permitem comparar múltiplos gráficos simultaneamente.</p>
+          <p class="pillar-desc lang-en">On-demand rendering (table virtualization) for millions of rows via custom QAbstractTableModel and QItemDelegate, combined with analytical Modeless Dialogs that enable side-by-side comparison of multiple charts simultaneously.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">🔒</div>
+              <h3 class="pillar-title"><span class="lang-pt">Arquitetura Local-First &amp; I18N em Tempo Real</span><span class="lang-en">Local-First Architecture &amp; Real-Time I18N</span></h3>
+            </div>
+            <span class="pillar-tag">Zero Telemetry • PT-BR / EN-US</span>
+          </div>
+          <p class="pillar-desc lang-pt">Sistemas projetados para funcionar 100% offline sem dependência de nuvem ou coleta de telemetria, contando com dicionários de internacionalização embarcados que alternam instantaneamente toda a interface e os relatórios técnicos entre Português e Inglês.</p>
+          <p class="pillar-desc lang-en">Systems engineered to operate 100% offline with zero cloud dependency or telemetry collection, featuring embedded internationalization dictionaries that instantaneously switch the entire interface and technical reports between Portuguese and English.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-projects-section">
+      <h2 class="section-heading">
+        <span>📂</span>
+        <span class="lang-pt">Projetos do Portfólio que Aplicam esta Habilidade</span>
+        <span class="lang-en">Portfolio Projects Applying This Skill</span>
+      </h2>
+      <div class="related-projects-grid">
+        <a href="../apps/linceu-lighthouse.html" class="related-project-card">
+          <img src="../image_perfil/linceu_sem_fundo.png" alt="Linceu Lighthouse" class="related-project-icon">
+          <div>
+            <div class="related-project-name">Linceu Lighthouse</div>
+            <div class="related-project-meta">C++17 • Produtor-Consumidor &amp; Modeless UI</div>
+          </div>
+        </a>
+        <a href="../apps/huginn.html" class="related-project-card">
+          <img src="../image_perfil/huginn.png" alt="Huginn Sentinel" class="related-project-icon">
+          <div>
+            <div class="related-project-name">Huginn Sentinel</div>
+            <div class="related-project-meta">Rust • Pipeline MPMC &amp; Arquitetura Modular</div>
+          </div>
+        </a>
+        <a href="../apps/acl-auditor.html" class="related-project-card">
+          <img src="../image_perfil/acl_auditor.png" alt="ACL Auditor" class="related-project-icon">
+          <div>
+            <div class="related-project-name">ACL Auditor</div>
+            <div class="related-project-meta">C++20 • Clean Architecture &amp; Plugins</div>
+          </div>
+        </a>
+        <a href="../apps/eisenpo.html" class="related-project-card">
+          <img src="../image_perfil/eisenpo.png" alt="EisenPo" class="related-project-icon">
+          <div>
+            <div class="related-project-name">EisenPo</div>
+            <div class="related-project-meta">C++ • MVC &amp; Persistência Local-First</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div id="skill-prev-next" class="skill-FromTo-nav"></div>
+
+    <section class="all-skills-matrix">
+      <h2 class="section-heading">
+        <span>🧭</span>
+        <span class="lang-pt">Navegar por Todas as 10 Habilidades</span>
+        <span class="lang-en">Browse All 10 Skills</span>
+      </h2>
+      <div id="all-skills-grid" class="all-skills-grid"></div>
+    </section>
+
+  </main>
+
+  <footer class="skill-footer">
+    <div>
+      <span class="lang-pt">Fernando Nillsson Cidade • Graduando em Engenharia Civil (UFPR) &amp; Desenvolvedor Autodidata</span>
+      <span class="lang-en">Fernando Nillsson Cidade • Civil Engineering Undergraduate (UFPR) &amp; Self-Taught Developer</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html"><span class="lang-pt">Página Principal</span><span class="lang-en">Main Page</span></a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="skill-details.js"></script>
+</body>
+</html>
+

@@ -114,6 +114,10 @@
       pt: 'Eolo Platform • Ações de Vento em Edificações conforme ABNT NBR 6123:2023 em Rust',
       en: 'Eolo Platform • Wind Loads on Buildings per ABNT NBR 6123:2023 in Rust'
     },
+    'geoestabil.html': {
+      pt: 'GeoEstabil • Estabilidade de Taludes, Muros de Arrimo e Fundações conforme ABNT NBR 11682/6122/6118 em Rust',
+      en: 'GeoEstabil • Slope Stability, Retaining Walls & Foundations per ABNT NBR 11682/6122/6118 in Rust'
+    },
     'concrete_mix_design.html': {
       pt: 'Concrete Mix Designer • Dosagem Experimental de Concreto pelo Método IPT/EPUSP em C++20',
       en: 'Concrete Mix Designer • Experimental Concrete Proportioning via IPT/EPUSP in C++20'
@@ -193,6 +197,7 @@
 
     setupBackToTop();
     setupAppCarousels();
+    setupAuthorSkillsSection();
   });
 
   // Sincronização ao retornar pelo histórico de navegação (BFCache)
@@ -228,7 +233,10 @@
       <button type="button" class="carousel-lightbox-nav next" aria-label="Próxima Imagem">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </button>
-      <div class="carousel-lightbox-caption"></div>
+      <div class="carousel-lightbox-footer">
+        <div class="carousel-lightbox-caption"></div>
+        <div class="carousel-lightbox-dots" role="tablist" aria-label="Navegação de imagens"></div>
+      </div>
     `;
 
     document.body.appendChild(lb);
@@ -284,6 +292,7 @@
     const lightbox = createGlobalLightbox();
     const lbImg = lightbox.querySelector('.carousel-lightbox-img');
     const lbCaption = lightbox.querySelector('.carousel-lightbox-caption');
+    const lbDots = lightbox.querySelector('.carousel-lightbox-dots');
 
     carousels.forEach((carousel) => {
       const track = carousel.querySelector('.carousel-track');
@@ -336,6 +345,25 @@
             lbImg.alt = img ? (img.getAttribute('alt') || '') : '';
             const cap = curSlide.dataset.caption || (img ? img.getAttribute('alt') : '');
             lbCaption.textContent = cap || '';
+          }
+          if (lbDots) {
+            const existingDots = lbDots.querySelectorAll('.carousel-dot');
+            if (existingDots.length !== visibleSlides.length) {
+              lbDots.innerHTML = '';
+              for (let i = 0; i < visibleSlides.length; i++) {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
+                dot.setAttribute('aria-label', `Ir para slide ${i + 1}`);
+                dot.addEventListener('click', (e) => {
+                  e.stopPropagation();
+                  if (activeLightboxCarousel) activeLightboxCarousel.goTo(i);
+                });
+                lbDots.appendChild(dot);
+              }
+            } else {
+              existingDots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+            }
           }
         }
       }
@@ -456,6 +484,7 @@
         const isDark = document.body.classList.contains('dark') || (localStorage.getItem(THEME_KEY) === 'dark');
         lightbox.classList.toggle('dark', isDark);
 
+        if (lbDots) lbDots.innerHTML = '';
         activeLightboxCarousel = { id: carousel, next, prev, goTo };
         syncLightbox();
         lightbox.classList.add('open');
@@ -474,5 +503,64 @@
       updateDots(getVisibleSlides().length);
       goTo(0);
     });
+  }
+
+  // ====================================================================
+  // 7. Seção de Habilidades e Engenharia de Software do Autor (PT-BR / EN-US)
+  // ====================================================================
+  const AUTHOR_SKILLS_DATA = {
+    pt: {
+      heading: 'Habilidades & Engenharia de Software do Autor',
+      intro: 'Competências técnicas construídas de forma 100% autodidata e movidas por intensa curiosidade científica, paralelamente à minha graduação no Bacharelado em Engenharia Civil pela UFPR. Clique no título de qualquer habilidade abaixo para abrir sua tela exclusiva com a descrição completa de arquitetura, design de código, estruturas de dados, algoritmos e boas práticas:',
+      items: [
+        { slug: 'linguagens-compiladores', icon: '💻', category: 'Linguagens de Programação, Compiladores & Padrões', text: 'Domínio autodidata de C++ (C++17/C++20 — STL, templates, concepts, std::span), Rust (Edições 2021/2024 — ownership, lifetimes, traits e binários CLI/GUI), C (C99/C11), Python (3.10+ — Type Hints, PEP 8) e Tecnologias Web (HTML5, CSS3, JS ES6+) com toolchains MSVC 2022, Clang/LLVM, MinGW-w64, Cargo e CMake.' },
+        { slug: 'arquitetura-software', icon: '🏛️', category: 'Arquitetura de Software & Padrões de Projeto', text: 'Arquitetura Limpa e em Camadas (Apresentação, Domínio e Persistência), Orientação a Eventos (Signals & Slots), Modelo de Atores e Produtor-Consumidor (DbWriter), Model-View-Delegate, janelas não-modais (Modeless Dialogs), sistemas modulares, I18N bilíngue em tempo real e arquitetura 100% Local-First / Zero-Trust Offline.' },
+        { slug: 'design-codigo-boas-praticas', icon: '🧩', category: 'Design de Código, Lógica Computacional & Boas Práticas', text: 'Aplicação rigorosa de SOLID, Clean Code, DRY, KISS e YAGNI, gestão determinística de recursos via RAII e smart pointers, semântica Move e Zero-Copy, Fearless Concurrency sem data races, contratos defensivos, persistência transacional atômica contra quedas de energia (ReplaceFileW / ACID) e 12 apps na Microsoft Store.' },
+        { slug: 'estruturas-dados-algoritmos', icon: '🧮', category: 'Estruturas de Dados, Algoritmos & Complexidade', text: 'Ring Buffers e canais lock-free MPMC, Hash Sets/Maps com busca O(1), árvores DOM/SAX/NTFS, grafos dirigidos por forças físicas, compressão LZ77 e LZMA, autômatos Regex JIT (PCRE2), métodos numéricos híbridos (Newton-Raphson e Brent-Dekker), regressão não linear e pools paralelos Work-Stealing (Rayon, std::jthread).' },
+        { slug: 'engenharia-computacao-baixo-nivel', icon: '⚡', category: 'Engenharia de Computação, Baixo Nível, SIMD & Paralelismo', text: 'Programação próxima ao hardware x86-64, Memory-Mapped Files (CreateFileMappingW / MapViewOfFile) para abertura instantânea de múltiplos gigabytes com RAM constante, vetorização SIMD de 256/128 bits (AVX2, SSE4.2 > 3,0 GB/s), I/O assíncrono de kernel sub-milissegundo, ponto flutuante IEEE 754 e integração Win32 API.' },
+        { slug: 'interfaces-graficas-gpu', icon: '🎨', category: 'Engenharia de Interfaces Gráficas (GUI), GPU & UX', text: 'Desenvolvimento desktop nativo com Qt 6/6.11 (Widgets, Charts, QGraphicsView, QPainter, QPdfWriter, QSS e Windows 11 Mica), interfaces reativas em modo imediato em Rust com egui/eframe, renderização 2D/3D acelerada por GPU (WGPU, DirectX 12, Vulkan e OpenGL a 60 FPS), PySide6/PyQt6/Tkinter e suporte HiDPI/4K.' },
+        { slug: 'ciberseguranca-auditoria-forense', icon: '🛡️', category: 'Cibersegurança, Auditoria Forense, Criptografia & FIM', text: 'Monitoramento de integridade em tempo real (FIM) com correlação semântica no kernel, análise binária de descritores NTFS/SMB (DACL, SACL, SIDs), simulação do Security Reference Monitor para Acesso Efetivo, detecção de escalonamento de privilégios, remediação com rollback icacls, SHA-256, AES-256-CBC/GCM e LGPD/GDPR/ISO 27001.' },
+        { slug: 'engenharia-civil-computacional', icon: '🏗️', category: 'Engenharia Civil, Estrutural & Geotécnica Computacional', text: 'Modelagem matemática e verificação normativa ABNT NBR: ação de ventos (NBR 6123:2023 / NBR 8800:2024), estabilidade de taludes e mecânica dos solos por Bishop, Fellenius, Janbu, Rankine, Coulomb e Hansen/Meyerhof (NBR 11682 / NBR 6122), muros em concreto armado (NBR 6118:2023) e dosagem de concreto IPT/EPUSP (NBR 12655).' },
+        { slug: 'engenharia-economica-ciencia-dados', icon: '📊', category: 'Engenharia Econômica, Finanças, Ciência de Dados & BDs', text: 'Modelagem financeira com arredondamento ABNT, amortização (SAC, Price, SAM, Bullet), viabilidade econômica (VPL, TIR, MTIR, VAUE, Payback), bancos embarcados SQLite3 em modo WAL concorrente, ciência de dados e BI em Python (Taipy, Streamlit, Plotly, Pandas, SciPy), Curva ABC/Pareto e relatórios PDF A4 300 DPI, XLSX e SVG.' },
+        { slug: 'acessibilidade-cognitiva-produtividade', icon: '♿', category: 'Acessibilidade Cognitiva (A11y) & Produtividade Científica', text: 'Engenharia centrada em ergonomia cognitiva e neurodiversidade (TEA, TDAH e Dislexia) padrão W3C WCAG 2.1 AAA, síntese de voz neural offline (QTextToSpeech / SAPI5), navegação integral por teclado e leitores de tela (NVDA/MSAA), bibliotecas digitais (PDF/EPUB/MOBI) e metodologias Eisenhower, Pomodoro e Técnica Feynman.' }
+      ]
+    },
+    en: {
+      heading: 'Author\'s Skills & Software Engineering',
+      intro: 'Technical competencies built through 100% self-taught study and driven by intense scientific curiosity, alongside my undergraduate studies in the Bachelor of Civil Engineering at UFPR. Click on any skill title below to open its dedicated screen with the complete description of architecture, code design, data structures, algorithms, and best practices:',
+      items: [
+        { slug: 'linguagens-compiladores', icon: '💻', category: 'Programming Languages, Compilers & Standards', text: 'Self-taught mastery of C++ (C++17/C++20 — STL, templates, concepts, std::span), Rust (2021/2024 Editions — ownership, lifetimes, traits, and native CLI/GUI binaries), C (C99/C11), Python (3.10+ — Type Hints, PEP 8), and Web Technologies (HTML5, CSS3, ES6+ JS) with MSVC 2022, Clang/LLVM, MinGW-w64, Cargo, and CMake toolchains.' },
+        { slug: 'arquitetura-software', icon: '🏛️', category: 'Software Architecture & Design Patterns', text: 'Clean and Layered Architecture (Presentation, Domain, and Persistence), Event-Driven Design (Signals & Slots), Actor and Producer-Consumer Models (DbWriter), Model-View-Delegate, modeless window management (Modeless Dialogs), modular plugin systems, real-time bilingual I18N, and 100% Local-First / Zero-Trust Offline architecture.' },
+        { slug: 'design-codigo-boas-praticas', icon: '🧩', category: 'Code Design, Computational Logic & Best Practices', text: 'Strict application of SOLID, Clean Code, DRY, KISS, and YAGNI, deterministic resource management via RAII and smart pointers, Move Semantics and Zero-Copy processing, data-race-free Fearless Concurrency, defensive contracts, power-safe atomic transactional persistence (ReplaceFileW / ACID), and 12 Microsoft Store apps.' },
+        { slug: 'estruturas-dados-algoritmos', icon: '🧮', category: 'Data Structures, Algorithms & Complexity', text: 'Circular Ring Buffers and lock-free MPMC channels, Hash Sets/Maps with O(1) lookup, DOM/SAX/NTFS hierarchical trees, force-directed spatial graphs, LZ77 and LZMA lossless compression, JIT-compiled Regex automata (PCRE2), hybrid numerical root-finding (Newton-Raphson and Brent-Dekker), non-linear regression, and Work-Stealing thread pools.' },
+        { slug: 'engenharia-computacao-baixo-nivel', icon: '⚡', category: 'Computer Engineering, Low-Level Systems, SIMD & Parallelism', text: 'Hardware-close x86-64 systems programming, Memory-Mapped Files (CreateFileMappingW / MapViewOfFile) for instant multi-gigabyte opening with constant RAM, 256/128-bit SIMD CPU vectorization (AVX2, SSE4.2 > 3.0 GB/s), sub-millisecond asynchronous kernel I/O, IEEE 754 floating-point math, and native Win32 API integration.' },
+        { slug: 'interfaces-graficas-gpu', icon: '🎨', category: 'GUI Engineering, GPU Rendering & User Experience', text: 'Native desktop development with Qt 6/6.11 (Widgets, Charts, QGraphicsView, QPainter, QPdfWriter, QSS, and Windows 11 Mica), immediate-mode reactive UIs in Rust with egui/eframe, hardware-accelerated 2D/3D GPU rendering (WGPU, DirectX 12, Vulkan, and OpenGL at 60 FPS), PySide6/PyQt6/Tkinter, and crisp HiDPI/4K scaling.' },
+        { slug: 'ciberseguranca-auditoria-forense', icon: '🛡️', category: 'Cybersecurity, Forensic Auditing, Cryptography & FIM', text: 'Real-time File Integrity Monitoring (FIM) with deterministic kernel correlation, binary analysis of NTFS/SMB security descriptors (DACL, SACL, SIDs), Security Reference Monitor emulation for Effective Access, privilege escalation detection, safe icacls rollback remediation, SHA-256, AES-256-CBC/GCM, and GDPR/LGPD/ISO 27001 compliance.' },
+        { slug: 'engenharia-civil-computacional', icon: '🏗️', category: 'Computational Civil, Structural & Geotechnical Engineering', text: 'Analytical mathematical modeling and automated ABNT NBR compliance: wind actions (NBR 6123:2023 / NBR 8800:2024), slope stability and soil mechanics via Bishop, Fellenius, Janbu, Rankine, Coulomb, and Hansen/Meyerhof (NBR 11682 / NBR 6122), reinforced concrete retaining walls (NBR 6118:2023), and IPT/EPUSP concrete mix design (NBR 12655).' },
+        { slug: 'engenharia-economica-ciencia-dados', icon: '📊', category: 'Engineering Economics, Finance, Data Science & Databases', text: 'Accounting-precision financial modeling with ABNT rounding, loan amortization (SAC, Price, SAM, Bullet), economic feasibility (NPV, IRR, MIRR, EUAW, Payback), embedded concurrent WAL SQLite3 databases, Python data science and BI (Taipy, Streamlit, Plotly, Pandas, SciPy), ABC/Pareto analytics, and 300 DPI A4 PDF, XLSX, and SVG reports.' },
+        { slug: 'acessibilidade-cognitiva-produtividade', icon: '♿', category: 'Cognitive Accessibility (A11y) & Productivity Methodologies', text: 'Software engineering centered on cognitive ergonomics and neurodiversity (ASD, ADHD, and Dyslexia) under W3C WCAG 2.1 AAA, offline neural speech synthesis (QTextToSpeech / SAPI5), full keyboard navigation and screen reader integration (NVDA/MSAA), digital library cataloging (PDF/EPUB/MOBI), and Eisenhower, Pomodoro, and Feynman methodologies.' }
+      ]
+    }
+  };
+
+  function setupAuthorSkillsSection() {
+    const mainContainer = document.querySelector('main.app-container');
+    if (!mainContainer) return;
+
+    let section = mainContainer.querySelector('.author-skills-section');
+    if (!section) {
+      section = document.createElement('section');
+      section.className = 'author-skills-section';
+      mainContainer.appendChild(section);
+    }
+
+    const ptItemsHtml = AUTHOR_SKILLS_DATA.pt.items
+      .map(item => `<li><a href="../skills/${item.slug}.html" class="author-skill-link"><span>${item.icon} ${item.category}</span><span>→</span></a><span class="author-skill-summary">${item.text}</span></li>`)
+      .join('');
+    const enItemsHtml = AUTHOR_SKILLS_DATA.en.items
+      .map(item => `<li><a href="../skills/${item.slug}.html" class="author-skill-link"><span>${item.icon} ${item.category}</span><span>→</span></a><span class="author-skill-summary">${item.text}</span></li>`)
+      .join('');
+
+    section.innerHTML = `<h2 class="section-heading"><span>🚀</span> <span class="lang-pt">${AUTHOR_SKILLS_DATA.pt.heading}</span><span class="lang-en">${AUTHOR_SKILLS_DATA.en.heading}</span></h2><p class="author-skills-intro lang-pt">${AUTHOR_SKILLS_DATA.pt.intro}</p><p class="author-skills-intro lang-en">${AUTHOR_SKILLS_DATA.en.intro}</p><ul class="author-skills-list lang-pt">${ptItemsHtml}</ul><ul class="author-skills-list lang-en">${enItemsHtml}</ul>`;
   }
 })();

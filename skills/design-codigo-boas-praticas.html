@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Design de Código, Lógica Computacional &amp; Boas Práticas • Fernando Nillsson Cidade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Habilidade 03/10 — Design de Código, Lógica Computacional & Boas Práticas de Programação (SOLID, Clean Code, RAII, Zero-Copy e Concorrência Segura) por Fernando Nillsson Cidade.">
+  <link rel="icon" type="image/png" href="../image_perfil/linceu_sem_fundo.png">
+  <link rel="stylesheet" href="skill-details.css">
+</head>
+<body>
+
+  <header class="skill-topbar">
+    <div class="skill-topbar-inner">
+      <a href="../index.html" class="back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span class="lang-pt">Voltar ao Portfólio</span>
+        <span class="lang-en">Back to Portfolio</span>
+      </a>
+      <div class="topbar-controls">
+        <span class="skill-step-pill"><span class="lang-pt">HABILIDADE 03 / 10</span><span class="lang-en">SKILL 03 / 10</span></span>
+        <button id="btn-theme-toggle" class="control-btn" type="button">🌙 <span class="btn-text">Escuro</span></button>
+        <button id="btn-lang-toggle" class="control-btn" type="button">🌐 <span class="btn-text">EN-US</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="skill-container">
+
+    <section class="skill-hero">
+      <div class="skill-hero-orb orb-1"></div>
+      <div class="skill-hero-orb orb-2"></div>
+      <div class="skill-hero-content">
+        <div class="skill-hero-top-badges">
+          <span class="hero-pill pill-accent"><span class="lang-pt">🚀 Habilidade Técnica 03 de 10</span><span class="lang-en">🚀 Technical Skill 03 of 10</span></span>
+          <span class="hero-pill pill-ufpr"><span class="lang-pt">🎓 Graduando no Bacharelado em Engenharia Civil • UFPR</span><span class="lang-en">🎓 Bachelor of Civil Engineering Undergraduate • UFPR</span></span>
+          <span class="hero-pill pill-autodidact"><span class="lang-pt">💡 100% Autodidata &amp; Curiosidade Científica</span><span class="lang-en">💡 100% Self-Taught &amp; Scientific Curiosity</span></span>
+        </div>
+
+        <div class="skill-hero-main">
+          <div class="skill-hero-icon-box" aria-hidden="true">💎</div>
+          <div>
+            <h1 class="skill-hero-title">
+              <span class="lang-pt">Design de Código, Lógica Computacional &amp; Boas Práticas de Programação</span>
+              <span class="lang-en">Code Design, Computational Logic &amp; Programming Best Practices</span>
+            </h1>
+            <div class="skill-hero-tags">
+              <span class="tech-tag">SOLID • Clean Code • DRY • KISS</span>
+              <span class="tech-tag">RAII &amp; Smart Pointers</span>
+              <span class="tech-tag">Move Semantics &amp; Zero-Copy</span>
+              <span class="tech-tag">Fearless Concurrency</span>
+              <span class="tech-tag">Atomic ACID &amp; ReplaceFileW</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="autodidact-banner lang-pt"><strong>Trajetória Autodidata &amp; Formação Acadêmica:</strong> Graduando no Bacharelado em Engenharia Civil pela Universidade Federal do Paraná (UFPR) — todas as disciplinas de design de código, segurança de memória e boas práticas de engenharia de software abaixo foram adquiridas de forma autodidata e aplicadas em 12 softwares publicados na Microsoft Store.</div>
+        <div class="autodidact-banner lang-en"><strong>Self-Taught Journey &amp; Academic Background:</strong> Undergraduate student in the Bachelor of Civil Engineering at the Federal University of Paraná (UFPR) — all code design disciplines, memory safety practices, and software engineering best practices below were acquired through self-taught study and applied across 12 applications published on the Microsoft Store.</div>
+      </div>
+    </section>
+
+    <section class="skill-full-card">
+      <h2 class="section-heading">
+        <span>📜</span>
+        <span class="lang-pt">Descrição Completa da Habilidade</span>
+        <span class="lang-en">Complete Skill Description</span>
+      </h2>
+      <p class="skill-full-text lang-pt">Aplicação rigorosa dos princípios SOLID, Clean Code, DRY (Don't Repeat Yourself), KISS e YAGNI, gerenciamento determinístico de recursos via RAII (Resource Acquisition Is Initialization) e ponteiros inteligentes (std::unique_ptr e std::shared_ptr), semântica de movimentação (Move Semantics) e leitura Zero-Copy sem alocações desnecessárias no heap, concorrência sem condições de corrida (Fearless Concurrency em Rust e sincronização segura em C++), programação defensiva com validação de invariantes e contratos, tipagem estática forte, persistência transacional atômica contra falhas de energia (Write-Replace via ReplaceFileW e commits ACID), cancelamento cooperativo de threads operárias e empacotamento certificado para a Microsoft Store (12 aplicativos publicados).</p>
+      <p class="skill-full-text lang-en">Strict application of SOLID, Clean Code, DRY (Don't Repeat Yourself), KISS, and YAGNI principles, deterministic resource management via RAII (Resource Acquisition Is Initialization) and smart pointers (std::unique_ptr and std::shared_ptr), Move Semantics and Zero-Copy processing free of superfluous heap allocations, data-race-free concurrency (Fearless Concurrency in Rust and thread-safe synchronization in C++), defensive programming with invariant and contract validation, strong static typing, power-safe atomic transactional persistence (Write-Replace via ReplaceFileW and ACID commits), cooperative worker thread cancellation, and certified packaging for the Microsoft Store (12 published applications).</p>
+    </section>
+
+    <section class="pillars-section">
+      <h2 class="section-heading">
+        <span>🔬</span>
+        <span class="lang-pt">Boas Práticas de Engenharia de Software em Detalhe</span>
+        <span class="lang-en">Software Engineering Best Practices in Detail</span>
+      </h2>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">🧭</div>
+              <h3 class="pillar-title"><span class="lang-pt">SOLID, Clean Code, DRY, KISS &amp; YAGNI</span><span class="lang-en">SOLID, Clean Code, DRY, KISS &amp; YAGNI</span></h3>
+            </div>
+            <span class="pillar-tag">Single Responsibility • Coesão</span>
+          </div>
+          <p class="pillar-desc lang-pt">Organização do código em unidades altamente coesas e de responsabilidade única, funções determinísticas com nomes autoexplicativos, eliminação de duplicação lógica e validação explícita de pré-condições, pós-condições e invariantes de domínio.</p>
+          <p class="pillar-desc lang-en">Code organization into highly cohesive single-responsibility units, deterministic functions with self-documenting names, elimination of logical duplication, and explicit validation of preconditions, postconditions, and domain invariants.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">🛡️</div>
+              <h3 class="pillar-title"><span class="lang-pt">RAII, Smart Pointers &amp; Zero-Copy</span><span class="lang-en">RAII, Smart Pointers &amp; Zero-Copy</span></h3>
+            </div>
+            <span class="pillar-tag">std::unique_ptr • Move Semantics</span>
+          </div>
+          <p class="pillar-desc lang-pt">Ciclo de vida determinístico de descritores de arquivos, handles de kernel do Windows e buffers de memória vinculados ao escopo léxico via RAII, evitando vazamentos de memória (memory leaks) e cópias redundantes no heap através de Move Semantics e fatias Zero-Copy.</p>
+          <p class="pillar-desc lang-en">Deterministic lifecycle management of file descriptors, Windows kernel handles, and memory buffers tied to lexical scope via RAII, preventing memory leaks and redundant heap copies through Move Semantics and Zero-Copy slices.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">🧵</div>
+              <h3 class="pillar-title"><span class="lang-pt">Concorrência Segura &amp; Cancelamento Cooperativo</span><span class="lang-en">Safe Concurrency &amp; Cooperative Cancellation</span></h3>
+            </div>
+            <span class="pillar-tag">Fearless Concurrency • Atomics</span>
+          </div>
+          <p class="pillar-desc lang-pt">Sincronização livre de deadlocks e data races mediante tipos Send/Sync em Rust, variáveis atômicas (std::atomic) e tokens de interrupção cooperativa que permitem encerrar varreduras massivas de disco instantaneamente sem corromper o estado da aplicação.</p>
+          <p class="pillar-desc lang-en">Deadlock- and data-race-free synchronization via Send/Sync traits in Rust, atomic primitives (std::atomic), and cooperative cancellation tokens that terminate massive disk scans instantaneously without corrupting application state.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">💾</div>
+              <h3 class="pillar-title"><span class="lang-pt">Persistência Transacional Atômica (Power-Safe)</span><span class="lang-en">Power-Safe Atomic Transactional Persistence</span></h3>
+            </div>
+            <span class="pillar-tag">ReplaceFileW • ACID Commits</span>
+          </div>
+          <p class="pillar-desc lang-pt">Proteção integral dos dados do usuário contra quedas abruptas de energia por meio de gravação estagiada com substituição atômica no sistema de arquivos (Write-Replace via API Win32 ReplaceFileW) e transações ACID em SQLite WAL.</p>
+          <p class="pillar-desc lang-en">Full protection of user data against abrupt power loss through staged writing with atomic file-system replacement (Write-Replace via Win32 ReplaceFileW API) and ACID transactions in SQLite WAL.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-projects-section">
+      <h2 class="section-heading">
+        <span>📂</span>
+        <span class="lang-pt">Projetos do Portfólio que Aplicam esta Habilidade</span>
+        <span class="lang-en">Portfolio Projects Applying This Skill</span>
+      </h2>
+      <div class="related-projects-grid">
+        <a href="../apps/munin-app.html" class="related-project-card">
+          <img src="../image_perfil/munin.png" alt="Munin App" class="related-project-icon">
+          <div>
+            <div class="related-project-name">Munin App</div>
+            <div class="related-project-meta">C++20 • Zero-Copy &amp; RAII Memory Mapping</div>
+          </div>
+        </a>
+        <a href="../apps/eisenhower-organizer.html" class="related-project-card">
+          <img src="../image_perfil/eisenhower.png" alt="Eisenhower Organizer" class="related-project-icon">
+          <div>
+            <div class="related-project-name">Eisenhower Organizer</div>
+            <div class="related-project-meta">C++17 • Persistência Atômica ReplaceFileW</div>
+          </div>
+        </a>
+        <a href="../apps/acl-auditor.html" class="related-project-card">
+          <img src="../image_perfil/acl_auditor.png" alt="ACL Auditor" class="related-project-icon">
+          <div>
+            <div class="related-project-name">ACL Auditor</div>
+            <div class="related-project-meta">C++20 • Cancelamento Cooperativo &amp; RAII</div>
+          </div>
+        </a>
+        <a href="../apps/huginn.html" class="related-project-card">
+          <img src="../image_perfil/huginn.png" alt="Huginn Sentinel" class="related-project-icon">
+          <div>
+            <div class="related-project-name">Huginn Sentinel</div>
+            <div class="related-project-meta">Rust • Fearless Concurrency &amp; ACID</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div id="skill-prev-next" class="skill-FromTo-nav"></div>
+
+    <section class="all-skills-matrix">
+      <h2 class="section-heading">
+        <span>🧭</span>
+        <span class="lang-pt">Navegar por Todas as 10 Habilidades</span>
+        <span class="lang-en">Browse All 10 Skills</span>
+      </h2>
+      <div id="all-skills-grid" class="all-skills-grid"></div>
+    </section>
+
+  </main>
+
+  <footer class="skill-footer">
+    <div>
+      <span class="lang-pt">Fernando Nillsson Cidade • Graduando em Engenharia Civil (UFPR) &amp; Desenvolvedor Autodidata</span>
+      <span class="lang-en">Fernando Nillsson Cidade • Civil Engineering Undergraduate (UFPR) &amp; Self-Taught Developer</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html"><span class="lang-pt">Página Principal</span><span class="lang-en">Main Page</span></a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="skill-details.js"></script>
+</body>
+</html>
+

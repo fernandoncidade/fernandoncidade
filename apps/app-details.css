@@ -1281,6 +1281,8 @@ html.dark .carousel-lightbox,
 
 /* Imagem Ampliada com moldura e fundo adaptáveis ao tema */
 .carousel-lightbox-img {
+  position: relative;
+  z-index: 1;
   max-width: 95vw;
   max-height: 90vh;
   object-fit: contain;
@@ -1309,6 +1311,7 @@ html.dark .carousel-lightbox-img,
   position: absolute;
   top: 20px;
   right: 20px;
+  z-index: 10;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -1321,6 +1324,8 @@ html.dark .carousel-lightbox-img,
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
@@ -1353,6 +1358,7 @@ html.dark .carousel-lightbox-close:hover,
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 10;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -1364,6 +1370,8 @@ html.dark .carousel-lightbox-close:hover,
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
@@ -1395,23 +1403,37 @@ html.dark .carousel-lightbox-nav:hover,
 .carousel-lightbox-nav.prev { left: 24px; }
 .carousel-lightbox-nav.next { right: 24px; }
 
-/* Legenda da Imagem */
-.carousel-lightbox-caption {
+/* Rodapé do Lightbox (Legenda + Esferas de Navegação) */
+.carousel-lightbox-footer {
   position: absolute;
-  bottom: 18px;
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  max-width: 92vw;
+  pointer-events: none;
+}
+
+/* Legenda da Imagem */
+.carousel-lightbox-caption {
+  pointer-events: auto;
   color: #0f172a;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 600;
   background: rgba(255, 255, 255, 0.94);
   border: 1px solid rgba(15, 23, 42, 0.15);
-  padding: 0.45rem 1.4rem;
+  padding: 0.4rem 1.3rem;
   border-radius: 999px;
   white-space: nowrap;
   max-width: 90vw;
   overflow: hidden;
   text-overflow: ellipsis;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -1424,6 +1446,57 @@ html.dark .carousel-lightbox-caption,
   background: rgba(15, 23, 42, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Esferas de Paginação / Navegação no Lightbox */
+.carousel-lightbox-dots {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 90vw;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+body.dark .carousel-lightbox-dots,
+html.dark .carousel-lightbox-dots,
+.carousel-lightbox.dark .carousel-lightbox-dots {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-lightbox-dots .carousel-dot {
+  background: #cbd5e1;
+}
+
+body.dark .carousel-lightbox-dots .carousel-dot,
+html.dark .carousel-lightbox-dots .carousel-dot,
+.carousel-lightbox.dark .carousel-lightbox-dots .carousel-dot {
+  background: #334155;
+}
+
+.carousel-lightbox-dots .carousel-dot:hover,
+body.dark .carousel-lightbox-dots .carousel-dot:hover,
+html.dark .carousel-lightbox-dots .carousel-dot:hover,
+.carousel-lightbox.dark .carousel-lightbox-dots .carousel-dot:hover {
+  background: var(--accent);
+}
+
+.carousel-lightbox-dots .carousel-dot.active,
+body.dark .carousel-lightbox-dots .carousel-dot.active,
+html.dark .carousel-lightbox-dots .carousel-dot.active,
+.carousel-lightbox.dark .carousel-lightbox-dots .carousel-dot.active {
+  background: var(--accent);
 }
 
 /* Responsividade Mobile para o Carrossel */
@@ -1452,4 +1525,109 @@ html.dark .carousel-lightbox-caption,
   }
   .carousel-lightbox-nav.prev { left: 10px; }
   .carousel-lightbox-nav.next { right: 10px; }
+}
+
+/* ====================================================================
+   Seção de Habilidades e Engenharia do Autor (Subpáginas)
+   ==================================================================== */
+.author-skills-section {
+  background: var(--container-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.author-skills-intro {
+  font-size: 0.96rem;
+  line-height: 1.72;
+  color: var(--text-main);
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  padding: 0.9rem 1.15rem;
+  border-radius: var(--radius-sm);
+  margin: 0.75rem 0 1.25rem 0;
+}
+
+.author-skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+.author-skills-list li {
+  background: var(--main-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1.1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.author-skills-list li:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.author-skill-link {
+  color: var(--text-main);
+  font-weight: 800;
+  font-size: 0.96rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.author-skill-link:hover {
+  color: #0b5e52;
+  text-decoration: underline;
+}
+
+.author-skill-summary {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.58;
+}
+
+html.dark .author-skills-list li,
+body.dark .author-skills-list li {
+  background: var(--card-bg);
+  border-color: var(--border);
+  color: var(--text-main);
+}
+
+html.dark .author-skill-link,
+body.dark .author-skill-link {
+  color: var(--accent);
+}
+
+html.dark .author-skill-link:hover,
+body.dark .author-skill-link:hover {
+  color: #a3ffd6;
+}
+
+@media (max-width: 900px) {
+  .author-skills-section {
+    padding: 1.4rem 1.1rem;
+  }
+  .author-skills-list {
+    grid-template-columns: 1fr;
+  }
 }

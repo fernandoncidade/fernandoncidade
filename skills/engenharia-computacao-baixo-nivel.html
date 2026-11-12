@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Engenharia de Computação, Sistemas de Baixo Nível, SIMD &amp; Paralelismo • Fernando Nillsson Cidade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Habilidade 05/10 — Engenharia de Computação, Sistemas de Baixo Nível, SIMD & Paralelismo (x86-64, Memory-Mapped Files, AVX2/SSE4.2 e Win32 Kernel I/O) por Fernando Nillsson Cidade.">
+  <link rel="icon" type="image/png" href="../image_perfil/linceu_sem_fundo.png">
+  <link rel="stylesheet" href="skill-details.css">
+</head>
+<body>
+
+  <header class="skill-topbar">
+    <div class="skill-topbar-inner">
+      <a href="../index.html" class="back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span class="lang-pt">Voltar ao Portfólio</span>
+        <span class="lang-en">Back to Portfolio</span>
+      </a>
+      <div class="topbar-controls">
+        <span class="skill-step-pill"><span class="lang-pt">HABILIDADE 05 / 10</span><span class="lang-en">SKILL 05 / 10</span></span>
+        <button id="btn-theme-toggle" class="control-btn" type="button">🌙 <span class="btn-text">Escuro</span></button>
+        <button id="btn-lang-toggle" class="control-btn" type="button">🌐 <span class="btn-text">EN-US</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="skill-container">
+
+    <section class="skill-hero">
+      <div class="skill-hero-orb orb-1"></div>
+      <div class="skill-hero-orb orb-2"></div>
+      <div class="skill-hero-content">
+        <div class="skill-hero-top-badges">
+          <span class="hero-pill pill-accent"><span class="lang-pt">🚀 Habilidade Técnica 05 de 10</span><span class="lang-en">🚀 Technical Skill 05 of 10</span></span>
+          <span class="hero-pill pill-ufpr"><span class="lang-pt">🎓 Graduando no Bacharelado em Engenharia Civil • UFPR</span><span class="lang-en">🎓 Bachelor of Civil Engineering Undergraduate • UFPR</span></span>
+          <span class="hero-pill pill-autodidact"><span class="lang-pt">💡 100% Autodidata &amp; Curiosidade Científica</span><span class="lang-en">💡 100% Self-Taught &amp; Scientific Curiosity</span></span>
+        </div>
+
+        <div class="skill-hero-main">
+          <div class="skill-hero-icon-box" aria-hidden="true">⚡</div>
+          <div>
+            <h1 class="skill-hero-title">
+              <span class="lang-pt">Engenharia de Computação, Sistemas de Baixo Nível, SIMD &amp; Paralelismo</span>
+              <span class="lang-en">Computer Engineering, Low-Level Systems, SIMD &amp; Parallelism</span>
+            </h1>
+            <div class="skill-hero-tags">
+              <span class="tech-tag">x86-64 Hardware-Close</span>
+              <span class="tech-tag">SIMD AVX2 / SSE4.2 (&gt;3.0 GB/s)</span>
+              <span class="tech-tag">Memory-Mapped Files (Win32)</span>
+              <span class="tech-tag">Async Kernel I/O</span>
+              <span class="tech-tag">IEEE 754 64-bit</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="autodidact-banner lang-pt"><strong>Trajetória Autodidata &amp; Formação Acadêmica:</strong> Graduando no Bacharelado em Engenharia Civil pela Universidade Federal do Paraná (UFPR) — todo o aprofundamento em arquitetura x86-64, vetorização SIMD, mapeamento de memória virtual e APIs de kernel Win32 foi construído de forma autodidata e movido por curiosidade sobre o funcionamento interno dos computadores.</div>
+        <div class="autodidact-banner lang-en"><strong>Self-Taught Journey &amp; Academic Background:</strong> Undergraduate student in the Bachelor of Civil Engineering at the Federal University of Paraná (UFPR) — all deep study in x86-64 architecture, SIMD vectorization, virtual memory mapping, and Win32 kernel APIs was built through self-taught exploration and curiosity about how computers work under the hood.</div>
+      </div>
+    </section>
+
+    <section class="skill-full-card">
+      <h2 class="section-heading">
+        <span>📜</span>
+        <span class="lang-pt">Descrição Completa da Habilidade</span>
+        <span class="lang-en">Complete Skill Description</span>
+      </h2>
+      <p class="skill-full-text lang-pt">Programação de sistemas próxima ao hardware (arquitetura x86-64), mapeamento de arquivos diretamente no espaço de endereçamento virtual do kernel (Memory-Mapped Files via CreateFileMappingW e MapViewOfFile para abertura instantânea de arquivos de múltiplos gigabytes com RAM constante), vetorização de CPU com instruções SIMD de 256 e 128 bits (intrínsecos AVX2, AVX, SSE4.2 e SSE2 como _mm256_cmpeq_epi8 e _mm256_movemask_epi8 com fallback escalar dinâmico atingindo vazão superior a 3,0 GB/s), I/O assíncrono de kernel com buffers alinhados (ReadDirectoryChangesW e FindFirstFileExW com latência sub-milissegundo), streaming em blocos de memória limitada (memory-bounded chunks de 1 a 4 MB), temporização monotônica de alta precisão (std::chrono e QElapsedTimer), aritmética de ponto flutuante IEEE 754 de dupla precisão (64 bits) e integração nativa com subsistemas Win32 (Advapi32, Secur32, Netapi32, ShellExecuteW, DWM API e SAPI5/OneCore).</p>
+      <p class="skill-full-text lang-en">Hardware-close systems programming (x86-64 architecture), direct virtual address space file mapping (Memory-Mapped Files via CreateFileMappingW and MapViewOfFile for instant multi-gigabyte file opening with constant RAM usage), CPU vectorization with 256-bit and 128-bit SIMD instructions (AVX2, AVX, SSE4.2, and SSE2 intrinsics such as _mm256_cmpeq_epi8 and _mm256_movemask_epi8 with dynamic scalar fallback exceeding 3.0 GB/s throughput), asynchronous kernel I/O with aligned completion buffers (ReadDirectoryChangesW and FindFirstFileExW with sub-millisecond dispatch), memory-bounded stream chunk processing (1 to 4 MB chunks), high-precision monotonic timing (std::chrono and QElapsedTimer), 64-bit IEEE 754 double-precision floating-point arithmetic, and native Win32 subsystem integration (Advapi32, Secur32, Netapi32, ShellExecuteW, DWM API, and SAPI5/OneCore).</p>
+    </section>
+
+    <section class="pillars-section">
+      <h2 class="section-heading">
+        <span>🔬</span>
+        <span class="lang-pt">Técnicas de Baixo Nível, Vetorização &amp; Kernel</span>
+        <span class="lang-en">Low-Level Techniques, Vectorization &amp; Kernel</span>
+      </h2>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">🚀</div>
+              <h3 class="pillar-title"><span class="lang-pt">Vetorização SIMD AVX2 &amp; SSE4.2 (256/128 bits)</span><span class="lang-en">AVX2 &amp; SSE4.2 SIMD Vectorization (256/128-bit)</span></h3>
+            </div>
+            <span class="pillar-tag">_mm256_cmpeq_epi8 • &gt;3.0 GB/s</span>
+          </div>
+          <p class="pillar-desc lang-pt">Processamento simultâneo de 32 bytes por ciclo de instrução utilizando registradores YMM de 256 bits (intrínsecos AVX2) e XMM de 128 bits (SSE4.2/SSE2) para indexação de quebras de linha e varredura de padrões em logs massivos a mais de 3,0 GB/s.</p>
+          <p class="pillar-desc lang-en">Simultaneous processing of 32 bytes per instruction cycle using 256-bit YMM registers (AVX2 intrinsics) and 128-bit XMM registers (SSE4.2/SSE2) for newline indexing and pattern scanning in massive logs at over 3.0 GB/s.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">🗺️</div>
+              <h3 class="pillar-title"><span class="lang-pt">Mapeamento em Memória Virtual (Memory-Mapped I/O)</span><span class="lang-en">Virtual Memory Mapping (Memory-Mapped I/O)</span></h3>
+            </div>
+            <span class="pillar-tag">CreateFileMappingW • MapViewOfFile</span>
+          </div>
+          <p class="pillar-desc lang-pt">Abertura instantânea de arquivos de 10 GB+ mapeando páginas diretamente do cache de sistema do kernel para o espaço de endereçamento virtual do processo, mantendo consumo de memória RAM constante (~35 MB) independentemente do tamanho do arquivo.</p>
+          <p class="pillar-desc lang-en">Instant opening of 10 GB+ files by mapping pages directly from the kernel system cache into the process virtual address space, maintaining a constant RAM footprint (~35 MB) regardless of file size.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">📡</div>
+              <h3 class="pillar-title"><span class="lang-pt">I/O Assíncrono de Kernel &amp; Streaming</span><span class="lang-en">Asynchronous Kernel I/O &amp; Streaming</span></h3>
+            </div>
+            <span class="pillar-tag">ReadDirectoryChangesW • 1-4 MB Chunks</span>
+          </div>
+          <p class="pillar-desc lang-pt">Captura de eventos do sistema de arquivos NTFS diretamente do kernel com latência sub-milissegundo e enumeração otimizada de diretórios (FindFirstFileExW com FindExInfoBasic), aliada ao processamento de streams criptográficos em blocos de 1 a 4 MB.</p>
+          <p class="pillar-desc lang-en">Direct NTFS file system event capture from the kernel with sub-millisecond latency and optimized directory enumeration (FindFirstFileExW with FindExInfoBasic), paired with cryptographic stream processing in 1 to 4 MB chunks.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <div class="pillar-title-group">
+              <div class="pillar-icon">🖥️</div>
+              <h3 class="pillar-title"><span class="lang-pt">Integração Nativa com Subsistemas Win32</span><span class="lang-en">Native Win32 Subsystem Integration</span></h3>
+            </div>
+            <span class="pillar-tag">Advapi32 • Secur32 • DWM • SAPI5</span>
+          </div>
+          <p class="pillar-desc lang-pt">Interação direta com as bibliotecas nativas do sistema operacional Windows para inspeção de tokens e descritores de segurança (Advapi32/Secur32), enumeração de compartilhamentos SMB (Netapi32), composição visual (DWM) e síntese neural (SAPI5/OneCore).</p>
+          <p class="pillar-desc lang-en">Direct interaction with native Windows operating system libraries for security token and descriptor inspection (Advapi32/Secur32), SMB share enumeration (Netapi32), visual composition (DWM), and neural speech synthesis (SAPI5/OneCore).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-projects-section">
+      <h2 class="section-heading">
+        <span>📂</span>
+        <span class="lang-pt">Projetos do Portfólio que Aplicam esta Habilidade</span>
+        <span class="lang-en">Portfolio Projects Applying This Skill</span>
+      </h2>
+      <div class="related-projects-grid">
+        <a href="../apps/munin-app.html" class="related-project-card">
+          <img src="../image_perfil/munin.png" alt="Munin App" class="related-project-icon">
+          <div>
+            <div class="related-project-name">Munin App</div>
+            <div class="related-project-meta">C++20 • SIMD AVX2 &amp; Memory-Mapped Files</div>
+          </div>
+        </a>
+        <a href="../apps/linceu-lighthouse.html" class="related-project-card">
+          <img src="../image_perfil/linceu_sem_fundo.png" alt="Linceu Lighthouse" class="related-project-icon">
+          <div>
+            <div class="related-project-name">Linceu Lighthouse</div>
+            <div class="related-project-meta">C++17 • ReadDirectoryChangesW Kernel I/O</div>
+          </div>
+        </a>
+        <a href="../apps/acl-auditor.html" class="related-project-card">
+          <img src="../image_perfil/acl_auditor.png" alt="ACL Auditor" class="related-project-icon">
+          <div>
+            <div class="related-project-name">ACL Auditor</div>
+            <div class="related-project-meta">C++20 • Advapi32, Secur32 &amp; Netapi32</div>
+          </div>
+        </a>
+        <a href="../apps/huginn.html" class="related-project-card">
+          <img src="../image_perfil/huginn.png" alt="Huginn Sentinel" class="related-project-icon">
+          <div>
+            <div class="related-project-name">Huginn Sentinel</div>
+            <div class="related-project-meta">Rust • Win32 Kernel Notifications &amp; SHA-256</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div id="skill-prev-next" class="skill-FromTo-nav"></div>
+
+    <section class="all-skills-matrix">
+      <h2 class="section-heading">
+        <span>🧭</span>
+        <span class="lang-pt">Navegar por Todas as 10 Habilidades</span>
+        <span class="lang-en">Browse All 10 Skills</span>
+      </h2>
+      <div id="all-skills-grid" class="all-skills-grid"></div>
+    </section>
+
+  </main>
+
+  <footer class="skill-footer">
+    <div>
+      <span class="lang-pt">Fernando Nillsson Cidade • Graduando em Engenharia Civil (UFPR) &amp; Desenvolvedor Autodidata</span>
+      <span class="lang-en">Fernando Nillsson Cidade • Civil Engineering Undergraduate (UFPR) &amp; Self-Taught Developer</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html"><span class="lang-pt">Página Principal</span><span class="lang-en">Main Page</span></a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="skill-details.js"></script>
+</body>
+</html>

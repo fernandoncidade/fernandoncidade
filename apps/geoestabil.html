@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoEstabil • Estabilidade de Taludes, Muros de Arrimo e Fundações conforme ABNT NBR 11682/6122/6118 em Rust</title>
+  <meta name="description" content="GeoEstabil: Software desktop de engenharia geotécnica e estrutural nativo em Rust para análise de estabilidade de taludes (Bishop, Fellenius, Janbu com paralelismo Rayon), empuxos de terra (Rankine e Coulomb), verificação de fundações e dimensionamento de muros de contenção conforme ABNT NBR 11682:2009, NBR 6122:2022 e NBR 6118:2023.">
+  <link rel="icon" type="image/png" href="../image_perfil/geoestabil.png">
+  <link rel="stylesheet" href="app-details.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-topbar">
+    <div class="app-topbar-inner">
+      <a href="../index.html" class="topbar-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span class="lang-pt">Voltar ao Início</span>
+        <span class="lang-en">Back to Home</span>
+      </a>
+      <div class="topbar-actions">
+        <button id="btn-lang-toggle" class="topbar-btn" type="button" title="Alternar Idioma">
+          🌐 <span class="btn-text">EN-US</span>
+        </button>
+        <button id="btn-theme-toggle" class="topbar-btn" type="button" title="Alternar Tema">
+          🌙 <span class="btn-text">Escuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Section -->
+    <section class="app-hero">
+      <div class="app-hero-header">
+        <div class="app-hero-icon-wrapper">
+          <img src="../image_perfil/geoestabil.png" alt="Ícone GeoEstabil" class="app-hero-icon">
+        </div>
+        <div class="app-hero-info">
+          <div class="app-badges-row">
+            <span class="tech-badge">Rust 2021</span>
+            <span class="tech-badge">egui / eframe</span>
+            <span class="tech-badge">Rayon Parallel CPU</span>
+            <span class="tech-badge">ABNT NBR 11682 / 6122 / 6118</span>
+            <span class="tech-badge">SQLite Local</span>
+            <span class="tech-badge platform">Windows 10 / 11 (x64)</span>
+            <span class="tech-badge offline">100% Offline</span>
+          </div>
+
+          <h1 class="app-hero-title">GeoEstabil</h1>
+
+          <p class="app-hero-tagline lang-pt">
+            Estabilidade de Taludes (Bishop, Fellenius e Janbu com Paralelismo via Rayon), Empuxos de Terra (Rankine e Coulomb), Verificação de Fundações e Dimensionamento de Muros de Arrimo segundo as Normas ABNT NBR 11682:2009, NBR 6122:2022 e NBR 6118:2023.
+          </p>
+          <p class="app-hero-tagline lang-en">
+            Slope Stability Analysis (Bishop, Fellenius, and Janbu with Rayon CPU Parallelism), Earth Pressures (Rankine and Coulomb), Foundation Verification, and Retaining Wall Design per ABNT NBR 11682:2009, NBR 6122:2022, and NBR 6118:2023.
+          </p>
+
+          <div class="app-hero-actions">
+            <a href="https://apps.microsoft.com/detail/9P9BDZ9RHRC7" class="btn-cta btn-cta-store" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.5 3H2v8.5h9.5V3zm1 0V11.5H22V3h-9.5zM2 12.5V21h9.5v-8.5H2zm10.5 0V21H22v-8.5h-9.5z"/></svg>
+              <span class="lang-pt">Obter na Microsoft Store</span>
+              <span class="lang-en">Get from Microsoft Store</span>
+            </a>
+            <a href="https://github.com/fernandoncidade/GeoEstabil_rs" class="btn-cta btn-cta-github" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span class="lang-pt">Ver Repositório no GitHub</span>
+              <span class="lang-en">View GitHub Repository</span>
+            </a>
+            <a href="mailto:linceu_lighthouse@outlook.com?subject=[GeoEstabil]%20Contato" class="btn-cta btn-cta-contact">
+              <span>✉</span>
+              <span class="lang-pt">Contato Direto</span>
+              <span class="lang-en">Direct Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrossel de Capturas de Tela (Português) -->
+    <section class="app-carousel-section lang-pt app-carousel" aria-label="Capturas de Tela & Fluxo Geotécnico">
+      <div class="carousel-header">
+        <div>
+          <div class="carousel-title-group">
+            <span class="carousel-title-icon" aria-hidden="true">📸</span>
+            <h2 class="carousel-title">Capturas de Tela & Fluxo Geotécnico</h2>
+            <span class="carousel-badge">5 capturas de tela</span>
+          </div>
+          <p class="carousel-subtitle">Interface gráfica em 5 abas: Estratigrafia & Solos, Estabilidade de Taludes (Heatmap FS), Muro de Contenção, Fundações & Estrutural NBR 6118 e Memorial de Cálculo.</p>
+        </div>
+      </div>
+
+      <div class="carousel-viewport-wrapper">
+        <div class="carousel-viewport" tabindex="0" role="region" aria-label="Galeria interativa de imagens">
+          <button type="button" class="carousel-nav-btn prev" aria-label="Imagem Anterior">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          <div class="carousel-track">
+            <div class="carousel-slide" data-caption="GeoEstabil • Aba 1: Estratigrafia Geotécnica, Catálogo de Solos ABNT NBR 6122 / SPT, Camadas Mohr-Coulomb, Lençol Freático e Nível de Segurança (NBR 11682)">
+              <img src="../listing/listing_GeoEstabil_rs/pt_BR/Captura%20de%20tela%202026-11-11%20002316.png" alt="Aba 1 - Estratigrafia Geotécnica, Camadas de Solo e Nível Freático" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="GeoEstabil • Aba 2: Estabilidade de Taludes com Busca em Grade Paralela via Rayon, Mapa de Calor (Heatmap FS), Fatias e Círculo Crítico (Bishop / Fellenius / Janbu)">
+              <img src="../listing/listing_GeoEstabil_rs/pt_BR/Captura%20de%20tela%202026-11-11%20002325.png" alt="Aba 2 - Estabilidade de Taludes com Heatmap FS e Círculo Crítico" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="GeoEstabil • Aba 3: Muro de Contenção com Diagrama Interativo de Empuxos (Rankine / Coulomb), Tensões na Base e Verificações NBR 11682 / NBR 6122">
+              <img src="../listing/listing_GeoEstabil_rs/pt_BR/Captura%20de%20tela%202026-11-11%20002335.png" alt="Aba 3 - Muro de Contenção e Diagramas de Empuxo" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="GeoEstabil • Aba 4: Fundações & Dimensionamento Estrutural em Concreto Armado (ABNT NBR 6118:2023) à Flexão, Cortante e Fissuração (Fuste, Ponta e Calcanhar)">
+              <img src="../listing/listing_GeoEstabil_rs/pt_BR/Captura%20de%20tela%202026-11-11%20002344.png" alt="Aba 4 - Fundações e Dimensionamento Estrutural NBR 6118" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="GeoEstabil • Aba 5: Memorial de Cálculo Geotécnico e Estrutural com Exportação Direta para HTML5/PDF (A4), Markdown e Perfil Vetorial SVG">
+              <img src="../listing/listing_GeoEstabil_rs/pt_BR/Captura%20de%20tela%202026-11-11%20002354.png" alt="Aba 5 - Memorial de Cálculo e Exportação HTML5, PDF, Markdown e SVG" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <button type="button" class="carousel-nav-btn next" aria-label="Próxima Imagem">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="carousel-zoom-trigger" title="🔍 Ampliar">
+            <span>🔍</span>
+            <span>🔍 Ampliar</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-footer-bar">
+        <div class="carousel-caption-wrapper">
+          <span class="carousel-counter">1 / 5</span>
+          <span class="carousel-caption"></span>
+        </div>
+      </div>
+
+      <div class="carousel-dots" aria-hidden="true"></div>
+
+      <div class="carousel-thumbnails" aria-label="Miniaturas das capturas de tela">
+        <button type="button" class="carousel-thumb-btn active" aria-label="Ver Aba 1 - Estratigrafia & Solos">
+          <img src="../listing/listing_GeoEstabil_rs/pt_BR/Captura%20de%20tela%202026-11-11%20002316.png" alt="Thumb 1" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Aba 2 - Estabilidade de Taludes">
+          <img src="../listing/listing_GeoEstabil_rs/pt_BR/Captura%20de%20tela%202026-11-11%20002325.png" alt="Thumb 2" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Aba 3 - Muro de Contenção">
+          <img src="../listing/listing_GeoEstabil_rs/pt_BR/Captura%20de%20tela%202026-11-11%20002335.png" alt="Thumb 3" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Aba 4 - Fundações & Estrutural NBR 6118">
+          <img src="../listing/listing_GeoEstabil_rs/pt_BR/Captura%20de%20tela%202026-11-11%20002344.png" alt="Thumb 4" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="Ver Aba 5 - Memorial de Cálculo">
+          <img src="../listing/listing_GeoEstabil_rs/pt_BR/Captura%20de%20tela%202026-11-11%20002354.png" alt="Thumb 5" loading="lazy" decoding="async">
+        </button>
+      </div>
+    </section>
+
+    <!-- Carrossel de Capturas de Tela (English) -->
+    <section class="app-carousel-section lang-en app-carousel" aria-label="Screenshots & Geotechnical Workflow">
+      <div class="carousel-header">
+        <div>
+          <div class="carousel-title-group">
+            <span class="carousel-title-icon" aria-hidden="true">📸</span>
+            <h2 class="carousel-title">Screenshots & Geotechnical Workflow</h2>
+            <span class="carousel-badge">5 screenshots</span>
+          </div>
+          <p class="carousel-subtitle">5-tab graphical environment: Stratigraphy & Soils, Slope Stability (FS Heatmap), Retaining Wall, Foundations & Structural NBR 6118, and Calculation Memorial.</p>
+        </div>
+      </div>
+
+      <div class="carousel-viewport-wrapper">
+        <div class="carousel-viewport" tabindex="0" role="region" aria-label="Interactive image gallery">
+          <button type="button" class="carousel-nav-btn prev" aria-label="Previous Image">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          <div class="carousel-track">
+            <div class="carousel-slide" data-caption="GeoEstabil • Tab 1: Geotechnical Stratigraphy, ABNT NBR 6122 / SPT Soil Catalog, Mohr-Coulomb Soil Layers, Phreatic Water Table, and Safety Level (NBR 11682)">
+              <img src="../listing/listing_GeoEstabil_rs/en_US/Captura%20de%20tela%202026-11-11%20002418.png" alt="Tab 1 - Geotechnical Stratigraphy, Soil Layers, and Phreatic Level" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="GeoEstabil • Tab 2: Slope Stability with Parallel Rayon Grid Search, FS Heatmap Overlay, Vertical Slices, and Critical Slip Circle (Bishop / Fellenius / Janbu)">
+              <img src="../listing/listing_GeoEstabil_rs/en_US/Captura%20de%20tela%202026-11-11%20002447.png" alt="Tab 2 - Slope Stability with FS Heatmap and Critical Slip Circle" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="GeoEstabil • Tab 3: Retaining Wall with Interactive Earth Pressure Diagram (Rankine / Coulomb), Base Contact Pressures, and NBR 11682 / NBR 6122 Checks">
+              <img src="../listing/listing_GeoEstabil_rs/en_US/Captura%20de%20tela%202026-11-11%20002513.png" alt="Tab 3 - Retaining Wall and Earth Pressure Diagrams" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="GeoEstabil • Tab 4: Foundations & Reinforced Concrete Structural Sizing (ABNT NBR 6118:2023) for Flexure, Shear, and Crack Width (Stem, Toe, and Heel)">
+              <img src="../listing/listing_GeoEstabil_rs/en_US/Captura%20de%20tela%202026-11-11%20002525.png" alt="Tab 4 - Foundations and Reinforced Concrete Sizing NBR 6118" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+            <div class="carousel-slide" data-caption="GeoEstabil • Tab 5: Geotechnical & Structural Calculation Memorial with Direct Export to HTML5/PDF (A4), Markdown, and Vector SVG Profiles">
+              <img src="../listing/listing_GeoEstabil_rs/en_US/Captura%20de%20tela%202026-11-11%20002540.png" alt="Tab 5 - Calculation Memorial and HTML5, PDF, Markdown, SVG Export" class="carousel-img" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <button type="button" class="carousel-nav-btn next" aria-label="Next Image">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+
+          <button type="button" class="carousel-zoom-trigger" title="🔍 Enlarge">
+            <span>🔍</span>
+            <span>🔍 Enlarge</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-footer-bar">
+        <div class="carousel-caption-wrapper">
+          <span class="carousel-counter">1 / 5</span>
+          <span class="carousel-caption"></span>
+        </div>
+      </div>
+
+      <div class="carousel-dots" aria-hidden="true"></div>
+
+      <div class="carousel-thumbnails" aria-label="Screenshot thumbnails">
+        <button type="button" class="carousel-thumb-btn active" aria-label="View Tab 1 - Stratigraphy & Soils">
+          <img src="../listing/listing_GeoEstabil_rs/en_US/Captura%20de%20tela%202026-11-11%20002418.png" alt="Thumb 1" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Tab 2 - Slope Stability">
+          <img src="../listing/listing_GeoEstabil_rs/en_US/Captura%20de%20tela%202026-11-11%20002447.png" alt="Thumb 2" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Tab 3 - Retaining Wall">
+          <img src="../listing/listing_GeoEstabil_rs/en_US/Captura%20de%20tela%202026-11-11%20002513.png" alt="Thumb 3" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Tab 4 - Foundations & Structural NBR 6118">
+          <img src="../listing/listing_GeoEstabil_rs/en_US/Captura%20de%20tela%202026-11-11%20002525.png" alt="Thumb 4" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="carousel-thumb-btn" aria-label="View Tab 5 - Calculation Memorial">
+          <img src="../listing/listing_GeoEstabil_rs/en_US/Captura%20de%20tela%202026-11-11%20002540.png" alt="Thumb 5" loading="lazy" decoding="async">
+        </button>
+      </div>
+    </section>
+
+    <!-- Grade de Conteúdo -->
+    <div class="app-sections-grid">
+
+      <!-- Visão Geotécnica e Estrutural -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⛰️</span>
+          <span class="lang-pt">Engenharia Geotécnica, Contenções & Estruturas</span>
+          <span class="lang-en">Geotechnical Engineering, Retaining Structures & Foundations</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Equilíbrio Limite por Fatias, Empuxos de Terra e Dimensionamento em Concreto Armado</span>
+          <span class="lang-en">Limit Equilibrium Slice Methods, Earth Pressures & Reinforced Concrete Design</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          O <strong>GeoEstabil</strong> é uma aplicação desktop nativa em Rust projetada para estudo acadêmico, ensino e análise computacional de estabilidade de encostas e taludes, empuxos de terra, verificação de fundações e dimensionamento didático em concreto armado de muros de contenção, fundamentada nas formulações de referência das normas <strong>ABNT NBR 11682:2009</strong>, <strong>ABNT NBR 6122:2022</strong> e <strong>ABNT NBR 6118:2023</strong>.
+        </p>
+        <p class="section-lead lang-en">
+          <strong>GeoEstabil</strong> is a native Rust desktop application designed for academic study, teaching, and computational analysis of slope stability, earth pressures, foundation verification, and educational reinforced concrete sizing of retaining walls, grounded in the reference formulations of Brazilian standards <strong>ABNT NBR 11682:2009</strong>, <strong>ABNT NBR 6122:2022</strong>, and <strong>ABNT NBR 6118:2023</strong>.
+        </p>
+
+        <!-- Banner de Privacidade Local-First -->
+        <div class="highlight-banner">
+          <div class="highlight-banner-icon">🔒</div>
+          <div>
+            <div class="highlight-banner-title lang-pt">Privacidade Soberana & Execução 100% Offline (Local-First)</div>
+            <div class="highlight-banner-title lang-en">Sovereign Privacy & 100% Offline Execution (Local-First)</div>
+            <div class="highlight-banner-text lang-pt">
+              Zero tráfego de rede, zero telemetria e zero IA na nuvem. Todos os modelos estratigráficos, malhas de estabilidade, verificações de muros e memoriais de cálculo são processados localmente e persistidos em banco SQLite local (<code>%APPDATA%\GeoEstabil\geoestabil.db</code>) e arquivos <code>.geoestabil</code> (<code>.json</code>).
+            </div>
+            <div class="highlight-banner-text lang-en">
+              Zero network traffic, zero telemetry, and zero cloud AI. All stratigraphic models, stability meshes, retaining wall verifications, and calculation memorials are processed locally and persisted in a local SQLite database (<code>%APPDATA%\GeoEstabil\geoestabil.db</code>) and <code>.geoestabil</code> (<code>.json</code>) project files.
+            </div>
+          </div>
+        </div>
+
+        <!-- Grade de Funcionalidades -->
+        <div class="features-grid">
+          <div class="feature-box">
+            <span class="feature-icon">📐</span>
+            <h3 class="feature-title lang-pt">Estabilidade de Taludes & Heatmap FS</h3>
+            <h3 class="feature-title lang-en">Slope Stability & FS Heatmap</h3>
+            <p class="feature-desc lang-pt">
+              Métodos de Equilíbrio Limite por Fatias: <strong>Bishop Simplificado</strong> (iterativo com <em>m</em><sub>α</sub>), <strong>Fellenius</strong> (Ordinário / Sueco) e <strong>Janbu Simplificado</strong> (fator corretivo <em>f</em><sub>0</sub>). Varredura paralela via <code>Rayon</code> em malhas de centros (<em>X</em><sub>c</sub>, <em>Y</em><sub>c</sub>) e raios <em>R</em> com Mapa de Calor (Heatmap FS) contínuo, múltiplas camadas Mohr-Coulomb (<em>c'</em>, φ', γ, γ<sub>sat</sub>), poropressão <em>u</em> e sobrecarga <em>q</em>.
+            </p>
+            <p class="feature-desc lang-en">
+              Limit Equilibrium Slice Methods: <strong>Simplified Bishop</strong> (iterative with <em>m</em><sub>α</sub>), <strong>Fellenius</strong> (Ordinary / Swedish), and <strong>Simplified Janbu</strong> (correction factor <em>f</em><sub>0</sub>). Parallel <code>Rayon</code> grid sweep over centers (<em>X</em><sub>c</sub>, <em>Y</em><sub>c</sub>) and radii <em>R</em> with continuous FS Heatmap, multi-layer Mohr-Coulomb strata (<em>c'</em>, φ', γ, γ<sub>sat</sub>), pore pressure <em>u</em>, and crest surcharge <em>q</em>.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🧱</span>
+            <h3 class="feature-title lang-pt">Muros de Contenção & Fundações</h3>
+            <h3 class="feature-title lang-en">Retaining Walls & Foundations</h3>
+            <p class="feature-desc lang-pt">
+              Análise de <strong>Muros de Flexão em Concreto Armado (Perfil L/T Cantilever)</strong> e <strong>Muros de Gravidade (Concreto Ciclópico / Gabião)</strong> com dente de ancoragem opcional. Empuxos ativos e passivos por <strong>Rankine</strong> e <strong>Coulomb</strong>, cunha hidrostática e fenda de tração. Verificações de Tombamento (<em>FS</em> ≥ 1,50), Deslizamento (<em>FS</em> ≥ 1,50), Excentricidade (<em>e</em> ≤ <em>B</em>/6) e Capacidade de Carga de Hansen/Meyerhof (<em>FS</em> ≥ 2,00).
+            </p>
+            <p class="feature-desc lang-en">
+              Analysis of <strong>Reinforced Concrete Cantilever Walls (L/T Profile)</strong> and <strong>Gravity Walls (Cyclopean Concrete / Gabion)</strong> with optional base shear key. Active and passive earth pressures via <strong>Rankine</strong> and <strong>Coulomb</strong>, hydrostatic wedge, and tension crack depth. Checks for Overturning (<em>FS</em> ≥ 1.50), Sliding (<em>FS</em> ≥ 1.50), Eccentricity (<em>e</em> ≤ <em>B</em>/6), and Hansen/Meyerhof Ultimate Bearing Capacity (<em>FS</em> ≥ 2.00).
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">🏗️</span>
+            <h3 class="feature-title lang-pt">Concreto Armado (ABNT NBR 6118:2023)</h3>
+            <h3 class="feature-title lang-en">Reinforced Concrete (ABNT NBR 6118:2023)</h3>
+            <p class="feature-desc lang-pt">
+              Dimensionamento didático à flexão simples (Domínio 3 dúctil ξ ≤ 0,45), taxa mínima de armadura (ρ<sub>min</sub> = 0,15%), verificação ao esforço cortante sem estribos (<em>V</em><sub>Rd1</sub> ≥ <em>V</em><sub>d</sub>), estimativa de abertura de fissuras (<em>w</em><sub>k</sub> ≤ 0,30 mm) e sugestão de bitolas comerciais (⌀ 8,0 a ⌀ 25,0 mm) para <strong>Fuste</strong>, <strong>Ponta</strong> e <strong>Calcanhar</strong>.
+            </p>
+            <p class="feature-desc lang-en">
+              Educational flexural sizing (ductile Domain 3 ξ ≤ 0.45), minimum steel ratio (ρ<sub>min</sub> = 0.15%), unreinforced shear verification (<em>V</em><sub>Rd1</sub> ≥ <em>V</em><sub>d</sub>), crack-width estimation (<em>w</em><sub>k</sub> ≤ 0.30 mm), and commercial rebar suggestions (⌀ 8.0 to ⌀ 25.0 mm) across <strong>Stem</strong>, <strong>Toe</strong>, and <strong>Heel</strong> sections.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <span class="feature-icon">📄</span>
+            <h3 class="feature-title lang-pt">Memorial de Cálculo, SVG & CLI</h3>
+            <h3 class="feature-title lang-en">Calculation Memorial, SVG & CLI</h3>
+            <p class="feature-desc lang-pt">
+              Emissão instantânea de memoriais detalhados em <strong>HTML5/PDF (A4)</strong>, <strong>Markdown (<code>.md</code>)</strong> e <strong>perfis vetoriais SVG (<code>.svg</code>)</strong>. Acompanha manual técnico bilíngue pesquisável e executável autônomo de linha de comando (<code>geoestabil-cli.exe</code>) para processamento em lote.
+            </p>
+            <p class="feature-desc lang-en">
+              Instant generation of comprehensive study reports in <strong>HTML5/PDF (A4)</strong>, <strong>Markdown (<code>.md</code>)</strong>, and <strong>vector SVG profiles (<code>.svg</code>)</strong>. Includes a searchable bilingual technical manual and a standalone command-line utility (<code>geoestabil-cli.exe</code>) for batch processing.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visão Técnica para Desenvolvedores e Engenheiros -->
+      <section class="content-card">
+        <div class="section-badge-header">
+          <span>⚙️</span>
+          <span class="lang-pt">Engenharia de Sistemas & Arquitetura em Rust</span>
+          <span class="lang-en">Systems Engineering & Rust Architecture</span>
+        </div>
+
+        <h2 class="section-title">
+          <span class="lang-pt">Paralelismo Multi-Core em CPU, Canvas Vetorial 2D e Persistência Local</span>
+          <span class="lang-en">Multi-Core CPU Parallelism, 2D Vector Canvas & Local Persistence</span>
+        </h2>
+
+        <p class="section-lead lang-pt">
+          Projetado em Rust (Edição 2021), o GeoEstabil combina processamento numérico paralelo de alta velocidade com interface gráfica responsiva em modo imediato (<code>egui</code> / <code>eframe</code>), garantindo estabilidade, determinismo matemático e consumo mínimo de memória.
+        </p>
+        <p class="section-lead lang-en">
+          Engineered in Rust (2021 Edition), GeoEstabil pairs high-speed parallel numerical computing with a responsive immediate-mode graphical user interface (<code>egui</code> / <code>eframe</code>), ensuring mathematical determinism, memory safety, and minimal resource consumption.
+        </p>
+
+        <div class="dev-spec-list">
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Varredura Paramétrica Paralela de Superfícies Críticas</span>
+              <span class="dev-spec-name lang-en">Parallel Parametric Critical Surface Sweep</span>
+              <span class="dev-spec-tag">Rayon Work-Stealing</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Utiliza o agendador *work-stealing* do <code>Rayon</code> para distribuir a avaliação de milhares de círculos potenciais de ruptura entre todos os núcleos lógicos da CPU, convergindo as iterações de Bishop Simplificado em milissegundos.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Leverages <code>Rayon</code>'s work-stealing scheduler to distribute the evaluation of thousands of trial slip circles across all logical CPU cores, converging Simplified Bishop iterations in milliseconds.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Canvas 2D Interativo com Heatmap Contínuo</span>
+              <span class="dev-spec-name lang-en">Interactive 2D Canvas with Continuous Heatmap</span>
+              <span class="dev-spec-tag">egui / eframe / SVG</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Renderização vetorial interativa com zoom ancorado no cursor, pan fluido, enquadramento automático, discretização visual das fatias verticais, linha freática, diagramas proporcionais de empuxo e tensões de contato na sapata.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Interactive vector viewport featuring pointer-anchored zoom, smooth panning, auto-fit, visual discretization of vertical slices, phreatic surface, proportional earth pressure diagrams, and base contact stress distributions.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Catálogo Normativo SPT & Persistência SQLite</span>
+              <span class="dev-spec-name lang-en">Normative SPT Soil Catalog & SQLite Persistence</span>
+              <span class="dev-spec-tag">SQLite / JSON</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Banco de solos padronizados correlacionado ao índice <em>N</em><sub>SPT</sub> e às referências da ABNT NBR 6122/6484, aliado a armazenamento relacional local em SQLite e serialização estruturada em arquivos <code>.geoestabil</code>.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Standardized soil library correlated with <em>N</em><sub>SPT</sub> blow counts and ABNT NBR 6122/6484 references, paired with local SQLite relational storage and structured serialization in <code>.geoestabil</code> files.
+            </p>
+          </div>
+
+          <div class="dev-spec-item">
+            <div class="dev-spec-header">
+              <span class="dev-spec-name lang-pt">Arquitetura Dual-Binary (GUI Desktop + CLI)</span>
+              <span class="dev-spec-name lang-en">Dual-Binary Architecture (Desktop GUI + CLI)</span>
+              <span class="dev-spec-tag">geoestabil.exe / geoestabil-cli.exe</span>
+            </div>
+            <p class="dev-spec-desc lang-pt">
+              Além da interface gráfica interativa em 5 abas com janelas modeless de Manual (F1) e Sobre, disponibiliza o utilitário de linha de comando <code>geoestabil-cli.exe</code> para execução de casos de referência e automação de relatórios.
+            </p>
+            <p class="dev-spec-desc lang-en">
+              Alongside the 5-tab interactive desktop GUI with modeless Manual (F1) and About windows, provides the standalone <code>geoestabil-cli.exe</code> command-line tool for running benchmark presets and automating report exports.
+            </p>
+          </div>
+        </div>
+
+        <div class="spec-table-container">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th class="lang-pt">Parâmetro</th>
+                <th class="lang-en">Parameter</th>
+                <th class="lang-pt">Especificação</th>
+                <th class="lang-en">Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="lang-pt">Linguagem / Padrão</th>
+                <th class="lang-en">Language / Standard</th>
+                <td>
+                  <span class="lang-pt">Rust Nativo (Edição 2021, toolchain estável 1.80+)</span>
+                  <span class="lang-en">Native Rust (2021 Edition, stable toolchain 1.80+)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Framework de GUI & Paralelismo</th>
+                <th class="lang-en">GUI Framework & Parallelism</th>
+                <td>
+                  <span class="lang-pt">egui / eframe (Modo Imediato) + Rayon (Paralelismo Multi-Core em CPU)</span>
+                  <span class="lang-en">egui / eframe (Immediate Mode) + Rayon (Multi-Core CPU Parallelism)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Normas Técnicas Referenciadas</th>
+                <th class="lang-en">Referenced Technical Standards</th>
+                <td>
+                  <span class="lang-pt">ABNT NBR 11682:2009 (Encostas), NBR 6122:2022 (Fundações), NBR 6118:2023 (Concreto) e NBR 6484:2020 (SPT)</span>
+                  <span class="lang-en">ABNT NBR 11682:2009 (Slopes), NBR 6122:2022 (Foundations), NBR 6118:2023 (Concrete), and NBR 6484:2020 (SPT)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Métodos de Estabilidade de Taludes</th>
+                <th class="lang-en">Slope Stability Methods</th>
+                <td>
+                  <span class="lang-pt">Bishop Simplificado (Iterativo), Fellenius (Ordinário/Sueco) e Janbu Simplificado (com fator f₀)</span>
+                  <span class="lang-en">Simplified Bishop (Iterative), Fellenius (Ordinary/Swedish), and Simplified Janbu (with factor f₀)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Muros de Contenção & Empuxos</th>
+                <th class="lang-en">Retaining Walls & Earth Pressures</th>
+                <td>
+                  <span class="lang-pt">Flexão Cantilever (L/T) e Gravidade (Ciclópico/Gabião); Teorias de Rankine e Coulomb + Hansen/Meyerhof</span>
+                  <span class="lang-en">Cantilever (L/T) and Gravity (Cyclopean/Gabion); Rankine and Coulomb Theories + Hansen/Meyerhof Bearing</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Persistência & Executáveis</th>
+                <th class="lang-en">Persistence & Binaries</th>
+                <td>
+                  <span class="lang-pt">SQLite local (geoestabil.db) e arquivos .geoestabil (.json); geoestabil.exe + geoestabil-cli.exe</span>
+                  <span class="lang-en">Local SQLite (geoestabil.db) and .geoestabil (.json) files; geoestabil.exe + geoestabil-cli.exe</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Formatos de Exportação</th>
+                <th class="lang-en">Export Formats</th>
+                <td>
+                  <span class="lang-pt">Memorial de estudo em HTML5/PDF (A4), Markdown (.md) e Perfil Vetorial SVG (.svg)</span>
+                  <span class="lang-en">Study calculation memorial in HTML5/PDF (A4), Markdown (.md), and Vector SVG Profile (.svg)</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="lang-pt">Distribuição / Licenciamento</th>
+                <th class="lang-en">Distribution / Licensing</th>
+                <td>
+                  <span class="lang-pt">Microsoft Store (EULA Comercial) / Código Aberto no GitHub (GNU AGPLv3)</span>
+                  <span class="lang-en">Microsoft Store (Commercial EULA) / Open Source on GitHub (GNU AGPLv3)</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção de Aplicativos Relacionados -->
+    <section class="related-apps-section">
+      <h3 class="section-title">
+        <span class="lang-pt">Outros Aplicativos do Ecossistema</span>
+        <span class="lang-en">Other Applications in the Ecosystem</span>
+      </h3>
+      <div class="related-apps-grid">
+        <a href="eolo-platform.html" class="related-app-card">
+          <img src="../image_perfil/eolo.png" alt="Eolo Platform" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Eolo Platform</div>
+            <div class="related-app-tag">Rust • Ações de Vento NBR 6123</div>
+          </div>
+        </a>
+        <a href="concrete_mix_design.html" class="related-app-card">
+          <img src="../image_perfil/concrete_mix_design.png" alt="Concrete Mix Designer" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Concrete Mix Designer</div>
+            <div class="related-app-tag">C++20 • Dosagem de Concreto NBR</div>
+          </div>
+        </a>
+        <a href="huginn.html" class="related-app-card">
+          <img src="../image_perfil/huginn.png" alt="Huginn Sentinel" class="related-app-icon">
+          <div class="related-app-info">
+            <div class="related-app-name">Huginn Sentinel</div>
+            <div class="related-app-tag">Rust • Monitoramento & Integridade</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="author-skills-section">
+      <h2 class="section-heading">
+        <span>🚀</span>
+        <span class="lang-pt">Habilidades &amp; Engenharia de Software do Autor</span>
+        <span class="lang-en">Author's Skills &amp; Software Engineering</span>
+      </h2>
+      <p class="author-skills-intro lang-pt">Competências técnicas construídas de forma 100% autodidata e movidas por intensa curiosidade científica, paralelamente à minha graduação no Bacharelado em Engenharia Civil pela UFPR. Clique no título de qualquer habilidade abaixo para abrir sua tela exclusiva com a descrição completa de arquitetura, design de código, estruturas de dados, algoritmos e boas práticas:</p>
+      <p class="author-skills-intro lang-en">Technical competencies built through 100% self-taught study and driven by intense scientific curiosity, alongside my undergraduate studies in the Bachelor of Civil Engineering at UFPR. Click on any skill title below to open its dedicated screen with the complete description of architecture, code design, data structures, algorithms, and best practices:</p>
+      <ul class="author-skills-list lang-pt">
+        <li><a href="../skills/linguagens-compiladores.html" class="author-skill-link"><span>💻 Linguagens de Programação, Compiladores &amp; Padrões</span><span>→</span></a><span class="author-skill-summary">Domínio autodidata de C++ (C++17/C++20 — STL, templates, concepts, std::span), Rust (Edições 2021/2024 — ownership, lifetimes, traits e binários CLI/GUI), C (C99/C11), Python (3.10+ — Type Hints, PEP 8) e Tecnologias Web (HTML5, CSS3, JS ES6+) com toolchains MSVC 2022, Clang/LLVM, MinGW-w64, Cargo e CMake.</span></li>
+        <li><a href="../skills/arquitetura-software.html" class="author-skill-link"><span>🏛️ Arquitetura de Software &amp; Padrões de Projeto</span><span>→</span></a><span class="author-skill-summary">Arquitetura Limpa e em Camadas (Apresentação, Domínio e Persistência), Orientação a Eventos (Signals &amp; Slots), Modelo de Atores e Produtor-Consumidor (DbWriter), Model-View-Delegate, janelas não-modais (Modeless Dialogs), sistemas modulares, I18N bilíngue em tempo real e arquitetura 100% Local-First / Zero-Trust Offline.</span></li>
+        <li><a href="../skills/design-codigo-boas-praticas.html" class="author-skill-link"><span>🧩 Design de Código, Lógica Computacional &amp; Boas Práticas</span><span>→</span></a><span class="author-skill-summary">Aplicação rigorosa de SOLID, Clean Code, DRY, KISS e YAGNI, gestão determinística de recursos via RAII e smart pointers, semântica Move e Zero-Copy, Fearless Concurrency sem data races, contratos defensivos, persistência transacional atômica contra quedas de energia (ReplaceFileW / ACID) e 12 apps na Microsoft Store.</span></li>
+        <li><a href="../skills/estruturas-dados-algoritmos.html" class="author-skill-link"><span>🧮 Estruturas de Dados, Algoritmos &amp; Complexidade</span><span>→</span></a><span class="author-skill-summary">Ring Buffers e canais lock-free MPMC, Hash Sets/Maps com busca O(1), árvores DOM/SAX/NTFS, grafos dirigidos por forças físicas, compressão LZ77 e LZMA, autômatos Regex JIT (PCRE2), métodos numéricos híbridos (Newton-Raphson e Brent-Dekker), regressão não linear e pools paralelos Work-Stealing (Rayon, std::jthread).</span></li>
+        <li><a href="../skills/engenharia-computacao-baixo-nivel.html" class="author-skill-link"><span>⚡ Engenharia de Computação, Baixo Nível, SIMD &amp; Paralelismo</span><span>→</span></a><span class="author-skill-summary">Programação próxima ao hardware x86-64, Memory-Mapped Files (CreateFileMappingW / MapViewOfFile) para abertura instantânea de múltiplos gigabytes com RAM constante, vetorização SIMD de 256/128 bits (AVX2, SSE4.2 &gt; 3,0 GB/s), I/O assíncrono de kernel sub-milissegundo, ponto flutuante IEEE 754 e integração Win32 API.</span></li>
+        <li><a href="../skills/interfaces-graficas-gpu.html" class="author-skill-link"><span>🎨 Engenharia de Interfaces Gráficas (GUI), GPU &amp; UX</span><span>→</span></a><span class="author-skill-summary">Desenvolvimento desktop nativo com Qt 6/6.11 (Widgets, Charts, QGraphicsView, QPainter, QPdfWriter, QSS e Windows 11 Mica), interfaces reativas em modo imediato em Rust com egui/eframe, renderização 2D/3D acelerada por GPU (WGPU, DirectX 12, Vulkan e OpenGL a 60 FPS), PySide6/PyQt6/Tkinter e suporte HiDPI/4K.</span></li>
+        <li><a href="../skills/ciberseguranca-auditoria-forense.html" class="author-skill-link"><span>🛡️ Cibersegurança, Auditoria Forense, Criptografia &amp; FIM</span><span>→</span></a><span class="author-skill-summary">Monitoramento de integridade em tempo real (FIM) com correlação semântica no kernel, análise binária de descritores NTFS/SMB (DACL, SACL, SIDs), simulação do Security Reference Monitor para Acesso Efetivo, detecção de escalonamento de privilégios, remediação com rollback icacls, SHA-256, AES-256-CBC/GCM e LGPD/GDPR/ISO 27001.</span></li>
+        <li><a href="../skills/engenharia-civil-computacional.html" class="author-skill-link"><span>🏗️ Engenharia Civil, Estrutural &amp; Geotécnica Computacional</span><span>→</span></a><span class="author-skill-summary">Modelagem matemática e verificação normativa ABNT NBR: ação de ventos (NBR 6123:2023 / NBR 8800:2024), estabilidade de taludes e mecânica dos solos por Bishop, Fellenius, Janbu, Rankine, Coulomb e Hansen/Meyerhof (NBR 11682 / NBR 6122), muros em concreto armado (NBR 6118:2023) e dosagem de concreto IPT/EPUSP (NBR 12655).</span></li>
+        <li><a href="../skills/engenharia-economica-ciencia-dados.html" class="author-skill-link"><span>📊 Engenharia Econômica, Finanças, Ciência de Dados &amp; BDs</span><span>→</span></a><span class="author-skill-summary">Modelagem financeira com arredondamento ABNT, amortização (SAC, Price, SAM, Bullet), viabilidade econômica (VPL, TIR, MTIR, VAUE, Payback), bancos embarcados SQLite3 em modo WAL concorrente, ciência de dados e BI em Python (Taipy, Streamlit, Plotly, Pandas, SciPy), Curva ABC/Pareto e relatórios PDF A4 300 DPI, XLSX e SVG.</span></li>
+        <li><a href="../skills/acessibilidade-cognitiva-produtividade.html" class="author-skill-link"><span>♿ Acessibilidade Cognitiva (A11y) &amp; Produtividade Científica</span><span>→</span></a><span class="author-skill-summary">Engenharia centrada em ergonomia cognitiva e neurodiversidade (TEA, TDAH e Dislexia) padrão W3C WCAG 2.1 AAA, síntese de voz neural offline (QTextToSpeech / SAPI5), navegação integral por teclado e leitores de tela (NVDA/MSAA), bibliotecas digitais (PDF/EPUB/MOBI) e metodologias Eisenhower, Pomodoro e Técnica Feynman.</span></li>
+      </ul>
+      <ul class="author-skills-list lang-en">
+        <li><a href="../skills/linguagens-compiladores.html" class="author-skill-link"><span>💻 Programming Languages, Compilers &amp; Standards</span><span>→</span></a><span class="author-skill-summary">Self-taught mastery of C++ (C++17/C++20 — STL, templates, concepts, std::span), Rust (2021/2024 Editions — ownership, lifetimes, traits, and native CLI/GUI binaries), C (C99/C11), Python (3.10+ — Type Hints, PEP 8), and Web Technologies (HTML5, CSS3, ES6+ JS) with MSVC 2022, Clang/LLVM, MinGW-w64, Cargo, and CMake toolchains.</span></li>
+        <li><a href="../skills/arquitetura-software.html" class="author-skill-link"><span>🏛️ Software Architecture &amp; Design Patterns</span><span>→</span></a><span class="author-skill-summary">Clean and Layered Architecture (Presentation, Domain, and Persistence), Event-Driven Design (Signals &amp; Slots), Actor and Producer-Consumer Models (DbWriter), Model-View-Delegate, modeless window management (Modeless Dialogs), modular plugin systems, real-time bilingual I18N, and 100% Local-First / Zero-Trust Offline architecture.</span></li>
+        <li><a href="../skills/design-codigo-boas-praticas.html" class="author-skill-link"><span>🧩 Code Design, Computational Logic &amp; Best Practices</span><span>→</span></a><span class="author-skill-summary">Strict application of SOLID, Clean Code, DRY, KISS, and YAGNI, deterministic resource management via RAII and smart pointers, Move Semantics and Zero-Copy processing, data-race-free Fearless Concurrency, defensive contracts, power-safe atomic transactional persistence (ReplaceFileW / ACID), and 12 Microsoft Store apps.</span></li>
+        <li><a href="../skills/estruturas-dados-algoritmos.html" class="author-skill-link"><span>🧮 Data Structures, Algorithms &amp; Complexity</span><span>→</span></a><span class="author-skill-summary">Circular Ring Buffers and lock-free MPMC channels, Hash Sets/Maps with O(1) lookup, DOM/SAX/NTFS hierarchical trees, force-directed spatial graphs, LZ77 and LZMA lossless compression, JIT-compiled Regex automata (PCRE2), hybrid numerical root-finding (Newton-Raphson and Brent-Dekker), non-linear regression, and Work-Stealing thread pools.</span></li>
+        <li><a href="../skills/engenharia-computacao-baixo-nivel.html" class="author-skill-link"><span>⚡ Computer Engineering, Low-Level Systems, SIMD &amp; Parallelism</span><span>→</span></a><span class="author-skill-summary">Hardware-close x86-64 systems programming, Memory-Mapped Files (CreateFileMappingW / MapViewOfFile) for instant multi-gigabyte opening with constant RAM, 256/128-bit SIMD CPU vectorization (AVX2, SSE4.2 &gt; 3.0 GB/s), sub-millisecond asynchronous kernel I/O, IEEE 754 floating-point math, and native Win32 API integration.</span></li>
+        <li><a href="../skills/interfaces-graficas-gpu.html" class="author-skill-link"><span>🎨 GUI Engineering, GPU Rendering &amp; User Experience</span><span>→</span></a><span class="author-skill-summary">Native desktop development with Qt 6/6.11 (Widgets, Charts, QGraphicsView, QPainter, QPdfWriter, QSS, and Windows 11 Mica), immediate-mode reactive UIs in Rust with egui/eframe, hardware-accelerated 2D/3D GPU rendering (WGPU, DirectX 12, Vulkan, and OpenGL at 60 FPS), PySide6/PyQt6/Tkinter, and crisp HiDPI/4K scaling.</span></li>
+        <li><a href="../skills/ciberseguranca-auditoria-forense.html" class="author-skill-link"><span>🛡️ Cybersecurity, Forensic Auditing, Cryptography &amp; FIM</span><span>→</span></a><span class="author-skill-summary">Real-time File Integrity Monitoring (FIM) with deterministic kernel correlation, binary analysis of NTFS/SMB security descriptors (DACL, SACL, SIDs), Security Reference Monitor emulation for Effective Access, privilege escalation detection, safe icacls rollback remediation, SHA-256, AES-256-CBC/GCM, and GDPR/LGPD/ISO 27001 compliance.</span></li>
+        <li><a href="../skills/engenharia-civil-computacional.html" class="author-skill-link"><span>🏗️ Computational Civil, Structural &amp; Geotechnical Engineering</span><span>→</span></a><span class="author-skill-summary">Analytical mathematical modeling and automated ABNT NBR compliance: wind actions (NBR 6123:2023 / NBR 8800:2024), slope stability and soil mechanics via Bishop, Fellenius, Janbu, Rankine, Coulomb, and Hansen/Meyerhof (NBR 11682 / NBR 6122), reinforced concrete retaining walls (NBR 6118:2023), and IPT/EPUSP concrete mix design (NBR 12655).</span></li>
+        <li><a href="../skills/engenharia-economica-ciencia-dados.html" class="author-skill-link"><span>📊 Engineering Economics, Finance, Data Science &amp; Databases</span><span>→</span></a><span class="author-skill-summary">Accounting-precision financial modeling with ABNT rounding, loan amortization (SAC, Price, SAM, Bullet), economic feasibility (NPV, IRR, MIRR, EUAW, Payback), embedded concurrent WAL SQLite3 databases, Python data science and BI (Taipy, Streamlit, Plotly, Pandas, SciPy), ABC/Pareto analytics, and 300 DPI A4 PDF, XLSX, and SVG reports.</span></li>
+        <li><a href="../skills/acessibilidade-cognitiva-produtividade.html" class="author-skill-link"><span>♿ Cognitive Accessibility (A11y) &amp; Productivity Methodologies</span><span>→</span></a><span class="author-skill-summary">Software engineering centered on cognitive ergonomics and neurodiversity (ASD, ADHD, and Dyslexia) under W3C WCAG 2.1 AAA, offline neural speech synthesis (QTextToSpeech / SAPI5), full keyboard navigation and screen reader integration (NVDA/MSAA), digital library cataloging (PDF/EPUB/MOBI), and Eisenhower, Pomodoro, and Feynman methodologies.</span></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="app-footer">
+    <div>
+      <span class="lang-pt">Desenvolvido por Fernando Nillsson Cidade</span>
+      <span class="lang-en">Developed by Fernando Nillsson Cidade</span>
+      <span class="footer-divider">•</span>
+      <a href="../index.html">
+        <span class="lang-pt">Página Principal</span>
+        <span class="lang-en">Main Page</span>
+      </a>
+      <span class="footer-divider">•</span>
+      <a href="https://github.com/fernandoncidade/GeoEstabil_rs" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-divider">•</span>
+      <a href="https://apps.microsoft.com/detail/9P9BDZ9RHRC7" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="btn-top" class="btn-top" type="button" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="app-details.js"></script>
+</body>
+</html>
+

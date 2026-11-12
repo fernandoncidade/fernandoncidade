@@ -945,6 +945,229 @@
     body.dark .store-app-title-link:hover .store-app-name {
       color:#00e5c8;
     }
+
+    /* Estilização criativa da seção de Habilidades (Skills Preview Cards) */
+    .skills-card {
+      margin-bottom:1rem;
+    }
+    .skills-intro {
+      font-size:.92rem;
+      line-height:1.65;
+      color:#2d3b4e;
+      background:linear-gradient(135deg, #f0fdfa 0%, #eff6ff 100%);
+      border:1px solid rgba(26,188,156,0.3);
+      border-left:4px solid var(--accent);
+      padding:.75rem .95rem;
+      border-radius:8px;
+      margin:.45rem 0 .95rem 0;
+    }
+    .skills-showcase-list {
+      display:flex;
+      flex-direction:column;
+      gap:.72rem;
+      margin:0;
+      padding:0;
+    }
+    .skill-preview-card {
+      position:relative;
+      border-radius:11px;
+      border:1px solid var(--border);
+      background:#f9fbfd;
+      padding:.82rem .95rem;
+      overflow:hidden;
+      transition:transform .22s cubic-bezier(.16,1,.3,1), border-color .22s ease, box-shadow .22s ease, background-color .22s ease;
+      background-image:radial-gradient(
+        360px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(0, 229, 200, 0.11),
+        transparent 45%
+      );
+    }
+    .skill-preview-card::before {
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      width:4px;
+      background:linear-gradient(180deg, #0078d4 0%, #00e5c8 100%);
+      opacity:.75;
+      transition:width .22s ease, opacity .22s ease;
+    }
+    .skill-preview-card:hover {
+      transform:translateY(-3px);
+      border-color:#00c7ad;
+      background-color:#ffffff;
+      box-shadow:0 10px 24px rgba(15, 23, 42, 0.08), 0 2px 8px rgba(0, 229, 200, 0.15);
+    }
+    .skill-preview-card:hover::before {
+      width:6px;
+      opacity:1;
+    }
+    .skill-preview-header {
+      display:flex;
+      align-items:flex-start;
+      gap:.7rem;
+      margin-bottom:.42rem;
+    }
+    .skill-preview-icon-link {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      background:linear-gradient(135deg, rgba(0,229,200,0.16) 0%, rgba(0,120,212,0.14) 100%);
+      border:1px solid rgba(26,188,156,0.35);
+      font-size:1.25rem;
+      text-decoration:none;
+      flex-shrink:0;
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .skill-preview-card:hover .skill-preview-icon-link {
+      transform:scale(1.08) rotate(-3deg);
+      border-color:#00e5c8;
+      box-shadow:0 4px 12px rgba(0,229,200,0.25);
+    }
+    .skill-preview-head-info {
+      flex:1;
+      min-width:0;
+    }
+    .skill-preview-meta {
+      display:flex;
+      align-items:center;
+      gap:.4rem;
+      flex-wrap:wrap;
+      margin-bottom:.18rem;
+    }
+    .skill-num-badge {
+      font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size:.7rem;
+      font-weight:800;
+      color:#0078d4;
+      background:rgba(0,120,212,0.1);
+      border:1px solid rgba(0,120,212,0.25);
+      padding:.08rem .42rem;
+      border-radius:5px;
+      letter-spacing:.3px;
+    }
+    .skill-tech-pill {
+      font-size:.71rem;
+      font-weight:700;
+      color:#0f5850;
+      background:#e6f7f3;
+      border:1px solid #b5ebe0;
+      padding:.08rem .48rem;
+      border-radius:999px;
+    }
+    .skill-preview-title {
+      margin:0;
+      font-size:1.01rem;
+      font-weight:800;
+      line-height:1.3;
+    }
+    .skill-preview-title-link {
+      color:var(--primary);
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:.35rem;
+      transition:color .18s ease;
+      cursor:pointer;
+    }
+    .skill-preview-title-link:hover {
+      color:#0078d4;
+      text-decoration:none;
+    }
+    .skill-arrow {
+      display:inline-block;
+      font-size:.95rem;
+      color:var(--accent);
+      transition:transform .22s ease;
+    }
+    .skill-preview-card:hover .skill-arrow {
+      transform:translateX(4px);
+    }
+    .skill-preview-summary {
+      margin:0;
+      font-size:.87rem;
+      line-height:1.54;
+      color:#334155;
+      display:-webkit-box;
+      -webkit-line-clamp:3;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .skill-preview-footer {
+      margin-top:.48rem;
+      display:flex;
+      justify-content:flex-end;
+    }
+    .skill-explore-link {
+      font-size:.76rem;
+      font-weight:700;
+      color:#0078d4;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:.25rem;
+      padding:.18rem .55rem;
+      border-radius:999px;
+      background:rgba(0,120,212,0.08);
+      border:1px solid rgba(0,120,212,0.2);
+      transition:all .18s ease;
+    }
+    .skill-explore-link:hover {
+      background:#0078d4;
+      color:#ffffff;
+      border-color:#0078d4;
+      text-decoration:none;
+    }
+    body.dark .skills-intro {
+      color:#d6e4f5;
+      background:linear-gradient(135deg, rgba(16,35,41,0.9) 0%, rgba(17,29,51,0.9) 100%);
+      border-color:rgba(0,229,200,0.28);
+      border-left-color:#00e5c8;
+    }
+    body.dark .skill-preview-card {
+      background-color:#111d33;
+      border-color:var(--border-dark);
+      color:#d6e4f5;
+    }
+    body.dark .skill-preview-card:hover {
+      background-color:#152644;
+      border-color:#00e5c8;
+      box-shadow:0 10px 26px rgba(0, 0, 0, 0.55), 0 0 16px rgba(0, 229, 200, 0.18);
+    }
+    body.dark .skill-num-badge {
+      color:#60a5fa;
+      background:rgba(96,165,250,0.14);
+      border-color:rgba(96,165,250,0.3);
+    }
+    body.dark .skill-tech-pill {
+      background:rgba(26,188,156,.18);
+      color:#79ffe1;
+      border-color:#1abc9c55;
+    }
+    body.dark .skill-preview-title-link {
+      color:#e9f2ff;
+    }
+    body.dark .skill-preview-title-link:hover {
+      color:#00e5c8;
+    }
+    body.dark .skill-preview-summary {
+      color:#b8c7dc;
+    }
+    body.dark .skill-explore-link {
+      color:#5efce8;
+      background:rgba(0,229,200,0.12);
+      border-color:rgba(0,229,200,0.3);
+    }
+    body.dark .skill-explore-link:hover {
+      background:#00e5c8;
+      color:#080d1a;
+      border-color:#00e5c8;
+    }
   </style>
 
   <script>
@@ -967,8 +1190,48 @@
     // Traduções simples do texto de tagline exibido no cabeçalho.
     // Usado por updateHeaderTagline() para ajustar conforme CURRENT_LANG.
     const HEADER_T = {
-      ptbr: "Desenvolvedor de Software • Python • C++ • GUI",
-      enus: "Software Developer • Python • C++ • GUI"
+      ptbr: "Graduando em Engenharia Civil (UFPR) • Desenvolvedor de Software Autodidata • C++17/20 • Rust • C • Python",
+      enus: "Civil Engineering Undergraduate (UFPR) • Self-Taught Software Developer • C++17/20 • Rust • C • Python"
+    };
+
+    const FOOTER_SUB_T = {
+      ptbr: "Graduando no Bacharelado em Engenharia Civil (UFPR) • Programação Autodidata & Curiosidade Científica • C++17/20 • Rust • C • Python • 100% Offline & Open Source",
+      enus: "Bachelor of Civil Engineering Undergraduate (UFPR) • Self-Taught Programming & Scientific Curiosity • C++17/20 • Rust • C • Python • 100% Offline & Open Source"
+    };
+
+    const SKILLS_DATA = {
+      ptbr: {
+        title: "🚀 Habilidades",
+        intro: "Competências técnicas construídas de forma 100% autodidata e movidas por intensa curiosidade científica, paralelamente à minha graduação no Bacharelado em Engenharia Civil pela UFPR. Clique no título de qualquer habilidade abaixo para abrir sua tela exclusiva com a descrição completa de arquitetura, design de código, estruturas de dados, algoritmos e boas práticas:",
+        items: [
+          { num: "01", slug: "skills/linguagens-compiladores.html", icon: "⚙️", category: "Linguagens de Programação, Compiladores & Padrões", summary: "Desenvolvimento autodidata de sistemas nativos e aplicações desktop em C++ (C++17/C++20), Rust (Edições 2021/2024), C (C99/C11), Python (3.10+) e Web Moderna (HTML5, CSS3 e JS ES6+), utilizando toolchains MSVC 2022, Clang/LLVM, GCC, Cargo e CMake." },
+          { num: "02", slug: "skills/arquitetura-software.html", icon: "🏛️", category: "Arquitetura de Software & Padrões de Projeto", summary: "Concepção de arquiteturas limpas e em camadas com desacoplamento estrito entre UI, Domínio e Persistência, aplicando programação orientada a eventos (Signals & Slots), modelo Produtor-Consumidor, Model-View-Delegate, I18N bilíngue e soberania 100% offline." },
+          { num: "03", slug: "skills/design-codigo-boas-praticas.html", icon: "💎", category: "Design de Código, Lógica Computacional & Boas Práticas", summary: "Aplicação rigorosa de SOLID, Clean Code, DRY, KISS e YAGNI, gerenciamento determinístico de memória via RAII e ponteiros inteligentes, semântica de movimentação, leitura Zero-Copy, concorrência sem condições de corrida e persistência atômica ACID." },
+          { num: "04", slug: "skills/estruturas-dados-algoritmos.html", icon: "🧮", category: "Estruturas de Dados, Algoritmos & Complexidade", summary: "Implementação de Ring Buffers, canais lock-free MPMC, Hash Maps O(1), árvores NTFS/JSON, grafos dirigidos por forças, compressão LZ77/LZMA, Regex JIT em código de máquina, métodos numéricos (Newton-Raphson e Brent-Dekker) e Thread Pools Work-Stealing." },
+          { num: "05", slug: "skills/engenharia-computacao-baixo-nivel.html", icon: "⚡", category: "Engenharia de Computação, Baixo Nível, SIMD & Paralelismo", summary: "Programação de sistemas próxima ao hardware x86-64 com mapeamento direto em memória virtual (Memory-Mapped Files), vetorização SIMD AVX2/SSE4.2 acima de 3,0 GB/s, I/O assíncrono de kernel sub-milissegundo e integração nativa com subsistemas Win32." },
+          { num: "06", slug: "skills/interfaces-graficas-gpu.html", icon: "🎨", category: "Engenharia de Interfaces Gráficas (GUI) & Renderização GPU", summary: "Construção de interfaces desktop nativas de alta responsividade com Qt6/Qt 6.11, PySide6 e egui/eframe em Rust, aliadas à renderização gráfica 2D/3D acelerada por GPU (WGPU, DirectX 12, Vulkan e OpenGL) a 60 FPS com suporte a temas Claro/Escuro e HiDPI/4K." },
+          { num: "07", slug: "skills/ciberseguranca-auditoria-forense.html", icon: "🛡️", category: "Cibersegurança, Auditoria Forense & Criptografia", summary: "Monitoramento de integridade de arquivos (FIM) em tempo real com correlação semântica no kernel, auditoria forense de descritores DACL/SACL e Acesso Efetivo NTFS/SMB, detecção de escalonamento de privilégios, criptografia AES-256/SHA-256 e relatórios LGPD/ISO." },
+          { num: "08", slug: "skills/engenharia-civil-computacional.html", icon: "🏗️", category: "Engenharia Civil, Estrutural & Geotécnica Computacional", summary: "Aplicação dos estudos no Bacharelado em Engenharia Civil (UFPR) e programação autodidata na modelagem numérica de ações do vento (NBR 6123), estabilidade de taludes e fundações (NBR 11682/6122), muros em concreto armado (NBR 6118) e dosagem IPT/EPUSP." },
+          { num: "09", slug: "skills/engenharia-economica-ciencia-dados.html", icon: "📈", category: "Engenharia Econômica, Ciência de Dados & Bancos de Dados", summary: "Modelagem financeira de precisão contábil (SAC, Price, VPL, TIR, MTIR e VAUE), arquitetura de bancos relacionais SQLite3 em modo concorrente WAL, dashboards estatísticos em Python (Pareto, Curva ABC e Boxplots) e exportação nativa em PDF vetorial A4 e XLSX." },
+          { num: "10", slug: "skills/acessibilidade-cognitiva-produtividade.html", icon: "🧠", category: "Acessibilidade Cognitiva (A11y) & Produtividade Científica", summary: "Desenvolvimento centrado em ergonomia cognitiva e neurodiversidade (TEA, TDAH e Dislexia) padrão WCAG 2.1 AAA, síntese de voz neural offline (SAPI5/OneCore), suporte a leitores de tela e metodologias de foco e aprendizagem (Matriz de Eisenhower, Pomodoro e Feynman)." }
+        ]
+      },
+      enus: {
+        title: "🚀 Skills",
+        intro: "Technical competencies built through 100% self-taught study and driven by intense scientific curiosity, alongside my undergraduate studies in the Bachelor of Civil Engineering at UFPR. Click on any skill title below to open its dedicated screen with the complete description of architecture, code design, data structures, algorithms, and best practices:",
+        items: [
+          { num: "01", slug: "skills/linguagens-compiladores.html", icon: "⚙️", category: "Programming Languages, Compilers & Standards", summary: "Self-taught development of native systems and desktop applications in C++ (C++17/C++20), Rust (2021/2024 Editions), C (C99/C11), Python (3.10+), and Modern Web (HTML5, CSS3, and ES6+ JS), using MSVC 2022, Clang/LLVM, GCC, Cargo, and CMake toolchains." },
+          { num: "02", slug: "skills/arquitetura-software.html", icon: "🏛️", category: "Software Architecture & Design Patterns", summary: "Design of clean, layered architectures with strict decoupling across UI, Domain, and Persistence layers, applying event-driven programming (Signals & Slots), Producer-Consumer models, Model-View-Delegate, bilingual I18N, and 100% offline data sovereignty." },
+          { num: "03", slug: "skills/design-codigo-boas-praticas.html", icon: "💎", category: "Code Design, Computational Logic & Best Practices", summary: "Strict application of SOLID, Clean Code, DRY, KISS, and YAGNI, deterministic memory management via RAII and smart pointers, move semantics, Zero-Copy reading, data-race-free concurrency, and power-safe atomic ACID persistence." },
+          { num: "04", slug: "skills/estruturas-dados-algoritmos.html", icon: "🧮", category: "Data Structures, Algorithms & Complexity", summary: "Implementation of Ring Buffers, lock-free MPMC channels, O(1) Hash Maps, NTFS/JSON trees, force-directed graphs, LZ77/LZMA compression, machine-code Regex JIT, numerical methods (Newton-Raphson and Brent-Dekker), and Work-Stealing Thread Pools." },
+          { num: "05", slug: "skills/engenharia-computacao-baixo-nivel.html", icon: "⚡", category: "Computer Engineering, Low-Level Systems, SIMD & Parallelism", summary: "Hardware-close x86-64 systems programming with direct virtual Memory-Mapped Files, AVX2/SSE4.2 SIMD vectorization exceeding 3.0 GB/s, sub-millisecond asynchronous kernel I/O, and native integration with Win32 subsystems." },
+          { num: "06", slug: "skills/interfaces-graficas-gpu.html", icon: "🎨", category: "Graphical User Interface (GUI) Engineering & GPU Rendering", summary: "Construction of highly responsive native desktop interfaces with Qt6/Qt 6.11, PySide6, and Rust egui/eframe, paired with hardware-accelerated 2D/3D GPU rendering (WGPU, DirectX 12, Vulkan, and OpenGL) at 60 FPS with Light/Dark themes and HiDPI/4K scaling." },
+          { num: "07", slug: "skills/ciberseguranca-auditoria-forense.html", icon: "🛡️", category: "Cybersecurity, Forensic Auditing & Cryptography", summary: "Real-time File Integrity Monitoring (FIM) with kernel semantic correlation, forensic auditing of DACL/SACL descriptors and NTFS/SMB Effective Access, privilege escalation detection, AES-256/SHA-256 cryptography, and GDPR/LGPD/ISO compliance reporting." },
+          { num: "08", slug: "skills/engenharia-civil-computacional.html", icon: "🏗️", category: "Computational Civil, Structural & Geotechnical Engineering", summary: "Application of Bachelor of Civil Engineering studies (UFPR) and self-taught programming to numerical modeling of wind loads (NBR 6123), slope stability and foundations (NBR 11682/6122), reinforced concrete walls (NBR 6118), and IPT/EPUSP mix design." },
+          { num: "09", slug: "skills/engenharia-economica-ciencia-dados.html", icon: "📈", category: "Engineering Economics, Data Science & Databases", summary: "Accounting-precision financial modeling (SAC, Price, NPV, IRR, MIRR, and EUAW), concurrent WAL SQLite3 relational database architecture, statistical Python dashboards (Pareto, ABC Curve, and Boxplots), and native 300 DPI vector A4 PDF and XLSX export." },
+          { num: "10", slug: "skills/acessibilidade-cognitiva-produtividade.html", icon: "🧠", category: "Cognitive Accessibility (A11y) & Scientific Productivity", summary: "Software development centered on cognitive ergonomics and neurodiversity (ASD, ADHD, and Dyslexia) per WCAG 2.1 AAA, offline neural speech synthesis (SAPI5/OneCore), screen reader support, and focus/learning methodologies (Eisenhower Matrix, Pomodoro, and Feynman)." }
+        ]
+      }
     };
 
     // Badge "último commit" em diferentes línguas.
@@ -1043,6 +1306,7 @@
       { name: "EoloPlatform_rs", html_url: "https://github.com/fernandoncidade/EoloPlatform_rs" },
       { name: "fernandoncidade", html_url: "https://github.com/fernandoncidade/fernandoncidade" },
       { name: "File_Manager", html_url: "https://github.com/fernandoncidade/File_Manager" },
+      { name: "GeoEstabil_rs", html_url: "https://github.com/fernandoncidade/GeoEstabil_rs" },
       { name: "HuginnSentinel_rs", html_url: "https://github.com/fernandoncidade/HuginnSentinel_rs" },
       { name: "Launcher_EBook", html_url: "https://github.com/fernandoncidade/Launcher_EBook" },
       { name: "Linceu_Lighthouse_cpp", html_url: "https://github.com/fernandoncidade/Linceu_Lighthouse_cpp" },
@@ -1068,6 +1332,7 @@
       "HuginnSentinel_rs": "image_perfil/huginn.png",
       "Huginn_rs": "image_perfil/huginn.png",
       "EoloPlatform_rs": "image_perfil/eolo.png",
+      "GeoEstabil_rs": "image_perfil/geoestabil.png",
       "Concrete_Mix_Designer_cpp": "image_perfil/concrete_mix_design.png",
       "Compression_Manager": "image_perfil/Manager-BackUp.png",
       "Economia_APP": "image_perfil/economia.png",
@@ -1083,6 +1348,7 @@
       "HuginnSentinel_rs": "https://apps.microsoft.com/detail/9NHQTGB26LMK",
       "Huginn_rs": "https://apps.microsoft.com/detail/9NHQTGB26LMK",
       "EoloPlatform_rs": "https://apps.microsoft.com/detail/9NHTCM7PZ9MM",
+      "GeoEstabil_rs": "https://apps.microsoft.com/detail/9P9BDZ9RHRC7",
       "Concrete_Mix_Designer_cpp": "https://apps.microsoft.com/detail/9PB3M1HPF8M4",
       "Compression_Manager": "https://apps.microsoft.com/detail/9PJMT90R953K",
       "Economia_APP": "https://apps.microsoft.com/detail/9PLR0KD6KSJJ",
@@ -1096,6 +1362,7 @@
       "HuginnSentinel_rs": "apps/huginn.html",
       "Huginn_rs": "apps/huginn.html",
       "EoloPlatform_rs": "apps/eolo-platform.html",
+      "GeoEstabil_rs": "apps/geoestabil.html",
       "Concrete_Mix_Designer_cpp": "apps/concrete_mix_design.html",
       "Compression_Manager": "apps/compression-manager.html",
       "Economia_APP": "apps/economia-app.html",
@@ -1417,7 +1684,7 @@
   <div class="header">
     <img class="avatar" src="https://raw.githubusercontent.com/fernandoncidade/fernandoncidade/main/image_perfil/photo_2024-12-26_12-19-42.jpg" alt="Avatar">
     <h1 class="title">Fernando Nillsson Cidade</h1>
-    <div id="tagline" class="tagline">Desenvolvedor de Software • Python • C++ • GUI</div>
+    <div id="tagline" class="tagline">Graduando em Engenharia Civil (UFPR) • Desenvolvedor de Software Autodidata • C++17/20 • Rust • C • Python</div>
     <div class="header-links">
       <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
@@ -1458,21 +1725,165 @@
 
     <section id="sec-ptbr" class="lang-section active">
       <div class="note">
-        <b>Olá, eu sou o Fernando!</b> Sou desenvolvedor com foco em Python, C++ e GUIs (PySide6, PyQt6, Tkinter). Interesses em automação, análise de dados e soluções práticas.
+        <b>Olá, eu sou o Fernando Nillsson Cidade!</b> Graduando no Bacharelado em Engenharia Civil pela Universidade Federal do Paraná (UFPR) — tudo o que desenvolvo nasce de uma intensa atividade autodidata e de muita curiosidade científica e tecnológica. Desenvolvedor de software autodidata com sólida prática em C++ (C++17/C++20), Rust (Edições 2021/2024), C e Python (3.10+), dedicado ao estudo e implementação de arquitetura de sistemas nativos de altíssima performance, design de código limpo e seguro em memória, estruturas de dados e algoritmos avançados, paralelismo multi-core e vetorização SIMD, cibersegurança e auditoria forense de sistemas de arquivos, processamento massivo de logs em tempo real, simulação estrutural, eólica, geotécnica e de tecnologia do concreto (normas ABNT NBR), engenharia econômica, ciência de dados, compressão de dados, acessibilidade cognitiva para neurodivergentes e ferramentas de produtividade — aliando Qt6, egui/WGPU, Win32 API e bancos de dados relacionais locais com soberania total de dados (100% offline e zero telemetria).
       </div>
 
       <div class="grid">
         <div class="col-6">
-          <div class="card">
+          <div class="card skills-card">
             <h3>🚀 Habilidades</h3>
-            <ul>
-              <li><b>Linguagens:</b> C++ (C++17, C++20), Rust (2021/2024), Python (3.10+)</li>
-              <li><b>GUI & Desktop:</b> Qt6 (Widgets, QSS, Mica/Windows DWM), egui/eframe (Rust), PySide6, PyQt6, Tkinter</li>
-              <li><b>Sistemas & Performance:</b> Win32 API, Memory-Mapped Files (Zero-Copy), SIMD (AVX2, SSE4.2), Multithreading, SQLite Local</li>
-              <li><b>Segurança & Auditoria:</b> Permissões NTFS, Auditoria SMB, Effective Access, File Integrity Monitoring (FIM), Hashes Criptográficos</li>
-              <li><b>Dados & Visualização:</b> Pandas, Plotly, Streamlit, Taipy, NumPy, SciPy, Matplotlib</li>
-              <li><b>Arquivos & Backup:</b> Automação, compressão (LZMA, LZ77), Git/GitHub</li>
-            </ul>
+            <p class="skills-intro">Competências técnicas construídas de forma 100% autodidata e movidas por intensa curiosidade científica, paralelamente à minha graduação no Bacharelado em Engenharia Civil pela UFPR. Clique no título de qualquer habilidade abaixo para abrir sua tela exclusiva com a descrição completa de arquitetura, design de código, estruturas de dados, algoritmos e boas práticas:</p>
+            <div class="skills-showcase-list">
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/linguagens-compiladores.html" class="skill-preview-icon-link" title="Ver descrição completa: Linguagens de Programação, Compiladores &amp; Padrões">⚙️</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">01 / 10</span>
+                      <span class="skill-tech-pill">C++17/20 • Rust 2021/2024 • C99/C11 • Python 3.10+</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/linguagens-compiladores.html" class="skill-preview-title-link" title="Abrir página completa da habilidade">Linguagens de Programação, Compiladores &amp; Padrões <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Desenvolvimento autodidata de sistemas nativos e aplicações desktop em C++ (C++17/C++20), Rust (Edições 2021/2024), C (C99/C11), Python (3.10+) e Web Moderna (HTML5, CSS3 e JS ES6+), utilizando toolchains MSVC 2022, Clang/LLVM, GCC, Cargo e CMake.</p>
+                <div class="skill-preview-footer"><a href="skills/linguagens-compiladores.html" class="skill-explore-link">🔍 Ver habilidade completa</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/arquitetura-software.html" class="skill-preview-icon-link" title="Ver descrição completa: Arquitetura de Software &amp; Padrões de Projeto">🏛️</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">02 / 10</span>
+                      <span class="skill-tech-pill">Clean Architecture • Event-Driven • Model-View-Delegate</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/arquitetura-software.html" class="skill-preview-title-link" title="Abrir página completa da habilidade">Arquitetura de Software &amp; Padrões de Projeto <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Concepção de arquiteturas limpas e em camadas com desacoplamento estrito entre UI, Domínio e Persistência, aplicando programação orientada a eventos (Signals &amp; Slots), modelo Produtor-Consumidor, Model-View-Delegate, I18N bilíngue e soberania 100% offline.</p>
+                <div class="skill-preview-footer"><a href="skills/arquitetura-software.html" class="skill-explore-link">🔍 Ver habilidade completa</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/design-codigo-boas-praticas.html" class="skill-preview-icon-link" title="Ver descrição completa: Design de Código, Lógica Computacional &amp; Boas Práticas">💎</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">03 / 10</span>
+                      <span class="skill-tech-pill">SOLID • Clean Code • RAII • Zero-Copy • ACID</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/design-codigo-boas-praticas.html" class="skill-preview-title-link" title="Abrir página completa da habilidade">Design de Código, Lógica Computacional &amp; Boas Práticas <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Aplicação rigorosa de SOLID, Clean Code, DRY, KISS e YAGNI, gerenciamento determinístico de memória via RAII e ponteiros inteligentes, semântica de movimentação, leitura Zero-Copy, concorrência sem condições de corrida e persistência atômica ACID.</p>
+                <div class="skill-preview-footer"><a href="skills/design-codigo-boas-praticas.html" class="skill-explore-link">🔍 Ver habilidade completa</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/estruturas-dados-algoritmos.html" class="skill-preview-icon-link" title="Ver descrição completa: Estruturas de Dados, Algoritmos &amp; Complexidade">🧮</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">04 / 10</span>
+                      <span class="skill-tech-pill">Hash Maps O(1) • LZ77/LZMA • Regex JIT • Newton-Raphson</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/estruturas-dados-algoritmos.html" class="skill-preview-title-link" title="Abrir página completa da habilidade">Estruturas de Dados, Algoritmos &amp; Complexidade <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Implementação de Ring Buffers, canais lock-free MPMC, Hash Maps O(1), árvores NTFS/JSON, grafos dirigidos por forças, compressão LZ77/LZMA, Regex JIT em código de máquina, métodos numéricos (Newton-Raphson e Brent-Dekker) e Thread Pools Work-Stealing.</p>
+                <div class="skill-preview-footer"><a href="skills/estruturas-dados-algoritmos.html" class="skill-explore-link">🔍 Ver habilidade completa</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/engenharia-computacao-baixo-nivel.html" class="skill-preview-icon-link" title="Ver descrição completa: Engenharia de Computação, Baixo Nível, SIMD &amp; Paralelismo">⚡</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">05 / 10</span>
+                      <span class="skill-tech-pill">x86-64 • SIMD AVX2/SSE4.2 (&gt;3 GB/s) • Memory-Mapped I/O</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/engenharia-computacao-baixo-nivel.html" class="skill-preview-title-link" title="Abrir página completa da habilidade">Engenharia de Computação, Baixo Nível, SIMD &amp; Paralelismo <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Programação de sistemas próxima ao hardware x86-64 com mapeamento direto em memória virtual (Memory-Mapped Files), vetorização SIMD AVX2/SSE4.2 acima de 3,0 GB/s, I/O assíncrono de kernel sub-milissegundo e integração nativa com subsistemas Win32.</p>
+                <div class="skill-preview-footer"><a href="skills/engenharia-computacao-baixo-nivel.html" class="skill-explore-link">🔍 Ver habilidade completa</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/interfaces-graficas-gpu.html" class="skill-preview-icon-link" title="Ver descrição completa: Engenharia de Interfaces Gráficas (GUI) &amp; Renderização GPU">🎨</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">06 / 10</span>
+                      <span class="skill-tech-pill">Qt 6.11 • egui/eframe • WGPU • DX12 / Vulkan / OpenGL</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/interfaces-graficas-gpu.html" class="skill-preview-title-link" title="Abrir página completa da habilidade">Engenharia de Interfaces Gráficas (GUI) &amp; Renderização GPU <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Construção de interfaces desktop nativas de alta responsividade com Qt6/Qt 6.11, PySide6 e egui/eframe em Rust, aliadas à renderização gráfica 2D/3D acelerada por GPU (WGPU, DirectX 12, Vulkan e OpenGL) a 60 FPS com suporte a temas Claro/Escuro e HiDPI/4K.</p>
+                <div class="skill-preview-footer"><a href="skills/interfaces-graficas-gpu.html" class="skill-explore-link">🔍 Ver habilidade completa</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/ciberseguranca-auditoria-forense.html" class="skill-preview-icon-link" title="Ver descrição completa: Cibersegurança, Auditoria Forense &amp; Criptografia">🛡️</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">07 / 10</span>
+                      <span class="skill-tech-pill">FIM Real-Time • DACL/SACL • Effective Access • AES-256</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/ciberseguranca-auditoria-forense.html" class="skill-preview-title-link" title="Abrir página completa da habilidade">Cibersegurança, Auditoria Forense &amp; Criptografia <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Monitoramento de integridade de arquivos (FIM) em tempo real com correlação semântica no kernel, auditoria forense de descritores DACL/SACL e Acesso Efetivo NTFS/SMB, detecção de escalonamento de privilégios, criptografia AES-256/SHA-256 e relatórios LGPD/ISO.</p>
+                <div class="skill-preview-footer"><a href="skills/ciberseguranca-auditoria-forense.html" class="skill-explore-link">🔍 Ver habilidade completa</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/engenharia-civil-computacional.html" class="skill-preview-icon-link" title="Ver descrição completa: Engenharia Civil, Estrutural &amp; Geotécnica Computacional">🏗️</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">08 / 10</span>
+                      <span class="skill-tech-pill">Graduando UFPR • ABNT NBR 6123 / 11682 / 6122 / 6118 / 12655</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/engenharia-civil-computacional.html" class="skill-preview-title-link" title="Abrir página completa da habilidade">Engenharia Civil, Estrutural &amp; Geotécnica Computacional <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Aplicação dos estudos no Bacharelado em Engenharia Civil (UFPR) e programação autodidata na modelagem numérica de ações do vento (NBR 6123), estabilidade de taludes e fundações (NBR 11682/6122), muros em concreto armado (NBR 6118) e dosagem IPT/EPUSP.</p>
+                <div class="skill-preview-footer"><a href="skills/engenharia-civil-computacional.html" class="skill-explore-link">🔍 Ver habilidade completa</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/engenharia-economica-ciencia-dados.html" class="skill-preview-icon-link" title="Ver descrição completa: Engenharia Econômica, Ciência de Dados &amp; Bancos de Dados">📈</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">09 / 10</span>
+                      <span class="skill-tech-pill">VPL/TIR • SAC/Price • SQLite3 WAL • Python BI • PDF 300 DPI</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/engenharia-economica-ciencia-dados.html" class="skill-preview-title-link" title="Abrir página completa da habilidade">Engenharia Econômica, Ciência de Dados &amp; Bancos de Dados <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Modelagem financeira de precisão contábil (SAC, Price, VPL, TIR, MTIR e VAUE), arquitetura de bancos relacionais SQLite3 em modo concorrente WAL, dashboards estatísticos em Python (Pareto, Curva ABC e Boxplots) e exportação nativa em PDF vetorial A4 e XLSX.</p>
+                <div class="skill-preview-footer"><a href="skills/engenharia-economica-ciencia-dados.html" class="skill-explore-link">🔍 Ver habilidade completa</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/acessibilidade-cognitiva-produtividade.html" class="skill-preview-icon-link" title="Ver descrição completa: Acessibilidade Cognitiva (A11y) &amp; Produtividade Científica">🧠</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">10 / 10</span>
+                      <span class="skill-tech-pill">WCAG 2.1 AAA • TEA / TDAH / Dislexia • Eisenhower &amp; Feynman</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/acessibilidade-cognitiva-produtividade.html" class="skill-preview-title-link" title="Abrir página completa da habilidade">Acessibilidade Cognitiva (A11y) &amp; Produtividade Científica <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Desenvolvimento centrado em ergonomia cognitiva e neurodiversidade (TEA, TDAH e Dislexia) padrão WCAG 2.1 AAA, síntese de voz neural offline (SAPI5/OneCore), suporte a leitores de tela e metodologias de foco e aprendizagem (Matriz de Eisenhower, Pomodoro e Feynman).</p>
+                <div class="skill-preview-footer"><a href="skills/acessibilidade-cognitiva-produtividade.html" class="skill-explore-link">🔍 Ver habilidade completa</a></div>
+              </div>
+            </div>
           </div>
 
           <div class="card">
@@ -1483,6 +1894,7 @@
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Munin_App_cpp">Munin App (C++20 / Qt6)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/HuginnSentinel_rs">Huginn Sentinel (Rust / egui / SQLite)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/EoloPlatform_rs">Eolo Platform (Rust / egui / WGPU)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/GeoEstabil_rs">GeoEstabil (Rust / egui / Rayon)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp">Concrete Mix Designer (C++20 / Qt6)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9MW96RN044TT">EisenPo (C++ / Qt6)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9N70CLLMVRPN">Lúmen (C++ / Qt6)</a></li>
@@ -1590,6 +2002,21 @@
 
               <div class="store-app-item">
                 <div class="store-app-info">
+                  <a href="apps/geoestabil.html" class="store-app-icon-link" title="Ver subpágina do GeoEstabil">
+                    <img src="image_perfil/geoestabil.png" alt="GeoEstabil" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/geoestabil.html" class="store-app-title-link" title="Ver subpágina do GeoEstabil">
+                      <span class="store-app-name">GeoEstabil</span>
+                    </a>
+                    <span class="store-app-tag">Taludes & Muros de Arrimo (NBR & Rust)</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9P9BDZ9RHRC7" target="_blank" rel="noopener noreferrer">Obter</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
                   <a href="apps/eisenpo.html" class="store-app-icon-link" title="Ver subpágina do EisenPo">
                     <img src="image_perfil/eisenpo.png" alt="EisenPo" class="store-app-icon">
                   </a>
@@ -1682,8 +2109,8 @@
           </div>
 
           <div class="card">
-            <h3>🎓 Formação</h3>
-            <p>Aluno de Engenharia Civil (UFPR). Estudos anteriores em Licenciatura em Física (UTFPR), experiência em docência no Ensino Médio.</p>
+            <h3>🎓 Formação &amp; Trajetória Autodidata</h3>
+            <p>Graduando no Bacharelado em Engenharia Civil pela Universidade Federal do Paraná (UFPR). Todo o desenvolvimento de software, arquitetura de sistemas, estruturas de dados e algoritmos deste portfólio nasce de uma atividade autodidata contínua e de muita curiosidade científica, somada a estudos anteriores em Licenciatura em Física (UTFPR) e experiência em docência no Ensino Médio.</p>
             <h3>🎯 Objetivos</h3>
             <ul>
               <li>Aprimorar automação, análise de dados e IA</li>
@@ -1805,6 +2232,24 @@
               <a class="cta" href="https://github.com/fernandoncidade/EoloPlatform_rs" target="_blank" rel="noopener noreferrer">Ver repositório</a>
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9NHTCM7PZ9MM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
               <button type="button" class="cta tertiary btn-open-msg" data-repo="EoloPlatform_rs" data-app="Eolo Platform">💬 Mensagem</button>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/geoestabil.html" class="project-icon-link" title="Ver subpágina do GeoEstabil">
+                <img src="image_perfil/geoestabil.png" alt="GeoEstabil" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">Rust • egui • Rayon • ABNT NBR 11682 / 6122 / 6118 • 100% Offline</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/geoestabil.html" class="project-title-link" title="Ver subpágina do GeoEstabil">GeoEstabil</a></h2>
+              </div>
+            </div>
+            <p>Plataforma desktop em Rust para estudo e análise computacional de estabilidade de taludes e encostas (Bishop Simplificado, Fellenius e Janbu com varredura paralela via Rayon e Heatmap FS), empuxos de terra (Rankine e Coulomb), verificação de fundações (Hansen/Meyerhof) e dimensionamento em concreto armado de muros de contenção (fuste, ponta e calcanhar) segundo as normas ABNT NBR 11682:2009, NBR 6122:2022 e NBR 6118:2023, com exportação para HTML5/PDF (A4), Markdown e SVG vetorial.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/GeoEstabil_rs" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P9BDZ9RHRC7" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="GeoEstabil_rs" data-app="GeoEstabil">💬 Mensagem</button>
             </div>
           </div>
 
@@ -1951,21 +2396,165 @@
 
     <section id="sec-enus" class="lang-section">
       <div class="note">
-        <b>Hello! I'm Fernando.</b> Software developer focused on Python, C++ and GUIs (PySide6, PyQt6, Tkinter). Interests in automation, data analysis and practical solutions.
+        <b>Hello, I'm Fernando Nillsson Cidade!</b> Undergraduate student in the Bachelor of Civil Engineering at the Federal University of Paraná (UFPR) — everything I develop stems from an intense self-taught activity and deep scientific and technological curiosity. Self-taught software developer with solid hands-on practice in C++ (C++17/C++20), Rust (2021/2024 Editions), C, and Python (3.10+), dedicated to studying and implementing ultra-high-performance native systems architecture, clean and memory-safe code design, advanced data structures and algorithms, multi-core parallelism and SIMD vectorization, cybersecurity and forensic file system auditing, real-time massive log processing, structural, wind, geotechnical, and concrete technology simulation (ABNT NBR standards), engineering economics, data science, data compression, cognitive accessibility for neurodivergent users, and productivity tooling — combining Qt6, egui/WGPU, the Win32 API, and local relational databases with total data sovereignty (100% offline and zero telemetry).
       </div>
 
       <div class="grid">
         <div class="col-6">
-          <div class="card">
+          <div class="card skills-card">
             <h3>🚀 Skills</h3>
-            <ul>
-              <li><b>Languages:</b> C++ (C++17, C++20), Rust (2021/2024), Python (3.10+)</li>
-              <li><b>GUI & Desktop:</b> Qt6 (Widgets, QSS, Mica/Windows DWM), egui/eframe (Rust), PySide6, PyQt6, Tkinter</li>
-              <li><b>Systems & Performance:</b> Win32 API, Memory-Mapped Files (Zero-Copy), SIMD (AVX2, SSE4.2), Multithreading, Local SQLite</li>
-              <li><b>Security & Auditing:</b> NTFS Permissions, SMB Auditing, Effective Access, File Integrity Monitoring (FIM), Cryptographic Hashes</li>
-              <li><b>Data & Visualization:</b> Pandas, Plotly, Streamlit, Taipy, NumPy, SciPy, Matplotlib</li>
-              <li><b>Files & Backup:</b> Automation, compression (LZMA, LZ77), Git/GitHub</li>
-            </ul>
+            <p class="skills-intro">Technical competencies built through 100% self-taught study and driven by intense scientific curiosity, alongside my undergraduate studies in the Bachelor of Civil Engineering at UFPR. Click on any skill title below to open its dedicated screen with the complete description of architecture, code design, data structures, algorithms, and best practices:</p>
+            <div class="skills-showcase-list">
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/linguagens-compiladores.html" class="skill-preview-icon-link" title="View complete description: Programming Languages, Compilers &amp; Standards">⚙️</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">01 / 10</span>
+                      <span class="skill-tech-pill">C++17/20 • Rust 2021/2024 • C99/C11 • Python 3.10+</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/linguagens-compiladores.html" class="skill-preview-title-link" title="Open complete skill page">Programming Languages, Compilers &amp; Standards <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Self-taught development of native systems and desktop applications in C++ (C++17/C++20), Rust (2021/2024 Editions), C (C99/C11), Python (3.10+), and Modern Web (HTML5, CSS3, and ES6+ JS), using MSVC 2022, Clang/LLVM, GCC, Cargo, and CMake toolchains.</p>
+                <div class="skill-preview-footer"><a href="skills/linguagens-compiladores.html" class="skill-explore-link">🔍 View complete skill</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/arquitetura-software.html" class="skill-preview-icon-link" title="View complete description: Software Architecture &amp; Design Patterns">🏛️</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">02 / 10</span>
+                      <span class="skill-tech-pill">Clean Architecture • Event-Driven • Model-View-Delegate</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/arquitetura-software.html" class="skill-preview-title-link" title="Open complete skill page">Software Architecture &amp; Design Patterns <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Design of clean, layered architectures with strict decoupling across UI, Domain, and Persistence layers, applying event-driven programming (Signals &amp; Slots), Producer-Consumer models, Model-View-Delegate, bilingual I18N, and 100% offline data sovereignty.</p>
+                <div class="skill-preview-footer"><a href="skills/arquitetura-software.html" class="skill-explore-link">🔍 View complete skill</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/design-codigo-boas-praticas.html" class="skill-preview-icon-link" title="View complete description: Code Design, Computational Logic &amp; Best Practices">💎</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">03 / 10</span>
+                      <span class="skill-tech-pill">SOLID • Clean Code • RAII • Zero-Copy • ACID</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/design-codigo-boas-praticas.html" class="skill-preview-title-link" title="Open complete skill page">Code Design, Computational Logic &amp; Best Practices <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Strict application of SOLID, Clean Code, DRY, KISS, and YAGNI, deterministic memory management via RAII and smart pointers, move semantics, Zero-Copy reading, data-race-free concurrency, and power-safe atomic ACID persistence.</p>
+                <div class="skill-preview-footer"><a href="skills/design-codigo-boas-praticas.html" class="skill-explore-link">🔍 View complete skill</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/estruturas-dados-algoritmos.html" class="skill-preview-icon-link" title="View complete description: Data Structures, Algorithms &amp; Complexity">🧮</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">04 / 10</span>
+                      <span class="skill-tech-pill">Hash Maps O(1) • LZ77/LZMA • Regex JIT • Newton-Raphson</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/estruturas-dados-algoritmos.html" class="skill-preview-title-link" title="Open complete skill page">Data Structures, Algorithms &amp; Complexity <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Implementation of Ring Buffers, lock-free MPMC channels, O(1) Hash Maps, NTFS/JSON trees, force-directed graphs, LZ77/LZMA compression, machine-code Regex JIT, numerical methods (Newton-Raphson and Brent-Dekker), and Work-Stealing Thread Pools.</p>
+                <div class="skill-preview-footer"><a href="skills/estruturas-dados-algoritmos.html" class="skill-explore-link">🔍 View complete skill</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/engenharia-computacao-baixo-nivel.html" class="skill-preview-icon-link" title="View complete description: Computer Engineering, Low-Level Systems, SIMD &amp; Parallelism">⚡</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">05 / 10</span>
+                      <span class="skill-tech-pill">x86-64 • SIMD AVX2/SSE4.2 (&gt;3 GB/s) • Memory-Mapped I/O</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/engenharia-computacao-baixo-nivel.html" class="skill-preview-title-link" title="Open complete skill page">Computer Engineering, Low-Level Systems, SIMD &amp; Parallelism <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Hardware-close x86-64 systems programming with direct virtual Memory-Mapped Files, AVX2/SSE4.2 SIMD vectorization exceeding 3.0 GB/s, sub-millisecond asynchronous kernel I/O, and native integration with Win32 subsystems.</p>
+                <div class="skill-preview-footer"><a href="skills/engenharia-computacao-baixo-nivel.html" class="skill-explore-link">🔍 View complete skill</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/interfaces-graficas-gpu.html" class="skill-preview-icon-link" title="View complete description: Graphical User Interface (GUI) Engineering &amp; GPU Rendering">🎨</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">06 / 10</span>
+                      <span class="skill-tech-pill">Qt 6.11 • egui/eframe • WGPU • DX12 / Vulkan / OpenGL</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/interfaces-graficas-gpu.html" class="skill-preview-title-link" title="Open complete skill page">Graphical User Interface (GUI) Engineering &amp; GPU Rendering <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Construction of highly responsive native desktop interfaces with Qt6/Qt 6.11, PySide6, and Rust egui/eframe, paired with hardware-accelerated 2D/3D GPU rendering (WGPU, DirectX 12, Vulkan, and OpenGL) at 60 FPS with Light/Dark themes and HiDPI/4K scaling.</p>
+                <div class="skill-preview-footer"><a href="skills/interfaces-graficas-gpu.html" class="skill-explore-link">🔍 View complete skill</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/ciberseguranca-auditoria-forense.html" class="skill-preview-icon-link" title="View complete description: Cybersecurity, Forensic Auditing &amp; Cryptography">🛡️</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">07 / 10</span>
+                      <span class="skill-tech-pill">FIM Real-Time • DACL/SACL • Effective Access • AES-256</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/ciberseguranca-auditoria-forense.html" class="skill-preview-title-link" title="Open complete skill page">Cybersecurity, Forensic Auditing &amp; Cryptography <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Real-time File Integrity Monitoring (FIM) with kernel semantic correlation, forensic auditing of DACL/SACL descriptors and NTFS/SMB Effective Access, privilege escalation detection, AES-256/SHA-256 cryptography, and GDPR/LGPD/ISO compliance reporting.</p>
+                <div class="skill-preview-footer"><a href="skills/ciberseguranca-auditoria-forense.html" class="skill-explore-link">🔍 View complete skill</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/engenharia-civil-computacional.html" class="skill-preview-icon-link" title="View complete description: Computational Civil, Structural &amp; Geotechnical Engineering">🏗️</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">08 / 10</span>
+                      <span class="skill-tech-pill">UFPR Undergraduate • ABNT NBR 6123 / 11682 / 6122 / 6118 / 12655</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/engenharia-civil-computacional.html" class="skill-preview-title-link" title="Open complete skill page">Computational Civil, Structural &amp; Geotechnical Engineering <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Application of Bachelor of Civil Engineering studies (UFPR) and self-taught programming to numerical modeling of wind loads (NBR 6123), slope stability and foundations (NBR 11682/6122), reinforced concrete walls (NBR 6118), and IPT/EPUSP mix design.</p>
+                <div class="skill-preview-footer"><a href="skills/engenharia-civil-computacional.html" class="skill-explore-link">🔍 View complete skill</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/engenharia-economica-ciencia-dados.html" class="skill-preview-icon-link" title="View complete description: Engineering Economics, Data Science &amp; Databases">📈</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">09 / 10</span>
+                      <span class="skill-tech-pill">NPV/IRR • SAC/Price • SQLite3 WAL • Python BI • 300 DPI PDF</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/engenharia-economica-ciencia-dados.html" class="skill-preview-title-link" title="Open complete skill page">Engineering Economics, Data Science &amp; Databases <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Accounting-precision financial modeling (SAC, Price, NPV, IRR, MIRR, and EUAW), concurrent WAL SQLite3 relational database architecture, statistical Python dashboards (Pareto, ABC Curve, and Boxplots), and native 300 DPI vector A4 PDF and XLSX export.</p>
+                <div class="skill-preview-footer"><a href="skills/engenharia-economica-ciencia-dados.html" class="skill-explore-link">🔍 View complete skill</a></div>
+              </div>
+
+              <div class="skill-preview-card">
+                <div class="skill-preview-header">
+                  <a href="skills/acessibilidade-cognitiva-produtividade.html" class="skill-preview-icon-link" title="View complete description: Cognitive Accessibility (A11y) &amp; Scientific Productivity">🧠</a>
+                  <div class="skill-preview-head-info">
+                    <div class="skill-preview-meta">
+                      <span class="skill-num-badge">10 / 10</span>
+                      <span class="skill-tech-pill">WCAG 2.1 AAA • ASD / ADHD / Dyslexia • Eisenhower &amp; Feynman</span>
+                    </div>
+                    <h4 class="skill-preview-title"><a href="skills/acessibilidade-cognitiva-produtividade.html" class="skill-preview-title-link" title="Open complete skill page">Cognitive Accessibility (A11y) &amp; Scientific Productivity <span class="skill-arrow">→</span></a></h4>
+                  </div>
+                </div>
+                <p class="skill-preview-summary">Software development centered on cognitive ergonomics and neurodiversity (ASD, ADHD, and Dyslexia) per WCAG 2.1 AAA, offline neural speech synthesis (SAPI5/OneCore), screen reader support, and focus/learning methodologies (Eisenhower Matrix, Pomodoro, and Feynman).</p>
+                <div class="skill-preview-footer"><a href="skills/acessibilidade-cognitiva-produtividade.html" class="skill-explore-link">🔍 View complete skill</a></div>
+              </div>
+            </div>
           </div>
 
           <div class="card">
@@ -1976,6 +2565,7 @@
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Munin_App_cpp">Munin App (C++20 / Qt6)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/HuginnSentinel_rs">Huginn Sentinel (Rust / egui / SQLite)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/EoloPlatform_rs">Eolo Platform (Rust / egui / WGPU)</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/GeoEstabil_rs">GeoEstabil (Rust / egui / Rayon)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Concrete_Mix_Designer_cpp">Concrete Mix Designer (C++20 / Qt6)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9MW96RN044TT">EisenPo (C++ / Qt6)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://apps.microsoft.com/detail/9N70CLLMVRPN">Lúmen (C++ / Qt6)</a></li>
@@ -2083,6 +2673,21 @@
 
               <div class="store-app-item">
                 <div class="store-app-info">
+                  <a href="apps/geoestabil.html" class="store-app-icon-link" title="View GeoEstabil subpage">
+                    <img src="image_perfil/geoestabil.png" alt="GeoEstabil" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/geoestabil.html" class="store-app-title-link" title="View GeoEstabil subpage">
+                      <span class="store-app-name">GeoEstabil</span>
+                    </a>
+                    <span class="store-app-tag">Slope Stability & Retaining Walls (NBR & Rust)</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9P9BDZ9RHRC7" target="_blank" rel="noopener noreferrer">Get</a>
+              </div>
+
+              <div class="store-app-item">
+                <div class="store-app-info">
                   <a href="apps/eisenpo.html" class="store-app-icon-link" title="View EisenPo subpage">
                     <img src="image_perfil/eisenpo.png" alt="EisenPo" class="store-app-icon">
                   </a>
@@ -2175,8 +2780,8 @@
           </div>
 
           <div class="card">
-            <h3>🎓 Education</h3>
-            <p>Civil Engineering student (UFPR). Previously studied Physics Teaching (UTFPR), experience in high school teaching.</p>
+            <h3>🎓 Education &amp; Self-Taught Journey</h3>
+            <p>Undergraduate student in the Bachelor of Civil Engineering at the Federal University of Paraná (UFPR). All software development, systems architecture, data structures, and algorithms in this portfolio stem from continuous self-taught activity and deep scientific curiosity, combined with previous studies in Physics Teaching (UTFPR) and high school teaching experience.</p>
             <h3>🎯 Goals</h3>
             <ul>
               <li>Improve automation, data analysis and AI skills</li>
@@ -2298,6 +2903,24 @@
               <a class="cta" href="https://github.com/fernandoncidade/EoloPlatform_rs" target="_blank" rel="noopener noreferrer">Open repository</a>
               <a class="cta secondary" href="https://apps.microsoft.com/detail/9NHTCM7PZ9MM" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
               <button type="button" class="cta tertiary btn-open-msg" data-repo="EoloPlatform_rs" data-app="Eolo Platform">💬 Message</button>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/geoestabil.html" class="project-icon-link" title="View GeoEstabil subpage">
+                <img src="image_perfil/geoestabil.png" alt="GeoEstabil" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">Rust • egui • Rayon • ABNT NBR 11682 / 6122 / 6118 • 100% Offline</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/geoestabil.html" class="project-title-link" title="View GeoEstabil subpage">GeoEstabil</a></h2>
+              </div>
+            </div>
+            <p>Desktop geotechnical and structural platform written in Rust for academic study and computational analysis of slope stability (Simplified Bishop, Fellenius, and Janbu with parallel Rayon grid sweeps and FS Heatmaps), earth pressures (Rankine and Coulomb), foundation bearing verification (Hansen/Meyerhof), and reinforced concrete retaining wall sizing (stem, toe, and heel) per ABNT NBR 11682:2009, NBR 6122:2022, and NBR 6118:2023, featuring direct export to HTML5/PDF (A4), Markdown, and vector SVG.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/GeoEstabil_rs" target="_blank" rel="noopener noreferrer">Open repository</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P9BDZ9RHRC7" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="GeoEstabil_rs" data-app="GeoEstabil">💬 Message</button>
             </div>
           </div>
 
@@ -2486,7 +3109,7 @@
       <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">Perfil no GitHub</a>
     </div>
     <div id="footer-sub" class="footer-sub">
-      Python • C++ • Qt / PySide • Open Source
+      Graduando no Bacharelado em Engenharia Civil (UFPR) • Programação Autodidata &amp; Curiosidade Científica • C++17/20 • Rust • C • Python • 100% Offline &amp; Open Source
     </div>
   </footer>
 
@@ -2609,6 +3232,10 @@
           `;
         }
       }
+      const footerSub = document.getElementById('footer-sub');
+      if(footerSub){
+        footerSub.textContent = FOOTER_SUB_T[CURRENT_LANG] || FOOTER_SUB_T.ptbr;
+      }
       const btnTop = document.getElementById('btn-top');
       if(btnTop){
         const label = CURRENT_LANG === 'enus' ? 'Back to top' : 'Voltar ao topo';
@@ -2724,6 +3351,7 @@
       { id: 'Munin_App_cpp', name: 'Munin App', repo: 'Munin_App_cpp', hasDiscussion: true },
       { id: 'HuginnSentinel_rs', name: 'Huginn Sentinel', repo: 'HuginnSentinel_rs', hasDiscussion: true },
       { id: 'EoloPlatform_rs', name: 'Eolo Platform', repo: 'EoloPlatform_rs', hasDiscussion: true },
+      { id: 'GeoEstabil_rs', name: 'GeoEstabil', repo: 'GeoEstabil_rs', hasDiscussion: true },
       { id: 'Concrete_Mix_Designer_cpp', name: 'Concrete Mix Designer', repo: 'Concrete_Mix_Designer_cpp', hasDiscussion: true },
       { id: 'Compression_Manager', name: 'COMPRESSION MANAGER', repo: 'Compression_Manager', hasDiscussion: true },
       { id: 'Economia_APP', name: 'Economia APP', repo: 'Economia_APP', hasDiscussion: true },
@@ -3132,6 +3760,15 @@
       });
       const pb = document.getElementById('btn-projects');
       if(pb){ pb.addEventListener('click', ()=> toast('Aba de projetos')); }
+
+      // Efeito Spotlight interativo nos cards de habilidades
+      document.querySelectorAll('.skill-preview-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+          card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+        });
+      });
 
       // Reforça segurança em links externos
       secureExternalLinks();
