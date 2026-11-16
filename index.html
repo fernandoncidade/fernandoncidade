@@ -1190,13 +1190,13 @@
     // Traduções simples do texto de tagline exibido no cabeçalho.
     // Usado por updateHeaderTagline() para ajustar conforme CURRENT_LANG.
     const HEADER_T = {
-      ptbr: "Graduando em Engenharia Civil (UFPR) • Desenvolvedor de Software Autodidata • C++17/20 • Rust • C • Python",
-      enus: "Civil Engineering Undergraduate (UFPR) • Self-Taught Software Developer • C++17/20 • Rust • C • Python"
+      ptbr: "Graduando em Engenharia Civil (UFPR) • Desenvolvedor de Software Autodidata • C++17/20/23 • Rust • C • Python",
+      enus: "Civil Engineering Undergraduate (UFPR) • Self-Taught Software Developer • C++17/20/23 • Rust • C • Python"
     };
 
     const FOOTER_SUB_T = {
-      ptbr: "Graduando no Bacharelado em Engenharia Civil (UFPR) • Programação Autodidata & Curiosidade Científica • C++17/20 • Rust • C • Python • 100% Offline & Open Source",
-      enus: "Bachelor of Civil Engineering Undergraduate (UFPR) • Self-Taught Programming & Scientific Curiosity • C++17/20 • Rust • C • Python • 100% Offline & Open Source"
+      ptbr: "Graduando no Bacharelado em Engenharia Civil (UFPR) • Programação Autodidata & Curiosidade Científica • C++17/20/23 • Rust • C • Python • 100% Offline & Open Source",
+      enus: "Bachelor of Civil Engineering Undergraduate (UFPR) • Self-Taught Programming & Scientific Curiosity • C++17/20/23 • Rust • C • Python • 100% Offline & Open Source"
     };
 
     const SKILLS_DATA = {
@@ -1204,14 +1204,14 @@
         title: "🚀 Habilidades",
         intro: "Competências técnicas construídas de forma 100% autodidata e movidas por intensa curiosidade científica, paralelamente à minha graduação no Bacharelado em Engenharia Civil pela UFPR. Clique no título de qualquer habilidade abaixo para abrir sua tela exclusiva com a descrição completa de arquitetura, design de código, estruturas de dados, algoritmos e boas práticas:",
         items: [
-          { num: "01", slug: "skills/linguagens-compiladores.html", icon: "⚙️", category: "Linguagens de Programação, Compiladores & Padrões", summary: "Desenvolvimento autodidata de sistemas nativos e aplicações desktop em C++ (C++17/C++20), Rust (Edições 2021/2024), C (C99/C11), Python (3.10+) e Web Moderna (HTML5, CSS3 e JS ES6+), utilizando toolchains MSVC 2022, Clang/LLVM, GCC, Cargo e CMake." },
+          { num: "01", slug: "skills/linguagens-compiladores.html", icon: "⚙️", category: "Linguagens de Programação, Compiladores & Padrões", summary: "Desenvolvimento autodidata de sistemas nativos e aplicações desktop em C++ (C++17/C++20/C++23), Rust (Edições 2021/2024), C (C99/C11), Python (3.10+) e Web Moderna (HTML5, CSS3 e JS ES6+), utilizando toolchains MSVC 2022, Clang/LLVM, GCC, Cargo e CMake." },
           { num: "02", slug: "skills/arquitetura-software.html", icon: "🏛️", category: "Arquitetura de Software & Padrões de Projeto", summary: "Concepção de arquiteturas limpas e em camadas com desacoplamento estrito entre UI, Domínio e Persistência, aplicando programação orientada a eventos (Signals & Slots), modelo Produtor-Consumidor, Model-View-Delegate, I18N bilíngue e soberania 100% offline." },
           { num: "03", slug: "skills/design-codigo-boas-praticas.html", icon: "💎", category: "Design de Código, Lógica Computacional & Boas Práticas", summary: "Aplicação rigorosa de SOLID, Clean Code, DRY, KISS e YAGNI, gerenciamento determinístico de memória via RAII e ponteiros inteligentes, semântica de movimentação, leitura Zero-Copy, concorrência sem condições de corrida e persistência atômica ACID." },
-          { num: "04", slug: "skills/estruturas-dados-algoritmos.html", icon: "🧮", category: "Estruturas de Dados, Algoritmos & Complexidade", summary: "Implementação de Ring Buffers, canais lock-free MPMC, Hash Maps O(1), árvores NTFS/JSON, grafos dirigidos por forças, compressão LZ77/LZMA, Regex JIT em código de máquina, métodos numéricos (Newton-Raphson e Brent-Dekker) e Thread Pools Work-Stealing." },
+          { num: "04", slug: "skills/estruturas-dados-algoritmos.html", icon: "🧮", category: "Estruturas de Dados, Algoritmos & Complexidade", summary: "Implementação de Ring Buffers, canais lock-free MPMC, Hash Maps O(1), árvores NTFS/JSON, grafos dirigidos por forças, compressão LZ77/LZMA, Regex JIT, solvers esparsos (Cholesky LDLT via Eigen), interpolação de Hermite e Thread Pools Work-Stealing." },
           { num: "05", slug: "skills/engenharia-computacao-baixo-nivel.html", icon: "⚡", category: "Engenharia de Computação, Baixo Nível, SIMD & Paralelismo", summary: "Programação de sistemas próxima ao hardware x86-64 com mapeamento direto em memória virtual (Memory-Mapped Files), vetorização SIMD AVX2/SSE4.2 acima de 3,0 GB/s, I/O assíncrono de kernel sub-milissegundo e integração nativa com subsistemas Win32." },
-          { num: "06", slug: "skills/interfaces-graficas-gpu.html", icon: "🎨", category: "Engenharia de Interfaces Gráficas (GUI) & Renderização GPU", summary: "Construção de interfaces desktop nativas de alta responsividade com Qt6/Qt 6.11, PySide6 e egui/eframe em Rust, aliadas à renderização gráfica 2D/3D acelerada por GPU (WGPU, DirectX 12, Vulkan e OpenGL) a 60 FPS com suporte a temas Claro/Escuro e HiDPI/4K." },
+          { num: "06", slug: "skills/interfaces-graficas-gpu.html", icon: "🎨", category: "Engenharia de Interfaces Gráficas (GUI) & Renderização GPU", summary: "Construção de interfaces desktop nativas de alta responsividade com Qt6/Qt 6.11, PySide6 e egui/eframe em Rust, aliadas à renderização 2D/3D acelerada por GPU (OpenGL 3.3 Core com SSAA/MSAA/SDF, WGPU, DX12 e Vulkan) a 60 FPS com temas Claro/Escuro e HiDPI/4K." },
           { num: "07", slug: "skills/ciberseguranca-auditoria-forense.html", icon: "🛡️", category: "Cibersegurança, Auditoria Forense & Criptografia", summary: "Monitoramento de integridade de arquivos (FIM) em tempo real com correlação semântica no kernel, auditoria forense de descritores DACL/SACL e Acesso Efetivo NTFS/SMB, detecção de escalonamento de privilégios, criptografia AES-256/SHA-256 e relatórios LGPD/ISO." },
-          { num: "08", slug: "skills/engenharia-civil-computacional.html", icon: "🏗️", category: "Engenharia Civil, Estrutural & Geotécnica Computacional", summary: "Aplicação dos estudos no Bacharelado em Engenharia Civil (UFPR) e programação autodidata na modelagem numérica de ações do vento (NBR 6123), estabilidade de taludes e fundações (NBR 11682/6122), muros em concreto armado (NBR 6118) e dosagem IPT/EPUSP." },
+          { num: "08", slug: "skills/engenharia-civil-computacional.html", icon: "🏗️", category: "Engenharia Civil, Estrutural & Geotécnica Computacional", summary: "Aplicação dos estudos no Bacharelado em Engenharia Civil (UFPR) e programação autodidata em análise estrutural 3D por elementos finitos (NBR 8800/6118), ações do vento (NBR 6123), estabilidade de taludes e muros (NBR 11682/6122) e dosagem IPT/EPUSP." },
           { num: "09", slug: "skills/engenharia-economica-ciencia-dados.html", icon: "📈", category: "Engenharia Econômica, Ciência de Dados & Bancos de Dados", summary: "Modelagem financeira de precisão contábil (SAC, Price, VPL, TIR, MTIR e VAUE), arquitetura de bancos relacionais SQLite3 em modo concorrente WAL, dashboards estatísticos em Python (Pareto, Curva ABC e Boxplots) e exportação nativa em PDF vetorial A4 e XLSX." },
           { num: "10", slug: "skills/acessibilidade-cognitiva-produtividade.html", icon: "🧠", category: "Acessibilidade Cognitiva (A11y) & Produtividade Científica", summary: "Desenvolvimento centrado em ergonomia cognitiva e neurodiversidade (TEA, TDAH e Dislexia) padrão WCAG 2.1 AAA, síntese de voz neural offline (SAPI5/OneCore), suporte a leitores de tela e metodologias de foco e aprendizagem (Matriz de Eisenhower, Pomodoro e Feynman)." }
         ]
@@ -1220,14 +1220,14 @@
         title: "🚀 Skills",
         intro: "Technical competencies built through 100% self-taught study and driven by intense scientific curiosity, alongside my undergraduate studies in the Bachelor of Civil Engineering at UFPR. Click on any skill title below to open its dedicated screen with the complete description of architecture, code design, data structures, algorithms, and best practices:",
         items: [
-          { num: "01", slug: "skills/linguagens-compiladores.html", icon: "⚙️", category: "Programming Languages, Compilers & Standards", summary: "Self-taught development of native systems and desktop applications in C++ (C++17/C++20), Rust (2021/2024 Editions), C (C99/C11), Python (3.10+), and Modern Web (HTML5, CSS3, and ES6+ JS), using MSVC 2022, Clang/LLVM, GCC, Cargo, and CMake toolchains." },
+          { num: "01", slug: "skills/linguagens-compiladores.html", icon: "⚙️", category: "Programming Languages, Compilers & Standards", summary: "Self-taught development of native systems and desktop applications in C++ (C++17/C++20/C++23), Rust (2021/2024 Editions), C (C99/C11), Python (3.10+), and Modern Web (HTML5, CSS3, and ES6+ JS), using MSVC 2022, Clang/LLVM, GCC, Cargo, and CMake toolchains." },
           { num: "02", slug: "skills/arquitetura-software.html", icon: "🏛️", category: "Software Architecture & Design Patterns", summary: "Design of clean, layered architectures with strict decoupling across UI, Domain, and Persistence layers, applying event-driven programming (Signals & Slots), Producer-Consumer models, Model-View-Delegate, bilingual I18N, and 100% offline data sovereignty." },
           { num: "03", slug: "skills/design-codigo-boas-praticas.html", icon: "💎", category: "Code Design, Computational Logic & Best Practices", summary: "Strict application of SOLID, Clean Code, DRY, KISS, and YAGNI, deterministic memory management via RAII and smart pointers, move semantics, Zero-Copy reading, data-race-free concurrency, and power-safe atomic ACID persistence." },
-          { num: "04", slug: "skills/estruturas-dados-algoritmos.html", icon: "🧮", category: "Data Structures, Algorithms & Complexity", summary: "Implementation of Ring Buffers, lock-free MPMC channels, O(1) Hash Maps, NTFS/JSON trees, force-directed graphs, LZ77/LZMA compression, machine-code Regex JIT, numerical methods (Newton-Raphson and Brent-Dekker), and Work-Stealing Thread Pools." },
+          { num: "04", slug: "skills/estruturas-dados-algoritmos.html", icon: "🧮", category: "Data Structures, Algorithms & Complexity", summary: "Implementation of Ring Buffers, lock-free MPMC channels, O(1) Hash Maps, NTFS/JSON trees, force-directed graphs, LZ77/LZMA compression, Regex JIT, sparse solvers (Eigen Cholesky LDLT), Hermite interpolation, and Work-Stealing Thread Pools." },
           { num: "05", slug: "skills/engenharia-computacao-baixo-nivel.html", icon: "⚡", category: "Computer Engineering, Low-Level Systems, SIMD & Parallelism", summary: "Hardware-close x86-64 systems programming with direct virtual Memory-Mapped Files, AVX2/SSE4.2 SIMD vectorization exceeding 3.0 GB/s, sub-millisecond asynchronous kernel I/O, and native integration with Win32 subsystems." },
-          { num: "06", slug: "skills/interfaces-graficas-gpu.html", icon: "🎨", category: "Graphical User Interface (GUI) Engineering & GPU Rendering", summary: "Construction of highly responsive native desktop interfaces with Qt6/Qt 6.11, PySide6, and Rust egui/eframe, paired with hardware-accelerated 2D/3D GPU rendering (WGPU, DirectX 12, Vulkan, and OpenGL) at 60 FPS with Light/Dark themes and HiDPI/4K scaling." },
+          { num: "06", slug: "skills/interfaces-graficas-gpu.html", icon: "🎨", category: "Graphical User Interface (GUI) Engineering & GPU Rendering", summary: "Construction of highly responsive native desktop interfaces with Qt6/Qt 6.11, PySide6, and Rust egui/eframe, paired with hardware-accelerated 2D/3D GPU rendering (OpenGL 3.3 Core with SSAA/MSAA/SDF, WGPU, DX12, and Vulkan) at 60 FPS with Light/Dark themes and HiDPI/4K scaling." },
           { num: "07", slug: "skills/ciberseguranca-auditoria-forense.html", icon: "🛡️", category: "Cybersecurity, Forensic Auditing & Cryptography", summary: "Real-time File Integrity Monitoring (FIM) with kernel semantic correlation, forensic auditing of DACL/SACL descriptors and NTFS/SMB Effective Access, privilege escalation detection, AES-256/SHA-256 cryptography, and GDPR/LGPD/ISO compliance reporting." },
-          { num: "08", slug: "skills/engenharia-civil-computacional.html", icon: "🏗️", category: "Computational Civil, Structural & Geotechnical Engineering", summary: "Application of Bachelor of Civil Engineering studies (UFPR) and self-taught programming to numerical modeling of wind loads (NBR 6123), slope stability and foundations (NBR 11682/6122), reinforced concrete walls (NBR 6118), and IPT/EPUSP mix design." },
+          { num: "08", slug: "skills/engenharia-civil-computacional.html", icon: "🏗️", category: "Computational Civil, Structural & Geotechnical Engineering", summary: "Application of Bachelor of Civil Engineering studies (UFPR) and self-taught programming to 3D finite element structural analysis (NBR 8800/6118), wind loads (NBR 6123), slope stability and retaining walls (NBR 11682/6122), and IPT/EPUSP mix design." },
           { num: "09", slug: "skills/engenharia-economica-ciencia-dados.html", icon: "📈", category: "Engineering Economics, Data Science & Databases", summary: "Accounting-precision financial modeling (SAC, Price, NPV, IRR, MIRR, and EUAW), concurrent WAL SQLite3 relational database architecture, statistical Python dashboards (Pareto, ABC Curve, and Boxplots), and native 300 DPI vector A4 PDF and XLSX export." },
           { num: "10", slug: "skills/acessibilidade-cognitiva-produtividade.html", icon: "🧠", category: "Cognitive Accessibility (A11y) & Scientific Productivity", summary: "Software development centered on cognitive ergonomics and neurodiversity (ASD, ADHD, and Dyslexia) per WCAG 2.1 AAA, offline neural speech synthesis (SAPI5/OneCore), screen reader support, and focus/learning methodologies (Eisenhower Matrix, Pomodoro, and Feynman)." }
         ]
@@ -1311,6 +1311,7 @@
       { name: "Launcher_EBook", html_url: "https://github.com/fernandoncidade/Launcher_EBook" },
       { name: "Linceu_Lighthouse_cpp", html_url: "https://github.com/fernandoncidade/Linceu_Lighthouse_cpp" },
       { name: "Munin_App_cpp", html_url: "https://github.com/fernandoncidade/Munin_App_cpp" },
+      { name: "OmniFrame3D_cpp", html_url: "https://github.com/fernandoncidade/OmniFrame3D_cpp" },
       { name: "Programa_Carteira_Motorista", html_url: "https://github.com/fernandoncidade/Programa_Carteira_Motorista" },
       { name: "Programa_Determinar_Maior_Inteiro", html_url: "https://github.com/fernandoncidade/Programa_Determinar_Maior_Inteiro" },
       { name: "Programa_Expressoes_Relacionais", html_url: "https://github.com/fernandoncidade/Programa_Expressoes_Relacionais" },
@@ -1326,6 +1327,7 @@
     ];
 
     const REPO_ICONS = {
+      "OmniFrame3D_cpp": "image_perfil/omniframe.png",
       "Linceu_Lighthouse_cpp": "image_perfil/linceu_sem_fundo.png",
       "ACL_Auditor_cpp": "image_perfil/acl_auditor.png",
       "Munin_App_cpp": "image_perfil/munin.png",
@@ -1342,6 +1344,7 @@
     };
 
     const REPO_STORE_URLS = {
+      "OmniFrame3D_cpp": "https://apps.microsoft.com/detail/9P67Q1S3Z021",
       "Linceu_Lighthouse_cpp": "https://apps.microsoft.com/detail/9NN8Z5Z700TM",
       "ACL_Auditor_cpp": "https://apps.microsoft.com/detail/9NX5XZLL8WXW",
       "Munin_App_cpp": "https://apps.microsoft.com/detail/9PP4GVHR5THC",
@@ -1356,6 +1359,7 @@
     };
 
     const REPO_SUBPAGES = {
+      "OmniFrame3D_cpp": "apps/omniframe-3d.html",
       "Linceu_Lighthouse_cpp": "apps/linceu-lighthouse.html",
       "ACL_Auditor_cpp": "apps/acl-auditor.html",
       "Munin_App_cpp": "apps/munin-app.html",
@@ -1684,7 +1688,7 @@
   <div class="header">
     <img class="avatar" src="https://raw.githubusercontent.com/fernandoncidade/fernandoncidade/main/image_perfil/photo_2024-12-26_12-19-42.jpg" alt="Avatar">
     <h1 class="title">Fernando Nillsson Cidade</h1>
-    <div id="tagline" class="tagline">Graduando em Engenharia Civil (UFPR) • Desenvolvedor de Software Autodidata • C++17/20 • Rust • C • Python</div>
+    <div id="tagline" class="tagline">Graduando em Engenharia Civil (UFPR) • Desenvolvedor de Software Autodidata • C++17/20/23 • Rust • C • Python</div>
     <div class="header-links">
       <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="http://lattes.cnpq.br/1220810284745516" target="_blank" rel="noopener noreferrer">Lattes</a>
@@ -1725,7 +1729,7 @@
 
     <section id="sec-ptbr" class="lang-section active">
       <div class="note">
-        <b>Olá, eu sou o Fernando Nillsson Cidade!</b> Graduando no Bacharelado em Engenharia Civil pela Universidade Federal do Paraná (UFPR) — tudo o que desenvolvo nasce de uma intensa atividade autodidata e de muita curiosidade científica e tecnológica. Desenvolvedor de software autodidata com sólida prática em C++ (C++17/C++20), Rust (Edições 2021/2024), C e Python (3.10+), dedicado ao estudo e implementação de arquitetura de sistemas nativos de altíssima performance, design de código limpo e seguro em memória, estruturas de dados e algoritmos avançados, paralelismo multi-core e vetorização SIMD, cibersegurança e auditoria forense de sistemas de arquivos, processamento massivo de logs em tempo real, simulação estrutural, eólica, geotécnica e de tecnologia do concreto (normas ABNT NBR), engenharia econômica, ciência de dados, compressão de dados, acessibilidade cognitiva para neurodivergentes e ferramentas de produtividade — aliando Qt6, egui/WGPU, Win32 API e bancos de dados relacionais locais com soberania total de dados (100% offline e zero telemetria).
+        <b>Olá, eu sou o Fernando Nillsson Cidade!</b> Graduando no Bacharelado em Engenharia Civil pela Universidade Federal do Paraná (UFPR) — tudo o que desenvolvo nasce de uma intensa atividade autodidata e de muita curiosidade científica e tecnológica. Desenvolvedor de software autodidata com sólida prática em C++ (C++17/C++20/C++23), Rust (Edições 2021/2024), C e Python (3.10+), dedicado ao estudo e implementação de arquitetura de sistemas nativos de altíssima performance, design de código limpo e seguro em memória, estruturas de dados e algoritmos avançados, paralelismo multi-core e vetorização SIMD, cibersegurança e auditoria forense de sistemas de arquivos, processamento massivo de logs em tempo real, simulação estrutural 3D por elementos finitos (FEA), eólica, geotécnica e de tecnologia do concreto (normas ABNT NBR), engenharia econômica, ciência de dados, compressão de dados, acessibilidade cognitiva para neurodivergentes e ferramentas de produtividade — aliando Qt6, egui/WGPU, OpenGL 3.3 Core, Eigen, Win32 API e bancos de dados relacionais locais com soberania total de dados (100% offline e zero telemetria).
       </div>
 
       <div class="grid">
@@ -1740,12 +1744,12 @@
                   <div class="skill-preview-head-info">
                     <div class="skill-preview-meta">
                       <span class="skill-num-badge">01 / 10</span>
-                      <span class="skill-tech-pill">C++17/20 • Rust 2021/2024 • C99/C11 • Python 3.10+</span>
+                      <span class="skill-tech-pill">C++17/20/23 • Rust 2021/2024 • C99/C11 • Python 3.10+</span>
                     </div>
                     <h4 class="skill-preview-title"><a href="skills/linguagens-compiladores.html" class="skill-preview-title-link" title="Abrir página completa da habilidade">Linguagens de Programação, Compiladores &amp; Padrões <span class="skill-arrow">→</span></a></h4>
                   </div>
                 </div>
-                <p class="skill-preview-summary">Desenvolvimento autodidata de sistemas nativos e aplicações desktop em C++ (C++17/C++20), Rust (Edições 2021/2024), C (C99/C11), Python (3.10+) e Web Moderna (HTML5, CSS3 e JS ES6+), utilizando toolchains MSVC 2022, Clang/LLVM, GCC, Cargo e CMake.</p>
+                <p class="skill-preview-summary">Desenvolvimento autodidata de sistemas nativos e aplicações desktop em C++ (C++17/C++20/C++23), Rust (Edições 2021/2024), C (C99/C11), Python (3.10+) e Web Moderna (HTML5, CSS3 e JS ES6+), utilizando toolchains MSVC 2022, Clang/LLVM, GCC, Cargo e CMake.</p>
                 <div class="skill-preview-footer"><a href="skills/linguagens-compiladores.html" class="skill-explore-link">🔍 Ver habilidade completa</a></div>
               </div>
 
@@ -1785,12 +1789,12 @@
                   <div class="skill-preview-head-info">
                     <div class="skill-preview-meta">
                       <span class="skill-num-badge">04 / 10</span>
-                      <span class="skill-tech-pill">Hash Maps O(1) • LZ77/LZMA • Regex JIT • Newton-Raphson</span>
+                      <span class="skill-tech-pill">Hash Maps O(1) • Eigen Cholesky • Hermite • LZ77/LZMA</span>
                     </div>
                     <h4 class="skill-preview-title"><a href="skills/estruturas-dados-algoritmos.html" class="skill-preview-title-link" title="Abrir página completa da habilidade">Estruturas de Dados, Algoritmos &amp; Complexidade <span class="skill-arrow">→</span></a></h4>
                   </div>
                 </div>
-                <p class="skill-preview-summary">Implementação de Ring Buffers, canais lock-free MPMC, Hash Maps O(1), árvores NTFS/JSON, grafos dirigidos por forças, compressão LZ77/LZMA, Regex JIT em código de máquina, métodos numéricos (Newton-Raphson e Brent-Dekker) e Thread Pools Work-Stealing.</p>
+                <p class="skill-preview-summary">Implementação de Ring Buffers, canais lock-free MPMC, Hash Maps O(1), árvores NTFS/JSON, grafos dirigidos por forças, compressão LZ77/LZMA, Regex JIT, solvers esparsos (Cholesky LDLT via Eigen), interpolação de Hermite e Thread Pools Work-Stealing.</p>
                 <div class="skill-preview-footer"><a href="skills/estruturas-dados-algoritmos.html" class="skill-explore-link">🔍 Ver habilidade completa</a></div>
               </div>
 
@@ -1815,12 +1819,12 @@
                   <div class="skill-preview-head-info">
                     <div class="skill-preview-meta">
                       <span class="skill-num-badge">06 / 10</span>
-                      <span class="skill-tech-pill">Qt 6.11 • egui/eframe • WGPU • DX12 / Vulkan / OpenGL</span>
+                      <span class="skill-tech-pill">Qt 6.11 • egui • OpenGL 3.3 (SSAA/MSAA/SDF) • WGPU</span>
                     </div>
                     <h4 class="skill-preview-title"><a href="skills/interfaces-graficas-gpu.html" class="skill-preview-title-link" title="Abrir página completa da habilidade">Engenharia de Interfaces Gráficas (GUI) &amp; Renderização GPU <span class="skill-arrow">→</span></a></h4>
                   </div>
                 </div>
-                <p class="skill-preview-summary">Construção de interfaces desktop nativas de alta responsividade com Qt6/Qt 6.11, PySide6 e egui/eframe em Rust, aliadas à renderização gráfica 2D/3D acelerada por GPU (WGPU, DirectX 12, Vulkan e OpenGL) a 60 FPS com suporte a temas Claro/Escuro e HiDPI/4K.</p>
+                <p class="skill-preview-summary">Construção de interfaces desktop nativas de alta responsividade com Qt6/Qt 6.11, PySide6 e egui/eframe em Rust, aliadas à renderização 2D/3D acelerada por GPU (OpenGL 3.3 Core com SSAA/MSAA/SDF, WGPU, DX12 e Vulkan) a 60 FPS com temas Claro/Escuro e HiDPI/4K.</p>
                 <div class="skill-preview-footer"><a href="skills/interfaces-graficas-gpu.html" class="skill-explore-link">🔍 Ver habilidade completa</a></div>
               </div>
 
@@ -1845,12 +1849,12 @@
                   <div class="skill-preview-head-info">
                     <div class="skill-preview-meta">
                       <span class="skill-num-badge">08 / 10</span>
-                      <span class="skill-tech-pill">Graduando UFPR • ABNT NBR 6123 / 11682 / 6122 / 6118 / 12655</span>
+                      <span class="skill-tech-pill">Graduando UFPR • 3D FEA • ABNT NBR 8800 / 6118 / 6123 / 11682</span>
                     </div>
                     <h4 class="skill-preview-title"><a href="skills/engenharia-civil-computacional.html" class="skill-preview-title-link" title="Abrir página completa da habilidade">Engenharia Civil, Estrutural &amp; Geotécnica Computacional <span class="skill-arrow">→</span></a></h4>
                   </div>
                 </div>
-                <p class="skill-preview-summary">Aplicação dos estudos no Bacharelado em Engenharia Civil (UFPR) e programação autodidata na modelagem numérica de ações do vento (NBR 6123), estabilidade de taludes e fundações (NBR 11682/6122), muros em concreto armado (NBR 6118) e dosagem IPT/EPUSP.</p>
+                <p class="skill-preview-summary">Aplicação dos estudos no Bacharelado em Engenharia Civil (UFPR) e programação autodidata em análise estrutural 3D por elementos finitos (NBR 8800/6118), ações do vento (NBR 6123), estabilidade de taludes e muros (NBR 11682/6122) e dosagem IPT/EPUSP.</p>
                 <div class="skill-preview-footer"><a href="skills/engenharia-civil-computacional.html" class="skill-explore-link">🔍 Ver habilidade completa</a></div>
               </div>
 
@@ -1889,6 +1893,7 @@
           <div class="card">
             <h3>🎯 Principais Projetos</h3>
             <ul class="subtopics">
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/OmniFrame3D_cpp">OmniFrame 3D (C++23 / Qt 6.11.1 / Eigen / OpenGL 3.3)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse_cpp">Linceu Lighthouse (C++17 / Qt6)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/ACL_Auditor_cpp">ACL Auditor (C++20 / Qt 6.11)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Munin_App_cpp">Munin App (C++20 / Qt6)</a></li>
@@ -1910,6 +1915,21 @@
           <div class="card">
             <h3>🏪 Aplicativos na Microsoft Store</h3>
             <div class="store-apps-list">
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/omniframe-3d.html" class="store-app-icon-link" title="Ver subpágina do OmniFrame 3D">
+                    <img src="image_perfil/omniframe.png" alt="OmniFrame 3D" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/omniframe-3d.html" class="store-app-title-link" title="Ver subpágina do OmniFrame 3D">
+                      <span class="store-app-name">OmniFrame 3D</span>
+                    </a>
+                    <span class="store-app-tag">Análise Estrutural 3D (MEF / OpenGL)</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9P67Q1S3Z021" target="_blank" rel="noopener noreferrer">Obter</a>
+              </div>
+
               <div class="store-app-item">
                 <div class="store-app-info">
                   <a href="apps/linceu-lighthouse.html" class="store-app-icon-link" title="Ver subpágina do Linceu Lighthouse">
@@ -2127,6 +2147,24 @@
         </div>
 
         <div class="col-6">
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/omniframe-3d.html" class="project-icon-link" title="Ver subpágina do OmniFrame 3D">
+                <img src="image_perfil/omniframe.png" alt="OmniFrame 3D" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++23 • Qt 6.11.1 • Eigen • OpenGL 3.3 Core • 100% Offline</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/omniframe-3d.html" class="project-title-link" title="Ver subpágina do OmniFrame 3D">OmniFrame 3D</a></h2>
+              </div>
+            </div>
+            <p>Plataforma nativa de engenharia estrutural tridimensional por Elementos Finitos (MEF/FEA) para Windows em C++23 (<code>OmniFrameKernel</code> livre de Qt), Qt 6.11.1, Eigen 3.4.0 e OpenGL 3.3 Core. Abrange elementos 1D/2D/3D (Euler-Bernoulli/Timoshenko, cascas Tri3/Quad4/Quad8 e sólidos Tet4/Tet10/Hex8/Hex20), análises estática linear, modal, flambagem, harmônica, espectro de resposta, transiente/sísmica e não linear geométrica/plasticidade J2, recuperação contínua de Hermite, viewport com SSAA 200%/MSAA 16×/Shader SDF, auditoria ABNT NBR, interoperabilidade <code>.omniframe</code>/DXF/IFC4/VTK, relatórios PDF A4 e CLI <code>omniframe-cli.exe</code>.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/OmniFrame3D_cpp" target="_blank" rel="noopener noreferrer">Ver repositório</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P67Q1S3Z021" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="OmniFrame3D_cpp" data-app="OmniFrame 3D">💬 Mensagem</button>
+            </div>
+          </div>
+
           <div class="card project-card">
             <div class="card-header-flex">
               <a href="apps/linceu-lighthouse.html" class="project-icon-link" title="Ver subpágina do Linceu Lighthouse">
@@ -2396,7 +2434,7 @@
 
     <section id="sec-enus" class="lang-section">
       <div class="note">
-        <b>Hello, I'm Fernando Nillsson Cidade!</b> Undergraduate student in the Bachelor of Civil Engineering at the Federal University of Paraná (UFPR) — everything I develop stems from an intense self-taught activity and deep scientific and technological curiosity. Self-taught software developer with solid hands-on practice in C++ (C++17/C++20), Rust (2021/2024 Editions), C, and Python (3.10+), dedicated to studying and implementing ultra-high-performance native systems architecture, clean and memory-safe code design, advanced data structures and algorithms, multi-core parallelism and SIMD vectorization, cybersecurity and forensic file system auditing, real-time massive log processing, structural, wind, geotechnical, and concrete technology simulation (ABNT NBR standards), engineering economics, data science, data compression, cognitive accessibility for neurodivergent users, and productivity tooling — combining Qt6, egui/WGPU, the Win32 API, and local relational databases with total data sovereignty (100% offline and zero telemetry).
+        <b>Hello, I'm Fernando Nillsson Cidade!</b> Undergraduate student in the Bachelor of Civil Engineering at the Federal University of Paraná (UFPR) — everything I develop stems from an intense self-taught activity and deep scientific and technological curiosity. Self-taught software developer with solid hands-on practice in C++ (C++17/C++20/C++23), Rust (2021/2024 Editions), C, and Python (3.10+), dedicated to studying and implementing ultra-high-performance native systems architecture, clean and memory-safe code design, advanced data structures and algorithms, multi-core parallelism and SIMD vectorization, cybersecurity and forensic file system auditing, real-time massive log processing, 3D finite element structural (FEA), wind, geotechnical, and concrete technology simulation (ABNT NBR standards), engineering economics, data science, data compression, cognitive accessibility for neurodivergent users, and productivity tooling — combining Qt6, egui/WGPU, OpenGL 3.3 Core, Eigen, the Win32 API, and local relational databases with total data sovereignty (100% offline and zero telemetry).
       </div>
 
       <div class="grid">
@@ -2411,12 +2449,12 @@
                   <div class="skill-preview-head-info">
                     <div class="skill-preview-meta">
                       <span class="skill-num-badge">01 / 10</span>
-                      <span class="skill-tech-pill">C++17/20 • Rust 2021/2024 • C99/C11 • Python 3.10+</span>
+                      <span class="skill-tech-pill">C++17/20/23 • Rust 2021/2024 • C99/C11 • Python 3.10+</span>
                     </div>
                     <h4 class="skill-preview-title"><a href="skills/linguagens-compiladores.html" class="skill-preview-title-link" title="Open complete skill page">Programming Languages, Compilers &amp; Standards <span class="skill-arrow">→</span></a></h4>
                   </div>
                 </div>
-                <p class="skill-preview-summary">Self-taught development of native systems and desktop applications in C++ (C++17/C++20), Rust (2021/2024 Editions), C (C99/C11), Python (3.10+), and Modern Web (HTML5, CSS3, and ES6+ JS), using MSVC 2022, Clang/LLVM, GCC, Cargo, and CMake toolchains.</p>
+                <p class="skill-preview-summary">Self-taught development of native systems and desktop applications in C++ (C++17/C++20/C++23), Rust (2021/2024 Editions), C (C99/C11), Python (3.10+), and Modern Web (HTML5, CSS3, and ES6+ JS), using MSVC 2022, Clang/LLVM, GCC, Cargo, and CMake toolchains.</p>
                 <div class="skill-preview-footer"><a href="skills/linguagens-compiladores.html" class="skill-explore-link">🔍 View complete skill</a></div>
               </div>
 
@@ -2456,12 +2494,12 @@
                   <div class="skill-preview-head-info">
                     <div class="skill-preview-meta">
                       <span class="skill-num-badge">04 / 10</span>
-                      <span class="skill-tech-pill">Hash Maps O(1) • LZ77/LZMA • Regex JIT • Newton-Raphson</span>
+                      <span class="skill-tech-pill">Hash Maps O(1) • Eigen Cholesky • Hermite • LZ77/LZMA</span>
                     </div>
                     <h4 class="skill-preview-title"><a href="skills/estruturas-dados-algoritmos.html" class="skill-preview-title-link" title="Open complete skill page">Data Structures, Algorithms &amp; Complexity <span class="skill-arrow">→</span></a></h4>
                   </div>
                 </div>
-                <p class="skill-preview-summary">Implementation of Ring Buffers, lock-free MPMC channels, O(1) Hash Maps, NTFS/JSON trees, force-directed graphs, LZ77/LZMA compression, machine-code Regex JIT, numerical methods (Newton-Raphson and Brent-Dekker), and Work-Stealing Thread Pools.</p>
+                <p class="skill-preview-summary">Implementation of Ring Buffers, lock-free MPMC channels, O(1) Hash Maps, NTFS/JSON trees, force-directed graphs, LZ77/LZMA compression, Regex JIT, sparse solvers (Eigen Cholesky LDLT), Hermite interpolation, and Work-Stealing Thread Pools.</p>
                 <div class="skill-preview-footer"><a href="skills/estruturas-dados-algoritmos.html" class="skill-explore-link">🔍 View complete skill</a></div>
               </div>
 
@@ -2486,12 +2524,12 @@
                   <div class="skill-preview-head-info">
                     <div class="skill-preview-meta">
                       <span class="skill-num-badge">06 / 10</span>
-                      <span class="skill-tech-pill">Qt 6.11 • egui/eframe • WGPU • DX12 / Vulkan / OpenGL</span>
+                      <span class="skill-tech-pill">Qt 6.11 • egui • OpenGL 3.3 (SSAA/MSAA/SDF) • WGPU</span>
                     </div>
                     <h4 class="skill-preview-title"><a href="skills/interfaces-graficas-gpu.html" class="skill-preview-title-link" title="Open complete skill page">Graphical User Interface (GUI) Engineering &amp; GPU Rendering <span class="skill-arrow">→</span></a></h4>
                   </div>
                 </div>
-                <p class="skill-preview-summary">Construction of highly responsive native desktop interfaces with Qt6/Qt 6.11, PySide6, and Rust egui/eframe, paired with hardware-accelerated 2D/3D GPU rendering (WGPU, DirectX 12, Vulkan, and OpenGL) at 60 FPS with Light/Dark themes and HiDPI/4K scaling.</p>
+                <p class="skill-preview-summary">Construction of highly responsive native desktop interfaces with Qt6/Qt 6.11, PySide6, and Rust egui/eframe, paired with hardware-accelerated 2D/3D GPU rendering (OpenGL 3.3 Core with SSAA/MSAA/SDF, WGPU, DX12, and Vulkan) at 60 FPS with Light/Dark themes and HiDPI/4K scaling.</p>
                 <div class="skill-preview-footer"><a href="skills/interfaces-graficas-gpu.html" class="skill-explore-link">🔍 View complete skill</a></div>
               </div>
 
@@ -2516,12 +2554,12 @@
                   <div class="skill-preview-head-info">
                     <div class="skill-preview-meta">
                       <span class="skill-num-badge">08 / 10</span>
-                      <span class="skill-tech-pill">UFPR Undergraduate • ABNT NBR 6123 / 11682 / 6122 / 6118 / 12655</span>
+                      <span class="skill-tech-pill">UFPR Undergraduate • 3D FEA • ABNT NBR 8800 / 6118 / 6123 / 11682</span>
                     </div>
                     <h4 class="skill-preview-title"><a href="skills/engenharia-civil-computacional.html" class="skill-preview-title-link" title="Open complete skill page">Computational Civil, Structural &amp; Geotechnical Engineering <span class="skill-arrow">→</span></a></h4>
                   </div>
                 </div>
-                <p class="skill-preview-summary">Application of Bachelor of Civil Engineering studies (UFPR) and self-taught programming to numerical modeling of wind loads (NBR 6123), slope stability and foundations (NBR 11682/6122), reinforced concrete walls (NBR 6118), and IPT/EPUSP mix design.</p>
+                <p class="skill-preview-summary">Application of Bachelor of Civil Engineering studies (UFPR) and self-taught programming to 3D finite element structural analysis (NBR 8800/6118), wind loads (NBR 6123), slope stability and retaining walls (NBR 11682/6122), and IPT/EPUSP mix design.</p>
                 <div class="skill-preview-footer"><a href="skills/engenharia-civil-computacional.html" class="skill-explore-link">🔍 View complete skill</a></div>
               </div>
 
@@ -2560,6 +2598,7 @@
           <div class="card">
             <h3>🎯 Main Projects</h3>
             <ul class="subtopics">
+              <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/OmniFrame3D_cpp">OmniFrame 3D (C++23 / Qt 6.11.1 / Eigen / OpenGL 3.3)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Linceu_Lighthouse_cpp">Linceu Lighthouse (C++17 / Qt6)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/ACL_Auditor_cpp">ACL Auditor (C++20 / Qt 6.11)</a></li>
               <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandoncidade/Munin_App_cpp">Munin App (C++20 / Qt6)</a></li>
@@ -2581,6 +2620,21 @@
           <div class="card">
             <h3>🏪 Microsoft Store Applications</h3>
             <div class="store-apps-list">
+              <div class="store-app-item">
+                <div class="store-app-info">
+                  <a href="apps/omniframe-3d.html" class="store-app-icon-link" title="View OmniFrame 3D subpage">
+                    <img src="image_perfil/omniframe.png" alt="OmniFrame 3D" class="store-app-icon">
+                  </a>
+                  <div>
+                    <a href="apps/omniframe-3d.html" class="store-app-title-link" title="View OmniFrame 3D subpage">
+                      <span class="store-app-name">OmniFrame 3D</span>
+                    </a>
+                    <span class="store-app-tag">3D Structural Analysis (FEA / OpenGL)</span>
+                  </div>
+                </div>
+                <a class="store-app-btn" href="https://apps.microsoft.com/detail/9P67Q1S3Z021" target="_blank" rel="noopener noreferrer">Get</a>
+              </div>
+
               <div class="store-app-item">
                 <div class="store-app-info">
                   <a href="apps/linceu-lighthouse.html" class="store-app-icon-link" title="View Linceu Lighthouse subpage">
@@ -2798,6 +2852,24 @@
         </div>
 
         <div class="col-6">
+          <div class="card project-card">
+            <div class="card-header-flex">
+              <a href="apps/omniframe-3d.html" class="project-icon-link" title="View OmniFrame 3D subpage">
+                <img src="image_perfil/omniframe.png" alt="OmniFrame 3D" class="project-icon">
+              </a>
+              <div>
+                <span class="badge-tech">C++23 • Qt 6.11.1 • Eigen • OpenGL 3.3 Core • 100% Offline</span>
+                <h2 style="margin:0;font-size:1.35rem;"><a href="apps/omniframe-3d.html" class="project-title-link" title="View OmniFrame 3D subpage">OmniFrame 3D</a></h2>
+              </div>
+            </div>
+            <p>Native Windows 3D Finite Element structural engineering suite engineered in C++23 (Qt-free <code>OmniFrameKernel</code>), Qt 6.11.1, Eigen 3.4.0, and OpenGL 3.3 Core. Covers unified 1D/2D/3D elements (Euler-Bernoulli/Timoshenko beams, Tri3/Quad4/Quad8 shells, and Tet4/Tet10/Hex8/Hex20 solids), linear static, modal, buckling, harmonic FRF, response spectrum, transient/seismic, and geometric nonlinear/J2 plasticity solvers, continuous Hermite force recovery, SSAA 200%/MSAA 16×/Shader SDF viewport, ABNT NBR audit, <code>.omniframe</code>/DXF/IFC4/VTK interop, A4 PDF reports, and <code>omniframe-cli.exe</code>.</p>
+            <div class="card-actions">
+              <a class="cta" href="https://github.com/fernandoncidade/OmniFrame3D_cpp" target="_blank" rel="noopener noreferrer">Open repository</a>
+              <a class="cta secondary" href="https://apps.microsoft.com/detail/9P67Q1S3Z021" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+              <button type="button" class="cta tertiary btn-open-msg" data-repo="OmniFrame3D_cpp" data-app="OmniFrame 3D">💬 Message</button>
+            </div>
+          </div>
+
           <div class="card project-card">
             <div class="card-header-flex">
               <a href="apps/linceu-lighthouse.html" class="project-icon-link" title="View Linceu Lighthouse subpage">
@@ -3109,7 +3181,7 @@
       <a href="https://github.com/fernandoncidade" target="_blank" rel="noopener noreferrer">Perfil no GitHub</a>
     </div>
     <div id="footer-sub" class="footer-sub">
-      Graduando no Bacharelado em Engenharia Civil (UFPR) • Programação Autodidata &amp; Curiosidade Científica • C++17/20 • Rust • C • Python • 100% Offline &amp; Open Source
+      Graduando no Bacharelado em Engenharia Civil (UFPR) • Programação Autodidata &amp; Curiosidade Científica • C++17/20/23 • Rust • C • Python • 100% Offline &amp; Open Source
     </div>
   </footer>
 
@@ -3346,6 +3418,7 @@
 
     // ===== Sistema de Mensagens para Repositórios Públicos e Apps =====
     const REPO_APP_LIST = [
+      { id: 'OmniFrame3D_cpp', name: 'OmniFrame 3D', repo: 'OmniFrame3D_cpp', hasDiscussion: true },
       { id: 'Linceu_Lighthouse_cpp', name: 'Linceu Lighthouse', repo: 'Linceu_Lighthouse_cpp', hasDiscussion: true },
       { id: 'ACL_Auditor_cpp', name: 'ACL Auditor', repo: 'ACL_Auditor_cpp', hasDiscussion: true },
       { id: 'Munin_App_cpp', name: 'Munin App', repo: 'Munin_App_cpp', hasDiscussion: true },

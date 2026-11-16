@@ -18,8 +18,8 @@
       icon: '⚙️',
       ptTitle: 'Linguagens de Programação, Compiladores & Padrões',
       enTitle: 'Programming Languages, Compilers & Standards',
-      ptSummary: 'Desenvolvimento autodidata de sistemas nativos e aplicações desktop em C++ (C++17/C++20), Rust (Edições 2021/2024), C (C99/C11), Python (3.10+) e Web Moderna (HTML5, CSS3 e JS ES6+), utilizando toolchains MSVC 2022, Clang/LLVM, GCC, Cargo e CMake.',
-      enSummary: 'Self-taught development of native systems and desktop applications in C++ (C++17/C++20), Rust (2021/2024 Editions), C (C99/C11), Python (3.10+), and Modern Web (HTML5, CSS3, and ES6+ JS), using MSVC 2022, Clang/LLVM, GCC, Cargo, and CMake toolchains.'
+      ptSummary: 'Desenvolvimento autodidata de sistemas nativos e aplicações desktop em C++ (C++17/C++20/C++23), Rust (Edições 2021/2024), C (C99/C11), Python (3.10+) e Web Moderna (HTML5, CSS3 e JS ES6+), utilizando toolchains MSVC 2022, Clang/LLVM, GCC, Cargo e CMake.',
+      enSummary: 'Self-taught development of native systems and desktop applications in C++ (C++17/C++20/C++23), Rust (2021/2024 Editions), C (C99/C11), Python (3.10+), and Modern Web (HTML5, CSS3, and ES6+ JS), using MSVC 2022, Clang/LLVM, GCC, Cargo, and CMake toolchains.'
     },
     {
       num: '02',
@@ -45,8 +45,8 @@
       icon: '🧮',
       ptTitle: 'Estruturas de Dados, Algoritmos & Complexidade',
       enTitle: 'Data Structures, Algorithms & Complexity',
-      ptSummary: 'Implementação de Ring Buffers, canais lock-free MPMC, Hash Maps O(1), árvores NTFS/JSON, grafos dirigidos por forças, compressão LZ77/LZMA, Regex JIT em código de máquina, métodos numéricos (Newton-Raphson e Brent-Dekker) e Thread Pools Work-Stealing.',
-      enSummary: 'Implementation of Ring Buffers, lock-free MPMC channels, O(1) Hash Maps, NTFS/JSON trees, force-directed graphs, LZ77/LZMA compression, machine-code Regex JIT, numerical methods (Newton-Raphson and Brent-Dekker), and Work-Stealing Thread Pools.'
+      ptSummary: 'Implementação de Ring Buffers, canais lock-free MPMC, Hash Maps O(1), árvores NTFS/JSON, grafos dirigidos por forças, compressão LZ77/LZMA, Regex JIT, solvers esparsos (Cholesky LDLT via Eigen), interpolação de Hermite e Thread Pools Work-Stealing.',
+      enSummary: 'Implementation of Ring Buffers, lock-free MPMC channels, O(1) Hash Maps, NTFS/JSON trees, force-directed graphs, LZ77/LZMA compression, Regex JIT, sparse solvers (Eigen Cholesky LDLT), Hermite interpolation, and Work-Stealing Thread Pools.'
     },
     {
       num: '05',
@@ -63,8 +63,8 @@
       icon: '🎨',
       ptTitle: 'Engenharia de Interfaces Gráficas (GUI) & Renderização GPU',
       enTitle: 'Graphical User Interface (GUI) Engineering & GPU Rendering',
-      ptSummary: 'Construção de interfaces desktop nativas de alta responsividade com Qt6/Qt 6.11, PySide6 e egui/eframe em Rust, aliadas à renderização gráfica 2D/3D acelerada por GPU (WGPU, DirectX 12, Vulkan e OpenGL) a 60 FPS com suporte a temas Claro/Escuro e HiDPI/4K.',
-      enSummary: 'Construction of highly responsive native desktop interfaces with Qt6/Qt 6.11, PySide6, and Rust egui/eframe, paired with hardware-accelerated 2D/3D GPU rendering (WGPU, DirectX 12, Vulkan, and OpenGL) at 60 FPS with Light/Dark themes and HiDPI/4K scaling.'
+      ptSummary: 'Construção de interfaces desktop nativas de alta responsividade com Qt6/Qt 6.11, PySide6 e egui/eframe em Rust, aliadas à renderização 2D/3D acelerada por GPU (OpenGL 3.3 Core com SSAA/MSAA/SDF, WGPU, DX12 e Vulkan) a 60 FPS com temas Claro/Escuro e HiDPI/4K.',
+      enSummary: 'Construction of highly responsive native desktop interfaces with Qt6/Qt 6.11, PySide6, and Rust egui/eframe, paired with hardware-accelerated 2D/3D GPU rendering (OpenGL 3.3 Core with SSAA/MSAA/SDF, WGPU, DX12, and Vulkan) at 60 FPS with Light/Dark themes and HiDPI/4K scaling.'
     },
     {
       num: '07',
@@ -81,8 +81,8 @@
       icon: '🏗️',
       ptTitle: 'Engenharia Civil, Estrutural & Geotécnica Computacional',
       enTitle: 'Computational Civil, Structural & Geotechnical Engineering',
-      ptSummary: 'Aplicação dos estudos no Bacharelado em Engenharia Civil (UFPR) e programação autodidata na modelagem numérica de ações do vento (NBR 6123), estabilidade de taludes e fundações (NBR 11682/6122), muros em concreto armado (NBR 6118) e dosagem IPT/EPUSP.',
-      enSummary: 'Application of Bachelor of Civil Engineering studies (UFPR) and self-taught programming to numerical modeling of wind loads (NBR 6123), slope stability and foundations (NBR 11682/6122), reinforced concrete walls (NBR 6118), and IPT/EPUSP mix design.'
+      ptSummary: 'Aplicação dos estudos no Bacharelado em Engenharia Civil (UFPR) e programação autodidata em análise estrutural 3D por elementos finitos (NBR 8800/6118), ações do vento (NBR 6123), estabilidade de taludes e muros (NBR 11682/6122) e dosagem IPT/EPUSP.',
+      enSummary: 'Application of Bachelor of Civil Engineering studies (UFPR) and self-taught programming to 3D finite element structural analysis (NBR 8800/6118), wind loads (NBR 6123), slope stability and retaining walls (NBR 11682/6122), and IPT/EPUSP mix design.'
     },
     {
       num: '09',
