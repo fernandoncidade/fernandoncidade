@@ -27,9 +27,9 @@
 
 <div align="center">
 
-### 🕒 Total de Tempo Trabalhado: 57795.5h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total de Linhas Escritas: 629020 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total de Commits: 433 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total de Tempo Trabalhado: 57959.5h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total de Linhas Escritas: 631024 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total de Commits: 436 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -54,12 +54,12 @@
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
 | EoloPlatform_rs | Rust | 1063.5h | 15953 | 1 | 15.00 l/h |
-| fernandoncidade | HTML | 554.0h | 17314 | 274 | 31.25 l/h |
+| fernandoncidade | HTML | 581.9h | 18184 | 276 | 31.25 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | GeoEstabil_rs | Rust | 1612.7h | 24190 | 2 | 15.00 l/h |
 | HuginnSentinel_rs | Rust | 3984.7h | 59770 | 2 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
-| Linceu_Lighthouse_cpp | C++ | 16068.2h | 133902 | 1 | 8.33 l/h |
+| Linceu_Lighthouse_cpp | C++ | 16204.3h | 135036 | 2 | 8.33 l/h |
 | Munin_App_cpp | C++ | 2077.0h | 17308 | 1 | 8.33 l/h |
 | OmniFrame3D_cpp | C++ | 8767.0h | 73058 | 6 | 8.33 l/h |
 | Programa_Carteira_Motorista | C++ | 21.5h | 387 | 2 | 18.00 l/h |
@@ -74,7 +74,7 @@
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 45 | 15.00 l/h |
-| **TOTAL** | - | 57795.5h | 629020 | 433 | - |
+| **TOTAL** | - | 57959.5h | 631024 | 436 | - |
 <!-- PUBLIC_REPOS_STATS_PT_END -->
 
 ## 🌻 Sobre Mim 🌻
@@ -494,9 +494,9 @@ Aplicativo desktop em Python/PySide6 para comparar, de forma prática e visual, 
 
 <div align="center">
 
-### 🕒 Total Working Time: 57795.5h <!-- TOTAL_HOURS_PLACEHOLDER -->
-### 📝 Total Lines Written: 629020 <!-- TOTAL_LINES_PLACEHOLDER -->
-### 💻 Total Commits: 433 <!-- TOTAL_COMMITS_PLACEHOLDER -->
+### 🕒 Total Working Time: 57959.5h <!-- TOTAL_HOURS_PLACEHOLDER -->
+### 📝 Total Lines Written: 631024 <!-- TOTAL_LINES_PLACEHOLDER -->
+### 💻 Total Commits: 436 <!-- TOTAL_COMMITS_PLACEHOLDER -->
 
 </div>
 
@@ -521,12 +521,12 @@ Aplicativo desktop em Python/PySide6 para comparar, de forma prática e visual, 
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
 | EoloPlatform_rs | Rust | 1063.5h | 15953 | 1 | 15.00 l/h |
-| fernandoncidade | HTML | 554.0h | 17314 | 274 | 31.25 l/h |
+| fernandoncidade | HTML | 581.9h | 18184 | 276 | 31.25 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | GeoEstabil_rs | Rust | 1612.7h | 24190 | 2 | 15.00 l/h |
 | HuginnSentinel_rs | Rust | 3984.7h | 59770 | 2 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
-| Linceu_Lighthouse_cpp | C++ | 16068.2h | 133902 | 1 | 8.33 l/h |
+| Linceu_Lighthouse_cpp | C++ | 16204.3h | 135036 | 2 | 8.33 l/h |
 | Munin_App_cpp | C++ | 2077.0h | 17308 | 1 | 8.33 l/h |
 | OmniFrame3D_cpp | C++ | 8767.0h | 73058 | 6 | 8.33 l/h |
 | Programa_Carteira_Motorista | C++ | 21.5h | 387 | 2 | 18.00 l/h |
@@ -541,7 +541,7 @@ Aplicativo desktop em Python/PySide6 para comparar, de forma prática e visual, 
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 45 | 15.00 l/h |
-| **TOTAL** | - | 57795.5h | 629020 | 433 | - |
+| **TOTAL** | - | 57959.5h | 631024 | 436 | - |
 <!-- PUBLIC_REPOS_STATS_EN_END -->
 
 ## 🌻 About Me 🌻
