@@ -186,14 +186,14 @@ Plataforma desktop nativa de engenharia estrutural tridimensional por Elementos 
 </div>
 
 **Linceu Lighthouse**  
-Plataforma desktop nativa em **C++17 e Qt6** para inteligência, rastreamento histórico e auditoria determinística do sistema de arquivos do Windows.
-- **Monitoramento Semântico em Tempo Real:** Captura via APIs Win32 assíncronas (`ReadDirectoryChangesW`) com correlação de eventos complexos para identificação real de `RENAMED` e `MOVED`.
-- **Inteligência Local sem IA:** Banco de dados relacional SQLite local enriquecido com mais de 30 categorias de metadados antes e depois de cada modificação, acompanhado por 17 visualizações gráficas nativas e mapas de calor.
-- **Segurança e Linha de Base:** Linha de base criptográfica (baseline), cálculo determinístico de score de risco e exportação de relatórios auditáveis.
-- **100% Local & Offline:** Zero nuvem, zero telemetria e isolamento completo.
+Plataforma desktop nativa em **C++23 e Qt 6.11.1** (`Cpp23ModernCore.h`, `std::jthread`/`std::stop_token`, `std::expected`, `std::format` e tabelas `constexpr O(log n)`) para inteligência local sem IA, rastreamento histórico e auditoria determinística do sistema de arquivos do Windows.
+- **Monitoramento Semântico & Concorrência Cooperativa:** Captura via APIs Win32 assíncronas (`ReadDirectoryChangesW`) com `std::jthread`/`std::stop_token`, varredura em lotes de 16 itens e correlação semântica real para operações `RENAMED` e `MOVED`.
+- **SHA-256 & Entropia de Shannon em Passagem Única:** Análise criptográfica e cálculo de entropia em uma única leitura (`≥ 7,25 bits/byte`, regra `entropia_anomala_payload` +15 pontos no risco), quarentena e restauração segura com APIs `std::expected`.
+- **Inteligência Local sem IA, SQLite WAL & 17 Gráficos:** Banco relacional SQLite WAL com mais de 30 categorias de metadados antes e depois de cada alteração, estatísticas em passagem única (`WelfordAccumulator`), ordenação determinística `<=>` e 17 visualizações gráficas nativas (`QPainter`, `QOpenGLWidget`, Qt Quick).
+- **Exportação Multiformato, CLI, 6 Idiomas & Privacidade Soberana:** Exportação nativa em `.xlsx` (OpenXML próprio), `.csv`, `.txt`, `.json`, `.xml` e `.db`, ferramenta CLI `linceu-lighthouse-cli.exe` (`scan`/`metadata`), 6 idiomas, licença GNU AGPLv3 e execução 100% Local-First Offline (zero nuvem e zero telemetria).
 - [Repositório GitHub: Linceu_Lighthouse_cpp](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp)
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9NN8Z5Z700TM)
-- ![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![Windows](https://img.shields.io/badge/Platform-Windows-0078D4?logo=windows) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
+- ![C++23](https://img.shields.io/badge/C%2B%2B-23-00599C?logo=cplusplus) ![Qt 6.11.1](https://img.shields.io/badge/Qt-6.11.1-brightgreen?logo=qt) ![Windows](https://img.shields.io/badge/Platform-Windows-0078D4?logo=windows) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
 
 ## 🛡️ Destaque de Projeto: ACL Auditor
 
@@ -409,7 +409,7 @@ Aplicativo desktop em Python/PySide6 para comparar, de forma prática e visual, 
 ## 🎯 Principais Projetos
 
 - [**OmniFrame 3D**](https://github.com/fernandoncidade/OmniFrame3D_cpp): Plataforma desktop nativa em C++23 / Qt 6.11.1 / Eigen 3.4.0 / OpenGL 3.3 Core para análise estrutural tridimensional por elementos finitos (1D/2D/3D, estática, modal, flambagem, harmônica, espectral, transiente e não linear geométrica/J2) com auditoria ABNT NBR e CLI (`omniframe-cli.exe`).
-- [**Linceu Lighthouse**](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp): Plataforma local de inteligência, histórico e auditoria determinística de atividades de arquivos no Windows (C++17 / Qt6 / SQLite).
+- [**Linceu Lighthouse**](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp): Plataforma desktop nativa em C++23 / Qt 6.11.1 / SQLite WAL para inteligência local sem IA, histórico pesquisável, entropia de Shannon e auditoria determinística de arquivos no Windows com CLI (`linceu-lighthouse-cli.exe`).
 - [**ACL Auditor**](https://github.com/fernandoncidade/ACL_Auditor_cpp): Auditor enterprise-grade de permissões NTFS e compartilhamentos SMB com análise de acesso efetivo e riscos (C++20 / Qt 6.11).
 - [**Munin App**](https://github.com/fernandoncidade/Munin_App_cpp): Visualizador de logs massivos ultraveloz com Win32 Memory-Mapped Files e aceleração SIMD AVX2/SSE4.2 (C++20 / Qt6).
 - [**Huginn Sentinel**](https://github.com/fernandoncidade/HuginnSentinel_rs): Plataforma local em Rust (egui/WGPU/SQLite) para monitoramento em tempo real, inteligência e auditoria determinística do sistema de arquivos do Windows.
@@ -653,14 +653,14 @@ Native Windows 3D Finite Element structural engineering desktop suite (**3D Spac
 </div>
 
 **Linceu Lighthouse**  
-Native Windows desktop application engineered in **C++17 and Qt6** providing deterministic intelligence, historical timeline tracking, and auditing over the file system.
-- **Real-Time Semantic Monitoring:** Captures system events via asynchronous Win32 APIs (`ReadDirectoryChangesW`) with complex correlation algorithms to detect true `RENAMED` and `MOVED` operations.
-- **Local Intelligence without AI:** Automatic local SQLite database enriched with 30+ metadata categories before and after each modification, accompanied by 17 native charts and heatmaps.
-- **Cryptographic Baseline & Security:** Cryptographic integrity baselines, deterministic risk scoring, and audit-ready report generation.
-- **100% Local & Offline:** Zero cloud, zero telemetry, and complete network isolation.
+Native Windows desktop application engineered in **C++23 and Qt 6.11.1** (`Cpp23ModernCore.h`, `std::jthread`/`std::stop_token`, `std::expected`, `std::format`, and `constexpr O(log n)` lookup tables) providing AI-free file intelligence, searchable history, and deterministic auditing.
+- **Semantic Monitoring & Cooperative Concurrency:** Asynchronous Win32 capture (`ReadDirectoryChangesW`) backed by `std::jthread`/`std::stop_token`, 16-item chunked scanning, and true semantic correlation for `RENAMED` and `MOVED` operations.
+- **Single-Pass SHA-256 & Shannon Entropy:** Combined hashing and entropy anomaly detection in one read pass (`≥ 7.25 bits/byte`, triggering `entropia_anomala_payload` +15 risk points), quarantine, and safe recovery via `std::expected` APIs.
+- **AI-Free Intelligence, SQLite WAL & 17 Native Charts:** Local SQLite WAL database capturing 30+ before/after metadata categories, single-pass `WelfordAccumulator` statistics, deterministic `<=>` tie-breaking, and 17 native visualizations (`QPainter`, `QOpenGLWidget`, Qt Quick).
+- **6-Format Export, CLI, 6 Languages & Sovereign Privacy:** Native export to `.xlsx` (custom OpenXML), `.csv`, `.txt`, `.json`, `.xml`, and `.db`, `linceu-lighthouse-cli.exe` (`scan`/`metadata`), 6 built-in languages, GNU AGPLv3 open-source license, and 100% Local-First Offline execution (zero cloud, zero telemetry).
 - [GitHub Repository: Linceu_Lighthouse_cpp](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp)
 - [Microsoft Web Store](https://apps.microsoft.com/detail/9NN8Z5Z700TM)
-- ![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus) ![Qt6](https://img.shields.io/badge/Qt6-Framework-brightgreen?logo=qt) ![Windows](https://img.shields.io/badge/Platform-Windows-0078D4?logo=windows) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
+- ![C++23](https://img.shields.io/badge/C%2B%2B-23-00599C?logo=cplusplus) ![Qt 6.11.1](https://img.shields.io/badge/Qt-6.11.1-brightgreen?logo=qt) ![Windows](https://img.shields.io/badge/Platform-Windows-0078D4?logo=windows) ![Offline](https://img.shields.io/badge/Security-100%25_Offline-success)
 
 ## 🛡️ Project Highlight: ACL Auditor
 
@@ -876,7 +876,7 @@ Python/PySide6 desktop app to easily audit and compare your GitHub connections (
 ## 🎯 Main Projects
 
 - [**OmniFrame 3D**](https://github.com/fernandoncidade/OmniFrame3D_cpp): Native Windows desktop platform in C++23 / Qt 6.11.1 / Eigen 3.4.0 / OpenGL 3.3 Core for 3D finite element structural analysis (1D/2D/3D, static, modal, buckling, harmonic, spectrum, transient, and geometric nonlinear/J2) with ABNT NBR audit and CLI (`omniframe-cli.exe`).
-- [**Linceu Lighthouse**](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp): Local file activity intelligence, history, and deterministic audit platform for Windows (C++17 / Qt6 / SQLite).
+- [**Linceu Lighthouse**](https://github.com/fernandoncidade/Linceu_Lighthouse_cpp): Native Windows desktop platform in C++23 / Qt 6.11.1 / SQLite WAL for AI-free local file intelligence, searchable history, single-pass Shannon entropy, and deterministic auditing with CLI (`linceu-lighthouse-cli.exe`).
 - [**ACL Auditor**](https://github.com/fernandoncidade/ACL_Auditor_cpp): Enterprise-grade Windows NTFS & SMB permission auditor with effective access explanation and risk detection (C++20 / Qt 6.11).
 - [**Munin App**](https://github.com/fernandoncidade/Munin_App_cpp): Ultra-fast massive log viewer and analyzer leveraging Win32 Memory-Mapped Files and SIMD acceleration (C++20 / Qt6).
 - [**Huginn Sentinel**](https://github.com/fernandoncidade/HuginnSentinel_rs): Local Rust platform (egui/WGPU/SQLite) for real-time monitoring, intelligence, and deterministic Windows file system auditing.

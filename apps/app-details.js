@@ -67,8 +67,8 @@
       en: 'OmniFrame 3D • 3D Finite Element Structural Analysis in C++23, Qt 6.11.1, Eigen & OpenGL 3.3'
     },
     'linceu-lighthouse.html': {
-      pt: 'Linceu Lighthouse • Auditoria Forense e Monitoramento de Arquivos em C++',
-      en: 'Linceu Lighthouse • Forensic File Audit & Directory Monitoring in C++'
+      pt: 'Linceu Lighthouse • Auditoria Forense e Monitoramento de Arquivos em C++23 e Qt 6.11.1',
+      en: 'Linceu Lighthouse • Forensic File Audit & Directory Monitoring in C++23 & Qt 6.11.1'
     },
     'acl-auditor.html': {
       pt: 'ACL Auditor • Auditoria de Permissões NTFS e Segurança Corporativa em C++20',
@@ -148,6 +148,11 @@
     // Atualiza botão de tema com texto do novo idioma
     const currentTheme = localStorage.getItem(THEME_KEY) === 'dark' ? 'dark' : 'light';
     applyTheme(currentTheme);
+
+    // Sincroniza textos do modal de contato direto quando presente
+    if (document.getElementById('message-dialog')) {
+      updateContactModalLocale();
+    }
   }
 
   function toggleLanguage() {
@@ -202,6 +207,7 @@
     setupBackToTop();
     setupAppCarousels();
     setupAuthorSkillsSection();
+    setupDirectContactModal();
   });
 
   // Sincronização ao retornar pelo histórico de navegação (BFCache)
@@ -566,5 +572,543 @@
       .join('');
 
     section.innerHTML = `<h2 class="section-heading"><span>🚀</span> <span class="lang-pt">${AUTHOR_SKILLS_DATA.pt.heading}</span><span class="lang-en">${AUTHOR_SKILLS_DATA.en.heading}</span></h2><p class="author-skills-intro lang-pt">${AUTHOR_SKILLS_DATA.pt.intro}</p><p class="author-skills-intro lang-en">${AUTHOR_SKILLS_DATA.en.intro}</p><ul class="author-skills-list lang-pt">${ptItemsHtml}</ul><ul class="author-skills-list lang-en">${enItemsHtml}</ul>`;
+  }
+
+  // ====================================================================
+  // 8. Sistema Universal de Contato Direto (Modal + FormSubmit + Mailto)
+  // ====================================================================
+  const CONTACT_EMAIL = 'linceu_lighthouse@outlook.com';
+
+  const REPO_APP_LIST = [
+    { id: 'OmniFrame3D_cpp', name: 'OmniFrame 3D', repo: 'OmniFrame3D_cpp', hasDiscussion: true },
+    { id: 'Linceu_Lighthouse_cpp', name: 'Linceu Lighthouse', repo: 'Linceu_Lighthouse_cpp', hasDiscussion: true },
+    { id: 'ACL_Auditor_cpp', name: 'ACL Auditor', repo: 'ACL_Auditor_cpp', hasDiscussion: true },
+    { id: 'Munin_App_cpp', name: 'Munin App', repo: 'Munin_App_cpp', hasDiscussion: true },
+    { id: 'HuginnSentinel_rs', name: 'Huginn Sentinel', repo: 'HuginnSentinel_rs', hasDiscussion: true },
+    { id: 'EoloPlatform_rs', name: 'Eolo Platform', repo: 'EoloPlatform_rs', hasDiscussion: true },
+    { id: 'GeoEstabil_rs', name: 'GeoEstabil', repo: 'GeoEstabil_rs', hasDiscussion: true },
+    { id: 'Concrete_Mix_Designer_cpp', name: 'Concrete Mix Designer', repo: 'Concrete_Mix_Designer_cpp', hasDiscussion: true },
+    { id: 'Compression_Manager', name: 'COMPRESSION MANAGER', repo: 'Compression_Manager', hasDiscussion: true },
+    { id: 'Economia_APP', name: 'Economia APP', repo: 'Economia_APP', hasDiscussion: true },
+    { id: 'EisenPo', name: 'EisenPo', repo: '', hasDiscussion: false },
+    { id: 'EISENHOWER_ORGANIZER', name: 'EISENHOWER ORGANIZER', repo: '', hasDiscussion: false },
+    { id: 'Lumen', name: 'Lúmen', repo: '', hasDiscussion: false },
+    { id: 'Launcher_EBook', name: 'Launcher EBook', repo: 'Launcher_EBook', hasDiscussion: true },
+    { id: 'Agenda_Avaliacoes_Academicas', name: 'Agenda Avaliações Acadêmicas', name_en: 'Academic Evaluations Scheduler', repo: 'Agenda_Avaliacoes_Academicas', hasDiscussion: true },
+    { id: 'Compare_Following_Follower', name: 'Compare - Following and Follower', repo: 'Compare_Following_Follower', hasDiscussion: true },
+    { id: 'Programa_Urna_Eletronica', name: 'Programa Urna Eletrônica', name_en: 'Electronic Voting Machine Program', repo: 'Programa_Urna_Eletronica', hasDiscussion: true },
+    { id: 'SlidingWindowLZ77_cpp', name: 'SlidingWindowLZ77_cpp', repo: 'SlidingWindowLZ77_cpp', hasDiscussion: true },
+    { id: 'EcoLZMA_cpp', name: 'EcoLZMA_cpp', repo: 'EcoLZMA_cpp', hasDiscussion: true },
+    { id: 'sloth-highlander-theme-1', name: 'sloth-highlander-theme-1', repo: 'sloth-highlander-theme-1', hasDiscussion: true },
+    { id: 'Geral', name: 'Outro Repositório / Geral', name_en: 'Other Repository / General', repo: '', hasDiscussion: false }
+  ];
+
+  const PAGE_TO_REPO_ID = {
+    'omniframe-3d.html': 'OmniFrame3D_cpp',
+    'linceu-lighthouse.html': 'Linceu_Lighthouse_cpp',
+    'acl-auditor.html': 'ACL_Auditor_cpp',
+    'munin-app.html': 'Munin_App_cpp',
+    'huginn.html': 'HuginnSentinel_rs',
+    'eolo-platform.html': 'EoloPlatform_rs',
+    'geoestabil.html': 'GeoEstabil_rs',
+    'concrete_mix_design.html': 'Concrete_Mix_Designer_cpp',
+    'compression-manager.html': 'Compression_Manager',
+    'economia-app.html': 'Economia_APP',
+    'eisenpo.html': 'EisenPo',
+    'eisenhower-organizer.html': 'EISENHOWER_ORGANIZER',
+    'lumen.html': 'Lumen',
+    'launcher-ebook.html': 'Launcher_EBook',
+    'agenda-avaliacoes-academicas.html': 'Agenda_Avaliacoes_Academicas',
+    'compare-following-follower.html': 'Compare_Following_Follower'
+  };
+
+  const DIALOG_T = {
+    pt: {
+      title: 'Contato Direto',
+      subtitle: 'Envie uma mensagem para o repositório ou aplicativo selecionado',
+      closeAria: 'Fechar',
+      repoLabel: 'Repositório / Aplicativo de Destino *',
+      nameLabel: 'Seu Nome Completo *',
+      namePlaceholder: 'Ex.: Maria Silva',
+      emailLabel: 'Seu E-mail *',
+      emailPlaceholder: 'seuemail@exemplo.com',
+      subjectLabel: 'Assunto *',
+      subjectPlaceholder: 'Título da mensagem / dúvida / feedback',
+      hint: `A mensagem será encaminhada para <strong>${CONTACT_EMAIL}</strong> identificada com este rótulo no assunto.`,
+      bodyLabel: 'Sua Mensagem *',
+      bodyPlaceholder: 'Digite sua mensagem detalhada aqui...',
+      submitBtn: `<span>📨 Enviar para ${CONTACT_EMAIL}</span>`,
+      sendingBtn: '<span>⏳ Enviando mensagem...</span>',
+      sentBtn: '<span>✅ Mensagem Enviada!</span>',
+      discBtn: '<span>🌐 Abrir no GitHub Discussions do Repositório</span>',
+      mailtoBtn: '<span>📧 Enviar via Cliente de E-mail Local (mailto)</span>',
+      copyBtn: `<span>📋 Copiar E-mail (${CONTACT_EMAIL})</span>`,
+      copySuccess: `E-mail copiado: ${CONTACT_EMAIL}`,
+      copyFail: `E-mail: ${CONTACT_EMAIL}`,
+      loadingMsg: `Enviando mensagem para <strong>${CONTACT_EMAIL}</strong>...`,
+      successMsg: (target, email) => `✅ Mensagem enviada com sucesso! A notificação foi encaminhada para <strong>${CONTACT_EMAIL}</strong> com o rótulo <code>[${target}]</code>. Responderemos para <strong>${email}</strong>.`,
+      toastSuccess: 'Mensagem enviada com sucesso!',
+      fileProtocolWarning: '⚠️ A API do FormSubmit bloqueia requisições vindas de arquivos locais (protocolo file://). Abra a página por um servidor local (ex.: http://localhost:8000) ou envie pelo seu cliente de e-mail local clicando no botão abaixo.',
+      activationWarning: `⚠️ O formulário ainda precisa de ativação! Um link de confirmação foi enviado para <strong>${CONTACT_EMAIL}</strong>. Clique em 'Activate Form' na caixa de entrada/spam do Outlook para liberar o recebimento de mensagens.`,
+      errorFallback: (msg, target) => `⚠️ Não foi possível conectar ao serviço de envio direto (${msg}). Abrindo seu cliente de e-mail (Outlook / Mail) com o assunto <code>[${target}]</code> pré-preenchido para <strong>${CONTACT_EMAIL}</strong>...`
+    },
+    en: {
+      title: 'Direct Contact',
+      subtitle: 'Send a message to the selected repository or application',
+      closeAria: 'Close',
+      repoLabel: 'Target Repository / Application *',
+      nameLabel: 'Your Full Name *',
+      namePlaceholder: 'e.g. John Doe',
+      emailLabel: 'Your Email *',
+      emailPlaceholder: 'youremail@example.com',
+      subjectLabel: 'Subject *',
+      subjectPlaceholder: 'Message title / question / feedback',
+      hint: `The message will be forwarded to <strong>${CONTACT_EMAIL}</strong> labeled with this subject tag.`,
+      bodyLabel: 'Your Message *',
+      bodyPlaceholder: 'Type your detailed message here...',
+      submitBtn: `<span>📨 Send to ${CONTACT_EMAIL}</span>`,
+      sendingBtn: '<span>⏳ Sending message...</span>',
+      sentBtn: '<span>✅ Message Sent!</span>',
+      discBtn: '<span>🌐 Open in Repository GitHub Discussions</span>',
+      mailtoBtn: '<span>📧 Send via Local Email Client (mailto)</span>',
+      copyBtn: `<span>📋 Copy Email (${CONTACT_EMAIL})</span>`,
+      copySuccess: `Email copied: ${CONTACT_EMAIL}`,
+      copyFail: `Email: ${CONTACT_EMAIL}`,
+      loadingMsg: `Sending message to <strong>${CONTACT_EMAIL}</strong>...`,
+      successMsg: (target, email) => `✅ Message sent successfully! Notification forwarded to <strong>${CONTACT_EMAIL}</strong> with label <code>[${target}]</code>. We will reply to <strong>${email}</strong>.`,
+      toastSuccess: 'Message sent successfully!',
+      fileProtocolWarning: '⚠️ FormSubmit blocks submissions from local files (file:// protocol). Please open via a local web server (e.g. http://localhost:8000) or send directly via your local email client using the button below.',
+      activationWarning: `⚠️ Form requires activation! A confirmation link was sent to <strong>${CONTACT_EMAIL}</strong>. Please click 'Activate Form' in your Outlook inbox/spam to enable deliveries.`,
+      errorFallback: (msg, target) => `⚠️ Direct send service unavailable (${msg}). Opening your local email client (Outlook / Mail) with <code>[${target}]</code> pre-filled to <strong>${CONTACT_EMAIL}</strong>...`
+    }
+  };
+
+  function getCurrentLangKey() {
+    return document.documentElement.lang.startsWith('en') ? 'en' : 'pt';
+  }
+
+  function populateRepoDropdown() {
+    const sel = document.getElementById('msg-repo');
+    if (!sel) return;
+    const curVal = sel.value;
+    const langKey = getCurrentLangKey();
+    sel.innerHTML = REPO_APP_LIST.map(item => {
+      const displayName = (langKey === 'en' && item.name_en) ? item.name_en : item.name;
+      return `<option value="${item.id}" data-name="${displayName}" data-repo="${item.repo}" data-discussion="${item.hasDiscussion}">${displayName}${item.repo ? ` (${item.repo})` : ''}</option>`;
+    }).join('');
+    if (curVal) {
+      sel.value = curVal;
+    }
+  }
+
+  function updateSubjectPrefix() {
+    const sel = document.getElementById('msg-repo');
+    const prefixEl = document.getElementById('subject-prefix');
+    const discBtn = document.getElementById('btn-discussion-link');
+    if (!sel || !prefixEl) return;
+
+    const langKey = getCurrentLangKey();
+    const opt = sel.selectedOptions[0];
+    const targetName = opt ? (opt.dataset.name || opt.text) : (langKey === 'en' ? 'Project' : 'Projeto');
+    const repoName = opt ? opt.dataset.repo : '';
+    const hasDisc = opt && opt.dataset.discussion === 'true';
+
+    prefixEl.textContent = `[${targetName}]`;
+
+    if (discBtn) {
+      if (hasDisc && repoName) {
+        discBtn.style.display = 'inline-flex';
+        discBtn.href = `https://github.com/fernandoncidade/${repoName}/discussions`;
+      } else {
+        discBtn.style.display = 'none';
+      }
+    }
+  }
+
+  function updateContactModalLocale() {
+    const langKey = getCurrentLangKey();
+    const t = DIALOG_T[langKey] || DIALOG_T.pt;
+
+    const titleEl = document.getElementById('dialog-title');
+    const subtitleEl = document.getElementById('dialog-subtitle');
+    const closeBtn = document.getElementById('dialog-close-btn');
+    const repoLabel = document.getElementById('msg-repo-label');
+    const nameLabel = document.getElementById('msg-sender-name-label');
+    const nameInput = document.getElementById('msg-sender-name');
+    const emailLabel = document.getElementById('msg-sender-email-label');
+    const emailInput = document.getElementById('msg-sender-email');
+    const subjectLabel = document.getElementById('msg-subject-label');
+    const subjectInput = document.getElementById('msg-subject');
+    const hintEl = document.getElementById('msg-subject-hint');
+    const bodyLabel = document.getElementById('msg-body-label');
+    const bodyInput = document.getElementById('msg-body');
+    const submitBtn = document.getElementById('btn-submit-msg');
+    const mailtoBtn = document.getElementById('btn-mailto-fallback');
+    const discBtn = document.getElementById('btn-discussion-link');
+    const copyBtn = document.getElementById('btn-copy-email');
+
+    if (titleEl) titleEl.textContent = t.title;
+    if (subtitleEl) subtitleEl.textContent = t.subtitle;
+    if (closeBtn) {
+      closeBtn.setAttribute('aria-label', t.closeAria);
+      closeBtn.title = t.closeAria;
+    }
+    if (repoLabel) repoLabel.textContent = t.repoLabel;
+    if (nameLabel) nameLabel.textContent = t.nameLabel;
+    if (nameInput) nameInput.placeholder = t.namePlaceholder;
+    if (emailLabel) emailLabel.textContent = t.emailLabel;
+    if (emailInput) emailInput.placeholder = t.emailPlaceholder;
+    if (subjectLabel) subjectLabel.textContent = t.subjectLabel;
+    if (subjectInput) subjectInput.placeholder = t.subjectPlaceholder;
+    if (hintEl) hintEl.innerHTML = t.hint;
+    if (bodyLabel) bodyLabel.textContent = t.bodyLabel;
+    if (bodyInput) bodyInput.placeholder = t.bodyPlaceholder;
+
+    if (submitBtn && !submitBtn.disabled) submitBtn.innerHTML = t.submitBtn;
+    if (mailtoBtn) mailtoBtn.innerHTML = t.mailtoBtn;
+    if (discBtn) discBtn.innerHTML = t.discBtn;
+    if (copyBtn) copyBtn.innerHTML = t.copyBtn;
+
+    const sel = document.getElementById('msg-repo');
+    const curVal = sel ? sel.value : null;
+    populateRepoDropdown();
+    if (sel && curVal) sel.value = curVal;
+    updateSubjectPrefix();
+  }
+
+  function clearFormStatus() {
+    const st = document.getElementById('msg-status');
+    if (st) {
+      st.className = 'form-status';
+      st.textContent = '';
+    }
+  }
+
+  function showFormStatus(msg, type = 'loading') {
+    const st = document.getElementById('msg-status');
+    if (!st) return;
+    st.className = `form-status show ${type}`;
+    st.innerHTML = msg;
+  }
+
+  function buildMailtoUrl(targetName, name, email, subject, body) {
+    const isEn = getCurrentLangKey() === 'en';
+    const mailSubject = encodeURIComponent(
+      `[${targetName}] ${subject}${name ? (isEn ? ' - from ' : ' - de ') + name : ''}`
+    );
+    const mailBody = encodeURIComponent(
+      isEn
+        ? `Full Name: ${name}\nEmail: ${email}\nRepository / Application: ${targetName}\n\nMessage:\n${body}`
+        : `Nome Completo: ${name}\nE-mail: ${email}\nRepositório / Aplicativo: ${targetName}\n\nMensagem:\n${body}`
+    );
+    return `mailto:${CONTACT_EMAIL}?subject=${mailSubject}&body=${mailBody}`;
+  }
+
+  function copyContactEmailToClipboard() {
+    const t = DIALOG_T[getCurrentLangKey()] || DIALOG_T.pt;
+    const onCopied = () => showToast(t.copySuccess, 2400);
+    const onFallback = () => {
+      try {
+        const tmp = document.createElement('textarea');
+        tmp.value = CONTACT_EMAIL;
+        tmp.setAttribute('readonly', '');
+        tmp.style.position = 'fixed';
+        tmp.style.opacity = '0';
+        document.body.appendChild(tmp);
+        tmp.select();
+        const ok = document.execCommand('copy');
+        document.body.removeChild(tmp);
+        showToast(ok ? t.copySuccess : t.copyFail, 2400);
+      } catch (err) {
+        showToast(t.copyFail, 2400);
+      }
+    };
+
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      navigator.clipboard.writeText(CONTACT_EMAIL).then(onCopied).catch(onFallback);
+    } else {
+      onFallback();
+    }
+  }
+
+  function createContactModal() {
+    let dialog = document.getElementById('message-dialog');
+    if (dialog) return dialog;
+
+    dialog = document.createElement('dialog');
+    dialog.id = 'message-dialog';
+    dialog.className = 'message-dialog';
+    dialog.setAttribute('aria-labelledby', 'dialog-title');
+
+    dialog.innerHTML = `
+      <div class="dialog-content">
+        <div class="dialog-header">
+          <div class="dialog-title-group">
+            <span class="dialog-icon" aria-hidden="true">💬</span>
+            <div>
+              <h2 id="dialog-title" class="dialog-title">Contato Direto</h2>
+              <span id="dialog-subtitle" class="dialog-subtitle">Envie uma mensagem para o repositório ou aplicativo selecionado</span>
+            </div>
+          </div>
+          <button type="button" class="dialog-close-btn" id="dialog-close-btn" aria-label="Fechar">&times;</button>
+        </div>
+
+        <form id="message-form" class="message-form">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="_template" value="table">
+
+          <div class="form-group">
+            <label id="msg-repo-label" for="msg-repo">Repositório / Aplicativo de Destino *</label>
+            <select id="msg-repo" name="repositorio" class="form-control" required></select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label id="msg-sender-name-label" for="msg-sender-name">Seu Nome Completo *</label>
+              <input type="text" id="msg-sender-name" name="nome_completo" class="form-control" placeholder="Ex.: Maria Silva" required minlength="3" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label id="msg-sender-email-label" for="msg-sender-email">Seu E-mail *</label>
+              <input type="email" id="msg-sender-email" name="email" class="form-control" placeholder="seuemail@exemplo.com" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label id="msg-subject-label" for="msg-subject">Assunto *</label>
+            <div class="subject-input-wrapper">
+              <span id="subject-prefix" class="subject-prefix">[Linceu Lighthouse]</span>
+              <input type="text" id="msg-subject" name="assunto" class="form-control" placeholder="Título da mensagem / dúvida / feedback" required minlength="3">
+            </div>
+            <small id="msg-subject-hint" class="form-hint"></small>
+          </div>
+
+          <div class="form-group">
+            <label id="msg-body-label" for="msg-body">Sua Mensagem *</label>
+            <textarea id="msg-body" name="mensagem" class="form-control" rows="5" placeholder="Digite sua mensagem detalhada aqui..." required minlength="10"></textarea>
+          </div>
+
+          <div id="msg-status" class="form-status" role="status" aria-live="polite"></div>
+
+          <div class="dialog-actions">
+            <button type="submit" id="btn-submit-msg" class="dialog-cta-primary"></button>
+            <a id="btn-discussion-link" href="#" target="_blank" rel="noopener noreferrer" class="dialog-cta-secondary" style="display:none;"></a>
+            <button type="button" id="btn-mailto-fallback" class="dialog-cta-tertiary"></button>
+            <button type="button" id="btn-copy-email" class="dialog-cta-copy"></button>
+          </div>
+        </form>
+      </div>
+    `;
+
+    document.body.appendChild(dialog);
+
+    const closeBtn = dialog.querySelector('#dialog-close-btn');
+    const form = dialog.querySelector('#message-form');
+    const repoSel = dialog.querySelector('#msg-repo');
+    const mailtoBtn = dialog.querySelector('#btn-mailto-fallback');
+    const copyBtn = dialog.querySelector('#btn-copy-email');
+
+    const closeDialog = () => {
+      if (typeof dialog.close === 'function') {
+        dialog.close();
+      } else {
+        dialog.removeAttribute('open');
+      }
+    };
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeDialog);
+    }
+
+    dialog.addEventListener('click', (e) => {
+      const rect = dialog.getBoundingClientRect();
+      if (
+        e.clientX < rect.left ||
+        e.clientX > rect.right ||
+        e.clientY < rect.top ||
+        e.clientY > rect.bottom
+      ) {
+        closeDialog();
+      }
+    });
+
+    if (repoSel) {
+      repoSel.addEventListener('change', updateSubjectPrefix);
+    }
+
+    if (mailtoBtn) {
+      mailtoBtn.addEventListener('click', () => {
+        const isEn = getCurrentLangKey() === 'en';
+        const opt = repoSel ? repoSel.selectedOptions[0] : null;
+        const targetName = opt ? (opt.dataset.name || opt.text) : (isEn ? 'Project' : 'Projeto');
+        const name = (dialog.querySelector('#msg-sender-name')?.value || '').trim();
+        const email = (dialog.querySelector('#msg-sender-email')?.value || '').trim();
+        const sub = (dialog.querySelector('#msg-subject')?.value || (isEn ? 'Contact' : 'Contato')).trim();
+        const body = (dialog.querySelector('#msg-body')?.value || '').trim();
+        window.location.href = buildMailtoUrl(targetName, name, email, sub, body);
+      });
+    }
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', copyContactEmailToClipboard);
+    }
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        const langKey = getCurrentLangKey();
+        const isEn = langKey === 'en';
+        const t = DIALOG_T[langKey] || DIALOG_T.pt;
+        const opt = repoSel ? repoSel.selectedOptions[0] : null;
+        const targetName = opt ? (opt.dataset.name || opt.text) : (isEn ? 'Project' : 'Projeto');
+        const name = dialog.querySelector('#msg-sender-name').value.trim();
+        const email = dialog.querySelector('#msg-sender-email').value.trim();
+        const sub = dialog.querySelector('#msg-subject').value.trim();
+        const body = dialog.querySelector('#msg-body').value.trim();
+        const submitBtn = dialog.querySelector('#btn-submit-msg');
+
+        const fullSubject = `[${targetName}] ${sub}${name ? (isEn ? ' (from ' : ' (de ') + name + ')' : ''}`;
+
+        if (window.location.protocol === 'file:') {
+          showFormStatus(t.fileProtocolWarning, 'error');
+          window.location.href = buildMailtoUrl(targetName, name, email, sub, body);
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = t.sendingBtn;
+        showFormStatus(t.loadingMsg, 'loading');
+
+        try {
+          const res = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              _subject: fullSubject,
+              _replyto: email,
+              'Nome / Name': name,
+              'E-mail': email,
+              'Repositório / Repository': targetName,
+              'Assunto / Subject': sub,
+              'Mensagem / Message': body
+            })
+          });
+
+          const data = await res.json().catch(() => null);
+          const isSuccess = res.ok && data && (data.success === true || data.success === 'true');
+
+          if (isSuccess) {
+            showFormStatus(t.successMsg(targetName, email), 'success');
+            submitBtn.innerHTML = t.sentBtn;
+            showToast(t.toastSuccess);
+            setTimeout(() => {
+              form.reset();
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = t.submitBtn;
+              updateSubjectPrefix();
+            }, 4000);
+          } else {
+            const returnedMsg = (data && data.message) ? data.message : `HTTP ${res.status}`;
+            const lowerMsg = returnedMsg.toLowerCase();
+            if (lowerMsg.includes('activation') || lowerMsg.includes('activate')) {
+              showFormStatus(t.activationWarning, 'error');
+            } else if (lowerMsg.includes('web server') || lowerMsg.includes('html file')) {
+              showFormStatus(t.fileProtocolWarning, 'error');
+            } else {
+              showFormStatus(t.errorFallback(returnedMsg, targetName), 'error');
+            }
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = t.submitBtn;
+            window.location.href = buildMailtoUrl(targetName, name, email, sub, body);
+          }
+        } catch (err) {
+          showFormStatus(t.errorFallback((err && err.message) || 'Network error', targetName), 'error');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = t.submitBtn;
+          window.location.href = buildMailtoUrl(targetName, name, email, sub, body);
+        }
+      });
+    }
+
+    return dialog;
+  }
+
+  function openContactModal(repoKey, fallbackAppName) {
+    const dialog = createContactModal();
+    populateRepoDropdown();
+
+    const sel = dialog.querySelector('#msg-repo');
+    if (sel) {
+      if (repoKey) {
+        const opt = Array.from(sel.options).find(o => o.value === repoKey || o.dataset.repo === repoKey);
+        if (opt) sel.value = opt.value;
+      } else if (fallbackAppName) {
+        const normalized = fallbackAppName.trim().toLowerCase();
+        const opt = Array.from(sel.options).find(o => {
+          const oName = (o.dataset.name || o.text || '').toLowerCase();
+          return oName === normalized || oName.includes(normalized);
+        });
+        if (opt) sel.value = opt.value;
+      }
+    }
+
+    updateContactModalLocale();
+    updateSubjectPrefix();
+    clearFormStatus();
+
+    if (typeof dialog.showModal === 'function') {
+      if (!dialog.open) dialog.showModal();
+    } else {
+      dialog.setAttribute('open', '');
+    }
+
+    const nameInput = dialog.querySelector('#msg-sender-name');
+    if (nameInput) nameInput.focus();
+  }
+
+  function resolveFallbackAppName(btn) {
+    const href = btn.getAttribute('href') || '';
+    const match = href.match(/subject=\[([^\]]+)\]/i);
+    if (match && match[1]) {
+      try {
+        return decodeURIComponent(match[1]);
+      } catch (err) {
+        return match[1];
+      }
+    }
+    const heroTitle = document.querySelector('.app-hero-title');
+    return heroTitle ? heroTitle.textContent.trim() : '';
+  }
+
+  function setupDirectContactModal() {
+    const contactButtons = document.querySelectorAll('.btn-cta-contact, .btn-open-msg');
+    if (!contactButtons.length) return;
+
+    createContactModal();
+    updateContactModalLocale();
+
+    contactButtons.forEach(btn => {
+      btn.setAttribute('aria-haspopup', 'dialog');
+      btn.setAttribute('aria-controls', 'message-dialog');
+    });
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.btn-cta-contact, .btn-open-msg');
+      if (!btn) return;
+      e.preventDefault();
+
+      const currentPath = window.location.pathname.split('/').pop();
+      const repoKey = btn.dataset.repo || PAGE_TO_REPO_ID[currentPath] || '';
+      const fallbackAppName = btn.dataset.app || resolveFallbackAppName(btn);
+      openContactModal(repoKey, fallbackAppName);
+    });
   }
 })();
