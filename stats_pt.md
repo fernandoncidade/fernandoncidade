@@ -14,14 +14,14 @@
 | Economia_APP | Python | 857.9h | 10724 | 15 | 12.50 l/h |
 | Economia_APP_cpp | C++ | 2707.4h | 22562 | 2 | 8.33 l/h |
 | EoloPlatform_rs | Rust | 1063.5h | 15953 | 1 | 15.00 l/h |
-| fernandoncidade | HTML | 581.9h | 18184 | 276 | 31.25 l/h |
+| fernandoncidade | HTML | 581.9h | 18184 | 277 | 31.25 l/h |
 | File_Manager | C++ | 534.9h | 8024 | 5 | 15.00 l/h |
 | GeoEstabil_rs | Rust | 1612.7h | 24190 | 2 | 15.00 l/h |
 | HuginnSentinel_rs | Rust | 3984.7h | 59770 | 2 | 15.00 l/h |
 | Launcher_EBook | C++ | 352.2h | 3202 | 2 | 9.09 l/h |
 | Linceu_Lighthouse_cpp | C++ | 16204.3h | 135036 | 2 | 8.33 l/h |
 | Munin_App_cpp | C++ | 2077.0h | 17308 | 1 | 8.33 l/h |
-| OmniFrame3D_cpp | C++ | 8767.0h | 73058 | 6 | 8.33 l/h |
+| OmniFrame3D_cpp | C++ | 10017.1h | 83476 | 7 | 8.33 l/h |
 | Programa_Carteira_Motorista | C++ | 21.5h | 387 | 2 | 18.00 l/h |
 | Programa_Determinar_Maior_Inteiro | C++ | 10.0h | 150 | 2 | 15.00 l/h |
 | Programa_Expressoes_Relacionais | C++ | 10.0h | 140 | 2 | 14.00 l/h |
@@ -34,4 +34,4 @@
 | Programa_Urna_Eletronica | C++ | 744.4h | 11166 | 6 | 15.00 l/h |
 | SlidingWindowLZ77_cpp | C | 2198.4h | 32976 | 1 | 15.00 l/h |
 | sloth-highlander-theme-1 | CSS/HTML | 459.9h | 6898 | 45 | 15.00 l/h |
-| **TOTAL** | - | 57959.5h | 631024 | 436 | - |
+| **TOTAL** | - | 59209.6h | 641442 | 438 | - |
